@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.4)  20 JUL 2017 14:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.4)  20 JUL 2017 15:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -857,7 +857,7 @@ Package: abraces 2012/08/24 v1.0 Arbitrary and asymmetric braces
 Package: threeparttable 2003/06/13  v 3.0
 \@tempboxb=\box80
 )
-(./Louden_Thesis.aux)
+(./Louden_Thesis.aux (./Chapters/iceWater.aux))
 \openout1 = `Louden_Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
@@ -1177,7 +1177,22 @@ List of figures - FIGURES
 
 ]
 List of tables - TABLES
-(./Louden_Thesis.lot)
+(./Louden_Thesis.lot
+
+Package natbib Warning: Citation `Hirsch04' on page iv undefined on input line 
+2.
+
+
+Overfull \hbox (1.83316pt too wide) in paragraph at lines 2--2
+ [][] []\OT1/cmr/m/n/12 Mapping be-tween the Miller in-dices of four facets of 
+ice in the $\OML/cmm/m/it/12 P\OT1/cmr/m/n/12 6[]\OML/cmm/m/it/12 =mmc$ 
+ []
+
+
+Package natbib Warning: Citation `Hirsch04' on page iv undefined on input line 
+4.
+
+)
 \tf@lot=\write7
 \openout7 = `Louden_Thesis.lot'.
 
@@ -1188,30 +1203,378 @@ Acknowledgment page
 ] [5
 
 ]
+\openout2 = `Chapters/iceWater.aux'.
+
+ (./Chapters/iceWater.tex
+CHAPTER 1.
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package natbib Warning: Citation `Han92' on page 1 undefined on input line 35.
+
+
+Package natbib Warning: Citation `Granasy95' on page 1 undefined on input line 
+35.
+
+
+Package natbib Warning: Citation `Vanfleet95' on page 1 undefined on input line
+ 35.
+
+
+Package natbib Warning: Citation `Weber83' on page 1 undefined on input line 36
+.
+
+
+Package natbib Warning: Citation `Han92' on page 1 undefined on input line 36.
+
+
+Package natbib Warning: Citation `Sakai96' on page 1 undefined on input line 36
+.
+
+
+Package natbib Warning: Citation `Sakai96B' on page 1 undefined on input line 3
+6.
+
+
+Package natbib Warning: Citation `Wierzbicki07' on page 1 undefined on input li
+ne 38.
+
+
+Package natbib Warning: Citation `Chapsky97' on page 1 undefined on input line 
+38.
+
+
+Package natbib Warning: Citation `Duman:2001qy' on page 1 undefined on input li
+ne 39.
+
+
+Package natbib Warning: Citation `Meister29012013' on page 1 undefined on input
+ line 39.
+
+
+Package natbib Warning: Citation `Karim90' on page 1 undefined on input line 44
+.
+
+
+Package natbib Warning: Citation `Gay02' on page 1 undefined on input line 44.
+
+
+Package natbib Warning: Citation `Bryk02' on page 1 undefined on input line 44.
+
+
+
+Package natbib Warning: Citation `Hayward01' on page 1 undefined on input line 
+44.
+
+
+Package natbib Warning: Citation `Hayward02' on page 1 undefined on input line 
+44.
+
+
+Package natbib Warning: Citation `Karim88' on page 1 undefined on input line 44
+.
+
+
+Package natbib Warning: Citation `Bryk04' on page 1 undefined on input line 48.
+
+
+
+Package natbib Warning: Citation `Smith05' on page 1 undefined on input line 48
+.
+
+
+Package natbib Warning: Citation `Wilson08' on page 1 undefined on input line 4
+8.
+
+
+Package natbib Warning: Citation `Wilson10' on page 1 undefined on input line 4
+8.
+
+
+Package natbib Warning: Citation `Nada95' on page 1 undefined on input line 50.
+
+
+
+Package natbib Warning: Citation `Nada00' on page 1 undefined on input line 50.
+
+
+
+Package natbib Warning: Citation `Nada03' on page 1 undefined on input line 50.
+
+
+
+Package natbib Warning: Citation `Nada12' on page 1 undefined on input line 50.
+
+
+
+Package natbib Warning: Citation `Nada05' on page 1 undefined on input line 52.
+
+
+[1
+
+
+
+
+]
+
+Package natbib Warning: Citation `Kuang12' on page 2 undefined on input line 70
+.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 84.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 84.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 84.
+
+
+Package natbib Warning: Citation `Buch:2008fk' on page 2 undefined on input lin
+e 96.
+
+[2]
+
+Package natbib Warning: Citation `Hirsch04' on page 3 undefined on input line 1
+02.
+
+
+Package natbib Warning: Citation `Hirsch04' on page 3 undefined on input line 1
+21.
+
+[3]
+
+Package natbib Warning: Citation `Hirsch04' on page 4 undefined on input line 1
+50.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package natbib Warning: Citation `Karim88' on page 4 undefined on input line 16
+9.
+
+
+Package natbib Warning: Citation `Karim90' on page 4 undefined on input line 16
+9.
+
+
+Package natbib Warning: Citation `Hayward01' on page 4 undefined on input line 
+169.
+
+
+Package natbib Warning: Citation `Bryk02' on page 4 undefined on input line 169
+.
+
+
+Package natbib Warning: Citation `Hayward02' on page 4 undefined on input line 
+169.
+
+
+Package natbib Warning: Citation `Berendsen87' on page 4 undefined on input lin
+e 170.
+
+
+Package natbib Warning: Citation `Bryk02' on page 4 undefined on input line 172
+.
+
+[4]
+
+Package natbib Warning: Citation `Kuang12' on page 5 undefined on input line 19
+8.
+
+[5] [6]
+
+Package natbib Warning: Citation `Kuang12' on page 7 undefined on input line 26
+9.
+
+[7]
+
+Package natbib Warning: Citation `OOPSE' on page 8 undefined on input line 278.
+
+
+
+Package natbib Warning: Citation `openmd' on page 8 undefined on input line 278
+.
+
+
+Package natbib Warning: Citation `Ewald' on page 8 undefined on input line 281.
+
+
+
+Package natbib Warning: Citation `Bryk02' on page 8 undefined on input line 312
+.
+
+
+Package natbib Warning: Citation `Kumar09' on page 8 undefined on input line 32
+1.
+
+
+Package natbib Warning: Citation `Errington01' on page 8 undefined on input lin
+e 321.
+
+
+Package natbib Warning: Citation `Bryk2004b' on page 8 undefined on input line 
+324.
+
+[8] [9] <Figures/bComicStrip.pdf, id=194, 705.63625pt x 545.03625pt>
+File: Figures/bComicStrip.pdf Graphic file (type pdf)
+
+<use Figures/bComicStrip.pdf>
+Package pdftex.def Info: Figures/bComicStrip.pdf used on input line 384.
+(pdftex.def)             Requested size: 432.0pt x 333.67754pt.
+
+<Figures/pComicStrip.pdf, id=195, 693.59125pt x 536.0025pt>
+File: Figures/pComicStrip.pdf Graphic file (type pdf)
+
+<use Figures/pComicStrip.pdf>
+Package pdftex.def Info: Figures/pComicStrip.pdf used on input line 396.
+(pdftex.def)             Requested size: 432.0pt x 333.85571pt.
+
+
+Package natbib Warning: Citation `Bryk02' on page 10 undefined on input line 41
+4.
+
+
+Package natbib Warning: Citation `Bryk2004b' on page 10 undefined on input line
+ 414.
+
+
+Package natbib Warning: Citation `Bryk02' on page 10 undefined on input line 41
+7.
+
+
+Package natbib Warning: Citation `Bryk2004b' on page 10 undefined on input line
+ 417.
+
+[10] [11 <./Figures/bComicStrip.pdf>] [12 <./Figures/pComicStrip.pdf>]
+<Figures/interface_width_by_shear_rate.pdf, id=248, 670.505pt x 476.78125pt>
+File: Figures/interface_width_by_shear_rate.pdf Graphic file (type pdf)
+
+<use Figures/interface_width_by_shear_rate.pdf>
+Package pdftex.def Info: Figures/interface_width_by_shear_rate.pdf used on inpu
+t line 423.
+(pdftex.def)             Requested size: 432.0pt x 307.18324pt.
+ [13] [14 <./Figures/interface_width_by_shear_rate.pdf>]
+
+Package natbib Warning: Citation `Furse08' on page 15 undefined on input line 4
+59.
+
+
+Package natbib Warning: Citation `Laage08' on page 15 undefined on input line 4
+66.
+
+
+Package natbib Warning: Citation `Laage11' on page 15 undefined on input line 4
+66.
+
+<Figures/basal_Tau_comic_strip.pdf, id=274, 671.50874pt x 480.79625pt>
+File: Figures/basal_Tau_comic_strip.pdf Graphic file (type pdf)
+
+<use Figures/basal_Tau_comic_strip.pdf>
+Package pdftex.def Info: Figures/basal_Tau_comic_strip.pdf used on input line 4
+89.
+(pdftex.def)             Requested size: 432.0pt x 309.30786pt.
+
+<Figures/prismatic_Tau_comic_strip.pdf, id=276, 679.53876pt x 474.77374pt>
+File: Figures/prismatic_Tau_comic_strip.pdf Graphic file (type pdf)
+
+<use Figures/prismatic_Tau_comic_strip.pdf>
+Package pdftex.def Info: Figures/prismatic_Tau_comic_strip.pdf used on input li
+ne 505.
+(pdftex.def)             Requested size: 432.0pt x 301.82571pt.
+
+
+Package natbib Warning: Citation `Laage08' on page 15 undefined on input line 5
+21.
+
+
+Package natbib Warning: Citation `Laage11' on page 15 undefined on input line 5
+21.
+
+[15] [16 <./Figures/basal_Tau_comic_strip.pdf>] [17 <./Figures/prismatic_Tau_co
+mic_strip.pdf>] [18]
+
+Package natbib Warning: Citation `Beaglehole93' on page 19 undefined on input l
+ine 564.
+
+
+Package natbib Warning: Citation `PhysRevLett.70.2726' on page 19 undefined on 
+input line 580.
+
+
+Package natbib Warning: Citation `PhysRevE.49.3079' on page 19 undefined on inp
+ut line 580.
+
+
+Package natbib Warning: Citation `Mundy1997305' on page 19 undefined on input l
+ine 585.
+
+
+Package natbib Warning: Citation `Pit99' on page 19 undefined on input line 590
+.
+
+[19]
+
+Package natbib Warning: Citation `Kuang12' on page 20 undefined on input line 6
+06.
+
+[20] <Figures/delta_example.pdf, id=369, 712.6625pt x 474.77374pt>
+File: Figures/delta_example.pdf Graphic file (type pdf)
+
+<use Figures/delta_example.pdf>
+Package pdftex.def Info: Figures/delta_example.pdf used on input line 645.
+(pdftex.def)             Requested size: 432.0pt x 287.7932pt.
+ [21] [22 <./Figures/delta_example.pdf>])
+[23]
+
+Package natbib Warning: There were undefined citations.
+
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 162.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 162.
- (./Louden_Thesis.aux)
+(./Louden_Thesis.aux (./Chapters/iceWater.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 162.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 162.
 Package rerunfilecheck Info: File `Louden_Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 7EF67542AA9A1EDBF1C0D7A500B6705E;224.
+(rerunfilecheck)             Checksum: 0B78302E1F2333C5DA37C79FB046277B;1159.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 162.
  ) 
 Here is how much of TeX's memory you used:
- 28491 strings out of 494936
- 573118 string characters out of 6180786
- 651023 words of memory out of 5000000
- 31324 multiletter control sequences out of 15000+600000
- 535235 words of font info for 43 fonts, out of 8000000 for 9000
+ 28672 strings out of 494936
+ 575811 string characters out of 6180786
+ 660883 words of memory out of 5000000
+ 31431 multiletter control sequences out of 15000+600000
+ 536510 words of font info for 47 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,5n,67p,10373b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
-</opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></op
-t/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/local
-/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Louden_Thesis.pdf (7 pages, 36176 bytes).
+ 55i,11n,67p,10373b,416s stack positions out of 5000i,500n,10000p,200000b,80000s
+</opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></o
+pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/lo
+cal/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi12.pfb></opt/local/s
+hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi6.pfb></opt/local/share/t
+exmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/local/share/texmf-t
+exlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/local/share/texmf-texlive
+/fonts/type1/public/amsfonts/cm/cmr6.pfb></opt/local/share/texmf-texlive/fonts/
+type1/public/amsfonts/cm/cmr8.pfb></opt/local/share/texmf-texlive/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb></opt/local/share/texmf-texlive/fonts/type1/public
+/amsfonts/cm/cmsy8.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfo
+nts/cm/cmti12.pfb>
+Output written on Louden_Thesis.pdf (30 pages, 382545 bytes).
 PDF statistics:
- 79 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
- 12 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 465 PDF objects out of 1000 (max. 8388607)
+ 385 compressed objects within 4 object streams
+ 66 named destinations out of 1000 (max. 500000)
+ 171 words of extra memory for PDF output out of 10000 (max. 10000000)
 
