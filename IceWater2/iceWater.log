@@ -1,0 +1,814 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/MacPorts 2014_1) (preloaded format=latex 2014.9.2)  12 SEP 2014 14:10
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**iceWater.tex
+(./iceWater.tex
+LaTeX2e <2014/05/01>
+Babel <3.9k> and hyphenation patterns for 2 languages loaded.
+(/opt/local/share/texmf-texlive/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/opt/local/share/texmf-texlive/tex/latex/base/size11.clo
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/opt/local/share/texmf-texlive/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks14
+\ex@=\dimen103
+))
+(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen104
+)
+(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count87
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count88
+\leftroot@=\count89
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count90
+\DOTSCASE@=\count91
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count92
+\c@MaxMatrixCols=\count93
+\dotsspace@=\muskip10
+\c@parentequation=\count94
+\dspbrk@lvl=\count95
+\tag@help=\toks15
+\row@=\count96
+\column@=\count97
+\maxfields@=\count98
+\andhelp@=\toks16
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks17
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/opt/local/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/opt/local/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/opt/local/share/texmf-texlive/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(/opt/local/share/texmf-texlive/tex/latex/caption/caption.sty
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+(/opt/local/share/texmf-texlive/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+
+(/opt/local/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+\KV@toks@=\toks19
+)
+\captionmargin=\dimen112
+\captionmargin@=\dimen113
+\captionwidth=\dimen114
+\caption@tempdima=\dimen115
+\caption@indent=\dimen116
+\caption@parindent=\dimen117
+\caption@hangindent=\dimen118
+)
+\c@ContinuedFloat=\count99
+)
+(/opt/local/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/opt/local/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/opt/local/share/texmf-texlive/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/opt/local/share/texmf-texlive/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: dvips.def on input line 91.
+
+(/opt/local/share/texmf-texlive/tex/latex/graphics/dvips.def
+File: dvips.def 2014/04/23 v3.0j Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen119
+\Gin@req@width=\dimen120
+)
+(/opt/local/share/texmf-texlive/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen121
+)
+(/opt/local/share/texmf-texlive/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen122
+\WF@size=\dimen123
+\c@WF@wrappedlines=\count100
+\WF@box=\box28
+\WF@everypar=\toks20
+Package: wrapfig 2003/01/31  v 3.6
+)
+(/opt/local/share/texmf-texlive/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip46
+\bibsep=\skip47
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count101
+)
+(/opt/local/share/texmf-texlive/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/opt/local/share/texmf-texlive/tex/latex/mhchem/mhchem.sty
+Package: mhchem 2014/03/27 v3.17 for typesetting chemical formulae
+
+(/opt/local/share/texmf-texlive/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/opt/local/share/texmf-texlive/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count102
+\calc@Bcount=\count103
+\calc@Adimen=\dimen124
+\calc@Bdimen=\dimen125
+\calc@Askip=\skip48
+\calc@Bskip=\skip49
+LaTeX Info: Redefining \setlength on input line 75.
+LaTeX Info: Redefining \addtolength on input line 76.
+\calc@Ccount=\count104
+\calc@Cskip=\skip50
+)
+(/opt/local/share/texmf-texlive/tex/latex/oberdiek/twoopt.sty
+Package: twoopt 2008/08/11 v1.5 Definitions with two optional arguments (HO)
+)
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode is ignored in DVI mode.
+)
+(/opt/local/share/texmf-texlive/tex/latex/l3kernel/expl3.sty
+Package: expl3 2014/05/20 v4814 L3 programming layer (loader) 
+
+(/opt/local/share/texmf-texlive/tex/latex/l3kernel/expl3-code.tex
+Package: expl3 2014/05/20 v4814 L3 programming layer (code) 
+L3 Module: l3bootstrap 2014/05/16 v4782 L3 Bootstrap code
+
+(/opt/local/share/texmf-texlive/tex/latex/etex-pkg/etex.sty
+Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
+\et@xins=\count105
+)
+L3 Module: l3names 2014/05/04 v4728 L3 Namespace for primitives
+L3 Module: l3basics 2014/05/04 v4728 L3 Basic definitions
+L3 Module: l3expan 2014/04/30 v4712 L3 Argument expansion
+L3 Module: l3tl 2014/05/04 v4728 L3 Token lists
+L3 Module: l3seq 2014/04/30 v4712 L3 Sequences and stacks
+L3 Module: l3int 2014/05/16 v4776 L3 Integers
+\c_max_int=\count106
+\l_tmpa_int=\count107
+\l_tmpb_int=\count108
+\g_tmpa_int=\count109
+\g_tmpb_int=\count110
+L3 Module: l3quark 2014/05/04 v4728 L3 Quarks
+L3 Module: l3prg 2014/05/04 v4728 L3 Control structures
+\g__prg_map_int=\count111
+L3 Module: l3clist 2014/05/04 v4728 L3 Comma separated lists
+L3 Module: l3token 2014/05/04 v4728 L3 Experimental token manipulation
+L3 Module: l3prop 2014/04/30 v4712 L3 Property lists
+L3 Module: l3msg 2014/05/04 v4728 L3 Messages
+L3 Module: l3file 2014/05/05 v4737 L3 File and I/O operations
+\l_iow_line_count_int=\count112
+\l__iow_target_count_int=\count113
+\l__iow_current_line_int=\count114
+\l__iow_current_word_int=\count115
+\l__iow_current_indentation_int=\count116
+L3 Module: l3skip 2014/05/05 v4738 L3 Dimensions and skips
+\c_zero_dim=\dimen126
+\c_max_dim=\dimen127
+\l_tmpa_dim=\dimen128
+\l_tmpb_dim=\dimen129
+\g_tmpa_dim=\dimen130
+\g_tmpb_dim=\dimen131
+\c_zero_skip=\skip51
+\c_max_skip=\skip52
+\l_tmpa_skip=\skip53
+\l_tmpb_skip=\skip54
+\g_tmpa_skip=\skip55
+\g_tmpb_skip=\skip56
+\c_zero_muskip=\muskip12
+\c_max_muskip=\muskip13
+\l_tmpa_muskip=\muskip14
+\l_tmpb_muskip=\muskip15
+\g_tmpa_muskip=\muskip16
+\g_tmpb_muskip=\muskip17
+L3 Module: l3keys 2014/05/08 v4753 L3 Key-value interfaces
+\g__keyval_level_int=\count117
+\l_keys_choice_int=\count118
+L3 Module: l3fp 2014/04/30 v4712 L3 Floating points
+\c__fp_leading_shift_int=\count119
+\c__fp_middle_shift_int=\count120
+\c__fp_trailing_shift_int=\count121
+\c__fp_big_leading_shift_int=\count122
+\c__fp_big_middle_shift_int=\count123
+\c__fp_big_trailing_shift_int=\count124
+\c__fp_Bigg_leading_shift_int=\count125
+\c__fp_Bigg_middle_shift_int=\count126
+\c__fp_Bigg_trailing_shift_int=\count127
+L3 Module: l3box 2014/05/04 v4728 L3 Experimental boxes
+\c_empty_box=\box29
+\l_tmpa_box=\box30
+\l_tmpb_box=\box31
+\g_tmpa_box=\box32
+\g_tmpb_box=\box33
+L3 Module: l3coffins 2014/05/04 v4728 L3 Coffin code layer
+\l__coffin_internal_box=\box34
+\l__coffin_internal_dim=\dimen132
+\l__coffin_offset_x_dim=\dimen133
+\l__coffin_offset_y_dim=\dimen134
+\l__coffin_x_dim=\dimen135
+\l__coffin_y_dim=\dimen136
+\l__coffin_x_prime_dim=\dimen137
+\l__coffin_y_prime_dim=\dimen138
+\c_empty_coffin=\box35
+\l__coffin_aligned_coffin=\box36
+\l__coffin_aligned_internal_coffin=\box37
+\l_tmpa_coffin=\box38
+\l_tmpb_coffin=\box39
+\l__coffin_display_coffin=\box40
+\l__coffin_display_coord_coffin=\box41
+\l__coffin_display_pole_coffin=\box42
+\l__coffin_display_offset_dim=\dimen139
+\l__coffin_display_x_dim=\dimen140
+\l__coffin_display_y_dim=\dimen141
+L3 Module: l3color 2014/04/30 v4712 L3 Experimental color support
+L3 Module: l3luatex 2014/04/30 v4712 L3 Experimental LuaTeX-specific functions
+\g__cctab_allocate_int=\count128
+\g__cctab_stack_int=\count129
+L3 Module: l3candidates 2014/05/04 v4734 L3 Experimental additions to l3kernel
+\l__box_top_dim=\dimen142
+\l__box_bottom_dim=\dimen143
+\l__box_left_dim=\dimen144
+\l__box_right_dim=\dimen145
+\l__box_top_new_dim=\dimen146
+\l__box_bottom_new_dim=\dimen147
+\l__box_left_new_dim=\dimen148
+\l__box_right_new_dim=\dimen149
+\l__box_internal_box=\box43
+\l__coffin_bounding_shift_dim=\dimen150
+\l__coffin_left_corner_dim=\dimen151
+\l__coffin_right_corner_dim=\dimen152
+\l__coffin_bottom_corner_dim=\dimen153
+\l__coffin_top_corner_dim=\dimen154
+\l__coffin_scaled_total_height_dim=\dimen155
+\l__coffin_scaled_width_dim=\dimen156
+))
+\mhchem@ce@result=\toks21
+\mhchem@ce@part=\toks22
+\mhchem@arrow@deployType=\toks23
+\mhchem@arrow@params=\toks24
+\mhchem@arrowlength@pgf=\skip57
+\mhchem@bondwidth=\skip58
+\mhchem@bondheight=\skip59
+\mhchem@smallbondwidth@tmpA=\skip60
+\mhchem@smallbondwidth@tmpB=\skip61
+\mhchem@smallbondwidth=\skip62
+\__mhchem_option_version_int=\count130
+\mhchem@prepostscript@tmp@i=\skip63
+\mhchem@prepostscript@tmp@ii=\skip64
+\mhchem@mathbox@tmp@i=\skip65
+\mhchem@mathbox@tmp@ii=\skip66
+\mhchem@minispace@tmp=\skip67
+\mhchem@option@minussidebearingleft=\skip68
+\mhchem@option@minussidebearingright=\skip69
+)
+No file iceWater.aux.
+\openout1 = `iceWater.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: wrapfig package is loaded.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for U+msa on input line 57.
+(/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 57.
+
+(/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+]
+
+Package natbib Warning: Citation `Han92' on page 2 undefined on input line 95.
+
+
+Package natbib Warning: Citation `Granasy95' on page 2 undefined on input line 
+95.
+
+
+Package natbib Warning: Citation `Vanfleet95' on page 2 undefined on input line
+ 95.
+
+
+Package natbib Warning: Citation `Weber83' on page 2 undefined on input line 96
+.
+
+
+Package natbib Warning: Citation `Han92' on page 2 undefined on input line 96.
+
+
+Package natbib Warning: Citation `Sakai96' on page 2 undefined on input line 96
+.
+
+
+Package natbib Warning: Citation `Sakai96B' on page 2 undefined on input line 9
+6.
+
+
+Package natbib Warning: Citation `Wierzbicki07' on page 2 undefined on input li
+ne 98.
+
+
+Package natbib Warning: Citation `Chapsky97' on page 2 undefined on input line 
+98.
+
+
+Package natbib Warning: Citation `Duman:2001qy' on page 2 undefined on input li
+ne 99.
+
+
+Package natbib Warning: Citation `Meister29012013' on page 2 undefined on input
+ line 99.
+
+
+Package natbib Warning: Citation `Karim90' on page 2 undefined on input line 10
+4.
+
+
+Package natbib Warning: Citation `Gay02' on page 2 undefined on input line 104.
+
+
+
+Package natbib Warning: Citation `Bryk02' on page 2 undefined on input line 104
+.
+
+
+Package natbib Warning: Citation `Hayward01' on page 2 undefined on input line 
+104.
+
+
+Package natbib Warning: Citation `Hayward02' on page 2 undefined on input line 
+104.
+
+
+Package natbib Warning: Citation `Karim88' on page 2 undefined on input line 10
+4.
+
+
+Package natbib Warning: Citation `Bryk04' on page 2 undefined on input line 108
+.
+
+
+Package natbib Warning: Citation `Smith05' on page 2 undefined on input line 10
+8.
+
+
+Package natbib Warning: Citation `Wilson08' on page 2 undefined on input line 1
+08.
+
+
+Package natbib Warning: Citation `Wilson10' on page 2 undefined on input line 1
+08.
+
+
+Package natbib Warning: Citation `Nada95' on page 2 undefined on input line 110
+.
+
+
+Package natbib Warning: Citation `Nada00' on page 2 undefined on input line 110
+.
+
+
+Package natbib Warning: Citation `Nada03' on page 2 undefined on input line 110
+.
+
+
+Package natbib Warning: Citation `Nada12' on page 2 undefined on input line 110
+.
+
+
+Package natbib Warning: Citation `Nada05' on page 2 undefined on input line 112
+.
+
+
+Package natbib Warning: Citation `Kuang12' on page 2 undefined on input line 13
+0.
+
+
+Package natbib Warning: Citation `Buch:2008fk' on page 2 undefined on input lin
+e 156.
+
+[2]
+
+Package natbib Warning: Citation `Hirsch04' on page 3 undefined on input line 1
+62.
+
+
+Package natbib Warning: Citation `Hirsch04' on page 3 undefined on input line 1
+62.
+
+
+Package natbib Warning: Citation `Hirsch04' on page 3 undefined on input line 1
+81.
+
+
+LaTeX Warning: Reference `tab:equiv' on page 3 undefined on input line 185.
+
+
+LaTeX Warning: Reference `tab:p212121' on page 3 undefined on input line 193.
+
+[3]
+
+Package natbib Warning: Citation `Hirsch04' on page 4 undefined on input line 2
+10.
+
+
+Package natbib Warning: Citation `Hirsch04' on page 4 undefined on input line 2
+10.
+
+
+Package natbib Warning: Citation `Karim88' on page 4 undefined on input line 22
+9.
+
+
+Package natbib Warning: Citation `Karim90' on page 4 undefined on input line 22
+9.
+
+
+Package natbib Warning: Citation `Hayward01' on page 4 undefined on input line 
+229.
+
+
+Package natbib Warning: Citation `Bryk02' on page 4 undefined on input line 229
+.
+
+
+Package natbib Warning: Citation `Hayward02' on page 4 undefined on input line 
+229.
+
+
+Package natbib Warning: Citation `Berendsen87' on page 4 undefined on input lin
+e 230.
+
+
+Package natbib Warning: Citation `Bryk02' on page 4 undefined on input line 232
+.
+
+[4]
+
+Package natbib Warning: Citation `Kuang12' on page 5 undefined on input line 25
+8.
+
+[5]
+
+Package natbib Warning: Citation `Kuang12' on page 6 undefined on input line 32
+9.
+
+
+Package natbib Warning: Citation `OOPSE' on page 6 undefined on input line 338.
+
+
+
+Package natbib Warning: Citation `openmd' on page 6 undefined on input line 338
+.
+
+
+Package natbib Warning: Citation `Ewald' on page 6 undefined on input line 341.
+
+
+[6]
+
+Package natbib Warning: Citation `Bryk02' on page 7 undefined on input line 372
+.
+
+
+Package natbib Warning: Citation `Kumar09' on page 7 undefined on input line 38
+1.
+
+
+Package natbib Warning: Citation `Errington01' on page 7 undefined on input lin
+e 381.
+
+
+Package natbib Warning: Citation `Bryk2004b' on page 7 undefined on input line 
+384.
+
+[7]
+
+LaTeX Warning: Reference `tet_fit' on page 8 undefined on input line 420.
+
+
+LaTeX Warning: Reference `fig:bComic' on page 8 undefined on input line 424.
+
+
+LaTeX Warning: Reference `fig:pComic' on page 8 undefined on input line 424.
+
+
+LaTeX Warning: Reference `tet_fit' on page 8 undefined on input line 432.
+
+[8]
+
+! LaTeX Error: File `bComicStrip' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.444 ...degraphics[width=\linewidth]{bComicStrip}
+                                                  
+? 
+
+! LaTeX Error: File `pComicStrip' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.456 ...degraphics[width=\linewidth]{pComicStrip}
+                                                  
+? 
+
+LaTeX Warning: Reference `fig:bComic' on page 9 undefined on input line 459.
+
+
+LaTeX Warning: Reference `fig:bComic' on page 9 undefined on input line 459.
+
+
+LaTeX Warning: Reference `tet_fit' on page 9 undefined on input line 462.
+
+
+LaTeX Warning: Reference `tet_fit' on page 9 undefined on input line 472.
+
+
+Package natbib Warning: Citation `Bryk02' on page 9 undefined on input line 474
+.
+
+
+Package natbib Warning: Citation `Bryk2004b' on page 9 undefined on input line 
+474.
+
+
+Package natbib Warning: Citation `Bryk02' on page 9 undefined on input line 477
+.
+
+
+Package natbib Warning: Citation `Bryk2004b' on page 9 undefined on input line 
+477.
+
+
+! LaTeX Error: File `interface_width_by_shear_rate' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.483 ...linewidth]{interface_width_by_shear_rate}
+                                                  
+? 
+
+LaTeX Warning: Reference `tet_fit' on page 9 undefined on input line 486.
+
+
+LaTeX Warning: Reference `tet_fit' on page 9 undefined on input line 486.
+
+[9]
+
+LaTeX Warning: Reference `C(t)1' on page 10 undefined on input line 499.
+
+
+Package natbib Warning: Citation `Furse08' on page 10 undefined on input line 5
+19.
+
+
+Package natbib Warning: Citation `Laage08' on page 10 undefined on input line 5
+26.
+
+
+Package natbib Warning: Citation `Laage11' on page 10 undefined on input line 5
+26.
+
+[10]
+
+LaTeX Warning: Reference `fig:basal_Tau_comic_strip' on page 11 undefined on in
+put line 543.
+
+
+LaTeX Warning: Reference `fig:prismatic_Tau_comic_strip' on page 11 undefined o
+n input line 544.
+
+
+! LaTeX Error: File `basal_Tau_comic_strip' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.549 ...[width=\linewidth]{basal_Tau_comic_strip}
+                                                  
+? 
+
+LaTeX Warning: Reference `tauFit' on page 11 undefined on input line 561.
+
+
+LaTeX Warning: Reference `tauFit' on page 11 undefined on input line 561.
+
+
+! LaTeX Error: File `prismatic_Tau_comic_strip' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.565 ...th=\linewidth]{prismatic_Tau_comic_strip}
+                                                  
+? 
+
+LaTeX Warning: Reference `fig:basal_Tau_comic_strip' on page 11 undefined on in
+put line 568.
+
+
+LaTeX Warning: Reference `fig:basal_Tau_comic_strip' on page 11 undefined on in
+put line 568.
+
+
+LaTeX Warning: Reference `fig:basal_Tau_comic_strip' on page 11 undefined on in
+put line 571.
+
+
+LaTeX Warning: Reference `fig:prismatic_Tau_comic_strip' on page 11 undefined o
+n input line 572.
+
+
+Package natbib Warning: Citation `Laage08' on page 11 undefined on input line 5
+81.
+
+
+Package natbib Warning: Citation `Laage11' on page 11 undefined on input line 5
+81.
+
+
+LaTeX Warning: Reference `fig:basal_Tau_comic_strip' on page 11 undefined on in
+put line 591.
+
+
+LaTeX Warning: Reference `fig:prismatic_Tau_comic_strip' on page 11 undefined o
+n input line 592.
+
+[11]
+
+LaTeX Warning: Reference `fig:basal_Tau_comic_strip' on page 12 undefined on in
+put line 608.
+
+
+LaTeX Warning: Reference `fig:prismatic_Tau_comic_strip' on page 12 undefined o
+n input line 609.
+
+
+Package natbib Warning: Citation `Beaglehole93' on page 12 undefined on input l
+ine 624.
+
+
+Package natbib Warning: Citation `PhysRevLett.70.2726' on page 12 undefined on 
+input line 640.
+
+
+Package natbib Warning: Citation `PhysRevE.49.3079' on page 12 undefined on inp
+ut line 640.
+
+
+Package natbib Warning: Citation `Mundy1997305' on page 12 undefined on input l
+ine 645.
+
+[12]
+
+Package natbib Warning: Citation `Pit99' on page 13 undefined on input line 650
+.
+
+
+LaTeX Warning: Reference `Pit' on page 13 undefined on input line 660.
+
+
+Package natbib Warning: Citation `Kuang12' on page 13 undefined on input line 6
+66.
+
+
+LaTeX Warning: Reference `Pit' on page 13 undefined on input line 671.
+
+
+LaTeX Warning: Reference `fig:delta_example' on page 13 undefined on input line
+ 683.
+
+
+LaTeX Warning: Reference `tab:lambda' on page 13 undefined on input line 686.
+
+[13]
+
+! LaTeX Error: File `delta_example' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.705 ...graphics[width=\linewidth]{delta_example}
+                                                  
+? 
+[14] [15]
+No file iceWater.bbl.
+
+Package natbib Warning: There were undefined citations.
+
+(./iceWater.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 8724 strings out of 495026
+ 157046 string characters out of 6181465
+ 197732 words of memory out of 5000000
+ 11861 multiletter control sequences out of 15000+600000
+ 17118 words of font info for 66 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 36i,13n,42p,10341b,436s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on iceWater.dvi (15 pages, 49016 bytes).

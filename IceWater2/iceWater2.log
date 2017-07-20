@@ -1,0 +1,982 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/MacPorts 2014_3) (preloaded format=pdflatex 2014.10.28)  8 DEC 2014 12:04
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**iceWater2.tex
+(./iceWater2.tex
+LaTeX2e <2014/05/01>
+Babel <3.9k> and hyphenation patterns for 2 languages loaded.
+(./pnastwo.cls
+
+
+ Two Column Journal Style for the
+ Proceedings of the National Academy of Science 
+ Written by Amy Hendrickson, TeXnology, Inc., 9/04
+ 
+ This version is dated October 04, 2013
+
+
+Document Class: pnastwo 
+\affilcount=\count79
+\saveaffilcount=\count80
+\c@fnaffilcount=\count81
+\c@part=\count82
+\c@section=\count83
+\c@subsection=\count84
+\c@subsubsection=\count85
+\c@paragraph=\count86
+\c@subparagraph=\count87
+\c@figure=\count88
+\c@table=\count89
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+\bibskip=\skip43
+\c@cms=\count90
+\footnum=\count91
+\savefootnum=\count92
+\abovefigcaptionskip=\skip44
+\abovetabcaptionskip=\skip45
+\abovetableskip=\skip46
+\belowtabcaptionskip=\dimen103
+\saveparskip=\dimen104
+\captionskip=\dimen105
+\PushOneColTopFig=\dimen106
+\PushOneColBotFig=\dimen107
+\PushOneColTopTab=\dimen108
+\PushOneColBotTab=\dimen109
+\PushTwoColTopFig=\dimen110
+\PushTwoColBotFig=\dimen111
+\PushTwoColTopTab=\dimen112
+\PushTwoColBotTab=\dimen113
+\intextfloatskip=\skip47
+\c@appfigure=\count93
+\c@apptable=\count94
+\c@appplate=\count95
+\checkforspace=\dimen114
+\savetopinsert=\box26
+\savebotinsert=\box27
+\secondsavetopinsert=\box28
+\secondsavebotinsert=\box29
+\firstcolbox=\box30
+\secondcolbox=\box31
+\thefirstbox=\box32
+\thesecondbox=\box33
+\firstcol=\dimen115
+\secondcol=\dimen116
+\checkheight=\dimen117
+\loopnum=\count96
+\firstcolsavefignum=\count97
+\footnotebox=\box34
+\ColUsed=\dimen118
+\FigSpace=\dimen119
+\testdblbotins=\box35
+\pageloopnum=\count98
+\endcolsavetopinsert=\box36
+\endcolsavebotinsert=\box37
+\testpagesize=\box38
+\savelastskip=\dimen120
+\partialpage=\box39
+\figandtabnumber=\count99
+\figandtabbox=\box40
+\pagefloatnumber=\count100
+\sizeoffloat=\box41
+\bogus=\count101
+\figinsert=\insert233
+\herebox=\box42
+\endfigbox=\box43
+\spanbox=\box44
+\dbltopins=\box45
+\dblbotins=\box46
+\dblbotskip=\skip48
+\dblfigandtabnumber=\count102
+\dblfigandtabbox=\box47
+\dblloopnum=\count103
+\savedblfigandtabnumber=\count104
+\dblspanherebox=\box48
+(/opt/local/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/opt/local/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/opt/local/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/opt/local/share/texmf-texlive/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/opt/local/share/texmf-texlive/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/opt/local/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count105
+))
+\Gin@req@height=\dimen121
+\Gin@req@width=\dimen122
+)
+(/opt/local/share/texmf-texlive/tex/latex/oberdiek/epstopdf.sty
+Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
+
+(/opt/local/share/texmf-texlive/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/opt/local/share/texmf-texlive/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/opt/local/share/texmf-texlive/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/opt/local/share/texmf-texlive/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+)))
+(/opt/local/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/opt/local/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks15
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(/opt/local/share/texmf-texlive/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen123
+))
+(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen124
+)
+(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count106
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count107
+\leftroot@=\count108
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count109
+\DOTSCASE@=\count110
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box49
+\strutbox@=\box50
+\big@size=\dimen125
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count111
+\c@MaxMatrixCols=\count112
+\dotsspace@=\muskip10
+\c@parentequation=\count113
+\dspbrk@lvl=\count114
+\tag@help=\toks17
+\row@=\count115
+\column@=\count116
+\maxfields@=\count117
+\andhelp@=\toks18
+\eqnshift@=\dimen126
+\alignsep@=\dimen127
+\tagshift@=\dimen128
+\tagwidth@=\dimen129
+\totwidth@=\dimen130
+\lineht@=\dimen131
+\@envbody=\toks19
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/opt/local/share/texmf-texlive/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/opt/local/share/texmf-texlive/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Package option `usenames' ignored on input line 216.
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+\captionwidth=\dimen132
+\widecaptionwidth=\dimen133
+\tablenoteloopnum=\count118
+\tablenotenum=\count119
+\c@theorem=\count120
+\c@lemma=\count121
+\c@definition=\count122
+\c@claim=\count123
+\c@alemma=\count124
+\c@remark=\count125
+\tablewide=\box51
+)
+(./iceWater2.aux)
+\openout1 = `iceWater2.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+ (/opt/local/share/texmf-texlive/tex/latex/crop/crop.sty
+Package: crop 2003/05/20 v1.9 crop marks (mf)
+\stockwidth=\dimen134
+\stockheight=\dimen135
+\CROP@index=\count126
+Package crop Info: requested driver: `' on input line 123.
+Package crop Info: detected driver: `pdftex' on input line 123.
+\CROP@offset=\count127
+Package crop Info: using `pdftex' graphics driver on input line 607.
+)
+(/opt/local/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count128
+\scratchdimen=\dimen136
+\scratchbox=\box52
+\nofMPsegments=\count129
+\nofMParguments=\count130
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count131
+\MPscratchDim=\dimen137
+\MPnumerator=\count132
+\makeMPintoPDFobject=\count133
+\everyMPtoPDFconversion=\toks22
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 45.
+ (/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 45.
+
+(/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+LaTeX Warning: Citation `Nada95' on page 1 undefined on input line 80.
+
+
+LaTeX Warning: Citation `Nada00' on page 1 undefined on input line 82.
+
+
+Overfull \hbox (74.9394pt too wide) in paragraph at lines 75--83
+\OT1/cmr/m/n/9 SPC,[[]] SPC/E,[[],
+ []
+
+
+Overfull \hbox (0.97604pt too wide) in paragraph at lines 75--83
+[]\OT1/cmr/m/n/9 ], CF1,[[],
+ []
+
+
+Overfull \hbox (28.26054pt too wide) in paragraph at lines 75--83
+[]\OT1/cmr/m/n/9 ] and TIP4P[[]]
+ []
+
+
+Overfull \hbox (62.79506pt too wide) in paragraph at lines 75--83
+\OT1/cmr/m/n/9 mod-els for water.[[], [],
+ []
+
+
+LaTeX Warning: Citation `Conde08' on page 1 undefined on input line 88.
+
+
+LaTeX Warning: Citation `Limmer14' on page 1 undefined on input line 91.
+
+
+LaTeX Warning: Citation `Sazaki10' on page 1 undefined on input line 94.
+
+
+LaTeX Warning: Citation `Sazaki12' on page 1 undefined on input line 98.
+
+
+LaTeX Warning: Citation `Casassa91' on page 1 undefined on input line 103.
+
+
+LaTeX Warning: Citation `Sukhorukov13' on page 1 undefined on input line 103.
+
+
+LaTeX Warning: Citation `Pritchard12' on page 1 undefined on input line 103.
+
+
+LaTeX Warning: Citation `Lishman13' on page 1 undefined on input line 103.
+
+
+LaTeX Warning: Citation `Cuffey99' on page 1 undefined on input line 104.
+
+
+LaTeX Warning: Citation `Bell08' on page 1 undefined on input line 104.
+
+
+LaTeX Warning: Citation `Samadashvili13' on page 1 undefined on input line 107.
+
+
+
+Overfull \hbox (50.70833pt too wide) in paragraph at lines 100--113
+[]\OT1/cmr/m/n/9 ] and crys-tal melting[[],
+ []
+
+
+LaTeX Warning: Citation `Kuang12' on page 1 undefined on input line 121.
+
+
+LaTeX Warning: Citation `Tadanaga00' on page 1 undefined on input line 143.
+
+
+LaTeX Warning: Citation `Liu04' on page 1 undefined on input line 143.
+
+
+LaTeX Warning: Citation `Sun04' on page 1 undefined on input line 143.
+
+
+LaTeX Warning: Citation `Herbertson06' on page 1 undefined on input line 145.
+
+
+LaTeX Warning: Citation `Dhindsa06' on page 1 undefined on input line 145.
+
+
+LaTeX Warning: Citation `Verplanck07' on page 1 undefined on input line 145.
+
+
+LaTeX Warning: Citation `Ahuja08' on page 1 undefined on input line 145.
+
+
+LaTeX Warning: Citation `Manukyan11' on page 1 undefined on input line 145.
+
+
+LaTeX Warning: Citation `Daub07' on page 1 undefined on input line 147.
+
+
+LaTeX Warning: Citation `Daub10' on page 1 undefined on input line 147.
+
+
+LaTeX Warning: Citation `Daub11' on page 1 undefined on input line 147.
+
+
+LaTeX Warning: Citation `Ritchie12' on page 1 undefined on input line 147.
+
+
+LaTeX Warning: Citation `Daub07' on page 1 undefined on input line 149.
+
+
+LaTeX Warning: Citation `Berendsen81' on page 1 undefined on input line 164.
+
+
+LaTeX Warning: Citation `Berendsen87' on page 1 undefined on input line 164.
+
+
+LaTeX Warning: Citation `Jorgensen85' on page 1 undefined on input line 165.
+
+
+LaTeX Warning: Citation `Abascal05' on page 1 undefined on input line 165.
+
+
+LaTeX Warning: Citation `Abascal05b' on page 1 undefined on input line 167.
+
+
+LaTeX Warning: Citation `Abascal07' on page 1 undefined on input line 170.
+
+
+LaTeX Warning: Citation `Baez95' on page 1 undefined on input line 170.
+
+
+LaTeX Warning: Citation `Arbuckle02' on page 1 undefined on input line 170.
+
+
+LaTeX Warning: Citation `Bryk04b' on page 1 undefined on input line 170.
+
+
+LaTeX Warning: Citation `Sanz04b' on page 1 undefined on input line 170.
+
+
+LaTeX Warning: Citation `Gernandez06' on page 1 undefined on input line 170.
+
+
+LaTeX Warning: Citation `Abascal07' on page 1 undefined on input line 170.
+
+
+LaTeX Warning: Citation `Vrbka07' on page 1 undefined on input line 170.
+
+
+LaTeX Warning: Citation `Gao00' on page 1 undefined on input line 170.
+
+
+LaTeX Warning: Citation `Sanz04' on page 1 undefined on input line 170.
+
+
+LaTeX Warning: Citation `Sanz04b' on page 1 undefined on input line 170.
+
+
+LaTeX Warning: Citation `Koyama04' on page 1 undefined on input line 170.
+
+
+LaTeX Warning: Citation `Wang05' on page 1 undefined on input line 170.
+
+
+LaTeX Warning: Citation `Fernandez06' on page 1 undefined on input line 170.
+
+
+LaTeX Warning: Citation `Abascal07' on page 1 undefined on input line 170.
+
+
+LaTeX Warning: Citation `Sanz04' on page 1 undefined on input line 170.
+
+
+LaTeX Warning: Citation `Koyama04' on page 1 undefined on input line 170.
+
+
+LaTeX Warning: Citation `Wang05' on page 1 undefined on input line 170.
+
+
+LaTeX Warning: Citation `Fernandez06' on page 1 undefined on input line 170.
+
+
+LaTeX Warning: Citation `Abascal07' on page 1 undefined on input line 170.
+
+
+LaTeX Warning: Citation `Baez95' on page 1 undefined on input line 172.
+
+
+LaTeX Warning: Citation `Bryk04b' on page 1 undefined on input line 172.
+
+
+LaTeX Warning: Citation `Sanz04b' on page 1 undefined on input line 172.
+
+
+LaTeX Warning: Citation `Sanz04' on page 1 undefined on input line 172.
+
+
+LaTeX Warning: Citation `Sanz04b' on page 1 undefined on input line 172.
+
+
+LaTeX Warning: Citation `Koyama04' on page 1 undefined on input line 172.
+
+
+LaTeX Warning: Citation `Sanz04' on page 1 undefined on input line 172.
+
+
+LaTeX Warning: Citation `Koyama04' on page 1 undefined on input line 172.
+
+[1{/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+]
+
+LaTeX Warning: Citation `Berendsen87' on page 2 undefined on input line 190.
+
+
+LaTeX Warning: Reference `tab:ice_sheets' on page 2 undefined on input line 220
+.
+
+
+LaTeX Warning: Citation `Daub10' on page 2 undefined on input line 225.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--242
+\OT1/cmr/m/n/9 [[], [],
+ []
+
+
+Overfull \hbox (3.89827pt too wide) in paragraph at lines 233--242
+[]\OT1/cmr/m/n/9 , [],
+ []
+
+
+LaTeX Warning: Citation `Bryk04b' on page 2 undefined on input line 251.
+
+[2]
+
+LaTeX Warning: Citation `Kuang12' on page 3 undefined on input line 374.
+
+
+LaTeX Warning: Citation `Kuang12' on page 3 undefined on input line 410.
+
+[3] [4] (./iceWater2.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 111--116
+[]
+ []
+
+
+Overfull \hbox (23.1629pt too wide) in paragraph at lines 148--154
+[]
+ []
+
+)
+
+LaTeX Warning: Citation `Casassa91' on page 5 undefined on input line 508.
+
+
+LaTeX Warning: Citation `Sukhorukov13' on page 5 undefined on input line 508.
+
+
+LaTeX Warning: Citation `Pritchard12' on page 5 undefined on input line 508.
+
+
+LaTeX Warning: Citation `Lishman13' on page 5 undefined on input line 508.
+
+
+LaTeX Warning: Citation `Cuffey99' on page 5 undefined on input line 509.
+
+
+LaTeX Warning: Citation `Bell08' on page 5 undefined on input line 509.
+
+
+LaTeX Warning: Citation `Samadashvili13' on page 5 undefined on input line 512.
+
+
+
+Overfull \hbox (38.92023pt too wide) in paragraph at lines 515--527
+\OT1/cmr/m/n/9 growth,[[], [], []]
+ []
+
+
+Overfull \hbox (23.72241pt too wide) in paragraph at lines 515--527
+\OT1/cmr/m/n/9 and crys-tal melting[[], [],
+ []
+
+
+Overfull \hbox (144.83028pt too wide) in paragraph at lines 515--527
+\OT1/cmr/m/n/9 flounder,[[],
+ []
+
+
+Overfull \hbox (63.48329pt too wide) in paragraph at lines 515--527
+[]\OT1/cmr/m/n/9 ] and cer-tain ter-res-tial arthropods.[[],
+ []
+
+
+Overfull \hbox (145.7781pt too wide) in paragraph at lines 515--527
+[]\OT1/cmr/m/n/9 ]
+ []
+
+
+LaTeX Warning: Citation `Berendsen81' on page 5 undefined on input line 530.
+
+
+LaTeX Warning: Citation `Berendsen87' on page 5 undefined on input line 530.
+
+
+LaTeX Warning: Citation `Jorgensen85' on page 5 undefined on input line 531.
+
+
+LaTeX Warning: Citation `Abascal05' on page 5 undefined on input line 531.
+
+
+LaTeX Warning: Citation `Abascal05b' on page 5 undefined on input line 533.
+
+
+LaTeX Warning: Citation `Abascal07' on page 5 undefined on input line 536.
+
+
+LaTeX Warning: Citation `Baez95' on page 5 undefined on input line 536.
+
+
+LaTeX Warning: Citation `Arbuckle02' on page 5 undefined on input line 536.
+
+
+LaTeX Warning: Citation `Bryk04b' on page 5 undefined on input line 536.
+
+
+LaTeX Warning: Citation `Sanz04b' on page 5 undefined on input line 536.
+
+
+LaTeX Warning: Citation `Gernandez06' on page 5 undefined on input line 536.
+
+
+LaTeX Warning: Citation `Abascal07' on page 5 undefined on input line 536.
+
+
+LaTeX Warning: Citation `Vrbka07' on page 5 undefined on input line 536.
+
+
+LaTeX Warning: Citation `Gao00' on page 5 undefined on input line 536.
+
+
+LaTeX Warning: Citation `Sanz04' on page 5 undefined on input line 536.
+
+
+LaTeX Warning: Citation `Sanz04b' on page 5 undefined on input line 536.
+
+
+LaTeX Warning: Citation `Koyama04' on page 5 undefined on input line 536.
+
+
+LaTeX Warning: Citation `Wang05' on page 5 undefined on input line 536.
+
+
+LaTeX Warning: Citation `Fernandez06' on page 5 undefined on input line 536.
+
+
+LaTeX Warning: Citation `Abascal07' on page 5 undefined on input line 536.
+
+
+LaTeX Warning: Citation `Sanz04' on page 5 undefined on input line 536.
+
+
+LaTeX Warning: Citation `Koyama04' on page 5 undefined on input line 536.
+
+
+LaTeX Warning: Citation `Wang05' on page 5 undefined on input line 536.
+
+
+LaTeX Warning: Citation `Fernandez06' on page 5 undefined on input line 536.
+
+
+LaTeX Warning: Citation `Abascal07' on page 5 undefined on input line 536.
+
+
+LaTeX Warning: Citation `Baez95' on page 5 undefined on input line 538.
+
+
+LaTeX Warning: Citation `Bryk04b' on page 5 undefined on input line 538.
+
+
+LaTeX Warning: Citation `Sanz04b' on page 5 undefined on input line 538.
+
+
+LaTeX Warning: Citation `Sanz04' on page 5 undefined on input line 538.
+
+
+LaTeX Warning: Citation `Sanz04b' on page 5 undefined on input line 538.
+
+
+LaTeX Warning: Citation `Koyama04' on page 5 undefined on input line 538.
+
+
+LaTeX Warning: Citation `Sanz04' on page 5 undefined on input line 538.
+
+
+LaTeX Warning: Citation `Koyama04' on page 5 undefined on input line 538.
+
+
+LaTeX Warning: Citation `Nada95' on page 5 undefined on input line 550.
+
+
+LaTeX Warning: Citation `Nada00' on page 5 undefined on input line 552.
+
+
+LaTeX Warning: Citation `Nada08' on page 5 undefined on input line 553.
+
+
+LaTeX Warning: Citation `Nada11' on page 5 undefined on input line 553.
+
+
+LaTeX Warning: Citation `Nada12' on page 5 undefined on input line 553.
+
+
+LaTeX Warning: Citation `Nada03' on page 5 undefined on input line 554.
+
+
+LaTeX Warning: Citation `Nada11b' on page 5 undefined on input line 555.
+
+
+LaTeX Warning: Citation `Nada05' on page 5 undefined on input line 559.
+
+
+Overfull \hbox (74.9394pt too wide) in paragraph at lines 542--562
+\OT1/cmr/m/n/9 SPC,[[]] SPC/E,[[],
+ []
+
+
+Overfull \hbox (0.97604pt too wide) in paragraph at lines 542--562
+[]\OT1/cmr/m/n/9 ], CF1,[[],
+ []
+
+
+Overfull \hbox (28.26054pt too wide) in paragraph at lines 542--562
+[]\OT1/cmr/m/n/9 ] and TIP4P[[]]
+ []
+
+
+Overfull \hbox (0.1594pt too wide) in paragraph at lines 542--562
+[]\OT1/cmr/m/n/9 , [],
+ []
+
+
+LaTeX Warning: Citation `Conde08' on page 5 undefined on input line 567.
+
+
+LaTeX Warning: Citation `Limmer14' on page 5 undefined on input line 570.
+
+
+LaTeX Warning: Citation `Sazaki10' on page 5 undefined on input line 573.
+
+
+LaTeX Warning: Citation `Sazaki12' on page 5 undefined on input line 577.
+
+[5]
+
+LaTeX Warning: Citation `Kuang12' on page 6 undefined on input line 588.
+
+
+Overfull \hbox (86.93658pt too wide) in paragraph at lines 581--596
+[]\OT1/cmr/m/n/9 Presented here is the fol-low up to our pre-vi-ous paper[[]],
+ []
+
+
+Overfull \hbox (14.1169pt too wide) detected at line 603
+\OML/cmm/m/it/9 q\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 z\OT1/cmr/m/n/9 ) = [][] [] []
+1 \OMS/cmsy/m/n/9 ^^@ [] [] [] [] [] \OML/cmm/m/it/9  [] \OT1/cmr/m/n/9 + [][][
+][]\OML/cmm/m/it/9 ^^N\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 z[] \OMS/cmsy/m/n/9 ^^@ \
+OML/cmm/m/it/9 z\OT1/cmr/m/n/9 )d\OML/cmm/m/it/9 z[]N[]
+ []
+
+
+LaTeX Warning: Citation `Tadanaga00' on page 6 undefined on input line 628.
+
+
+LaTeX Warning: Citation `Liu04' on page 6 undefined on input line 628.
+
+
+LaTeX Warning: Citation `Sun04' on page 6 undefined on input line 628.
+
+
+LaTeX Warning: Citation `Herbertson06' on page 6 undefined on input line 630.
+
+
+LaTeX Warning: Citation `Dhindsa06' on page 6 undefined on input line 630.
+
+
+LaTeX Warning: Citation `Verplanck07' on page 6 undefined on input line 630.
+
+
+LaTeX Warning: Citation `Ahuja08' on page 6 undefined on input line 630.
+
+
+LaTeX Warning: Citation `Manukyan11' on page 6 undefined on input line 630.
+
+
+LaTeX Warning: Citation `Daub07' on page 6 undefined on input line 632.
+
+
+LaTeX Warning: Citation `Daub10' on page 6 undefined on input line 632.
+
+
+LaTeX Warning: Citation `Daub11' on page 6 undefined on input line 632.
+
+
+LaTeX Warning: Citation `Ritchie12' on page 6 undefined on input line 632.
+
+
+LaTeX Warning: Citation `Daub07' on page 6 undefined on input line 634.
+
+[6]
+Package epstopdf Info: Source file: <Pyr_comic_strip.eps>
+(epstopdf)                    date: 2014-09-17 10:01:14
+(epstopdf)                    size: 675754 bytes
+(epstopdf)             Output file: <Pyr_comic_strip-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-06-23 16:21:28
+(epstopdf)                    size: 17427 bytes
+(epstopdf)             Command: <repstopdf --outfile=Pyr_comic_strip-eps-conver
+ted-to.pdf Pyr_comic_strip.eps>
+(epstopdf)             \includegraphics on input line 641.
+runsystem(repstopdf --outfile=Pyr_comic_strip-eps-converted-to.pdf Pyr_comic_st
+rip.eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <Pyr_comic_strip-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-06-23 16:21:28
+(epstopdf)                    size: 17427 bytes.
+ <Pyr_comic_strip-eps-converted-to.pdf, id=37, 670.505pt x 477.785pt>
+File: Pyr_comic_strip-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Pyr_comic_strip-eps-converted-to.pdf>
+Package pdftex.def Info: Pyr_comic_strip-eps-converted-to.pdf used on input lin
+e 641.
+(pdftex.def)             Requested size: 510.0pt x 363.41199pt.
+
+Overfull \hbox (234.0pt too wide) in paragraph at lines 641--648
+[][] 
+ []
+
+Package epstopdf Info: Source file: <SP_comic_strip.eps>
+(epstopdf)                    date: 2014-10-07 10:53:48
+(epstopdf)                    size: 595530 bytes
+(epstopdf)             Output file: <SP_comic_strip-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-06-23 15:51:13
+(epstopdf)                    size: 17698 bytes
+(epstopdf)             Command: <repstopdf --outfile=SP_comic_strip-eps-convert
+ed-to.pdf SP_comic_strip.eps>
+(epstopdf)             \includegraphics on input line 652.
+runsystem(repstopdf --outfile=SP_comic_strip-eps-converted-to.pdf SP_comic_stri
+p.eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <SP_comic_strip-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-06-23 15:51:13
+(epstopdf)                    size: 17698 bytes.
+<SP_comic_strip-eps-converted-to.pdf, id=38, 794.97pt x 614.295pt>
+File: SP_comic_strip-eps-converted-to.pdf Graphic file (type pdf)
+
+<use SP_comic_strip-eps-converted-to.pdf>
+Package pdftex.def Info: SP_comic_strip-eps-converted-to.pdf used on input line
+ 652.
+(pdftex.def)             Requested size: 510.0pt x 394.10353pt.
+
+Overfull \hbox (234.0pt too wide) in paragraph at lines 652--655
+[][] 
+ []
+
+Package epstopdf Info: Source file: <Pyr-orient.eps>
+(epstopdf)                    date: 2014-06-24 09:32:55
+(epstopdf)                    size: 47008 bytes
+(epstopdf)             Output file: <Pyr-orient-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-06-24 10:12:40
+(epstopdf)                    size: 18682 bytes
+(epstopdf)             Command: <repstopdf --outfile=Pyr-orient-eps-converted-t
+o.pdf Pyr-orient.eps>
+(epstopdf)             \includegraphics on input line 659.
+Package epstopdf Info: Output file is already uptodate.
+<Pyr-orient-eps-converted-to.pdf, id=39, 794.97pt x 614.295pt>
+File: Pyr-orient-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Pyr-orient-eps-converted-to.pdf>
+Package pdftex.def Info: Pyr-orient-eps-converted-to.pdf used on input line 659
+.
+(pdftex.def)             Requested size: 510.0pt x 394.10353pt.
+
+Overfull \hbox (234.0pt too wide) in paragraph at lines 659--671
+[][] 
+ []
+
+Package epstopdf Info: Source file: <SP-orient-less.eps>
+(epstopdf)                    date: 2014-06-24 14:20:18
+(epstopdf)                    size: 51431 bytes
+(epstopdf)             Output file: <SP-orient-less-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-06-24 14:23:36
+(epstopdf)                    size: 18972 bytes
+(epstopdf)             Command: <repstopdf --outfile=SP-orient-less-eps-convert
+ed-to.pdf SP-orient-less.eps>
+(epstopdf)             \includegraphics on input line 675.
+Package epstopdf Info: Output file is already uptodate.
+<SP-orient-less-eps-converted-to.pdf, id=40, 794.97pt x 614.295pt>
+File: SP-orient-less-eps-converted-to.pdf Graphic file (type pdf)
+
+<use SP-orient-less-eps-converted-to.pdf>
+Package pdftex.def Info: SP-orient-less-eps-converted-to.pdf used on input line
+ 675.
+(pdftex.def)             Requested size: 510.0pt x 394.10353pt.
+
+Overfull \hbox (234.0pt too wide) in paragraph at lines 675--677
+[][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[7 <./Pyr_comic_strip-eps-converted-to.pdf>] [8 <./SP_comic_strip-eps-converted
+-to.pdf>] [9 <./Pyr-orient-eps-converted-to.pdf>] [10 <./SP-orient-less-eps-con
+verted-to.pdf>] (./iceWater2.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 3613 strings out of 495025
+ 45635 string characters out of 6181437
+ 130949 words of memory out of 5000000
+ 6760 multiletter control sequences out of 15000+600000
+ 20291 words of font info for 75 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 49i,12n,37p,908b,266s stack positions out of 5000i,500n,10000p,200000b,80000s
+</opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></op
+t/local/share/texmf-texlive/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></opt
+/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi5.pfb></opt/local
+/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi6.pfb></opt/local/share
+/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/local/share/texmf
+-texlive/fonts/type1/public/amsfonts/cm/cmmi9.pfb></opt/local/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/local/share/texmf-texlive/fon
+ts/type1/public/amsfonts/cm/cmr6.pfb></opt/local/share/texmf-texlive/fonts/type
+1/public/amsfonts/cm/cmr8.pfb></opt/local/share/texmf-texlive/fonts/type1/publi
+c/amsfonts/cm/cmr9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfo
+nts/cm/cmss10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/c
+m/cmssbx10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
+mssi10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy5
+.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy6.pfb><
+/opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy9.pfb></opt/l
+ocal/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti9.pfb></opt/local/s
+hare/texmf-texlive/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb>
+Output written on iceWater2.pdf (10 pages, 291338 bytes).
+PDF statistics:
+ 127 PDF objects out of 1000 (max. 8388607)
+ 90 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+

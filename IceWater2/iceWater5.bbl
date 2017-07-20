@@ -1,0 +1,168 @@
+\begin{thebibliography}{10}
+
+\bibitem{Hayward01}
+J.~A. Hayward and A.~D.~J. Haymet,
+\newblock {\em J. Chem. Phys.} {\bf 114}, 3713 (2001).
+
+\bibitem{Hayward02}
+J.~A. Hayward and A.~D.~J. Haymet,
+\newblock {\em Phys. Chem. Chem. Phys.} {\bf 4}, 3712 (2002).
+
+\bibitem{Nada95}
+H.~Nada and Y.~Furukawa,
+\newblock {\em Jpn. J. Appl. Phys., Part 1} {\bf 34}, 583 (1995).
+
+\bibitem{Nada00}
+H.~Nada and Y.~Furukawa,
+\newblock {\em Surf. Sci.} {\bf 446}, 1 (2000).
+
+\bibitem{Cuffey99}
+K.~M. Cuffey, H.~Conway, B.~Hallet, A.~M. Gades, and C.~F. Raymond,
+\newblock {\em Geophysical Research Letters} {\bf 26}, 751 (1999).
+
+\bibitem{Bell08}
+R.~E. Bell,
+\newblock {\em Nature Geoscience} {\bf 1}, 297 (2008).
+
+\bibitem{Casassa91}
+G.~Casassa, H.~Narita, and N.~Maeno,
+\newblock {\em J. Appl. Phys.} {\bf 69}, 3745 (1991).
+
+\bibitem{Sukhorukov13}
+S.~Sukhorukov and S.~Loset,
+\newblock {\em Cold Regions Science and Technology} {\bf 94}, 1 (2013).
+
+\bibitem{Pritchard12}
+R.~S. Pritchard, G.~S. Knoke, and D.~C.~S. Echert,
+\newblock {\em Cold Regions Science and Technology} {\bf 76-77}, 8 (2012).
+
+\bibitem{Lishman13}
+B.~Lishman, P.~R. Sammonds, and D.~L. Feltham,
+\newblock {\em Cold Regions Science and Technology} {\bf 90-91}, 9 (2013).
+
+\bibitem{Samadashvili13}
+N.~Samadashvili, B.~Reischl, T.~Hynninen, T.~Ala-Nissila, and A.~S. Foster,
+\newblock {\em Friction} {\bf 1}, 242 (2013).
+
+\bibitem{Louden13}
+P.~B. Louden and J.~D. Gezelter,
+\newblock {\em J. Chem. Phys.} {\bf 139}, 194710 (2013).
+
+\bibitem{Buch:2008fk}
+V.~Buch, H.~Groenzin, I.~Li, M.~J. Shultz, and E.~Tosatti,
+\newblock {\em Proc Natl Acad Sci USA} {\bf 105}, 5969 (2008).
+
+\bibitem{Hirsch04}
+T.~K. Hirsch and L.~Ojam{\"a}e,
+\newblock {\em J. Phys. Chem. B.} {\bf 108}, 15856 (2004).
+
+\bibitem{Bryk02}
+T.~Bryk and A.~D.~J. Haymet,
+\newblock {\em J. Chem. Phys.} {\bf 117}, 10258 (2002).
+
+\bibitem{Berendsen87}
+H.~J.~C. Berendsen, J.~R. Grigera, and T.~P. Straatsma,
+\newblock {\em J. Phys. Chem.} {\bf 91}, 6269 (1987).
+
+\bibitem{Arbuckle02}
+B.~W. Arbuckle and P.~Clancy,
+\newblock {\em J. Chem. Phys.} {\bf 116}, 5090 (2002).
+
+\bibitem{Kuang12}
+S.~Kuang and J.~D. Gezelter,
+\newblock {\em Mol. Phys.} {\bf 110}, 691 (2012).
+
+\bibitem{Baez95}
+L.~A. Baez and P.~Clancy,
+\newblock {\em J. Chem. Phys.} {\bf 103}, 9744 (1995).
+
+\bibitem{Bryk04b}
+T.~Bryk and A.~Haymet,
+\newblock {\em Mol. Simulat.} {\bf 30}, 131 (2004).
+
+\bibitem{Sanz04b}
+E.~Sanz, C.~Vega, J.~L.~F. Abascal, and L.~G. MacDowell,
+\newblock {\em Phys. Rev. Lett.} {\bf 92}, 255701 (2004).
+
+\bibitem{Fennell:2005fk}
+C.~J. Fennell and J.~D. Gezelter,
+\newblock {\em J. Chem. Theory Comput.} {\bf 1}, 662 (2005).
+
+\bibitem{Gay02}
+S.~C. Gay, E.~J. Smith, and A.~D.~J. Haymet,
+\newblock {\em J. Chem. Phys.} {\bf 116}, 8876 (2002).
+
+\bibitem{Fernandez06}
+R.~Garc\'{i}a~Fern\'{a}ndez, J.~L.~F. Abascal, and C.~Vega,
+\newblock {\em J. Chem. Phys.} {\bf 124}, 144506 (2006).
+
+\bibitem{Abascal07}
+J.~Abascal, R.~G. Fern\'{a}ndez, L.~MacDowell, E.~Sanz, and C.~Vega,
+\newblock {\em J. Mol. Liq.} {\bf 136}, 214  (2007).
+
+\bibitem{Vrbka07}
+L.~Vrbka and P.~Jungwirth,
+\newblock {\em J. Mol. Liq.} {\bf 134}, 64 (2007).
+
+\bibitem{OOPSE}
+M.~A. Meineke, C.~F. Vardeman, T.~Lin, C.~J. Fennell, and J.~D. Gezelter,
+\newblock {\em J. Comput. Chem.} {\bf 26}, 252 (2005).
+
+\bibitem{openmd}
+J.~D. Gezelter et~al.,
+\newblock {OpenMD, an Open Source Engine for Molecular Dynamics},
+\newblock Available at {\tt http://openmd.org}, 2014.
+
+\bibitem{Ewald}
+C.~J. Fennell and J.~D. Gezelter,
+\newblock {\em J. Chem. Phys.} {\bf 124}, 234104 (2006).
+
+\bibitem{Muller99}
+F.~M\"uller-Plathe,
+\newblock {\em Phys. Rev. E} {\bf 59}, 4894 (1999).
+
+\bibitem{Bordat02}
+P.~Bordat and F.~M\"uller-Plathe,
+\newblock {\em J. Chem. Phys.} {\bf 116}, 3362 (2002).
+
+\bibitem{Cavalcanti07}
+W.~L. Cavalcanti, X.~Chen, and F.~M{\"u}ller-Plathe,
+\newblock {\em Phys. Status Solidi A} {\bf 204}, 935 (2007).
+
+\bibitem{Sendner:2009uq}
+C.~Sendner, D.~Horinek, L.~Bocquet, and R.~R. Netz,
+\newblock {\em Langmuir} {\bf 25}, 10768 (2009).
+
+\bibitem{Ho:2011zr}
+T.~A. Ho, D.~V. Papavassiliou, L.~L. Lee, and A.~Striolo,
+\newblock {\em Proc Natl Acad Sci USA} {\bf 108}, 16170 (2011).
+
+\bibitem{Lasne:2008vn}
+D.~Lasne et~al.,
+\newblock {\em Phys. Rev. Lett.} {\bf 100}, 214502 (2008).
+
+\bibitem{Bouzigues:2008ys}
+C.~Bouzigues, P.~Tabeling, and L.~Bocquet,
+\newblock {\em Phys. Rev. Lett.} {\bf 101}, 114503 (2008).
+
+\bibitem{Schaeffel:2013kx}
+D.~Schaeffel et~al.,
+\newblock {\em Phys. Rev. E} {\bf 87}, 051001 (2013).
+
+\bibitem{Karim88}
+O.~A. Karim and A.~D.~J. Haymet,
+\newblock {\em J. Chem. Phys.} {\bf 89}, 6889 (1988).
+
+\bibitem{Karim90}
+O.~A. Karim, P.~A. Kay, and A.~D.~J. Haymet,
+\newblock {\em J. Chem. Phys.} {\bf 92}, 4634 (1990).
+
+\bibitem{Errington01}
+J.~R. Errington and P.~G. Debenedetti,
+\newblock {\em Nature} {\bf 409}, 318 (2001).
+
+\bibitem{Kumar09}
+P.~Kumar, S.~V. Buldyrev, and H.~E. Stanley,
+\newblock {\em Proc Natl Acad Sci USA} {\bf 106}, 22130 (2009).
+
+\end{thebibliography}

@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2014/MacPorts 2014_3)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Supplemental_Information.aux
+The style file: pnas2011.bst
+Database file #1: iceWater.bib
+You've used 5 entries,
+            1787 wiz_defined-function locations,
+            508 strings with 4626 characters,
+and the built_in function-call counts, 1278 in all, are:
+= -- 101
+> -- 66
+< -- 0
++ -- 19
+- -- 14
+* -- 118
+:= -- 197
+add.period$ -- 10
+call.type$ -- 5
+change.case$ -- 5
+chr.to.int$ -- 0
+cite$ -- 5
+duplicate$ -- 50
+empty$ -- 121
+format.name$ -- 14
+if$ -- 279
+int.to.chr$ -- 0
+int.to.str$ -- 5
+missing$ -- 5
+newline$ -- 23
+num.names$ -- 5
+pop$ -- 5
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 29
+stack$ -- 0
+substring$ -- 123
+swap$ -- 10
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 10
+width$ -- 6
+write$ -- 52
