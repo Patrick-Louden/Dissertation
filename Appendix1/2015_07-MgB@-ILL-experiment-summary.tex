@@ -1,0 +1,164 @@
+\documentclass[aps, prl, reprint, groupedaddress, superscriptaddress, twocolumn]{revtex4-1} 
+%\usepackage{graphicx,topcapt,booktabs,hyperref,url, float,multirow,caption,subcaption,bm}
+\usepackage{graphicx, color, bm, amsmath, multirow, subcaption, topcapt, hyperref}
+\usepackage[ labelfont=bf, font = small, justification=justified, format=plain]{caption}
+
+
+\begin{document}
+
+\title{Experiment Summary for Proposal 5-42-388:  MgB$_2$}
+\author{E. R. De Waard}
+\author{W. R. Morgenlander}
+\author{M. R. Eskildsen}
+\affiliation{Department of Physics, University of Notre Dame, Notre Dame, IN 46556}
+
+\date{July 20 to July 24, 2015}
+
+%macros
+
+\newcommand{\dr}{dilution refrigerator}
+\newcommand{\Lu}{LuNi$^{11}$B$_{2}$C }
+\newcommand{\BSCCO}{Bi$_{2}$Sr$_{2}$CaCu$_{2}$O$_{y} $}
+\newcommand{\Sr}{Sr$_{2}$RuO$_{4} $}
+\newcommand{\Nb}{NbSe$_2$}
+\newcommand{\Tc }{T$_c$}
+\newcommand{\om }{$\Omega$}
+\newcommand{\ax }{$a$-axis}
+\newcommand{\cx }{$c$-axis}
+\newcommand{\degree}{\ensuremath{^\circ}}
+\newcommand{\SIT}{ Sn$_{0.9}$In$_{0.1}$Te }
+\newcommand{\SITp}{Sn$_{0.9}$In$_{0.1}$Te}
+
+\begin{abstract}
+\end{abstract}
+
+\maketitle
+
+
+\section{Introduction}
+Due to the lack of an observable vortex lattice in \SITp, there was enough remaining beam time to perform measurements on MgB$_2$.  
+
+
+The experimental goal was to repeat rocking curve measurements that had been performed in November 2014 at Oak Ridge National Laboratory (ORNL).
+At ORNL, the rocking curves had an additional side peak that complicated the analysis.  
+Upon examination, this peak had no physical significance and was most likely due to a misalignment between the sample and magnetic field ($\omega$).
+
+The width of a rocking curve is indicative of the correlation length ($\zeta_L$) along the vortices.  
+To determine if the VL transition results in any fracturing of vortices, rocking curves were performed as the VL was driven to the GS.  
+
+
+
+\section{Experiment Details}
+The experiment was performed on the D33 beam line at the ILL using the standard SANS configuration.  The specific instrument settings used for the experiment are listed in Table \ref{Settings}.
+
+		\begin{table}
+			\begin{tabular}{|c|c|}
+			\hline 
+			Parameter					&		Value			\\
+			\hline \hline
+			Wavelength ($\lambda$)		&		7 $\AA$			\\
+			Temperature 				&		2 K			\\
+			Collimation				&		 12.8 m			\\
+			Magnetic Field				&		0.5 mT			\\
+			~~ Detector 1 Distance~~		&	~~  1.205 m ~~			\\
+			Detector 2	 Distance			&		12.996 m			\\
+			Source Aperture			&		 20 mm			\\
+			Sample Aperture			&		 mm			\\
+			\hline
+			\multicolumn{2}{c}{} 									\\	
+			\hline		
+			\multicolumn{2}{|c|}{Function Generator: Burst} 				\\
+			\hline
+			Frequency ($f$)			&		250 Hz			\\
+			Amplitude					&		7, 13 mT			\\
+			\hline
+			\multicolumn{2}{|c|}{Function Generator: Sleep}			 	\\
+			\hline
+			Frequency ($f$)			&		1 $\mu$Hz		\\
+			Amplitude					&		1 mV$_{pp}$		\\		
+			\hline 
+			\end{tabular}
+			\caption{D33 Instrument Settings}
+			\label{Settings}
+		\end{table}
+
+
+
+	\subsection{Sample Mount and Alignment} 
+	
+	Crystals of \SIT were obtained from Athena Sefat and were characterized by x-ray Laue and neutron scattering at the Paul Scherrer Institute by M. R. Eskildsen and D. Mazzone.  
+	Two-fold (110), four-fold (100), and six-fold (111) symmetry axes were obtained through a simple rotation about the (110) direction.  
+	These symmetry axes and their relative angular positions can be seen in Fig. \ref{sym_axes}.  
+	The sample was glued with a mixture of Bostick and acetone to an aluminum plate that had been designed with a small bend such that the (110) symmetry axis is parallel to the top portion of the plate, see Fig. \ref{fig:alplate}.  
+	This was then securely clamped to the sample holder at the top, unbent portion of the plate.  From this and the \SIT symmetry axes, it was easy to move perpendicular to any of the desired faces.  
+	
+
+	
+	Because it was unknown whether or not \SIT would exhibit an observable VL, a well-characterized type-II superconductor was necessary for alignment.  
+	The \SIT sample, the alignment sample, and the sample plate can be seen in Fig. \ref{fig:sm}.
+	By aligning with the known sample, the bent face of the aluminum plate was oriented normal to the beam.  
+	This was then attached to the end of a sample stick and inserted into a \dr.	
+
+
+	\subsection{Electronics}
+	A diagram of the electronics used for this experiment can be seen in Fig. \ref{fig:electronics}.  The calibration curve for the coil is shown in Fig. \ref{fig:coeliac}
+	Sleep mode was used to minimize the effect of transients.
+	
+		\begin{figure}[h!]
+			\includegraphics[width = 0.5\textwidth]{MgB2 Electronics Setup.pdf}
+			\caption{\label{fig:electronics} Diagram of electronics setup.}
+		\end{figure}
+		
+		\begin{figure}[h!]
+			\includegraphics[width = 0.5\textwidth]{MgB2 Electronics Setup.pdf}
+			\caption{\label{fig:coilcal} Coil calibration curve.}
+		\end{figure}	
+	
+
+	\subsection{Rocking Curves} 	
+	The MS was prepped by warming to 25 K, performing a 0.5 T wiggle, and cooling back down to 2 K.
+	
+	
+	\subsection{Results}
+	No measurable broadening was observed and ($\zeta_L$) was found to be comparable to the crystal thickness.
+
+
+	\begin{equation}
+		\begin{split}
+		\Delta \omega_L = (0.13 \pm 0.01) ^{\circ} = (2.3 \pm 2) ~mrad
+		\\
+		\zeta = (\pi ~\Delta \omega_L)^{-1} =1.4 \times 10^2  ~a_0 ~~(14 ~\mu m)
+		\end{split}
+	\end{equation}
+		
+
+	
+	\begin{figure}
+		\includegraphics[width = 0.45\textwidth]{Rocking Curves.pdf}
+		\caption{\label{fig:RC} Comparison of ``Bragg Peak" location at 0.1 T and 0.2 T on the (111) symmetry axis.  It would appear that the Bragg peak is actually background fluctuations, and that the initial location at the correct $\vec{q}$ was an unfortunate coincidence.}
+	\end{figure}
+	
+	\begin{figure}
+		\includegraphics[width=0.45\textwidth]{fwhm.pdf}
+		\caption{\label{fig:fwhm} Comparison of ``Bragg Peak" location at 0.1 T and 0.2 T on the (111) symmetry axis.  It would appear that the Bragg peak is actually background fluctuations, and that the initial location at the correct $\vec{q}$ was an unfortunate coincidence.}
+	\end{figure}
+
+		
+\section{Scientific and Technical Difficulties}
+No monitor
+
+The coil was no longer behaving as expected.
+
+
+\section{Conclusions}
+In conclusion, there appears to be no measurable disorder throughout the VL transition from MS to GS.
+
+		%\caption{\label{fig:fwhm} Comparison of ``Bragg Peak" location at 0.1 T and 0.2 T on the (111) symmetry axis.  It would appear that the Bragg peak is actually background fluctuations, and that the initial location at the correct $\vec{q}$ was an unfortunate coincidence.}
+
+
+\bibliographystyle{apsrev}
+\begin{thebibliography}{widest entry}
+
+\end{thebibliography}
+
+\end{document}

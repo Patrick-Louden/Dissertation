@@ -1,0 +1,14 @@
+\BOOKMARK [0][-]{section*.2}{A Single-Site Model for Water: Parameterized for the Reproduction of the Melting Point of Ice Ih}{}% 2
+\BOOKMARK [1][-]{section*.1}{Abstract}{section*.2}% 1
+\BOOKMARK [1][-]{section*.3}{Introduction}{section*.2}% 3
+\BOOKMARK [1][-]{section*.10}{TIP1P/Ice}{section*.2}% 4
+\BOOKMARK [2][-]{section*.11}{Gas Phase Dimer}{section*.10}% 5
+\BOOKMARK [3][-]{section*.14}{Testing Electrostatic Cutoff}{section*.11}% 6
+\BOOKMARK [3][-]{section*.16}{Varying Lennard-Jones Parameters}{section*.11}% 7
+\BOOKMARK [3][-]{section*.19}{Varying Damping }{section*.11}% 8
+\BOOKMARK [3][-]{section*.21}{Varing the Quadrupole: Introduction of Qxx}{section*.11}% 9
+\BOOKMARK [2][-]{section*.29}{TIP1P/Ice 2.0}{section*.10}% 10
+\BOOKMARK [2][-]{section*.37}{Bulk Properties}{section*.10}% 11
+\BOOKMARK [2][-]{section*.38}{Basal Ice Ih/water Coexistence}{section*.10}% 12
+\BOOKMARK [1][-]{section*.39}{Conclusions}{section*.2}% 13
+\BOOKMARK [1][-]{section*.40}{References}{section*.2}% 14

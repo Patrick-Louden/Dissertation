@@ -1,0 +1,36 @@
+\begin{thebibliography}{1}
+
+\bibitem{Abascal07b}
+J.~L.~F. Abascal and C.~Vega,
+\newblock {\em Phys. Rev. Lett.} {\bf 98}, 237801 (2007).
+
+\bibitem{Abascal07c}
+J.~L.~F. Abascal*, , and C.~Vega,
+\newblock {\em The Journal of Physical Chemistry C} {\bf 111}, 15811 (2007).
+
+\bibitem{Abascal07d}
+J.~L.~F. Abascal and C.~Vega,
+\newblock {\em Phys. Chem. Chem. Phys.} {\bf 9}, 2775 (2007).
+
+\bibitem{Carnie82}
+S.~L. Carnie and G.~N. Patey,
+\newblock {\em Mol. Phys.} {\bf 47}, 1129 (1982).
+
+\bibitem{Rick04}
+S.~W. Rick,
+\newblock {\em J. Chem. Phys.} {\bf 120}, 6085 (2004).
+
+\bibitem{Abascal05b}
+J.~L.~F. Abascal, E.~Sanz, R.~Garcia~Fernandec, and C.~Vega,
+\newblock {\em J. Chem. Phys.} {\bf 122}, 234511 (2005).
+
+\bibitem{Yu04}
+H.~Yu and W.~F. can Gunsteren,
+\newblock {\em J. Chem. Phys.} {\bf 121}, 9549 (2004).
+
+\bibitem{openmd}
+J.~D. Gezelter et~al.,
+\newblock {OpenMD, an Open Source Engine for Molecular Dynamics},
+\newblock Available at {\tt http://openmd.org}, 2014.
+
+\end{thebibliography}
