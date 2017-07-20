@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/MacPorts 2017_0)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: iceWaterFriction.aux
+The style file: achemso.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: acs-iceWaterFriction.bib
+Database file #2: testBibTex.bib
+achemso 2017/05/18 v3.10i
+You've used 74 entries,
+            2536 wiz_defined-function locations,
+            1329 strings with 21606 characters,
+and the built_in function-call counts, 26091 in all, are:
+= -- 2227
+> -- 1381
+< -- 43
++ -- 534
+- -- 460
+* -- 2905
+:= -- 3466
+add.period$ -- 145
+call.type$ -- 74
+change.case$ -- 4
+chr.to.int$ -- 2
+cite$ -- 74
+duplicate$ -- 1376
+empty$ -- 1837
+format.name$ -- 592
+if$ -- 5083
+int.to.chr$ -- 0
+int.to.str$ -- 1
+missing$ -- 0
+newline$ -- 466
+num.names$ -- 219
+pop$ -- 116
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 73
+stack$ -- 0
+substring$ -- 1689
+swap$ -- 1417
+text.length$ -- 146
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 512
+warning$ -- 0
+while$ -- 274
+width$ -- 0
+write$ -- 973
