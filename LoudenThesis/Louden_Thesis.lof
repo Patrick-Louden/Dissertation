@@ -11,3 +11,98 @@
  {\vskip 0.4em} 
 \contentsline {figure}{\numberline {1.6}{\ignorespaces Determining the (negative) slip length ($\delta $) for the ice-water interfaces (which have decidedly non-slip behavior). This length is the difference between the structural edge of the ice (determined by the tetrahedrality profile) and the location where the projected velocity of the bulk liquid (dashed red line) intersects the solid phase velocity (solid black line). The dotted line indicates the location of the ice as determined by the tetrahedrality profile. This example is taken from the basal-face simulation with an applied shear rate of 3.0 ms\textsuperscript {-1}.}}{22}{figure.1.6}
  {\vskip 0.4em} 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Computational model of a droplet of liquid water spreading over the prismatic $\{10\mathaccentV {bar}016{1}0\}$ facet of ice, before (left) and 2.6 ns after (right) being introduced to the surface. The contact angle ($\theta $) shrinks as the simulation proceeds, and the long-time behavior of this angle is used to estimate the hydrophilicity of the facet.}}{40}{figure.2.1}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Computational model of a slab of ice being sheared through liquid water. In this figure, the ice is presenting two copies of the prismatic $\{10\mathaccentV {bar}016{1}0\}$ facet towards the liquid phase. The RNEMD simulation exchanges both linear momentum (indicated with arrows) and kinetic energy between the central box and the box that spans the cell boundary. The system responds with weak thermal gradient and a velocity profile that shears the ice relative to the surrounding liquid.}}{41}{figure.2.2}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {2.3}{\ignorespaces The dynamic contact angle of a droplet after approaching each of the four ice facets. The decay to an equilibrium contact angle displays similar dynamics. Although all the surfaces are hydrophilic, the long-time behavior stabilizes to significantly flatter droplets for the basal and pyramidal facets. This suggests a difference in hydrophilicity for these facets compared with the two prismatic facets.}}{45}{figure.2.3}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Properties of the pyramidal interface being sheared through water at 3.8 ms\textsuperscript {-1}. Lower panel: the local tetrahedral order parameter, $q(z)$, (circles) and the hyperbolic tangent fit (turquoise line). Middle panel: the imposed thermal gradient required to maintain a fixed interfacial temperature of 225 K. Upper panel: the transverse velocity gradient that develops in response to an imposed momentum flux. The vertical dotted lines indicate the locations of the midpoints of the two interfaces.}}{46}{figure.2.4}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {2.5}{\ignorespaces The secondary prism interface with a shear rate of 3.5 \ ms\textsuperscript {-1}. Panel descriptions match those in figure \ref {fig:pyrComic}.}}{47}{figure.2.5}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {2.6}{\ignorespaces The basal interface with a shear rate of 1.3 \ ms\textsuperscript {-1}. Panel descriptions match those in figure \ref {fig:pyrComic}.}}{48}{figure.2.6}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {2.7}{\ignorespaces The prismatic interface with a shear rate of 2 \ ms\textsuperscript {-1}. Panel descriptions match those in figure \ref {fig:pyrComic}.}}{49}{figure.2.7}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {2.8}{\ignorespaces The three decay constants of the orientational time correlation function, $C_2(z,t)$, for water as a function of distance from the center of the ice slab. The vertical dashed line indicates the edge of the pyramidal ice slab determined by the local order tetrahedral parameter. The control (circles) and sheared (squares) simulations were fit using shifted-exponential decay (see Eq. 9 in Ref. \citealp {Louden13}).}}{50}{figure.2.8}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Decay constants for $C_2(z,t)$ at the secondary prism face. Panel descriptions match those in \ref {fig:PyrOrient}.}}{51}{figure.2.9}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Decay constants for $C_2(z,t)$ at the basal face. Panel descriptions match those in \ref {fig:PyrOrient}.}}{52}{figure.2.10}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Decay constants for $C_2(z,t)$ at the prismatic face. Panel descriptions match those in \ref {fig:PyrOrient}.}}{53}{figure.2.11}
+ {\vskip 0.4em} 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces In the hydrodynamic regime, the friction felt by a slider on an ice surface is mediated by a quasi-liquid layer (QLL) that forms on the surface of the ice. There can be many contributions to this friction: capillary bridges between the material and the QLL (red), viscous drag in the liquid (yellow), and solid-liquid friction between the ice and the liquid film (green). This study concerns the last of the three contributions, the drag contributed by the ice-liquid interface.}}{56}{figure.3.1}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Computational model of a slab of ice being sheared through liquid water. The ice presents two copies of the prismatic $\{10\mathaccentV {bar}016{1}0\}$ facet towards the liquid phase. The RNEMD simulation exchanges both linear momentum (indicated with arrows) and kinetic energy between the central box and the box that spans the cell boundary. The system responds with weak thermal gradient and a velocity profile that shears the ice relative to the surrounding liquid.}}{62}{figure.3.2}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Properties of the secondary prism interface being sheared through water at 8.6 ms\textsuperscript {-1}. Lower panel: the local tetrahedral order parameter, $q(z)$, (circles) and the hyperbolic tangent fit (turquoise line). Middle panel: the imposed thermal gradient required to maintain a fixed interfacial temperature of 225 K. Upper panel: the transverse velocity gradient (squares) that develops in response to an imposed momentum flux, along with the fit (green line). The vertical dotted lines indicate the locations of the Gibbs dividing surfaces of the two interfaces.}}{65}{figure.3.3}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Transverse velocity profiles, $v_x(z)$, for interfaces in slip (top), no-slip (middle), and negative slip boundary conditions (bottom). The location of the interface is defined by a Gibbs dividing surface at $z_0$. Under negative slip conditions, the 10-90 interfacial width, $w_{10-90}$, provides locations that are unambiguously on the liquid and solid sides of the interface.}}{69}{figure.3.4}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {3.5}{\ignorespaces $C_2(z,t)$ collected in 1 \r A\nobreakspace {}bins across the secondary prism ice/water interface. The band that experiences very little decay represents water molecules in the ice, while the band that decays quickly corresponds to bins in the liquid. The correlation function presents a continuous distribution of decay behaviors across the interface between ice and liquid water.}}{73}{figure.3.5}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Decay times (left) for $C_2(z,t)$ at the secondary prism interface, and their fractional contributions to the overall decay (right) fit using Eq. \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {eq:c2}\unskip \@@italiccorr )}}. The local decay constants are plotted as a function of distance from the center of the ice slab. The vertical dashed line indicates the Gibbs dividing surface determined using the local tetrahedral order parameter. Results are shown for a quiescent system with no applied kinetic or momentum flux (black), an interface with an imposed kinetic energy flux (red), and a sheared simulation (blue) with both kinetic and momentum fluxes.}}{75}{figure.3.6}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Distribution of hydrogen bonds at a prismatic interface showing the tetrahedralities of donor $(q_D)$ and acceptor $(q_A)$ molecules (lower panel). Distributions of tetrahedralities in bulk ice and liquid phases are shown in the upper panel, and the value of $q$ at the Gibbs dividing surface is indicated with dashed lines. Hydrogen bonds between ice molecules are represented by the upper right square, while those between liquid molecules are in the lower left. Hydrogen bonds that bridge the ice-liquid interface exist primarily in the vertical and horizontal strips that remain.}}{79}{figure.3.7}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Properties of the pyramidal interface being sheared through water at 7.6 ms\textsuperscript {-1}. Lower panel: the local tetrahedral order parameter, $q(z)$, (circles) and the hyperbolic tangent fit (turquoise line). Middle panel: the imposed thermal gradient required to maintain a fixed interfacial temperature of 225 K. Upper panel: the transverse velocity gradient (squares) that develops in response to an imposed momentum flux, along with the fit (green line). The vertical dotted lines indicate the locations of the Gibbs dividing surfaces of the two interfaces.}}{84}{figure.3.8}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Properties of the basal interface being sheared through water at 3.2 ms\textsuperscript {-1}. Panel descriptions are the same as in Fig. \ref {fig:pyrComic}.}}{85}{figure.3.9}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Properties of the prismatic interface being sheared through water at 6.0 ms\textsuperscript {-1}. Panel descriptions are the same as in Fig. \ref {fig:pyrComic}.}}{86}{figure.3.10}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Decay times (left) for $C_2(z,t)$ at the pyramidal interface, and their fractional contributions to the overall decay (right) fit using Eq. (8). The local decay constants are plotted as a function of distance from the center of the ice slab. The vertical dashed line indicates the Gibbs dividing surface determined using the local tetrahedral order parameter. Results are shown for a quiescent system with no applied kinetic or momentum flux (black), an interface with with an imposed kinetic energy flux (red), and a sheared simulation (blue) with both kinetic and momentum fluxes.}}{87}{figure.3.11}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {3.12}{\ignorespaces $C_2(z,t)$ time constants for the basal interface. Panel descriptions are the same as in Fig. \ref {fig:Pyrorient}. }}{88}{figure.3.12}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {3.13}{\ignorespaces $C_2(z,t)$ time constants for the prismatic interface. Panel descriptions are the same as in Fig. \ref {fig:Pyrorient}.}}{89}{figure.3.13}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Solid-liquid friction coefficients by the surface density of hydrogen bonds. Linear regression gives a slope of 2.1772\nobreakspace {}(amu\nobreakspace {}fs\textsuperscript {-1}) and a y-intercept of 0.0777\nobreakspace {}(amu\nobreakspace {}\r A\textsuperscript {-2}\nobreakspace {}fs\textsuperscript {-1}).}}{90}{figure.3.14}
+ {\vskip 0.4em} 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Melting point for ice I$_h$ of several popular water models as a function of the QBar for the model. We see a strong correlation between a more accurate melting point and a larger value of QBar. We estimate that a QBar of approximately 2.8 D\r Awill result in the experimental melting point of 273.15 K. A linear regression of the data resulted in an equation of best fit of $y = 158.89x - 166.83$. From this, we have predicted an optimal QBar to be 2.7690 D\r A\nobreakspace {}.}}{94}{figure.A.1}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Melting point for ice I$_h$ of several popular water models as a function of the trace of the quadrupole tensor for the model. We see a strong correlation between a more accurate melting point and a larger value of the trace. We estimate that a trace of approximately 2.3 D\r Awill result in the experimental melting point of 273.15 K.}}{95}{figure.A.2}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {A.3}{\ignorespaces The gas phase water dimer geometry.}}{97}{figure.A.3}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Damping $\alpha $ set to 0.05 \r A$^{-1}$ and the simulation box was $300\times 300\times 300$ \r A\nobreakspace {}.}}{99}{figure.A.4}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {A.5}{\ignorespaces The Lennard-Jones parameter $\sigma $ was varied while holding the other parameters of the TIP1P/Ice model constant.}}{100}{figure.A.5}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {A.6}{\ignorespaces The Lennard-Jones parameter $\epsilon $ was varied while holding the other parameters of the TIP1P/Ice model constant.}}{101}{figure.A.6}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {A.7}{\ignorespaces Damping $\alpha $ was varied while holding the otherparameters of the TIP1P/Ice model constant.}}{102}{figure.A.7}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {A.8}{\ignorespaces The Q$_{xx}$ components of the traced quadrupole tensor were varied while simultaneously adjusting the Q$_{yy}$ component such that the Q$_T$ value for the TIP1P/Ice model was held constant. All other parameters were also held constant and equal to the TIP1P/Ice parameters during this test.This means that $Tr(Q)$ varied since the $Q_{zz}$ component was not adjusted as$Q_{xx}$ was varied.}}{104}{figure.A.8}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {A.9}{\ignorespaces The same data as plotted in Figure \ref {fig:Qxx}, nowplotted as a function of the $TrQ$.}}{105}{figure.A.9}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {A.10}{\ignorespaces The Q$_{xx}$ components of the traced quadrupole tensor were varied while simultaneously adjusting the Q$_{yy}$ component such that the Q$_T$ value for the TIP1P/Ice model was held constant. The Q$_{zz}$ component of the quadrupole tensor was also varied in such a way as to keep the $Tr(Q)$ held constant to the TIP1P/Ice value. We see here that the angles cross overone another as in Figure \ref {fig:Qxx}.}}{106}{figure.A.10}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {A.11}{\ignorespaces Setting $\sigma $ to 3.2668 \r A\nobreakspace {}, vary Q$_{xx}$ while simultanesouly adjusting Q$_{yy}$ and Q$_{zz}$ to conserve Q$_T$ and $TrQ$.}}{107}{figure.A.11}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {A.12}{\ignorespaces Setting $\sigma $ to 3.2268 \r A\nobreakspace {}, vary Q$_{xx}$ while simultaneously adjusting Q$_{yy}$ and Q${zz}$ to conserve Q$_T$ and $TrQ$.}}{108}{figure.A.12}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {A.13}{\ignorespaces Here Q$_{xx}$ and Q$_{yy}$ are varied simulatneously to conserve the value of Q$_T$. $\mu $ is scaled as $0.996 Q_T$, thus the ratio of $\mu $ to Q$_T$ is conserved for each Test of Q$_T$. The $TrQ$ is fixed to a set value, thus Q$_{zz}$ varies as the other components do. }}{109}{figure.A.13}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {A.14}{\ignorespaces }}{110}{figure.A.14}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {A.15}{\ignorespaces Q$_{xx} = -0.1$, QBar set to the TIP4P/Ice QBar value of $2.8141$, Q$_{zz}$ was modified to keep this constant as Q$_{yy}$ changed.}}{111}{figure.A.15}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {A.16}{\ignorespaces Q$_{yy} = -0.1$, Q$_{zz}$ was varied to keep QBar constant and equal to the TIP4P/Ice model's value of 2.8141.}}{112}{figure.A.16}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {A.17}{\ignorespaces Q$_{xx}$ and Q$_{yy}$ varied while holding Q$_T$ constant, Q$_{zz}$ varied in order to keep $TrQ$ constant. Both Q$_T$ and $TrQ$ were set to the TIP4P/Ice model value.}}{113}{figure.A.17}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {A.18}{\ignorespaces Q$_{xx} = -0.1$, Q$_{yy} = -0.1$, Q$_{zz} = 1.3701$ which ensures QBar is set to the TIP4P/Ice model value of $2.8141$ D\r A\nobreakspace {}.}}{114}{figure.A.18}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {A.19}{\ignorespaces Q$_{xx}$ and Q$_{zz}$ are set to the TIP4P/Ice value, as well as the Lennard-Jones parameters.The left most data point is the parameter set of the TIP4P/Ice model.}}{115}{figure.A.19}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {A.20}{\ignorespaces Q$_{yy}$ and Q$_{zz}$ are set to the TIP4P/Ice value,as well as the Lennard-Jones parameters.The left most data point is the parameter set of the TIP4P/Ice model.}}{116}{figure.A.20}
+ {\vskip 0.4em} 
+\contentsline {figure}{\numberline {A.21}{\ignorespaces Q$_{xx}$ and Q$_{yy}$ are set to the TIP4P/Ice value,\ as well as the Lennard-Jones parameters.The left most data point is the parameter set of the TIP4P/Ice model.}}{117}{figure.A.21}
+ {\vskip 0.4em} 

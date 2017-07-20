@@ -1,7 +1,7 @@
-\contentsline {chapter}{FIGURES}{iii}{chapter*.2}
-\contentsline {chapter}{TABLES}{iv}{chapter*.3}
-\contentsline {chapter}{ACKNOWLEDGMENTS}{v}{chapter*.4}
-\contentsline {chapter}{{CHAPTER\ 1: Simulations of solid-liquid friction at ice-I$_\mathrm {h}$ / water interfaces}}{1}{chapter.1}
+\contentsline {chapter}{FIGURES}{iv}{chapter*.2}
+\contentsline {chapter}{TABLES}{x}{chapter*.3}
+\contentsline {chapter}{ACKNOWLEDGMENTS}{xi}{chapter*.4}
+\contentsline {chapter}{{CHAPTER\ 1: SIMULATIONS OF SOLID-LIQUID FRICTION AT ICE-I$_\mathrm {h}$ /WATER INTERFACES}}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Methodology}{3}{section.1.2}
 \contentsline {subsection}{\numberline {1.2.1}Stable ice I$_\mathrm {h}$ / water interfaces under shear}{3}{subsection.1.2.1}
@@ -12,3 +12,45 @@
 \contentsline {subsubsection}{\numberline {1.3.1.1}Orientational Dynamics}{13}{subsubsection.1.3.1.1}
 \contentsline {subsection}{\numberline {1.3.2}Coefficient of Friction of the Interface}{19}{subsection.1.3.2}
 \contentsline {section}{\numberline {1.4}Conclusion}{23}{section.1.4}
+\contentsline {chapter}{{CHAPTER\ 2: The different facets of ice have different hydrophilicities: \\ Friction at water / ice-I$_\mathrm {h}$ interfaces}}{24}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introduction}{24}{section.2.1}
+\contentsline {section}{\numberline {2.2}Methodology}{27}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Construction of the Ice / Water interfaces}{27}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.3}Droplet Simulations}{28}{section.2.3}
+\contentsline {section}{\numberline {2.4}Shearing Simulations (Interfaces in Bulk Water)}{29}{section.2.4}
+\contentsline {section}{\numberline {2.5}Results}{31}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Ice - Water Contact Angles}{31}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Solid-liquid friction of the interfaces}{33}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}Structural measures of interfacial width under shear}{35}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.4}Dynamic measures of interfacial width under shear}{37}{subsection.2.5.4}
+\contentsline {section}{\numberline {2.6}Conclusions}{38}{section.2.6}
+\contentsline {section}{\numberline {2.7}The Advancing Contact Angle}{40}{section.2.7}
+\contentsline {section}{\numberline {2.8}Interfacial widths using structural information}{42}{section.2.8}
+\contentsline {section}{\numberline {2.9}Interfacial widths using dynamic information}{44}{section.2.9}
+\contentsline {chapter}{{CHAPTER\ 3: Friction at ice-I$_\mathrm {h}$ / water interfaces}}{54}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introduction}{54}{section.3.1}
+\contentsline {section}{\numberline {3.2}Methodology}{57}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Construction of Ice / Water interfaces}{57}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Creating shear in molecular simulations}{59}{subsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.2.1}Shearing at ice / water interfaces}{60}{subsubsection.3.2.2.1}
+\contentsline {section}{\numberline {3.3}Results}{61}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Structural measures of interfacial width under shear}{61}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Solid-liquid friction at ice/water interfaces}{67}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Dynamic measures of interfacial width under shear}{71}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}Discussion}{76}{section.3.4}
+\contentsline {subsubsection}{\numberline {3.4.0.1}Solid-liquid hydrogen bond density}{77}{subsubsection.3.4.0.1}
+\contentsline {subsubsection}{\numberline {3.4.0.2}Surface corrugation}{78}{subsubsection.3.4.0.2}
+\contentsline {section}{\numberline {3.5}Conclusions}{81}{section.3.5}
+\contentsline {section}{\numberline {3.6}Fitting velocity profiles}{82}{section.3.6}
+\contentsline {chapter}{{APPENDIX\ A: A Single-Site Model for Water: Parameterized for the Reproduction of the Melting Point of Ice I$_h$}}{91}{appendix.A}
+\contentsline {section}{\numberline {A.1}Introduction}{91}{section.A.1}
+\contentsline {section}{\numberline {A.2}TIP1P/Ice}{95}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}Gas Phase Dimer}{95}{subsection.A.2.1}
+\contentsline {subsubsection}{\numberline {A.2.1.1}Testing Electrostatic Cutoff}{98}{subsubsection.A.2.1.1}
+\contentsline {subsubsection}{\numberline {A.2.1.2}Varying Lennard-Jones Parameters}{98}{subsubsection.A.2.1.2}
+\contentsline {subsubsection}{\numberline {A.2.1.3}Varying Damping $\alpha $}{100}{subsubsection.A.2.1.3}
+\contentsline {subsubsection}{\numberline {A.2.1.4}Varing the Quadrupole: Introduction of Q$_{xx}$}{101}{subsubsection.A.2.1.4}
+\contentsline {subsection}{\numberline {A.2.2}TIP1P/Ice 2.0}{105}{subsection.A.2.2}
+\contentsline {subsection}{\numberline {A.2.3}Bulk Properties}{109}{subsection.A.2.3}
+\contentsline {subsection}{\numberline {A.2.4}Basal Ice I$_{h}$/water Coexistence}{110}{subsection.A.2.4}
+\contentsline {chapter}{BIBLIOGRAPHY}{118}{appendix*.5}

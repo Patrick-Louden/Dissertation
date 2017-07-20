@@ -2,9 +2,14 @@ This is BibTeX, Version 0.99d (TeX Live 2017/MacPorts 2017_0)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Louden_Thesis.aux
 A level-1 auxiliary file: Chapters/iceWater.aux
+A level-1 auxiliary file: Chapters/iceWater2.aux
+A level-1 auxiliary file: Chapters/iceWaterFriction.aux
+A level-1 auxiliary file: Chapters/appendix1.aux
 The style file: achemso.bst
-I found no \bibdata command---while reading file Louden_Thesis.aux
 Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated field_info (elt_size=4) to 10216 items from 5000.
+Database file #1: Louden_Thesis.bib
+Warning--I didn't find a database entry for "Louden13"
 Warning--I didn't find a database entry for "Hirsch04"
 Warning--I didn't find a database entry for "Han92"
 Warning--I didn't find a database entry for "Granasy95"
@@ -48,46 +53,92 @@ Warning--I didn't find a database entry for "PhysRevLett.70.2726"
 Warning--I didn't find a database entry for "PhysRevE.49.3079"
 Warning--I didn't find a database entry for "Mundy1997305"
 Warning--I didn't find a database entry for "Pit99"
+Warning--I didn't find a database entry for "Young05"
+Warning--I didn't find a database entry for "Tadanaga00"
+Warning--I didn't find a database entry for "Liu04"
+Warning--I didn't find a database entry for "Sun04"
+Warning--I didn't find a database entry for "Koishi09"
+Warning--I didn't find a database entry for "Herbertson06"
+Warning--I didn't find a database entry for "Dhindsa06"
+Warning--I didn't find a database entry for "Verplanck07"
+Warning--I didn't find a database entry for "Ahuja08"
+Warning--I didn't find a database entry for "Manukyan11"
+Warning--I didn't find a database entry for "Daub07"
+Warning--I didn't find a database entry for "Daub10"
+Warning--I didn't find a database entry for "Daub11"
+Warning--I didn't find a database entry for "Ritchie12"
+Warning--I didn't find a database entry for "Conde08"
+Warning--I didn't find a database entry for "Molinero09"
+Warning--I didn't find a database entry for "Limmer14"
+Warning--I didn't find a database entry for "Sazaki10"
+Warning--I didn't find a database entry for "Sazaki12"
+Warning--I didn't find a database entry for "Samadashvili13"
+Warning--I didn't find a database entry for "Arbuckle02"
+Warning--I didn't find a database entry for "Baez95"
+Warning--I didn't find a database entry for "Bryk04b"
+Warning--I didn't find a database entry for "Sanz04b"
+Warning--I didn't find a database entry for "Fennell:2005fk"
+Warning--I didn't find a database entry for "Fernandez06"
+Warning--I didn't find a database entry for "Abascal07"
+Warning--I didn't find a database entry for "Vrbka07"
+Warning--I didn't find a database entry for "Hautman91"
+Warning--I didn't find a database entry for "Hirvi06"
+Warning--I didn't find a database entry for "Ruijter99"
+Warning--I didn't find a database entry for "Muller99"
+Warning--I didn't find a database entry for "Bordat02"
+Warning--I didn't find a database entry for "Cavalcanti07"
+Warning--I didn't find a database entry for "Sendner:2009uq"
+Warning--I didn't find a database entry for "Ho:2011zr"
+Warning--I didn't find a database entry for "Lasne:2008vn"
+Warning--I didn't find a database entry for "Bouzigues:2008ys"
+Warning--I didn't find a database entry for "Schaeffel:2013kx"
+Warning--I didn't find a database entry for "Abascal07b"
+Warning--I didn't find a database entry for "Abascal07c"
+Warning--I didn't find a database entry for "Abascal07d"
+Warning--I didn't find a database entry for "Carnie82"
+Warning--I didn't find a database entry for "Rick04"
+Warning--I didn't find a database entry for "Abascal05b"
+Warning--I didn't find a database entry for "Yu04"
 achemso 2017/05/18 v3.10i
-You've used 0 entries,
+You've used 73 entries,
             2536 wiz_defined-function locations,
-            829 strings with 7111 characters,
-and the built_in function-call counts, 75 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 12
-add.period$ -- 0
-call.type$ -- 0
+            1508 strings with 23209 characters,
+and the built_in function-call counts, 24268 in all, are:
+= -- 1978
+> -- 1322
+< -- 39
++ -- 503
+- -- 430
+* -- 2779
+:= -- 3228
+add.period$ -- 74
+call.type$ -- 73
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+cite$ -- 73
+duplicate$ -- 1236
+empty$ -- 1683
+format.name$ -- 565
+if$ -- 4617
 int.to.chr$ -- 0
 int.to.str$ -- 1
 missing$ -- 0
-newline$ -- 28
-num.names$ -- 0
-pop$ -- 0
+newline$ -- 466
+num.names$ -- 219
+pop$ -- 115
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 0
+skip$ -- 72
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 1683
+swap$ -- 1283
+text.length$ -- 146
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 0
+type$ -- 508
 warning$ -- 0
-while$ -- 0
+while$ -- 271
 width$ -- 0
-write$ -- 28
-(There was 1 error message)
+write$ -- 902
+(There were 90 warnings)

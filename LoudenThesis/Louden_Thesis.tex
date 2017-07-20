@@ -20,10 +20,16 @@
 %           is identical to sort when used with textrefs)
 
 % \usepackage{amsmath}
-% \usepackage{amssymb}
+% % \usepackage{amssymb}
 % \usepackage{graphicx}
 % \usepackage{multirow}
-% \usepackage{caption}
+% \usepackage{dcolumn}
+% \usepackage{bm} 
+% \usepackage{amssymb}
+% %\usepackage{tablefootnote}
+% \usepackage{times}
+% \usepackage{mathptm}
+% % \usepackage{caption}
 % \usepackage{float}
 % \usepackage{geometry}
 % \usepackage{xkeyval}
@@ -96,14 +102,14 @@ So many thanks, much wow.
 \include{Chapters/iceWater}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%		CHAPTER 3 -- PERIODIC NON-EQUILIBRIUM (THIOLATES)
+%		CHAPTER 3 -- IceWater2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\include{Chapters/thiolates}
+\include{Chapters/iceWater2}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%		CHAPTER 4 -- NON-PERIODIC NON-EQUILIBRIUM (NP VSS-RNEMD)
+%		CHAPTER 4 -- IceWaterFriction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\include{Chapters/nonperiodicvss}
+\include{Chapters/iceWaterFriction}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %		CHAPTER 5 -- NP VSS-RNEMD NANOPARTICLE LIGANDS
@@ -127,8 +133,8 @@ So many thanks, much wow.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %		APPENDIX
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\appendix
-% \include{appendix}
+\appendix
+\include{Chapters/appendix1}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %		BACK STUFF
@@ -143,7 +149,7 @@ So many thanks, much wow.
  % \bibliographystyle{nddiss2enoarticletitles}
  \bibliographystyle{achemso}
  % \bibliographystyle{abbrvnat} 
- %\bibliography{Louden_Thesis} 
+ \bibliography{Louden_Thesis} 
  
  % The standard abbrvnat style should be acceptable. Also provided with both the advanced and standard distributions are nddiss2e and nddiss2enoarticletitles style options. If you prefer to manually enter your bibliography, that is fine. Comment out the previous two lines, and enter your bibliography as usual. Note that if you choose this route, formatting the bibliography is your responsibility. An example is below, including the optional arguments necessary for author-date style citations.
  
