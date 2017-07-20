@@ -1,0 +1,186 @@
+\begin{thebibliography}{10}
+
+\bibitem{Han92}
+K.~Han and B.~N. Hale,
+\newblock {\em Phys. Rev. B} {\bf 45}, 29 (1992).
+
+\bibitem{Granasy95}
+L.~Granasy,
+\newblock {\em The Journal of Physical Chemistry} {\bf 99}, 14182 (1995).
+
+\bibitem{Vanfleet95}
+R.~R. Vanfleet and J.~Mochel,
+\newblock {\em Surface Science} {\bf 341}, 40  (1995).
+
+\bibitem{Weber83}
+T.~A. Weber and F.~H. Stillinger,
+\newblock {\em The Journal of Physical Chemistry} {\bf 87}, 4277 (1983).
+
+\bibitem{Sakai96}
+H.~Sakai,
+\newblock {\em Surface Science} {\bf 348}, 387  (1996).
+
+\bibitem{Sakai96B}
+H.~Sakai,
+\newblock {\em Surface Science} {\bf 351}, 285  (1996).
+
+\bibitem{Wierzbicki07}
+A.~Wierzbicki et~al.,
+\newblock {\em Biophysical journal} {\bf 93}, 1442 (2007).
+
+\bibitem{Chapsky97}
+L.~Chapsky and B.~Rubinsky,
+\newblock {\em FEBS letters} {\bf 412}, 241 (1997).
+
+\bibitem{Duman:2001qy}
+J.~G. Duman,
+\newblock {\em Annual Review of Physiology} {\bf 63}, 327 (2001),
+\newblock PMID: 11181959.
+
+\bibitem{Meister29012013}
+K.~Meister et~al.,
+\newblock {\em Proceedings of the National Academy of Sciences} {\bf 110}, 1617
+  (2013).
+
+\bibitem{Karim90}
+O.~A. Karim, P.~A. Kay, and A.~D.~J. Haymet,
+\newblock {\em The Journal of Chemical Physics} {\bf 92}, 4634 (1990).
+
+\bibitem{Gay02}
+S.~C. Gay, E.~J. Smith, and A.~D.~J. Haymet,
+\newblock {\em The Journal of Chemical Physics} {\bf 116}, 8876 (2002).
+
+\bibitem{Bryk02}
+T.~Bryk and A.~D.~J. Haymet,
+\newblock {\em The Journal of Chemical Physics} {\bf 117}, 10258 (2002).
+
+\bibitem{Hayward01}
+J.~A. Hayward and A.~D.~J. Haymet,
+\newblock {\em The Journal of Chemical Physics} {\bf 114}, 3713 (2001).
+
+\bibitem{Hayward02}
+J.~A. Hayward and A.~D.~J. Haymet,
+\newblock {\em Phys. Chem. Chem. Phys.} {\bf 4}, 3712 (2002).
+
+\bibitem{Karim88}
+O.~A. Karim and A.~D.~J. Haymet,
+\newblock {\em The Journal of Chemical Physics} {\bf 89}, 6889 (1988).
+
+\bibitem{Bryk04}
+T.~Bryk and A.~D.~J. Haymet,
+\newblock {\em Journal of Molecular Liquids} {\bf 112}, 47 (2004).
+
+\bibitem{Smith05}
+E.~J. Smith, T.~Bryk, and A.~D.~J. Haymet,
+\newblock {\em The Journal of Chemical Physics} {\bf 123}, 034706 (2005).
+
+\bibitem{Wilson08}
+P.~W. Wilson and A.~D.~J. Haymet,
+\newblock {\em The Journal of Physical Chemistry B} {\bf 112}, 11750 (2008),
+\newblock PMID: 18720967.
+
+\bibitem{Wilson10}
+P.~W. Wilson and A.~D.~J. Haymet,
+\newblock {\em The Journal of Physical Chemistry B} {\bf 114}, 12585 (2010).
+
+\bibitem{Nada95}
+H.~Nada and Y.~Furukawa,
+\newblock {\em Japanese Journal of Applied Physics} {\bf 34}, 583 (1995).
+
+\bibitem{Nada00}
+H.~Nada and Y.~Furukawa,
+\newblock {\em Surface Science} {\bf 446}, 1 (2000).
+
+\bibitem{Nada03}
+H.~Nada and J.~P. J.~M. van~der Eerden,
+\newblock {\em The Journal of Chemical Physics} {\bf 118}, 7401 (2003).
+
+\bibitem{Nada12}
+H.~Nada and Y.~Furukawa,
+\newblock {\em Polym J} {\bf 44}, 690 (2012).
+
+\bibitem{Nada05}
+H.~Nada and Y.~Furukawa,
+\newblock {\em Journal of Crystal Growth} {\bf 283}, 242 (2005).
+
+\bibitem{Kuang12}
+S.~Kuang and J.~D. Gezelter,
+\newblock {\em Molecular Physics} {\bf 110}, 691 (2012).
+
+\bibitem{Buch:2008fk}
+V.~Buch, H.~Groenzin, I.~Li, M.~J. Shultz, and E.~Tosatti,
+\newblock {\em Proceedings of the National Academy of Sciences} {\bf 105}, 5969
+  (2008).
+
+\bibitem{Hirsch04}
+T.~K. Hirsch and L.~Ojam{\"a}e,
+\newblock {\em The Journal of Physical Chemistry B} {\bf 108}, 15856 (2004).
+
+\bibitem{Berendsen87}
+H.~J.~C. Berendsen, J.~R. Grigera, and T.~P. Straatsma,
+\newblock {\em The Journal of Physical Chemistry} {\bf 91}, 6269 (1987).
+
+\bibitem{OOPSE}
+M.~A. Meineke, C.~F. Vardeman, T.~Lin, C.~J. Fennell, and J.~D. Gezelter,
+\newblock {\em Journal of Computational Chemistry} {\bf 26}, 252 (2005).
+
+\bibitem{openmd}
+J.~D. Gezelter et~al.,
+\newblock {OpenMD, an Open Source Engine for Molecular Dynamics},
+\newblock Available at {\tt http://openmd.org}.
+
+\bibitem{Ewald}
+C.~J. Fennell and J.~D. Gezelter,
+\newblock {\em The Journal of Chemical Physics} {\bf 124}, 234104 (2006).
+
+\bibitem{Kumar09}
+P.~Kumar, S.~V. Buldyrev, and H.~E. Stanley,
+\newblock {\em Proceedings of the National Academy of Sciences} {\bf 106},
+  22130 (2009).
+
+\bibitem{Errington01}
+J.~R. Errington and P.~G. Debenedetti,
+\newblock {\em Nature} {\bf 409}, 318 (2001).
+
+\bibitem{Bryk2004b}
+T.~Bryk and A.~Haymet,
+\newblock {\em Molecular Simulation} {\bf 30}, 131 (2004).
+
+\bibitem{Furse08}
+K.~E. Furse and S.~A. Corcelli,
+\newblock {\em Journal of the American Chemical Society} {\bf 130}, 13103
+  (2008),
+\newblock PMID: 18767841.
+
+\bibitem{Laage08}
+D.~Laage and J.~T. Hynes,
+\newblock {\em The Journal of Physical Chemistry B} {\bf 112}, 14230 (2008),
+\newblock PMID: 18942871.
+
+\bibitem{Laage11}
+D.~Laage, G.~Stirnemann, F.~Sterpone, R.~Rey, and J.~T. Hynes,
+\newblock {\em Annual Review of Physical Chemistry} {\bf 62}, 395 (2011),
+\newblock PMID: 21219140.
+
+\bibitem{Beaglehole93}
+D.~Beaglehole and P.~Wilson,
+\newblock {\em The Journal of Physical Chemistry} {\bf 97}, 11053 (1993).
+
+\bibitem{PhysRevLett.70.2726}
+L.~Bocquet and J.-L. Barrat,
+\newblock {\em Phys. Rev. Lett.} {\bf 70}, 2726 (1993).
+
+\bibitem{PhysRevE.49.3079}
+L.~Bocquet and J.-L. Barrat,
+\newblock {\em Phys. Rev. E} {\bf 49}, 3079 (1994).
+
+\bibitem{Mundy1997305}
+C.~J. Mundy, S.~Balasubramanian, and M.~L. Klein,
+\newblock {\em Physica A: Statistical Mechanics and its Applications} {\bf
+  240}, 305  (1997).
+
+\bibitem{Pit99}
+R.~Pit, H.~Hervet, and L.~L{\'e}ger,
+\newblock {\em Tribology Letters} {\bf 7}, 147 (1999).
+
+\end{thebibliography}
