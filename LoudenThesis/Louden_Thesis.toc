@@ -1,6 +1,7 @@
 \contentsline {chapter}{FIGURES}{iv}{chapter*.2}
 \contentsline {chapter}{TABLES}{x}{chapter*.3}
-\contentsline {chapter}{ACKNOWLEDGMENTS}{xi}{chapter*.4}
+\contentsline {chapter}{PREFACE}{xi}{chapter*.4}
+\contentsline {chapter}{ACKNOWLEDGMENTS}{xii}{chapter*.5}
 \contentsline {chapter}{{CHAPTER\ 1: SIMULATIONS OF SOLID-LIQUID FRICTION AT ICE-I$_\mathrm {h}$ /WATER INTERFACES}}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Methodology}{3}{section.1.2}
@@ -53,4 +54,4 @@
 \contentsline {subsection}{\numberline {A.2.2}TIP1P/Ice 2.0}{105}{subsection.A.2.2}
 \contentsline {subsection}{\numberline {A.2.3}Bulk Properties}{109}{subsection.A.2.3}
 \contentsline {subsection}{\numberline {A.2.4}Basal Ice I$_{h}$/water Coexistence}{110}{subsection.A.2.4}
-\contentsline {chapter}{BIBLIOGRAPHY}{118}{appendix*.5}
+\contentsline {chapter}{BIBLIOGRAPHY}{118}{appendix*.6}

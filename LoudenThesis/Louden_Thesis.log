@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.4)  20 JUL 2017 16:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.4)  20 JUL 2017 16:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1286,10 +1286,15 @@ Package natbib Warning: Citation `Yu04' on page x undefined on input line 29.
 \openout7 = `Louden_Thesis.lot'.
 
 
-Acknowledgment page
+Preface page
 [10
 
 ] [11
+
+]
+Acknowledgment page
+[12
+
 
 ]
 \openout2 = `Chapters/iceWater.aux'.
@@ -1519,14 +1524,14 @@ e 320.
 Package natbib Warning: Citation `Bryk2004b' on page 8 undefined on input line 
 323.
 
-[8] [9] <Figures/bComicStrip.pdf, id=557, 705.63625pt x 545.03625pt>
+[8] [9] <Figures/bComicStrip.pdf, id=566, 705.63625pt x 545.03625pt>
 File: Figures/bComicStrip.pdf Graphic file (type pdf)
 
 <use Figures/bComicStrip.pdf>
 Package pdftex.def Info: Figures/bComicStrip.pdf used on input line 383.
 (pdftex.def)             Requested size: 432.0pt x 333.67754pt.
 
-<Figures/pComicStrip.pdf, id=558, 693.59125pt x 536.0025pt>
+<Figures/pComicStrip.pdf, id=567, 693.59125pt x 536.0025pt>
 File: Figures/pComicStrip.pdf Graphic file (type pdf)
 
 <use Figures/pComicStrip.pdf>
@@ -1550,7 +1555,7 @@ Package natbib Warning: Citation `Bryk2004b' on page 10 undefined on input line
  416.
 
 [10] [11 <./Figures/bComicStrip.pdf>] [12 <./Figures/pComicStrip.pdf>]
-<Figures/interface_width_by_shear_rate.pdf, id=612, 670.505pt x 476.78125pt>
+<Figures/interface_width_by_shear_rate.pdf, id=621, 670.505pt x 476.78125pt>
 File: Figures/interface_width_by_shear_rate.pdf Graphic file (type pdf)
 
 <use Figures/interface_width_by_shear_rate.pdf>
@@ -1570,7 +1575,7 @@ Package natbib Warning: Citation `Laage08' on page 15 undefined on input line 4
 Package natbib Warning: Citation `Laage11' on page 15 undefined on input line 4
 65.
 
-<Figures/basal_Tau_comic_strip.pdf, id=640, 671.50874pt x 480.79625pt>
+<Figures/basal_Tau_comic_strip.pdf, id=649, 671.50874pt x 480.79625pt>
 File: Figures/basal_Tau_comic_strip.pdf Graphic file (type pdf)
 
 <use Figures/basal_Tau_comic_strip.pdf>
@@ -1578,7 +1583,7 @@ Package pdftex.def Info: Figures/basal_Tau_comic_strip.pdf used on input line 4
 88.
 (pdftex.def)             Requested size: 432.0pt x 309.30786pt.
 
-<Figures/prismatic_Tau_comic_strip.pdf, id=642, 679.53876pt x 474.77374pt>
+<Figures/prismatic_Tau_comic_strip.pdf, id=651, 679.53876pt x 474.77374pt>
 File: Figures/prismatic_Tau_comic_strip.pdf Graphic file (type pdf)
 
 <use Figures/prismatic_Tau_comic_strip.pdf>
@@ -1621,7 +1626,7 @@ Package natbib Warning: Citation `Pit99' on page 19 undefined on input line 589
 Package natbib Warning: Citation `Kuang12' on page 20 undefined on input line 6
 05.
 
-[20] <Figures/delta_example.pdf, id=735, 712.6625pt x 474.77374pt>
+[20] <Figures/delta_example.pdf, id=744, 712.6625pt x 474.77374pt>
 File: Figures/delta_example.pdf Graphic file (type pdf)
 
 <use Figures/delta_example.pdf>
@@ -2014,14 +2019,14 @@ Package natbib Warning: Citation `Louden13' on page 36 undefined on input line
 Package natbib Warning: Citation `Louden13' on page 38 undefined on input line 
 532.
 
-[38] [39] <Figures/Droplet.pdf, id=863, 674.52pt x 235.11841pt>
+[38] [39] <Figures/Droplet.pdf, id=873, 674.52pt x 235.11841pt>
 File: Figures/Droplet.pdf Graphic file (type pdf)
 
 <use Figures/Droplet.pdf>
 Package pdftex.def Info: Figures/Droplet.pdf used on input line 739.
 (pdftex.def)             Requested size: 432.0pt x 150.58647pt.
 
-<Figures/Shearing.pdf, id=864, 903.375pt x 3589.41pt>
+<Figures/Shearing.pdf, id=874, 903.375pt x 3589.41pt>
 File: Figures/Shearing.pdf Graphic file (type pdf)
 
 <use Figures/Shearing.pdf>
@@ -2099,35 +2104,35 @@ Package natbib Warning: Citation `Louden13' on page 42 undefined on input line
 Package natbib Warning: Citation `Louden13' on page 44 undefined on input line 
 937.
 
-[44] <Figures/ContactAngle.pdf, id=928, 687.00763pt x 450.4288pt>
+[44] <Figures/ContactAngle.pdf, id=937, 687.00763pt x 450.4288pt>
 File: Figures/ContactAngle.pdf Graphic file (type pdf)
 
 <use Figures/ContactAngle.pdf>
 Package pdftex.def Info: Figures/ContactAngle.pdf used on input line 967.
 (pdftex.def)             Requested size: 432.0pt x 283.23555pt.
 
-<Figures/Pyr_comic_strip.pdf, id=929, 688.5725pt x 487.8225pt>
+<Figures/Pyr_comic_strip.pdf, id=938, 688.5725pt x 487.8225pt>
 File: Figures/Pyr_comic_strip.pdf Graphic file (type pdf)
 
 <use Figures/Pyr_comic_strip.pdf>
 Package pdftex.def Info: Figures/Pyr_comic_strip.pdf used on input line 982.
 (pdftex.def)             Requested size: 432.0pt x 306.0495pt.
 
-<Figures/SP_comic_strip.pdf, id=930, 794.97pt x 614.295pt>
+<Figures/SP_comic_strip.pdf, id=939, 794.97pt x 614.295pt>
 File: Figures/SP_comic_strip.pdf Graphic file (type pdf)
 
 <use Figures/SP_comic_strip.pdf>
 Package pdftex.def Info: Figures/SP_comic_strip.pdf used on input line 995.
 (pdftex.def)             Requested size: 432.0pt x 333.82336pt.
 
-<Figures/B_comic_strip.pdf, id=932, 794.97pt x 614.295pt>
+<Figures/B_comic_strip.pdf, id=941, 794.97pt x 614.295pt>
 File: Figures/B_comic_strip.pdf Graphic file (type pdf)
 
 <use Figures/B_comic_strip.pdf>
 Package pdftex.def Info: Figures/B_comic_strip.pdf used on input line 1002.
 (pdftex.def)             Requested size: 432.0pt x 333.82336pt.
 
-<Figures/prismatic_comic_strip.pdf, id=934, 794.97pt x 614.295pt>
+<Figures/prismatic_comic_strip.pdf, id=943, 794.97pt x 614.295pt>
 File: Figures/prismatic_comic_strip.pdf Graphic file (type pdf)
 
 <use Figures/prismatic_comic_strip.pdf>
@@ -2135,7 +2140,7 @@ Package pdftex.def Info: Figures/prismatic_comic_strip.pdf used on input line 1
 010.
 (pdftex.def)             Requested size: 432.0pt x 333.82336pt.
 
-<Figures/Pyr-orient.pdf, id=936, 701.19363pt x 492.34943pt>
+<Figures/Pyr-orient.pdf, id=945, 701.19363pt x 492.34943pt>
 File: Figures/Pyr-orient.pdf Graphic file (type pdf)
 
 <use Figures/Pyr-orient.pdf>
@@ -2146,21 +2151,21 @@ Package pdftex.def Info: Figures/Pyr-orient.pdf used on input line 1019.
 Package natbib Warning: Citation `Louden13' on page 45 undefined on input line 
 1026.
 
-<Figures/SP-orient.pdf, id=937, 794.97pt x 614.295pt>
+<Figures/SP-orient.pdf, id=946, 794.97pt x 614.295pt>
 File: Figures/SP-orient.pdf Graphic file (type pdf)
 
 <use Figures/SP-orient.pdf>
 Package pdftex.def Info: Figures/SP-orient.pdf used on input line 1030.
 (pdftex.def)             Requested size: 432.0pt x 333.82336pt.
 
-<Figures/B-orient.pdf, id=939, 794.97pt x 614.295pt>
+<Figures/B-orient.pdf, id=948, 794.97pt x 614.295pt>
 File: Figures/B-orient.pdf Graphic file (type pdf)
 
 <use Figures/B-orient.pdf>
 Package pdftex.def Info: Figures/B-orient.pdf used on input line 1036.
 (pdftex.def)             Requested size: 432.0pt x 333.82336pt.
 
-<Figures/prismatic-orient.pdf, id=941, 794.97pt x 614.295pt>
+<Figures/prismatic-orient.pdf, id=950, 794.97pt x 614.295pt>
 File: Figures/prismatic-orient.pdf Graphic file (type pdf)
 
 <use Figures/prismatic-orient.pdf>
@@ -2191,7 +2196,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 
 
-] [55] <Figures/QLLsketch.pdf, id=1163, 347.50136pt x 132.56245pt>
+] [55] <Figures/QLLsketch.pdf, id=1172, 347.50136pt x 132.56245pt>
 File: Figures/QLLsketch.pdf Graphic file (type pdf)
 
 <use Figures/QLLsketch.pdf>
@@ -2215,7 +2220,7 @@ Package pdftex.def Info: Figures/Shearing.pdf used on input line 329.
 LaTeX Warning: Float too large for page by 43.72977pt on input line 338.
 
 [61] [62] [63]
-<Figures/Sec_comic_strip.pdf, id=1279, 688.5725pt x 492.84125pt>
+<Figures/Sec_comic_strip.pdf, id=1288, 688.5725pt x 492.84125pt>
 File: Figures/Sec_comic_strip.pdf Graphic file (type pdf)
 
 <use Figures/Sec_comic_strip.pdf>
@@ -2229,7 +2234,7 @@ Overfull \hbox (22.65398pt too wide) in paragraph at lines 478--488
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[66] [67] <Figures/slipLengthPlot.pdf, id=1335, 744.7825pt x 520.94624pt>
+[66] [67] <Figures/slipLengthPlot.pdf, id=1344, 744.7825pt x 520.94624pt>
 File: Figures/slipLengthPlot.pdf Graphic file (type pdf)
 
 <use Figures/slipLengthPlot.pdf>
@@ -2242,14 +2247,14 @@ Overfull \hbox (19.12172pt too wide) in paragraph at lines 633--649
 or wa-ter reorientation.[],
  []
 
-[71] <Figures/CztImage.pdf, id=1394, 1027.84pt x 770.88pt>
+[71] <Figures/CztImage.pdf, id=1404, 1027.84pt x 770.88pt>
 File: Figures/CztImage.pdf Graphic file (type pdf)
 
 <use Figures/CztImage.pdf>
 Package pdftex.def Info: Figures/CztImage.pdf used on input line 665.
 (pdftex.def)             Requested size: 432.0pt x 324.00266pt.
  [72] [73 <./Figures/CztImage.pdf>] [74]
-<Figures/Sec_lcorrz.pdf, id=1463, 772.8875pt x 499.8675pt>
+<Figures/Sec_lcorrz.pdf, id=1472, 772.8875pt x 499.8675pt>
 File: Figures/Sec_lcorrz.pdf Graphic file (type pdf)
 
 <use Figures/Sec_lcorrz.pdf>
@@ -2260,7 +2265,7 @@ Package pdftex.def Info: Figures/Sec_lcorrz.pdf used on input line 724.
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 790.
 
-[77] <Figures/hbtet.pdf, id=1522, 627.46419pt x 794.1359pt>
+[77] <Figures/hbtet.pdf, id=1533, 627.46419pt x 794.1359pt>
 File: Figures/hbtet.pdf Graphic file (type pdf)
 
 <use Figures/hbtet.pdf>
@@ -2279,41 +2284,41 @@ File: Figures/Pyr_comic_strip.pdf Graphic file (type pdf)
 Package pdftex.def Info: Figures/Pyr_comic_strip.pdf used on input line 1020.
 (pdftex.def)             Requested size: 432.0pt x 306.0495pt.
 
-<Figures/Bas_comic_strip.pdf, id=1773, 702.625pt x 548.0475pt>
+<Figures/Bas_comic_strip.pdf, id=1782, 702.625pt x 548.0475pt>
 File: Figures/Bas_comic_strip.pdf Graphic file (type pdf)
 
 <use Figures/Bas_comic_strip.pdf>
 Package pdftex.def Info: Figures/Bas_comic_strip.pdf used on input line 1034.
 (pdftex.def)             Requested size: 432.0pt x 336.96776pt.
 
-<Figures/Pri_comic_strip.pdf, id=1775, 689.57625pt x 493.845pt>
+<Figures/Pri_comic_strip.pdf, id=1784, 689.57625pt x 493.845pt>
 File: Figures/Pri_comic_strip.pdf Graphic file (type pdf)
 
 <use Figures/Pri_comic_strip.pdf>
 Package pdftex.def Info: Figures/Pri_comic_strip.pdf used on input line 1041.
 (pdftex.def)             Requested size: 432.0pt x 309.3833pt.
 
-<Figures/Pyr_lcorrz.pdf, id=1777, 772.8875pt x 499.8675pt>
+<Figures/Pyr_lcorrz.pdf, id=1786, 772.8875pt x 499.8675pt>
 File: Figures/Pyr_lcorrz.pdf Graphic file (type pdf)
 
 <use Figures/Pyr_lcorrz.pdf>
 Package pdftex.def Info: Figures/Pyr_lcorrz.pdf used on input line 1051.
 (pdftex.def)             Requested size: 432.0pt x 279.3976pt.
 
-<Figures/Bas_lcorrz.pdf, id=1778, 779.91376pt x 499.8675pt>
+<Figures/Bas_lcorrz.pdf, id=1787, 779.91376pt x 499.8675pt>
 File: Figures/Bas_lcorrz.pdf Graphic file (type pdf)
 
 <use Figures/Bas_lcorrz.pdf>
 Package pdftex.def Info: Figures/Bas_lcorrz.pdf used on input line 1065.
 (pdftex.def)             Requested size: 432.0pt x 276.88057pt.
 
-<Figures/Pri_lcorrz.pdf, id=1780, 772.8875pt x 499.8675pt>
+<Figures/Pri_lcorrz.pdf, id=1789, 772.8875pt x 499.8675pt>
 File: Figures/Pri_lcorrz.pdf Graphic file (type pdf)
 
 <use Figures/Pri_lcorrz.pdf>
 Package pdftex.def Info: Figures/Pri_lcorrz.pdf used on input line 1072.
 (pdftex.def)             Requested size: 432.0pt x 279.3976pt.
- <Figures/hb.pdf, id=1782, 698.61pt x 497.86pt>
+ <Figures/hb.pdf, id=1791, 698.61pt x 497.86pt>
 File: Figures/hb.pdf Graphic file (type pdf)
 
 <use Figures/hb.pdf>
@@ -2364,7 +2369,7 @@ Package natbib Warning: Citation `Carnie82' on page 92 undefined on input line
 Package natbib Warning: Citation `Rick04' on page 92 undefined on input line 62
 .
 
-[92] <Figures/Tm_Ih_Qbar_plot.pdf, id=1981, 675.52374pt x 501.875pt>
+[92] <Figures/Tm_Ih_Qbar_plot.pdf, id=1990, 675.52374pt x 501.875pt>
 File: Figures/Tm_Ih_Qbar_plot.pdf Graphic file (type pdf)
 
 <use Figures/Tm_Ih_Qbar_plot.pdf>
@@ -2374,7 +2379,7 @@ Package pdftex.def Info: Figures/Tm_Ih_Qbar_plot.pdf used on input line 116.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/Tm_Ih_TraQ_plot.pdf, id=1982, 681.54625pt x 501.875pt>
+<Figures/Tm_Ih_TraQ_plot.pdf, id=1991, 681.54625pt x 501.875pt>
 File: Figures/Tm_Ih_TraQ_plot.pdf Graphic file (type pdf)
 
 <use Figures/Tm_Ih_TraQ_plot.pdf>
@@ -2403,7 +2408,7 @@ Package natbib Warning: Citation `Yu04' on page 94 undefined on input line 183.
 
 
 [94 <./Figures/Tm_Ih_Qbar_plot.pdf>]
-<Figures/dimer.pdf, id=2000, 583.17876pt x 436.63126pt>
+<Figures/dimer.pdf, id=2009, 583.17876pt x 436.63126pt>
 File: Figures/dimer.pdf Graphic file (type pdf)
 
 <use Figures/dimer.pdf>
@@ -2426,7 +2431,7 @@ Package natbib Warning: Citation `Yu04' on page 97 undefined on input line 216.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [97 <./Figures/dimer.pdf>]
-<Figures/Test17_plot.pdf, id=2023, 683.78459pt x 478.98952pt>
+<Figures/Test17_plot.pdf, id=2032, 683.78459pt x 478.98952pt>
 File: Figures/Test17_plot.pdf Graphic file (type pdf)
 
 <use Figures/Test17_plot.pdf>
@@ -2436,7 +2441,7 @@ Package pdftex.def Info: Figures/Test17_plot.pdf used on input line 228.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/Test1_plot.pdf, id=2025, 666.72084pt x 478.98952pt>
+<Figures/Test1_plot.pdf, id=2034, 666.72084pt x 478.98952pt>
 File: Figures/Test1_plot.pdf Graphic file (type pdf)
 
 <use Figures/Test1_plot.pdf>
@@ -2446,7 +2451,7 @@ Package pdftex.def Info: Figures/Test1_plot.pdf used on input line 249.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/Test2_plot.pdf, id=2031, 675.20255pt x 475.12506pt>
+<Figures/Test2_plot.pdf, id=2040, 675.20255pt x 475.12506pt>
 File: Figures/Test2_plot.pdf Graphic file (type pdf)
 
 <use Figures/Test2_plot.pdf>
@@ -2479,7 +2484,7 @@ Overfull \hbox (2.54134pt too wide) in paragraph at lines 271--286
  []
 
 [99 <./Figures/Test17_plot.pdf>] [100 <./Figures/Test1_plot.pdf>]
-<Figures/Test3_plot.pdf, id=2053, 683.85486pt x 477.02214pt>
+<Figures/Test3_plot.pdf, id=2062, 683.85486pt x 477.02214pt>
 File: Figures/Test3_plot.pdf Graphic file (type pdf)
 
 <use Figures/Test3_plot.pdf>
@@ -2502,7 +2507,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 293.
 
 [101 <./Figures/Test2_plot.pdf>] [102 <./Figures/Test3_plot.pdf>]
-<Figures/Test4_plot.pdf, id=2083, 675.20255pt x 482.83386pt>
+<Figures/Test4_plot.pdf, id=2092, 675.20255pt x 482.83386pt>
 File: Figures/Test4_plot.pdf Graphic file (type pdf)
 
 <use Figures/Test4_plot.pdf>
@@ -2512,7 +2517,7 @@ Package pdftex.def Info: Figures/Test4_plot.pdf used on input line 328.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/Test4_plot2.pdf, id=2084, 675.20255pt x 479.00958pt>
+<Figures/Test4_plot2.pdf, id=2093, 675.20255pt x 479.00958pt>
 File: Figures/Test4_plot2.pdf Graphic file (type pdf)
 
 <use Figures/Test4_plot2.pdf>
@@ -2522,7 +2527,7 @@ Package pdftex.def Info: Figures/Test4_plot2.pdf used on input line 334.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/Test5_plot.pdf, id=2090, 667.44357pt x 477.3333pt>
+<Figures/Test5_plot.pdf, id=2099, 667.44357pt x 477.3333pt>
 File: Figures/Test5_plot.pdf Graphic file (type pdf)
 
 <use Figures/Test5_plot.pdf>
@@ -2532,7 +2537,7 @@ Package pdftex.def Info: Figures/Test5_plot.pdf used on input line 356.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/Test6_plot.pdf, id=2092, 676.5275pt x 477.785pt>
+<Figures/Test6_plot.pdf, id=2101, 676.5275pt x 477.785pt>
 File: Figures/Test6_plot.pdf Graphic file (type pdf)
 
 <use Figures/Test6_plot.pdf>
@@ -2542,7 +2547,7 @@ Package pdftex.def Info: Figures/Test6_plot.pdf used on input line 361.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/Test7_plot.pdf, id=2093, 675.86505pt x 482.83386pt>
+<Figures/Test7_plot.pdf, id=2102, 675.86505pt x 482.83386pt>
 File: Figures/Test7_plot.pdf Graphic file (type pdf)
 
 <use Figures/Test7_plot.pdf>
@@ -2552,7 +2557,7 @@ Package pdftex.def Info: Figures/Test7_plot.pdf used on input line 366.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[103] <Figures/Test12_plot.pdf, id=2100, 667.21268pt x 482.60298pt>
+[103] <Figures/Test12_plot.pdf, id=2109, 667.21268pt x 482.60298pt>
 File: Figures/Test12_plot.pdf Graphic file (type pdf)
 
 <use Figures/Test12_plot.pdf>
@@ -2562,7 +2567,7 @@ Package pdftex.def Info: Figures/Test12_plot.pdf used on input line 389.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/Test16_plot.pdf, id=2102, 675.20255pt x 474.69347pt>
+<Figures/Test16_plot.pdf, id=2111, 675.20255pt x 474.69347pt>
 File: Figures/Test16_plot.pdf Graphic file (type pdf)
 
 <use Figures/Test16_plot.pdf>
@@ -2573,7 +2578,7 @@ Package pdftex.def Info: Figures/Test16_plot.pdf used on input line 401.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [105 <./Figures/Test4_plot2.pdf>]
-<Figures/Test19_plot.pdf, id=2124, 675.86505pt x 485.61424pt>
+<Figures/Test19_plot.pdf, id=2133, 675.86505pt x 485.61424pt>
 File: Figures/Test19_plot.pdf Graphic file (type pdf)
 
 <use Figures/Test19_plot.pdf>
@@ -2583,7 +2588,7 @@ Package pdftex.def Info: Figures/Test19_plot.pdf used on input line 435.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/Test20_plot.pdf, id=2128, 675.86505pt x 482.96436pt>
+<Figures/Test20_plot.pdf, id=2137, 675.86505pt x 482.96436pt>
 File: Figures/Test20_plot.pdf Graphic file (type pdf)
 
 <use Figures/Test20_plot.pdf>
@@ -2593,7 +2598,7 @@ Package pdftex.def Info: Figures/Test20_plot.pdf used on input line 450.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/Test5_plot2.pdf, id=2142, 670.8262pt x 479.00958pt>
+<Figures/Test5_plot2.pdf, id=2151, 670.8262pt x 479.00958pt>
 File: Figures/Test5_plot2.pdf Graphic file (type pdf)
 
 <use Figures/Test5_plot2.pdf>
@@ -2603,7 +2608,7 @@ Package pdftex.def Info: Figures/Test5_plot2.pdf used on input line 461.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/Test22_plot.pdf, id=2144, 675.20255pt x 475.73734pt>
+<Figures/Test22_plot.pdf, id=2153, 675.20255pt x 475.73734pt>
 File: Figures/Test22_plot.pdf Graphic file (type pdf)
 
 <use Figures/Test22_plot.pdf>
@@ -2614,7 +2619,7 @@ Package pdftex.def Info: Figures/Test22_plot.pdf used on input line 471.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [107 <./Figures/Test6_plot.pdf>]
-<Figures/Test23_plot.pdf, id=2160, 681.57639pt x 485.49379pt>
+<Figures/Test23_plot.pdf, id=2170, 681.57639pt x 485.49379pt>
 File: Figures/Test23_plot.pdf Graphic file (type pdf)
 
 <use Figures/Test23_plot.pdf>
@@ -2624,7 +2629,7 @@ Package pdftex.def Info: Figures/Test23_plot.pdf used on input line 489.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/Test24_plot.pdf, id=2162, 667.21268pt x 477.3333pt>
+<Figures/Test24_plot.pdf, id=2172, 667.21268pt x 477.3333pt>
 File: Figures/Test24_plot.pdf Graphic file (type pdf)
 
 <use Figures/Test24_plot.pdf>
@@ -2635,7 +2640,7 @@ Package pdftex.def Info: Figures/Test24_plot.pdf used on input line 497.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [108 <./Figures/Test7_plot.pdf>]
-<Figures/Test25_plot.pdf, id=2175, 670.86633pt x 482.90413pt>
+<Figures/Test25_plot.pdf, id=2184, 670.86633pt x 482.90413pt>
 File: Figures/Test25_plot.pdf Graphic file (type pdf)
 
 <use Figures/Test25_plot.pdf>
@@ -2674,25 +2679,25 @@ gures/Test20_plot.pdf>] [113 <./Figures/Test5_plot2.pdf>] [114 <./Figures/Test2
 Package natbib Warning: There were undefined citations.
 
 [121]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 168.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 168.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 175.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 175.
  (./Louden_Thesis.aux (./Chapters/iceWater.aux) (./Chapters/iceWater2.aux) (./C
 hapters/iceWaterFriction.aux) (./Chapters/appendix1.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 168.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 168.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 175.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 175.
 Package rerunfilecheck Info: File `Louden_Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 3B3FEA2B622F3F1C8B256DEF0A9A3A93;4832.
+(rerunfilecheck)             Checksum: 63BE06685E528EEF2A7A85EC23D7C8EC;4876.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 168.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 175.
  ) 
 Here is how much of TeX's memory you used:
- 29642 strings out of 494936
- 592114 string characters out of 6180786
- 684472 words of memory out of 5000000
- 32013 multiletter control sequences out of 15000+600000
+ 29645 strings out of 494936
+ 592144 string characters out of 6180786
+ 684473 words of memory out of 5000000
+ 32014 multiletter control sequences out of 15000+600000
  539623 words of font info for 62 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  55i,13n,67p,10373b,602s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2712,10 +2717,10 @@ onts/cm/cmr7.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm
 /opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/l
 ocal/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti12.pfb></opt/local/
 share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Louden_Thesis.pdf (134 pages, 20488093 bytes).
+Output written on Louden_Thesis.pdf (135 pages, 20488770 bytes).
 PDF statistics:
- 2444 PDF objects out of 2487 (max. 8388607)
- 1886 compressed objects within 19 object streams
- 378 named destinations out of 1000 (max. 500000)
- 727 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2454 PDF objects out of 2487 (max. 8388607)
+ 1895 compressed objects within 19 object streams
+ 380 named destinations out of 1000 (max. 500000)
+ 735 words of extra memory for PDF output out of 10000 (max. 10000000)
 
