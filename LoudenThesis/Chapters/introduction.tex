@@ -451,6 +451,113 @@ by temperature. They observed a transition to about unity between 240K
 and 250K, between 49 and 39 K of undercooling for the NE6 model.
 
 % end Gladdich11
+
+\subsubsection{Ice Nanostructures}
+%Pan11 Melting the Ice: On the Relation between Melting Temperature
+%and Size for Nanoscale Ice Crystals. ACS Nano 5 (2011) 4562-4569
+While there has been significant progress made on understanding a
+two-dimensional ice surface exposed to vacuum, less is known on the
+surface premelting of a three-dimensional ice
+nanostructure. Understanding premelting of three-dimensional
+nanostructures is of importance as particles in this size range are
+commonly found in polar mospheric clouds, at altitudes of 80-90 km,
+and are known to scatter light from the ice/water interfaces they
+contain.\cite{Murray10} 
+
+Egorov \textit{et al.} studied the sensativity of the meling point
+with cluster size, for water clusters from 8 to 40 molecules
+large.\cite{Egorov02} They observed a nonmonotonic decrease in the melting
+point with growing cluster size, though they concluded this behavior
+might be specific to the size range they investigated. (In a follow up
+study,) Pereyra and Carignano performed molecular simulations of ice
+nanocolumns, where they observed the change in melting point
+depression as they varied the rectangular width of the
+nanostructure.\cite{Pereyra09} 
+
+Pan \textit{et al.} have recently studied hexagonal ice nanostructures
+in the range of 2nm (768 water molecules) to 8 nm (9600 water
+molecules) using molecular dynamics simulations with the TIP4P water
+model.\cite{Pan11} These nanostructures exposed both basal and primary
+prism surfaces, as well as two unique edges; one edge where two prism
+surfaces meet at a 120 degree angle, and an edge where a basal and
+prism surface meet at a 90 degree angle. These nanostructures also
+exposed corners where three surfaces intersected, allowing for
+investigation of surface premelting at a variety of low-coordination
+sites.
+
+% this feels a summarizey, might take out the next P.
+They observed that surface premelting occurred first at the corner
+sites, followed by the edge sites, and lastly on the flat surfaces.
+In addition, they also observed a strong size dependence in the
+melting point depression, agreeing well with the classical
+Gibbs-Thomson relation. 
+
+Pan \textit{et al.} observed the nanocrystals ordering decrease with
+increasing temperature, where the overall shape of the crystal
+transitioned from hexagonal to spherical. Interior water molecules
+were found to mantain their tetrahedral ordering up to an undercooling
+temperature of about 5K to 2.5K. In general, they observed surface
+premelting onset between 30 to 40K below the bulk melting point of the
+model, in agreement with NAME and NAME. 
+
+Pan \textit{et al.} observed the potential energy increase with
+increasing temperature up to the melting point of the ice crystals,
+$T^{c}_\mathrm{m}$; at the melting point of the crystals a first-order
+phase transition occurs and the temperature appears to rise
+vertically. From the jumps in temperature, Pan was able to estimate
+the $T^{c}_\mathrm{m}$ for the ice nanocrystals, and saw
+$T^{c}_\mathrm{m}$ decrease with decreasing crystal size. Melting
+point depression that decreases with decreasing size for nanoscale
+clusters of molecules has previoulsy been described by the
+Gibbs-Thomson relation. 
+\begin{equation}\label{GibbsThomson}
+\Delta T^{c}_{m} = T^{b}_{m} - T^{c}_{m} = \frac{\gamma T^{b}_{m} K}{L}
+\end{equation}
+Here, $T^{b}_{m}$ is the bulk melting temperature, $T^{c}_{m}$ is the
+nanocrystal melting temperature, $\gamma$ is the free energy of the
+solid/liquid interface, $K$ is the average curvature of the interface,
+and $L$ is the volumetric latent heat of melting. $K$ can be obtained
+from the ratio of the change in surface area to the change in volume,
+$K = dA/dV$. The accuracy of which the Gibbs-Thomson relation predicts
+melting point depression for ice nanocrystals has been unclear in
+previous studies,\cite{Makkonen00,Makkonen02,Della02,Campbell02},
+however, Pan \textit{et al.} were able to show their computed
+temperature depressions matched well with the Gibbs-Thomson equation.
+
+Using the local tetrahderal order parameter, Pan \textit{et al.}
+discriminated ice-like and liquid-like water molecules with the
+partitioning criteria of ice-like molecules having $q_{i} \geq 0.91$,
+and all other molecules being considered liquid-like, following Conde
+\textit{et al.}.\cite{Conde08} Using this criteria, Pan computed the
+thickness of the QLL by
+\begin{equation}
+d_{apparent} = \frac{n_{QLL}M_{H_{2}O}}{2\rho N_{A} \pi r^{2}}
+\end{equation}
+where $n_{QLL}$ is the mean number of liquid-like water molecules
+within a cylinder of radius $r = 0.6$~nm, $M_{H_{2}O}$ is the molar
+mass of water, $\rho$ is the density of TIP4P at it's melting point
+(0.99 g/cm$^{3}$\cite{Bluhm00,Conde08}), and $N_{A}$ is Avogadro's number.
+Using this metric, Pan \textit{et al.} estimate the onset temperature
+of the QLL (defined as the temperature at which the QLL becomes 0.1 nm
+thick on the basal plane\cite{Conde08}), as well as determine the thickness
+of the QLL on the exposed basal and prismatic surfaces of the ice
+nanocrystals. 
+
+With their definition of onset temperature, they observed bulk
+premelting (a comensurate crystal with an exposed basal surface) at
+100K below the melting temperature of the model. For the nanocrystals,
+they observed an onset temperature at about 90K to 95K below the
+melting point of the nanocrystals. 
+
+% for the water model discussion, copied from text
+High melting temperatures (>400 K) predicted by widely used density
+functional theory (DFT) exchange corelation functionals such as
+Perdew-Burke-Ernzerhof (PBE)\cite{Perdew96} and Becke-Lee- Yang-Parr
+(BLYP)\cite{Becke88,Sprik96} are a further reason to favor force fields over
+DFT.\cite{Yoo09}
+
+%end Pan11 
+
 \subsubsection{The Anomolous Friction of Ice}
 
 
@@ -888,6 +995,12 @@ simulating water, we are still optimizing and searching for geometries
 and distributions of charges and potential sites, mass sites, and many
 other parameters which will reproduce the phase diagram of water in
 closer detail. 
+
+Include a table of parameters for common water models.
+Include a table of properties estimated by water models, Tm, etc.
+
+This is also important for understanding the Appendix about a water
+model construction.
 
 In this section we will discuss the different water models used in the
 literature, and reasons why to use each one. 
