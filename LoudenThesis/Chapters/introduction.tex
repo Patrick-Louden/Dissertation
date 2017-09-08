@@ -195,10 +195,26 @@ disordering. Hayward and NAME developed an algorithm for sampling of
 ice-I$_\mathrm{h}$ crystals.\cite{HaywardXX}
 
 \subsection{Ice/Water Coexistence}
+%%%
+% General introduction to ice/water coexistence
+% Early work in the field, quiescent systems and measures of
+% interfacial width.
+% Problems discovered specific to ice/water coexistence, improper
+% treatment of the electrostatics, coexistence temperatures, etc.
+%
+%%%
+
 % General intro to ice/water coexistence
 Understanding the ice/water interface and the properties of the
 molecules at the interface is important for many areas, including the
-process of nucleation and crystal growth or melt. 
+process of nucleation and crystal growth or melt. Biologically,
+understanding this interface is vital for progression towards
+understanding how antifreeze proteins work. Talk about some popular
+antifreeze proteins, which have been shown to disrupt the hydrogen
+bonding network at the interface. Some have been found to dock on the
+ice surface / interface. A clearer picture of the structure and
+dynamics of the molecules at the ice/water interface can help us
+understand how antifreeze proteins work.
 
 % Omar A. Karim and A.D.J. Haymet ChemPhysLett, 138, 6, (1987) 531
 In one of the first computer simulations of the ice/water interface,
@@ -227,6 +243,44 @@ orientationally still exhibits perturbations due to the
 interface. They observed the same interfacial width using a larger
 system (and the same metric of measure, the density of oxygen sites).
 % End  J.Chem.Phys 89, 11 (1988) 6889
+
+% T. Bryk and A.D.J.Haymet J. Chem. Phys. 117 (2002) 10258
+% make sure I have all of haymets papers.
+The basal and prismatic facets of ice Ih using SPC/E water in
+temperature range of 220 - 240 K and 1 atm. Density, translational,
+orientational, and dynamic order parameters indicate a smooth change
+from ice to bulk liquid, indicative of a diffuse interface. The
+interfaces are observed to be stable at 225 $\pm$ 5K (though this is
+later revisted and shown to be 215K by Vega and others). 
+
+Kusalik \textit{et al.} simulated ice nucleation using the SPC/E model
+in the presence of a large external electric field.\cite{14} Baez and
+Clancy investigated the ice/water interface using non-equilibrium
+molecular dynamics.\cite{15} Without careful treatment of the
+long-range electrostatic portion of the potential energy, sparious ice
+motifs have been found to form, including a quartzlike proton-ordered
+structure not (yet) found in real systems.\cite{16} 
+
+citations 22 through 24 are about antifreeze proteins, steal them for
+broader intro to ice/water coexistence. 
+
+Bryk and Haymet set out to properly treat the long-range Coulomb
+interactions with Ewald summation method, whereas Baez and Clancy
+(also studying basal and prism ice/water interfaces using SPC/E,
+however, switching function at 6 \AA~ which went to zero at 9 \AA~ for
+speed of computation.) 
+
+Ice crystal construction constrained to have zero net dipole and some
+higher order multipoles, using the method employed by Hayward in the
+CF1 paper. I'm betting it's the Hayward and Reimers construction. 
+
+Bryk uses the original parameters of Berendesn's SPC/E model, not the
+updated one?
+
+
+
+
+
 
 
 \subsection{The Surface Premelting of Ice and the Quasi-Liquid Layer}
