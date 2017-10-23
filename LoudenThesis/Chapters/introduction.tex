@@ -277,7 +277,25 @@ CF1 paper. I'm betting it's the Hayward and Reimers construction.
 Bryk uses the original parameters of Berendesn's SPC/E model, not the
 updated one?
 
+%
+%
+%D. Beaglehol, P. Wilson, JPC 1993, 97, 11053-11055
+1993.
 
+Ellipsometry provides a measure of the dielectric constant profile through an interface, so observing the spatial transition yields an interfacial thickness. "Ellipsometry determines the state of polarization of light reflected from an interface and is a sensative tool for the analysis of surface absorbants." At the Brewster angle, the imaginary component of the ratio of the p and s wave reflection amplitudes gives the coefficient of ellipticity, or ellipticity for short. The magnitude and sign of the ellipticity (\rho) helps build a model to describe the transition region of the interface.
+
+They measured a small negative ellipticity at the ice/water interface, changing the thermal gradient over the sample did not change the value of \rho  
+
+~550nm light was used.
+
+Since water molecules are non-spherically symmetric, they are weakly optically anisotropic. For ice, the optic axis lies in the c direction, normal to the basal face (denoted the z-axis here). \epsilon_{x} = 1.7136 and \epsilon_{z} = 1.709, and water of course is isotropic with \epsilon = 1.778, but as water molecules take up orientational order through the transition region, some anisotropy is likely to develop. This is assuming that the outtermost part of the QLL is completely bulk liquid-like, and is not influenced by the underlying ice.
+
+Ellipsometry measurements indicate the surface premelting layer of the basal and prismatic surfaces of ice are both approximately 10 angstroms thick.
+
+The prism QLL was found to have roughly twice as much anisotropy to it
+than the basal does, indicated by the sign of the ellipticity
+measurement.
+% end D. Beaglehol, P. Wilson, JPC 1993, 97, 11053-11055
 
 
 
@@ -732,6 +750,148 @@ vibrational and rotational motions at temperatures well below the bulk
 melting temperature.\cite{Ikeda-Fukazawa04} Their results supported
 the continous variation of structural ordering across the qausi-liquid
 layer observed by the SFG spectroscopy.
+
+% Ding Pan et al. J. Phys. Condens. Matter. 22, 2010, 074209
+DFT calculations of basal and prism surface of ice Ih. Similar surface
+energies obtained, however, both showed a strong dependence on surface
+proton order. The energy for proton-ordering at the surface can
+account for up to 50percent of the total surface energy (significantly
+larger than proton ordering in the bulk < 1 percent), suggesting that
+the thermodynamic ground state of the ice surface will remain proton
+ordered well above the bulk order-disorder temperature of about 72 K.
+
+Nice review of proton order at surfaces studies up to this date.
+``Fletcher [11] appears to have been the first person to consider the
+question of proton disorder at ice Ih surfaces, tackling the question
+theoretically with intuitive heuristic models based on classical
+electrostatics. This led to the suggestion in 1992 that the low energy
+structure for the unreconstructed ice Ih basal surface should be
+proton ordered [11]. This conclusion was arrived at simply on
+electrostatic grounds by considering dipole interactions among nearest
+neighbor dangling OH bonds. Fletcher further suggested that this phase
+would transform in to a proton disordered state at about 30
+K. Likewise the prism surface was predicted to be proton ordered with
+an order–disorder transition temperature of 70 K, close to the bulk
+order–disorder transition temperature of about 72 K. More recently,
+Buch et al used empirical potentials to compare basal faces with
+different proton arrangements [12]. Again proton ordered surfaces were
+predicted to be more stable than disordered ones with Fletcher’s phase
+with alternating rows of dangling OH groups suggested to be the most
+stable. At a similar time we reported an ab initio determination of
+the surface energy of the basal surface of ice Ih along with a
+detailed consideration of the energetics of different proton
+arrangements [13]. Consistent with the studies of Fletcher and Buch et
+al our ab initio calculations predicted low total energy surfaces that
+were considerably more ordered than the bulk''
+
+Pan et al. concluded that the range of energies from proton order
+configurations at the ice Ih surface is more than an order of
+magnitude larger than computed for bulk ice. This indicates a much
+higher order-disorder transition temperature at the surface than
+compared with the bulk (~72 K).
+
+Solutions from a monte carlo simulation of a 2D Ising Model suggest
+that the surface proton order-disorder transition will occur at any
+relevan temperature, i.e., the transition temperature is greater than
+the onset of surface premelting.
+
+On the energy of the bulk ice XI to bulk ice Ih proton order to
+disorder transition, `` The energy difference on the level of
+?5meV/H2O between the lowest energy ordered ice XI structure and the
+disordered ice Ih structures is in the right ballpark for a bulk
+order–disorder transition of about 72 K. At the ice XI–Ih phase
+transition temperature (T), the ordering energy ?E should equal
+T?S,where ?S is the entropy difference between the ordered (ice XI)
+and disordered (ice Ih) phases. In this system the entropy is
+comprised of two parts: vibrational and configurational entropy. The
+vibrational entropy differences between the two phases is expected to
+be almost negligible since the phonon frequencies of ice XI and Ih do
+not differ greatly, as has been seen through comparison of calculated
+phonon dispersion curves of ice XI with experimental phonon dispersion
+curves of ice Ih [36, 37]. Thus the phase transition temperature is
+governed primarily by differences in configurational entropies,
+something which Pauling has shown to be given by Sconf = kB ln( 3 2 )
+= 0.035 meV/(K·H2O) [15].  Hence at the phase transition temperature,
+the configurational entropy contributes 2–3 meV/H2O, which is
+consistent with the ?5meV/H2O total energy difference between the two
+phases. Therefore'' ``Knight et al [17] who neglected the vibrational
+contribution to the entropy and predicted a bulk transition
+temperature of ca. 100 K based on DFT calculations.''
+
+Surface energy is a thermodynamic quantity that affects crystal growth
+and controls crystal shape.
+
+For droplets work ``Makkonen [41] observed that the value for the
+contact angle between a hot water drop (95 ◦C) and the ice surface is
+37◦, and so estimated the interface energy of ice to be roughly 4.8meV
+˚ A−2 (77 mJ m−2)at −25 ◦C.''
+
+
+Pan \textit{et al.} calculated the surface energy, $\gamma$, using an
+\textit{ab initio} approach, through
+\begin{equation}\label{PanSurfaceEnergy}
+\gamma = \frac{E_{tot}^{slab}(n) - nE_{tot}^{bulk}}{2A}
+\end{equation}
+where $E_{tot}^{slab}$ is the total energy of the ice slab obtained
+from their DFT calculations, $n$ is the number of bilayers in the
+slab, and $A$ is the surface area of the exposed slab. The factor of
+two is present to account for the exposure of two surface upon
+cleaving a crystal. The bulk energy per bilayer, $E_{tot}^{bulk}$, is
+extrapolated from calculations with varying number of ice bilayers
+using 
+\begin{equation}
+E_{tot}^{bulk} = E_{tot}^{slab}(n) - E_{tot}^{slab}(n-1).
+\end{equation}
+This relation holds for ice slabs thicker than some critical
+thickness, as the energy of insertion of a bilayer is equivalent to
+that of a bilayer addition of bulk ice.
+
+The surface energies for antiferroelectric ice XI were found to
+converge with variying exchange-correlation functionals on a value of
+about $\gamma_{basal}^{XI} \sim 11 \mathrm{meV \AA^{-2}}$. However,
+the surface energies for ice Ih were observed to be spread over a much
+larger range of values. Values from 12.2 to 18.2
+$\mathrm{meV \AA^{-2}}$ were computed. ``The fact that we do not get a
+unique value for ice Ih is to be expected since, as we know, the
+lattice energy of bulk ice depends on the degree of proton disorder
+within the simulation cell. The interesting finding here is that the
+variations in surface energy for configurations which dif- fer only in
+the degree of proton order by far exceeds the small range of energies
+found in bulk''
+
+For the ice Ih surface bilayers, they find the oxygen to oxygen
+distance do not change much compared to the bulk, the average surface
+oxygen to oxygen distance is 0.02 \AA greater when compared to the
+bulk. This is consistent to experimentally obtained values of 2.77 \AA
+for surface and 2.76 \AA for the bulk at 38~K. (reference 10). Pan observed
+that OH bonds sticking out on the surface moved away slightly from
+their initial position, to ``lean'' away from one another as much as
+possible. 
+
+Initially Fletcher\cite{Fletcher} and later Buch\cite{Buch} observed
+the OH bonds ``dangling'' from the surface play an important role in
+the energetics of the surface. To quantify unique distributions of
+dangling OH bonds, Pan \textit{et al.} calculated an order parameter
+which describes the average separation between dangling OH bonds at
+the surface.
+\begin{equation}
+C_{OH}^{basal} = \frac{1}{N_{OH}}\sum_{i=1}^{N_{OH}}c_{i}
+\end{equation}
+where $N_{OH}$ is the total number of dangling OH bonds presented by
+the two basal surfaces, and $c_{i}$ is the number nearest neighbor
+dangling OH bonds around the $i$th dangling OH bond. Here we see that
+a larger value of $C_{OH}^{basal}$ indicate a more inhomogeneous
+distribution of dangling OH bonds, and that on average the dangling OH
+groups are close together. For a completely random distribution of
+dangling OH bonds, the order parameter will go to $\approx 3$, and the
+smallest value that can be obtained for a non-polar surface is 2.
+
+Plotting surface energy as a function of $C_{OH}$, a linear
+relationship is obtained. This indicates that as the more inhomogenous
+surface dangling OH patterning results in a larger surface energy.
+
+
+%end Pan et al.
 
 \subsection{Thickness of the Premelting Layer}
 Many surface science techniques have been used to quantify the
