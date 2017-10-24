@@ -64,6 +64,35 @@ five elements, earth, wood, metal, fire, and water. The importance of
 water was discovered early in our human history, and it has been
 studied extensively since those early days.  
 
+%How water's properties are encoded in its molecular structure and
+%energies. Chemical Reviews. Brini et al. 2017.
+It has volumetric anomalies-water’s solid (ice) floats on its liquid;
+pressure can melt the solid rather than freezing the liquid; heating
+can shrink the liquid. It has more solid phases than other materials.
+
+Water is highly abundant on Earth, occupying
+$1.4x10^{9} km^{3}$.\cite{2-4} It is the most abundant greenhouse gas
+in the atmosphere, accounting for 40 percent to 70 percent of Earth's
+retention of heat.
+
+All forms of life depend on water.\cite{5,6} Approximately half of the
+volume of every cell is water.\cite{7} Water plays a rich role in
+biochemical processes, where it has been seen to act as a solvent,
+reactant, product, catalyst, chaperone, messenger, and
+controller. Water also plays a dominant role in the complex folding of
+proteins.
+
+Our species is highly dependent on the solubility of gasses in liquid
+water. Beyond the movement of oxygen (O\textsubscript{2}) throughout
+our bodies, much of the oxygen we breathe is produced by sea
+life. These marine plants require carbon dioxide
+(CO\textsubtscript{2}) in order for photosynthesis to produce
+carbohydrates and release oxygen. However, the solubility of gasses in
+water is highly sensative to temperature, pressure, and salinity. 
+
+Water molecules associate with each other relatively
+tightly. Therefore, H2O has relatively high values of surface tension,
+melting point, and boiling point.
 
 \subsection{The Structure of H$_\mathrm{2}$O}
 %
@@ -96,6 +125,24 @@ harder to probe experimentally, but values have been reported ranging
 from 2.2D to 2.9D. 
 
 High accuracy QM calculations on collections of water molecules?
+
+
+This dissertation is a study of water, often in coexistence between
+two of its many phases. The current phase diagram for water is shown
+in figure \ref{fig:phaseDiagram}.
+
+\begin{figure}
+\includegraphics[width=\linewidth]{Figures/PhaseDiagram}
+\caption{\label{fig:phaseDiagram} The phase diagram of
+  water.\cite{Zhang2015} dT_{C}\dP < 0 at the following boundaries:
+  ice-II to ice-V, liquid to ice-I$_\mathrm{h}$, and ice-VII to
+  ice-VIII. Conversely, dT_{C}\dP > 0 at the following boundaries:
+  liquid to vapour, liquid to ice-(V, VI, VII). dT_{C}/dP $\approx$
+  $\inf$ at the ice-(VII, VIII) to ice-X boundary occurring at 60 GPa.
+  dT_{C}/dP $\approx$ 0 at ice-I$_\mathrm{h}$ to ice-XI boundary at
+  low temperatures. }
+\end{figure}
+
 
 \subsubsection{Liquid Water}
 It is this dipole moment polarization in conjunction with hydrogen
@@ -191,8 +238,8 @@ spectroscopy, as well as NMR and laser spectroscopy.\cite{w. F. Kuhs
 From these, a set of 'ice-rules' have been established by Bernal and
 Fowler.\cite{} These rules describe the required metrics for accurate
 crystals of ice-I$_\mathrm{h}$. Residual entropy due to hydrogen
-disordering. Hayward and NAME developed an algorithm for sampling of
-ice-I$_\mathrm{h}$ crystals.\cite{HaywardXX}
+disordering. Hayward and RameiresSP developed an algorithm for
+sampling of ice-I$_\mathrm{h}$ crystals.\cite{HaywardXX}
 
 \subsection{Ice/Water Coexistence}
 %%%
@@ -276,26 +323,89 @@ CF1 paper. I'm betting it's the Hayward and Reimers construction.
 
 Bryk uses the original parameters of Berendesn's SPC/E model, not the
 updated one?
+%end Bryk and A.D.J.Haymet J. Chem. Phys. 117 (2002) 10258
 
-%
-%
-%D. Beaglehol, P. Wilson, JPC 1993, 97, 11053-11055
-1993.
+% Benet, MacDowell, Sanz, PCCP 2014, 16, 22159
+% A study of the ice/water interface using the TIP4P/2005 water model
+Benet \textit{et al.} have measured the interfacial free energy of ice
+Ih in coexistence with liquid water at 248.5~K by using the TIP4P/2005
+water model by analysing the spectrum of capillary fluctuations at the
+interface.\cite{Benet2014} This method was originally described by
+Hoyt \textit{et al.}\cite{Hoyt01}, has been used to calculate the
+interfacial free energy of hard spheres,\cite{14} the Lennard-Jones
+potential,\cite{15} and dipolar fluids.\cite{16}
 
-Ellipsometry provides a measure of the dielectric constant profile through an interface, so observing the spatial transition yields an interfacial thickness. "Ellipsometry determines the state of polarization of light reflected from an interface and is a sensative tool for the analysis of surface absorbants." At the Brewster angle, the imaginary component of the ratio of the p and s wave reflection amplitudes gives the coefficient of ellipticity, or ellipticity for short. The magnitude and sign of the ellipticity (\rho) helps build a model to describe the transition region of the interface.
+In this method, water molecules were labeled as ice-like or
+liquid-like based on local bond order parameters. Next, a discretized
+profile parrallel to the interface (i.e, along the $x$ dimension),
+$h(x_{n})$, was computed for many small bins across the system. These
+resulting profiles were then Fourier-transformed,
+\begin{equation}
+h_{q} = \frac{1}{N}\sum_{n=1}^{N} h(x_{n})e^{iqx_n}
+\end{equation}
+giving an amplitude $h_{q}$ for each wave vector $q$, for each of the
+$N$ total bins across the $x$-dimension. 
 
-They measured a small negative ellipticity at the ice/water interface, changing the thermal gradient over the sample did not change the value of \rho  
+Capillary wave theory provides a relationship between these wave
+vector amplitudes and the interfacial stiffness, $\sigma$ by
+\begin{equation}
+\langle|h_{q}|^{2}\range = \frac{k_{B}T}{A\sigma q^{2}}
+\end{equation}
+where $A$ is taken to be the product of the two simulation box
+dimensions not normal to the interface. Since the interfacial
+stiffness is dependent on both the crystal plane that is exposed to
+the liquid and the direction which the wave vector propogates, we have
+\begin{equation}
+\sigma = \bigg(\gamma (\theta ) + \frac{d^{2}\gamma (\theta )}{d\theta
+^{2}} \bigg)_{\theta = 0} .
+\end{equation}
+Here, $\theta$ is the angle between the average planar ice / water
+interface, and the normal vector of the instantaneous interface. The
+orientational dependence of the interfacial free energy can be written
+as an expansion of the Spherical Harmonics\cite{23}, and will be
+unique for each crystal plane studied. 
 
-~550nm light was used.
+Benet found an orientationally averaged interfacial free energy of
+$27 \mathrm{mN} \mathrm{m}^{-1}$, which agrees well with recent
+estimates using size cluster analysis by Sanz \textit{et
+  al.}\cite{Sanz13}. Benet \textit{et al.} were able to estimate the
+free energy of different planes (in coexistence with liquid), and
+obtained values of 27 $\pm$ 2, 28 $\pm$ 2, and 28 $\pm$ 2
+$\mathrm{mN} \mathrm{m}^{-1}$ for the basal, prismatic, and secondary
+prismatic surfaces, respectively. They also observed an interfacial
+thickness of about four to five molecular diameters, which was found
+to be (in)sensitive to the crystal face exposed to the liquid. Lastly,
+when the basal face is exposed to the liquid, they observed local
+areas of hexagonal ice and cubic ice within the interface. This
+observation is not unique to this study, other simulations and
+experiments have shown hexgonal ice to grow with a mixed Ic-Ih
+stacking.\cite{43-47}
 
-Since water molecules are non-spherically symmetric, they are weakly optically anisotropic. For ice, the optic axis lies in the c direction, normal to the basal face (denoted the z-axis here). \epsilon_{x} = 1.7136 and \epsilon_{z} = 1.709, and water of course is isotropic with \epsilon = 1.778, but as water molecules take up orientational order through the transition region, some anisotropy is likely to develop. This is assuming that the outtermost part of the QLL is completely bulk liquid-like, and is not influenced by the underlying ice.
+The interfacial free energy between ice and water, $\gamma_{iw}$, is a
+crucial parameter for ice nucleation and crystal growth.\cite{1,2}
+Experimentally obtained values of $\gamma_{iw}$ range from 25 to 35
+$\mathrm{mN} \mathrm{m}^{-1}$.\cite{1} This spread stems from the
+problem that there are no current methods for obtaining a robust
+measurement. Computer simulations have attempted to quantify
+$\gamma_{iw}$, and predictions have been made for a series of water
+models, some with\cite{4} and some without\cite{5} taking full
+electrostatic interactions into account. These studies used a varient
+of the cleaving method,\cite{6} and estimated $\gamma_{iw}$ using the
+TIP4P, TIP4P-Ew, and TIP5P-E water models.
 
-Ellipsometry measurements indicate the surface premelting layer of the basal and prismatic surfaces of ice are both approximately 10 angstroms thick.
+Previously, $\gamma_{iw}$ has been estimated using the TIP4P/2005
+water model and the method pruposed by Bai and Li, studying the
+crystal-melt interface of a Lennard-Jones system.\cite{10} In the
+method of Bai and Li, the critical size of crystalline clusters are
+measured, and by extension of classical nucleation theory
+$\gamma_{iw}$ can be obtained.\cite{11,12} This result produces an
+orientationally averaged estimate of $\gamma_{iw}$, which does not
+provide any information on the dependency of $\gamma_{iw}$ on the
+orienation of the crystal.
 
-The prism QLL was found to have roughly twice as much anisotropy to it
-than the basal does, indicated by the sign of the ellipticity
-measurement.
-% end D. Beaglehol, P. Wilson, JPC 1993, 97, 11053-11055
+
+
+%end Benet, MacDowell, Sanz, PCCP 2014, 16, 22159
 
 
 
@@ -347,6 +457,25 @@ transition.''\cite{R. Lipowsky, Phys. Rev. Lett. 49, 1575 (1982).}
 
 \subsubsection{Previous Investigations of the QLL}
 \subsubsection{QLL Width}
+%
+%
+%D. Beaglehol, P. Wilson, JPC 1993, 97, 11053-11055
+1993.
+
+Ellipsometry provides a measure of the dielectric constant profile through an interface, so observing the spatial transition yields an interfacial thickness. "Ellipsometry determines the state of polarization of light reflected from an interface and is a sensative tool for the analysis of surface absorbants." At the Brewster angle, the imaginary component of the ratio of the p and s wave reflection amplitudes gives the coefficient of ellipticity, or ellipticity for short. The magnitude and sign of the ellipticity (\rho) helps build a model to describe the transition region of the interface.
+
+They measured a small negative ellipticity at the ice/water interface, changing the thermal gradient over the sample did not change the value of \rho  
+
+~550nm light was used.
+
+Since water molecules are non-spherically symmetric, they are weakly optically anisotropic. For ice, the optic axis lies in the c direction, normal to the basal face (denoted the z-axis here). \epsilon_{x} = 1.7136 and \epsilon_{z} = 1.709, and water of course is isotropic with \epsilon = 1.778, but as water molecules take up orientational order through the transition region, some anisotropy is likely to develop. This is assuming that the outtermost part of the QLL is completely bulk liquid-like, and is not influenced by the underlying ice.
+
+Ellipsometry measurements indicate the surface premelting layer of the basal and prismatic surfaces of ice are both approximately 10 angstroms thick.
+
+The prism QLL was found to have roughly twice as much anisotropy to it
+than the basal does, indicated by the sign of the ellipticity
+measurement.
+% end D. Beaglehol, P. Wilson, JPC 1993, 97, 11053-11055
 \subsubsection{QLL Structure and Dynamics}
 
 % Arrhenius analysis of anisotropic surface self-diffusion on the
@@ -630,91 +759,7 @@ DFT.\cite{Yoo09}
 
 %end Pan11 
 
-\subsubsection{The Anomolous Friction of Ice}
 
-
-
-For ice-I$_\mathrm{h}$, the temperature at which surface molecule
-vibrations become prevelent at has been reported between 200K and
-271K. Experimentally the surface molecules have been probed using a
-variety of techniques and have determined slightly different
-temperatures at which these internal vibrations become prevelent.
-
-Both experiment and theory agree that the thickness of the QLL on ice
-increases approaching T$_\mathrm{m}$, and values have been reported
-between 2 nm to over 45 nm at 271~K. Part of the reason for the
-discrepency is due to the definition of what molecules constitute a
-QLL, as well as the probe used to measure the molecules. Most
-experimental measurements observed a gradual and continuous increase
-in the QLL width with increasing temperature to T$_\mathrm{m}$,
-however, simulations by Kreos \textit{et al.} predicted the melting
-occurs in a bilayer-to-bilayer manner. This result was recently
-confirmed by Sa'nchez \textit{et al.}, where they probed the QLL
-molecules using sum frequency generation spectroscopy to probe the
-hydrogen-bonded OH stretch frequency between temperatures of 235~K
-and 273~K, the temperature range where many agree the surface
-premelting occurs at.
-
-% PRL 117, 096101 (2016) Summary
-% Premelting-Induced Smoothening of the Ice-Vapor Interface
-Benet \textit{et al.} computer simulations of the QLL of ice fromed on
-the primary prismatic facet of an ice I$_\mathrm{h}$ crystal at the
-ice-vapor interface close to the ice I$_\mathrm{h}$-liquid-vapor
-triple point of water.\cite{Benet17} They found that close to the
-triple point(2K below it), the QLL on the prismatic face behaves as
-two independent interfaces, the ice-water interface and at further
-distances normal to the surface, the water-vapor interface. This
-result was prominent for small wavelengths, but observing over large
-wavelengths the two interfaces smooth into one gradual interface at
-long wavelengths.
-
-Ice crystal morphologies grown from bulk vapor change from plates, to
-columns, to plates, and back to columns as the temperature is cooled
-down below the triple point, and dendrites can form at high
-saturations.\cite{K. G. Libbrecht, Rep. Prog. Phys. 68, 855 (2005).}
-The varying crystalline morphologies are attributed to the crossover
-in growth rates of the basal and prismatic faces, however, we do not
-currently understand what structural transformation at the surface to
-drive the crossover in growth rates.\cite{1,2,4,5} Kuroda and Lacmann
-have attributed the crossover in crystal growth rates to be due to the
-fact that QLL formation occurs at different temperatures for different
-exposed crystal facets.\cite{6} (Name and Name have determined QLL
-formation to occur at T1 and T2 for basal and prismatic respectively,
-where the higher energy pyramidal and secondary prism surface exhibit
-premelting at T3 and T4.)
-
-Experimental observations of the QLL on ice\cite{8-14}, though the
-presence of impourities has a very large impact on the surface
-structure.\cite{12,15} Due to the large perturbations made by these
-impurities, and the vast array of probes used to study the QLL,
-properties such as the premelting temperature and thickness of the QLL
-is still highly debated.\cite{8} 
-
-Benet \textit{et al.} used the TIP4P/2005 water model. Interrogating
-water molecules to determine if they are a part of the QLL or that of
-ice was performed using the q$_{6}$ order parameter\cite{42}, which
-was later optimized to differentiate betwee icelike and waterlike
-molecules via correlations of the second nearest neighbors.\cite{43}
-Using this parameter, Benet observed an average QLL thickness of
-0.9~nm, agreeing with experimental observations\cite{12,14} and
-computer simulations.\cite{38-40} Using the q$_{6}$ order parameter,
-the ice-liquid and liquid-vapor interfaces were determined, and each
-surface was Fourier transformed to give the spectrum of surface
-fluctuations.
-
-Analyzing the Fourier transformed surfaces, they found that for QLL
-films less than 1 nm thick, the ice-QLL and QLL-vapor interfaces
-fluctuated independently, and were hardly distinguishable from those
-of bulk water-vapor interfaces. sine-Gordon model of the solid-liquid
-interface\cite{20,45}
- % End Summary 
-
- % Melting the ice one layer at a time, PNAS commentary (2017) 114, 2,
- % 195-197. Steal the citations from this paper. Seems like there are
- % good things to talk about from this paper to in relation to the
- % recent PNAS paper.
-
- % Surface Premelting of Ice, J.Phys.Chem.C. 111,27 (2007) 9631
 \subsection{Structure of Ice Surface}
 To begin to understand the surface premelting of ice, we must first
 understand what this surface looks like. A wide variety of
@@ -790,7 +835,8 @@ magnitude larger than computed for bulk ice. This indicates a much
 higher order-disorder transition temperature at the surface than
 compared with the bulk (~72 K).
 
-Solutions from a monte carlo simulation of a 2D Ising Model suggest
+Solutions from a monte carlo simulation of a 2D Ising Model which
+accurately reproduces surface energies from DFT calculations suggest
 that the surface proton order-disorder transition will occur at any
 relevan temperature, i.e., the transition temperature is greater than
 the onset of surface premelting.
@@ -890,8 +936,11 @@ Plotting surface energy as a function of $C_{OH}$, a linear
 relationship is obtained. This indicates that as the more inhomogenous
 surface dangling OH patterning results in a larger surface energy.
 
-
+There is a nice walk through how to model the surface through classic
+electrostatics, not sure if it's worth covering here.
 %end Pan et al.
+
+
 
 \subsection{Thickness of the Premelting Layer}
 Many surface science techniques have been used to quantify the
@@ -1033,6 +1082,94 @@ on the surface at XX degrees Celcius.)
  and trailing edge of sliders.
 
  % End Summary
+
+
+\subsubsection{The Anomolous Friction of Ice}
+
+
+
+For ice-I$_\mathrm{h}$, the temperature at which surface molecule
+vibrations become prevelent at has been reported between 200K and
+271K. Experimentally the surface molecules have been probed using a
+variety of techniques and have determined slightly different
+temperatures at which these internal vibrations become prevelent.
+
+Both experiment and theory agree that the thickness of the QLL on ice
+increases approaching T$_\mathrm{m}$, and values have been reported
+between 2 nm to over 45 nm at 271~K. Part of the reason for the
+discrepency is due to the definition of what molecules constitute a
+QLL, as well as the probe used to measure the molecules. Most
+experimental measurements observed a gradual and continuous increase
+in the QLL width with increasing temperature to T$_\mathrm{m}$,
+however, simulations by Kreos \textit{et al.} predicted the melting
+occurs in a bilayer-to-bilayer manner. This result was recently
+confirmed by Sa'nchez \textit{et al.}, where they probed the QLL
+molecules using sum frequency generation spectroscopy to probe the
+hydrogen-bonded OH stretch frequency between temperatures of 235~K
+and 273~K, the temperature range where many agree the surface
+premelting occurs at.
+
+% PRL 117, 096101 (2016) 
+% Premelting-Induced Smoothening of the Ice-Vapor Interface
+Benet \textit{et al.} computer simulations of the QLL of ice fromed on
+the primary prismatic facet of an ice I$_\mathrm{h}$ crystal at the
+ice-vapor interface close to the ice I$_\mathrm{h}$-liquid-vapor
+triple point of water.\cite{Benet2016} They found that close to the
+triple point(2K below it), the QLL on the prismatic face behaves as
+two independent interfaces, the ice-water interface and at further
+distances normal to the surface, the water-vapor interface. This
+result was prominent for small wavelengths, but observing over large
+wavelengths the two interfaces smooth into one gradual interface at
+long wavelengths.
+
+Ice crystal morphologies grown from bulk vapor change from plates, to
+columns, to plates, and back to columns as the temperature is cooled
+down below the triple point, and dendrites can form at high
+saturations.\cite{K. G. Libbrecht, Rep. Prog. Phys. 68, 855 (2005).}
+The varying crystalline morphologies are attributed to the crossover
+in growth rates of the basal and prismatic faces, however, we do not
+currently understand what structural transformation at the surface to
+drive the crossover in growth rates.\cite{1,2,4,5} Kuroda and Lacmann
+have attributed the crossover in crystal growth rates to be due to the
+fact that QLL formation occurs at different temperatures for different
+exposed crystal facets.\cite{6} (Name and Name have determined QLL
+formation to occur at T1 and T2 for basal and prismatic respectively,
+where the higher energy pyramidal and secondary prism surface exhibit
+premelting at T3 and T4.)
+
+Experimental observations of the QLL on ice\cite{8-14}, though the
+presence of impourities has a very large impact on the surface
+structure.\cite{12,15} Due to the large perturbations made by these
+impurities, and the vast array of probes used to study the QLL,
+properties such as the premelting temperature and thickness of the QLL
+is still highly debated.\cite{8} 
+
+Benet \textit{et al.} used the TIP4P/2005 water model. Interrogating
+water molecules to determine if they are a part of the QLL or that of
+ice was performed using the q$_{6}$ order parameter\cite{42}, which
+was later optimized to differentiate betwee icelike and waterlike
+molecules via correlations of the second nearest neighbors.\cite{43}
+Using this parameter, Benet observed an average QLL thickness of
+0.9~nm, agreeing with experimental observations\cite{12,14} and
+computer simulations.\cite{38-40} Using the q$_{6}$ order parameter,
+the ice-liquid and liquid-vapor interfaces were determined, and each
+surface was Fourier transformed to give the spectrum of surface
+fluctuations.
+
+Analyzing the Fourier transformed surfaces, they found that for QLL
+films less than 1 nm thick, the ice-QLL and QLL-vapor interfaces
+fluctuated independently, and were hardly distinguishable from those
+of bulk water-vapor interfaces. sine-Gordon model of the solid-liquid
+interface\cite{20,45}
+% end PRL 117, 096101 (2016)
+
+ % Melting the ice one layer at a time, PNAS commentary (2017) 114, 2,
+ % 195-197. Steal the citations from this paper. Seems like there are
+ % good things to talk about from this paper to in relation to the
+ % recent PNAS paper.
+
+ % Surface Premelting of Ice, J.Phys.Chem.C. 111,27 (2007) 9631
+
 
 
 \subsection{Friction at Ice/Water Interfaces}
