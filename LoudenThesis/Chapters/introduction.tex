@@ -83,10 +83,10 @@ controller. Water also plays a dominant role in the complex folding of
 proteins.
 
 Our species is highly dependent on the solubility of gasses in liquid
-water. Beyond the movement of oxygen (O\textsubscript{2}) throughout
+water. Beyond the movement of oxygen (O$_{2}$) throughout
 our bodies, much of the oxygen we breathe is produced by sea
 life. These marine plants require carbon dioxide
-(CO\textsubtscript{2}) in order for photosynthesis to produce
+(CO$_{2}$) in order for photosynthesis to produce
 carbohydrates and release oxygen. However, the solubility of gasses in
 water is highly sensative to temperature, pressure, and salinity. 
 
@@ -220,7 +220,7 @@ in the gas phase, water adopts a 'bent' like geometry, with an HOH
 bond angle of about 104.5 degrees. The oxygen-hydrogen bond length as
 computed by high accuracy quantum mechanical calculations gives 1
 \AA~. These bond lengths and bend angles are an equilibrium value, as
-they are constantly vibrating. Even at -273.15 degrees Celcius (0
+they are constantly vibrating. Even at $-$273.15 degrees Celcius (0
 Kelvin) some residual vibrations remain. This is described as a
 zero-point energy, and has considerable implications for the potential
 energy of the molecules. 
@@ -248,12 +248,12 @@ in figure \ref{fig:phaseDiagram}.
 \begin{figure}
 \includegraphics[width=\linewidth]{Figures/PhaseDiagram}
 \caption{\label{fig:phaseDiagram} The phase diagram of
-  water.\cite{Zhang2015} dT_{C}\dP < 0 at the following boundaries:
+  water.\cite{Zhang2015} dT_{C} \ dP $<$ 0 at the following boundaries:
   ice-II to ice-V, liquid to ice-I$_\mathrm{h}$, and ice-VII to
-  ice-VIII. Conversely, dT_{C}\dP > 0 at the following boundaries:
-  liquid to vapour, liquid to ice-(V, VI, VII). dT_{C}/dP $\approx$
+  ice-VIII. Conversely, dT_{C} \ dP $>$ 0 at the following boundaries:
+  liquid to vapour, liquid to ice-(V, VI, VII). dT_{C} \ dP $\approx$
   $\inf$ at the ice-(VII, VIII) to ice-X boundary occurring at 60 GPa.
-  dT_{C}/dP $\approx$ 0 at ice-I$_\mathrm{h}$ to ice-XI boundary at
+  dT_{C} \ dP $\approx$ 0 at ice$-$I$_\mathrm{h}$ to ice-XI boundary at
   low temperatures. }
 \end{figure}
 
@@ -463,7 +463,7 @@ $N$ total bins across the $x$-dimension.
 Capillary wave theory provides a relationship between these wave
 vector amplitudes and the interfacial stiffness, $\sigma$ by
 \begin{equation}
-\langle|h_{q}|^{2}\range = \frac{k_{B}T}{A\sigma q^{2}}
+\langle |h_{q}|^{2} \range = \frac{k_{B}T}{A \sigma q^{2}}
 \end{equation}
 where $A$ is taken to be the product of the two simulation box
 dimensions not normal to the interface. Since the interfacial
@@ -576,9 +576,9 @@ transition.''\cite{R. Lipowsky, Phys. Rev. Lett. 49, 1575 (1982).}
 %D. Beaglehol, P. Wilson, JPC 1993, 97, 11053-11055
 1993.
 
-Ellipsometry provides a measure of the dielectric constant profile through an interface, so observing the spatial transition yields an interfacial thickness. "Ellipsometry determines the state of polarization of light reflected from an interface and is a sensative tool for the analysis of surface absorbants." At the Brewster angle, the imaginary component of the ratio of the p and s wave reflection amplitudes gives the coefficient of ellipticity, or ellipticity for short. The magnitude and sign of the ellipticity (\rho) helps build a model to describe the transition region of the interface.
+Ellipsometry provides a measure of the dielectric constant profile through an interface, so observing the spatial transition yields an interfacial thickness. "Ellipsometry determines the state of polarization of light reflected from an interface and is a sensative tool for the analysis of surface absorbants." At the Brewster angle, the imaginary component of the ratio of the p and s wave reflection amplitudes gives the coefficient of ellipticity, or ellipticity for short. The magnitude and sign of the ellipticity ($\rho$) helps build a model to describe the transition region of the interface.
 
-They measured a small negative ellipticity at the ice/water interface, changing the thermal gradient over the sample did not change the value of \rho  
+They measured a small negative ellipticity at the ice/water interface, changing the thermal gradient over the sample did not change the value of $\rho$  
 
 ~550nm light was used.
 
@@ -591,6 +591,60 @@ than the basal does, indicated by the sign of the ellipticity
 measurement.
 % end D. Beaglehol, P. Wilson, JPC 1993, 97, 11053-11055
 \subsubsection{QLL Structure and Dynamics}
+
+%Anisotropy in structural phase transitions at ice surfaces: a
+%molecular dynamics stdy. H. Nada and Y. Furukawa, 1997, Applied
+%Surface Science, 121/122, 445-447. Nada1997
+720 water molecules in each ice slab, exposing the basal and prismatic
+surfaces. basal system was (22.4 x 23.3 x 43.8) \AA and the prismatic
+system was (22.4 x 21.9 x 46.6) \AA. The TIP4P water model was
+used. Simulations were performed between temperatures of 220 and 250
+K, in incrementes of 5 K. NVT simulations performed. To estimate the
+thickness of the quasi-liquid layer, root mean square fluctuations in
+the oxygen-oxygen length between molecules was calculated for bins of
+molecules normal to the interface.
+\begin{equation}\label{eqNada1997-1}
+\delta = \frac{2}{n(n-1)} \sum_{i<j}^{n}
+\frac{\sqrt{<r_{ij}^{2}>-<r_{ij}>^{2}}}{<r_{ij}>}
+\end{equation}
+Here, $n$ denotes the number of water molecules, $r_{ij}$ the distance
+between oxygen atoms of water molecules $i$ and $j$ respectively, and
+the angle brackets denote a times average. For a slice of molecules
+with a $\delta \ge 0.1$, they are denoted as satisfying the criteria
+to be a quasi liquid layer. This criteria is known as the Linemann
+criterion (ref. 11 therein). Nada and Furukawa estimated the width of
+the QLL to be about 11.5 \AA for the basal ice/vapor interface, and 9
+\AA for the prismatic interface, respectively. They also observe
+increasing QLL thickness with increasing temperature. Also, for low
+temperatures, they observed the prismatic surface having a thicker
+QLL, while at higher temperatures, the basal QLL was predicted to be
+thicker, with the transition occurring around 235~K. \cite{Nada1997}
+%end Nada1997
+
+% Anisotropic Surface Melting of an Ice Crystal and its Relationship
+% to Growth Forms. Y. Furukawa and H. Nada. J. Phys. Chem. B 1997,
+% 101, 6167-6170.
+Experiments have shown that anisotropic surface mleting occurs on the
+surface of the basal and prismatic faces of an ice crystal, just below
+the melting point. That is, at temperatures approaching the melting
+point, the basal QLL is thicker than the prismatic QLL. 
+
+A nice summary of ellipsometry measurements is given in the
+intro. References 12 and 14 therein, simultaneously measured both the
+thickness of the QLL as well as the index of refraction of the
+transition layer on the ice surface using null elipsometry (what is
+null elipsometry). From -2 degrees Celcius, the thickness of the QLL
+steeply increased with increasing temperature. The index of refraction
+was found to be 1.330 (which converts to a density of 991
+$kg/m^{3}$. Comparitively, the index of refraction for water is 1.333
+and bulk ice is 1.308. The QLL thickness of the prismatic facet was
+found to be proportional to $delta T ^{-1/3}$ above -2 degrees
+celcius, while the basal temperature dependence was much steeper. They
+also observed a flat facet at the melting point for the basal face,
+however, the prismatic facet exhibited a rounded surface at -2C. Thus
+a roughening transition is beleived to occur on the prismatic facet
+while not on the basal facet.
+%end Furukawa1997
 
 % Arrhenius analysis of anisotropic surface self-diffusion on the
 % prismatic facet of ice. Gladich11, PCCP (2011), 13, 19960-19969
