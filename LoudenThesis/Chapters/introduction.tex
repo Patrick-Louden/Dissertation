@@ -248,12 +248,12 @@ in figure \ref{fig:phaseDiagram}.
 \begin{figure}
 \includegraphics[width=\linewidth]{Figures/PhaseDiagram}
 \caption{\label{fig:phaseDiagram} The phase diagram of
-  water.\cite{Zhang2015} dT_{C} \ dP $<$ 0 at the following boundaries:
+  water.\cite{Zhang2015} dT$_{C}$ / dP $<$ 0 at the following boundaries:
   ice-II to ice-V, liquid to ice-I$_\mathrm{h}$, and ice-VII to
-  ice-VIII. Conversely, dT_{C} \ dP $>$ 0 at the following boundaries:
-  liquid to vapour, liquid to ice-(V, VI, VII). dT_{C} \ dP $\approx$
+  ice-VIII. Conversely, dT$_{C}$ / dP $>$ 0 at the following boundaries:
+  liquid to vapour, liquid to ice-(V, VI, VII). dT$_{C}$ / dP $\approx$
   $\inf$ at the ice-(VII, VIII) to ice-X boundary occurring at 60 GPa.
-  dT_{C} \ dP $\approx$ 0 at ice$-$I$_\mathrm{h}$ to ice-XI boundary at
+  dT$_{C}$ / dP $\approx$ 0 at ice-I$_\mathrm{h}$ to ice-XI boundary at
   low temperatures. }
 \end{figure}
 
@@ -354,6 +354,64 @@ Fowler.\cite{} These rules describe the required metrics for accurate
 crystals of ice-I$_\mathrm{h}$. Residual entropy due to hydrogen
 disordering. Hayward and RameiresSP developed an algorithm for
 sampling of ice-I$_\mathrm{h}$ crystals.\cite{HaywardXX}
+
+\subsubsection{Residual Entropy of Ice}
+If we further consider the Bernal-Fowler ice rules, we see that the
+hydrogen arrangement in ice I$_\mathrm{h}$ is not unique. In 1935,
+Linus Pauling argued that any arrangements of hydrogens which
+satisfies the ice rules is valid and has equal probability of
+occuring since each unique arrangement has the same energy,
+\textit{i.e.} they are degenerate configurations. Due to this, he
+predicted ice I$_\mathrm{h}$ to have a \textit{residual entropy}, that is, a
+non-vanishing positive entropy ($S_{0}$) at zero Kelvin. This entropy
+can be computed from Boltmann's equation of statistical mechanics,
+\begin{equation}\label{Boltzmann-W}
+S = k_{B}~ln(W)
+\end{equation}
+where $k_{B}$ is Boltzmann's constant and $W$ is the number of
+equivalent arrangements of the molecules. Pauling estimated the number
+of configurations in two separate ways.\cite{Pauling1935} First, we
+consider that there are possible six ways to orient a water molecule
+within a tetrahedral structure formed by neighboring molecules while
+satisfying ice rule number NUM. If we give each water molecule one of
+these six orientations at random, there is then a 1/2 probability of
+having a hydrogen between two oxygens, thus there is a 1/4 chance of
+satisfying ice rule NUM, that there is exactly one hydrogen between
+every two oxygens in the lattice. The resulting number of correct
+possible arrangements of $N$ water molecules is
+\begin{equation} \label{Pauling-1}
+W_{Pauling} = (6/4)^{N} = (3/2)^{N}.
+\end{equation}   
+Pauling arrived at the same result by a second construction. If we
+ignore ice rule NUM, and only enforce there to be a single Hydrogen
+between each Oxygen in the lattice, there are $2^{2N}$ configurations
+(since there are $2N$ bonds in the network). For each Oxygen atom,
+here are $2^{4} = 16$ possible arrangements for the Hydrogens, 10 of
+which are ruled out by ice rule NUM, as they result in non-intact
+molecules. That is, they form structures of (H$_{4}$O)$^{2+}$,
+(H$_{3}$O)$^{+}$, (HO)$^{-}$, and O$^{2-}$. Therefore, there are only
+6/16 possible configurations allowed for placing Hydrogens around each
+Oxygen. This gives a total number of configurations as,
+\begin{equation}
+W_{Pauling} = 2^{2N}(6/16)^{N} = (3/2)^{N}.
+\end{equation}
+Using these results with equation \ref{eq:Boltzmann-W}, the residual
+entropy follows as
+\begin{equation}
+S_{0} = k_{B}Nln(3/2) = Rln(3/2)
+\end{equation}
+where $R$ is the molar gas constant, $R = 8.31447 J
+mol^{-1}K^{-1}$. This gives a residual entropy of 
+\begin{equation}
+S_{0} = 3.3712 J mol^{-1}K^{-1} = 0.80574 cal deg^{-1} mol^{-1}.
+\end{equation}
+The residual entropy has been further investigated by Berg \textit{et
+  al.} who obtained $S_{0} \approx 0.81550 \pm 0.00021 cal deg^{-1}
+mol^{-1}$ by means of multicanonical simulations.\cite{Berg2007} This
+result was found to be in good agreement with a series expansion
+method by Nagle \textit{et al.}\cite{Nagle1966}, as well as Giaque and
+Stouts calorimetry experiments which estimated $S_{0} = 0.82 \pm 0.05
+cal deg^{-1} mol^{-1}$.\cite{Giaque1936} 
 
 \subsection{Ice/Water Coexistence}
 %%%
@@ -463,7 +521,7 @@ $N$ total bins across the $x$-dimension.
 Capillary wave theory provides a relationship between these wave
 vector amplitudes and the interfacial stiffness, $\sigma$ by
 \begin{equation}
-\langle |h_{q}|^{2} \range = \frac{k_{B}T}{A \sigma q^{2}}
+\langle |h_{q}|^{2} \rangle = \frac{k_{B}T}{A \sigma q^{2}}
 \end{equation}
 where $A$ is taken to be the product of the two simulation box
 dimensions not normal to the interface. Since the interfacial
@@ -582,7 +640,15 @@ They measured a small negative ellipticity at the ice/water interface, changing 
 
 ~550nm light was used.
 
-Since water molecules are non-spherically symmetric, they are weakly optically anisotropic. For ice, the optic axis lies in the c direction, normal to the basal face (denoted the z-axis here). \epsilon_{x} = 1.7136 and \epsilon_{z} = 1.709, and water of course is isotropic with \epsilon = 1.778, but as water molecules take up orientational order through the transition region, some anisotropy is likely to develop. This is assuming that the outtermost part of the QLL is completely bulk liquid-like, and is not influenced by the underlying ice.
+Since water molecules are non-spherically symmetric, they are weakly
+optically anisotropic. For ice, the optic axis lies in the c
+direction, normal to the basal face (denoted the z-axis
+here). $\epsilon_{x}$ = 1.7136 and $\epsilon_{z}$ = 1.709, and water
+of course is isotropic with $\epsilon$ = 1.778, but as water molecules
+take up orientational order through the transition region, some
+anisotropy is likely to develop. This is assuming that the outtermost
+part of the QLL is completely bulk liquid-like, and is not influenced
+by the underlying ice.
 
 Ellipsometry measurements indicate the surface premelting layer of the basal and prismatic surfaces of ice are both approximately 10 angstroms thick.
 
@@ -643,7 +709,22 @@ celcius, while the basal temperature dependence was much steeper. They
 also observed a flat facet at the melting point for the basal face,
 however, the prismatic facet exhibited a rounded surface at -2C. Thus
 a roughening transition is beleived to occur on the prismatic facet
-while not on the basal facet.
+while not on the basal facet.\cite{Furukawa1997} 
+
+Current work, TIP4P water model for 720 water molecules. At 250~K, the
+basal face has a thinner QLL than the prismatic. This turns over at
+260~K where they are approximately equal width, and at warmer
+temperatures the basal is observed to have a thicker QLL. Furukawa and
+Nada used the $S$ order parameter of Karim and Haymet which depends on
+the orientational ordering of neighboring molecules.\cite{Karim1988}
+This parameter is unity for an ordered arrangement of water molecules
+in an ice crystal, and $\approx$ 0.3 for a random
+arrangement. Furukawa and Nada defined QLL to be present only if a
+slice of water molecules had $S \le 0.1$. References 18 and 22 therein
+describe the basal/water interface as being smooth, while the
+prismatic/water interface as being diffuse. In addition, reference 22
+shows that the basal facet grows in a layer-by-layer process while the
+prismatic facet grows by a collective incorporation process. 
 %end Furukawa1997
 
 % Arrhenius analysis of anisotropic surface self-diffusion on the
@@ -734,7 +815,7 @@ the number of liquid-like quasi-liquid layer molecule
 with box dimensions of $L_\mathrm{x}L_\mathrm{y}\delta$,
 \begin{equation}
 \delta =
-\frac{N_\mathrm{LL}M}{2\rhoN_\mathrm{A}L_\mathrm{x}L_\mathrm{y}}
+\frac{N_\mathrm{LL}M}{2\rho N_\mathrm{A}L_\mathrm{x}L_\mathrm{y}}
 \end{equation}
 where $M$ is the molar mass of water, $N_{A}$ is Avogadro's number,
 and $\rho$ is the density of liquid water; the factor of two accounts for
@@ -809,7 +890,7 @@ diffusivity measured by Price \textit{et al.}. However, the
 supercooled bulk liquid simulations predict a negative Arrhenius
 curvature, implying the activation energy of diffusion decreases with
 increasing temperature, opposite of that observed by Price \textit{et
-  al.} and predicted by Gladich \texit{et al.}. Given the difference
+  al.} and predicted by Gladich \textit{et al.}. Given the difference
 in sign for the estimated activation energies, it is clear the
 mechanism predicted in each case is drastically different. 
 

@@ -19,13 +19,13 @@
 % \usepackage{tablefootnote}
 % \usepackage{mathptmx}
 
-% \newcommand*{\citen}[1]{%
-%   \begingroup
-%     \romannumeral-`\x % remove space at the beginning of \setcitestyle
-%     \setcitestyle{numbers}%
-%     \cite{#1}%
-%   \endgroup   
-% }
+\newcommand*{\citen}[1]{%
+  \begingroup
+    \romannumeral-`\x % remove space at the beginning of \setcitestyle
+    \setcitestyle{numbers}%
+    \cite{#1}%
+  \endgroup   
+}
 
 % \title[Friction at ice-I$_\mathrm{h}$ / water interfaces]{Friction at
 %   ice-I$_\mathrm{h}$ / water interfaces is governed by solid / liquid
@@ -43,7 +43,7 @@
 % \center\includegraphics[width=2.5in]{TOC.pdf} 
 % \end{tocentry}
 
-\chapter{FRICTION AT ICE-I$_\MATHRM{H}$ / WATER INTERFACES IS GOVERNED BY SOLID / LIQUID HYDROGEN-BONDING}
+\chapter{FRICTION AT ICE-I$_\mathrm{h}$ / WATER INTERFACES IS GOVERNED BY SOLID / LIQUID HYDROGEN-BONDING}
 
 \begin{abstract}
 Non-equilibrium molecular dynamics simulations of solid / liquid
@@ -634,7 +634,7 @@ several molecular layers before reaching the solid. Thus a new
 friction coefficient must be defined to describe these interfaces.
 
 \begin{figure}
-\includegraphics[width=\linewidth]{slipLengthPlot}
+\includegraphics[width=\linewidth]{Figures/slipLengthPlot}
 \caption{\label{fig:slipLength} A sketch of transverse velocity
   profiles, $v_x(z)$, for interfaces in slip (top), no-slip (middle),
   and negative slip boundary conditions (bottom).  The location of the
@@ -1275,16 +1275,16 @@ ice during shear.
 % }
 
 
-\title{Friction at ice-I$_\mathrm{h}$ / water interfaces is governed
-  by solid-liquid hydrogen-bonding} 
-\author{Patrick B. Louden}
-\author{J. Daniel Gezelter} \email{gezelter@nd.edu}
-\affiliation{Department of Chemistry and Biochemistry, University of
-  Notre Dame, Notre Dame, IN 46556} 
+% \title{Friction at ice-I$_\mathrm{h}$ / water interfaces is governed
+%   by solid-liquid hydrogen-bonding} 
+% \author{Patrick B. Louden}
+% \author{J. Daniel Gezelter} \email{gezelter@nd.edu}
+% \affiliation{Department of Chemistry and Biochemistry, University of
+%   Notre Dame, Notre Dame, IN 46556} 
 
-\keywords{ice; water; interfaces; friction; hydrogen bonding}
+% \keywords{ice; water; interfaces; friction; hydrogen bonding}
 
-\begin{document}
+% \begin{document}
 
 \section{Overview}
 The supporting information contains further details about the model
@@ -1475,5 +1475,4 @@ occupying the channels.
   Fig. \ref{fig:Pyrorient}.}
 \end{figure}
 %End z-orientation times                                                           
-\end{document}
 
