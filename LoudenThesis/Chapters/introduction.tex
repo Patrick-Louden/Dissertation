@@ -628,6 +628,88 @@ theoretically as a premelting surface phase
 transition.''\cite{R. Lipowsky, Phys. Rev. Lett. 49, 1575 (1982).}
 
 \subsubsection{Previous Investigations of the QLL}
+% The thickness of a liquid layer on the free surface of ice as
+% obtained from computer simulation. M.M.Conde, C.Vega, A.Patrykiejew
+% JCP 129, 014702 (2008)
+%Outstanding references and background
+Molecular dynamics simulations of ice I$_\mathrm{h}$ with a free
+surface were performed using the SPC/E, TIP4P, TIP4P/Ice, and
+TIP5P/2005 water models. The basal, prismatic, and secondary prismatic
+surfaces exposed to vacuum were analyzed. Conde \textit{et al.}
+observed that the thickness of the liquid like layer that develops on
+the surface of the ice is of approximate thickness for a given plane
+across all water models, when comparison is made at the same relative
+undercooling temperature for the water models.\cite{Conde2008} In all cases the width
+of the liquid layer is found to increase with increasing
+temperature. For a given temperature, the following trend in QLL
+thickness was observed, the basal plane > the primary prismatic plane
+> the secondary prismatic plane. For the TIP4P/Ice model, the onset
+temperature of the QLL was observed at -100 degrees Celcius for the
+basal plan, -80 degrees Celcius for the primary prismatic plane, and
+-70 degrees Celcius for the secondary prismatic plane. NVT simulations
+between 6 and 12 ns. To discriminate icelike and liquidlike water
+molecules, they have used the local tetrahedral order parameter of
+Errington and Debenedetti. However, their values are locked at only
+the four closest neighbors. 
+
+Conde \textit{et al.} have computed probability densities of the local
+tetrahedral order parameter, $p(q)$, for both a bulk liquid and bulk
+icesystem for all the models investigated. The TIP4P model results
+were almost indistinguishable, and the SPC/E model results were in
+good agreement with the TIP4P/Ice results considering the large
+discrepency between the melting points of the models. However, there
+is visible overlap between the bulk liquid and bulk ice distributions,
+making discrimination between icelike and liquidlike molecules
+difficult. Therefore, they defined a cutoff value of $q$, denoted
+$q_{t}$, where molecules with $q < q_t$ are denoted to be liquid-like,
+and molecules found with $q > q_t$ are denoted as ice-like. 
+\begin{equation}
+\int_{q_t}^{1} p_{liquid}(q)dq = \int_{0}^{q_t} p_{I_h}(q)dq
+\end{equation}
+Here, $\int_{q_t}^{1} p_{liquid}(q)dq$ is the probability of
+incorrectly assigning a liquidlike water molecule as icelike, and
+similarly $\int_{0}^{q_t} p_{I_h}(q)dq$ is the probability of
+incorrectly assigning an icelike water molecule as
+liquidlike. Graphically, $q_t$ is the value of $q$ where the area
+under the $p_{liquid}(q)$ curve to the left of $q_t$ is equal to the
+area under the $p_{I_h}(q)$ curve to the right of $q_t$.  The values
+for $q_t$ were found to be approximately the same for each model
+investigated, with $q_t(SPC/E) \sim 0.9101$ and
+$q_t(TIP4P/Ice) \sim 0.9076$. 
+
+The width of the QLL was obtained by
+\begin{equation}
+\delta =
+\frac{N_\mathrm{liquid}M}{2\rho N_\mathrm{AV}L_\mathrm{y}L_\mathrm{z}}
+\end{equation}
+where $N_{liquid}$ is taken to be the average number of liquid-like
+molecules during the simulation, $M$ is the molecular weight of water,
+$N_{AV}$ is Avagadro's number, the product $L_yL_z$ is the area of the
+exposed crystal face, and $\rho$ is the density of liquid water. The
+factor of 2 in the denominator accounts for the two interfaces which
+are presented by the crystal in the simulation cell. However, their
+definition of the thickness of the QLL is inherently flawed in the
+following way. Since their definition of liquid-like molecules comes
+from their local tetrahedral order number which assumes four nearest
+neighbors, molecules at the surface of the crystal will have an
+artificially low value for $q$ and be labled as liquid-like, even
+though their structure (based on angles between neighbors) is
+indicitive of an icelike environment. A rescaling based on the number
+of neighbors present would give a more accurate result. 
+
+Conde \textit{et al.} also considered a dynamic criteria for whether a
+water molecule is liquidlike or icelike. They computed the mean-square
+displacement of each water molecule, and compared these values to
+reference data of the TIP4P/2005 water model mean-square displacement
+of bulk ice and bulk liquid water simulations. They quantified an
+icelike molecule to have a mean-square displacement of less than 1
+\AA~ after 400ps, and classified molecules as liquidlike if their
+mean-square displacement was greater than 1 \AA~ otherwise. While the
+structural and dynamic widths are not precisely the same, they are on
+the same order of magnitude, similar to our own results. 
+%end Conde2008
+
+
 \subsubsection{QLL Width}
 %
 %
