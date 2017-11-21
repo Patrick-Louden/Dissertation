@@ -674,8 +674,8 @@ liquidlike. Graphically, $q_t$ is the value of $q$ where the area
 under the $p_{liquid}(q)$ curve to the left of $q_t$ is equal to the
 area under the $p_{I_h}(q)$ curve to the right of $q_t$.  The values
 for $q_t$ were found to be approximately the same for each model
-investigated, with $q_t(SPC/E) \sim 0.9101$ and
-$q_t(TIP4P/Ice) \sim 0.9076$. 
+investigated, with $q_t$ (SPC/E) $\sim 0.9101$ and
+$q_t$ (TIP4P/Ice) $\sim 0.9076$. 
 
 The width of the QLL was obtained by
 \begin{equation}
@@ -1374,6 +1374,12 @@ the increase in viscosity could be due to the confinement of the QLL
 between the AFM tip and the ice, or due to the intrinsic ordering of
 the QLL itself.
 
+% Molecular dynamics simulation of ice indentation by model atomic
+% force microscopy tips.
+%  Constantin, Carignano, Corti, Szleifer, JPC-C 119 (2015) 27118
+
+% end Constantin2015
+
 \subsubsection{Lateral Force Microscopy Measurements}
 Lateral force microscopy is an experimental technique in which ...
 
@@ -1437,7 +1443,7 @@ where $q$ is the wave vector for the perturbing mode for the
 relaxation of the amplitude of the contact line and $u_q(0)$ being the
 initial amplitude of the mode. Here, $V^* = \gamma / \eta$ is the
 characteristic velocity and $\theta$ is the contact angle the BLD makes
-with the ice surface (\sim 2 degrees). Lastly, the logarithmic factor
+with the ice surface ($\sim$ 2 degrees). Lastly, the logarithmic factor
 $l=ln(L/a)$ is a cutoff parameter which helps avoid
 singularities. From this fit, they obtained $V^* = 2 \pm 1$ m/s, which
 is about an order of magnitude smaller than that of bulk water, 42.21
@@ -1720,16 +1726,46 @@ the observed friction.
 % Describe NEMD approaches to obtaining TP
 % Describe RNEMD approaches to obtaining TP
 %%
-\subsection{Molecular Dynamics Simulations}
-With a firm understanding of the problem which we turn to the method
-we will use to investigate the problem. Molecular dynamics (MD)
-simulations. In MD simulations, models describing atoms and molecules
-are propogated by evolving Netwon's Second Law through time. We begin
-by considering some atom with position $\vec{r}(t)$ at some time $t$,
-and we Taylor-expand about this position.
+\subsection{Molecular Simulations}
+With a firm understanding of the problem which we aim to understand,
+we now turn to the method we will use to investigate the
+problem. Molecular simulations offers insight on the mechanisms
+driving emergent phenomena. Simulations are also useful in that we are
+able to probe systems at experimentally unachievable conditions, and
+also observe and decouple interactions. However, parameters for
+simulations are often dependent on real world observables obtained by
+experiments. In conjunction with this, it is important to understand
+the scope of the problem aimed to be solved by molecular simulation,
+in order to correctly identify which methodologies to use. 
+
+In principle we know how to simulate a system of molecules with very
+high accuracy. 
+It is possible to achieve very high accuracy for a small number of
+particles using \textit{ab initio} quantum mechanics methodologies. 
+
+
+Molecular dynamics (MD) simulations. In MD simulations,
+models describing atoms and molecules are propogated by evolving
+Netwon's Second Law through time. We begin by considering some atom
+with position $\vec{r}(t)$ at some time $t$, and we Taylor-expand
+about this position.
 
 Integrators, velocity verlet, shake, etc. Ensembles, calculation of
 pressure and temperature. Leach had a great explanation of these.
+
+\begin{figure}
+\includegraphics[width=\linewidth]{Figures/PBC}
+\caption{\label{fig:PBC} Periodic boundary conditions and minimum
+  image calculation. The central blue cell is the only simulation cell
+  maintained by computation. Molecules (red circles) are free to move
+  throughout space uninhindered. When a molecule leaves the blue
+  simulation cell, one of its ghost images enters the cell from one of
+  the neighboring cells. This is achieved by computation of
+  interactions of a molecule with its nearest neighbors within a
+  cutoff radius of $r_{cut}$. Note these molecules may not necessarily
+  be located within the same simulation cell as the molecule of
+  interest.}
+\end{figure}
 
 
 
