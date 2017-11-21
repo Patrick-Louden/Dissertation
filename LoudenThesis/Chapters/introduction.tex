@@ -1744,11 +1744,49 @@ It is possible to achieve very high accuracy for a small number of
 particles using \textit{ab initio} quantum mechanics methodologies. 
 
 
+
+
+\begin{figure}
+\includegraphics[width=\linewidth]{Figures/SimulationScale}
+\caption{\label{fig:SimulationScale} Different length scales in
+  numbers of molecules (here length of material) and corresponding
+  achievable simulation time for various molecular modeling
+  methodologies. High accuracy quantum mechanical methods (red and
+  orange) cannot simulate large numbers of molecules for long
+  times. Methods which reduce molecular detail and propogate by
+  classical mechanics (yellow and green) are able to achieve longer
+  simulation times for larger systems. Monte Carlo methods (blue)
+  remove the expense of computing dynamics altogether, and ultra
+  coarse-grained methods (violet) which approximate collections of
+  atoms as a single unit achieve even longer simulation times.}
+\end{figure}
+
+
+
 Molecular dynamics (MD) simulations. In MD simulations,
 models describing atoms and molecules are propogated by evolving
 Netwon's Second Law through time. We begin by considering some atom
 with position $\vec{r}(t)$ at some time $t$, and we Taylor-expand
 about this position.
+
+The instantaneous temperature, $T$, of a collection of $N$ molecules
+is described by their kinetic energy $K$ through the equipartition
+theorem.
+\begin{equation}\label{Temperature}
+T = \frac{2}{fk_B}\Bigg( \sum_{i=1}^{N} \frac{1}{2} m_i {\bf v}_i^T \cdot {\bf v}_i +
+\sum_{i=1}^{N_{\mathrm{linear}}+N_{\mathrm{non-linear}}}  \frac{1}{2} {\bf j}_i^T \cdot
+\overleftrightarrow{\mathsf{I}}_i^{-1} \cdot {\bf j}_i  \Bigg)
+\end{equation}
+
+where $f$ is the total number of degrees of freedom in the system,
+\begin{equation}
+f = 3 N + 2 N_{\mathrm{linear}} + 3 N_{\mathrm{non-linear}} - N_{\mathrm{constraints}}
+\end{equation}
+$N_{linear}$ is the number of linear molecules, and $N_{non-linear}$
+is the total number of non-linear molecules in the system.
+
+In a similar manner the instantaneous pressure, $P$, of a collection
+of molecules can be obtained through the \textit{virial} 
 
 Integrators, velocity verlet, shake, etc. Ensembles, calculation of
 pressure and temperature. Leach had a great explanation of these.
