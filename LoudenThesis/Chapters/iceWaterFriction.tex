@@ -27,11 +27,14 @@
   \endgroup   
 }
 
-% \title[Friction at ice-I$_\mathrm{h}$ / water interfaces]{Friction at
-%   ice-I$_\mathrm{h}$ / water interfaces is governed by solid / liquid
-%   hydrogen-bonding}
+\chapter{FRICTION AT ICE-I$_\mathrm{h}$ / WATER INTERFACES IS GOVERNED
+  BY SOLID / LIQUID HYDROGEN-BONDING}
+
+% \title[Friction at Ice-I$_\mathrm{h}$ / Water Interfaces]{Friction at
+%   Ice-I$_\mathrm{h}$ / Water Interfaces is Governed by Solid / Liquid
+%   Hydrogen-Bonding}
 % \author{Patrick B. Louden}
-% \author{J. Daniel Gezelter} \email{gezelter@nd.edu}
+% \author{J. Daniel Gezelter} \email{gezelter@nd.edu} \phone{+1 (574) 631-7595}
 % \affiliation{Department of Chemistry and Biochemistry, University of
 %   Notre Dame, Notre Dame, IN 46556} 
 
@@ -40,12 +43,10 @@
 % \begin{document}
 
 % \begin{tocentry}
-% \center\includegraphics[width=2.5in]{TOC.pdf} 
+% \center\includegraphics[width=2.55in]{TOC.pdf} 
 % \end{tocentry}
 
-\chapter{FRICTION AT ICE-I$_\mathrm{h}$ / WATER INTERFACES IS GOVERNED BY SOLID / LIQUID HYDROGEN-BONDING}
-
-\begin{abstract}
+% \begin{abstract}
 Non-equilibrium molecular dynamics simulations of solid / liquid
 friction at ice / water interfaces suggest that the surface density
 of solid to liquid hydrogen bonds directly correlates with
@@ -60,14 +61,14 @@ conditions is presented, and the computed friction of these
 interfaces is found to be invariant to the shear rate and direction
 of shear relative to the surface features. Structural and dynamic
 interfacial widths for all four facets were found to be similar
-(6.6--9.5 \AA~structural, 9--13 \AA~dynamic), and are largely
+(6.6--9.5 \AA~structural, 9--15 \AA~dynamic), and are largely
 independent of the shear rate and direction. Differences in the
 solid to liquid hydrogen bond density are explained in terms of
 surface features of the four facets. Lastly, we present a simple
 momentum transmission model using the density of solid / liquid
 hydrogen bonds, the shear viscosity of the liquid, and the
 structural width of the interface.
-\end{abstract}
+%\end{abstract}
 
 
 \section{Introduction}
@@ -311,7 +312,7 @@ water models, although the coexistence temperature for SPC/E is still
 well below the experimental melting point of real water.  
 
 Recent investigations have questioned the applicability of SPC/E in
-ice/water simulations,\cite{Vega2005c,Vega2011a,Gladich2012,Gallo2016}
+ice / water simulations,\cite{Vega2005c,Vega2011a,Gladich2012,Gallo2016}
 however, so simulations have also been done using
 TIP4P/Ice.\cite{Abascal2005} This model was parameterized by fitting
 the equation of state, as well as the melting and coexistence lines
@@ -373,15 +374,18 @@ imposed coincident with the kinetic energy flux. The resulting
 velocity gradients were allowed to stabilize for 1~ns before data
 collection began. Four successive 1~ns simulations were performed for
 each shear rate (varying from
-$0.5 \rightarrow 10.0~\mathrm{~m~s}^{-1}$) . Configurations of the
-systems were stored every 1~ps, and statistics on the structure and
-dynamics were accumulated every 0.1~ps. Small variations in the
-measured interfacial widths between successive simulations were
-observed, but there was no indication of bulk melting or crystal
-growth. That is, no large scale changes in the positions of the two
-interfaces were observed during the simulations. A representative
-configuration of the solvated prismatic facet being sheared through
-liquid water is shown in Figure \ref{fig:Shearing}.
+$0.5 \rightarrow 10.0~\mathrm{~m~s}^{-1}$) . All atomic configurations
+(positions and velocities) were saved every 1~ps, while statistical
+measures of the system (e.g. temperature, potential energy, total
+energy, and pressure) were sampled every 0.1~ps during the
+simulation. Velocity and thermal profiles (used to compute friction)
+were sampled every 2~fs. Small variations in the measured interfacial
+widths between successive simulations were observed, but there was no
+indication of bulk melting or crystal growth. That is, no large scale
+changes in the positions of the two interfaces were observed during
+the simulations. A representative configuration of the solvated
+prismatic facet being sheared through liquid water is shown in Figure
+\ref{fig:Shearing}.
 
 \begin{figure}
 \includegraphics[width=1.9in]{Figures/Shearing}
@@ -573,10 +577,10 @@ error bars of the values obtained from the quiescent simulations.
                                                     density \\
   Interface & $w_\mathrm{10-90}$ &  $d_\mathrm{10-90}$ & $j_\mathrm{10-90}$ & $\rho_{sl}$ (\AA\textsuperscript{-2}) \\ 
   \midrule
-  Basal  $\{0001\}$                 & 8.8(8) & 15(3) & 9   & 0.0749(9)  \\
-  Prismatic  $\{10\bar{1}0\}$       & 9.0(5) &15(2) & 13   & 0.141(1)  \\
-  Pyramidal  $\{20\bar{2}1\}$       & 8.2(5) & 13(1) & 10   & 0.074(1)  \\
-  Secondary Prism  $\{11\bar{2}0\}$ & 9.4(6) & XXX& 12   & 0.119(1) \\
+  Basal  $\{0001\}$                 & 8.8(8) & 15(3) & 9   & 0.0749(9)\\
+  Prismatic  $\{10\bar{1}0\}$       & 9.0(5) & 15(2) & 13  & 0.141(1) \\
+  Pyramidal  $\{20\bar{2}1\}$       & 8.2(5) & 13(1) & 10  & 0.074(1) \\
+  Secondary Prism  $\{11\bar{2}0\}$ & 9.4(6) & 14(2)   & 12  & 0.119(1) \\
   \bottomrule
 \end{tabular}
 \end{table}
@@ -773,16 +777,15 @@ In the ice crystal, decay of $C_2(z,t)$ is incomplete, while in the
 liquid, correlation times are typically measured in ps. Observing the
 spatial transition between the decay regimes can define a dynamic
 measure of the interfacial width. To determine dynamic widths of the
-interfaces under shear, each of the SPC/E systems were divided into
-bins along the $z$ axis ($\approx$ 1 \AA\ wide) and $C_2(z,t)$ was
-computed using only those molecules that were in the bin at the
-initial time. For each ice / water interface investigated, the
-following 0.5 ns simulations were computed: quiescent simulations
-(where no thermal or momentum gradient was present), simulations with
-only a thermal gradient present, and simulations where both thermal
-and momentum gradients were present. During these simulations, the
-positions and orientations of each molecule were recorded every 100
-fs.
+interfaces under shear, each of the systems were divided into bins
+along the $z$ axis ($\approx$ 1 \AA\ wide) and $C_2(z,t)$ was computed
+using only those molecules that were in the bin at the initial
+time. For each ice / water interface investigated, the following 0.5
+ns simulations were computed: quiescent simulations (where no thermal
+or momentum gradient was present), simulations with only a thermal
+gradient present, and simulations where both thermal and momentum
+gradients were present. During these simulations, the positions and
+orientations of each molecule were recorded every 100 fs.
 
 \begin{figure}
 \includegraphics[width=\linewidth]{Figures/CztImage}
@@ -886,10 +889,12 @@ smoothly between bulk-like liquid behavior and the crystal,
 where $l$ and $r$ are the locations of the Gibbs dividing surfaces,
 and $d$ is a dynamic width.  As with the structural widths,
 $10\%-90\%$ dynamic widths are easily computed from the fits
-($d_\mathrm{10-90} = 2.197~d$).  These values are provided in Table
-\ref{tab:propsSPCE}. All four SPC/E interfaces exhibit dynamic widths
-that are $\sim 11$~\AA, and are larger than the structural widths
-computed above.
+($d_\mathrm{10-90} = 2.197~d$).  These values are provided in Tables
+\ref{tab:propsSPCE} and \ref{tab:propsTIP4P}. All four SPC/E
+interfaces exhibit dynamic widths that are $\sim 11$~\AA, and are
+larger than the structural widths computed above.  In TIP4P/Ice at
+270K, the dynamic widths are $\sim 14$~\AA, also larger than the
+structural widths in for these interafaces.
 
 We note that Bryk and Haymet also calculated the orientational time
 correlation function at the basal interface of SPC/E
@@ -1043,7 +1048,7 @@ by the imposed shear.
 A second possible influence on the friction coefficient is the surface
 topography of the ice crystals. To investigate this possibility, we
 computed the mean projected density ($\rho(y,z)$) for each of the
-ice/water systems; details of these computations can be found in the
+ice / water systems; details of these computations can be found in the
 Supplemental Information. The structure of the surface corrugation can
 be obtained by measuring the peak-to-peak distances of the
 liquid-exposed crystal structures, the dimensions of which are
@@ -1135,7 +1140,7 @@ spaces\cite{Laage2012b,Fogarty2014}.  Laage and Hynes studied how the
 strength of the hydrogen bond might perturb the reorientation
 dynamics,\cite{Laage2006a} and found the librational motion which
 forms a cone around the O-O vector is smaller for more strongly
-hydrogen bonded water This may also provide a partial explanation for
+hydrogen bonded water. This may also provide a partial explanation for
 the increasing contribution of short time orientational decay very
 close to the ice surfaces.  Since the solid creates an excluded volume
 for the water molecules that are in proximity to the interface, the
@@ -1159,7 +1164,7 @@ width, $j_\mathrm{10-90}$, is shown in tables \ref{tab:propsSPCE} and
 The interfacial friction coefficient, $\kappa$ captures the momentum
 conductance transverse to the interface, and this momentum should be
 transferred via strong intermolecular interactions across the
-interface. This is measured in ice/water systems by the surface
+interface. This is measured in ice / water systems by the surface
 density of hydrogen bonds, $\rho_\mathrm{s-l}$.  The momentum is then
 carried through the liquid via viscous forces $(\eta)$ across an
 interfacial region that has width $w_\mathrm{s-l}$. A simple linear
@@ -1168,7 +1173,7 @@ model,
   \kappa = c~~\rho_\mathrm{s-l}~~\eta~~w_\mathrm{s-l},
 \label{eq:model}
 \end{equation}
-captures these features at the ice/water interface, and the results
+captures these features at the ice / water interface, and the results
 for the two water models nearly coalesce with a proportionality
 constant, $c = 0.343$.  The structural width, $w_\mathrm{10-90}$, and
 values for $\eta$ for each ice / water system were obtained by fitting
@@ -1239,52 +1244,14 @@ ice during shear.
 % \begin{suppinfo}
 %   The fitting function used for the transverse velocity profiles,
 %   plots of the temperature, tetrahedrality, transverse velocity
-%   profiles, and orientational correlation functions for the interfaces
-%   not shown above.
+%   profiles, orientational correlation functions, and hydrogen bond
+%   jump correlations for the interfaces not shown above.
 % \end{suppinfo}
 
+%\newpage
+%\bibliography{testBibTex}
+%\end{document}
 
-% %load any "/usepackage" here...
-% \documentclass[journal = jpccck, manuscript = suppinfo]{achemso}
-% \setkeys{acs}{usetitle = true}
-% \usepackage{fixltx2e}
-% \usepackage{float}
-% \usepackage{achemso}
-% \usepackage{natbib}
-% \usepackage{multirow}
-% \usepackage{wrapfig}
-% \usepackage{times}
-% \usepackage{tablefootnote}
-% \usepackage{booktabs}
-% \usepackage[version=3]{mhchem}  % this is a great package for formatting chemical reactions
-% \usepackage{url}
-% \usepackage{graphicx}  % needed for figures
-% \usepackage{dcolumn}   % needed for some tables
-% \usepackage{bm}        % for math
-% \usepackage{amssymb}   % for math
-% \usepackage{booktabs}
-% \usepackage{tablefootnote}
-% \usepackage{mathptmx}
-
-% \newcommand*{\citen}[1]{%
-%   \begingroup
-%     \romannumeral-`\x % remove space at the beginning of \setcitestyle
-%     \setcitestyle{numbers}%
-%     \cite{#1}%
-%   \endgroup   
-% }
-
-
-% \title{Friction at ice-I$_\mathrm{h}$ / water interfaces is governed
-%   by solid-liquid hydrogen-bonding} 
-% \author{Patrick B. Louden}
-% \author{J. Daniel Gezelter} \email{gezelter@nd.edu}
-% \affiliation{Department of Chemistry and Biochemistry, University of
-%   Notre Dame, Notre Dame, IN 46556} 
-
-% \keywords{ice; water; interfaces; friction; hydrogen bonding}
-
-% \begin{document}
 
 \section{Overview}
 The supporting information contains further details about the model
@@ -1397,7 +1364,7 @@ interface.
 \end{figure}
 %end TIP4P/Ice plots
 
-\section{Dependence of friction on Shear Rate}
+%\section{Dependence of friction on Shear Rate}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{Figures/kappaPlot2}
@@ -1411,6 +1378,9 @@ interface.
   270K. The points on this plot have also been averaged over shear
   direction ($x$ and $y$).}
 \end{figure}
+
+
+\newpage
 
 \section{Projected Densities and Channel Widths}
 
@@ -1444,7 +1414,9 @@ the peak densities.  These figures also indicate that below the Gibbs
 dividing surface, almost no liquid state molecules can be found
 occupying the channels.
 
-%Begin z-orientation times                                                         
+%Begin z-orientation times                                                      
+
+\newpage   
 \section{Orientational Decay Profiles}
 
 \begin{figure}
@@ -1474,5 +1446,35 @@ occupying the channels.
   interface.  Panel descriptions are the same as in
   Fig. \ref{fig:Pyrorient}.}
 \end{figure}
-%End z-orientation times                                                           
+%End z-orientation times       
 
+\newpage
+\section{Jump-time Decay Profiles}
+\begin{figure}
+\includegraphics[width=5.5in]{Figures/secPrismJumpPlot}
+\caption{\label{fig:SPkjmp} Upper: Hydrogen bond jump correlation
+  functions, $C_\mathrm{jump}(z,t)$, collected in 1 \AA~bins across
+  the SPC/E secondary prism ice / water interface. The band that
+  experiences very little decay represents water molecules in the ice,
+  while the band that decays quickly corresponds to bins in the
+  liquid.  The correlation function presents a continuous distribution
+  of decay behaviors across the interface between ice and liquid
+  water.  Lower: $C_\mathrm{jump}(z,t)$ decays exponentially, and each
+  1 \AA~spatial bin can be fit with a jump rate, $k_\mathrm{jump}(z)$.
+  These are shown with a fit that provides a ``jump'' width,
+  $j_\mathrm{10-90}$. The locations of the structural Gibbs dividing
+  surfaces (using tetrahedrality) are indicated with vertical dashed
+  blue lines, while the locations of the ``jump'' interfaces are shown in
+  orange.}
+\end{figure}
+
+
+\begin{figure}
+\includegraphics[width=\linewidth]{Figures/secprismJumpPlotTIP4PIce}
+\caption{\label{fig:SPTIP4Pkjmp} The same secondary prism hydrogen
+  bond jump data as Fig. \ref{fig:SPkjmp}, but collected using the
+  TIP4P/Ice model and at 270~K.  Note that the higher coexistence
+  temperature for this model increases the observed liquid-state jump
+  rates, and has brought the structural and jump interfaces much
+  closer together.}
+\end{figure}
