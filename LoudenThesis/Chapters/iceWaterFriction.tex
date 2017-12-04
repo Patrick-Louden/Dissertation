@@ -182,222 +182,222 @@ significantly longer times, a wider range of shear rates, and we
 introduce a novel method for calculating solid / liquid friction
 coefficients under conditions of \textit{negative} slip.
 
-\section{Methodology}
-\subsection{Construction of Ice / Water interfaces}
-%%% Old here
-Ice-I$_\mathrm{h}$ crystallizes in the hexagonal space group
-P$6_3/mmc$, and ice crystals normally form hexagonal plates with the
-basal face, $\{0001\}$, forming the top and bottom of each plate, and
-the prismatic facet, $\{10\bar{1}0\}$, forming the sides.  In extreme
-temperatures or low water saturation conditions, ice crystals can form
-hollow columns, needles, and dendrites, exposing other crystalline
-facets of the ice to the surroundings.  Among the more
-commonly-observed facets are the secondary prism, $\{11\bar{2}0\}$,
-and pyramidal, $\{20\bar{2}1\}$, faces.
+% \section{Methodology}
+% \subsection{Construction of Ice / Water interfaces}
+% %%% Old here
+% Ice-I$_\mathrm{h}$ crystallizes in the hexagonal space group
+% P$6_3/mmc$, and ice crystals normally form hexagonal plates with the
+% basal face, $\{0001\}$, forming the top and bottom of each plate, and
+% the prismatic facet, $\{10\bar{1}0\}$, forming the sides.  In extreme
+% temperatures or low water saturation conditions, ice crystals can form
+% hollow columns, needles, and dendrites, exposing other crystalline
+% facets of the ice to the surroundings.  Among the more
+% commonly-observed facets are the secondary prism, $\{11\bar{2}0\}$,
+% and pyramidal, $\{20\bar{2}1\}$, faces.
 
-The oxygen lattice is a hexagonal unit cell comprising 4 oxygen atoms,
-but it is also possible to construct an equivalent orthorhombic unit
-cell with 8 oxygen atoms.\cite{Hirsch2004} Hydrogen atom placement
-obeys the Bernal-Fowler ice rules which distribute protons so that
-each oxygen donates two hydrogen bonds and accepts two from
-neighboring molecules.\cite{Bernal1933} The resulting structure also
-typically has zero net dipole moment. Below 72~K and under ambient
-pressures, the lattice can undergo a phase transition to ice XI, a
-configuration with ferroelectric proton-ordering and a non-zero bulk
-dipole moment.
+% The oxygen lattice is a hexagonal unit cell comprising 4 oxygen atoms,
+% but it is also possible to construct an equivalent orthorhombic unit
+% cell with 8 oxygen atoms.\cite{Hirsch2004} Hydrogen atom placement
+% obeys the Bernal-Fowler ice rules which distribute protons so that
+% each oxygen donates two hydrogen bonds and accepts two from
+% neighboring molecules.\cite{Bernal1933} The resulting structure also
+% typically has zero net dipole moment. Below 72~K and under ambient
+% pressures, the lattice can undergo a phase transition to ice XI, a
+% configuration with ferroelectric proton-ordering and a non-zero bulk
+% dipole moment.
 
-While exploring the ice-I$_\mathrm{h}$ to XI phase transition, Hirsch
-and Ojam\"{a}e determined sixteen unique hydrogen arrangements for the
-ice-I$_\mathrm{h}$ orthorhombic unit cells which yield structures with
-zero net dipole.\cite{Hirsch2004} Upon replication of some of these
-unit cells, the resulting structures present stripes of dangling
-H-atoms and lone pairs at an exposed crystal facet. These orthorhombic
-initial configurations can be used to reproduce the surface features
-from Buch \textit{et al.}\cite{Buch2008} that helped interpret
-sum-frequency generation (SFG) experiments by the Shultz
-lab.\cite{Groenzin07} More recently, Nojima \textit{et
-  al.}\cite{Nojima2017} have successfully obtained both the real and
-imaginary parts of the vibrational spectra of the free OH stretch for
-surface water molecules of the basal, prismatic, and secondary
-prismatic facets at ca. 130~K through heterodyne-detected
-sum-frequency generation (HD-SFG). They also present evidence of
-proton-striped surfaces as the sign of the imaginary part of the
-vibrational spectra indicates ``up'' or ``down'' orientations of
-surface molecules.
+% While exploring the ice-I$_\mathrm{h}$ to XI phase transition, Hirsch
+% and Ojam\"{a}e determined sixteen unique hydrogen arrangements for the
+% ice-I$_\mathrm{h}$ orthorhombic unit cells which yield structures with
+% zero net dipole.\cite{Hirsch2004} Upon replication of some of these
+% unit cells, the resulting structures present stripes of dangling
+% H-atoms and lone pairs at an exposed crystal facet. These orthorhombic
+% initial configurations can be used to reproduce the surface features
+% from Buch \textit{et al.}\cite{Buch2008} that helped interpret
+% sum-frequency generation (SFG) experiments by the Shultz
+% lab.\cite{Groenzin07} More recently, Nojima \textit{et
+%   al.}\cite{Nojima2017} have successfully obtained both the real and
+% imaginary parts of the vibrational spectra of the free OH stretch for
+% surface water molecules of the basal, prismatic, and secondary
+% prismatic facets at ca. 130~K through heterodyne-detected
+% sum-frequency generation (HD-SFG). They also present evidence of
+% proton-striped surfaces as the sign of the imaginary part of the
+% vibrational spectra indicates ``up'' or ``down'' orientations of
+% surface molecules.
 
-SPC/E~\cite{Berendsen1987} and TIP4P/Ice~\cite{Abascal2005} structures
-were created starting from Structure 6 of Hirsch and Ojam\"{a}e's set
-of orthorhombic representations for ice-I$_{h}$.\cite{Hirsch2004} The
-primitive unit cell was replicated in all dimensions. The crystal was
-cleaved along the desired face, and two additional mutually
-perpendicular cuts were made.  The crystal was reoriented so that the
-initial cut (basal, pyramidal, prismatic, or secondary prism) was
-normal to the $z$-axis of the simulation cell.  The resulting
-structures were extended in $x$ and $y$ to form large exposed facets
-in rectangular box geometries.  Because the orthorhombic unit cells
-are relatively small, using these as building blocks for an ice
-simulation creates proton translational order on the length scale of
-the unit cells. We note that all simulated ice structures have proton
-ordering on the length scale of the periodic box, but in order to
-reproduce proton surface striping with zero dipole crystals, we have
-utilized proton translational ordering on a smaller length scale than
-other ice studies.
+% SPC/E~\cite{Berendsen1987} and TIP4P/Ice~\cite{Abascal2005} structures
+% were created starting from Structure 6 of Hirsch and Ojam\"{a}e's set
+% of orthorhombic representations for ice-I$_{h}$.\cite{Hirsch2004} The
+% primitive unit cell was replicated in all dimensions. The crystal was
+% cleaved along the desired face, and two additional mutually
+% perpendicular cuts were made.  The crystal was reoriented so that the
+% initial cut (basal, pyramidal, prismatic, or secondary prism) was
+% normal to the $z$-axis of the simulation cell.  The resulting
+% structures were extended in $x$ and $y$ to form large exposed facets
+% in rectangular box geometries.  Because the orthorhombic unit cells
+% are relatively small, using these as building blocks for an ice
+% simulation creates proton translational order on the length scale of
+% the unit cells. We note that all simulated ice structures have proton
+% ordering on the length scale of the periodic box, but in order to
+% reproduce proton surface striping with zero dipole crystals, we have
+% utilized proton translational ordering on a smaller length scale than
+% other ice studies.
 
-Liquid water boxes were created with identical dimensions (in $x$ and
-$y$) as the ice, with a $z$ dimension of three times that of the ice
-block, and with a density corresponding to $1$ g / cm$^3$.  Each of
-the ice slabs and water boxes were independently equilibrated to
-$50$~K and a pressure of $1$ atm by coupling the temperature and
-pressure of the system to a heat and pressure bath. For all
-simulations non-bonded interactions were cut-off at 12~\AA~ and
-electrostatics were handled using the damped-shifted force real-space
-electrostatic kernel.\cite{Fennell2006} The resulting systems were
-merged by carving out any liquid water molecules within 3~\AA~ of any
-atoms in the ice slabs.  For the SPC/E simulations, the combined ice /
-water systems were equilibrated to 225~K. The liquid-ice coexistence
-temperature for SPC/E water has been reported as
-$215 \pm 4$~K.\cite{Vega2006a,Fernandez2006} We observed a coexistence
-temperature of 225~K for our crystals, possibly due to the surface
-striped structures utilized in this study. For the TIP4P/Ice
-simulations, the combined ice / water system was equilibrated to the
-reported coexistence temperature, 270~K.\cite{Vega2006a,Fernandez2006}
-The quiescent ice / water interfaces were then equilibrated for 10 ns,
-with 5 ns under a constant temperature (NVT) integrator, followed by 5
-ns under a microcanonical (NVE) integrator.  During this time the ice
-was monitored for crystal growth or melting. We observed no advance of
-the ice interface into the liquid, and no loss of crystallinity of the
-ice. Reference \citen{Louden2013a} contains a more detailed
-explanation of the construction of similar ice / water interfaces. The
-resulting dimensions as well as the number of ice and liquid water
-molecules contained in each of these systems are shown in Table
-\ref{tab:sizes}.  Note that the water molecules are not restrained in
-any way - molecules that start in the liquid phase may exchange with
-the ice (and vice versa).
+% Liquid water boxes were created with identical dimensions (in $x$ and
+% $y$) as the ice, with a $z$ dimension of three times that of the ice
+% block, and with a density corresponding to $1$ g / cm$^3$.  Each of
+% the ice slabs and water boxes were independently equilibrated to
+% $50$~K and a pressure of $1$ atm by coupling the temperature and
+% pressure of the system to a heat and pressure bath. For all
+% simulations non-bonded interactions were cut-off at 12~\AA~ and
+% electrostatics were handled using the damped-shifted force real-space
+% electrostatic kernel.\cite{Fennell2006} The resulting systems were
+% merged by carving out any liquid water molecules within 3~\AA~ of any
+% atoms in the ice slabs.  For the SPC/E simulations, the combined ice /
+% water systems were equilibrated to 225~K. The liquid-ice coexistence
+% temperature for SPC/E water has been reported as
+% $215 \pm 4$~K.\cite{Vega2006a,Fernandez2006} We observed a coexistence
+% temperature of 225~K for our crystals, possibly due to the surface
+% striped structures utilized in this study. For the TIP4P/Ice
+% simulations, the combined ice / water system was equilibrated to the
+% reported coexistence temperature, 270~K.\cite{Vega2006a,Fernandez2006}
+% The quiescent ice / water interfaces were then equilibrated for 10 ns,
+% with 5 ns under a constant temperature (NVT) integrator, followed by 5
+% ns under a microcanonical (NVE) integrator.  During this time the ice
+% was monitored for crystal growth or melting. We observed no advance of
+% the ice interface into the liquid, and no loss of crystallinity of the
+% ice. Reference \citen{Louden2013a} contains a more detailed
+% explanation of the construction of similar ice / water interfaces. The
+% resulting dimensions as well as the number of ice and liquid water
+% molecules contained in each of these systems are shown in Table
+% \ref{tab:sizes}.  Note that the water molecules are not restrained in
+% any way - molecules that start in the liquid phase may exchange with
+% the ice (and vice versa).
 
-\begin{table}[h]
-\centering
-\caption{Sizes of the ice / water shearing simulations. (Box
-  dimensions are given in \AA)\label{tab:sizes}}
-\begin{tabular}{r|cc|ccc|ccc}
-\toprule
- & & & \multicolumn{3}{c|}{SPC/E~(225~K)} &  \multicolumn{3}{c}{TIP4P/Ice~(270~K)}\\
- Interface & $N_\mathrm{ice}$ &
- $N_\mathrm{liquid}$ & $L_x$ & $L_y$ & $L_z$ & $L_x$ & $L_y$ & $L_z$ \\
-\midrule
-Basal  $\{0001\}$                 & 900 & 1846  & 23.87 & 35.83 & 98.64  & 23.37 & 38.83 & 97.67  \\
-Prismatic  $\{10\bar{1}0\}$       & 3000 & 5464 & 35.95 & 35.65 & 205.77 & 36.33 & 38.86 & 191.75 \\
-Pyramidal  $\{20\bar{2}1\}$       & 1216 & 2203 & 37.47 & 29.50 & 93.02  & 37.16 & 30.19 & 97.65  \\
-Secondary Prism  $\{11\bar{2}0\}$ & 3840 & 8176 & 71.87 & 31.66 & 161.55 & 72.90 & 32.06 & 165.17 \\
-\bottomrule
-\end{tabular}
-\end{table}
+% \begin{table}[h]
+% \centering
+% \caption{Sizes of the ice / water shearing simulations. (Box
+%   dimensions are given in \AA)\label{tab:sizes}}
+% \begin{tabular}{r|cc|ccc|ccc}
+% \toprule
+%  & & & \multicolumn{3}{c|}{SPC/E~(225~K)} &  \multicolumn{3}{c}{TIP4P/Ice~(270~K)}\\
+%  Interface & $N_\mathrm{ice}$ &
+%  $N_\mathrm{liquid}$ & $L_x$ & $L_y$ & $L_z$ & $L_x$ & $L_y$ & $L_z$ \\
+% \midrule
+% Basal  $\{0001\}$                 & 900 & 1846  & 23.87 & 35.83 & 98.64  & 23.37 & 38.83 & 97.67  \\
+% Prismatic  $\{10\bar{1}0\}$       & 3000 & 5464 & 35.95 & 35.65 & 205.77 & 36.33 & 38.86 & 191.75 \\
+% Pyramidal  $\{20\bar{2}1\}$       & 1216 & 2203 & 37.47 & 29.50 & 93.02  & 37.16 & 30.19 & 97.65  \\
+% Secondary Prism  $\{11\bar{2}0\}$ & 3840 & 8176 & 71.87 & 31.66 & 161.55 & 72.90 & 32.06 & 165.17 \\
+% \bottomrule
+% \end{tabular}
+% \end{table}
 
-The liquid-state viscosity of the SPC/E water model has been
-extensively characterized over a wide range of liquid
-conditions~\cite{Kuang2012}, and its phase diagram has been well
-studied~\cite{Baez1995,Bryk2004,Sanz2004a,Fennell2005}. With longer
-cutoff radii and careful treatment of electrostatics, SPC/E mostly
-avoids metastable crystalline morphologies like
-ice-\textit{i}~\cite{Fennell2005} and ice-B~\cite{Baez1995}, although
-Sanz \textit{et al.}\cite{Sanz2004a} found that the stable polymorph
-for this model is likely ice-II at this temperature and 1 bar. The
-free energies and melting
-points~\cite{Baez1995,Arbuckle2002,Gay2002,Bryk2002,Bryk2004,Sanz2004a,Fennell2005,Fernandez2006,Abascal2007,Vrbka2007}
-of various other crystalline polymorphs have also been calculated.
-Haymet \textit{et al.}\cite{Bryk2002} have studied quiescent
-ice-I$_\mathrm{h}$ / water interfaces using the SPC/E water model, and
-have seen structural and dynamic measurements of the interfacial width
-that agree well with both experimental results and more expensive
-water models, although the coexistence temperature for SPC/E is still
-well below the experimental melting point of real water.  
+% The liquid-state viscosity of the SPC/E water model has been
+% extensively characterized over a wide range of liquid
+% conditions~\cite{Kuang2012}, and its phase diagram has been well
+% studied~\cite{Baez1995,Bryk2004,Sanz2004a,Fennell2005}. With longer
+% cutoff radii and careful treatment of electrostatics, SPC/E mostly
+% avoids metastable crystalline morphologies like
+% ice-\textit{i}~\cite{Fennell2005} and ice-B~\cite{Baez1995}, although
+% Sanz \textit{et al.}\cite{Sanz2004a} found that the stable polymorph
+% for this model is likely ice-II at this temperature and 1 bar. The
+% free energies and melting
+% points~\cite{Baez1995,Arbuckle2002,Gay2002,Bryk2002,Bryk2004,Sanz2004a,Fennell2005,Fernandez2006,Abascal2007,Vrbka2007}
+% of various other crystalline polymorphs have also been calculated.
+% Haymet \textit{et al.}\cite{Bryk2002} have studied quiescent
+% ice-I$_\mathrm{h}$ / water interfaces using the SPC/E water model, and
+% have seen structural and dynamic measurements of the interfacial width
+% that agree well with both experimental results and more expensive
+% water models, although the coexistence temperature for SPC/E is still
+% well below the experimental melting point of real water.  
 
-Recent investigations have questioned the applicability of SPC/E in
-ice / water simulations,\cite{Vega2005c,Vega2011a,Gladich2012,Gallo2016}
-however, so simulations have also been done using
-TIP4P/Ice.\cite{Abascal2005} This model was parameterized by fitting
-the equation of state, as well as the melting and coexistence lines
-involving different ice polymorphs, and the resulting melting
-temperature of ice-I$_\mathrm{h}$ is much closer to the experimental
-value.\cite{Abascal2005} Although TIP4P/Ice is more computationally
-demanding, it is worthwhile to compare models where liquid water is in
-contact with ice at multiple coexistence temperatures.
+% Recent investigations have questioned the applicability of SPC/E in
+% ice / water simulations,\cite{Vega2005c,Vega2011a,Gladich2012,Gallo2016}
+% however, so simulations have also been done using
+% TIP4P/Ice.\cite{Abascal2005} This model was parameterized by fitting
+% the equation of state, as well as the melting and coexistence lines
+% involving different ice polymorphs, and the resulting melting
+% temperature of ice-I$_\mathrm{h}$ is much closer to the experimental
+% value.\cite{Abascal2005} Although TIP4P/Ice is more computationally
+% demanding, it is worthwhile to compare models where liquid water is in
+% contact with ice at multiple coexistence temperatures.
 
-\subsection{Creating shear in molecular simulations}
-The velocity shearing and scaling variant of reverse non-equilibrium
-molecular dynamics (VSS-RNEMD)\cite{Kuang2012} was employed to create
-shear in our simulation cells. This method performs a series of
-simultaneous non-equilibrium exchanges of linear momentum and kinetic
-energy between two physically separated regions of the simulation
-cell. The system responds to this unphysical flux with velocity and
-temperature gradients. When VSS-RNEMD is applied to bulk liquids,
-transport properties like the shear viscosity, $\eta$, are easily
-extracted assuming a linear response between the applied flux,
-$j_z(p_x)$, and the resulting velocity gradient that develops in the
-liquid,\cite{Bordat2002a}
-\begin{equation}
-\label{eq:viscosity}
-j_z(p_x) = -\eta \left(\frac{\partial v_x}{\partial z}\right).
-\end{equation}
+% \subsection{Creating shear in molecular simulations}
+% The velocity shearing and scaling variant of reverse non-equilibrium
+% molecular dynamics (VSS-RNEMD)\cite{Kuang2012} was employed to create
+% shear in our simulation cells. This method performs a series of
+% simultaneous non-equilibrium exchanges of linear momentum and kinetic
+% energy between two physically separated regions of the simulation
+% cell. The system responds to this unphysical flux with velocity and
+% temperature gradients. When VSS-RNEMD is applied to bulk liquids,
+% transport properties like the shear viscosity, $\eta$, are easily
+% extracted assuming a linear response between the applied flux,
+% $j_z(p_x)$, and the resulting velocity gradient that develops in the
+% liquid,\cite{Bordat2002a}
+% \begin{equation}
+% \label{eq:viscosity}
+% j_z(p_x) = -\eta \left(\frac{\partial v_x}{\partial z}\right).
+% \end{equation}
 
-At interfaces between dissimilar materials, the same method can be
-used to extract \textit{interfacial} transport properties (e.g. the
-hydrodynamic slip length or the interfacial thermal
-conductance). Because the individual VSS-RNEMD exchange moves conserve
-both total energy and linear momentum, the method can be ``bolted on''
-to simulations in any ensemble.  A more detailed explanation of
-VSS-RNEMD shearing simulations applied to ice / water interfaces can
-be found in our previous work.\cite{Louden2013a}
+% At interfaces between dissimilar materials, the same method can be
+% used to extract \textit{interfacial} transport properties (e.g. the
+% hydrodynamic slip length or the interfacial thermal
+% conductance). Because the individual VSS-RNEMD exchange moves conserve
+% both total energy and linear momentum, the method can be ``bolted on''
+% to simulations in any ensemble.  A more detailed explanation of
+% VSS-RNEMD shearing simulations applied to ice / water interfaces can
+% be found in our previous work.\cite{Louden2013a}
 
-All simulations were performed using
-OpenMD~\cite{Meineke2005,Gezelter2016}, with a time step of 2 fs and
-periodic boundary conditions in all three dimensions. When applicable,
-VSS-RNEMD moves were attempted every time step. This minimized the
-magnitude of individual momentum exchanges. 
+% All simulations were performed using
+% OpenMD~\cite{Meineke2005,Gezelter2016}, with a time step of 2 fs and
+% periodic boundary conditions in all three dimensions. When applicable,
+% VSS-RNEMD moves were attempted every time step. This minimized the
+% magnitude of individual momentum exchanges. 
 
-\subsubsection{Shearing at ice / water interfaces}
-The RNEMD exchanges that force the solid to shear through a
-surrounding liquid do work on the system, and this work causes
-frictional heating at the interface. Close to the melting point of the
-solid, this frictional heating may result in melting of the crystal.
-We are interested in the structure and dynamics of the interface at
-the coexistence temperature.  Therefore, in order to prevent melting
-of the ice phase, we have imposed a weak kinetic energy flux
-($J_z \sim 2.0\times 10^{-6}$~kcal~mol$^{-1}$~\AA$^{-2}$~fs$^{-1}$)
-normal to the interface. The resulting thermal gradients ($< 10$~K
-over the length of the simulation box) were allowed to stabilize for 5
-ns, and were found to be sufficient to keep the interface within
-$\pm 5$ K of the target temperature (225~K for SPC/E and 270~K for
-TIP4P/Ice) during all shearing simulations.
+% \subsubsection{Shearing at ice / water interfaces}
+% The RNEMD exchanges that force the solid to shear through a
+% surrounding liquid do work on the system, and this work causes
+% frictional heating at the interface. Close to the melting point of the
+% solid, this frictional heating may result in melting of the crystal.
+% We are interested in the structure and dynamics of the interface at
+% the coexistence temperature.  Therefore, in order to prevent melting
+% of the ice phase, we have imposed a weak kinetic energy flux
+% ($J_z \sim 2.0\times 10^{-6}$~kcal~mol$^{-1}$~\AA$^{-2}$~fs$^{-1}$)
+% normal to the interface. The resulting thermal gradients ($< 10$~K
+% over the length of the simulation box) were allowed to stabilize for 5
+% ns, and were found to be sufficient to keep the interface within
+% $\pm 5$ K of the target temperature (225~K for SPC/E and 270~K for
+% TIP4P/Ice) during all shearing simulations.
  
-Once thermal gradients had stabilized, linear momentum fluxes were
-imposed coincident with the kinetic energy flux. The resulting
-velocity gradients were allowed to stabilize for 1~ns before data
-collection began. Four successive 1~ns simulations were performed for
-each shear rate (varying from
-$0.5 \rightarrow 10.0~\mathrm{~m~s}^{-1}$) . All atomic configurations
-(positions and velocities) were saved every 1~ps, while statistical
-measures of the system (e.g. temperature, potential energy, total
-energy, and pressure) were sampled every 0.1~ps during the
-simulation. Velocity and thermal profiles (used to compute friction)
-were sampled every 2~fs. Small variations in the measured interfacial
-widths between successive simulations were observed, but there was no
-indication of bulk melting or crystal growth. That is, no large scale
-changes in the positions of the two interfaces were observed during
-the simulations. A representative configuration of the solvated
-prismatic facet being sheared through liquid water is shown in Figure
-\ref{fig:Shearing}.
+% Once thermal gradients had stabilized, linear momentum fluxes were
+% imposed coincident with the kinetic energy flux. The resulting
+% velocity gradients were allowed to stabilize for 1~ns before data
+% collection began. Four successive 1~ns simulations were performed for
+% each shear rate (varying from
+% $0.5 \rightarrow 10.0~\mathrm{~m~s}^{-1}$) . All atomic configurations
+% (positions and velocities) were saved every 1~ps, while statistical
+% measures of the system (e.g. temperature, potential energy, total
+% energy, and pressure) were sampled every 0.1~ps during the
+% simulation. Velocity and thermal profiles (used to compute friction)
+% were sampled every 2~fs. Small variations in the measured interfacial
+% widths between successive simulations were observed, but there was no
+% indication of bulk melting or crystal growth. That is, no large scale
+% changes in the positions of the two interfaces were observed during
+% the simulations. A representative configuration of the solvated
+% prismatic facet being sheared through liquid water is shown in Figure
+% \ref{fig:Shearing}.
 
-\begin{figure}
-\includegraphics[width=1.9in]{Figures/Shearing}
-\caption{\label{fig:Shearing} Computational model of a slab of ice
-  being sheared through liquid water.  The ice presents two copies of
-  the prismatic $\{10\bar{1}0\}$ facet towards the liquid phase.  The
-  RNEMD simulation exchanges both linear momentum (indicated with
-  arrows) and kinetic energy between the central box and the box that
-  spans the cell boundary.  The system responds with weak thermal
-  gradient and a velocity profile that shears the ice relative to the
-  surrounding liquid.}
-\end{figure}
+% \begin{figure}
+% \includegraphics[width=1.9in]{Figures/Shearing}
+% \caption{\label{fig:Shearing} Computational model of a slab of ice
+%   being sheared through liquid water.  The ice presents two copies of
+%   the prismatic $\{10\bar{1}0\}$ facet towards the liquid phase.  The
+%   RNEMD simulation exchanges both linear momentum (indicated with
+%   arrows) and kinetic energy between the central box and the box that
+%   spans the cell boundary.  The system responds with weak thermal
+%   gradient and a velocity profile that shears the ice relative to the
+%   surrounding liquid.}
+% \end{figure}
 
 \section{Results}
 
