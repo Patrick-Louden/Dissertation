@@ -1,0 +1,232 @@
+%load any "/usepackage" here...
+\documentclass[journal = jpccck, manuscript = suppinfo]{achemso}
+\setkeys{acs}{usetitle = true}
+\usepackage{fixltx2e}
+\usepackage{float}
+\usepackage{achemso}
+\usepackage{natbib}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{times}
+\usepackage{tablefootnote}
+\usepackage{booktabs}
+\usepackage[version=3]{mhchem}  % this is a great package for formatting chemical reactions
+\usepackage{url}
+\usepackage{graphicx}  % needed for figures
+\usepackage{dcolumn}   % needed for some tables
+\usepackage{bm}        % for math
+\usepackage{amssymb}   % for math
+\usepackage{booktabs}
+\usepackage{tablefootnote}
+\usepackage{mathptmx}
+
+\newcommand*{\citen}[1]{%
+  \begingroup
+    \romannumeral-`\x % remove space at the beginning of \setcitestyle
+    \setcitestyle{numbers}%
+    \cite{#1}%
+  \endgroup   
+}
+
+
+\title{Friction at ice-I$_\mathrm{h}$ / water interfaces is governed
+  by solid-liquid hydrogen-bonding} 
+\author{Patrick B. Louden}
+\author{J. Daniel Gezelter} \email{gezelter@nd.edu}
+\affiliation{Department of Chemistry and Biochemistry, University of
+  Notre Dame, Notre Dame, IN 46556} 
+
+\keywords{ice; water; interfaces; friction; hydrogen bonding}
+
+\begin{document}
+
+\section{Overview}
+The supporting information contains further details about the model
+construction, analysis methods, and supplies figures that support the
+data presented in the main text.
+
+\section{Fitting velocity profiles}
+%%%%% All this goes in SI:
+In order to calculate solid-liquid friction coefficients, $\kappa$
+from Eq. (5) in the main text, the velocity profiles, $v_x(z)$,
+obtained from each shearing simulation were fit assuming linear
+behavior through each of the three regions of the simulation box; the
+lower liquid, the solid, and the upper liquid. Parabolic functions
+were designed to capture the negative slip behavior that links the
+three regions,
+\begin{equation}\label{vfit}
+v(z) =
+\begin{cases}
+  v_{l} - m_{l}z & 0 \leq z < (z_{1} - w) \\
+  v_{s} - \frac{1}{2}k(z-z_{1})^{2} & (z_{1}-w) \leq z < z_{1} \\
+  v_{s}  & z_{1} \leq z < z_{2} \\
+  v_{s} - \frac{1}{2}k(z-z_{2})^{2}  & z_{2} \leq z <( z_{2} + w)\\
+  v_{s} - \frac{1}{2}kw^{2} - m_{l}(z-(z_{2} + w)) & (z_{2} + w) \leq z \\
+\end{cases}
+\end{equation}
+  
+Here, $v_{l}$ is the velocity of the liquid at the middle of the
+liquid domain (the edge of the simulation box), and $v_{s}$ is the
+velocity of the solid. The locations $z_{1}$ and $z_{2}$ are the edges
+of the ice slab, and $w$ is the width of the interface (distinct from
+$w_{10-90}$ mentioned in the main text). The parameter $m_{l}$ is the
+slope of the velocity profile in the liquid regions of the box which
+is related to the liquid-state viscosity. Figure \ref{fig:pyrComic}
+shows a representative velocity profile (navy squares) and fit (green
+line) with the locations of $z_{1}$ and $z_{2}$ indicated as vertical
+dotted lines. Once the fits were obtained, the values for
+$v_{x}(solid)$ and $v_{x}(liquid)$ for Eq. (5) were sampled from the
+fit. The $z$ locations used to sample the fit were determined by
+structural measures. The $z$ location for $v_{x}(liquid)$ was taken to
+be the Gibbs dividing surface of the interface, less the 10$-$90 width
+of the interface. Similarly, the $z$ location for $v_{x}(solid)$ was
+taken to be the Gibbs dividing surface plus the 10$-$90 width of the
+interface.
+
+%The following 4 figures are the z-rnemd profiles a. q(z), b. T(z), c. Px(z)      \newpage 
+\begin{figure}
+\includegraphics[width=\linewidth]{Pyr_comic_strip}
+\caption{\label{fig:pyrComic} Properties of the SPC/E pyramidal
+  interface being sheared through water at 7.6
+  ms\textsuperscript{-1}. Lower panel: the local tetrahedral order
+  parameter, $q(z)$, (circles) and the hyperbolic tangent fit
+  (turquoise line).  Middle panel: the imposed thermal gradient
+  required to maintain a fixed interfacial temperature of 225 K. Upper
+  panel: the transverse velocity gradient (squares) that develops in
+  response to an imposed momentum flux, along with the fit (green
+  line). The vertical dotted lines indicate the locations of the Gibbs
+  dividing surfaces of the two interfaces.}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{Bas_comic_strip}
+\caption{\label{fig:bComic} Properties of the SPC/E basal interface being
+  sheared through water at 3.2 ms\textsuperscript{-1}.  Panel
+  descriptions are the same as in Fig. \ref{fig:pyrComic}.}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{Pri_comic_strip}
+\caption{\label{fig:pComic} Properties of the SPC/E prismatic interface
+  being sheared through water at 6.0 ms\textsuperscript{-1}.  Panel
+  descriptions are the same as in Fig. \ref{fig:pyrComic}.}
+\end{figure}
+%End figures of z-rnemd profile. 
+
+%Begin rnemdz profiles for the TIP4P/Ice ice/water systems
+\begin{figure}
+\includegraphics[width=\linewidth]{Basal_TIP4PIce_Plot}
+\caption{\label{fig:tipbComic} Properties of the TIP4P/Ice Basal
+  interface being sheared through water at 6.1
+  ms\textsuperscript{-1}. Lower panel: the local tetrahedral order
+  parameter, $q(z)$, (circles) and the hyperbolic tangent fit
+  (blue line).  Middle panel: the imposed thermal gradient
+  required to maintain a fixed interfacial temperature of 270 K. Upper
+  panel: the transverse velocity gradient (squares) that develops in
+  response to an imposed momentum flux, along with the fit (purple
+  line). The vertical dotted lines indicate the locations of the Gibbs
+  dividing surfaces of the two interfaces.}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{Prism_TIP4PIce_Plot}
+\caption{\label{fig:tippComic} Properties of the TIP4P/Ice prismatic
+  interface being sheared through water at 7.4 ms\textsuperscript{-1}.
+  Panel descriptions are the same as in Fig. \ref{fig:tipbComic}.}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{Pyra_TIP4PIce_Plot}
+\caption{\label{fig:tippyComic} Properties of the TIP4P/Ice prismatic
+  interface being sheared through water at 8.1 ms\textsuperscript{-1}.
+  Panel descriptions are the same as in Fig. \ref{fig:tipbComic}.}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{SecPrism_TIP4PIce_Plot}
+\caption{\label{fig:tipsComic} Properties of the TIP4P/Ice secondary
+  prism interface being sheared through water at 8.4
+  ms\textsuperscript{-1}.  Panel descriptions are the same as in
+  Fig. \ref{fig:tipbComic}.}
+\end{figure}
+%end TIP4P/Ice plots
+
+\section{Dependence of friction on Shear Rate}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{kappaPlot2}
+\caption{\label{fig:kappaPlot} Dependence on the observed friction
+  coefficient on the shear rate of the ice through the surrounding
+  liquid water.  The RNEMD simulations impose a momentum flux, but the
+  resulting shear rates can vary.  Here, we collect data in 2 m/s bins
+  to accumulate statistics over multiple independent simulations.  The
+  SPC/E simulations (solid symbols) were done at 225K, and the
+  TIP4P/Ice simulations (patterned symbols) were carried out at
+  270K. The points on this plot have also been averaged over shear
+  direction ($x$ and $y$).}
+\end{figure}
+
+\section{Projected Densities and Channel Widths}
+
+In order to understand the behavior of liquid-phase water molecules
+that are directly in contact with the four interfaces, we computed the
+mean parallelepiped density,
+\begin{equation}
+\rho(y, z) = \frac{1}{L_x~dy~dz} \left< \sum_{i = 1}^{N} m_i \delta(y_i - y) \delta(z_i - z)\right>
+\end{equation}
+for four quiescent interfaces over 1 ns of simulation time (sampled
+every ps).  Here, $dy$ and $dz$ are the lengths and widths of a set of
+parallelepipeds that span the box depth ($L_x$), and for relatively
+small $dy$ and $dz$ (0.05 \AA), the parallelepiped densities show the
+smooth transition between the ordered ice facet and the surrounding
+liquid.
+
+\begin{figure}
+\includegraphics[width=\linewidth]{DensityPlots}
+\caption{\label{fig:DensPlots} Projected densities, $\rho(y, z)$, at
+  the four quiescent interfaces.  Darker colors represent higher
+  densities, while lighter colors (e.g. white) are relatively
+  unpopulated.  For all four interfaces, the location of the
+  tetrahedrality Gibbs dividing surface is indicated with a solid
+  black line, while the two end points of the 90-10 width are shown in
+  grey.}
+\end{figure}
+
+We note that the projected densities allow computation of the channel
+widths and depth for the two prismatic facets using the locations of
+the peak densities.  These figures also indicate that below the Gibbs
+dividing surface, almost no liquid state molecules can be found
+occupying the channels.
+
+%Begin z-orientation times                                                         
+\section{Orientational Decay Profiles}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{Pyr_lcorrz}
+\caption{\label{fig:Pyrorient} Decay times (left) for $C_2(z,t)$ at
+  the pyramidal interface, and their fractional contributions to the
+  overall decay (right) fit using Eq. (8). The local decay constants
+  are plotted as a function of distance from the center of the ice
+  slab. The vertical dashed line indicates the Gibbs dividing surface
+  determined using the local tetrahedral order parameter.  Results are
+  shown for a quiescent system with no applied kinetic or momentum
+  flux (black), an interface with with an imposed kinetic energy flux
+  (red), and a sheared simulation (blue) with both kinetic and
+  momentum fluxes.}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{Bas_lcorrz}
+\caption{\label{fig:Borient} $C_2(z,t)$ time constants for the basal
+  interface.  Panel descriptions are the same as in
+  Fig. \ref{fig:Pyrorient}. }
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{Pri_lcorrz}
+\caption{\label{fig:Porient} $C_2(z,t)$ time constants for the prismatic
+  interface.  Panel descriptions are the same as in
+  Fig. \ref{fig:Pyrorient}.}
+\end{figure}
+%End z-orientation times                                                           
+\end{document}

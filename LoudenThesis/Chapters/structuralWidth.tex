@@ -1,1 +1,270 @@
 \chapter{STRUCTURAL WIDTHS OF ICE-I$_\mathrm{h}$ / WATER INTERFACES}
+
+\subsection{Structural measures of interfacial width under shear}\label{structure}
+One of the open questions about ice / water interfaces is whether the
+thickness of the interfacial `slush' layer depends on the facet
+of ice presented to the water. In the interfacial region, the water
+molecules are ordered differently than in either the solid or liquid
+phases, and also exhibit dynamics unique to their local structure.
+The width of this interfacial layer has been estimated by finding the
+distance over which structural order parameters or dynamic properties
+change from their bulk liquid values to those of the solid ice. The
+properties used to find interfacial widths have included the local
+density, the diffusion constant, and both translational and
+orientational order
+parameters~\cite{Karim1988,Karim1990,Hayward2001,Hayward2002,Bryk2002,Gay2002,Louden2013a}.
+
+Because the VSS-RNEMD method creates thermal and velocity gradients in
+the system, the momenta of the water molecules are perturbed, and
+order parameters that depend on translational motion may measure the
+momentum exchange and not physical properties of the interface.  As a
+structural measure of the interface, we have used the local
+tetrahedral order parameter, which compares the local molecular
+environments (e.g. the angles between nearest neighbor molecules) to
+perfect tetrahedral ordering.  This quantity was originally described
+by Chau and Hardwick,~\cite{Chau1998} was rescaled by Errington and
+Debenedetti,~\cite{Errington2001} and has been used in bulk liquid 
+simulations by Kumar \textit{et al.}~\cite{Kumar2009} It has also
+previously been used in ice / water interfaces by Bryk and
+Haymet~\cite{Bryk2004}, and in our initial work on ice / water
+interfaces\cite{Louden2013a}.
+
+We have evaluated the local tetrahedral order parameter, $q$, along
+the coordinate perpendicular to the ice / water interface, i.e., the
+$z$-axis of the simulation box. With $N$ molecules,
+\begin{equation}
+q(z) = \frac{1}{N_z} \int_0^L \sum_{i=1}^{N} \Bigg(1 -\frac{9}{2n(n-1)}\sum_{j=1}^{n-1}
+\sum_{k=j+1}^{n} \bigg(\cos\psi_{jik}+\frac{1}{3}\bigg)^2\Bigg)
+\delta(z_{i}-z)\mathrm{d}z .
+\label{eq:qz}
+\end{equation}
+$\psi_{jik}$ is the angle formed between the oxygen sites of water
+molecules $i$, $j$, and $k$, where molecule $i$ is the central water
+molecule (with $n$ neighbors) and molecules $j$ and $k$ are two of the
+neighbors of $i$.  The neighboring molecules $j$ and $k$ are
+restricted to lie within the first solvation shell of molecule $i$
+($r < 3.41$~\AA\ for water), and the double sum visits all angles for
+the $n$ neighbors of molecule $i$ that are within this distance.  When
+molecule $i$ has exactly four neighbors ($n=4$), the prefactor reduces
+to $3/8$, as in the expression of Errington and Debenedetti, but
+Eq. \eqref{eq:qz} also provides tetrahedrality information for water
+molecules that are either under- or over-coordinated. We have also
+introduced the normalization factor
+$N_z = \sum_i \int \delta(z_i - z) \mathrm{d}z$ to account for the
+varying populations of water molecules within each finite-width bin.
+
+At low temperatures, the tetrahedral order parameter can approach
+unity for perfect ice-I$_\mathrm{h}$ structures. However, at
+temperatures close to melting, values of 0.9 are more common in SPC/E
+ice due to thermal motion in the lattice. In the liquid, overlap of
+the local environment with a perfect tetrahedron is reduced, and
+values of $q(z) \approx 0.75$ are common in SPC/E water at 225~K. The
+results indicate more tetrahedral structure in TIP4P/Ice; at
+270~K, tetrahedrality averages, $q(z) \approx 0.95$ and $0.75$ are
+found in the ice and liquid, respectively.
+
+The structural widths of the ice / water interfaces were determined by
+dividing each system into 1~\AA~ bins along the $z$-axis, and
+computing statistical averages of $q(z)$ in each bin. For the
+secondary prism interface (using SPC/E water at 225~K), the resulting
+distribution can be seen in the bottom panel of Fig. \ref{fig:spComic}
+(and in the Supporting Information for the other interfaces and
+TIP4P/Ice). In the bulk liquid (at small and large values of $z$), the
+order parameter takes on values of $q(z) \approx~0.77$, while
+$q(z) \approx~0.92$ was found in bins spanning the ice. The
+tetrahedrality profiles were fit using a function that captures the
+smooth transition from the bulk liquid to ice (turquoise line in the
+bottom panel of the same figures),
+\begin{equation}\label{tet_fit}
+q(z) \approx
+q_\mathrm{liq}+\frac{q_\mathrm{ice}-q_\mathrm{liq}}{2}\left[\tanh\left(\frac{z-l}{w}\right)-\tanh\left(\frac{z-r}{w}\right)\right]+\beta\left|z-\frac{r+l}{2}\right|.
+\end{equation}
+Here $q_\mathrm{liq}$ and $q_\mathrm{ice}$ are the values of the order
+parameter for the bulk liquid and ice domains. The locations $l$ and
+$r$ are the $z-$coordinates of the Gibbs dividing surface for the left
+and right interfaces (shown in Fig. \ref{fig:spComic} with vertical
+dotted lines), and $w$ is the interfacial width.  The last term in
+Eq. \eqref{tet_fit} accounts for the influence of the weak thermal
+gradient on the tetrahedrality profile in the liquid region. Namely,
+at warmer temperatures the liquid is able to adopt local
+configurations resulting in lower values of the order parameter. This
+results in a small linear decay in the tetrahedrality profiles for
+increasing displacements from the ice surface.
+
+\begin{figure}
+\includegraphics[width=\linewidth]{Figures/SecPrismComicStrip}
+\caption{\label{fig:spComic} Properties of the secondary prism
+  interface (top) being sheared through water at 8.6 m
+  s\textsuperscript{-1}. Lower panel: the local tetrahedral order
+  parameter, $q(z)$, (circles) and the hyperbolic tangent fit
+  (turquoise line).  Middle panel: the imposed thermal gradient
+  required to maintain a fixed interfacial temperature of $\sim$225 K
+  with the SPC/E water model. Upper panel: the transverse velocity
+  gradient (squares) that develops in response to an imposed momentum
+  flux, along with the fit (green line). The vertical dotted lines
+  indicate the locations of the Gibbs dividing surfaces of the two
+  interfaces.}
+\end{figure}
+
+In the middle panel of Fig. \ref{fig:spComic}, we show the resulting
+thermal gradient from the imposed kinetic energy flux. For the SPC/E
+water model, the interfacial temperature is held at $\sim$ 225~K
+(270~K for the TIP4P/Ice), allowing investigation of the response to
+the shear while maintaining solid / liquid coexistence. In the top
+panel, the velocity gradient resulting from the imposed momentum flux
+shows that the ice has a uniform positive velocity along the $x$
+axis. The bulk liquid at the ends of the simulation cell has negative
+velocity, although the center of mass of the simulation box is
+stationary.  The bulk fluid shows a primarily linear velocity gradient
+allowing for easy calculation of the shear viscosity using
+Eq. \eqref{eq:viscosity}. Close to the interface, the ice imparts
+significant positive momentum into the surrounding interfacial liquid.
+Projections of the velocity gradient from the liquid onto the Gibbs
+dividing surface indicate that the ice-water interface is in the
+negative slip regime.
+
+From Eq. \eqref{tet_fit}, we have obtained estimates for $w$, the
+structural widths of the interfaces for the quiescent ice / water
+systems. These values are related to the $10\%-90\%$ interfacial
+widths commonly reported in previous studies
+($w_\mathrm{10-90} = 2.197~w$).\cite{Bryk2002,Bryk2004} For the SPC/E
+interfaces at 225~K, we find $w_\mathrm{10-90} \approx 7$~\AA~ as seen
+in Table \ref{tab:propsSPCE}.  These values are similar to our previous
+findings for the $10\%-90\%$ interfacial widths obtained from shorter
+simulations, ($7.0 \pm 0.9$ \AA) for basal and ($7.9 \pm 0.4$ \AA) for
+prismatic interfaces.\cite{Louden2013a} The interfacial widths in
+TIP4P/Ice systems indicate slightly broader interfaces, where values of
+$w_\mathrm{10-90} \approx 9$~\AA~ are more common. These values are
+reported in Table \ref{tab:propsTIP4P}.
+
+Over the range of shear rates investigated,
+$\sim 0.5-10.0~\mathrm{~m~s}^{-1}$, we find no significant changes in
+the interfacial widths for any of the crystal faces. All values of
+$w_\mathrm{10-90}$ obtained from shearing simulations fell inside the
+error bars of the values obtained from the quiescent simulations.
+
+\begin{table}[h]
+\centering
+\caption{Computed properties of the
+  ice-I$_\mathrm{h}$ interfaces with SPC/E (225~K)
+  water. Dynamic widths ($d_\mathrm{10-90}$ and $j_\mathrm{10-90}$)
+  are defined in Eqs. \eqref{tauFit} and the discussion section,
+  respectively. Uncertainties in the last digit are indicated with
+  parentheses.\label{tab:propsSPCE}} 
+\begin{tabular}{r|ccc|c}  
+  \toprule
+  & \multicolumn{3}{c|}{Interfacial Widths (\AA)} & Surface H-bond density \\
+  Interface & $w_\mathrm{10-90}$ &  $d_\mathrm{10-90}$ & $j_\mathrm{10-90}$ & $\rho_{sl}$ (\AA\textsuperscript{-2}) \\ 
+  \midrule
+  Basal  $\{0001\}$                 & 7.5(4) & 11(2) & 11 & 0.1227(3)  \\
+  Prismatic  $\{10\bar{1}0\}$       & 7.2(2) & 10(2) & 12 & 0.2014(5)  \\
+  Pyramidal  $\{20\bar{2}1\}$       & 6.6(2) & 11(3) & 13 & 0.0866(3)  \\
+  Secondary Prism  $\{11\bar{2}0\}$ & 6.7(2) & 11(3) & 10 & 0.1384(4)  \\ 
+  \bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Computed properties of the
+  ice-I$_\mathrm{h}$ interfaces with TIP4P/Ice (270~K) water. Uncertainties in the last digit are indicated with
+  parentheses. \label{tab:propsTIP4P}}
+\begin{tabular}{r|ccc|c}  
+  \toprule
+  & \multicolumn{3}{c|}{Interfacial Widths (\AA)} & 
+                                                    Surface H-bond
+                                                    density \\
+  Interface & $w_\mathrm{10-90}$ &  $d_\mathrm{10-90}$ & $j_\mathrm{10-90}$ & $\rho_{sl}$ (\AA\textsuperscript{-2}) \\ 
+  \midrule
+  Basal  $\{0001\}$                 & 8.8(8) & 15(3) & 9   & 0.0749(9)\\
+  Prismatic  $\{10\bar{1}0\}$       & 9.0(5) & 15(2) & 13  & 0.141(1) \\
+  Pyramidal  $\{20\bar{2}1\}$       & 8.2(5) & 13(1) & 10  & 0.074(1) \\
+  Secondary Prism  $\{11\bar{2}0\}$ & 9.4(6) & 14(2)   & 12  & 0.119(1) \\
+  \bottomrule
+\end{tabular}
+\end{table}
+
+These values agree reasonably well with those reported by Haymet
+\textit{et
+  al.}.\cite{Karim1988,Karim1990,Hayward2001,Bryk2002,Hayward2002,Bryk2004}
+Using a variety of water models and several different order
+parameters, they have estimated the ice / water interface to be
+between $5$~\AA~and $18$~\AA~depending on the particular interface and
+means of measure.  For the SPC/E model, they found the basal and
+prismatic ice / water interface to be $\approx 11$~\AA~ wide from
+translational and window-averaged density order parameters. The
+interfacial widths were also estimated by observing the transition of
+a similar tetrahedral order parameter from their ice-like value of
+$0.9$ to the bulk liquid value of $0.6$. This gave estimates of
+$\approx 11$~\AA~, somewhat larger than our current estimates. More
+careful analysis will be necessary to determine if the proton striped
+surface configurations used here are the origin of this discrepancy.
+
+
+%The following 4 figures are the z-rnemd profiles a. q(z), b. T(z), c. Px(z)     
+\begin{figure}
+\includegraphics[width=\linewidth]{Figures/Pyr_comic_strip}
+\caption{\label{fig:pyrComic} Properties of the SPC/E pyramidal
+  interface being sheared through water at 7.6
+  ms\textsuperscript{-1}. Lower panel: the local tetrahedral order
+  parameter, $q(z)$, (circles) and the hyperbolic tangent fit
+  (turquoise line).  Middle panel: the imposed thermal gradient
+  required to maintain a fixed interfacial temperature of 225 K. Upper
+  panel: the transverse velocity gradient (squares) that develops in
+  response to an imposed momentum flux, along with the fit (green
+  line). The vertical dotted lines indicate the locations of the Gibbs
+  dividing surfaces of the two interfaces.}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{Figures/Bas_comic_strip}
+\caption{\label{fig:bComic} Properties of the SPC/E basal interface being
+  sheared through water at 3.2 ms\textsuperscript{-1}.  Panel
+  descriptions are the same as in Fig. \ref{fig:pyrComic}.}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{Figures/Pri_comic_strip}
+\caption{\label{fig:pComic} Properties of the SPC/E prismatic interface
+  being sheared through water at 6.0 ms\textsuperscript{-1}.  Panel
+  descriptions are the same as in Fig. \ref{fig:pyrComic}.}
+\end{figure}
+%End figures of z-rnemd profile. 
+
+%Begin rnemdz profiles for the TIP4P/Ice ice/water systems
+\begin{figure}
+\includegraphics[width=\linewidth]{Figures/Basal_TIP4PIce_Plot}
+\caption{\label{fig:tipbComic} Properties of the TIP4P/Ice Basal
+  interface being sheared through water at 6.1
+  ms\textsuperscript{-1}. Lower panel: the local tetrahedral order
+  parameter, $q(z)$, (circles) and the hyperbolic tangent fit
+  (blue line).  Middle panel: the imposed thermal gradient
+  required to maintain a fixed interfacial temperature of 270 K. Upper
+  panel: the transverse velocity gradient (squares) that develops in
+  response to an imposed momentum flux, along with the fit (purple
+  line). The vertical dotted lines indicate the locations of the Gibbs
+  dividing surfaces of the two interfaces.}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{Figures/Prism_TIP4PIce_Plot}
+\caption{\label{fig:tippComic} Properties of the TIP4P/Ice prismatic
+  interface being sheared through water at 7.4 ms\textsuperscript{-1}.
+  Panel descriptions are the same as in Fig. \ref{fig:tipbComic}.}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{Figures/Pyra_TIP4PIce_Plot}
+\caption{\label{fig:tippyComic} Properties of the TIP4P/Ice prismatic
+  interface being sheared through water at 8.1 ms\textsuperscript{-1}.
+  Panel descriptions are the same as in Fig. \ref{fig:tipbComic}.}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{Figures/SecPrism_TIP4PIce_Plot}
+\caption{\label{fig:tipsComic} Properties of the TIP4P/Ice secondary
+  prism interface being sheared through water at 8.4
+  ms\textsuperscript{-1}.  Panel descriptions are the same as in
+  Fig. \ref{fig:tipbComic}.}
+\end{figure}
+%end TIP4P/Ice plots

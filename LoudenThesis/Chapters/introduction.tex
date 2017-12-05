@@ -1666,6 +1666,120 @@ interface\cite{20,45}
 % Ice/water interface
 % ice/qll interface
 %%%%%%%%%%%%%%%%%%%%%%%%
+
+%iceWaterFriction intro
+Ice friction has been investigated extensively with a range
+of experimental techniques to elucidate the role of
+temperature,\cite{Bowden1939,Evans1976,Roberts1981,Derjaguin1988,Liang2003,Higgins2008} sliding speed,\cite{Evans1976,Derjaguin1988,Liang2003} applied
+load,\cite{Bowden1939,Oksanen1982,Derjaguin1988,Buhl2001,Baurle2006}
+contact area,\cite{Bowden1939,Baurle2007} and
+moisture.\cite{Calabrese1980} Kietzig \textit{et al.} performed
+experiments on steel alloy rings sliding over a prepared ice
+surface.\cite{Kietzig2009} They investigated the effect of surface
+nanopatterning, hydrophobicity, and surface structure of the
+ice-exposed slider on the ice / slider friction.
+Using laser irradiation, the slider surface hydrophobicity was tuned
+without changing the chemical nature of the material. Kietzig showed
+that laser-induced hydrophobicity resulted in fewer capillary bridges
+forming between the slider and a thin film of melted ice. This reduced
+the amount of viscous shearing of the ice-melt, resulting in a lower
+friction coefficient.
+While ice friction experiments have focused on heterogeneous
+materials,\cite{Bowden1939,Evans1976,Derjaguin1988,Liang2003,Liang2005,Baurle2006,Baurle2007,Kietzig2009,Kietzig2010}
+there have also been significant advances made in understanding
+ice-ice
+friction.\cite{Oksanen1982,Kennedy2000,Maeno2004,Fortt2007,Fortt2011,Lishman2011,Samadashvili2013}
+
+Experiments and computer simulations both suggest the existence of a
+quasi-liquid layer (QLL) that forms at the surface of ice at
+temperatures below the bulk melting point but above
+235~K.\cite{Kroes1992,Ikeda-Fukazawa2004,Picaud2006,Conde2008,Bartels-Rausch2014,Sancheza2017}
+The formation of this layer is driven by the termination of the
+periodic crystal structure. The surface molecules are not as tightly
+bound to their lattice positions as molecules in the underlying ice,
+and with sufficient thermal energy, these molecules reorient to
+maximize hydrogen bonding. At warmer temperatures, they can also
+translate along the surface.\cite{Pfalzgraff2011,Bartels-Rausch2014}
+The existence of the QLL is now generally accepted as one of the
+reasons that ice displays a low coefficient of sliding
+friction.\cite{Dash1995,Rosenberg2005,Dash2006,Malenkov2009}
+
+Three distinct ice friction regimes have been described:
+boundary friction, mixed friction, and hydrodynamic friction, and the
+particular regime depends on the temperature and sliding velocity of
+the
+material.\cite{Bhushan2002,Kietzig2009,Kietzig2010,Persson2015,Tuononen2016}
+The observed friction is the result of different physical processes in
+each regime. In boundary friction, the lubricating layer of ice melt
+is only a few molecules thick. This thin film is unable to support the
+sliding load, and friction can be attributed to surface asperities of
+the sliding material interacting with the ice surface
+itself.\cite{Bhushan2002} In the mixed friction regime, the
+lubricating layer is thicker than in the boundary regime, but not yet
+sufficiently thick to maintain the sliding load. The QLL film reduces
+solid-solid adhesion at the interface, although the lubricating layer
+can also form capillary bridges with the material, resulting in a drag
+force.\cite{Kietzig2009,Kietzig2010}
+
+If the liquid layer is thick enough to support the sliding load, the
+slider's surface asperities are no longer in contact with the surface
+and the observed friction may be partially due to the capillary
+bridges formed between the ice melt and the material. Under these
+conditions, the ice friction is classified as hydrodynamic
+friction.\cite{Kietzig2009,Kietzig2010} Thus the three regimes are
+characterized by the extent that a liquid-like layer of water
+mitigates the sliding load.
+
+\begin{figure}
+\includegraphics[width=4in]{Figures/QLLsketch}
+\caption{\label{fig:QLLsketch} In the hydrodynamic regime, the
+  friction felt by a slider on an ice surface is mediated by a
+  quasi-liquid layer (QLL) that forms on the surface of the ice.
+  There can be many contributions to this friction: capillary bridges
+  between the slider and the QLL (red), viscous drag in the liquid
+  (yellow), and solid / liquid friction between the ice and the liquid
+  film (green). This study concerns the last of the three
+  contributions, the drag contributed by the ice-liquid interface.}
+\end{figure}
+
+Kietzig \textit{et al.} have outlined popular experimental techniques
+used to investigate the coefficients of friction for a variety of
+materials sliding on ice, as well as their sensitivity to temperature,
+slider load, contact area, wettability and hydrophobicity of the
+slider.\cite{Kietzig2010} Of particular interest, the friction
+coefficients were found to increase with increasing slider
+velocity. This was attributed to three physical processes; adhesion
+forces between the slider's asperities and the ice surface, breaking
+of capillary bridges between the slider and the ice surface, and the
+viscous shearing of the ice melt across the ice surface. While teasing
+apart the individual contributions has proven challenging,
+Kietzig\cite{Kietzig2009} and Persson\cite{Persson2015,Tuononen2016}
+have made significant progress. However, there is still very little
+known about water shearing over ice surfaces. Open questions include:
+how does the structure of the interface change during this process,
+and what role does the presented crystal facet have in the observed
+friction?
+
+To help understand slider-ice friction in the hydrodynamic regime, we
+have simulated the drag forces contributed by the interaction of the
+liquid water film with the underlying ice facet. This study uses
+non-equilibrium molecular dynamics (with an applied momentum flux) to
+create a shear flow at the ice / water interface. The magnitude of the
+momentum flux is then used to compute the solid / liquid friction for
+four different facets of ice that are presented to the liquid.  We
+have previously used this technique to study solid / liquid friction
+for the basal and prismatic crystal facets where we observed
+significant facet-dependence, and noted surface corrugations that
+could contribute to these differences.\cite{Louden2013a} Here, we
+broaden the investigation to four common ice facets using two
+different water models, we study significantly larger systems for
+significantly longer times, a wider range of shear rates, and we
+introduce a novel method for calculating solid / liquid friction
+coefficients under conditions of \textit{negative} slip.
+
+
+% end iceWaterFriction intro
+
 One anomoly of water in particular has been at the heart of a debate
 amongst scientists for nearly two centuries; the observed low
 coefficients of friction for sliding across ice.  Tribological studies of

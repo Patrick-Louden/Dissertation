@@ -120,56 +120,56 @@ with the liquid.
 
 \section{Methodology}
 \subsection{Construction of the Ice / Water interfaces}
-Ice I$_\mathrm{h}$ crystallizes in the hexagonal space group
-P$6_3/mmc$, and common ice crystals form hexagonal plates with the
-basal face, $\{0001\}$, forming the top and bottom of each plate, and
-the prismatic facet, $\{10\bar{1}0\}$, forming the sides.  In extreme
-temperatures or low water saturation conditions, ice crystals can
-easily form as hollow columns, needles and dendrites. These are
-structures that expose other crystalline facets of the ice to the
-surroundings.  Among the more common facets are the secondary prism,
-$\{11\bar{2}0\}$, and pyramidal, $\{20\bar{2}1\}$, faces.  
+% Ice I$_\mathrm{h}$ crystallizes in the hexagonal space group
+% P$6_3/mmc$, and common ice crystals form hexagonal plates with the
+% basal face, $\{0001\}$, forming the top and bottom of each plate, and
+% the prismatic facet, $\{10\bar{1}0\}$, forming the sides.  In extreme
+% temperatures or low water saturation conditions, ice crystals can
+% easily form as hollow columns, needles and dendrites. These are
+% structures that expose other crystalline facets of the ice to the
+% surroundings.  Among the more common facets are the secondary prism,
+% $\{11\bar{2}0\}$, and pyramidal, $\{20\bar{2}1\}$, faces.  
 
-We found it most useful to work with proton-ordered, zero-dipole
-crystals that expose strips of dangling H-atoms and lone
-pairs~\cite{Buch:2008fk}.  Our structures were created starting from
-Structure 6 of Hirsch and Ojam\"{a}e's set of orthorhombic
-representations for ice-I$_{h}$~\cite{Hirsch04}.  This crystal
-structure was cleaved along the four different facets.  The exposed
-face was reoriented normal to the $z$-axis of the simulation cell, and
-the structures were extended to form large exposed facets in
-rectangular box geometries.  Liquid water boxes were created with
-identical dimensions (in $x$ and $y$) as the ice, with a $z$ dimension
-of three times that of the ice block, and a density corresponding to 1
-g / cm$^3$.  Each of the ice slabs and water boxes were independently
-equilibrated at a pressure of 1 atm, and the resulting systems were
-merged by carving out any liquid water molecules within 3 \AA\ of any
-atoms in the ice slabs.  Each of the combined ice/water systems were
-then equilibrated at 225K, which is the liquid-ice coexistence
-temperature for SPC/E water~\cite{Bryk02}. Reference
-\citealp{Louden13} contains a more detailed explanation of the
-construction of similar ice/water interfaces. The resulting dimensions
-as well as the number of ice and liquid water molecules contained in
-each of these systems are shown in Table \ref{tab:method}.
+% We found it most useful to work with proton-ordered, zero-dipole
+% crystals that expose strips of dangling H-atoms and lone
+% pairs~\cite{Buch:2008fk}.  Our structures were created starting from
+% Structure 6 of Hirsch and Ojam\"{a}e's set of orthorhombic
+% representations for ice-I$_{h}$~\cite{Hirsch04}.  This crystal
+% structure was cleaved along the four different facets.  The exposed
+% face was reoriented normal to the $z$-axis of the simulation cell, and
+% the structures were extended to form large exposed facets in
+% rectangular box geometries.  Liquid water boxes were created with
+% identical dimensions (in $x$ and $y$) as the ice, with a $z$ dimension
+% of three times that of the ice block, and a density corresponding to 1
+% g / cm$^3$.  Each of the ice slabs and water boxes were independently
+% equilibrated at a pressure of 1 atm, and the resulting systems were
+% merged by carving out any liquid water molecules within 3 \AA\ of any
+% atoms in the ice slabs.  Each of the combined ice/water systems were
+% then equilibrated at 225K, which is the liquid-ice coexistence
+% temperature for SPC/E water~\cite{Bryk02}. Reference
+% \citealp{Louden13} contains a more detailed explanation of the
+% construction of similar ice/water interfaces. The resulting dimensions
+% as well as the number of ice and liquid water molecules contained in
+% each of these systems are shown in Table \ref{tab:method}.
 
-The SPC/E water model~\cite{Berendsen87} has been extensively
-characterized over a wide range of liquid
-conditions~\cite{Arbuckle02,Kuang12}, and its phase diagram has been
-well studied~\cite{Baez95,Bryk04b,Sanz04b,Fennell:2005fk}. With longer
-cutoff radii and careful treatment of electrostatics, SPC/E mostly
-avoids metastable crystalline morphologies like
-ice-\textit{i}~\cite{Fennell:2005fk} and ice-B~\cite{Baez95}.  The
-free energies and melting
-points~\cite{Baez95,Arbuckle02,Gay02,Bryk02,Bryk04b,Sanz04b,Fennell:2005fk,Fernandez06,Abascal07,Vrbka07}
-of various other crystalline polymorphs have also been calculated.
-Haymet \textit{et al.} have studied quiescent Ice-I$_\mathrm{h}$/water
-interfaces using the SPC/E water model, and have seen structural and
-dynamic measurements of the interfacial width that agree well with
-more expensive water models, although the coexistence temperature for
-SPC/E is still well below the experimental melting point of real
-water~\cite{Bryk02}. Given the extensive data and speed of this model,
-it is a reasonable choice even though the temperatures required are
-somewhat lower than real ice / water interfaces.
+% The SPC/E water model~\cite{Berendsen87} has been extensively
+% characterized over a wide range of liquid
+% conditions~\cite{Arbuckle02,Kuang12}, and its phase diagram has been
+% well studied~\cite{Baez95,Bryk04b,Sanz04b,Fennell:2005fk}. With longer
+% cutoff radii and careful treatment of electrostatics, SPC/E mostly
+% avoids metastable crystalline morphologies like
+% ice-\textit{i}~\cite{Fennell:2005fk} and ice-B~\cite{Baez95}.  The
+% free energies and melting
+% points~\cite{Baez95,Arbuckle02,Gay02,Bryk02,Bryk04b,Sanz04b,Fennell:2005fk,Fernandez06,Abascal07,Vrbka07}
+% of various other crystalline polymorphs have also been calculated.
+% Haymet \textit{et al.} have studied quiescent Ice-I$_\mathrm{h}$/water
+% interfaces using the SPC/E water model, and have seen structural and
+% dynamic measurements of the interfacial width that agree well with
+% more expensive water models, although the coexistence temperature for
+% SPC/E is still well below the experimental melting point of real
+% water~\cite{Bryk02}. Given the extensive data and speed of this model,
+% it is a reasonable choice even though the temperatures required are
+% somewhat lower than real ice / water interfaces.
 
 \section{Droplet Simulations}
 Ice surfaces with a thickness of $\sim$~20~\AA\ were created as
@@ -195,68 +195,68 @@ conducted in the microcanonical (NVE) ensemble.  Representative
 configurations for the droplet on the prismatic facet are shown in
 figure \ref{fig:Droplet}.
 
-\section{Shearing Simulations (Interfaces in Bulk Water)}
-To perform the shearing simulations, the velocity shearing and scaling
-variant of reverse non-equilibrium molecular dynamics (VSS-RNEMD) was
-employed \cite{Kuang12}. This method performs a series of simultaneous
-non-equilibrium exchanges of linear momentum and kinetic energy
-between two physically-separated regions of the simulation cell.  The
-system responds to this unphysical flux with velocity and temperature
-gradients.  When VSS-RNEMD is applied to bulk liquids, transport
-properties like the thermal conductivity and the shear viscosity are
-easily extracted assuming a linear response between the flux and the
-gradient.  At the interfaces between dissimilar materials, the same
-method can be used to extract \textit{interfacial} transport
-properties (e.g. the interfacial thermal conductance and the
-hydrodynamic slip length).
+% \section{Shearing Simulations (Interfaces in Bulk Water)}
+% To perform the shearing simulations, the velocity shearing and scaling
+% variant of reverse non-equilibrium molecular dynamics (VSS-RNEMD) was
+% employed \cite{Kuang12}. This method performs a series of simultaneous
+% non-equilibrium exchanges of linear momentum and kinetic energy
+% between two physically-separated regions of the simulation cell.  The
+% system responds to this unphysical flux with velocity and temperature
+% gradients.  When VSS-RNEMD is applied to bulk liquids, transport
+% properties like the thermal conductivity and the shear viscosity are
+% easily extracted assuming a linear response between the flux and the
+% gradient.  At the interfaces between dissimilar materials, the same
+% method can be used to extract \textit{interfacial} transport
+% properties (e.g. the interfacial thermal conductance and the
+% hydrodynamic slip length).
 
-The kinetic energy flux (producing a thermal gradient) is necessary
-when performing shearing simulations at the ice-water interface in
-order to prevent the frictional heating due to the shear from melting
-the crystal. Reference \citealp{Louden13} provides more details on the
-VSS-RNEMD method as applied to ice-water interfaces. A representative
-configuration of the solvated prismatic facet being sheared through
-liquid water is shown in figure \ref{fig:Shearing}.
+% The kinetic energy flux (producing a thermal gradient) is necessary
+% when performing shearing simulations at the ice-water interface in
+% order to prevent the frictional heating due to the shear from melting
+% the crystal. Reference \citealp{Louden13} provides more details on the
+% VSS-RNEMD method as applied to ice-water interfaces. A representative
+% configuration of the solvated prismatic facet being sheared through
+% liquid water is shown in figure \ref{fig:Shearing}.
 
-All simulations were performed using OpenMD~\cite{OOPSE,openmd}, with
-a time step of 2 fs and periodic boundary conditions in all three
-dimensions.  Electrostatics were handled using the damped-shifted
-force real-space electrostatic kernel~\cite{Ewald}. 
+% All simulations were performed using OpenMD~\cite{OOPSE,openmd}, with
+% a time step of 2 fs and periodic boundary conditions in all three
+% dimensions.  Electrostatics were handled using the damped-shifted
+% force real-space electrostatic kernel~\cite{Ewald}. 
 
-The interfaces were equilibrated for a total of 10 ns at equilibrium
-conditions before being exposed to either a shear or thermal gradient.
-This consisted of 5 ns under a constant temperature (NVT) integrator
-set to 225~K followed by 5 ns under a microcanonical (NVE) integrator.
-Weak thermal gradients were allowed to develop using the VSS-RNEMD
-(NVE) integrator using a small thermal flux ($-2.0\times 10^{-6}$
-kcal/mol/\AA$^2$/fs) for a duration of 5 ns to allow the gradient to
-stabilize.  The resulting temperature gradient was $\approx$ 10K over
-the entire box length, which was sufficient to keep the temperature at
-the interface within $\pm 1$ K of the 225~K target.
+% The interfaces were equilibrated for a total of 10 ns at equilibrium
+% conditions before being exposed to either a shear or thermal gradient.
+% This consisted of 5 ns under a constant temperature (NVT) integrator
+% set to 225~K followed by 5 ns under a microcanonical (NVE) integrator.
+% Weak thermal gradients were allowed to develop using the VSS-RNEMD
+% (NVE) integrator using a small thermal flux ($-2.0\times 10^{-6}$
+% kcal/mol/\AA$^2$/fs) for a duration of 5 ns to allow the gradient to
+% stabilize.  The resulting temperature gradient was $\approx$ 10K over
+% the entire box length, which was sufficient to keep the temperature at
+% the interface within $\pm 1$ K of the 225~K target.
 
-Velocity gradients were then imposed using the VSS-RNEMD (NVE)
-integrator with a range of momentum fluxes.  The systems were divided
-into 100 bins along the $z$-axis for the VSS-RNEMD moves, which were
-attempted every time step.  Although computationally expensive, this
-was done to minimize the magnitude of each individual momentum
-exchange.  Because individual VSS-RNEMD exchange moves conserve both
-total energy and linear momentum, the method can be ``bolted-on'' to
-simulations in any ensemble.  The simulations of the pyramidal
-interface were performed under the canonical (NVT) ensemble.  When
-time correlation functions were computed, the RNEMD simulations were
-done in the microcanonical (NVE) ensemble.  All simulations of the
-other interfaces were carried out in the microcanonical ensemble.
+% Velocity gradients were then imposed using the VSS-RNEMD (NVE)
+% integrator with a range of momentum fluxes.  The systems were divided
+% into 100 bins along the $z$-axis for the VSS-RNEMD moves, which were
+% attempted every time step.  Although computationally expensive, this
+% was done to minimize the magnitude of each individual momentum
+% exchange.  Because individual VSS-RNEMD exchange moves conserve both
+% total energy and linear momentum, the method can be ``bolted-on'' to
+% simulations in any ensemble.  The simulations of the pyramidal
+% interface were performed under the canonical (NVT) ensemble.  When
+% time correlation functions were computed, the RNEMD simulations were
+% done in the microcanonical (NVE) ensemble.  All simulations of the
+% other interfaces were carried out in the microcanonical ensemble.
 
-These gradients were allowed to stabilize for 1~ns before data
-collection started. Once established, four successive 0.5~ns runs were
-performed for each shear rate.  During these simulations,
-configurations of the system were stored every 1~ps, and statistics on
-the structure and dynamics in each bin were accumulated throughout the
-simulations.  Although there was some small variation in the measured
-interfacial width between succcessive runs, no indication of bulk
-melting or crystallization was observed.  That is, no large scale
-changes in the positions of the top and bottom interfaces occurred
-during the simulations.
+% These gradients were allowed to stabilize for 1~ns before data
+% collection started. Once established, four successive 0.5~ns runs were
+% performed for each shear rate.  During these simulations,
+% configurations of the system were stored every 1~ps, and statistics on
+% the structure and dynamics in each bin were accumulated throughout the
+% simulations.  Although there was some small variation in the measured
+% interfacial width between succcessive runs, no indication of bulk
+% melting or crystallization was observed.  That is, no large scale
+% changes in the positions of the top and bottom interfaces occurred
+% during the simulations.
 
 \section{Results}
 \subsection{Ice - Water Contact Angles}
@@ -744,18 +744,7 @@ explain much of the behavior observed in our simulations.
   proceeds, and the long-time behavior of this angle is used to
   estimate the hydrophilicity of the facet.}
 \end{figure}
-\newpage
-\begin{figure}
-\includegraphics[width=1.9in]{Figures/Shearing}
-\caption{\label{fig:Shearing} Computational model of a slab of ice
-  being sheared through liquid water.  In this figure, the ice is
-  presenting two copies of the prismatic $\{10\bar{1}0\}$ facet
-  towards the liquid phase.  The RNEMD simulation exchanges both
-  linear momentum (indicated with arrows) and kinetic energy between
-  the central box and the box that spans the cell boundary.  The
-  system responds with weak thermal gradient and a velocity profile
-  that shears the ice relative to the surrounding liquid.}
-\end{figure}
+
 
 % \begin{figure}
 % \includegraphics[width=\linewidth]{ContactAngle}
@@ -974,73 +963,4 @@ reasonable agreement with the structural width above.
   facets compared with the two prismatic facets.}
 \end{figure}
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%S2-S5 are the z-rnemd profiles
-\begin{figure}
-\includegraphics[width=\linewidth]{Figures/Pyr_comic_strip}
-\caption{\label{fig:pyrComic} Properties of the pyramidal interface
-  being sheared through water at 3.8 ms\textsuperscript{-1}. Lower
-  panel: the local tetrahedral order parameter, $q(z)$, (circles) and
-  the hyperbolic tangent fit (turquoise line).  Middle panel: the
-  imposed thermal gradient required to maintain a fixed interfacial
-  temperature of 225 K. Upper panel: the transverse velocity gradient
-  that develops in response to an imposed momentum flux. The vertical
-  dotted lines indicate the locations of the midpoints of the two
-  interfaces.}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=\linewidth]{Figures/SP_comic_strip}
-\caption{\label{fig:spComic} The secondary prism interface with a shear 
-rate of 3.5 \
-ms\textsuperscript{-1}. Panel descriptions match those in figure \ref{fig:pyrComic}.}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=\linewidth]{Figures/B_comic_strip}
-\caption{\label{fig:bComic} The basal interface with a shear 
-rate of 1.3 \
-ms\textsuperscript{-1}. Panel descriptions match those in figure \ref{fig:pyrComic}.}
-\end{figure}
-
-
-\begin{figure}
-\includegraphics[width=\linewidth]{Figures/prismatic_comic_strip}
-\caption{\label{fig:pComic} The prismatic interface with a shear 
-rate of 2 \
-ms\textsuperscript{-1}. Panel descriptions match those in figure \ref{fig:pyrComic}.}
-\end{figure}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Figures S6-S9 are the z-orientation times
-\begin{figure}
-\includegraphics[width=\linewidth]{Figures/Pyr-orient}
-\caption{\label{fig:PyrOrient} The three decay constants of the
-  orientational time correlation function, $C_2(z,t)$, for water as a
-  function of distance from the center of the ice slab. The vertical
-  dashed line indicates the edge of the pyramidal ice slab determined
-  by the local order tetrahedral parameter. The control (circles) and
-  sheared (squares) simulations were fit using shifted-exponential
-  decay (see Eq. 9 in Ref. \citealp{Louden13}).}
-\end{figure}  
-
-\begin{figure}
-\includegraphics[width=\linewidth]{Figures/SP-orient}
-\caption{\label{fig:SPorient} Decay constants for $C_2(z,t)$ at the secondary 
-prism face. Panel descriptions match those in \ref{fig:PyrOrient}.}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=\linewidth]{Figures/B-orient}
-\caption{\label{fig:Borient} Decay constants for $C_2(z,t)$ at the basal face. Panel descriptions match those in \ref{fig:PyrOrient}.}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=\linewidth]{Figures/prismatic-orient}
-\caption{\label{fig:Porient} Decay constants for $C_2(z,t)$ at the 
-prismatic face. Panel descriptions match those in \ref{fig:PyrOrient}.}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
