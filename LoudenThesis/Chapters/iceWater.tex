@@ -1,3 +1,11 @@
+\newcommand*{\citen}[1]{%
+  \begingroup
+    \romannumeral-`\x % remove space at the beginning of \setcitestyle
+    \setcitestyle{numbers}%
+    \cite{#1}%
+  \endgroup   
+}
+
 \chapter{SYSTEM CONSTRUCTION AND COMPUTATIONAL DETAILS}
 
 Non-equilibrium molecular dynamics simulations of solid / liquid
@@ -32,6 +40,8 @@ be found in Fig. \ref{fig:surfMorph}.
   and Ojam\"{a}e. The surface oxygens have been colored blue for clarity.}
 \end{figure}
 
+Surface energies, dimensions of crystal channels at zero kelvin, ...
+
 The oxygen lattice is a hexagonal unit cell comprising 4 oxygen atoms,
 but it is also possible to construct an equivalent orthorhombic unit
 cell with 8 oxygen atoms.\cite{Hirsch2004} Hydrogen atom placement
@@ -41,26 +51,37 @@ neighboring molecules.\cite{Bernal1933} The resulting structure also
 typically has zero net dipole moment. Below 72~K and under ambient
 pressures, the lattice can undergo a phase transition to ice XI, a
 configuration with ferroelectric proton-ordering and a non-zero bulk
-dipole moment.
+dipole moment (see Fig. \ref{fig:iceTransition}).
+
+\begin{figure}
+\includegraphics[width=\linewidth]{Figures/iceTransition}
+\caption{\label{fig:iceTransition}Left: A proton-disordered
+  ice-I$_\mathrm{h}$ crystal, viewed down onto the basal
+  facet. Coordinates for this crystal structure are taken from
+  Hayward and Reimers.\cite{Hayward1997} Right:
+  A proton-ordered ice-XI crystal, viewed down on the same crystal
+  face. Coordinates for this structure are taken from Structure 1 of
+  Hirsch and Ojam\"{a}e.\cite{Hirsch2004} The phase transition between
+ice-I$_\mathrm{h}$ and ice-XI is believed to be $\sim$ 72~K.}
+\end{figure}
 
 While exploring the ice-I$_\mathrm{h}$ to XI phase transition, Hirsch
 and Ojam\"{a}e determined sixteen unique hydrogen arrangements for the
-ice-I$_\mathrm{h}$ orthorhombic unit cells which yield structures with
-zero net dipole.\cite{Hirsch2004} Upon replication of some of these
-unit cells, the resulting structures present stripes of dangling
-H-atoms and lone pairs at an exposed crystal facet. These orthorhombic
-initial configurations can be used to reproduce the surface features
-from Buch \textit{et al.}\cite{Buch2008} that helped interpret
-sum-frequency generation (SFG) experiments by the Shultz
-lab.\cite{Groenzin07} More recently, Nojima \textit{et
-  al.}\cite{Nojima2017} have successfully obtained both the real and
-imaginary parts of the vibrational spectra of the free OH stretch for
-surface water molecules of the basal, prismatic, and secondary
-prismatic facets at ca. 130~K through heterodyne-detected
-sum-frequency generation (HD-SFG). They also present evidence of
-proton-striped surfaces as the sign of the imaginary part of the
-vibrational spectra indicates ``up'' or ``down'' orientations of
-surface molecules.
+ice-I$_\mathrm{h}$ orthorhombic unit cells.\cite{Hirsch2004} Upon
+replication of some of these unit cells, the resulting structures
+present stripes of dangling H-atoms and lone pairs at an exposed
+crystal facet. These orthorhombic initial configurations can be used
+to reproduce the surface features from Buch \textit{et
+  al.}\cite{Buch2008} that helped interpret sum-frequency generation
+(SFG) experiments by the Shultz lab.\cite{Groenzin07} More recently,
+Nojima \textit{et al.}\cite{Nojima2017} have successfully obtained
+both the real and imaginary parts of the vibrational spectra of the
+free OH stretch for surface water molecules of the basal, prismatic,
+and secondary prismatic facets at ca. 130~K through
+heterodyne-detected sum-frequency generation (HD-SFG). They also
+present evidence of proton-striped surfaces as the sign of the
+imaginary part of the vibrational spectra indicates ``up'' or ``down''
+orientations of surface molecules.
 
 \begin{table}[h]
 \centering
@@ -78,18 +99,14 @@ secondary prism & $\{1~1~\bar{2}~0\}$ & $\{1~3~0\}$ \\
 pyramidal & $\{2~0~\bar{2}~1\}$ & $\{2~0~1\}$ \\ \hline
 \end{tabular}
 \end{table}
-For small simulated ice interfaces, it is useful to work with
-proton-ordered, but zero-dipole crystal that exposes these strips of
-dangling H-atoms and lone pairs.  When placing another material in
-contact with one of the ice crystalline planes, it is also quite
-useful to have an orthorhombic (rectangular) box. Recent work by
-Hirsch and Ojam\"{a}e describes a number of alternative crystal
-systems for proton-ordered bulk ice I$_\mathrm{h}$ using orthorhombic
-cells.\cite{Hirsch04}
 
-In this work, we are using Hirsch and Ojam\"{a}e's structure 6 which
-is an orthorhombic cell ($P2_12_12_1$) that produces a proton-ordered
-version of ice I$_\mathrm{h}$.  Table \ref{tab:equiv} contains a
+SPC/E~\cite{Berendsen1987} and TIP4P/Ice~\cite{Abascal2005} structures
+were created starting from Structure 6 of Hirsch and Ojam\"{a}e's set
+of orthorhombic representations for ice-I$_{h}$.\cite{Hirsch2004}
+Replication of Structure 6 (unit cell geometry $P2_12_12_1$) produces a proton-ordered
+version of ice I$_\mathrm{h}$ on a smaller length scale than the
+simulation box. However, the resulting crystal has a zero-net dipole,
+unlike proton ordered ice-XI crystals. Table \ref{tab:equiv} contains a
 mapping between the Miller indices of common ice facets in the
 P$6_3/mmc$ crystal system and those in the Hirsch and Ojam\"{a}e
 $P2_12_12_1$ system.
@@ -116,53 +133,21 @@ atom type & x & y & z \\ \hline
 \end{tabular}
 \end{table}
 
-XXX add a figure highlighting the different surface corrugations and
-featuers, maybe some dimensions of the surface features as well as the
-surface energies. XXX 
 
-SPC/E~\cite{Berendsen1987} and TIP4P/Ice~\cite{Abascal2005} structures
-were created starting from Structure 6 of Hirsch and Ojam\"{a}e's set
-of orthorhombic representations for ice-I$_{h}$.\cite{Hirsch2004}
-Forcefield parameters for both water models can be found in table
-\ref{tab:waterModels}. 
-
-\begin{table}[H]
-\centering
-\caption{Forcefield parameters for the SPC/E and TIP4P/Ice water
-  models.}
-\label{tab:waterModels}
-\begin{tabular}{|l|c|c|c|c|c|c|c|c|} 
-\hline
-  Model &  $\sigma$ (\AA) & $\epsilon$ (kJ $\mathrm{mol}^{-2}$) &
-                                                              $\mathrm{l}_{1}$
-                                                              (\AA) &
-                                                                    $\mathrm{l}_{2}$
-                                                                      (\AA)
-  & $\mathrm{q}_{1}$ (e) & $\mathrm{q}_{2}$ (e) & $\theta$
-                                                  ($^{\mathrm{o}}$) &
-                                                                      $\phi$ ($^{\mathrm{o}}$) \\ \hline
-  SPC/E & 3.166 & 0.650 & 1.000 & - & +0.4238 & -0.8476 & 109.47 & - \\
-  TIP4P/Ice & 3.1668 & 0.8822 & 0.9572 & 0.1577 & +0.5897 & -1.1794 &
-  104.52 & 52.26 \\
-\hline
-\end{tabular}
-\end {table}
-
-The
-primitive unit cell was replicated in all dimensions. The crystal was
-cleaved along the desired face, and two additional mutually
-perpendicular cuts were made.  The crystal was reoriented so that the
-initial cut (basal, pyramidal, prismatic, or secondary prism) was
-normal to the $z$-axis of the simulation cell.  The resulting
-structures were extended in $x$ and $y$ to form large exposed facets
-in rectangular box geometries.  Because the orthorhombic unit cells
-are relatively small, using these as building blocks for an ice
-simulation creates proton translational order on the length scale of
-the unit cells. We note that all simulated ice structures have proton
-ordering on the length scale of the periodic box, but in order to
-reproduce proton surface striping with zero dipole crystals, we have
-utilized proton translational ordering on a smaller length scale than
-other ice studies.
+In order to generate large crystals for simulation, the primitive unit
+cell was replicated in all dimensions. The crystal was cleaved along
+the desired face, and two additional mutually perpendicular cuts were
+made.  The crystal was reoriented so that the initial cut (basal,
+pyramidal, prismatic, or secondary prism) was normal to the $z$-axis
+of the simulation cell.  The resulting structures were extended in $x$
+and $y$ to form large exposed facets in rectangular box geometries.
+Because the orthorhombic unit cells are relatively small, using these
+as building blocks for an ice simulation creates proton translational
+order on the length scale of the unit cells. We note that all
+simulated ice structures have proton ordering on the length scale of
+the periodic box, but in order to reproduce proton surface striping
+with zero dipole crystals, we have utilized proton translational
+ordering on a smaller length scale than other ice studies.
 
 Liquid water boxes were created with identical dimensions (in $x$ and
 $y$) as the ice, with a $z$ dimension of three times that of the ice
@@ -317,7 +302,17 @@ As the simulation progresses, the VSS moves are performed on a regular
 basis, and the system develops a thermal and/or velocity gradient in
 response to the applied flux.  In a bulk material, it is quite simple
 to use the slope of the temperature or velocity gradients to obtain
-either the thermal conductivity or shear viscosity.
+either the thermal conductivity or shear viscosity,
+$\eta$.\cite{Bordat2002a}
+\begin{equation}
+\label{eq:viscosity}
+j_z(p_x) = -\eta \left(\frac{\partial v_x}{\partial z}\right).
+\end{equation}
+At interfaces between dissimilar materials, the same method can be
+used to extract \textit{interfacial} transport properties (e.g. the
+hydrodynamic slip length or the interfacial thermal
+conductance).
+
 
 The VSS-RNEMD approach is versatile in that it may be used to
 implement thermal and shear transport simultaneously.  Perturbations
@@ -363,7 +358,30 @@ time step of 2 fs and periodic boundary conditions in all three
 dimensions.  Electrostatics were handled using the damped-shifted
 force real-space electrostatic kernel.\cite{Ewald} When applicable,
 VSS-RNEMD moves were attempted every time step. This minimized the
-magnitude of individual momentum exchanges.  
+magnitude of individual momentum exchanges.  Forcefield parameters for
+both water models can be found in table \ref{tab:waterModels}.
+
+\begin{table}[H]
+\centering
+\caption{Forcefield parameters for the SPC/E and TIP4P/Ice water
+  models.}
+\label{tab:waterModels}
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|} 
+\hline
+  Model &  $\sigma$ (\AA) & $\epsilon$ (kJ $\mathrm{mol}^{-2}$) &
+                                                              $\mathrm{l}_{1}$
+                                                              (\AA) &
+                                                                    $\mathrm{l}_{2}$
+                                                                      (\AA)
+  & $\mathrm{q}_{1}$ (e) & $\mathrm{q}_{2}$ (e) & $\theta$
+                                                  ($^{\mathrm{o}}$) &
+                                                                      $\phi$ ($^{\mathrm{o}}$) \\ \hline
+  SPC/E & 3.166 & 0.650 & 1.000 & - & +0.4238 & -0.8476 & 109.47 & - \\
+  TIP4P/Ice & 3.1668 & 0.8822 & 0.9572 & 0.1577 & +0.5897 & -1.1794 &
+  104.52 & 52.26 \\
+\hline
+\end{tabular}
+\end {table}
 
 
 The interfaces were equilibrated for a total of 10 ns at equilibrium
@@ -389,42 +407,6 @@ every 1~ps, and statistics on the structure and dynamics in each bin
 were accumulated throughout the simulations.  Although there was some
 small variation in the measured interfacial width between succcessive
 runs, no indication of bulk melting (or crystallization) was observed.
-
-
-
-
-\subsection{Second Paper Below}
-%%% Old here
-
-
-
-\subsection{Creating shear in molecular simulations}
-The velocity shearing and scaling variant of reverse non-equilibrium
-molecular dynamics (VSS-RNEMD)\cite{Kuang2012} was employed to create
-shear in our simulation cells. This method performs a series of
-simultaneous non-equilibrium exchanges of linear momentum and kinetic
-energy between two physically separated regions of the simulation
-cell. The system responds to this unphysical flux with velocity and
-temperature gradients. When VSS-RNEMD is applied to bulk liquids,
-transport properties like the shear viscosity, $\eta$, are easily
-extracted assuming a linear response between the applied flux,
-$j_z(p_x)$, and the resulting velocity gradient that develops in the
-liquid,\cite{Bordat2002a}
-\begin{equation}
-\label{eq:viscosity}
-j_z(p_x) = -\eta \left(\frac{\partial v_x}{\partial z}\right).
-\end{equation}
-
-At interfaces between dissimilar materials, the same method can be
-used to extract \textit{interfacial} transport properties (e.g. the
-hydrodynamic slip length or the interfacial thermal
-conductance). Because the individual VSS-RNEMD exchange moves conserve
-both total energy and linear momentum, the method can be ``bolted on''
-to simulations in any ensemble.  A more detailed explanation of
-VSS-RNEMD shearing simulations applied to ice / water interfaces can
-be found in our previous work.\cite{Louden2013a}
-
-
 
 
 
