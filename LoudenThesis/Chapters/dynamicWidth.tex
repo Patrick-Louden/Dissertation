@@ -1,5 +1,8 @@
 \chapter{DYNAMIC WIDTHS OF ICE-I$_\mathrm{h}$ / WATER INTERFACES}\label{chap:Dyn}
 
+\section{Dynamic Measures of an Ice / Water Interface Under Shear}\label{structure}
+
+\subsection{Reorientation of Water Molecules}
 The spatially-resolved orientational time correlation function,
 \begin{equation}\label{C(t)1}
   C_{2}(z,t)=\langle P_{2}(\mathbf{u}_i(0)\cdot \mathbf{u}_i(t))
@@ -101,7 +104,7 @@ molecular reorientation to be incomplete, however, at the interface we
 observe frame reorientation to contribute 85 percent of the overall
 decay.
 
-\newpage
+
 \begin{figure}
 \includegraphics[width=\linewidth]{Figures/Sec_lcorrz}
 \caption{\label{fig:SPorient} Decay times (left) for $C_2(z,t)$ at the
@@ -141,35 +144,76 @@ water,\cite{Bryk2002} and observed the same qualitative trend through
 the ice / water interface, although the spatial resolution was not
 sufficient to resolve a dynamic width.
  
+\subsection{Spatial resolution of Hydrogen bond jump rates}
+The spatially-resolved hydrogen bond jump correlation function,
+\begin{equation}\label{jump}
+C_\mathrm{jump}(z,t) = 1 - \langle n_a(0) n_b(t) \delta(z_i(0) - z) \rangle
+\end{equation}
+measures the decorrelation of a hydrogen bond on molecule $i$ as it
+transitions between one acceptor ($a$) and another ($b$). $n_a(0)$ is
+set to one if hydrogen $i$ is bound to acceptor $a$ at time $0$, and
+is zero otherwise.  Absorbing boundaries are utilized with this
+correlation function; switches from $b$ back to $a$ at a later time
+are considered a new jump, and the angle brackets indicate an average
+over all donor hydrogens and time origins. Laage and Hynes determined
+the bulk version of this function had \textit{single}-exponential
+decay in room temperature water.
 
-\newpage   
-\section{Orientational Decay Profiles}
+A version of this correlation function was used to investigate how
+water molecules reorient around
+ions\cite{Laage2007,Laage2008a,Stirnemann2011a,Laage2011},
+proteins\cite{Duboue-Dijon2014}, and in confined
+spaces\cite{Laage2012b,Fogarty2014}.  Laage and Hynes studied how the
+strength of the hydrogen bond might perturb the reorientation
+dynamics,\cite{Laage2006a} and found the librational motion which
+forms a cone around the O-O vector is smaller for more strongly
+hydrogen bonded water. This may also provide a partial explanation for
+the increasing contribution of short time orientational decay very
+close to the ice surfaces.  Since the solid creates an excluded volume
+for the water molecules that are in proximity to the interface, the
+hindered range of motion (i.e., a smaller cone around the O-O vector)
+manifests as faster librational decay.
+
+As an additional measure of a dynamic width of the quiescent
+interfaces, each of the systems were divided into bins along the $z$
+axis ($\approx$ 1 \AA\ wide) and $C_\mathrm{jump}(z,t)$ was computed
+(see Fig. \ref{fig:SPkjmp} and Fig. \ref{fig:SPTIP4Pkjmp}).
+Like Laage and Hynes, we find that within each spatial region, the
+decay is easily fit with a single exponential, yielding a local
+hydrogen bond jump time. The jump times diverge inside the ice
+crystal, so the jump rate, $k_\mathrm{jump}(z) = 1 / \tau_0(z)$ can be
+used to identify a hydrogen bond jump width for the interface in a
+similar manner to the dynamic width. $k_\mathrm{jump}(z)$ was fit with
+a hyperbolic tangent (see Eq. \eqref{tauFit}) and the 10-90 jump
+width, $j_\mathrm{10-90}$, is shown in tables \ref{tab:propsSPCE} and
+\ref{tab:propsTIP4P}.
 
 \begin{figure}
-\includegraphics[width=\linewidth]{Figures/Pyr_lcorrz}
-\caption{\label{fig:Pyrorient} Decay times (left) for $C_2(z,t)$ at
-  the pyramidal interface, and their fractional contributions to the
-  overall decay (right) fit using Eq. (8). The local decay constants
-  are plotted as a function of distance from the center of the ice
-  slab. The vertical dashed line indicates the Gibbs dividing surface
-  determined using the local tetrahedral order parameter.  Results are
-  shown for a quiescent system with no applied kinetic or momentum
-  flux (black), an interface with with an imposed kinetic energy flux
-  (red), and a sheared simulation (blue) with both kinetic and
-  momentum fluxes.}
+\includegraphics[width=5.5in]{Figures/secPrismJumpPlot}
+\caption{\label{fig:SPkjmp} Upper: Hydrogen bond jump correlation
+  functions, $C_\mathrm{jump}(z,t)$, collected in 1 \AA~bins across
+  the SPC/E secondary prism ice / water interface. The band that
+  experiences very little decay represents water molecules in the ice,
+  while the band that decays quickly corresponds to bins in the
+  liquid.  The correlation function presents a continuous distribution
+  of decay behaviors across the interface between ice and liquid
+  water.  Lower: $C_\mathrm{jump}(z,t)$ decays exponentially, and each
+  1 \AA~spatial bin can be fit with a jump rate, $k_\mathrm{jump}(z)$.
+  These are shown with a fit that provides a ``jump'' width,
+  $j_\mathrm{10-90}$. The locations of the structural Gibbs dividing
+  surfaces (using tetrahedrality) are indicated with vertical dashed
+  blue lines, while the locations of the ``jump'' interfaces are shown in
+  orange.}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=\linewidth]{Figures/Bas_lcorrz}
-\caption{\label{fig:Borient} $C_2(z,t)$ time constants for the basal
-  interface.  Panel descriptions are the same as in
-  Fig. \ref{fig:Pyrorient}. }
-\end{figure}
 
 \begin{figure}
-\includegraphics[width=\linewidth]{Figures/Pri_lcorrz}
-\caption{\label{fig:Porient} $C_2(z,t)$ time constants for the prismatic
-  interface.  Panel descriptions are the same as in
-  Fig. \ref{fig:Pyrorient}.}
+\includegraphics[width=\linewidth]{Figures/secprismJumpPlotTIP4PIce}
+\caption{\label{fig:SPTIP4Pkjmp} The same secondary prism hydrogen
+  bond jump data as Fig. \ref{fig:SPkjmp}, but collected using the
+  TIP4P/Ice model and at 270~K.  Note that the higher coexistence
+  temperature for this model increases the observed liquid-state jump
+  rates, and has brought the structural and jump interfaces much
+  closer together.}
 \end{figure}
-%End z-orientation times       
+
