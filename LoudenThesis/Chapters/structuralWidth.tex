@@ -20,14 +20,109 @@ interface. Dynamic measures are investigated later in Chapter \ref{chap:Dyn}.
 
 \section{Structural Measures of Ice I$_\mathrm{h}$ / Water Interfaces
   Under Shear}\label{structure}
-
-\subsection{Local Tetrahedral Order Parameter}
-
 The VSS-RNEMD method employed here creates thermal and velocity
 gradients in the system, during which the momenta of the water
 molecules are perturbed, thus any order parameters that depends on
 translational motion may measure the momentum exchange and not
-physical properties of the interface.  As a structural measure of the
+physical properties of the interface. To avoid these influences, we
+have probed the ice / water interface by observing the transition of
+several order parameters from their ice to bulk liquid values. 
+
+
+\subsection{Density Measurements Transverse to the Interface}
+Following the pioneering work of Haymet \textit{et al.}, we initially
+probed the ice-I$_\mathrm{h}$ / water interface by examining the
+transition of the density of molecules from bulk liquid to bulk
+ice. Four consecutive 1 ns simulations of quiescent ice / water
+systems were performed for each interface. The simulations were
+performed under a constant volume and constant energy integrator
+(NVE), equilibrated at the coexistence temperature (225~K for SPC/E
+and 270~K for TIP4P/Ice) and with no VSS-RNEMD moves attempted
+(\textit{i.e.} no thermal or momentum flux applied). During the
+simulations, the positions and velocities of the water molecules were
+sampled every 0.1 ps.
+
+To compute transverse density profile, each frame of the trajectories
+were divided into 0.25~\AA bins, and the average density of each bin
+was accumulated. The density profiles were then fit with a hyperbolic
+tangent function designed to smoothly transition between the bulk
+liquid and ice domains.
+\begin{equation}\label{rho_fit}
+\rho (z) \approx
+\rho_\mathrm{liq}+\frac{\rho_\mathrm{ice}-\rho_\mathrm{liq}}{2}\left[\tanh\left(\frac{z-l}{w^\rho}\right)-\tanh\left(\frac{z-r}{w^\rho}\right)\right]
+\end{equation}
+Here, $\rho_\mathrm{liq}$ and $\rho_\mathrm{ice}$ are the densities of
+the liquid and ice respectively. The $z$-locations of the left and
+right Gibbs dividing surfaces are $l$ and $r$, and $w^\rho$ is the
+width of the interface. An example density profile for each of the
+SPC/E interfaces is shown in Figure \ref{fig:transDensity}.
+
+\begin{figure}[H]
+\includegraphics[width=\linewidth]{Figures/transDensity}
+\caption{\label{fig:transDensity}Transverse density profiles for the
+  basal (a), prismatic (b), pyramidal (c) and secondary prism (d)
+  facets of an SPC/E ice-I$_\mathrm{h}$ / water interface (black
+  lines). The prismatic and secondary prism profiles are zoomed in to
+  show detail at the ice / water interface. The profiles are fit using
+  Eq. \eqref{rho_fit} (dashed red lines).}
+\end{figure}
+
+From Eq. \eqref{rho_fit}, we have obtained estimates for $w^{\rho}$;
+these values are related to the $10\%-90\%$ interfacial widths
+commonly reported in previous studies
+($w_\mathrm{10-90}^{\rho} = 2.197~w^{\rho}$).\cite{Bryk2002,Bryk2004}
+For the SPC/E interfaces at 225~K, we find large discrepencies in
+$w_\mathrm{10-90}^{\rho}$ as seen in Table \ref{tab:propsSPCE}.
+
+\begin{table}[h]
+\centering
+\caption{COMPUTED WIDTHS OF THE ICE-I$_\mathrm{h}$ / WATER INTERFACES BY
+  STRUCTURAL MEASURES. \label{tab:propsSPCE}} 
+\begin{tabular}{|r|cc|cc|}  
+\hline
+  \multirow{2}{*} & \multicolumn{2}{c|}{SPC/E (225~K)} &  \multicolumn{2}{c|}{TIP4P/Ice (270~K) } \\
+  & \multicolumn{2}{c|} {Interfacial Widths (\AA) \footnotemark[1]} &
+                                                                      \multicolumn{2}{c|} {Interfacial Widths  (\AA) \footnotemark[1]} \\
+ Interface &  $w_\mathrm{10-90}^{\rho}$ & $w_\mathrm{10-90}^{q}$ &  $w_\mathrm{10-90}^{\rho}$ &  $w_\mathrm{10-90}^{q}$ \\ 
+\hline
+  Basal  $\{0001\}$                 & 7.1 & 7.5(4) & & 8.8(8)  \\
+  Prismatic  $\{10\bar{1}0\}$       & 4.5  & 7.2(2) & & 9.0(5)  \\
+  Pyramidal  $\{20\bar{2}1\}$       & 2.0 & 6.6(2) & & 8.2(5)  \\
+  Secondary Prism  $\{11\bar{2}0\}$ & 4.9 &6.7(2) &  & 9.4(6)  \\ 
+\hline
+\end{tabular}
+\flushleft
+  \footnotemark[1]\footnotesize{Uncertainties in the last
+   digit are indicated with parentheses.} \\
+\end{table}
+
+For the basal interface, $w_\mathrm{10-90}^{\rho} \sim$ 7 \AA~, where
+values closer to 5 \AA~ are observed for the prismatic and secondary
+prism interfaces. Lastly, the density transition occurs over $\sim$ 2
+\AA~ for the pyramidal interface. Since the pyramidal crystal does not
+have well defined crystallographic planes perpendicular to the
+dimension normal to the surface, fitting the resulting density
+profiles give skewed results. Values for $w_\mathrm{10-90}^{\rho}$ for
+the TIP4P/Ice systems are also reported in the same table. While the
+interfacial width is observed to be larger for the TIP4P/Ice model,
+this is primarily due to the warmer coexistence temperature.XXX
+
+In their initial studies, Karim and Haymet investigated the liquid to
+solid transition for a basal ice-I$_\mathrm{h}$ / water interface
+using the TIP4P model at 240~K.\cite{Karim1987,Karim1988} They divided their
+system into 0.2 \AA~ bins along the dimension normal to the interface,
+and computed the average density for each of these bins. These density
+profiles were segmented into 3.7 \AA~bins, which coincide with the
+spacing of the crystallographic planes inside their ice crystal. Karim
+and Haymet then estimated the width of the basal ice-I$_\mathrm{h}$ /
+water interface to be $\sim$ 10 - 15 \AA~ by counting the number of
+these wider bins. 
+
+
+
+\subsection{Local Tetrahedral Order Parameter}
+
+ As a structural measure of the
 interface, we have used the local tetrahedral order parameter, which
 compares the local molecular environments (e.g. the angles between
 nearest neighbor molecules) to perfect tetrahedral ordering.  This
@@ -87,7 +182,7 @@ smooth transition from the bulk liquid to ice (turquoise line in the
 bottom panel of the same figures),
 \begin{equation}\label{tet_fit}
 q(z) \approx
-q_\mathrm{liq}+\frac{q_\mathrm{ice}-q_\mathrm{liq}}{2}\left[\tanh\left(\frac{z-l}{w}\right)-\tanh\left(\frac{z-r}{w}\right)\right]+\beta\left|z-\frac{r+l}{2}\right|.
+q_\mathrm{liq}+\frac{q_\mathrm{ice}-q_\mathrm{liq}}{2}\left[\tanh\left(\frac{z-l}{w^q}\right)-\tanh\left(\frac{z-r}{w^q}\right)\right]+\beta\left|z-\frac{r+l}{2}\right|.
 \end{equation}
 Here $q_\mathrm{liq}$ and $q_\mathrm{ice}$ are the values of the order
 parameter for the bulk liquid and ice domains. The locations $l$ and
@@ -134,7 +229,7 @@ dividing surface indicate that the ice-water interface is in the
 negative slip regime. For comparison, Figure \ref{fig:tipsComic} shows
 the secondary prism interface for the TIP4P/Ice system.
 
-\begin{figure}
+\begin{figure}[H]
 \includegraphics[width=\linewidth]{Figures/SecPrism_TIP4PIce_Plot}
 \caption{\label{fig:tipsComic} Properties of the TIP4P/Ice secondary prism
   interface being sheared through water at 8.4
@@ -165,31 +260,19 @@ are also reported in Table \ref{tab:propsSPCE}.
 
 Over the range of shear rates investigated,
 $\sim 0.5-10.0~\mathrm{~m~s}^{-1}$, we find no significant changes in
-the interfacial widths for any of the crystal faces. All values of
+the interfacial widths for any of the crystal faces (see Fig. \ref{fig:tetByShearRate}). All values of
 $w_\mathrm{10-90}^{q}$ obtained from shearing simulations fell inside the
 error bars of the values obtained from the quiescent simulations.
 
-\begin{table}[h]
-\centering
-\caption{COMPUTED WIDTHS OF THE ICE-I$_\mathrm{h}$ / WATER INTERFACES BY
-  STRUCTURAL MEASURES. \label{tab:propsSPCE}} 
-\begin{tabular}{|r|cc|cc|}  
-\hline
-  \multirow{2}{*} & \multicolumn{2}{c|}{SPC/E (225~K)} &  \multicolumn{2}{c|}{TIP4P/Ice (270~K) } \\
-  & \multicolumn{2}{c|} {Interfacial Widths (\AA) \footnotemark[1]} &
-                                                                      \multicolumn{2}{c|} {Interfacial Widths  (\AA) \footnotemark[1]} \\
- Interface & $w_\mathrm{10-90}^{q}$ &  $w_\mathrm{10-90}^{\rho}$ & $w_\mathrm{10-90}^{q}$ &  $w_\mathrm{10-90}^{q\rho}$ \\ 
-\hline
-  Basal  $\{0001\}$                 & 7.5(4) &  & 8.8(8) & \\
-  Prismatic  $\{10\bar{1}0\}$       & 7.2(2) &  & 9.0(5) & \\
-  Pyramidal  $\{20\bar{2}1\}$       & 6.6(2) &  & 8.2(5) & \\
-  Secondary Prism  $\{11\bar{2}0\}$ & 6.7(2) &  & 9.4(6) & \\ 
-\hline
-\end{tabular}
-\flushleft
-  \footnotemark[1]\footnotesize{Uncertainties in the last
-   digit are indicated with parentheses.} \\
-\end{table}
+\begin{figure}[H]
+\includegraphics[width=\linewidth]{Figures/tetByShearRate}
+\caption{\label{fig:tetByShearRate}The 10-90 widths of the ice-I$_\mathrm{h}$
+  / water interface for the basal, prismatic, pyramidal, and secondary
+  prism crystal faces as determined by the local tetrahedral order
+  parameter fit by Eq. \eqref{tet_fit}.}
+\end{figure}
+
+
 
 These values agree reasonably well with those reported by Haymet
 \textit{et
@@ -206,10 +289,4 @@ $0.9$ to the bulk liquid value of $0.6$. This gave estimates of
 $\approx 11$~\AA~, somewhat larger than our current estimates. More
 careful analysis will be necessary to determine if the proton striped
 surface configurations used here are the origin of this discrepancy.
-
-
-\subsection{Density Measurements Transverse to the Interface}
-As an additional structural measure of the ice / water interface, we
-have examined the transition of the density of molecules from bulk
-liquid to bulk ice.
 
