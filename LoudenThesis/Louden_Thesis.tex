@@ -53,6 +53,16 @@
 
 % \setcitestyle{square}
 
+\newcommand*{\citen}[1]{%
+  \begingroup
+    \romannumeral-`\x % remove space at the beginning of \setcitestyle
+    \setcitestyle{numbers}%
+    \cite{#1}%
+  \endgroup   
+}
+
+\newcommand{\degree}{\ensuremath{^\circ}}
+
 \begin{document}
 
 \frontmatter % All the items before the first chapter go in ``frontmatter''

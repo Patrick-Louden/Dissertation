@@ -3,7 +3,7 @@
 % 2. interfacial width by shear rate plot for tetrahedrality
 % 3. interfacial width by shear rate plot for density?
 
-\chapter{STRUCTURAL WIDTHS OF ICE-I$_\mathrm{h}$ / WATER INTERFACES}
+\chapter{STRUCTURAL WIDTHS OF ICE I$_\mathrm{h}$ / WATER INTERFACES}
 One of the open questions about ice / water interfaces is whether the
 thickness of the interfacial `slush' layer depends on the facet of ice
 presented to the water. In the interfacial region, the water molecules
@@ -60,7 +60,7 @@ SPC/E interfaces is shown in Figure \ref{fig:transDensity}.
 \begin{figure}[H]
 \includegraphics[width=\linewidth]{Figures/transDensity}
 \caption{\label{fig:transDensity}Transverse density profiles for the
-  basal (a), prismatic (b), pyramidal (c) and secondary prism (d)
+  basal (a), prismatic (b), 14\degree~pyramidal (c) and secondary prism (d)
   facets of an SPC/E ice-I$_\mathrm{h}$ / water interface (black
   lines). The prismatic and secondary prism profiles are zoomed in to
   show detail at the ice / water interface. The profiles are fit using
@@ -87,7 +87,7 @@ $w_\mathrm{10-90}^{\rho}$ as seen in Table \ref{tab:propsSPCE}.
 \hline
   Basal  $\{0001\}$                 & 7.1 & 7.5(4) & & 8.8(8)  \\
   Prismatic  $\{10\bar{1}0\}$       & 4.5  & 7.2(2) & & 9.0(5)  \\
-  Pyramidal  $\{20\bar{2}1\}$       & 2.0 & 6.6(2) & & 8.2(5)  \\
+  14\degree~Pyramidal  $\{20\bar{2}1\}$       & 2.0 & 6.6(2) & & 8.2(5)  \\
   Secondary Prism  $\{11\bar{2}0\}$ & 4.9 &6.7(2) &  & 9.4(6)  \\ 
 \hline
 \end{tabular}
@@ -99,33 +99,26 @@ $w_\mathrm{10-90}^{\rho}$ as seen in Table \ref{tab:propsSPCE}.
 For the basal interface, $w_\mathrm{10-90}^{\rho} \sim$ 7 \AA~, where
 values closer to 5 \AA~ are observed for the prismatic and secondary
 prism interfaces. Lastly, the density transition occurs over $\sim$ 2
-\AA~ for the pyramidal interface. Since the pyramidal crystal does not
-have well defined crystallographic planes perpendicular to the
-dimension normal to the surface, fitting the resulting density
-profiles give skewed results. Values for $w_\mathrm{10-90}^{\rho}$ for
-the TIP4P/Ice systems are also reported in the same table. While the
-interfacial width is observed to be larger for the TIP4P/Ice model,
-this is primarily due to the warmer coexistence temperature.XXX
-
-In their initial studies, Karim and Haymet investigated the liquid to
-solid transition for a basal ice-I$_\mathrm{h}$ / water interface
-using the TIP4P model at 240~K.\cite{Karim1987,Karim1988} They divided their
-system into 0.2 \AA~ bins along the dimension normal to the interface,
-and computed the average density for each of these bins. These density
-profiles were segmented into 3.7 \AA~bins, which coincide with the
-spacing of the crystallographic planes inside their ice crystal. Karim
-and Haymet then estimated the width of the basal ice-I$_\mathrm{h}$ /
-water interface to be $\sim$ 10 - 15 \AA~ by counting the number of
-these wider bins. 
-
-
+\AA~ for the 14\degree~pyramidal interface. Since the
+14\degree~pyramidal crystal does not have well defined
+crystallographic planes perpendicular to the dimension normal to the
+surface, fitting the resulting density profiles give skewed
+results. Values for $w_\mathrm{10-90}^{\rho}$ for the TIP4P/Ice
+systems are also reported in the same table. While the interfacial
+width is observed to be larger for the TIP4P/Ice model, this is
+primarily due to the warmer coexistence temperature. It is evident
+from the density profiles and fits in Figure \ref{fig:transDensity}
+that an order parameter that does not depend on the crystal
+orientation would give a more accurate estimate of the ice / water
+interface. 
 
 \subsection{Local Tetrahedral Order Parameter}
-
- As a structural measure of the
-interface, we have used the local tetrahedral order parameter, which
-compares the local molecular environments (e.g. the angles between
-nearest neighbor molecules) to perfect tetrahedral ordering.  This
+As a second structural measure of the interface, we have used the
+local tetrahedral order parameter, which compares the local molecular
+environments (e.g. the angles between nearest neighbor molecules) to
+perfect tetrahedral ordering. This method would not be skewed due to
+rotations of the crystal, and would therefore more accurately quantify
+the transition of the local structure through the interface. This
 quantity was originally described by Chau and
 Hardwick,~\cite{Chau1998} was rescaled by Errington and
 Debenedetti,~\cite{Errington2001} and has been used in bulk liquid
@@ -266,11 +259,169 @@ error bars of the values obtained from the quiescent simulations.
 
 \begin{figure}[H]
 \includegraphics[width=\linewidth]{Figures/tetByShearRate}
-\caption{\label{fig:tetByShearRate}The 10-90 widths of the ice-I$_\mathrm{h}$
-  / water interface for the basal, prismatic, pyramidal, and secondary
-  prism crystal faces as determined by the local tetrahedral order
-  parameter fit by Eq. \eqref{tet_fit}.}
+\caption{\label{fig:tetByShearRate}The 10-90 widths of the
+  ice-I$_\mathrm{h}$ / water interface for the basal, prismatic,
+  14\degree~pyramidal, and secondary prism crystal faces as determined
+  by the local tetrahedral order parameter fit by
+  Eq. \eqref{tet_fit}.}
 \end{figure}
+
+
+\subsection{Discussion}
+In their initial studies in the late 1980's, Karim and Haymet
+investigated the liquid to solid transition for a basal
+ice-I$_\mathrm{h}$ / water interface using the TIP4P model at
+240~K.\cite{Karim1987,Karim1988} They divided their system into 0.2
+\AA~ bins along the dimension normal to the interface, and computed
+the average density for each of these bins. These density profiles
+were segmented into 3.7 \AA~bins, which coincide with the spacing of
+the crystallographic planes inside their ice crystal. Karim and Haymet
+then estimated the width of the basal ice-I$_\mathrm{h}$ / water
+interface to be $\sim$ 10 - 15 \AA~ by counting the number of these
+wider bins. This result proved to be invarient of the exposed surface
+area of the basal plane, as a simulation of equal length in time with
+a factor of four larger presented surface area yielded the same
+results.
+
+In a follow up study, Karim, Kay, and Haymet investigated the same
+interface using the SPC water model.\cite{Karim1990} The interface was
+observed the be stable at 200~K over 300 ps under a microcanonical
+integrator. The basal ice-I$_\mathrm{h}$ / water interface was
+estimated to be of approximately the same width as determined
+previously with the TIP4P water model, by the methods described
+above. 
+
+About 10 year later, the problem was revisited by Hayward and Haymet,
+where a comparitive study of the basal, prism, 14\degree~pyramidal,
+and $\{2\bar{1}\bar{1}0\}$ secondary prism ice-I$_\mathrm{h}$ / water
+interfaces was conducted.\cite{Hayward2001} This was the
+first computer investigation of the 14\degree~pyramidal, and
+$\{2\bar{1}\bar{1}0\}$ secondary prism ice-I$_\mathrm{h}$ / water
+interfaces, providing the initial insights to the structure and
+dynamics of these higher-order crystal facet interfaces. These two
+interfaces were found to be of particular interest as Type 1
+antifreeze proteins in both winter flounder and shorthorn Sculpin
+inhibit ice growth at these ice
+surfaces.\cite{Knight2001,Wierzbicki1996,Haymet1998,Harding1999}
+
+They observed a stable ice / water interface at 270~K over 300 ps
+using the CF1 central force model. From these trajectories, they
+estimated the 10-90 width of the ice / water interfaces measuring the
+transition of two structural criteria, the translational order and a
+Gaussian filtered translational order (average density). For each order
+parameter studied, the systems were divided into $\sim$3 \AA~ bins
+along the dimension normal to the interface (chosen here to be along
+the $z$-axis), and the average of the parameter was computed for each
+bin. A Gaussian filter was then applied to the Fourier transofrm of
+the resulting order parameter profile. For example, for the
+translational order profile $\rho (z)$,
+\begin{equation}
+g(k) = \int_{-n}^{n} \mathrm{exp}(-2\pi ikz)\rho (z)dz
+\end{equation}
+where $n$ is half of the box length in the direction normal to the
+interface. The oscillations in $g(k)$ are then dampened with the
+Gaussian filter,
+\begin{equation}
+g'(k) = g(k)\mathrm{wt}(k)
+\end{equation}
+where 
+\begin{equation}
+\mathrm{wt}(k)=\frac{1}{\sigma_{k}\sqrt{2\pi }}~\mathrm{exp}\Bigg(-\frac{1}{2\sigma_{k}^{2}}k^{2}\Bigg).
+\end{equation}
+Here, $2\sigma_{k}$ defines the resolution of the Gaussian. Inverse
+Fourier transform of $g'(k)$ gives the filtered translational order
+profile, $\rho '(z)$
+\begin{equation}
+\rho '(z) = \int_{-n}^{n} \mathrm{exp}(2\pi ikz)g'(k)dk
+\end{equation}
+which can be written as a convolution integral
+\begin{equation}
+\rho '(z) = \int_{-n}^{n} \mathrm{wt}'(z-z')\rho (z')dz'
+\end{equation}
+where
+\begin{equation}
+\mathrm{wt}'(z-z') = \frac{1}{\sigma
+  \sqrt{2\pi}}~\mathrm{exp}\Bigg(-\frac{1}{2\sigma^{2}}(z-z')^{2}\Bigg)
+\end{equation}
+and the value of $\sigma$ is chosen such that $\rho '(z)$ is flat in
+the bulk ice region. This method of filtering the binned order
+parameter data ensures the profile smoothly varies from bulk ice to
+bulk liquid through the interface.  The filtered order parameter
+profiles were then averaged about the midpoint of the system, and fit
+by
+\begin{equation}
+\rho (z) = \rho_{l}[1-f(z)]+\rho_{s}f(z)
+\end{equation}
+where
+\begin{equation}
+f(z) = \frac{1}{2}\Bigg[1-\mathrm{tanh}\Big(\frac{z-z_{0}}{w}\Big)\Bigg]
+\end{equation}
+here, $\rho_{l}$ and $\rho_{s}$are the bulk densities of the liquid
+and solid, $z_0$ is the midpoint of the interface, and $w$ can be
+related to the 10-90 with of the interface through
+$w_{10-90} = 2.1971\times w$. When substitutions are made, the
+resulting expression is similar to Eq. \eqref{rho_fit}.
+\begin{equation}\label{eq:Hayward2001}
+\rho (z) = \rho_{l} + \frac{\rho_{s} -
+  \rho_{l}}{2}\Bigg[1-\mathrm{tanh}\bigg(\frac{z-z_0}{w}\bigg)\Bigg]
+\end{equation}
+
+From Eq. \eqref{eq:Hayward2001}, Hayward and Haymet estimated the
+10-90 widths of the ice I$_\mathrm{h}$ / water interface for the
+translational profiles and the average density profiles (see Table
+\ref{tab:structCompare}). Their calculations indicate that the basal
+and prismatic interfaces are wider than that of the two higher index
+facets. While we did not see this trend, our results for the basal and
+prismatic interfaces using the TIP4P/Ice water model agree well with
+their estimates given by the translational order parameter. Our
+simulations with the SPC/E model predict a slightly thinner interface,
+possibly due to the colder coexistence temperature. Lastly, their
+estimates of interfacial width from the average density predicts a
+much wider interface, with estimates roughly a factor of 2 larger than
+those computed by the unfiltered translational order parameter. It is
+unclear if the filtering process provides a more accurate measure,
+much of the observed difference can be attributed to how the Gaussian
+filtering process broadens out the transition between the bulk ice and
+bulk liquid domains.
+
+In a follow up paper, Hayward and Haymet studied the orientational
+ordering of water molecules transverse to the interface as an
+additional order parameter.\cite{Hayward2002} They computed the
+time-averaged one-body orientational correlation functions for the
+angle made between the origin of the simulation cell and the HOH
+bisector, $\theta$, as well as the angle made with the projection of
+the HOH bisector with the plane of the system, $\phi$.
+
+
+
+
+
+\begin{table}[h]
+\centering
+\caption{STRUCTURAL MEASURES OF THE ICE I$_\mathrm{h}$ / WATER
+  INTERFACE. \label{tab:structCompare}} 
+\begin{tabular}{|l|cccc|}  
+\hline
+& Basal & Prismatic & $\{2\bar{1}\bar{1}0\}$ & $\{20\bar{2}1\}$ \\
+\hline
+Translational (CF1)\footnotemark[1] & 9.9 & 8.6  & 7.9 & 6.6 \\
+Average Density (CF1)\footnotemark[1] & 18.2 & 13.6 & 11.4 & 12.3 \\
+Orientational (CF1)\footnotemark[2] & 10.8 & 10.1 & 9.7 & 8.8 \\
+Translational (TIP4P)\footnotemark[3] & 5.93 & & & \\
+Translational (SPC)\footnotemark[4] & 8.13 & & & \\
+\hline
+\end{tabular}
+\flushleft
+  \footnotemark[1]\footnotesize{Reference \cite{Hayward2001}.} \\
+  \footnotemark[2]\footnotesize{Reference \cite{Hayward2002}.} \\
+  \footnotemark[3]\footnotesize{Reference \cite{Karim1988}.} \\
+  \footnotemark[4]\footnotesize{Reference \cite{Karim1990}.} \\
+\end{table}
+
+
+
+
+
 
 
 
