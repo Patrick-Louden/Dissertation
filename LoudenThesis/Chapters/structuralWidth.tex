@@ -46,7 +46,9 @@ To compute transverse density profile, each frame of the trajectories
 were divided into 0.25~\AA bins, and the average density of each bin
 was accumulated. The density profiles were then fit with a hyperbolic
 tangent function designed to smoothly transition between the bulk
-liquid and ice domains.
+liquid and ice domains. Following Haymet \textit{et al.}, only the
+density maximas corresponding to the planes of ice were included in
+the data to be fit.
 \begin{equation}\label{rho_fit}
 \rho (z) \approx
 \rho_\mathrm{liq}+\frac{\rho_\mathrm{ice}-\rho_\mathrm{liq}}{2}\left[\tanh\left(\frac{z-l}{w^\rho}\right)-\tanh\left(\frac{z-r}{w^\rho}\right)\right]
@@ -55,7 +57,9 @@ Here, $\rho_\mathrm{liq}$ and $\rho_\mathrm{ice}$ are the densities of
 the liquid and ice respectively. The $z$-locations of the left and
 right Gibbs dividing surfaces are $l$ and $r$, and $w^\rho$ is the
 width of the interface. An example density profile for each of the
-SPC/E interfaces is shown in Figure \ref{fig:transDensity}.
+SPC/E interfaces is shown in Figure \ref{fig:transDensity} (a similar
+graph for the TIP4P-Ice results can be seen in Figure
+\ref{fig:TIPtransDensity} in Appendix \ref{structAppendix}).
 
 \begin{figure}[H]
 \includegraphics[width=\linewidth]{Figures/transDensity}
@@ -85,10 +89,10 @@ $w_\mathrm{10-90}^{\rho}$ as seen in Table \ref{tab:propsSPCE}.
                                                                       \multicolumn{2}{c|} {Interfacial Widths  (\AA) \footnotemark[1]} \\
  Interface &  $w_\mathrm{10-90}^{\rho}$ & $w_\mathrm{10-90}^{q}$ &  $w_\mathrm{10-90}^{\rho}$ &  $w_\mathrm{10-90}^{q}$ \\ 
 \hline
-  Basal  $\{0001\}$                 & 7.1 & 7.5(4) & & 8.8(8)  \\
-  Prismatic  $\{10\bar{1}0\}$       & 4.5  & 7.2(2) & & 9.0(5)  \\
-  14\degree~Pyramidal  $\{20\bar{2}1\}$       & 2.0 & 6.6(2) & & 8.2(5)  \\
-  Secondary Prism  $\{11\bar{2}0\}$ & 4.9 &6.7(2) &  & 9.4(6)  \\ 
+  Basal  $\{0001\}$                 & 7.1 & 7.5(4) & 8.1 & 8.8(8)  \\
+  Prismatic  $\{10\bar{1}0\}$       & 4.5  & 7.2(2) & 9.2 & 9.0(5)  \\
+  14\degree~Pyramidal  $\{20\bar{2}1\}$       & 2.0 & 6.6(2) & 4.6 & 8.2(5)  \\
+  Secondary Prism  $\{11\bar{2}0\}$ & 4.9 &6.7(2) & 8.0 & 9.4(6)  \\ 
 \hline
 \end{tabular}
 \flushleft
@@ -102,7 +106,7 @@ prism interfaces. Lastly, the density transition occurs over $\sim$ 2
 \AA~ for the 14\degree~pyramidal interface. Since the
 14\degree~pyramidal crystal does not have well defined
 crystallographic planes perpendicular to the dimension normal to the
-surface, fitting the resulting density profiles give skewed
+surface, fitting the resulting density profiles gives skewed
 results. Values for $w_\mathrm{10-90}^{\rho}$ for the TIP4P/Ice
 systems are also reported in the same table. While the interfacial
 width is observed to be larger for the TIP4P/Ice model, this is
@@ -170,8 +174,10 @@ distribution can be seen in the bottom panel of Fig. \ref{fig:spComic}
 TIP4P/Ice). In the bulk liquid (at small and large values of $z$), the
 order parameter takes on values of $q(z) \approx~0.77$, while
 $q(z) \approx~0.92$ was found in bins spanning the ice. The
-tetrahedrality profiles were fit using a function that captures the
-smooth transition from the bulk liquid to ice (turquoise line in the
+tetrahedrality profiles were fit using the same function as the
+density profiles, however, an additive term was include to account for
+the change in tetrahedral ordering due to the thermal gradient
+throughout the system (turquoise line in the
 bottom panel of the same figures),
 \begin{equation}\label{tet_fit}
 q(z) \approx
@@ -407,6 +413,8 @@ the HOH bisector with the plane of the system, $\phi$.
 Translational (CF1)\footnotemark[1] & 9.9 & 8.6  & 7.9 & 6.6 \\
 Average Density (CF1)\footnotemark[1] & 18.2 & 13.6 & 11.4 & 12.3 \\
 Orientational (CF1)\footnotemark[2] & 10.8 & 10.1 & 9.7 & 8.8 \\
+Translational (SPC/E)\footnotemark[5] & 10.54 & 8.30 & & \\
+Window-averaged Density (SPC/E) \footnotemark[5] & 12.86 & 10.03 & & \\
 Translational (TIP4P)\footnotemark[3] & 5.93 & & & \\
 Translational (SPC)\footnotemark[4] & 8.13 & & & \\
 \hline
@@ -416,6 +424,7 @@ Translational (SPC)\footnotemark[4] & 8.13 & & & \\
   \footnotemark[2]\footnotesize{Reference \cite{Hayward2002}.} \\
   \footnotemark[3]\footnotesize{Reference \cite{Karim1988}.} \\
   \footnotemark[4]\footnotesize{Reference \cite{Karim1990}.} \\
+  \footnotemark[5]\footnotesize{Reference \cite{Bryk2002}.} \\
 \end{table}
 
 
