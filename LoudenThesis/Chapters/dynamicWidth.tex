@@ -27,34 +27,34 @@ quantity is applied, deviation from equilibrium is achieved by adding
 a perturbation $\mathscr{A}$ to the Hamiltonian.  Transport
 coefficients $\gamma$ can then be calculated from an infinite time
 integral of an equilibrium time correlation function.
-\begin{equation}\label{trasport1}
+\begin{equation}\label{eq:transport1}
 \gamma = \int_0^{\infty} dt \langle \dot{\mathscr{A}}(t)
 \dot{\mathscr{A}}(0)\rangle 
 \end{equation}
 Albert Einstein was able to show that for any expression written in
 this form, there was an associated expression which takes the form
-\begin{equation}\label{trasport2}
+\begin{equation}\label{eq:transport2}
 2t\gamma = \langle (\mathscr{A}(t)-\mathscr{A}(0))^2 \rangle
 \end{equation}
 for large $t$ compared to the correlation time of $\mathscr{A}$. 
 
 The diffusion coefficient $D$ is given by
-\begin{equation}\label{diffusion1}
+\begin{equation}\label{eq:diffusion1}
 D = \frac{1}{3} \int_0^{\infty} dt \langle \dot{\bm{r}_i}(t) -
 \dot{\bm{r}_i}(0) \rangle
 \end{equation}
 where $\dot{\bm{r}_i}(t)$ is the center-of-mass velocity of molecule
 $i$, and the factor of $\frac{1}{3}$ accounts for motion in three
-dimensions. From Eq. \eqref{transport1} and Eq. \eqref{transport2},
+dimensions. From Eq. \eqref{eq:transport1} and Eq. \eqref{eq:transport2},
 the corresponding Einstein relation would then be
-\begin{equation}\label{diffusion2}
+\begin{equation}\label{eq:diffusion2}
 2Dt = \frac{1}{3} \langle | \bm{r}_i(t) - \bm{r}_i(0) |^2 \rangle
 \end{equation}
 where $\bm{r}_i(t)$ is the center-of-mass position of molecule
 $i$. 
 
 The spatially resolved diffusion constant,
-\begin{equation}\label{diffusion3}
+\begin{equation}\label{eq:diffusion3}
 D(z) = \frac{1}{6t} \langle | \bm{r}_i(t) - \bm{r}_i(0) |^2
 \delta(z_i(0) - z)  \rangle 
 \end{equation}
@@ -66,16 +66,16 @@ nonexistent. Therefore, we expect the corresponding diffusion
 constants for these two regions to be vastly different. Observing the
 spatial length over which this transition occurs provides us with a
 dynamic width of the interface, and allows for comparison with the
-structural widths obtained in Chapter \ref{chap:Struct}. 
+structural widths obtained in Chapter \ref{chap:Str}. 
 
 For each of the ice-I$_\mathrm{h}$ / water interfaces described in
-Chapter \ref{chap:Struct}, four subsequent one nanosecond simulations
+Chapter \ref{chap:Str}, four subsequent one nanosecond simulations
 were performed without the presence of an applied kinetic energy or
 momentum flux (\textit{i.e.}, no thermal or velocity gradient was
 present in the system). Configurations of the systems were stored
 every 100 fs, and the spatially resolved diffusion coefficients were
-computed by slicing the systems into 1~\AA bins along the
-$z$-dimension (see Figure \ref{fig:Diffusionz}).
+computed by slicing the systems into 1~\AA~bins along the
+$z$-dimension (see Figure \ref{fig:Diffusionz}). 
 
 \begin{figure}
 \includegraphics[width=\linewidth]{Figures/DzImage}
@@ -87,11 +87,50 @@ $z$-dimension (see Figure \ref{fig:Diffusionz}).
   behaviors across the interface between ice and liquid water.}
 \end{figure}
 
-In the top panel of Figure \ref{fig:Diffuzionz}, the mean-squared
-displacement has been computed of molecules within 1 \AA~ bins across
-the SPC/E basal ice / water interface.
+In the top panel of Figure \ref{fig:Diffusionz}, the mean-squared
+displacement ($\langle | \bm{r}_i(t) - \bm{r}_i(0) |^2 \rangle $) has
+been computed for molecules within 1 \AA~ bins across the SPC/E basal
+ice-I$_\mathrm{h}$ / water interface. At early times, the mean-square
+displacement rises linearly due to ballistic motion of the
+molecules. This is due to the unhindered motion of the water molecules
+within their local solvation cages. At slightly longer times, the
+molecules bounce off of the molecules comprising their solvation cage,
+which can be seen in the short decay immediately following the
+ballistic regeime. Diffusion coefficients are obtained from a
+regression of the longer time portion of the mean-squared
+displacements using Eq. \eqref{eq:diffusion3}, and are shown in the
+lower panel of Figure \ref{fig:Diffusionz}. 
+
+\begin{equation}\label{eq:Dfit}
+  D(z) = \frac{1}{D_\mathrm{liquid}} - \frac{1}{2D_\mathrm{liquid}} \left(
+      \tanh \left( \frac{z-l}{d^D} \right) - \tanh \left( \frac{z-r}{d^D} \right) \right)
+\end{equation}
 
 
+\begin{table}[h]
+\centering
+\caption{COMPUTED WIDTHS OF THE ICE-I$_\mathrm{h}$ / WATER INTERFACES BY
+  DYNAMIC MEASURES. \label{tab:dynWidths}} 
+\begin{tabular}{|r|ccc|ccc|}  
+\hline
+  \multirow{2}{*} & \multicolumn{3}{c|}{SPC/E (225~K)} &  \multicolumn{3}{c|}{TIP4P/Ice (270~K) } \\
+  & \multicolumn{3}{c|} {Interfacial Widths (\AA) \footnotemark[1]} &
+                                                                      \multicolumn{3}{c|} {Interfacial Widths  (\AA) \footnotemark[1]} \\
+ Interface &  $d_\mathrm{10-90}^{D}$ & $d_\mathrm{10-90}^{C_2}$ &
+                                                                  $d_\mathrm{10-90}^{jump}$  
+                                                                 &
+                     $d_\mathrm{10-90}^{D}$ & $d_\mathrm{10-90}^{C_2}$ & $d_\mathrm{10-90}^{jump}$\\ 
+\hline
+  Basal  $\{0001\}$                 & D() & C2() & J() & D() & C2() & J()  \\
+  Prismatic  $\{10\bar{1}0\}$       & D()  & C2() & J() & D() & C2() & J()  \\
+  14\degree~Pyramidal  $\{20\bar{2}1\}$   & D() & C2() & J() & D() & C2() & J()  \\
+  Secondary Prism  $\{11\bar{2}0\}$ & D() & C2() & J() & D() & C2() & J()  \\ 
+\hline
+\end{tabular}
+\flushleft
+  \footnotemark[1]\footnotesize{Uncertainties in the last
+   digit are indicated with parentheses.} \\
+\end{table}
 
 \section{Reorientation of Water Molecules}
 The spatially-resolved orientational time correlation function,
