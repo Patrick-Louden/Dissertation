@@ -8,17 +8,92 @@ the two regions, and yield similar widths for a given facet.
 Simulations and experiments indicate that the dynamics of water
 molecules depend not only on their local structure and environment,
 but also on the ordering of molecules outside of their first solvation
-shell. Given this, we have investigated the transition of the dynamics
-of water molecules across the interface as well.
+shell. Given this, we have investigated the spatial transition of the
+dynamics of water molecules across the interface as well.
+
+\section{Diffusion Coefficients as a Measure of Interfacial Width}
+As discussed in Chapter \ref{chap:intro}, transport coefficients are
+defined by a relation of the system's response to a perturbation. For
+example, the diffusion coefficient can be expressed in terms of an
+applied particle flux and the resulting concentration gradient, just
+as the shear viscosity can be expressed in terms of an applied shear
+stress and the resulting velocity gradient. While it is still possible
+to obtain transport coefficients by reversing which quantity is
+applied and which is observed, \textit{i.e.}, apply a velocity
+gradient across the system and measure the resulting shear stress,
+such methodologies are innately prone to noise and the resulting
+simulations are required to be much longer. Regardless of which
+quantity is applied, deviation from equilibrium is achieved by adding
+a perturbation $\mathscr{A}$ to the Hamiltonian.  Transport
+coefficients $\gamma$ can then be calculated from an infinite time
+integral of an equilibrium time correlation function.
+\begin{equation}\label{trasport1}
+\gamma = \int_0^{\infty} dt \langle \dot{\mathscr{A}}(t)
+\dot{\mathscr{A}}(0)\rangle 
+\end{equation}
+Albert Einstein was able to show that for any expression written in
+this form, there was an associated expression which takes the form
+\begin{equation}\label{trasport2}
+2t\gamma = \langle (\mathscr{A}(t)-\mathscr{A}(0))^2 \rangle
+\end{equation}
+for large $t$ compared to the correlation time of $\mathscr{A}$. 
+
+The diffusion coefficient $D$ is given by
+\begin{equation}\label{diffusion1}
+D = \frac{1}{3} \int_0^{\infty} dt \langle \dot{\bm{r}_i}(t) -
+\dot{\bm{r}_i}(0) \rangle
+\end{equation}
+where $\dot{\bm{r}_i}(t)$ is the center-of-mass velocity of molecule
+$i$, and the factor of $\frac{1}{3}$ accounts for motion in three
+dimensions. From Eq. \eqref{transport1} and Eq. \eqref{transport2},
+the corresponding Einstein relation would then be
+\begin{equation}\label{diffusion2}
+2Dt = \frac{1}{3} \langle | \bm{r}_i(t) - \bm{r}_i(0) |^2 \rangle
+\end{equation}
+where $\bm{r}_i(t)$ is the center-of-mass position of molecule
+$i$. 
+
+The spatially resolved diffusion constant,
+\begin{equation}\label{diffusion3}
+D(z) = \frac{1}{6t} \langle | \bm{r}_i(t) - \bm{r}_i(0) |^2
+\delta(z_i(0) - z)  \rangle 
+\end{equation}
+provides local information about the translational motions avaiable to
+the water molecules located within a computed $\delta z$. In the
+liquid, translation of molecules primarily occurs within local
+solvation cages, while translation within the ice is
+nonexistent. Therefore, we expect the corresponding diffusion
+constants for these two regions to be vastly different. Observing the
+spatial length over which this transition occurs provides us with a
+dynamic width of the interface, and allows for comparison with the
+structural widths obtained in Chapter \ref{chap:Struct}. 
+
+For each of the ice-I$_\mathrm{h}$ / water interfaces described in
+Chapter \ref{chap:Struct}, four subsequent one nanosecond simulations
+were performed without the presence of an applied kinetic energy or
+momentum flux (\textit{i.e.}, no thermal or velocity gradient was
+present in the system). Configurations of the systems were stored
+every 100 fs, and the spatially resolved diffusion coefficients were
+computed by slicing the systems into 1~\AA bins along the
+$z$-dimension (see Figure \ref{fig:Diffusionz}).
+
+\begin{figure}
+\includegraphics[width=\linewidth]{Figures/DzImage}
+\caption{\label{fig:Diffusionz} $D(z)$ collected in 1 \AA~bins across the SPC/E
+  basal ice / water interface. The band that experiences very
+  little decay represents water molecules in the ice, while the band
+  that decays quickly corresponds to bins in the liquid.  The
+  correlation function presents a continuous distribution of decay
+  behaviors across the interface between ice and liquid water.}
+\end{figure}
+
+In the top panel of Figure \ref{fig:Diffuzionz}, the mean-squared
+displacement has been computed of molecules within 1 \AA~ bins across
+the SPC/E basal ice / water interface.
 
 
-\section{Dynamic Measures of an Ice / Water Interface Under Shear}\label{structure}
 
-\subsection{Diffusion Coefficients as a Measure of Interfacial Width}
-Compute diffusion coefficients as a function of distance through
-interface. Plot, fit, etc.
-
-\subsection{Reorientation of Water Molecules}
+\section{Reorientation of Water Molecules}
 The spatially-resolved orientational time correlation function,
 \begin{equation}\label{C(t)1}
   C_{2}(z,t)=\langle P_{2}(\mathbf{u}_i(0)\cdot \mathbf{u}_i(t))
