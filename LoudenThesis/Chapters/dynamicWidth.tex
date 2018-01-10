@@ -1,4 +1,4 @@
-\chapter{DYNAMIC WIDTHS OF ICE-I$_\mathrm{h}$ / WATER INTERFACES}\label{chap:Dyn}
+\chapter{DYNAMIC MEASURES OF ICE-I$_\mathrm{h}$ / WATER INTERFACIAL WIDTHS}\label{chap:Dyn}
 In Chapter \ref{chap:Str}, estimates of the ice-I$_\mathrm{h}$ / water
 interface were obtained by determining the distance over which
 structural order parameters transitioned from their bulk liquid values
@@ -75,11 +75,12 @@ momentum flux (\textit{i.e.}, no thermal or velocity gradient was
 present in the system). Configurations of the systems were stored
 every 100 fs, and the spatially resolved diffusion coefficients were
 computed by slicing the systems into 1~\AA~bins along the
-$z$-dimension (see Figure \ref{fig:Diffusionz}). 
+$z$-dimension (see Figure \ref{fig:DzSPCE} and Figure
+\ref{fig:DzTIP4PIce}).
 
 \begin{figure}
-\includegraphics[width=\linewidth]{Figures/DzImage}
-\caption{\label{fig:Diffusionz} $D(z)$ collected in 1 \AA~bins across the SPC/E
+\includegraphics[width=\linewidth]{Figures/DzSPCE}
+\caption{\label{fig:DzSPCE} $D(z)$ collected in 1 \AA~bins across the SPC/E
   basal ice / water interface. The band that experiences very
   little decay represents water molecules in the ice, while the band
   that decays quickly corresponds to bins in the liquid.  The
@@ -87,25 +88,64 @@ $z$-dimension (see Figure \ref{fig:Diffusionz}).
   behaviors across the interface between ice and liquid water.}
 \end{figure}
 
-In the top panel of Figure \ref{fig:Diffusionz}, the mean-squared
-displacement ($\langle | \bm{r}_i(t) - \bm{r}_i(0) |^2 \rangle $) has
-been computed for molecules within 1 \AA~ bins across the SPC/E basal
-ice-I$_\mathrm{h}$ / water interface. At early times, the mean-square
-displacement rises linearly due to ballistic motion of the
-molecules. This is due to the unhindered motion of the water molecules
-within their local solvation cages. At slightly longer times, the
-molecules bounce off of the molecules comprising their solvation cage,
-which can be seen in the short decay immediately following the
-ballistic regeime. Diffusion coefficients are obtained from a
-regression of the longer time portion of the mean-squared
-displacements using Eq. \eqref{eq:diffusion3}, and are shown in the
-lower panel of Figure \ref{fig:Diffusionz}. 
+\begin{figure}
+\includegraphics[width=\linewidth]{Figures/DzTIP4PIce}
+\caption{\label{fig:DzTIP4PIce} The same basal diffusion coefficients
+  as Fig. \ref{fig:DzSPCE}, but collected using the TIP4P/Ice model
+  and at 270 K. Note that the higher coexistence temperature for this
+  model increases the observed diffusion coefficients, and has brought
+  the structural and diffusion interfaces much closer together.}
+\end{figure}
+
+In the top panel of Figure \ref{fig:DzSPCE} and Figure
+\ref{fig:DzTIP4PIce}, the mean-squared displacement
+($\langle | \bm{r}_i(t) - \bm{r}_i(0) |^2 \rangle $) has been computed
+for molecules within 1 \AA~bins across the basal ice-I$_\mathrm{h}$ /
+water interface. At early times, the mean-square displacement rises
+linearly due to ballistic motion of the molecules. This is due to the
+unhindered motion of the water molecules within their local solvation
+cages. At slightly longer times, the molecules bounce off of their
+solvation cages, which can be seen in the short decay in the
+mean-squared displacement immediately following the ballistic
+regeime. Diffusion coefficients are obtained from a regression of the
+longer time portion of the mean-squared displacements using
+Eq. \eqref{eq:diffusion3}, and are shown in the lower panels of the
+same figures. Calculation of the diffusion coefficients was performed
+assuming the water molecules could translate in three dimensions, even
+though it may be more appropriate to assume diffusion to occur in only
+two dimensions for molecules close to the ice. 
+
+In the bulk liquid portions of the SPC/E system (Figure
+\ref{fig:DzSPCE}), diffusion coefficients are found to be XXX, while
+in the ice the transport coefficient is numerically zero. In
+comparison, diffusion constants for the liquid region of the systems
+modeled with the TIP4P/Ice forcefield were found to be YYY. The
+increase in the values reported is attributed to the warmer
+temperature, 270~K. Fitting the $D(z)$ profiles with a function
+designed to smoothly transition from the liquid diffusion coefficients
+to those of the ice, we can determine the distance over which this
+transition occurs.
 
 \begin{equation}\label{eq:Dfit}
   D(z) = \frac{1}{D_\mathrm{liquid}} - \frac{1}{2D_\mathrm{liquid}} \left(
       \tanh \left( \frac{z-l}{d^D} \right) - \tanh \left( \frac{z-r}{d^D} \right) \right)
 \end{equation}
-
+  
+Here, $D_\mathrm{liquid}$ is the value of the diffusion coefficient in
+the liquid, $l$ and $r$ are the Gibbs dividing surface of the left and
+right interfaces, and $d^{D}$ is the width of the interface. These
+values of interfacial width are related to the structural $10\%-90\%$
+interfacial widths reported in Chapter \ref{chap:Str} by the same
+scaling coefficient, ($d_\mathrm{10-90}^{D} = 2.197~d^{D}$). All four
+SPC/E interfaces exhibit dynamic widths that are $\sim~XX$~\AA~and are
+larger than the structural measures reported in Table
+\ref{tab:strWidths}. Similarly, the TIP4P/Ice systems at 270~K exhibit
+dynamic widths of $\sim~YY$~\AA~, which are also larger than
+interfacial widths predicted by structural measures for the same
+model. As we saw with the structural measures of interfacial width,
+the TIP4P/Ice model at 270~K predicts a broader interface than the
+SPC/E model at 225~K.  The value of the dynamic width of the interface
+for each interface is reported in Table \ref{tab:dynWidths}.
 
 \begin{table}[h]
 \centering
@@ -121,10 +161,10 @@ lower panel of Figure \ref{fig:Diffusionz}.
                                                                  &
                      $d_\mathrm{10-90}^{D}$ & $d_\mathrm{10-90}^{C_2}$ & $d_\mathrm{10-90}^{jump}$\\ 
 \hline
-  Basal  $\{0001\}$                 & D() & C2() & J() & D() & C2() & J()  \\
-  Prismatic  $\{10\bar{1}0\}$       & D()  & C2() & J() & D() & C2() & J()  \\
-  14\degree~Pyramidal  $\{20\bar{2}1\}$   & D() & C2() & J() & D() & C2() & J()  \\
-  Secondary Prism  $\{11\bar{2}0\}$ & D() & C2() & J() & D() & C2() & J()  \\ 
+  Basal  $\{0001\}$                 & D() & 11(2) & 11 & D() & 15(3) & J()  \\
+  Prismatic  $\{10\bar{1}0\}$       & D()  & 10(2) & 12 & D() & 15(2) & J()  \\
+  14\degree~Pyramidal  $\{20\bar{2}1\}$   & D() & 11(3) & 13 & D() & 13(1) & J()  \\
+  Secondary Prism  $\{11\bar{2}0\}$ & D() & 11(3) & 10 & D() & 14(2) & J()  \\ 
 \hline
 \end{tabular}
 \flushleft
@@ -256,17 +296,17 @@ the middle and long-time orientational rates with a function that goes
 smoothly between bulk-like liquid behavior and the crystal,
 \begin{equation}\label{tauFit}
   k(z) = \frac{1}{\tau_\mathrm{liquid}} - \frac{1}{2~\tau_\mathrm{liquid}} \left(
-      \tanh \left( \frac{z-l}{d} \right) - \tanh \left( \frac{z-r}{d} \right) \right)
+      \tanh \left( \frac{z-l}{d^{C_2}} \right) - \tanh \left( \frac{z-r}{d^{C_2}} \right) \right)
 \end{equation}
 where $l$ and $r$ are the locations of the Gibbs dividing surfaces,
-and $d$ is a dynamic width.  As with the structural widths,
+and $d^{C_2}$ is a dynamic width.  As with the structural widths,
 $10\%-90\%$ dynamic widths are easily computed from the fits
-($d_\mathrm{10-90} = 2.197~d$).  These values are provided in Tables
-\ref{tab:propsSPCE} and \ref{tab:propsTIP4P}. All four SPC/E
-interfaces exhibit dynamic widths that are $\sim 11$~\AA, and are
-larger than the structural widths computed above.  In TIP4P/Ice at
-270K, the dynamic widths are $\sim 14$~\AA, also larger than the
-structural widths in for these interafaces.
+($d_\mathrm{10-90}^{C_2} = 2.197~d^{C_2}$), and are provided in Table
+\ref{tab:dynWidths}. All four SPC/E interfaces exhibit dynamic widths
+that are $\sim 11$~\AA, and are larger than the structural widths
+computed above.  In TIP4P/Ice at 270K, the dynamic widths are
+$\sim 14$~\AA, also larger than the structural widths in for these
+interfaces.
 
 We note that Bryk and Haymet also calculated the orientational time
 correlation function at the basal interface of SPC/E
@@ -274,7 +314,7 @@ water,\cite{Bryk2002} and observed the same qualitative trend through
 the ice / water interface, although the spatial resolution was not
 sufficient to resolve a dynamic width.
  
-\subsection{Spatial resolution of Hydrogen bond jump rates}
+\section{Spatial Resolution of Hydrogen Bond Jump Rates}
 The spatially-resolved hydrogen bond jump correlation function,
 \begin{equation}\label{jump}
 C_\mathrm{jump}(z,t) = 1 - \langle n_a(0) n_b(t) \delta(z_i(0) - z) \rangle
@@ -314,9 +354,8 @@ hydrogen bond jump time. The jump times diverge inside the ice
 crystal, so the jump rate, $k_\mathrm{jump}(z) = 1 / \tau_0(z)$ can be
 used to identify a hydrogen bond jump width for the interface in a
 similar manner to the dynamic width. $k_\mathrm{jump}(z)$ was fit with
-a hyperbolic tangent (see Eq. \eqref{tauFit}) and the 10-90 jump
-width, $j_\mathrm{10-90}$, is shown in tables \ref{tab:propsSPCE} and
-\ref{tab:propsTIP4P}.
+a hyperbolic tangent (see Eq. \eqref{tauFit}) and the $10\%-90\%$ jump
+width, $d_\mathrm{10-90}^{jump}$, is shown in Table \ref{tab:dynWidths}.
 
 \begin{figure}
 \includegraphics[width=5.5in]{Figures/secPrismJumpPlot}
