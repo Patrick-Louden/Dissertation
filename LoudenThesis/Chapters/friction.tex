@@ -2,7 +2,7 @@
   BY SOLID / LIQUID HYDROGEN-BONDING}\label{chap:Friction}
 
 % Write a short introduction to the topic discussed in this chapter.
-In this chapter, calculations of solid / liquid friction at
+In this chapter, calculations of solid-liquid friction at
 ice-I$_\mathrm{h}$ / water interfaces are discussed.  An expression
 for friction coefficients appropriate for negative slip boundary
 conditions is presented, and the computed friction of these interfaces
@@ -15,7 +15,7 @@ crystals presented to the liquid is quantified by querying mean
 projected densities. However, the dimensions of the surface features
 of the crystals do not correlate strongly with the obtained friction
 coefficients, leading to the conclusion that friciton is dominated by
-the density of solid to liquid cross hydrogen bonds.  Lastly, we
+the density of solid to liquid hydrogen bonds.  Lastly, we
 present a simple momentum transmission model using the density of
 solid / liquid hydrogen bonds, the shear viscosity of the liquid, and
 the structural width of the interface.
@@ -23,76 +23,143 @@ the structural width of the interface.
 
 
 
-\section{Coefficient of Friction of the Interface}
-As liquid water flows over an ice interface, there is a distance from
-the structural interface where bulk-like hydrodynamics are recovered.
-Bocquet and Barrat constructed a theory for the hydrodynamic boundary
-parameters, which include the slipping length
-$\left(\delta_\mathrm{wall}\right)$ of this boundary layer and the
-``hydrodynamic position'' of the boundary
-$\left(z_\mathrm{wall}\right)$.\cite{PhysRevLett.70.2726,PhysRevE.49.3079}
-This last parameter is the location (relative to a solid surface)
-where the bulk-like behavior is recovered.  Work by Mundy {\it et al.}
-has helped to combine these parameters into a liquid-solid friction
-coefficient, which quantifies the resistance to pulling the solid
-interface through a liquid,\cite{Mundy1997305}
-\begin{equation}
-\lambda_\mathrm{wall} = \frac{\eta}{\delta_\mathrm{wall}}.
-\end{equation}
-This expression is nearly identical to one provided by Pit {\it et
-  al.} for the solid-liquid friction of an interface,\cite{Pit1999}
-\begin{equation}\label{Pit}
-  \lambda=\frac{\eta}{\delta}
-\end{equation}
-where $\delta$ is the slip length for the liquid measured at the
-location of the interface itself.  In our simulations, the shoulder on
-the velocity profile indicating the location of the hydrodynamic
-boundary in the liquid is not always apparent. In some cases, the
-linear behavior persists nearly up to the interfacial region.  For
-this reason, the hydrodynamic position of the boundary is not always
-computable, while the Pit approach (Eq. \ref{Pit}) can be used to find
-the solid-liquid friction coefficient more reliably.
+%\section{Coefficient of Friction of the Interface}
+% As liquid water flows over an ice interface, there is a distance from
+% the structural interface where bulk-like hydrodynamics are recovered.
+% Bocquet and Barrat constructed a theory for the hydrodynamic boundary
+% parameters, which include the slipping length
+% $\left(\delta_\mathrm{wall}\right)$ of this boundary layer and the
+% ``hydrodynamic position'' of the boundary
+% $\left(z_\mathrm{wall}\right)$.\cite{PhysRevLett.70.2726,PhysRevE.49.3079}
+% This last parameter is the location (relative to a solid surface)
+% where the bulk-like behavior is recovered.  Work by Mundy {\it et al.}
+% has helped to combine these parameters into a liquid-solid friction
+% coefficient, which quantifies the resistance to pulling the solid
+% interface through a liquid,\cite{Mundy1997305}
+% \begin{equation}
+% \lambda_\mathrm{wall} = \frac{\eta}{\delta_\mathrm{wall}}.
+% \end{equation}
+% This expression is nearly identical to one provided by Pit {\it et
+%   al.} for the solid-liquid friction of an interface,\cite{Pit1999}
+% \begin{equation}\label{Pit}
+%   \lambda=\frac{\eta}{\delta}
+% \end{equation}
+% where $\delta$ is the slip length for the liquid measured at the
+% location of the interface itself.  In our simulations, the shoulder on
+% the velocity profile indicating the location of the hydrodynamic
+% boundary in the liquid is not always apparent. In some cases, the
+% linear behavior persists nearly up to the interfacial region.  For
+% this reason, the hydrodynamic position of the boundary is not always
+% computable, while the Pit approach (Eq. \ref{Pit}) can be used to find
+% the solid-liquid friction coefficient more reliably.
 
-In both the Pit and hydrodynamic boundary expressions, $\eta$ is the
-shear viscosity of the bulk-like region of the liquid, a quantity
-which is easily obtained in VSS-RNEMD simulations by fitting the
-velocity profile in the region far from the surface.\cite{Kuang2012}
-Assuming linear response in the bulk-like region,
-\begin{equation}\label{Kuang}
+% In both the Pit and hydrodynamic boundary expressions, $\eta$ is the
+% shear viscosity of the bulk-like region of the liquid, a quantity
+% which is easily obtained in VSS-RNEMD simulations by fitting the
+% velocity profile in the region far from the surface.\cite{Kuang2012}
+% Assuming linear response in the bulk-like region,
+% \begin{equation}\label{Kuang}
+% j_{z}(p_{x})=-\eta \left(\frac{\partial v_{x}}{\partial z}\right)
+% \end{equation}
+% Substituting this result into eq. \eqref{Pit}, we can estimate the
+% solid-liquid friction coefficient using the slip length,
+% \begin{equation}
+% \lambda=-\frac{j_{z}(p_{x})} {\left(\frac{\partial v_{x}}{\partial
+%       z}\right) \delta}.
+% \end{equation}
+
+% For ice / water interfaces, the boundary conditions are no-slip, so
+% projecting the bulk liquid state velocity profile yields a negative
+% slip length. This length is the difference between the structural edge
+% of the ice (determined by the tetrahedrality profile) and the location
+% where the projected velocity of the bulk liquid intersects the solid
+% phase velocity (see Figure \ref{fig:delta_example}). The coefficients
+% of friction for the basal and the prismatic facets were determined for
+% shearing along both the $x$ and $y$ axes.  The values are given in
+% Table \ref{tab:lambda}. 
+
+% Note that the measured friction coefficient for the basal face is
+% twice that of the prismatic face (regardless of drag direction).
+% These results may seem surprising as the basal face appears smoother
+% than the prismatic with only small undulations of the oxygen
+% positions, while the prismatic surface has deep corrugated channels
+% along the $x$ direction in the crystal system used in this work.
+% However, the corrugations are relatively thin, and the liquid phase
+% water does not appear to populate the channels.  The prismatic face
+% therefore effectively presents stripes of solid-phase molecules
+% (making up approximately half of the exposed surface area) with nearly
+% empty space between them. The interfacial friction appears to be
+% independent of the drag direction, so flow parallel to these channels
+% does not explain the lower friction of the prismatic face.  A more
+% likely explanation is that the effective contact between the liquid
+% phase and the prismatic face is reduced by the empty corrugations.  
+
+
+\section{Solid-Liquid Friction at Ice-I$_\mathrm{h}$ / Water Interfaces}
+In no-stick boundary conditions, fluid flowing over a solid is
+characterized by a slip length, $\delta$, describing the extent of
+slip of the fluid at the interface. This length is the extrapolated
+distance from the interface where the tangential velocity component
+vanishes. For solids with weak interactions with the liquid, there is
+little drag imposed on the fluid and the resulting interfacial liquid
+velocity, $\Delta v_\mathrm{slip}$, can be significant. In no-stick
+boundaries, therefore, the extrapolated slip lengths are also large
+(top panel of Fig. \ref{fig:slipLengthPlot}).  Balasubramanian and
+Mundy have related the slip length to the interfacial friction
+coefficient, 
+\begin{equation}\label{eq:kappa1}
+\lambda = \frac{\eta}{\delta}
+\end{equation}
+where $\eta$ is the shear viscosity of the
+liquid.\cite{Balasubramanian1999} For solids that have strong
+interactions with the liquid, a larger frictional drag is imposed on
+the fluid at the interface and the resulting slip lengths are
+smaller. When the solid / liquid interactions become large enough, the
+interface is best described with stick boundary conditions, and the
+slip length will vanish (middle panel of
+Fig. \ref{fig:slipLengthPlot}).
+
+
+\begin{figure}
+\includegraphics[width=\linewidth]{Figures/slipLengthPlot}
+\caption{\label{fig:slipLength} A sketch of transverse velocity
+  profiles, $v_x(z)$, for interfaces in slip (top), no-slip (middle),
+  and negative slip boundary conditions (bottom).  The location of the
+  interface is defined by a Gibbs dividing surface at $z_0$. Under
+  negative slip conditions, the 10-90 interfacial width, $w_{10-90}$,
+  provides locations that are unambiguously on the liquid and solid
+  sides of the interface.\label{fig:slipLengthPlot}}
+\end{figure}
+
+
+In our initial investigation of friction at the basal and prismatic
+interfaces, we related the interfacial friction coefficient to the
+imposed momentum flux $j_z(p_x)$ and the resulting velocity gradient
+through a linear constitutive relation.
+\begin{equation}\label{eq:linConRel}
 j_{z}(p_{x})=-\eta \left(\frac{\partial v_{x}}{\partial z}\right)
 \end{equation}
-Substituting this result into eq. \eqref{Pit}, we can estimate the
-solid-liquid coefficient using the slip length,
+Substituting Eq. \eqref{eq:linConRel} into Eq. \eqref{eq:kappa1} gives
+an expression for the friction coefficient which is straightforwardly
+obtained from the VSS-RNEMD simulations, as the momentum flux is an
+imposed quantity and the resulting velocity gradient is easily
+measured through the liquid region of the simulation box.
 \begin{equation}
 \lambda=-\frac{j_{z}(p_{x})} {\left(\frac{\partial v_{x}}{\partial
       z}\right) \delta}
 \end{equation}
 
-For ice / water interfaces, the boundary conditions are no-slip, so
-projecting the bulk liquid state velocity profile yields a negative
-slip length. This length is the difference between the structural edge
-of the ice (determined by the tetrahedrality profile) and the location
-where the projected velocity of the bulk liquid intersects the solid
-phase velocity (see Figure \ref{fig:delta_example}). The coefficients
-of friction for the basal and the prismatic facets were determined for
-shearing along both the $x$ and $y$ axes.  The values are given in
-table \ref{tab:lambda}. 
-
-Note that the measured friction coefficient for the basal face is
-twice that of the prismatic face (regardless of drag direction).
-These results may seem surprising as the basalface appears smoother
-than the prismatic with only small undulations of the oxygen
-positions, while the prismatic surface has deep corrugated channels
-along the $x$ direction in the crystal system used in this work.
-However, the corrugations are relatively thin, and the liquid phase
-water does not appear to populate the channels.  The prismatic face
-therefore effectively presents stripes of solid-phase molecules
-(making up approximately half of the exposed surface area) with nearly
-empty space between them. The interfacial friction appears to be
-independent of the drag direction, so flow parallel to these channels
-does not explain the lower friction of the prismatic face.  A more
-likely explanation is that the effective contact between the liquid
-phase and the prismatic face is reduced by the empty corrugations.  
+For ice-I$_\mathrm{h}$ / water interfaces, the boundary conditions are
+no-slip, so projecting the bulk liquid state velocity profile yields a
+negative slip length. This length is the difference between the
+structural edge of the ice (determined by the tetrahedrality profile)
+and the location where the projected velocity of the bulk liquid
+intersects the solid phase velocity (see Figure
+\ref{fig:delta_example} for a diagram of no-slip conditions at
+ice-I$_\mathrm{h}$ / water interfaces). The coefficients of friction
+for the basal and the prismatic facets were determined for shearing
+along both the $x$ and $y$ axes, and are given in Table
+\ref{tab:lambda}.
 
 \begin{figure}
 \includegraphics[width=\linewidth]{Figures/delta_example}
@@ -107,80 +174,49 @@ phase and the prismatic face is reduced by the empty corrugations.
   from the basal-face simulation with an applied shear rate of 3.0 ms\textsuperscript{-1}.}
 \end{figure}
 
-
 \begin{table}[h]
 \centering
-\caption{Solid-liquid friction coefficients (measured in amu~fs\textsuperscript{-1}) }
+\caption{SOLID-LIQUID FRICTION COEFFICIENTS (measured in
+  amu~\AA\textsuperscript{-2}~fs\textsuperscript{-1}) FOR NEGATIVE
+  SLIP BOUNDARY CONDITIONS }
 \label{tab:lambda}
-\begin{tabular}{|ccc|}  \hline
+\begin{tabular}{|r|cc|}  \hline
            & \multicolumn{2}{c|}{Drag direction} \\ 
  Interface & $x$               & $y$  \\ \hline
-     basal &  $0.08 \pm 0.02$  & $0.09 \pm 0.03$ \\
- prismatic & $0.037 \pm 0.008$ & $0.04 \pm 0.01$ \\ \hline
+     Basal  $\{0001\}$ &  $0.08 \pm 0.02$  & $0.09 \pm 0.03$ \\
+ Prismatic  $\{10\bar{1}0\}$ & $0.037 \pm 0.008$ & $0.04 \pm 0.01$ \\ \hline
 \end{tabular}
 \end{table}
 
 
-\subsection{Solid / liquid friction at ice / water interfaces}
-In no-stick boundary conditions, fluid flowing over a solid is
-characterized by a slip length, $\delta$, describing the extent of
-slip of the fluid at the interface. This length is the extrapolated
-distance from the interface where the tangential velocity component
-vanishes. For solids with weak interactions with the liquid, there is
-little drag imposed on the fluid and the resulting interfacial liquid
-velocity, $\Delta v_\mathrm{slip}$, can be significant. In no-stick
-boundaries, therefore, the extrapolated slip lengths are also large
-(top panel of Fig. \ref{fig:slipLengthPlot}).  Balasubramanian and
-Mundy have related the slip length to the interfacial friction
-coefficient, 
-\begin{equation}\label{kappa1}
-\lambda = \frac{\eta}{\delta}
-\end{equation}
-where $\eta$ is the shear viscosity of the
-liquid.\cite{Balasubramanian1999}
 
-For solids that have strong interactions with the liquid, a larger
-frictional drag is imposed on the fluid at the interface and the
-resulting slip lengths are smaller. When the solid / liquid interactions
-become large enough, the interface is best described with stick
-boundary conditions, and the slip length will vanish (middle panel of
-Fig. \ref{fig:slipLengthPlot}).  Stick boundaries pose a problem for
-Eq.  \eqref{kappa1}, as $\lambda$ asymptotically goes to infinity as
-$\delta \rightarrow 0$.  Likewise, some materials possess solid / liquid
-interactions that are strong enough for the extrapolated tangential
-velocity to vanish \textit{before} reaching the solid. The velocity
-profile yields a negative slip length (bottom panel of Fig.
-\ref{fig:slipLengthPlot}), and the solid / liquid friction coefficient
-defined in Eq. \eqref{kappa1} becomes meaningless.  Ice shearing
-through liquid water is in the negative slip limit. The tangential
-velocity profile of the liquid extrapolates to the solid velocity
-several molecular layers before reaching the solid. Thus a new
-friction coefficient must be defined to describe these interfaces.
+However, stick boundaries pose a problem for Eq.  \eqref{eq:kappa1}, as
+$\lambda$ asymptotically goes to infinity as $\delta \rightarrow 0$.
+Likewise, some materials possess solid / liquid interactions that are
+strong enough for the extrapolated tangential velocity to vanish
+\textit{before} reaching the solid. The velocity profile yields a
+negative slip length (bottom panel of Fig.  \ref{fig:slipLengthPlot}),
+and the solid / liquid friction coefficient defined in
+Eq. \eqref{eq:kappa1} becomes meaningless.  Ice shearing through liquid
+water is in the negative slip limit. The tangential velocity profile
+of the liquid extrapolates to the solid velocity several molecular
+layers before reaching the solid. Thus a new friction coefficient must
+be defined to describe these interfaces.
 
-\begin{figure}
-\includegraphics[width=\linewidth]{Figures/slipLengthPlot}
-\caption{\label{fig:slipLength} A sketch of transverse velocity
-  profiles, $v_x(z)$, for interfaces in slip (top), no-slip (middle),
-  and negative slip boundary conditions (bottom).  The location of the
-  interface is defined by a Gibbs dividing surface at $z_0$. Under
-  negative slip conditions, the 10-90 interfacial width, $w_{10-90}$,
-  provides locations that are unambiguously on the liquid and solid
-  sides of the interface.\label{fig:slipLengthPlot}}
-\end{figure}
-
-A solid / liquid friction coefficient, $\kappa$, may also be defined
-using the velocity drop across the interface, rather than the length
-scale over which this drop occurs. We can relate the imposed shear
-stress with the relative tangential velocity of the fluid in the
-interfacial region,\cite{Kuang2012}
-\begin{equation}\label{Shenyu-13}
+A solid / liquid friction coefficient appropriate for stick
+boundaries, $\kappa$, may also be defined using the velocity drop
+across the interface, rather than the length scale over which this
+drop occurs. We can relate the imposed shear stress with the relative
+tangential velocity of the fluid in the interfacial
+region,\cite{Kuang2012}
+\begin{equation}\label{eq:Shenyu-13}
 j_{z}(p_{x}) = \kappa_{x} \Delta v
 \end{equation}
 where $\Delta v = v_{x}(\mathrm{solid}) - v_{x}(\mathrm{liquid})$ is
 the difference in transverse velocity between points that are
 unambiguously on the solid and liquid sides of the interface.  In slip
 boundary conditions, $\kappa$ and $\lambda$ are identical, but
-Eq. \eqref{Shenyu-13} provides a direct analogy to non-equilibrium
+Eq. \eqref{eq:Shenyu-13} provides a direct analogy to non-equilibrium
 expressions for the interfacial thermal conductance $(G)$,
 \begin{equation}
 J_z = G~ \Delta T.
@@ -190,17 +226,17 @@ across an interface of \textit{finite width}. By analogy, $\kappa$ is
 a transport coefficient that measures \textit{interfacial momentum
   conductance} across an interface of finite width.
 
-In ice / water interfaces, the solid / liquid boundary is not
+In ice-I$_\mathrm{h}$ / water interfaces, the solid / liquid boundary is not
 an infinitely thin plane. An order parameter (the tetrahedrality) goes
 smoothly between the phases over a few molecular diameters.  We can
 use this order parameter to find the interfacial width and define
 locations in space that are unambiguously on the solid and liquid
 sides of the interface.  In what follows, we have used the Gibbs
 dividing surface ($z_0$) and the 10$-$90 width of the interface
-($w_\mathrm{10-90}$) to arrive at physical locations for measuring
+($w_\mathrm{10-90}^{q}$) to arrive at physical locations for measuring
 $v_{x}(solid)$ and $v_{x}(liquid)$.  These uniquely define a friction
 coefficient in terms of well-defined structural features ($z_0$ and
-$w_\mathrm{10-90}$) and dynamic properties ($v_{x}(z)$) of the
+$w_\mathrm{10-90}^{q}$) and dynamic properties ($v_{x}(z)$) of the
 interface.
 
 Tangential velocity profiles from the simulations were fit using a
@@ -210,7 +246,7 @@ shearing simulation were fit assuming linear behavior through each of
 the three regions of the simulation box; the lower liquid, the solid,
 and the upper liquid. Parabolic functions were designed to capture the
 negative slip behavior that links the three regions,
-\begin{equation}\label{vfit}
+\begin{equation}\label{eq:vfit}
 v(z) =
 \begin{cases}
   v_{l} - m_{l}z & 0 \leq z < (z_{1} - w) \\
@@ -225,19 +261,19 @@ Here, $v_{l}$ is the velocity of the liquid at the middle of the
 liquid domain (the edge of the simulation box), and $v_{s}$ is the
 velocity of the solid. The locations $z_{1}$ and $z_{2}$ are the edges
 of the ice slab, and $w$ is the width of the interface (distinct from
-$w_{10-90}$ mentioned in the main text). The parameter $m_{l}$ is the
+$w_{10-90}^{q}$). The parameter $m_{l}$ is the
 slope of the velocity profile in the liquid regions of the box which
-is related to the liquid-state viscosity. Figure \ref{fig:pyrComic}
+is related to the liquid-state viscosity. Figure \ref{fig:spComic}
 shows a representative velocity profile (navy squares) and fit (green
 line) with the locations of $z_{1}$ and $z_{2}$ indicated as vertical
 dotted lines. Once the fits were obtained, the values for
-$v_{x}(solid)$ and $v_{x}(liquid)$ for Eq. (5) were sampled from the
-fit. The $z$ locations used to sample the fit were determined by
-structural measures. The $z$ location for $v_{x}(liquid)$ was taken to
-be the Gibbs dividing surface of the interface, less the 10$-$90 width
-of the interface. Similarly, the $z$ location for $v_{x}(solid)$ was
-taken to be the Gibbs dividing surface plus the 10$-$90 width of the
-interface.
+$v_{x}(solid)$ and $v_{x}(liquid)$ for Eq. \eqref{eq:Shenyu-13} were
+sampled from the fit. The $z$ locations used to sample the fit were
+determined by structural measures. The $z$ location for
+$v_{x}(liquid)$ was taken to be the Gibbs dividing surface of the
+interface, less the 10$-$90 width of the interface. Similarly, the $z$
+location for $v_{x}(solid)$ was taken to be the Gibbs dividing surface
+plus the 10$-$90 width of the interface.
 
 To arrive at estimates of
 the interfacial velocities, these fits were queried at locations on
@@ -247,7 +283,7 @@ v_{x}(\mathrm{solid}) & = v_{x}( z_0 + w_\mathrm{10-90})  \label{eq:vx1}\\
 v_{x}(\mathrm{liquid}) & = v_{x}( z_0 - w_\mathrm{10-90}). \label{eq:vx2}
 \end{align}
 The momentum flux, $j_{z}(p_{x})$ is an imposed parameter of the
-VSS-RNEMD simulations, and by using Eq. \eqref{Shenyu-13}, estimates
+VSS-RNEMD simulations, and by using Eq. \eqref{eq:Shenyu-13}, estimates
 of interfacial friction coefficient $\kappa$ are straightforward.
 
 The calculated $\kappa$ values found for the four crystalline facets
@@ -256,7 +292,7 @@ of ice-I$_\mathrm{h}$ investigated here are shown in Table
 simulations where the imposed momentum flux was in the $y$-dimension,
 $\kappa_{y}$, are calculated in the same manner, with $j_{z}(p_{y})$
 and $v_{y}$ substituting for $j_{z}(p_{x})$ and $v_{x}$ in
-Eqs. \eqref{Shenyu-13}, \eqref{eq:vx1}, and \eqref{eq:vx2}.  These
+Eqs. \eqref{eq:Shenyu-13}, \eqref{eq:vx1}, and \eqref{eq:vx2}.  These
 results were found to be independent of the shear rate (see
 Fig. \ref{fig:kappaPlot}), as well as the direction of the shear
 relative to the features on the surfaces of the facets.
@@ -278,12 +314,12 @@ relative to the features on the surfaces of the facets.
 
 \begin{table}[h]
 \centering
-\caption{Solid / liquid friction coefficients (in units of amu \AA\textsuperscript{-2} fs\textsuperscript{-1}) for
-  ice-I$_\mathrm{h}$ interfaces with water. Uncertainties in the last digit are indicated with
-  parentheses.\label{tab:kappa}}
+\caption{SOLID / LIQUID FRICTION COEFFICIENTS (amu \AA\textsuperscript{-2} fs\textsuperscript{-1}) FOR
+  ICE-I$_\mathrm{h}$ INTERFACES WITH WATER. (Uncertainties in the last digit are indicated with
+  parentheses.)\label{tab:kappa}}
 \begin{tabular}{|r|cc|cc|}  
   \toprule
-  & \multicolumn{2}{c|}{SPC/E (225~K)} & \multicolumn{2}{c}{TIP4P/Ice (270~K)} \\
+  & \multicolumn{2}{c|}{SPC/E (225~K)} & \multicolumn{2}{c|}{TIP4P/Ice (270~K)} \\
   Interface & $\kappa_{x}$ &  $\kappa_{y}$ & $\kappa_{x}$ &  $\kappa_{y}$ \\ 
   \midrule
   Basal  $\{0001\}$                 & 0.32(5)  & 0.31(4) & 0.12(2)  & 0.13(2) \\
@@ -296,19 +332,20 @@ relative to the features on the surfaces of the facets.
 
 Note that the values of $\kappa$ for the basal and prismatic crystal
 facets in Table \ref{tab:kappa} disagree with values for interfacial
-friction ($\lambda$) we previously reported.\cite{Louden2013a} In our
-initial report, the expression for the coefficient of friction was
-derived from equation \eqref{kappa1} and the linear constitutive
-relation for shear stress in a bulk fluid.  However, as described
-above, sheared ice / water interfaces are in the domain negative slip
-lengths. Eq. \eqref{kappa1} should only be used in slip boundary
-conditions, as negative slip can yield coefficients of friction that
-appear to be smaller in magnitude than the zero slip conditions. In
-our previous work, the prismatic surface was found to have a larger
-negative slip length than the basal face, indicating a prismatic
-surface that should have been reported with a larger coefficient of
-friction. If one instead uses Eq. \eqref{Shenyu-13} and interfacial
-widths to compute friction, the reported values come into agreement.
+friction ($\lambda$) we previously in Table \ref{tab:lambda}. In our
+preliminary investigation, the expression for the coefficient of
+friction was derived from equation \eqref{eq:kappa1} and the linear
+constitutive relation for shear stress in a bulk fluid.  However, as
+described above, sheared ice / water interfaces are in the domain
+negative slip lengths. Eq. \eqref{eq:kappa1} should only be used in
+slip boundary conditions, as negative slip can yield coefficients of
+friction that appear to be smaller in magnitude than the zero slip
+conditions. In our previous work, the prismatic surface was found to
+have a larger negative slip length than the basal face, indicating a
+prismatic surface that should have been reported with a larger
+coefficient of friction. If one instead uses Eq. \eqref{eq:Shenyu-13}
+and interfacial widths to compute friction, the reported values come
+into agreement.
 
 The two water models give two significantly different values for the
 friction coefficients. This is primarily a result of the difference in
@@ -331,11 +368,11 @@ seems robust.
 
  
 \section{Discussion}
-The primary result of this paper is the observation that the different
-facets of ice-I$_\mathrm{h}$ produce significantly different solid /
-liquid interfacial friction coefficients with water (see Table
-\ref{tab:kappa}).  The two prismatic surfaces displayed the largest
-coefficients of friction, while the basal and pyramidal facets
+The primary result presented in this chapter is the observation that
+the different facets of ice-I$_\mathrm{h}$ produce significantly
+different solid / liquid interfacial friction coefficients with water
+(see Table \ref{tab:kappa}).  The two prismatic surfaces displayed the
+largest coefficients of friction, while the basal and pyramidal facets
 exhibited significantly lower friction. This trend is robust over a
 wide range of shear rates, and shear direction relative to ice surface
 features. Also, while the magnitude of the solid / liquid friction
@@ -362,10 +399,10 @@ prevailing mechanism of self-diffusion. At temperatures colder than
 influenced by the underlying geometry of the crystal. At temperatures
 warmer than 260~K, the QLL is thicker and diffusion occurs at the
 outer part of the QLL. These results were robust for TIP4P/2005 and
-TIP5P-Ew at the same relative undercooling temperature. Since our ice
-/ water interfaces are at their respective coexistence temperatures,
-the effects of the underlying ice crystal may be masked and we might
-expect to recover isotropic behavior.
+TIP5P-Ew at the same relative undercooling temperature. Since our
+ice-I$_\mathrm{h}$ / water interfaces are at their respective
+coexistence temperatures, the effects of the underlying ice crystal
+may be masked and we might expect to recover isotropic behavior.
 
 The differences in friction are also surprising given that densities
 and molecular interactions are identical for the four interfaces and
@@ -377,7 +414,7 @@ facets, notably surface corrugation, hydrogen bonding density, and
 hydrogen bond lifetime at the interface. In this section we
 investigate the roles of these surface features.
 
-\subsubsection{Solid / liquid hydrogen bond density}
+\subsection{Solid / Liquid Hydrogen Bond Density}
 The four ice surfaces may potentially have different densities of
 hydrogen bonds that bridge the solid and liquid. An ice surface that
 forms more hydrogen bonds with the interfacial liquid would be able to
@@ -464,9 +501,9 @@ surfaces are reported in Table \ref{tab:hbondDens}.
 
 \begin{table}[h]
 \centering
-\caption{ Surface Hydrogen-bond Densities for SPC/E and
-  TIP4P/Ice modled ice-I$_\mathrm{h}$ / water interfaces.  Uncertainties in the last digit are indicated with
-  parentheses.\label{tab:hbondDens}} 
+\caption{ SURFACE HYDROGEN BOND DENSITIES FOR SPC/E AND
+  TIP4P/Ice MODELED ICE-I$_\mathrm{h}$ / WATER INTERFACES.  (Uncertainties in the last digit are indicated with
+  parentheses.)\label{tab:hbondDens}} 
 \begin{tabular}{|r|c|c|}  
   \toprule
   & \multicolumn{1}{c|}{SPC/E (225~K)} & TIP4P/Ice (270~K) \\
@@ -492,12 +529,11 @@ in both the $x$ and $y$ dimensions), indicating that the hydrogen
 bonding statistics between an ice facet and the liquid are not altered
 by the imposed shear.
 
-\subsubsection{Surface corrugation}
+\subsection{Surface Corrugation By Projected Densities}
 A second possible influence on the friction coefficient is the surface
 topography of the ice crystals. To investigate this possibility, we
 computed the mean projected density ($\rho(y,z)$) for each of the
 ice / water systems.
-\section{Projected Densities and Channel Widths}
 
 In order to understand the behavior of liquid-phase water molecules
 that are directly in contact with the four interfaces, we computed the
@@ -519,7 +555,7 @@ liquid.
   densities, while lighter colors (e.g. white) are relatively
   unpopulated.  For all four interfaces, the location of the
   tetrahedrality Gibbs dividing surface is indicated with a solid
-  black line, while the two end points of the 90-10 width are shown in
+  black line, while the two end points of the 10-90 width are shown in
   grey.}
 \end{figure}
 
@@ -541,8 +577,8 @@ of oxygen atoms forming surface ripples with depths of $\sim$ 1~\AA~.
 
 \begin{table}[h]
 \centering
-\caption{Surface features of Ice-I$_\mathrm{h}$ facets.\label{tab:surf}}
-\begin{tabular}{r|cc}  
+\caption{SURFACE FEATURES OF ICE-I$_\mathrm{h}$ FACETS.\label{tab:surf}}
+\begin{tabular}{|r|cc|}  
 \toprule
 Interface & Channel width (\AA) & Channel depth (\AA) \\ 
 \midrule
@@ -595,7 +631,7 @@ in light of the hydrogen bonding data is simply that the surface
 density of solid / liquid hydrogen bonds (however transitory)
 dominates the interfacial friction.
 
-\subsubsection{A simple model for solid-liquid friction}
+\section{A Simple Model For Solid-Liquid Friction}
 The interfacial friction coefficient, $\kappa$ captures the momentum
 conductance transverse to the interface, and this momentum should be
 transferred via strong intermolecular interactions across the
@@ -617,7 +653,7 @@ the liquid portions of the simulation box in conjunction with equation
 coexistence temperatures, so they exhibit different hydrogen bond
 densities and viscosities adjacent to the interface.  Comparing
 Eq. \eqref{eq:model} with the non-equilibrium expressions for $\kappa$
-(Eq. \eqref{Shenyu-13}) and $\eta$ (Eq. \eqref{eq:viscosity}) shows
+(Eq. \eqref{eq:Shenyu-13}) and $\eta$ (Eq. \eqref{eq:viscosity}) shows
 that the liquid's viscosity is an important feature in capturing the
 velocity drop on the liquid side of the interface
 ($\eta w_\mathrm{s-l}$), but the magnitude of the solid-liquid
@@ -634,7 +670,7 @@ observed friction.
   solid-liquid hydrogen bonds.}
 \end{figure}                                            
 
-\section{Conclusions}
+\section{Conclusion}
 RNEMD simulations of the different facets of ice being drawn through
 surrounding water at the coexistence temperature indicate
 facet-dependence of solid / liquid friction.  We have defined a
@@ -653,20 +689,21 @@ this density to provide estimates of solid-liquid friction that give
 good agrement for two different water models at their respective
 coexistence temperatures.
 
-In addition, we have found the ice / water interfacial widths for all
-four crystal facets to be similar (using both structural and dynamic
-measures) and found these widths to be independent of shear rate.  The
-similarity of interfacial width estimates for the four facets indicate
-that the particular facet of the exposed ice crystal has very little
-effect on how far into the bulk the ice-like structural ordering
-persists. While differences have been found in previous simulations of
-ice / water interfaces,\cite{Hayward2001,Hayward2002} experimentally
-these differences have been less clear.\cite{Beaglehole1993} The
-significant differential friction coefficients obtained here suggest
-that while the liquid next to the ice might be structurally organized
-like bulk liquid, the dynamics of the molecules are still quite
-strongly perturbed by the ice.  That is, the surface hydrogen bonding
-significantly alters how the water layers are pulled along with the
-ice during shear.
+% In addition, we have found the ice / water interfacial widths for all
+% four crystal facets to be similar (using both structural and dynamic
+% measures) and found these widths to be independent of shear rate.  The
+% similarity of interfacial width estimates for the four facets indicate
+% that the particular facet of the exposed ice crystal has very little
+% effect on how far into the bulk the ice-like structural ordering
+% persists. While differences have been found in previous simulations of
+% ice / water interfaces,\cite{Hayward2001,Hayward2002} experimentally
+% these differences have been less clear.\cite{Beaglehole1993}
+
+The significant differential friction coefficients obtained here
+suggest that while the liquid next to the ice might be structurally
+organized like bulk liquid, the dynamics of the molecules are still
+quite strongly perturbed by the ice.  That is, the surface hydrogen
+bonding significantly alters how the water layers are pulled along
+with the ice during shear.
 
 
