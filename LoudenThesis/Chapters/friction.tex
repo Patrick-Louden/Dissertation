@@ -658,15 +658,19 @@ In order to determine the lifetime of the hydrogen bond, we can
 investigate the hydrogen bond jump rate at the interface. In Chapter
 \ref{chap:Dyn} we discussed how the hydrogen bond jump rate was
 calculated, and the results are presented in
-Fig. \ref{Fig:SPCEjumpRates}. By querying the value of
-$k_\mathrm{jump}$ at the interface, we have obtained estimates of the
-hydrogen bond lifetime for each of the crystal facets, which are
-reported in Table \ref{tab:jumpRates}.
+Fig. \ref{fig:SPCEjumpRates} and Fig. \ref{fig:TIP4PIcejumpRates}. By
+querying the value of $k_\mathrm{jump}^{-1}$ at each interface, we
+have obtained estimates of the hydrogen bond lifetime for each of the
+crystal facets under the two models. Here, we have obtained
+$\tau_{HB}$ at the interface as determined by both the local
+tetrahedral order parameter, and as determined by the jump rates ;
+these values are reported in Table \ref{tab:jumpRates}.
 
 
 \begin{table}[h]
 \centering
-\caption{HYDROGEN BOND JUMP RATES ($k_\mathrm{jump}$) FOR ICE-I$_\mathrm{h}$ / WATER INTERFACES.\label{tab:jumpRates}}
+\caption{HYDROGEN BOND LIFETIMES  ($k_\mathrm{jump}^{-1}$) FOR
+  ICE-I$_\mathrm{h}$ / WATER INTERFACES.(Measured in ps)\label{tab:jumpRates}}
 \begin{tabular}{|r|cc|cc|}  
 \toprule
 & \multicolumn{2}{c|}{SPC/E (225~K)}  &
@@ -675,14 +679,25 @@ reported in Table \ref{tab:jumpRates}.
 Interface & $q_\mathrm{mid}$ & $j_\mathrm{mid}$ & $q_\mathrm{mid}$
                               & $j_\mathrm{mid}$ \\
 \midrule
-Basal  $\{0001\}$                 & 3.5(2) & 0.9(1) & &  \\
-Prismatic  $\{10\bar{1}0\}$       & 4.5(1) & 2.4(3) & &  \\
-Pyramidal  $\{20\bar{2}1\}$       & 8.3(2) & 1.9(4)   & & \\
-Secondary Prism  $\{11\bar{2}0\}$ & 5.3(4) & 2.2(1)  &  & \\ 
+Basal  $\{0001\}$                 & 500 & 111 & 111 & 50 \\
+Prismatic  $\{10\bar{1}0\}$       & 333 & 167 & 143 & 50 \\
+Pyramidal  $\{20\bar{2}1\}$       & 500 & 100   & 125 & 50\\
+Secondary Prism  $\{11\bar{2}0\}$ & 333 &111  & 100 & 50\\ 
 \bottomrule
 \end{tabular}
 \end{table}
 
+We find that hydrogen bonds at the SPC/E ice-I$_\mathrm{h}$ / water
+interface has a lifetime of $\sim$ 100 ps, and $\sim$ 50 ps for
+TIP4P/Ice ice-I$_\mathrm{h}$ / water interfaces. For all interfaces,
+the hydrogen bond lifetime is observed to be longer-lived in the SPC/E
+interfaces as compared to the TIP4P/Ice interfaces. This is primarily
+due to the warmer coexistence temperature for the TIP4P/Ice model,
+leading to faster dynamics of the water molecules. However, there is
+no observed trend in the lifetime of the hydrogen bonds with the
+observed friction, further indicating that friction at
+ice-I$_\mathrm{h}$ / water interfaces is governed by the density of
+solid / liquid hydrogen bonds.
 
 \section{A Simple Model For Solid-Liquid Friction}
 The interfacial friction coefficient, $\kappa$ captures the momentum
