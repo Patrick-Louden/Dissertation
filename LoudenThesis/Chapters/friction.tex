@@ -383,7 +383,7 @@ coefficients,
 seems robust.
 
  
-\section{Driving Forces for Interfacial Friction}
+\section{Influences of Interfacial Friction}
 The primary result presented in this chapter is the observation that
 the different facets of ice-I$_\mathrm{h}$ produce significantly
 different solid / liquid interfacial friction coefficients with water
@@ -445,7 +445,7 @@ molecules.  Conde \textit{et al.}\cite{Conde2008} (and later Gladich
 \textit{et al.}\cite{Gladich2011,Gladich2015}) discriminated molecules
 as either ``ice'' or ``liquid'' by a threshold value of the local
 tetrahedral order parameter (the same order parameter described here
-in section \ref{structure}), denoted $q_{t}$. This threshold value was
+in section \ref{sec:tetra}), denoted $q_{t}$. This threshold value was
 obtained by equating the probability of incorrectly assigning a
 liquid-like molecule as ice-like to the probability of incorrectly
 assigning an ice-like molecule as liquid-like. Molecules with
@@ -468,7 +468,7 @@ water molecules if the distance between their oxygen sites,
 $r_\mathrm{OO} < 3.5$~\AA, and the OHO bond angle,
 $\theta_\mathrm{OHO} < 30^\circ$.
 
-For each of the shearing simulations performed above, a hydrogen bond
+For each of the shearing simulations performed, a hydrogen bond
 tetrahedrality matrix was constructed.  Snapshots from the shearing
 trajectories were taken every $0.1$ ps, and the tetrahedrality $(q)$
 value for each water molecule in the system was calculated. Hydrogen
@@ -548,17 +548,12 @@ by the imposed shear.
 \subsection{Surface Corrugation by Projected Densities}
 A second possible influence on the friction coefficient is the surface
 topography of the ice crystals. To investigate this possibility, we
-computed the mean projected density ($\rho(y,z)$) for each of the
-ice / water systems.
-
-In order to understand the behavior of liquid-phase water molecules
-that are directly in contact with the four interfaces, we computed the
-mean parallelepiped density,
+computed the mean projected density ($\rho(y,z)$),
 \begin{equation}
 \rho(y, z) = \frac{1}{L_x~dy~dz} \left< \sum_{i = 1}^{N} m_i \delta(y_i - y) \delta(z_i - z)\right>
 \end{equation}
 for four quiescent interfaces over 1 ns of simulation time (sampled
-every ps).  Here, $dy$ and $dz$ are the lengths and widths of a set of
+every 1 ps).  Here, $dy$ and $dz$ are the lengths and widths of a set of
 parallelepipeds that span the box depth ($L_x$), and for relatively
 small $dy$ and $dz$ (0.05 \AA), the parallelepiped densities show the
 smooth transition between the ordered ice facet and the surrounding
@@ -687,46 +682,55 @@ Secondary Prism  $\{11\bar{2}0\}$ & 333 &111  & 100 & 50\\
 \end{tabular}
 \end{table}
 
-We find that hydrogen bonds at the SPC/E ice-I$_\mathrm{h}$ / water
-interface has a lifetime of $\sim$ 100 ps, and $\sim$ 50 ps for
-TIP4P/Ice ice-I$_\mathrm{h}$ / water interfaces. For all interfaces,
-the hydrogen bond lifetime is observed to be longer-lived in the SPC/E
-interfaces as compared to the TIP4P/Ice interfaces. This is primarily
-due to the warmer coexistence temperature for the TIP4P/Ice model,
-leading to faster dynamics of the water molecules. However, there is
-no observed trend in the lifetime of the hydrogen bonds with the
-observed friction, further indicating that friction at
-ice-I$_\mathrm{h}$ / water interfaces is governed by the density of
-solid / liquid hydrogen bonds.
+We find that the lifetime of hydrogen bonds at the structural SPC/E
+ice-I$_\mathrm{h}$ / water interface has a lifetime of $\sim$ 500 ps
+for the basal and pyramidal facets, and about 300 ps for the two
+prismatic facets. This is significantly longer than compared with the
+lifetime obtained when querying at the midpoint of the hydrogen bond
+jump interface, which estimates the lifetime to be about 100 ps for
+each of the interfaces. Here, the prismatic surface displays a
+slightly longer lifetime than the other three facets.  The TIP4P/Ice /
+water interfaces have significantly shorter lived hydrogn bonds, with
+lifetimes of about 100 ps at the structural interface and 50 ps at the
+hydrogen bond jump interface. For all interfaces, the hydrogen bond
+lifetime is observed to be longer-lived in the SPC/E interfaces as
+compared to the TIP4P/Ice interfaces. This is primarily due to the
+warmer coexistence temperature for the TIP4P/Ice model, leading to
+faster dynamics of the water molecules. However, there is no observed
+trend in the lifetime of the hydrogen bonds with the observed
+friction, further indicating that friction at ice-I$_\mathrm{h}$ /
+water interfaces is governed by the density of solid / liquid hydrogen
+bonds.
 
 \section{A Simple Model For Solid-Liquid Friction}
 The interfacial friction coefficient, $\kappa$ captures the momentum
 conductance transverse to the interface, and this momentum should be
 transferred via strong intermolecular interactions across the
-interface. This is measured in ice / water systems by the surface
-density of hydrogen bonds, $\rho_\mathrm{s-l}$.  The momentum is then
-carried through the liquid via viscous forces $(\eta)$ across an
-interfacial region that has width $w_\mathrm{s-l}$. A simple linear
-model,
+interface. This is measured in ice-I$_\mathrm{h}$ / water systems by
+the surface density of hydrogen bonds, $\rho_\mathrm{s-l}$.  The
+momentum is then carried through the liquid via viscous forces
+$(\eta)$ across an interfacial region that has width
+$w_\mathrm{s-l}$. A simple linear model,
 \begin{equation}
   \kappa = c~~\rho_\mathrm{s-l}~~\eta~~w_\mathrm{s-l},
 \label{eq:model}
 \end{equation}
-captures these features at the ice / water interface, and the results
-for the two water models nearly coalesce with a proportionality
-constant, $c = 0.343$.  The structural width, $w_\mathrm{10-90}$, and
-values for $\eta$ for each ice / water system were obtained by fitting
-the liquid portions of the simulation box in conjunction with equation
-\eqref{eq:viscosity}.  The two water models have two different
-coexistence temperatures, so they exhibit different hydrogen bond
-densities and viscosities adjacent to the interface.  Comparing
-Eq. \eqref{eq:model} with the non-equilibrium expressions for $\kappa$
-(Eq. \eqref{eq:Shenyu-13}) and $\eta$ (Eq. \eqref{eq:viscosity}) shows
-that the liquid's viscosity is an important feature in capturing the
-velocity drop on the liquid side of the interface
-($\eta w_\mathrm{s-l}$), but the magnitude of the solid-liquid
-interactions ($c~~\rho_\mathrm{s-l}$) plays a central role in the
-observed friction.
+captures these features at the ice-I$_\mathrm{h}$ / water interface,
+and the results for the two water models nearly coalesce with a
+proportionality constant, $c = 0.343$ (see
+Fig. \ref{fig:simpleModel}).  The structural width,
+$w_\mathrm{10-90}^{q}$, and values for $\eta$ for each ice / water
+system were obtained by fitting the liquid portions of the simulation
+box in conjunction with equation \eqref{eq:viscosity}.  The two water
+models have two different coexistence temperatures, so they exhibit
+different hydrogen bond densities and viscosities adjacent to the
+interface.  Comparing Eq. \eqref{eq:model} with the non-equilibrium
+expressions for $\kappa$ (Eq. \eqref{eq:Shenyu-13}) and $\eta$
+(Eq. \eqref{eq:viscosity}) shows that the liquid's viscosity is an
+important feature in capturing the velocity drop on the liquid side of
+the interface ($\eta w_\mathrm{s-l}$), but the magnitude of the
+solid-liquid interactions ($c~~\rho_\mathrm{s-l}$) plays a central
+role in the observed friction.
 
 \begin{figure}
 \includegraphics[width=\linewidth]{Figures/simpleModel}
@@ -738,7 +742,7 @@ observed friction.
   solid-liquid hydrogen bonds.}
 \end{figure}                                            
 
-\section{Conclusion}
+\section{Summary}
 RNEMD simulations of the different facets of ice being drawn through
 surrounding water at the coexistence temperature indicate
 facet-dependence of solid / liquid friction.  We have defined a
@@ -757,21 +761,21 @@ this density to provide estimates of solid-liquid friction that give
 good agrement for two different water models at their respective
 coexistence temperatures.
 
-% In addition, we have found the ice / water interfacial widths for all
-% four crystal facets to be similar (using both structural and dynamic
-% measures) and found these widths to be independent of shear rate.  The
-% similarity of interfacial width estimates for the four facets indicate
-% that the particular facet of the exposed ice crystal has very little
-% effect on how far into the bulk the ice-like structural ordering
-% persists. While differences have been found in previous simulations of
-% ice / water interfaces,\cite{Hayward2001,Hayward2002} experimentally
-% these differences have been less clear.\cite{Beaglehole1993}
-
-The significant differential friction coefficients obtained here
-suggest that while the liquid next to the ice might be structurally
-organized like bulk liquid, the dynamics of the molecules are still
-quite strongly perturbed by the ice.  That is, the surface hydrogen
-bonding significantly alters how the water layers are pulled along
-with the ice during shear.
+In Chapters \ref{chap:Str} and \ref{chap:Dyn}, we presented evidence
+that the ice-I$_\mathrm{h}$ / water interfacial widths for all four
+crystal facets are similar (using both structural and dynamic
+measures) and found these widths to be independent of shear rate.  The
+similarity of interfacial width estimates for the four facets indicate
+that the particular facet of the exposed ice crystal has very little
+effect on how far into the bulk the ice-like structural ordering
+persists. While differences have been found in previous simulations of
+ice-I$_\mathrm{h}$ / water interfaces,\cite{Hayward2001,Hayward2002}
+experimentally these differences have been less
+clear.\cite{Beaglehole1993} The significant differential friction
+coefficients obtained here suggest that while the liquid next to the
+ice might be structurally organized like bulk liquid, the dynamics of
+the molecules are still quite strongly perturbed by the ice.  That is,
+the surface hydrogen bonding significantly alters how the water layers
+are pulled along with the ice during shear.
 
 
