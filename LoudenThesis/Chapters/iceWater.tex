@@ -34,7 +34,7 @@ and the two pyramidal, 14\degree~$\{20\bar{2}1\}$ and
 be found in Fig. \ref{fig:surfMorph}.
 
 
-\begin{figure} 
+\begin{figure*} 
 \includegraphics[width=1.0\linewidth]{Figures/surfMorph}
 \caption{\label{fig:surfMorph}The basal (1), prismatic (2),
   14\degree~pyramidal (3), and secondary prism (4) facets of an
@@ -44,9 +44,7 @@ be found in Fig. \ref{fig:surfMorph}.
   column: looking down on the crystal face (the 14\degree~pyramidal
   surface has been tilted to better observe the surface). The surface oxygens have
   been colored blue for clarity.}
-\end{figure}
-
-Surface energies, dimensions of crystal channels at zero kelvin, ...
+\end{figure*}
 
 The oxygen lattice is a hexagonal unit cell comprising 4 oxygen atoms,
 but it is also possible to construct an equivalent orthorhombic unit
@@ -59,7 +57,7 @@ pressures, the lattice can undergo a phase transition to ice-XI, a
 configuration with ferroelectric proton-ordering and a non-zero bulk
 dipole moment (see Fig. \ref{fig:iceTransition}).
 
-\begin{figure} 
+\begin{figure*} 
 \includegraphics[width=\linewidth]{Figures/iceTransition}
 \caption{\label{fig:iceTransition}Left: A proton-disordered
   ice-I$_\mathrm{h}$ crystal (zero-net dipole moment), viewed down
@@ -70,10 +68,10 @@ dipole moment (see Fig. \ref{fig:iceTransition}).
   taken from Structure 1 of Hirsch and Ojam\"{a}e.\cite{Hirsch2004}
   The phase transition between ice-I$_\mathrm{h}$ and ice-XI is
   believed to be $\sim$ 72~K.}
-\end{figure}
+\end{figure*}
 
 While exploring the ice-I$_\mathrm{h}$ to ice-XI phase transition, Hirsch
-and Ojam\"{a}e determined sixteen unique hydrogen arrangements for the
+and Ojam\"{a}e determined fourteen unique hydrogen arrangements for the
 ice-I$_\mathrm{h}$ orthorhombic unit cells.\cite{Hirsch2004} Upon
 replication of some of these unit cells, the resulting structures
 present stripes of dangling H-atoms and lone pairs at an exposed
@@ -90,24 +88,7 @@ present evidence of proton-striped surfaces as the sign of the
 imaginary part of the vibrational spectra indicates ``up'' or ``down''
 orientations of surface molecules.
 
-\begin{table}
-\centering
-  \caption{MAPPING BETWEEN THE MILLER INDICES OF FOUR FACETS OF ICE IN
-    THE $P6_3/mmc$ CRYSTAL SYSTEM TO THE ORTHORHOMBIC $P2_12_12_1$
-    SYSTEM IN REFERENCE \bibpunct{}{}{,}{n}{}{,} \protect\citep{Hirsch04}.}
-\label{tab:equiv}
-\begin{tabular}{|ccc|} \hline
- & hexagonal & orthorhombic \\
- & ($P6_3/mmc$) & ($P2_12_12_1$) \\
- crystal face  & Miller indices & equivalent \\ \hline
-basal & $\{0~0~0~1\}$ & $\{0~0~1\}$ \\
-prism & $\{1~0~\bar{1}~0\}$ & $\{1~0~0\}$ \\
-secondary prism & $\{1~1~\bar{2}~0\}$ & $\{1~3~0\}$ \\
-pyramidal & $\{2~0~\bar{2}~1\}$ & $\{2~0~1\}$ \\ \hline
-\end{tabular}
-\end{table}
-
-SPC/E~\cite{Berendsen1987} and TIP4P/Ice~\cite{Abascal2005} structures
+SPC/E~\cite{Berendsen1987} and TIP4P/Ice~\cite{Abascal2005} unit cells
 were created starting from Structure 6 of Hirsch and Ojam\"{a}e's set
 of orthorhombic representations for ice-I$_{h}$.\cite{Hirsch2004}
 Replication of Structure 6 (unit cell geometry $P2_12_12_1$) produces
@@ -115,7 +96,7 @@ a proton-ordered version of ice-I$_\mathrm{h}$ on a smaller length
 scale than the simulation box. However, the resulting crystal has a
 zero-net dipole, unlike proton ordered ice-XI crystals.  Structure 6
 from the Hirsch and Ojam\"{a}e paper has lattice parameters
-$a = 4.49225$ \AA\ , $b = 7.78080$ \AA\ , $c = 7.33581$ \AA\ and two
+$a = 4.49225$~\AA\ , $b = 7.78080$~\AA\ , $c = 7.33581$~\AA\ and two
 water molecules whose atoms reside at fractional coordinates given in
 Table \ref{tab:p212121}.  Table \ref{tab:equiv} contains a mapping
 between the Miller indices of common ice facets in the P$6_3/mmc$
@@ -125,24 +106,50 @@ system.
 \begin{table}
 \centering
   \caption{FRACTIONAL COORDINATES FOR WATER IN THE ORTHORHOMBIC
-    $P2_12_12_1$ SYSTEM FOR ICE I$_\mathrm{h}$ IN REFERENCE \bibpunct{}{}{,}{n}{}{,} \protect\citep{Hirsch0404}.}
+    $P2_12_12_1$ SYSTEM FOR ICE I$_\mathrm{h}$ IN REFERENCE
+    \bibpunct{}{}{,}{n}{}{,} \protect\citep{Hirsch0404}}
 \label{tab:p212121}
-\begin{tabular}{|cccc|}  \hline
+\begin{tabular}{cccc}  
+\hline
+\hline
 atom type & x & y & z \\ \hline
  O & 0.7500 & 0.1667 & 0.4375 \\
  H & 0.5735 & 0.2202 & 0.4836 \\
  H & 0.7420 & 0.0517 & 0.4836 \\
  O & 0.2500 & 0.6667 & 0.4375 \\
  H & 0.2580 & 0.6693 & 0.3071 \\
- H & 0.4265 & 0.7255 & 0.4756 \\ \hline
+ H & 0.4265 & 0.7255 & 0.4756 \\ 
+\hline
+\hline
 \end{tabular}
 \end{table}
 
 
+\begin{table}[h]
+\centering
+  \caption{MAPPING BETWEEN THE MILLER INDICES OF FOUR FACETS OF ICE IN
+    THE $P6_3/mmc$ CRYSTAL SYSTEM TO THE ORTHORHOMBIC $P2_12_12_1$
+    SYSTEM IN REFERENCE \bibpunct{}{}{,}{n}{}{,} \protect\citep{Hirsch04}}
+\label{tab:equiv}
+\begin{tabular}{r|cc} 
+\hline
+\hline
+ & hexagonal & orthorhombic \\
+ & ($P6_3/mmc$) & ($P2_12_12_1$) \\
+ crystal face  & Miller indices & equivalent \\ \hline
+Basal & $\{0~0~0~1\}$ & $\{0~0~1\}$ \\
+Prismatic & $\{1~0~\bar{1}~0\}$ & $\{1~0~0\}$ \\
+14\degree Pyramidal & $\{2~0~\bar{2}~1\}$ & $\{2~0~1\}$ \\ 
+Secondary Prism & $\{1~1~\bar{2}~0\}$ & $\{1~3~0\}$ \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
 In order to generate large crystals for simulation, the primitive unit
-cell was replicated in all dimensions. The crystal was cleaved along
+cells were replicated in all dimensions. The crystals were cleaved along
 the desired face, and two additional mutually perpendicular cuts were
-made.  The crystal was reoriented so that the initial cut (basal,
+made.  The crystals were reoriented so that the initial cut (basal,
 prismatic, 14 \degree~pyramidal, or secondary prism) was normal to the
 $z$-axis of the simulation cell.  The resulting structures were
 extended in $x$ and $y$ to form large exposed facets in rectangular
@@ -183,10 +190,10 @@ the ice (and vice versa).
 
 \begin{table}
 \centering
-\caption{SIZES OF THE ICE / WATER SHEARING SIMULATIONS. (Box
-  dimensions are given in \AA)\label{tab:sizes}}
+\caption{SIZES OF THE ICE / WATER SHEARING SIMULATIONS \label{tab:sizes}}
 \begin{tabular}{r|cc|ccc|ccc}
-\toprule
+\hline
+\hline
  & & & \multicolumn{3}{c|}{SPC/E~(225~K)} &  \multicolumn{3}{c}{TIP4P/Ice~(270~K)}\\
  Interface & $N_\mathrm{ice}$ &
  $N_\mathrm{liquid}$ & $L_x$ & $L_y$ & $L_z$ & $L_x$ & $L_y$ & $L_z$ \\
@@ -195,8 +202,12 @@ Basal  $\{0001\}$                 & 900 & 1846  & 23.87 & 35.83 & 98.64  & 23.37
 Prismatic  $\{10\bar{1}0\}$       & 3000 & 5464 & 35.95 & 35.65 & 205.77 & 36.33 & 38.86 & 191.75 \\
 14 \degree~Pyramidal  $\{20\bar{2}1\}$       & 1216 & 2203 & 37.47 & 29.50 & 93.02  & 37.16 & 30.19 & 97.65  \\
 Secondary Prism  $\{11\bar{2}0\}$ & 3840 & 8176 & 71.87 & 31.66 & 161.55 & 72.90 & 32.06 & 165.17 \\
-\bottomrule
+\hline
+\hline
 \end{tabular}
+\begin{flushleft}
+Box dimensions are given in \AA.
+\end{flushleft}
 \end{table}
 
 
@@ -304,11 +315,15 @@ As the simulation progresses, the VSS moves are performed on a regular
 basis, and the system develops a thermal and/or velocity gradient in
 response to the applied flux.  In a bulk material, it is quite simple
 to use the slope of the temperature or velocity gradients to obtain
-either the thermal conductivity or shear viscosity,
+either the thermal conductivity, $\lambda$,
+\begin{equation}
+J_z = -\lambda \frac{\partial T}{\partial z}
+\end{equation}
+ or shear viscosity,
 $\eta$.\cite{Bordat2002a}
 \begin{equation}
 \label{eq:viscosity}
-j_z(p_x) = -\eta \left(\frac{\partial v_x}{\partial z}\right).
+j_z(p_x) = -\eta \left(\frac{\partial v_x}{\partial z}\right)
 \end{equation}
 At interfaces between dissimilar materials, the same method can be
 used to extract \textit{interfacial} transport properties (e.g. the
@@ -352,9 +367,10 @@ both water models can be found in Table \ref{tab:waterModels}.
 
 \begin{table}
 \centering
-\caption{FORCEFIELD PARAMETERS FOR THE SPC/E AND TIP4P/Ice WATER MODELS.}
+\caption{FORCEFIELD PARAMETERS FOR THE SPC/E AND TIP4P/Ice WATER MODELS}
 \label{tab:waterModels}
-\begin{tabular}{|l|c|c|c|c|c|c|c|c|} 
+\begin{tabular}{l|c|c|c|c|c|c|c|c} 
+\hline
 \hline
   Model &  $\sigma$ (\AA) & $\epsilon$ (kJ $\mathrm{mol}^{-2}$) &
                                                               $\mathrm{l}_{1}$
@@ -367,6 +383,7 @@ both water models can be found in Table \ref{tab:waterModels}.
   SPC/E & 3.166 & 0.650 & 1.000 & - & +0.4238 & -0.8476 & 109.47 & - \\
   TIP4P/Ice & 3.1668 & 0.8822 & 0.9572 & 0.1577 & +0.5897 & -1.1794 &
   104.52 & 52.26 \\
+\hline
 \hline
 \end{tabular}
 \end {table}
@@ -402,7 +419,7 @@ prismatic facet being sheared through liquid water is shown in Figure
 \ref{fig:Shearing}.
 
 
-\begin{figure} 
+\begin{figure*} 
 \includegraphics[width=1.7in]{Figures/Shearing}
 \caption{\label{fig:Shearing} Computational model of a slab of ice
   being sheared through liquid water.  The ice presents two copies of
@@ -412,4 +429,6 @@ prismatic facet being sheared through liquid water is shown in Figure
   spans the cell boundary.  The system responds with weak thermal
   gradient and a velocity profile that shears the ice relative to the
   surrounding liquid.}
-\end{figure}
+\end{figure*}
+
+To add: Surface energies, dimensions of crystal channels at zero kelvin, ...

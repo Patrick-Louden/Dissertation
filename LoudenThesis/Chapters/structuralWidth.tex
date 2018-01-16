@@ -22,9 +22,9 @@ motion may measure the momentum exchange and not physical properties
 of the interface. To avoid these influences, we have probed the
 ice-I$\mathrm{h}$ / water interface by observing the transition of
 several order parameters from their ice to bulk liquid values.  In
-this chapter, we focus on structural measures of the ice / water
-interface. Dynamic measures are investigated later in Chapter
-\ref{chap:Dyn}.
+this chapter, we focus on structural order parameters for measurements
+of interfacial width. Dynamic measures are investigated later in
+Chapter \ref{chap:Dyn}.
 
 \section{Density Measurements Transverse to the Interface}
 Following the pioneering work of Haymet \textit{et al.}, we initially
@@ -39,13 +39,13 @@ and 270~K for TIP4P/Ice) and with no VSS-RNEMD moves attempted
 simulations, the positions and velocities of the water molecules were
 sampled every 0.1 ps.
 
-To compute transverse density profile, each frame of the trajectories
-were divided into 0.25~\AA bins, and the average density of each bin
+To compute transverse density profiles, each frame of the trajectories
+were divided into 0.25~\AA~bins, and the average density of each bin
 was accumulated. The density profiles were then fit with a hyperbolic
 tangent function designed to smoothly transition between the bulk
 liquid and ice domains. Following Haymet \textit{et al.}, only the
 density maximas corresponding to the planes of ice were included in
-the data to be fit.
+the data in the ice regions.
 \begin{equation}\label{rho_fit}
 \rho (z) \approx
 \rho_\mathrm{liq}+\frac{\rho_\mathrm{ice}-\rho_\mathrm{liq}}{2}\left[\tanh\left(\frac{z-l}{w^\rho}\right)-\tanh\left(\frac{z-r}{w^\rho}\right)\right]
@@ -78,12 +78,13 @@ $w_\mathrm{10-90}^{\rho}$ as seen in Table \ref{tab:strWidths}.
 \begin{table}[h]
 \centering
 \caption{COMPUTED WIDTHS OF THE ICE-I$_\mathrm{h}$ / WATER INTERFACES BY
-  STRUCTURAL MEASURES. \label{tab:strWidths}} 
-\begin{tabular}{|r|cc|cc|}  
+  STRUCTURAL MEASURES \label{tab:strWidths}} 
+\begin{tabular}{r|cc|cc}  
 \hline
-  \multirow{2}{*} & \multicolumn{2}{c|}{SPC/E (225~K)} &  \multicolumn{2}{c|}{TIP4P/Ice (270~K) } \\
-  & \multicolumn{2}{c|} {Interfacial Widths (\AA) \footnotemark[1]} &
-                                                                      \multicolumn{2}{c|} {Interfacial Widths  (\AA) \footnotemark[1]} \\
+\hline
+  \multirow{2}{*} & \multicolumn{2}{c|}{SPC/E (225~K)} &  \multicolumn{2}{c}{TIP4P/Ice (270~K) } \\
+  & \multicolumn{2}{c|} {Interfacial Widths (\AA)} &
+                                                                      \multicolumn{2}{c} {Interfacial Widths  (\AA)} \\
  Interface &  $w_\mathrm{10-90}^{\rho}$ & $w_\mathrm{10-90}^{q}$ &  $w_\mathrm{10-90}^{\rho}$ &  $w_\mathrm{10-90}^{q}$ \\ 
 \hline
   Basal  $\{0001\}$                 & 9(1) & 7.5(4) & 8.1 & 8.8(8)  \\
@@ -91,16 +92,16 @@ $w_\mathrm{10-90}^{\rho}$ as seen in Table \ref{tab:strWidths}.
   14\degree~Pyramidal  $\{20\bar{2}1\}$       & 3.1(6) & 6.6(2) & 4.6 & 8.2(5)  \\
   Secondary Prism  $\{11\bar{2}0\}$ & 8(1) &6.7(2) & 8.0 & 9.4(6)  \\ 
 \hline
+\hline
 \end{tabular}
 \flushleft
-  \footnotemark[1]\footnotesize{Uncertainties in the last
-   digit are indicated with parentheses.} \\
+ Uncertainties in the last digit are indicated with parentheses. \\
 \end{table}
 
 For the basal interface, $w_\mathrm{10-90}^{\rho} \sim$ 7 \AA~, where
 values closer to 5 \AA~ are observed for the prismatic and secondary
-prism interfaces. Lastly, the density transition occurs over $\sim$ 2
-\AA~ for the 14\degree~pyramidal interface. Since the
+prism interfaces. However, the density transition is observed to occur
+over $\sim$ 2 \AA~ for the 14\degree~pyramidal interface. Since the
 14\degree~pyramidal crystal does not have well defined
 crystallographic planes perpendicular to the dimension normal to the
 surface, fitting the resulting density profiles gives skewed
@@ -108,10 +109,10 @@ results. Values for $w_\mathrm{10-90}^{\rho}$ for the TIP4P/Ice
 systems are also reported in the same table. While the interfacial
 width is observed to be larger for the TIP4P/Ice model, this is
 primarily due to the warmer coexistence temperature. It is evident
-from the density profiles and fits in Figure \ref{fig:transDensity}
-that an order parameter that does not depend on the crystal
-orientation would give a more accurate estimate of the ice / water
-interface. 
+from the density profiles (black lines) and fits (red dashed-lines) in
+Figure \ref{fig:transDensity} that an order parameter that does not
+depend on the crystal orientation would give a more accurate estimate
+of the ice-I$_\mathrm{h}$ / water interface.
 
 \section{Local Tetrahedral Order Parameter}\label{sec:tetra}
 As a second structural measure of the interface, we have used the
