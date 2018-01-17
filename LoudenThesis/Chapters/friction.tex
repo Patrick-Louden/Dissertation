@@ -142,11 +142,10 @@ flow velocity gradient through a linear constitutive relation.
 j_{z}(p_{x})=-\eta \left(\frac{\partial v_{x}}{\partial z}\right)
 \end{equation}
 Substituting Eq. \eqref{eq:linConRel} into Eq. \eqref{eq:kappa1} gives
-an expression for the friction coefficient which is straightforwardly
-obtained from the VSS-RNEMD simulations, as the momentum flux is an
-imposed quantity and the resulting velocity gradient is easily
-measured through the liquid region of the simulation box.
-\begin{equation}
+an expression for the friction coefficient in terms of the momentum
+flux and the resulting velocity gradient through the liquid region of
+the simulation box.
+\begin{equation}\label{eq:lambda}
 \lambda=-\frac{j_{z}(p_{x})} {\delta\left(\frac{\partial v_{x}}{\partial
       z}\right) }
 \end{equation}
@@ -185,16 +184,23 @@ robust under varying shear rates.
 
 \begin{table}[h]
 \centering
-\caption{SOLID-LIQUID FRICTION COEFFICIENTS (measured in
-  amu~\AA\textsuperscript{-2}~fs\textsuperscript{-1}) FOR NEGATIVE
-  SLIP BOUNDARY CONDITIONS }
+\caption{SOLID-LIQUID FRICTION COEFFICIENTS ($\lambda$) FOR
+  ICE-I$_\mathrm{h}$ / WATER INTERFACES }
 \label{tab:lambda}
-\begin{tabular}{|r|cc|}  \hline
-           & \multicolumn{2}{c|}{Drag direction} \\ 
+\begin{tabular}{r|cc}  
+\hline
+\hline
+           & \multicolumn{2}{c}{Drag direction} \\ 
  Interface & $x$               & $y$  \\ \hline
      Basal  $\{0001\}$ &  $0.08 \pm 0.02$  & $0.09 \pm 0.03$ \\
- Prismatic  $\{10\bar{1}0\}$ & $0.037 \pm 0.008$ & $0.04 \pm 0.01$ \\ \hline
+ Prismatic  $\{10\bar{1}0\}$ & $0.037 \pm 0.008$ & $0.04 \pm 0.01$ \\ 
+\hline
+\hline
 \end{tabular}
+\begin{flushleft}
+  Friction coefficients are measured in
+  amu~\AA\textsuperscript{-2}~fs\textsuperscript{-1}.
+\end{flushleft}
 \end{table}
 
 
@@ -215,7 +221,7 @@ before reaching the solid. Thus a new friction coefficient must be
 defined to describe these interfaces.
 
 A solid / liquid friction coefficient appropriate for stick
-boundaries, $\kappa$, may also be defined using the velocity drop
+boundaries, $\kappa$, may be defined using the velocity drop
 across the interface, rather than the length scale over which this
 drop occurs. We can relate the imposed shear stress with the relative
 tangential velocity of the fluid in the interfacial
@@ -330,20 +336,26 @@ relative to the features on the surfaces of the facets.
 
 \begin{table}[h]
 \centering
-\caption{SOLID / LIQUID FRICTION COEFFICIENTS (amu \AA\textsuperscript{-2} fs\textsuperscript{-1}) FOR
-  ICE-I$_\mathrm{h}$ INTERFACES WITH WATER. (Uncertainties in the last digit are indicated with
-  parentheses.)\label{tab:kappa}}
-\begin{tabular}{|r|cc|cc|}  
-  \toprule
-  & \multicolumn{2}{c|}{SPC/E (225~K)} & \multicolumn{2}{c|}{TIP4P/Ice (270~K)} \\
+\caption{SOLID / LIQUID FRICTION COEFFICIENTS ($\kappa$) FOR
+  ICE-I$_\mathrm{h}$ INTERFACES WITH WATER \label{tab:kappa}}
+\begin{tabular}{r|cc|cc}  
+  \hline
+\hline
+  & \multicolumn{2}{c|}{SPC/E (225~K)} & \multicolumn{2}{c}{TIP4P/Ice (270~K)} \\
   Interface & $\kappa_{x}$ &  $\kappa_{y}$ & $\kappa_{x}$ &  $\kappa_{y}$ \\ 
-  \midrule
+  \hline
   Basal  $\{0001\}$                 & 0.32(5)  & 0.31(4) & 0.12(2)  & 0.13(2) \\
   Prismatic  $\{10\bar{1}0\}$       & 0.44(5)  & 0.46(5) & 0.16(2)  & 0.16(3) \\
   Pyramidal  $\{20\bar{2}1\}$       & 0.28(3)  & 0.25(3) & 0.09(1)  & 0.10(1) \\
   Secondary Prism  $\{11\bar{2}0\}$ & 0.44(4)  & 0.42(5) & 0.14(3)  & 0.14(2) \\ 
-  \bottomrule
+  \hline
+\hline
 \end{tabular}
+\begin{flushleft}
+  Friction coefficients $\kappa$ are measured in amu
+  \AA\textsuperscript{-2} fs\textsuperscript{-1}, and uncertainties in
+  the last digit are indicated with parentheses.
+\end{flushleft}
 \end{table}
 
 Note that the values of $\kappa$ for the basal and prismatic crystal
@@ -518,19 +530,24 @@ surfaces are reported in Table \ref{tab:hbondDens}.
 \begin{table}[h]
 \centering
 \caption{ SURFACE HYDROGEN BOND DENSITIES FOR SPC/E AND
-  TIP4P/Ice MODELED ICE-I$_\mathrm{h}$ / WATER INTERFACES.  (Uncertainties in the last digit are indicated with
-  parentheses.)\label{tab:hbondDens}} 
-\begin{tabular}{|r|c|c|}  
-  \toprule
+  TIP4P/Ice MODELED ICE-I$_\mathrm{h}$ / WATER INTERFACES \label{tab:hbondDens}} 
+\begin{tabular}{r|c|c}  
+  \hline
+\hline
   & \multicolumn{1}{c|}{SPC/E (225~K)} & TIP4P/Ice (270~K) \\
-  Interface & $\rho_{sl}$ (\AA\textsuperscript{-2} & $\rho_{sl}$ (\AA\textsuperscript{-2}) \\ 
-  \midrule
+  Interface & $\rho_{sl}$ (\AA\textsuperscript{-2}) & $\rho_{sl}$ (\AA\textsuperscript{-2}) \\ 
+  \hline
   Basal  $\{0001\}$                 & 0.1227(3) & 0.0749(9) \\
   Prismatic  $\{10\bar{1}0\}$       & 0.2014(5) &  0.141(1) \\
-  Pyramidal  $\{20\bar{2}1\}$       & 0.0866(3) & 0.074(1) \\
+  14\degree~Pyramidal  $\{20\bar{2}1\}$       & 0.0866(3) & 0.074(1) \\
   Secondary Prism  $\{11\bar{2}0\}$ & 0.1384(4) & 0.119(1) \\ 
-  \bottomrule
+  \hline
+\hline
 \end{tabular}
+\begin{flushleft}
+Uncertainties in the last digit are indicated with
+  parentheses.
+\end{flushleft}
 \end{table}
 
 
@@ -588,16 +605,18 @@ of oxygen atoms forming surface ripples with depths of $\sim$ 1~\AA~.
 
 \begin{table}[h]
 \centering
-\caption{SURFACE FEATURES OF ICE-I$_\mathrm{h}$ FACETS.\label{tab:surf}}
-\begin{tabular}{|r|cc|}  
-\toprule
+\caption{SURFACE FEATURES OF ICE-I$_\mathrm{h}$ FACETS\label{tab:surf}}
+\begin{tabular}{r|cc}  
+\hline
+\hline
 Interface & Channel width (\AA) & Channel depth (\AA) \\ 
-\midrule
+\hline
 Basal  $\{0001\}$                 & 3.5(2) & 0.9(1)  \\
 Prismatic  $\{10\bar{1}0\}$       & 4.5(1) & 2.4(3)  \\
-Pyramidal  $\{20\bar{2}1\}$       & 8.3(2) & 1.9(4)  \\
+14\degree~Pyramidal  $\{20\bar{2}1\}$       & 8.3(2) & 1.9(4)  \\
 Secondary Prism  $\{11\bar{2}0\}$ & 5.3(4) & 2.2(1)  \\ 
-\bottomrule
+\hline
+\hline
 \end{tabular}
 \end{table}
 
@@ -665,21 +684,28 @@ these values are reported in Table \ref{tab:jumpRates}.
 \begin{table}[h]
 \centering
 \caption{HYDROGEN BOND LIFETIMES  ($k_\mathrm{jump}^{-1}$) FOR
-  ICE-I$_\mathrm{h}$ / WATER INTERFACES.(Measured in ps)\label{tab:jumpRates}}
-\begin{tabular}{|r|cc|cc|}  
-\toprule
+  ICE-I$_\mathrm{h}$ / WATER INTERFACES\label{tab:jumpRates}}
+\begin{tabular}{r|cc|cc}  
+\hline
+\hline
 & \multicolumn{2}{c|}{SPC/E (225~K)}  &
-                                                  \multicolumn{2}{c|}{TIP4P/Ice
+                                                  \multicolumn{2}{c}{TIP4P/Ice
                                         (270~K)}  \\ 
 Interface & $q_\mathrm{mid}$ & $j_\mathrm{mid}$ & $q_\mathrm{mid}$
                               & $j_\mathrm{mid}$ \\
-\midrule
+\hline
 Basal  $\{0001\}$                 & 500 & 111 & 111 & 50 \\
 Prismatic  $\{10\bar{1}0\}$       & 333 & 167 & 143 & 50 \\
-Pyramidal  $\{20\bar{2}1\}$       & 500 & 100   & 125 & 50\\
+14\degree~Pyramidal  $\{20\bar{2}1\}$       & 500 & 100   & 125 & 50\\
 Secondary Prism  $\{11\bar{2}0\}$ & 333 &111  & 100 & 50\\ 
-\bottomrule
+\hline
+\hline
 \end{tabular}
+\begin{flushleft}
+Hydrogen bond lifetimes measured at the structural interface (as
+determined by tetrahedrality) and at the dynamic interface (as
+measured by hydrogen bond jump time) are reported in ps.
+\end{flushleft}
 \end{table}
 
 We find that the lifetime of hydrogen bonds at the structural SPC/E
@@ -735,7 +761,7 @@ role in the observed friction.
 \begin{figure}
 \includegraphics[width=\linewidth]{Figures/simpleModel}
 \caption{\label{fig:simpleModel} Solid-liquid friction coefficients
-  shown vs. surface hydrogen bond density model (Eq. \eqref{eq:model}
+  shown vs. surface hydrogen bond density model (Eq. \eqref{eq:model})
   for all four facets and for both water models.  Although SPC/E
   (225K) and TIP4P/Ice (270K) operate in two distinct viscosity
   domains, the model captures the importance of the density of
