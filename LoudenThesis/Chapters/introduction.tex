@@ -26,17 +26,280 @@
 % 4. Ice (water in collections cooled down)
 % 5. Ice surfaces, surface premeling, qll
 % 6. Friction at ice surfaces
-% 7. Molecular Dynamics (in general, e.o.m., periodic boxes, etc.)
-% 8. Water models for simulations
-% 9. Transport Properties
-% 10. Non-equilib. MD attempts to calculate TP
-% 11. RNEMD, better at calc. TP
 
 
 \begin{flushright}
 \textit{''Why do snowflakes always fall as flat structures with six corners?''} \\
 -Joannes Kepler (1611) \\
 \end{flushright}
+
+This introductory chapter begins with an overview of molecular
+simulations, focusing primarily on molecular dynamics methods. With a
+firm grasp of these techniques, a review of past and current
+investigations of water and ice are presented. The remaining chapters
+encompass my contributions to our understanding of hydrodynamic
+friction for a slider moving across the surface of ice.
+
+Chapter \ref{chap:Methods} details the construction of the
+ice-I$_\mathrm{h}$ / water systems, and outlines the velocity shearing
+and scaling variant of reverse non-equilibrium molecular dynamics
+method used to create a shear through the system without causing bulk
+melting. Molecular forcefield parameters are discussed and simulation
+methodologies pertaining to the simulations conducted in Chapters
+\ref{chap:Str} - \ref{chap:Friction} are also described.
+
+In Chapter \ref{chap:Str} we begin our characterization of the
+ice-I$_\mathrm{h}$ / water interface by two structural measures, the
+local density and the local tetrahedral order parameter. Following
+this, we present an investigation of the dynamics of the water
+molecules in Chapter \ref{chap:Dyn}, namely the self diffusion
+constant, the time dependent reorientation of molecules, and the
+hydrogen bond jump rates. In both chapters we quantify the spatial
+transition from bulk liquid to ice, and the effect shearing presents
+to these local order parameters and dynamics.
+
+An expression for friction coefficients ($\kappa$) appropriate for
+negative slip boundary conditions is presented in Chapter
+\ref{chap:Friction}. The obtained values of $\kappa$ are found to be
+invariant to shear rate and direction of the shear relative to the ice
+crystal surface topography. However, noncongruent friction
+coefficients are obtained for the four facets of ice investigated;
+although simulations with different models agree on the relative
+tribological ordering of the surfaces. The observed friction
+coefficients are explained in terms of solid / liquid hydrogen bonds
+identified by their local tetrahedral ordering, and influences of
+surface features and hydrogen bond lifetimes are investigated. Lastly
+a simple momentum transmission model is presented which agrees well
+with the results for both the SPC/E and TIP4P/Ice simulations.
+
+In Chapter \ref{chap:QLL}, we discuss the viscous shearing of the
+surface premelt quasi-liquid layer (QLL) of ice. We present evidence
+that the QLL is composed of a bilayer of water, and show that the
+shear viscosity ($\eta$) of the two layers are distinct from one
+another.
+
+\section{Molecular Simulations}
+With a firm understanding of the problem which we aim to understand,
+we now turn to the method we will use to investigate the
+problem. Molecular simulations offers insight on the mechanisms
+driving emergent phenomena. Simulations are also useful in that we are
+able to probe systems at experimentally unachievable conditions, and
+also observe and decouple interactions. However, parameters for
+simulations are often dependent on real world observables obtained by
+experiments. In conjunction with this, it is important to understand
+the scope of the problem aimed to be solved by molecular simulation,
+in order to correctly identify which methodologies to use. 
+
+In principle we know how to simulate a system of molecules with very
+high accuracy. 
+It is possible to achieve very high accuracy for a small number of
+particles using \textit{ab initio} quantum mechanics methodologies. 
+
+
+
+
+\begin{figure}
+\includegraphics[width=\linewidth]{Figures/SimulationScale}
+\caption{\label{fig:SimulationScale} Different length scales in
+  numbers of molecules (here length of material) and corresponding
+  achievable simulation time for various molecular modeling
+  methodologies. High accuracy quantum mechanical methods (red and
+  orange) cannot simulate large numbers of molecules for long
+  times. Methods which reduce molecular detail and propogate by
+  classical mechanics (yellow and green) are able to achieve longer
+  simulation times for larger systems. Monte Carlo methods (blue)
+  remove the expense of computing dynamics altogether, and ultra
+  coarse-grained methods (violet) which approximate collections of
+  atoms as a single unit achieve even longer simulation times.}
+\end{figure}
+
+
+
+\subsection{Molecular Dynamics}
+In a general defintion, molecular dynamics (MD) simulations involve
+popogating atoms and molecules through time by Netwon's Second
+Law. The models used to describe the atoms and molecules are often
+constructed using classical mechanics, treating atoms as hard spheres,
+and bonds between atoms within a molecule as spring. Charges are also
+handled classically, and depending on the model the charges can be
+static (restricted to some initial position), or dynamic and allowed
+to move around the molecule. While hybrid quantum / classical
+molecular dynamics methods exist, we restrict ourselves here to the
+purely classical case. Several excellent books have been published
+which cover molecular dynamics, from the classic text of Allan and
+Tildesey, to the modern broad work of
+Leach.\cite{AllanXX,LeachYY} 
+
+We begin by considering what the appropriate description of the potential
+energy for an atom or molecule might be. 
+\begin{equation}\label{eq:potE}
+U = \sum_i U(r_i) + \sum_{i,j} U(r_{i,j}) + \sum_{i,j,k} U(r_{i,j,k}) \dots
+\end{equation}
+
+We begin by considering some atom with position $\vec{r}(t)$ at some
+time $t$, and we Taylor-expand about this position.
+
+\subsection{Calculation of Thermodynamic Properties}
+The instantaneous temperature, $T$, of a collection of $N$ molecules
+is described by their kinetic energy $K$ through the equipartition
+theorem.
+\begin{equation}\label{Temperature}
+T = \frac{2}{fk_B}\Bigg( \sum_{i=1}^{N} \frac{1}{2} m_i {\bf v}_i^T \cdot {\bf v}_i +
+\sum_{i=1}^{N_{\mathrm{linear}}+N_{\mathrm{non-linear}}}  \frac{1}{2} {\bf j}_i^T \cdot
+\overleftrightarrow{\mathsf{I}}_i^{-1} \cdot {\bf j}_i  \Bigg)
+\end{equation}
+
+where $f$ is the total number of degrees of freedom in the system,
+\begin{equation}
+f = 3 N + 2 N_{\mathrm{linear}} + 3 N_{\mathrm{non-linear}} - N_{\mathrm{constraints}}
+\end{equation}
+$N_{linear}$ is the number of linear molecules, and $N_{non-linear}$
+is the total number of non-linear molecules in the system.
+
+In a similar manner the instantaneous pressure, $P$, of a collection
+of molecules can be obtained through the virial theorem of
+Clausius. The \textit{virial}, $W$, is defined by
+\begin{equation}\label{eq:virial}
+W = \sum_i^N x_i\dot{p}_{x_i}
+\end{equation}
+where $x_i$ is a coordinate such as the $x$ or $y$ dimension, and
+$\dot{p}_{x_i}$ is the first time derivitive of momentum, or force,
+along that coordinate. The virial theorem of Clausius states that the
+virial is equal to $-3Nk_BT$.
+
+For an ideal gas, the molecules composing the gas only interact with
+the walls of the container. Therefore, the only forces present in the
+system are due to those between the gas and the container. In this
+case, the virial becomes $-3PV$ directly from the ideal gas law
+$PV=-Nk_BT$. We can consider a system of interacting particles as a
+perturbation from the ideal gas case, where the virial for the
+interacting system would be the ideal gas virial plus a contribution
+due to the interactions of the particles. 
+\begin{equation}\label{eq:virial2}
+W = -3PV + \sum_i^N \sum_{j\neq i}^N r_{ij} \frac{dU(r_{ij})}{dr_{ij}} = -3Nk_BT
+\end{equation}
+Here we have considered a potential consisting of only two-body
+interactions, although expansion to consider higher-order terms is
+straightforward. If we instead write Equation \eqref{eq:virial2} in terms
+of the force between particles $i$ and $j$, ($f_{ij}$), we obtain the
+following expression for the pressure.
+\begin{equation}\label{eq:virial3}
+P = \frac{1}{V}\Big[Nk_BT - \frac{1}{3} \sum_i^N \sum_{j\neq i}^N
+r_{ij} r_{ij} f_{ij}\Big]
+\end{equation}
+
+
+Integrators, velocity verlet, shake, etc. Ensembles, calculation of
+pressure and temperature. Leach had a great explanation of these.
+
+\begin{figure}[h]
+\includegraphics[width=\linewidth]{Figures/PBC}
+\caption{\label{fig:PBC} Periodic boundary conditions and minimum
+  image calculation. The central blue cell is the only simulation cell
+  maintained by computation. Molecules (red circles) are free to move
+  throughout space uninhindered. When a molecule leaves the blue
+  simulation cell, one of its ghost images enters the cell from one of
+  the neighboring cells. This is achieved by computation of
+  interactions of a molecule with its nearest neighbors within a
+  cutoff radius of $r_{cut}$. Note these molecules may not necessarily
+  be located within the same simulation cell as the molecule of
+  interest.}
+\end{figure}
+
+\subsection{Molecular Forcefields}
+Having established how to propogate particles through time using MD
+simulations, we turn our focus next to the problem of developing an
+accurate representation for the interactions between molecules, more
+commonly known as a forcefield. Generally, the functional form of the
+forcefield is structured as a balance between wanting to accurately
+capture the pertinent physics and what is feasible in a reasonable
+amount of computing time. Here, we will present forcefield structures
+commonly used for simulations of water, followed by a discussion of
+suitable parameters for these functional forms; giving rise to a brief
+overview of the body of literature surrounding water models. 
+
+\subsubsection{Water Models}
+An investigation of the properties and dynamics of water anywhere in
+the phase diagram cannot be conducted without first critically
+analyzing the model proposed for the study. After XX years of
+simulating water, we are still optimizing and searching for geometries
+and distributions of charges and potential sites, mass sites, and many
+other parameters which will reproduce the phase diagram of water in
+closer detail. 
+
+Include a table of parameters for common water models.
+Include a table of properties estimated by water models, Tm, etc.
+
+This is also important for understanding the Appendix about a water
+model construction.
+
+In this section we will discuss the different water models used in the
+literature, and reasons why to use each one. 
+
+\subsubsection{Transport Properties}
+Transport phenomena are processes that describe the transfer (flux) of
+mass, heat, momentum, and charge by molecular motions. These movements
+have been well defined in both homogeneous and heterogeneous systems,
+through bulk materials as well as across interfaces, and transport
+coefficients have been defined relating the transfered quantities to
+the phenomena.
+
+
+\begin{longtable}{rcc}
+	\caption{BALANCE AND CONSTITUTIVE EQUATIONS FOR MASS, ENERGY, AND MOMENTUM TRANSPORT}
+	\label{tab:transport}
+	\\\hline \hline
+ 	& \textbf{~~Balance Equations~~} & \textbf{~~Constitutive Equations~~}\\ \hline 
+	\textbf{~~Mass~~} & $\frac{\partial c (\vec{r}, t)}{\partial t} + \nabla \vec{j} = 0$ & $\vec{j} = -D \cdot \nabla c(\vec{r}, t)$\\
+	\textbf{~~Energy~~} & $C_p \frac{\partial T (\vec{r}, t)}{\partial t} + \nabla \vec{J} = 0$ & $\vec{J} = -\lambda \cdot nabla T(\vec{r}, t)$\\
+	\textbf{~~Momentum~~} & $\rho \frac{D \vec{v}(\vec{r}, t)}{Dt} + \nabla \overleftrightarrow{\sigma} = 0$ & $\sigma_{x,z} = -\eta \cdot \nabla_z (\rho v_x)$\\ \hline \hline
+\end{longtable}
+
+
+
+
+
+Talk about shear viscosity and such.  In equilibrium molecular
+dynamics simulations, the transport properties can be obtained by
+utilizing the Green-Kubo relations. In this method, the fluctuations
+about SOME PROPERTY are integerated over a long period of time until
+convergence on the desired property is achieved. 
+
+Due to the timescale of the simulations required, others have
+approached the problem by performing non-equilibrium molecular
+dynamics simulations. Here, the system is forced to be at some
+non-equilibrium state, and the flux required to maintain that state is
+calculated from the simulation. This process can be challenging,
+however, simulation times are often shorter than those required for
+using the Green-Kubo formalism. With the required flux in hand, the
+transport property is calculated by using the relavent linear
+constitutive relation. If the desired transport property is the
+thermal conductivity ($\lambda$) of a material, two regions of the simulation box
+will be thermostatted, and the kinetic energy flux ($J$) required to
+maintain the temperature difference will be calculated. Once this
+value is converged, $\lambda$ can be obtained by 
+\begin{equation}\label{thermalTransport}
+J_{z} = \lambda \big(\frac{\partial T}{\partial z}\big)
+\end{equation}
+where the separation has been taken to be along the $z$-dimension of
+the system.  Here, $\big(\frac{\partial T}{\partial z}\big) $ is
+determined by the temperature of the two regions and the distance the
+regions are separated over. Similarly, the shear viscosity
+($\eta$) of a fluid can be determined by forcing molecules at two
+separated regions of the simulation box,
+\begin{equation}\label{momentumTransport}
+  j_{z}(p_{x}) = -\eta \big(\frac{\partial v_{x}}{\partial z}\big)
+\end{equation}
+where again the regions are taken to be separated along the
+$z$-dimension of the simulation box.
+
+\subsubsection{Reverse Non-equilibrium Molecular Dynamics}
+While it is possible to obtain the transport properties of interest
+through equilibrium or non-equilibrium molecular dyamics simulations,
+Kuang and Gezelter have recently developed an approach to
+non-equilibrium molecular dynamics in which they invert the measured
+and imposed quantites. 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 % The grand intro, ancient greeks, life as we know it, etc.
@@ -1927,186 +2190,7 @@ the observed friction.
 % Describe NEMD approaches to obtaining TP
 % Describe RNEMD approaches to obtaining TP
 %%
-\section{Molecular Simulations}
-With a firm understanding of the problem which we aim to understand,
-we now turn to the method we will use to investigate the
-problem. Molecular simulations offers insight on the mechanisms
-driving emergent phenomena. Simulations are also useful in that we are
-able to probe systems at experimentally unachievable conditions, and
-also observe and decouple interactions. However, parameters for
-simulations are often dependent on real world observables obtained by
-experiments. In conjunction with this, it is important to understand
-the scope of the problem aimed to be solved by molecular simulation,
-in order to correctly identify which methodologies to use. 
 
-In principle we know how to simulate a system of molecules with very
-high accuracy. 
-It is possible to achieve very high accuracy for a small number of
-particles using \textit{ab initio} quantum mechanics methodologies. 
-
-
-
-
-\begin{figure}
-\includegraphics[width=\linewidth]{Figures/SimulationScale}
-\caption{\label{fig:SimulationScale} Different length scales in
-  numbers of molecules (here length of material) and corresponding
-  achievable simulation time for various molecular modeling
-  methodologies. High accuracy quantum mechanical methods (red and
-  orange) cannot simulate large numbers of molecules for long
-  times. Methods which reduce molecular detail and propogate by
-  classical mechanics (yellow and green) are able to achieve longer
-  simulation times for larger systems. Monte Carlo methods (blue)
-  remove the expense of computing dynamics altogether, and ultra
-  coarse-grained methods (violet) which approximate collections of
-  atoms as a single unit achieve even longer simulation times.}
-\end{figure}
-
-
-
-\subsection{Molecular Dynamics}
-In a general defintion, molecular dynamics (MD) simulations involve
-popogating atoms and molecules through time by Netwon's Second
-Law. The models used to describe the atoms and molecules are often
-constructed using classical mechanics, treating atoms as hard spheres,
-and bonds between atoms within a molecule as spring. Charges are also
-handled classically, and depending on the model the charges can be
-static (restricted to some initial position), or dynamic and allowed
-to move around the molecule. While hybrid quantum / classical
-molecular dynamics methods exist, we restrict ourselves here to the
-purely classical case. Several excellent books have been published
-which cover molecular dynamics, from the classic text of Allan and
-Tildesey, to the modern broad work of
-Leach.\cite{AllanXX,LeachYY} 
-
-We begin by considering what the appropriate description of the potential
-energy for an atom or molecule might be. 
-$\begin{equation}\label{eq:potE}
-U = \sum_i U(r_i) + \sum_{i,j} U(r_{i,j}) + sum_{i,j,k} U(r_{i,j,k}) \dots
-$\end{equation}
-
-We begin by considering some atom with position $\vec{r}(t)$ at some
-time $t$, and we Taylor-expand about this position.
-
-The instantaneous temperature, $T$, of a collection of $N$ molecules
-is described by their kinetic energy $K$ through the equipartition
-theorem.
-\begin{equation}\label{Temperature}
-T = \frac{2}{fk_B}\Bigg( \sum_{i=1}^{N} \frac{1}{2} m_i {\bf v}_i^T \cdot {\bf v}_i +
-\sum_{i=1}^{N_{\mathrm{linear}}+N_{\mathrm{non-linear}}}  \frac{1}{2} {\bf j}_i^T \cdot
-\overleftrightarrow{\mathsf{I}}_i^{-1} \cdot {\bf j}_i  \Bigg)
-\end{equation}
-
-where $f$ is the total number of degrees of freedom in the system,
-\begin{equation}
-f = 3 N + 2 N_{\mathrm{linear}} + 3 N_{\mathrm{non-linear}} - N_{\mathrm{constraints}}
-\end{equation}
-$N_{linear}$ is the number of linear molecules, and $N_{non-linear}$
-is the total number of non-linear molecules in the system.
-
-In a similar manner the instantaneous pressure, $P$, of a collection
-of molecules can be obtained through the \textit{virial} 
-
-Integrators, velocity verlet, shake, etc. Ensembles, calculation of
-pressure and temperature. Leach had a great explanation of these.
-
-\begin{figure}
-\includegraphics[width=\linewidth]{Figures/PBC}
-\caption{\label{fig:PBC} Periodic boundary conditions and minimum
-  image calculation. The central blue cell is the only simulation cell
-  maintained by computation. Molecules (red circles) are free to move
-  throughout space uninhindered. When a molecule leaves the blue
-  simulation cell, one of its ghost images enters the cell from one of
-  the neighboring cells. This is achieved by computation of
-  interactions of a molecule with its nearest neighbors within a
-  cutoff radius of $r_{cut}$. Note these molecules may not necessarily
-  be located within the same simulation cell as the molecule of
-  interest.}
-\end{figure}
-
-
-
-\subsubsection{Water Models}
-An investigation of the properties and dynamics of water anywhere in
-the phase diagram cannot be conducted without first critically
-analyzing the model proposed for the study. After XX years of
-simulating water, we are still optimizing and searching for geometries
-and distributions of charges and potential sites, mass sites, and many
-other parameters which will reproduce the phase diagram of water in
-closer detail. 
-
-Include a table of parameters for common water models.
-Include a table of properties estimated by water models, Tm, etc.
-
-This is also important for understanding the Appendix about a water
-model construction.
-
-In this section we will discuss the different water models used in the
-literature, and reasons why to use each one. 
-
-\subsubsection{Transport Properties}
-Transport phenomena are processes that describe the transfer (flux) of
-mass, heat, momentum, and charge by molecular motions. These movements
-have been well defined in both homogeneous and heterogeneous systems,
-through bulk materials as well as across interfaces, and transport
-coefficients have been defined relating the transfered quantities to
-the phenomena.
-
-
-\begin{longtable}{rcc}
-	\caption{BALANCE AND CONSTITUTIVE EQUATIONS FOR MASS, ENERGY, AND MOMENTUM TRANSPORT}
-	\label{tab:transport}
-	\\\hline \hline
- 	& \textbf{~~Balance Equations~~} & \textbf{~~Constitutive Equations~~}\\ \hline 
-	\textbf{~~Mass~~} & $\frac{\partial c (\vec{r}, t)}{\partial t} + \nabla \vec{j} = 0$ & $\vec{j} = -D \cdot \nabla c(\vec{r}, t)$\\
-	\textbf{~~Energy~~} & $C_p \frac{\partial T (\vec{r}, t)}{\partial t} + \nabla \vec{J} = 0$ & $\vec{J} = -\lambda \cdot nabla T(\vec{r}, t)$\\
-	\textbf{~~Momentum~~} & $\rho \frac{D \vec{v}(\vec{r}, t)}{Dt} + \nabla \overleftrightarrow{\sigma} = 0$ & $\sigma_{x,z} = -\eta \cdot \nabla_z (\rho v_x)$\\ \hline \hline
-\end{longtable}
-
-
-
-
-
-Talk about shear viscosity and such.  In equilibrium molecular
-dynamics simulations, the transport properties can be obtained by
-utilizing the Green-Kubo relations. In this method, the fluctuations
-about SOME PROPERTY are integerated over a long period of time until
-convergence on the desired property is achieved. 
-
-Due to the timescale of the simulations required, others have
-approached the problem by performing non-equilibrium molecular
-dynamics simulations. Here, the system is forced to be at some
-non-equilibrium state, and the flux required to maintain that state is
-calculated from the simulation. This process can be challenging,
-however, simulation times are often shorter than those required for
-using the Green-Kubo formalism. With the required flux in hand, the
-transport property is calculated by using the relavent linear
-constitutive relation. If the desired transport property is the
-thermal conductivity ($\lambda$) of a material, two regions of the simulation box
-will be thermostatted, and the kinetic energy flux ($J$) required to
-maintain the temperature difference will be calculated. Once this
-value is converged, $\lambda$ can be obtained by 
-\begin{equation}\label{thermalTransport}
-J_{z} = \lambda \big(\frac{\partial T}{\partial z}\big)
-\end{equation}
-where the separation has been taken to be along the $z$-dimension of
-the system.  Here, $\big(\frac{\partial T}{\partial z}\big) $ is
-determined by the temperature of the two regions and the distance the
-regions are separated over. Similarly, the shear viscosity
-($\eta$) of a fluid can be determined by forcing molecules at two
-separated regions of the simulation box,
-\begin{equation}\label{momentumTransport}
-  j_{z}(p_{x}) = -\eta \big(\frac{\partial v_{x}}{\partial z}\big)
-\end{equation}
-where again the regions are taken to be separated along the
-$z$-dimension of the simulation box.
-
-\subsubsection{Reverse Non-equilibrium Molecular Dynamics}
-While it is possible to obtain the transport properties of interest
-through equilibrium or non-equilibrium molecular dyamics simulations,
-Kuang and Gezelter have recently developed an approach to
-non-equilibrium molecular dynamics in which they invert the measured
-and imposed quantites. 
 
 
 \subsection{Summary}
