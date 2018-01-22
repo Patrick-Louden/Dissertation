@@ -1927,7 +1927,7 @@ the observed friction.
 % Describe NEMD approaches to obtaining TP
 % Describe RNEMD approaches to obtaining TP
 %%
-\subsection{Molecular Simulations}
+\section{Molecular Simulations}
 With a firm understanding of the problem which we aim to understand,
 we now turn to the method we will use to investigate the
 problem. Molecular simulations offers insight on the mechanisms
@@ -1964,11 +1964,29 @@ particles using \textit{ab initio} quantum mechanics methodologies.
 
 
 
-Molecular dynamics (MD) simulations. In MD simulations,
-models describing atoms and molecules are propogated by evolving
-Netwon's Second Law through time. We begin by considering some atom
-with position $\vec{r}(t)$ at some time $t$, and we Taylor-expand
-about this position.
+\subsection{Molecular Dynamics}
+In a general defintion, molecular dynamics (MD) simulations involve
+popogating atoms and molecules through time by Netwon's Second
+Law. The models used to describe the atoms and molecules are often
+constructed using classical mechanics, treating atoms as hard spheres,
+and bonds between atoms within a molecule as spring. Charges are also
+handled classically, and depending on the model the charges can be
+static (restricted to some initial position), or dynamic and allowed
+to move around the molecule. While hybrid quantum / classical
+molecular dynamics methods exist, we restrict ourselves here to the
+purely classical case. Several excellent books have been published
+which cover molecular dynamics, from the classic text of Allan and
+Tildesey, to the modern broad work of
+Leach.\cite{AllanXX,LeachYY} 
+
+We begin by considering what the appropriate description of the potential
+energy for an atom or molecule might be. 
+$\begin{equation}\label{eq:potE}
+U = \sum_i U(r_i) + \sum_{i,j} U(r_{i,j}) + sum_{i,j,k} U(r_{i,j,k}) \dots
+$\end{equation}
+
+We begin by considering some atom with position $\vec{r}(t)$ at some
+time $t$, and we Taylor-expand about this position.
 
 The instantaneous temperature, $T$, of a collection of $N$ molecules
 is described by their kinetic energy $K$ through the equipartition
