@@ -115,7 +115,7 @@ particles using \textit{ab initio} quantum mechanics methodologies.
 
 
 
-\subsection{Molecular Dynamics}
+\section{Molecular Dynamics}
 In a general defintion, molecular dynamics (MD) simulations involve
 popogating atoms and molecules through time by Netwon's Second
 Law. The models used to describe the atoms and molecules are often
@@ -130,16 +130,36 @@ which cover molecular dynamics, from the classic text of Allan and
 Tildesey, to the modern broad work of
 Leach.\cite{AllanXX,LeachYY} 
 
-We begin by considering what the appropriate description of the potential
-energy for an atom or molecule might be. 
+We begin by considering a many-body expansion of the a configurational
+potential energy $\mathscr{U}$ for a collection of $N$ particles.
 \begin{equation}\label{eq:potE}
-U = \sum_i U(r_i) + \sum_{i,j} U(r_{i,j}) + \sum_{i,j,k} U(r_{i,j,k}) \dots
+\mathscr{U}(\mathbf{r}^N) = \sum_i U(r_i) + \sum_{i<j} U(r_i,r_j) + \sum_{i<j<k}
+U(r_i,r_j,r_k) \dots + U(r_1,r_2,r_3,\dots r_N)
 \end{equation}
+Most commonly, the expansion is truncated at the two-body term as
+higher order terms have proven computationally infeasible in the
+past. However, with the development of faster computers, Paesani
+\textit{et al.} has recently shown that incorporating higher order
+terms leads to a more accurate water model.\cite{PaesaniXX} These
+details will be discussed in more details in Section
+\ref{sec:WaterModels}, but for now we will restrict ourselves to a
+many-body expansion up to the two-body term. We further restrict
+ourelves to a potential where no dissapative forces act between
+particles, therefore from our truncated expansion we can obtain the
+force on particle $i$.
+\begin{equation}\label{eq:force}
+\mathbf{F_i} = -\frac{\partial \mathscr{U}(\mathbf{r}^N)}{\partial \mathbf{r}_i}
+\end{equation} 
+
+
 
 We begin by considering some atom with position $\vec{r}(t)$ at some
 time $t$, and we Taylor-expand about this position.
 
-\subsection{Calculation of Thermodynamic Properties}
+Integrators, velocity verlet, shake, etc. Ensembles, calculation of
+pressure and temperature. Leach had a great explanation of these.
+
+\subsubsection{Calculation of Thermodynamic Properties}
 The instantaneous temperature, $T$, of a collection of $N$ molecules
 is described by their kinetic energy $K$ through the equipartition
 theorem.
@@ -185,12 +205,10 @@ of the force between particles $i$ and $j$, ($f_{ij}$), we obtain the
 following expression for the pressure.
 \begin{equation}\label{eq:virial3}
 P = \frac{1}{V}\Big[Nk_BT - \frac{1}{3} \sum_i^N \sum_{j\neq i}^N
-r_{ij} r_{ij} f_{ij}\Big]
+r_{ij} f_{ij}\Big]
 \end{equation}
 
 
-Integrators, velocity verlet, shake, etc. Ensembles, calculation of
-pressure and temperature. Leach had a great explanation of these.
 
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{Figures/PBC}
@@ -215,10 +233,60 @@ forcefield is structured as a balance between wanting to accurately
 capture the pertinent physics and what is feasible in a reasonable
 amount of computing time. Here, we will present forcefield structures
 commonly used for simulations of water, followed by a discussion of
-suitable parameters for these functional forms; giving rise to a brief
-overview of the body of literature surrounding water models. 
+suitable parameters for these functional forms; this gives rise to a
+brief overview of the body of literature surrounding water models.
 
-\subsubsection{Water Models}
+Due to computational expense, it is common to truncate the many-body
+expansion of the potential energy to only the two-body interaction
+term, and consider only those two-body terms which are pairwise
+additive. That is, the potential
+\begin{equation}\label{eq:potPair}
+\mathscr{U}(\mathbf{r}^N) = \sum_{i<j}^N U(r_{i,j})
+\end{equation}
+with $r_{i,j}$ being the scalar distance between particles $i$ and
+$j$, $r_{i,j} = | \mathbf{r}_i - \mathbf{r}_j|$. While this may seem
+like an extreme restriction on the functional form of the forcefield
+for our simulations, as we will see models of this form still perform
+quite well. Generally, the terms incorporated into Equation
+\ref{eq:potPair} fall into one of two categories, inter- and
+intra-molecular interactions. 
+
+In 1924, J. E. Lennard-Jones proposed a pairwise additive
+intermolecular potential for a system of soft-spheres.
+\begin{equation}\label{eq:LJ}
+U(r_{i,j}) = k\epsilon\Bigg[ \Big( \frac{\sigma}{r_{i,j}}\Big)^n - \Big(\frac{\sigma}{r_{i,j}}\Big)^m\Bigg]
+\end{equation}
+where
+\begin{equation}\label{eq:LJ2}
+k = \frac{n}{n-m} \Big(\frac{n}{m}\Big)^{m/(n-m)}
+\end{equation}
+With this simple model, Lennard-Jones was able to account for both
+short-ranged repulsive forces as well as long-range attractive
+forces. The short-ranged forces are important to keep a collection of
+particles from collapsing in on itself, while the long-range forces
+prevents the collection of particles disintegrating. Since the leading
+term in London's theory on dispersion forces goes at $1/r^6$, the
+long-range term is chosen to mimic this behavior $m=6$. While there is
+no physical justification for it, the short-ranged attraction term is
+often set to $n=12$ primarily due to ease of computation. With these
+values for $m$ and $n$ the resulting Lennard-Jones model becomes
+\begin{equation}\label{eq:LJ3}
+U(r_{i,j}) =
+4\epsilon\Bigg[\Big(\frac{\sigma}{r_{i,j}}\Big)^{12}-\Big(\frac{\sigma}{r_{i,j}}\Big)^{6}\Bigg]
+\end{equation} 
+The remaining two parameters to the model are $\sigma$, the distance
+at which $U(r_{i,j})$ goes to zero, and $\epsilon$, the potential
+energy minimum which is located at $\sqrt[6]{2}\sigma$. While the
+number and locations of Lennard-Jones sites within water models vary,
+the parameter $\sigma$ is commonly taken to be the molecular diameter
+and $\epsilon$ is often tuned to reproduce a certain region of the
+phase diagram. 
+
+The second intermolecular interaction we must consider is the
+treatment of charged particles. 
+
+
+\subsubsection{Water Models}\label{sec:WaterModels}
 An investigation of the properties and dynamics of water anywhere in
 the phase diagram cannot be conducted without first critically
 analyzing the model proposed for the study. After XX years of
@@ -236,7 +304,7 @@ model construction.
 In this section we will discuss the different water models used in the
 literature, and reasons why to use each one. 
 
-\subsubsection{Transport Properties}
+\subsection{Transport Properties}
 Transport phenomena are processes that describe the transfer (flux) of
 mass, heat, momentum, and charge by molecular motions. These movements
 have been well defined in both homogeneous and heterogeneous systems,
@@ -293,7 +361,7 @@ separated regions of the simulation box,
 where again the regions are taken to be separated along the
 $z$-dimension of the simulation box.
 
-\subsubsection{Reverse Non-equilibrium Molecular Dynamics}
+\subsection{Reverse Non-equilibrium Molecular Dynamics}
 While it is possible to obtain the transport properties of interest
 through equilibrium or non-equilibrium molecular dyamics simulations,
 Kuang and Gezelter have recently developed an approach to
@@ -304,6 +372,7 @@ and imposed quantites.
 %%%%%%%%%%%%%%%%%%%%%%%%
 % The grand intro, ancient greeks, life as we know it, etc.
 %%%%%%%%%%%%%%%%%%%%%%%%
+\section{A Passion for Water}
 Water is the simplest compound of the two most common reactive
 elements in the unvierse and it the second most common molecule in the
 universe (behind hydrogen, H2). It is composed of two atoms of
@@ -2193,7 +2262,7 @@ the observed friction.
 
 
 
-\subsection{Summary}
+\section{Summary}
 We began this chapter discussing the importance of water in our world
 and in our lives. Everywhere we have found life, water has been at its
 center, and many scientists believe that life would not be able to
