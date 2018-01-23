@@ -221,6 +221,7 @@ t$ are computed by
 \frac{1}{2}\delta \mathbf{a}(t + \delta t)
 \end{equation}
 
+
 \subsubsection{Time Averages and Ensemble Averages}
 Consider a property $A$ that is dependent on the positions and momenta
 of the $N$ particles in the system, then the instantaneous value of
@@ -256,15 +257,19 @@ A(\mathbf{r}^N,\mathbf{p}^N) \rho
 \end{equation}
 Equation \eqref{eq:A-ens} is written with as double integral, although
 more accurately this equation indicates $6N$ integrals, one for each
-of the $6N$ position and momenta coordinates of the $N$ particles. The
-second term in the integrand, $ \rho(\mathbf{r}^N,\mathbf{p}^N)$, is
-the \textit{probability density} of the ensemble. It is a function
-which describes the relative probability of observing a specific
-configuration and distribution of momenta for the $N$ particles, given
-the energy of the configuration. If one is able to compute $\langle A
-\rangle$ by integrating over all possible configurations of the
-system, the resulting ensemble average of $A$ will be equal to the
-time average value of $A$ by the \textit{ergodic hypothesis}. 
+of the $6N$ position and momentum coordinates of the $N$
+particles. The second term in the integrand,
+$ \rho(\mathbf{r}^N,\mathbf{p}^N)$, is the \textit{probability
+  density} of the ensemble. It is a function which describes the
+relative probability of observing a specific configuration and
+distribution of momenta for the $N$ particles, given the energy of the
+configuration. If one is able to compute $\langle A \rangle$ by
+integrating over all possible configurations of the system, the
+resulting ensemble average will be equal to the time average value
+($A_{\mathrm{ave}} = \langle A \rangle$) by the \textit{ergodic
+  hypothesis}.
+
+
 
 \subsubsection{Calculation of Thermodynamic Properties}
 The instantaneous temperature, $T$, of a collection of $N$ molecules
@@ -317,19 +322,6 @@ r_{ij} f_{ij}\Big]
 
 
 
-\begin{figure}[h]
-\includegraphics[width=\linewidth]{Figures/PBC}
-\caption{\label{fig:PBC} Periodic boundary conditions and minimum
-  image calculation. The central blue cell is the only simulation cell
-  maintained by computation. Molecules (red circles) are free to move
-  throughout space uninhindered. When a molecule leaves the blue
-  simulation cell, one of its ghost images enters the cell from one of
-  the neighboring cells. This is achieved by computation of
-  interactions of a molecule with its nearest neighbors within a
-  cutoff radius of $r_{cut}$. Note these molecules may not necessarily
-  be located within the same simulation cell as the molecule of
-  interest.}
-\end{figure}
 
 \subsection{Molecular Forcefields}
 Having established how to propogate particles through time using MD
@@ -355,11 +347,11 @@ $j$, $r_{i,j} = | \mathbf{r}_i - \mathbf{r}_j|$. While this may seem
 like an extreme restriction on the functional form of the forcefield
 for our simulations, as we will see models of this form still perform
 quite well. Generally, the terms incorporated into Equation
-\ref{eq:potPair} fall into one of two categories, inter- and
-intra-molecular interactions. 
+\ref{eq:potPair} fall into one of two categories, bonded and
+non-bonded interactions. 
 
 In 1924, J. E. Lennard-Jones proposed a pairwise additive
-intermolecular potential for a system of soft-spheres.
+non-bonded potential for a system of soft-spheres.
 \begin{equation}\label{eq:LJ}
 U(r_{i,j}) = k\epsilon\Bigg[ \Big( \frac{\sigma}{r_{i,j}}\Big)^n - \Big(\frac{\sigma}{r_{i,j}}\Big)^m\Bigg]
 \end{equation}
@@ -383,14 +375,24 @@ U(r_{i,j}) =
 \end{equation} 
 The remaining two parameters to the model are $\sigma$, the distance
 at which $U(r_{i,j})$ goes to zero, and $\epsilon$, the potential
-energy minimum which is located at $\sqrt[6]{2}\sigma$. While the
+energy minimum which is located at $r_{i,j} = \sqrt[6]{2}\sigma$. While the
 number and locations of Lennard-Jones sites within water models vary,
 the parameter $\sigma$ is commonly taken to be the molecular diameter
 and $\epsilon$ is often tuned to reproduce a certain region of the
 phase diagram. 
 
-The second intermolecular interaction we must consider is the
-treatment of charged particles. 
+A second non-bonded interaction we must consider is the appropriate
+treatment of charged particles.
+
+Since the long-ranged interactions converge to zero slowly, cutoff
+radii are commonly employed. A cutoff radii is a distance at which the
+interactions between particles are truncated. However, truncation of
+the potential leads to discontinuities in the calculation of
+forces. Due to this, a number of schemes have been proposed in which
+the truncation of the potential is smoothened out as to avoid
+discontinuities. In the work discussed here, the \textit{damped
+  shifted force} method was utilized. 
+
 
 
 \subsubsection{Water Models}\label{sec:WaterModels}
@@ -410,6 +412,58 @@ model construction.
 
 In this section we will discuss the different water models used in the
 literature, and reasons why to use each one. 
+
+
+\subsubsection{Boundary Conditions}
+Having discussed how to evolve particles positions and momenta through
+time, and from these trajectories compute thermodynamic properties of
+the system, we now focus on the problem of how to simulate a tractable
+number of particles. Consider an open (but isolated) system of
+particles. The cluster would be exposed to vacuum in all three
+dimensions, and depending on the strength of the intermolecular
+interactions, the cluster could condense into a sphere or slowly
+dissipate into a gas. If we were interested in simulating a liquid and
+had incorporated an appropriate intermolecular potential, the vacuum
+exposed droplet would be a poor representation of a bulk liquid. 
+
+A naiive approach to fix this problem would be to simulate a large
+cluster of molecules and only probe the properties of the interior
+molecules. This is both inefficient and potentially inaccurate, as
+determining when a cluster is `large enough` for the interior
+molecules to recover bulk liquid behavior is open to
+interpretation. An efficient solution to this problem is to impose
+boundary conditions on the system. While the type of boundary
+condition imposed can depend on the type of material being simulated,
+cubic or parallelepiped periodic boundary conditions are the most
+common. In these methods, each simulated system of particles is
+effectively replicated around the initial simulation cell. If a
+particle leaves the simulation cell (\textit{e.g.} through the
+positive $x$ dimension) then one of the images of the particle will
+enter the cell through the opposite wall (from the negative $x$
+dimension).
+
+In Figure \ref{fig:PBC}, a two-dimensional representation of cubic
+periodic boundary conditions shows how the true simulation cell (in
+blue) has a constant number of particles (red circles). As a particle
+leaves the initial cell an image of itself enters through one of the
+ghost cells surrounding the box. This is achieved by either wrapping
+the position of each particle back to the initial cell after each
+timestep, or by computing the potential energy and force calculations
+with its ghost image.
+
+\begin{figure}[H]
+\includegraphics[width=\linewidth]{Figures/PBC}
+\caption{\label{fig:PBC} Periodic boundary conditions and minimum
+  image calculation. The central blue cell is the only simulation cell
+  maintained by computation. Molecules (red circles) are free to move
+  throughout space uninhindered. When a molecule leaves the blue
+  simulation cell, one of its ghost images enters the cell from one of
+  the neighboring cells. This is achieved by computation of
+  interactions of a molecule with its nearest neighbors within a
+  cutoff radius of $r_{cut}$. Note these molecules may not necessarily
+  be located within the same simulation cell as the molecule of
+  interest.}
+\end{figure}
 
 \subsection{Transport Properties}
 Transport phenomena are processes that describe the transfer (flux) of
