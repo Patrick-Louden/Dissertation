@@ -183,7 +183,7 @@ velocity terms do not appear explicitly but can be computed from the
 two sets of positions. In the \textit{Leap Frog} method, the positions
 and velocities are stored at a half-step difference. When the
 positions are known at a half-step forward in time, the new velocities are
-computed and \'leap-frog\' over the positions. While this method is an
+computed and `leap-frog` over the positions. While this method is an
 improvement over the Verlet algorithm as the velocities are computed
 directly, the positions and velocities are not known at the same time
 without further calculations.
@@ -249,7 +249,7 @@ macroscopic experimental observation. Here, instead of considering one
 large system, we evolve a large number of replications of a smaller
 systems simultaneously. The average value of the property from these
 replicas is denoted as an \textit{ensemble average} with angle bars,
-$\langle \rangle$. 
+$\langle$~ $\rangle$. 
 \begin{equation}\label{eq:A-ens}
 \langle A \rangle = \int \int d\mathbf{r}^N d\mathbf{p}^N
 A(\mathbf{r}^N,\mathbf{p}^N) \rho
@@ -328,27 +328,35 @@ Having established how to propogate particles through time using MD
 simulations, we turn our focus next to the problem of developing an
 accurate representation for the interactions between molecules, more
 commonly known as a forcefield. Generally, the functional form of the
-forcefield is structured as a balance between wanting to accurately
-capture the pertinent physics and what is feasible in a reasonable
-amount of computing time. Here, we will present forcefield structures
-commonly used for simulations of water, followed by a discussion of
-suitable parameters for these functional forms; this gives rise to a
-brief overview of the body of literature surrounding water models.
+forcefield is structured as a balance between accurately capturing the
+pertinent physics and what is feasible in computing time. Here, we
+present functional forms of a forcefield commonly used for simulations
+of water, followed by a discussion of suitable parameters in a brief
+overview of the large body of literature surrounding water models.
 
 Due to computational expense, it is common to truncate the many-body
-expansion of the potential energy to only the two-body interaction
-term, and consider only those two-body terms which are pairwise
-additive. That is, the potential
+expansion of the potential energy to include only the one-body and
+two-body interaction terms, and consider only those two-body terms
+which are pairwise additive. That is, the potential
 \begin{equation}\label{eq:potPair}
-\mathscr{U}(\mathbf{r}^N) = \sum_{i<j}^N U(r_{i,j})
+\mathscr{U}(\mathbf{r}^N) = \sum_i^N U(\mathbf{r}_i) + \sum_{i<j}^N U(r_{i,j})
 \end{equation}
-with $r_{i,j}$ being the scalar distance between particles $i$ and
-$j$, $r_{i,j} = | \mathbf{r}_i - \mathbf{r}_j|$. While this may seem
-like an extreme restriction on the functional form of the forcefield
-for our simulations, as we will see models of this form still perform
-quite well. Generally, the terms incorporated into Equation
-\ref{eq:potPair} fall into one of two categories, bonded and
-non-bonded interactions. 
+where $\mathbf{r}_i$ is the absolute position of particle $i$, and
+$r_{i,j}$ is the scalar distance between particles $i$ and $j$,
+$r_{i,j} = | \mathbf{r}_i - \mathbf{r}_j|$. While this may seem like
+an extreme restriction on the total potential, however, we will see
+models of this form still perform quite well. Generally, the terms
+incorporated into Equation \ref{eq:potPair} fall into one of two
+categories, bonded and non-bonded interactions.
+
+The one-body term in Equation \eqref{eq:potPair} accounts for any
+external forces on the particles, such as an external electric
+field. Their interaction with the field depends on the particle's
+absolute position in that field, not the relative distance between the
+other particles. In the absence of external forces, Equation
+\eqref{eq:potPair} reduces to just the two-body pairwise additive
+term, and all the potential depends upon is the relative distance
+between particles. 
 
 In 1924, J. E. Lennard-Jones proposed a pairwise additive
 non-bonded potential for a system of soft-spheres.
@@ -414,7 +422,7 @@ In this section we will discuss the different water models used in the
 literature, and reasons why to use each one. 
 
 
-\subsubsection{Boundary Conditions}
+\subsection{Boundary Conditions}
 Having discussed how to evolve particles positions and momenta through
 time, and from these trajectories compute thermodynamic properties of
 the system, we now focus on the problem of how to simulate a tractable
@@ -426,7 +434,7 @@ dissipate into a gas. If we were interested in simulating a liquid and
 had incorporated an appropriate intermolecular potential, the vacuum
 exposed droplet would be a poor representation of a bulk liquid. 
 
-A naiive approach to fix this problem would be to simulate a large
+A naive approach to fix this problem would be to simulate a large
 cluster of molecules and only probe the properties of the interior
 molecules. This is both inefficient and potentially inaccurate, as
 determining when a cluster is `large enough` for the interior
@@ -435,7 +443,7 @@ interpretation. An efficient solution to this problem is to impose
 boundary conditions on the system. While the type of boundary
 condition imposed can depend on the type of material being simulated,
 cubic or parallelepiped periodic boundary conditions are the most
-common. In these methods, each simulated system of particles is
+common. In these methods, the system of particles is
 effectively replicated around the initial simulation cell. If a
 particle leaves the simulation cell (\textit{e.g.} through the
 positive $x$ dimension) then one of the images of the particle will
@@ -449,9 +457,13 @@ leaves the initial cell an image of itself enters through one of the
 ghost cells surrounding the box. This is achieved by either wrapping
 the position of each particle back to the initial cell after each
 timestep, or by computing the potential energy and force calculations
-with its ghost image.
+using the ghost images. Notice that the nearest particles within the
+cutoff radii, $r_{\mathrm{cut}}$, may be an image of a particle in one
+of the ghost cells. Using this method, it is possible to simulate a
+bulk fluid (or more generally a bulk material) using a tractable
+number of particles.
 
-\begin{figure}[H]
+\begin{figure*}
 \includegraphics[width=\linewidth]{Figures/PBC}
 \caption{\label{fig:PBC} Periodic boundary conditions and minimum
   image calculation. The central blue cell is the only simulation cell
@@ -463,7 +475,18 @@ with its ghost image.
   cutoff radius of $r_{cut}$. Note these molecules may not necessarily
   be located within the same simulation cell as the molecule of
   interest.}
-\end{figure}
+\end{figure*}
+
+Utilizing periodic boundary conditions does pose one potential
+problem. There is the possibility that a particle could interact with
+an image of itself, if the unit cell length is not large enough. Also,
+while using these methodologies capture short wavelength events quite
+well, it is impossible to observe a phenomena with fluctuations or
+wavelengths larger than the unit cell dimensions. This includes events
+near liquid-gas critical points, observing phase transitions, and
+long-wavelength plasmons. However, unnecessarily large unit
+cells require an increasing number of particles in the simulation, and
+resulting computational times intractable. 
 
 \subsection{Transport Properties}
 Transport phenomena are processes that describe the transfer (flux) of
