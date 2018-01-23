@@ -29,8 +29,8 @@
 
 
 \begin{flushright}
-\textit{''Why do snowflakes always fall as flat structures with six corners?''} \\
--Joannes Kepler (1611) \\
+\textit{''The journey of a thousand miles starts with one step.''} \\
+-Lao Tzu (circa 500 B.C.) \\
 \end{flushright}
 
 This introductory chapter begins with an overview of molecular
@@ -79,9 +79,7 @@ shear viscosity ($\eta$) of the two layers are distinct from one
 another.
 
 \section{Molecular Simulations}
-With a firm understanding of the problem which we aim to understand,
-we now turn to the method we will use to investigate the
-problem. Molecular simulations offers insight on the mechanisms
+Molecular simulations offers insight on the mechanisms
 driving emergent phenomena. Simulations are also useful in that we are
 able to probe systems at experimentally unachievable conditions, and
 also observe and decouple interactions. However, parameters for
@@ -91,9 +89,9 @@ the scope of the problem aimed to be solved by molecular simulation,
 in order to correctly identify which methodologies to use. 
 
 In principle we know how to simulate a system of molecules with very
-high accuracy. 
-It is possible to achieve very high accuracy for a small number of
-particles using \textit{ab initio} quantum mechanics methodologies. 
+high accuracy.  It is possible to achieve very high accuracy for a
+small number of particles using \textit{ab initio} quantum mechanics
+methodologies.
 
 
 
@@ -117,24 +115,24 @@ particles using \textit{ab initio} quantum mechanics methodologies.
 
 \section{Molecular Dynamics}
 In a general defintion, molecular dynamics (MD) simulations involve
-popogating atoms and molecules through time by Netwon's Second
-Law. The models used to describe the atoms and molecules are often
-constructed using classical mechanics, treating atoms as hard spheres,
-and bonds between atoms within a molecule as spring. Charges are also
-handled classically, and depending on the model the charges can be
-static (restricted to some initial position), or dynamic and allowed
-to move around the molecule. While hybrid quantum / classical
-molecular dynamics methods exist, we restrict ourselves here to the
-purely classical case. Several excellent books have been published
-which cover molecular dynamics, from the classic text of Allan and
-Tildesey, to the modern broad work of
-Leach.\cite{AllanXX,LeachYY} 
+popogating molecules through time by Netwon's Second Law. The models
+used to describe the molecules are often constructed using classical
+mechanics, treating atoms as hard spheres, and bonds between atoms
+within a molecule as a spring. Charges are also handled classically,
+and depending on the model the charges can be static (restricted to
+some initial position), or dynamic, in which they allowed to move
+around the molecule. While hybrid quantum / classical molecular
+dynamics methods exist, we restrict ourselves here to the purely
+classical case. Several excellent books have been published which
+cover molecular dynamics, from the classic text of Allan and Tildesey,
+to the modern broad work of Leach.\cite{AllanXX,LeachYY}
 
-We begin by considering a many-body expansion of the a configurational
-potential energy $\mathscr{U}$ for a collection of $N$ particles.
+We begin by considering a many-body expansion of the configurational
+potential energy $\mathscr{U}$ for an isolated collection of $N$ particles with
+vector coordinates $\mathbf{r}^N$.
 \begin{equation}\label{eq:potE}
-\mathscr{U}(\mathbf{r}^N) = \sum_i U(r_i) + \sum_{i<j} U(r_i,r_j) + \sum_{i<j<k}
-U(r_i,r_j,r_k) \dots + U(r_1,r_2,r_3,\dots r_N)
+\mathscr{U}(\mathbf{r}^N) = \sum_i U(\mathbf{r}_i) + \sum_{i<j}
+U(\mathbf{r}_i,\mathbf{r}_j) + \sum_{i<j<k} U(\mathbf{r}_i,\mathbf{r}_j,\mathbf{r}_k) \dots + U(\mathbf{r}_1,\mathbf{r}_2,\mathbf{r}_3,\dots \mathbf{r}_N)
 \end{equation}
 Most commonly, the expansion is truncated at the two-body term as
 higher order terms have proven computationally infeasible in the
@@ -145,19 +143,128 @@ details will be discussed in more details in Section
 \ref{sec:WaterModels}, but for now we will restrict ourselves to a
 many-body expansion up to the two-body term. We further restrict
 ourelves to a potential where no dissapative forces act between
-particles, therefore from our truncated expansion we can obtain the
-force on particle $i$.
+particles, from this, we can obtain the force on particle $i$.
 \begin{equation}\label{eq:force}
 \mathbf{F_i} = -\frac{\partial \mathscr{U}(\mathbf{r}^N)}{\partial \mathbf{r}_i}
 \end{equation} 
+Since the system of $N$ particles is isolated and there are no
+dissapative forces, the total energy of the system will be
+conserved. From Equation \eqref{eq:force} and Newton's Second Law the
+accelerations for each of the $N$ particles follows.
+\begin{equation}\label{eq:accel}
+ m_i\mathbf{\ddot{r}}_i = -\frac{\partial \mathscr{U}(\mathbf{r}^N)}{\partial \mathbf{r}_i}
+\end{equation}
+Integrating Equation \eqref{eq:accel} once with respect to time gives
+the momentum of the $N$ particles, and a second integration gives the
+positions.
 
+\subsubsection{Finite Difference Methods and Equations of Motion}
+For particles described by a continous potential energy function, the
+forces acting upon those particles will change every time they move,
+or one of the particles they are interacting with moves. Due to this,
+the motion of all particles are coupled, giving rise to a many-body
+problem with no analytic solution. Therefore, finite difference
+methods of integration must be used in order to propogate the
+particles through time.
 
+While there exist a large number of algorithms for propogating
+particles through time under a potential as described above, they are
+not all equal. The general idea for each method is to take small steps
+through time ($\delta t$) by knowing the position and momenta for
+each of the $N$ particles at a previous time. Knowing these
+quantities, the forces are calculated from the position, and the
+positions and momenta are updated accordingly. This results in a new
+$\mathbf{r}^N$ configuration, and the method iterates again. 
 
-We begin by considering some atom with position $\vec{r}(t)$ at some
-time $t$, and we Taylor-expand about this position.
+The main difference between each integration scheme is what data is
+stored between steps. In the \textit{Verlet} method, two sets of
+positions are stored as well as a single set of accelerations. The
+velocity terms do not appear explicitly but can be computed from the
+two sets of positions. In the \textit{Leap Frog} method, the positions
+and velocities are stored at a half-step difference. When the
+positions are known at a half-step forward in time, the new velocities are
+computed and \'leap-frog\' over the positions. While this method is an
+improvement over the Verlet algorithm as the velocities are computed
+directly, the positions and velocities are not known at the same time
+without further calculations.
 
-Integrators, velocity verlet, shake, etc. Ensembles, calculation of
-pressure and temperature. Leach had a great explanation of these.
+In our work, the \textit{velocity Verlet} method was implemented. In
+this integration scheme the positions, velocities, and accelerations
+are known at the same time. Given an initial set of positions at time
+$t$, the accelerations $\mathbf{a}(t)$ can be computed from Equation
+\eqref{eq:accel}. Together with the velocities at $t$, the future
+values of these quantities can be determined.
+\begin{equation}\label{eq:vv-r}
+\mathbf{r}(t+\delta t) = \mathbf{r}(t) + \delta t \mathbf{v}(t) +
+\frac{1}{2}t^2\mathbf{a}(t)
+\end{equation}
+\begin{equation}\label{eq:vv-v}
+\mathbf{v}(t+ \delta t) = \mathbf{v}(t) + \frac{1}{2}\delta
+t[\mathbf{a}(t) + \mathbf{a}(t + \delta t)]
+\end{equation}
+This method has to be implemented in three steps, as the accelerations
+at times $t$ and $t + \delta t$ must be known to update the
+velocities. In the first step, the positions are updated to
+$t + \delta t$ using the velocities and accelerations at time $t$. In
+the second step, the velocities at time $t + \frac{1}{2} \delta t$ are
+computed.
+\begin{equation}\label{eq:vv-v2}
+\mathbf{v}(t+\frac{1}{2}\delta t) = \mathbf{v}(t) + \frac{1}{2}\delta t
+\mathbf{a}(t)
+\end{equation}
+Forces are computed using the new positions $\mathbf{r}(t + \delta
+t)$, and from these forces the new accelerations $\mathbf{a}(t +
+\delta t)$ are determined. Lastly the velocities at time $t + \delta
+t$ are computed by
+\begin{equation}\label{eq:vv-v3}
+\mathbf{v}(t+\delta t) = \mathbf{v}(t+\frac{1}{2}\delta t) +
+\frac{1}{2}\delta \mathbf{a}(t + \delta t)
+\end{equation}
+
+\subsubsection{Time Averages and Ensemble Averages}
+Consider a property $A$ that is dependent on the positions and momenta
+of the $N$ particles in the system, then the instantaneous value of
+the property $A$ can be expressed as
+$A(\mathbf{r}^N(t),\mathbf{p}^N(t))$. As the positions and momenta of
+the particles evolve, the value of $A$ fluctuates. During an
+experiment, a \textit{time average} of $A$ is measured for a large
+collection of particles. As the duration of the experiment increases,
+the value of the measured property approaches the  `true` value.
+\begin{equation}\label{eq:A-ave}
+A_{\mathrm{ave}} = \mathrm{lim}_{\tau \to \infty} \frac{1}{\tau} \int_{t=0}^{\tau}
+A(\mathbf{r}^N(t),\mathbf{p}^N(t))dt
+\end{equation}
+
+In theory, it is straightforward to compute the time averaged value of
+$A$ from a computer simulation. As described previously, the positions
+and velocities can be integrated through time using Newton's Second
+Law, and for each configuration of the system
+$A(\mathbf{r}^N(t),\mathbf{p}^N(t))$ could be computed. The issue
+arises when considering a macroscopic number of particles
+($10^{23}$), as the initial calculation of the forces isn't even
+feasible. Instead, we turn to statistical mechanics as a connection
+between a microscopic system ($10^2 - 10^6$ particles) and the
+macroscopic experimental observation. Here, instead of considering one
+large system, we evolve a large number of replications of a smaller
+systems simultaneously. The average value of the property from these
+replicas is denoted as an \textit{ensemble average} with angle bars,
+$\langle \rangle$. 
+\begin{equation}\label{eq:A-ens}
+\langle A \rangle = \int \int d\mathbf{r}^N d\mathbf{p}^N
+A(\mathbf{r}^N,\mathbf{p}^N) \rho
+(\mathbf{r}^N,\mathbf{p}^N)
+\end{equation}
+Equation \eqref{eq:A-ens} is written with as double integral, although
+more accurately this equation indicates $6N$ integrals, one for each
+of the $6N$ position and momenta coordinates of the $N$ particles. The
+second term in the integrand, $ \rho(\mathbf{r}^N,\mathbf{p}^N)$, is
+the \textit{probability density} of the ensemble. It is a function
+which describes the relative probability of observing a specific
+configuration and distribution of momenta for the $N$ particles, given
+the energy of the configuration. If one is able to compute $\langle A
+\rangle$ by integrating over all possible configurations of the
+system, the resulting ensemble average of $A$ will be equal to the
+time average value of $A$ by the \textit{ergodic hypothesis}. 
 
 \subsubsection{Calculation of Thermodynamic Properties}
 The instantaneous temperature, $T$, of a collection of $N$ molecules
@@ -372,7 +479,7 @@ and imposed quantites.
 %%%%%%%%%%%%%%%%%%%%%%%%
 % The grand intro, ancient greeks, life as we know it, etc.
 %%%%%%%%%%%%%%%%%%%%%%%%
-\section{A Passion for Water}
+\section{H$_2$O: A Simple Molecule with Mighty Implications}
 Water is the simplest compound of the two most common reactive
 elements in the unvierse and it the second most common molecule in the
 universe (behind hydrogen, H2). It is composed of two atoms of
