@@ -339,11 +339,11 @@ expansion of the potential energy to include only the one-body and
 two-body interaction terms, and consider only those two-body terms
 which are pairwise additive. That is, the potential
 \begin{equation}\label{eq:potPair}
-\mathscr{U}(\mathbf{r}^N) = \sum_i^N U(\mathbf{r}_i) + \sum_{i<j}^N U(r_{i,j})
+\mathscr{U}(\mathbf{r}^N) = \sum_i^N U(\mathbf{r}_i) + \sum_{i<j}^N U(r_{ij})
 \end{equation}
 where $\mathbf{r}_i$ is the absolute position of particle $i$, and
-$r_{i,j}$ is the scalar distance between particles $i$ and $j$,
-$r_{i,j} = | \mathbf{r}_i - \mathbf{r}_j|$. While this may seem like
+$r_{ij}$ is the scalar distance between particles $i$ and $j$,
+$r_{ij} = | \mathbf{r}_i - \mathbf{r}_j|$. While this may seem like
 an extreme restriction on the total potential, however, we will see
 models of this form still perform quite well. Generally, the terms
 incorporated into Equation \ref{eq:potPair} fall into one of two
@@ -361,11 +361,11 @@ between particles.
 In 1924, J. E. Lennard-Jones proposed a pairwise additive
 non-bonded potential for a system of soft-spheres.
 \begin{equation}\label{eq:LJ}
-U(r_{i,j}) = k\epsilon\Bigg[ \Big( \frac{\sigma}{r_{i,j}}\Big)^n - \Big(\frac{\sigma}{r_{i,j}}\Big)^m\Bigg]
+U(r_{ij}) = k\epsilon_{ij}\Bigg[ \Big( \frac{\sigma_{ij}}{r_{ij}}\Big)^n - \Big(\frac{\sigma_{ij}}{r_{ij}}\Big)^m\Bigg]
 \end{equation}
 where
 \begin{equation}\label{eq:LJ2}
-k = \frac{n}{n-m} \Big(\frac{n}{m}\Big)^{m/(n-m)}
+k = \frac{n}{n-m} \Big(\frac{n}{m}\Big)^{m/(n-m)}.
 \end{equation}
 With this simple model, Lennard-Jones was able to account for both
 short-ranged repulsive forces as well as long-range attractive
@@ -378,19 +378,47 @@ no physical justification for it, the short-ranged attraction term is
 often set to $n=12$ primarily due to ease of computation. With these
 values for $m$ and $n$ the resulting Lennard-Jones model becomes
 \begin{equation}\label{eq:LJ3}
-U(r_{i,j}) =
-4\epsilon\Bigg[\Big(\frac{\sigma}{r_{i,j}}\Big)^{12}-\Big(\frac{\sigma}{r_{i,j}}\Big)^{6}\Bigg]
+U(r_{ij}) =
+4\epsilon_{ij}\Bigg[\Big(\frac{\sigma_{ij}}{r_{ij}}\Big)^{12}-\Big(\frac{\sigma_{ij}}{r_{ij}}\Big)^{6}\Bigg]
 \end{equation} 
-The remaining two parameters to the model are $\sigma$, the distance
-at which $U(r_{i,j})$ goes to zero, and $\epsilon$, the potential
-energy minimum which is located at $r_{i,j} = \sqrt[6]{2}\sigma$. While the
+The remaining two parameters to the model are $\sigma_{ij}$, the distance
+at which $U(r_{ij})$ goes to zero, and $\epsilon_{ij}$, the potential
+energy minimum which is located at $r_{ij} = \sqrt[6]{2}\sigma$. While the
 number and locations of Lennard-Jones sites within water models vary,
 the parameter $\sigma$ is commonly taken to be the molecular diameter
 and $\epsilon$ is often tuned to reproduce a certain region of the
-phase diagram. 
+phase diagram. Interactions between different types of particles
+requires a mixing of the parameters $\sigma$ and $\epsilon$. These are
+normally determined by the Lorentz-Berthelot mixing rules, where
+$\sigma_{ij}$ is determined by an algebraic mean 
+\begin{equation}\label{eq:sigma}
+\sigma_{ij} = \frac{1}{2} [\sigma_{ii} + \sigma_{jj}]
+\end{equation}
+and $\epsilon_{ij}$ is taken as the geometric mean of $\epsilon$ for
+particles $i$ and $j$. \cite{paper}
+\begin{equation}\label{eq:epsilon}
+\epsilon_{ij} = \sqrt{\epsilon_{ii}\epsilon_{jj}}
+\end{equation}
+
 
 A second non-bonded interaction we must consider is the appropriate
-treatment of charged particles.
+treatment of charged particles. Commonly, molecular mechanics
+forcefields represent molecular charges as point charges on atomic
+sites, coupled with short-ranged Lennard-Jones repulsions to prevent
+molecules from collapsing onto one another. Due to the long-ranged
+$r^{-1}$ decay of electrostatic interactions, calculating
+charge-charge interactions is often the most computationally demanding
+part of a molecular dynamics simulation. While there are many
+implementations of how to compute these interactions, Coulomb's law is
+the governing principle for these interactions.
+\begin{equation}\label{eq:coulomb}
+U_{charge}(r_{ij}) = \sum_{ij}\frac{q_i q_j e^2}{4 \pi \epsilon_0
+  r_{ij}}
+\end{equation}
+Here, $q_i$ and $q_j$ are the charges on particles $i$ and $j$, $e$ is
+the charge of an electron, and $\epsilon_0$ is the permittivity of
+free space. 
+
 
 Since the long-ranged interactions converge to zero slowly, cutoff
 radii are commonly employed. A cutoff radii is a distance at which the
@@ -400,6 +428,45 @@ forces. Due to this, a number of schemes have been proposed in which
 the truncation of the potential is smoothened out as to avoid
 discontinuities. In the work discussed here, the \textit{damped
   shifted force} method was utilized. 
+
+There are three bonded terms (often denoted as short-ranged
+interactions) which deserve discussion. Bonds between two atoms in a
+molecule, bends between three centrally connected atoms, and torsions
+between four consecutively bonded atoms. Bonds are often treated as
+harmonic oscillators, with a spring constant $k_{ij}$ set to mimic the
+stiffness of the bond and equilibrium distance set to the bond length
+$r_{ij}^0$.
+\begin{equation}\label{eq:bonds}
+U_{bond}(r_{ij}) = \frac{1}{2} k_{ij} (r_{ij} -r_{ij}^0)^2
+\end{equation}
+
+Similarly, bends within a molecule are also treated as a harmonic
+oscillator, with spring constant $k_{\theta_{ijk}}$ and equilibrium bend
+angle $\theta_{ijk}^0$. However, while the bonding potential is a
+function of the distance between particles $i$ and $j$, the bending
+potential is a function of the angle formed between three
+consecutively bonded atoms $i$, $j$, and $k$,
+\begin{equation}\label{eq:bend}
+\theta_{ijk} = \mathrm{cos}^{-1}\Bigg(\frac{\mathbf{r}_{ji} \cdot
+  \mathbf{r}_{jk}}{r_{ji}r_{jk}}\Bigg)
+\end{equation}
+where particle $j$ is the central atom. 
+\begin{equation}\label{eq:bend2}
+U_{bend}(\theta_{ijk}) = \frac{1}{2} k_{\theta_{ijk}} (\theta_{ijk} -
+\theta_{ijk}^0)^2
+\end{equation}
+
+
+
+\begin{equation}\label{eq:torsion}
+U_{torsion} = 
+\end{equation}
+
+\begin{equation}\label{eq:inversion}
+U_{inversion} = 
+\end{equation}
+
+
 
 
 
@@ -503,7 +570,7 @@ the phenomena.
 	\\\hline \hline
  	& \textbf{~~Balance Equations~~} & \textbf{~~Constitutive Equations~~}\\ \hline 
 	\textbf{~~Mass~~} & $\frac{\partial c (\vec{r}, t)}{\partial t} + \nabla \vec{j} = 0$ & $\vec{j} = -D \cdot \nabla c(\vec{r}, t)$\\
-	\textbf{~~Energy~~} & $C_p \frac{\partial T (\vec{r}, t)}{\partial t} + \nabla \vec{J} = 0$ & $\vec{J} = -\lambda \cdot nabla T(\vec{r}, t)$\\
+	\textbf{~~Energy~~} & $C_p \frac{\partial T (\vec{r}, t)}{\partial t} + \nabla \vec{J} = 0$ & $\vec{J} = -\lambda \cdot \nabla T(\vec{r}, t)$\\
 	\textbf{~~Momentum~~} & $\rho \frac{D \vec{v}(\vec{r}, t)}{Dt} + \nabla \overleftrightarrow{\sigma} = 0$ & $\sigma_{x,z} = -\eta \cdot \nabla_z (\rho v_x)$\\ \hline \hline
 \end{longtable}
 
