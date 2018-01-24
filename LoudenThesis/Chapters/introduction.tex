@@ -78,40 +78,73 @@ that the QLL is composed of a bilayer of water, and show that the
 shear viscosity ($\eta$) of the two layers are distinct from one
 another.
 
-\section{Molecular Simulations}
-Molecular simulations offers insight on the mechanisms
-driving emergent phenomena. Simulations are also useful in that we are
-able to probe systems at experimentally unachievable conditions, and
-also observe and decouple interactions. However, parameters for
-simulations are often dependent on real world observables obtained by
-experiments. In conjunction with this, it is important to understand
-the scope of the problem aimed to be solved by molecular simulation,
-in order to correctly identify which methodologies to use. 
+\section{Laplace's Demon}
+% Molecular simulations offers insight on the mechanisms
+% driving emergent phenomena. Simulations are also useful in that we are
+% able to probe systems at experimentally unachievable conditions, and
+% also observe and decouple interactions. However, parameters for
+% simulations are often dependent on real world observables obtained by
+% experiments. In conjunction with this, it is important to understand
+% the scope of the problem aimed to be solved by molecular simulation,
+% in order to correctly identify which methodologies to use. 
 
-In principle we know how to simulate a system of molecules with very
-high accuracy.  It is possible to achieve very high accuracy for a
-small number of particles using \textit{ab initio} quantum mechanics
-methodologies.
-
-
+% In principle we know how to simulate a system of molecules with very
+% high accuracy.  It is possible to achieve very high accuracy for a
+% small number of particles using \textit{ab initio} quantum mechanics
+% methodologies.
 
 
-\begin{figure}
-\includegraphics[width=\linewidth]{Figures/SimulationScale}
-\caption{\label{fig:SimulationScale} Different length scales in
-  numbers of molecules (here length of material) and corresponding
-  achievable simulation time for various molecular modeling
-  methodologies. High accuracy quantum mechanical methods (red and
-  orange) cannot simulate large numbers of molecules for long
-  times. Methods which reduce molecular detail and propogate by
-  classical mechanics (yellow and green) are able to achieve longer
-  simulation times for larger systems. Monte Carlo methods (blue)
-  remove the expense of computing dynamics altogether, and ultra
-  coarse-grained methods (violet) which approximate collections of
-  atoms as a single unit achieve even longer simulation times.}
-\end{figure}
 
 
+% \begin{figure}
+% \includegraphics[width=\linewidth]{Figures/SimulationScale}
+% \caption{\label{fig:SimulationScale} Different length scales in
+%   numbers of molecules (here length of material) and corresponding
+%   achievable simulation time for various molecular modeling
+%   methodologies. High accuracy quantum mechanical methods (red and
+%   orange) cannot simulate large numbers of molecules for long
+%   times. Methods which reduce molecular detail and propogate by
+%   classical mechanics (yellow and green) are able to achieve longer
+%   simulation times for larger systems. Monte Carlo methods (blue)
+%   remove the expense of computing dynamics altogether, and ultra
+%   coarse-grained methods (violet) which approximate collections of
+%   atoms as a single unit achieve even longer simulation times.}
+% \end{figure}
+In 1812, Pierre Simon Laplace published a manuscript entitled
+\textit{A Philosophical Essay on Probabilities} detailing his system
+of reasoning based on probabilities. Within this work, he describes
+the notion of casual or scientific determinism, that is, that all
+events are dictated by previously existing causes.
+ 
+\begin{displayquote}
+We may regard the present state of the universe as the effect of
+its past and the cause of its future. An intellect which at a certain
+moment would know all forces that set nature in motion, and all
+positions of all items of which nature is comped, if this intellect
+were also vast enough to submit these data to analysis, it would
+embrace in a single formula the movements of the greatest bodies of
+the universe and those of the tiniest atom; for such an intellect
+nothing would be uncertain and the future just like the past would be
+present before its eyes.
+\end{displayquote}
+
+This became known as Laplace's Demon, and a desire to confirm or
+refute this claim was a significant driving force in the development
+of statistical thermodynamics.  At the beginning of the 19th century,
+concepts of irreversibility, entropy, and the second law of
+thermodynamics suggested Laplace's Demon as being inaccurate.
+Stochastic models for chaos theory and quantum mechanics provided
+additional evidence against the claim, and it now agreed upon as
+untrue.
+
+Still, today we strive to achieve the premise that Laplace founded,
+relinquishing unobtainable predictablility of nature for
+representative models, stepping slowly towards understanding the
+universe. We have replaced the `powerful intellect` with computers,
+and actively develop algorithms to recursively solve these complex
+models. Through computer simulations we are becoming more proficient
+at understanding and predicting the world around us, from the motion
+of planets, to the properties of molecules.
 
 \section{Molecular Dynamics}
 In a general defintion, molecular dynamics (MD) simulations involve
@@ -241,15 +274,15 @@ $A$ from a computer simulation. As described previously, the positions
 and velocities can be integrated through time using Newton's Second
 Law, and for each configuration of the system
 $A(\mathbf{r}^N(t),\mathbf{p}^N(t))$ could be computed. The issue
-arises when considering a macroscopic number of particles
-($10^{23}$), as the initial calculation of the forces isn't even
-feasible. Instead, we turn to statistical mechanics as a connection
-between a microscopic system ($10^2 - 10^6$ particles) and the
-macroscopic experimental observation. Here, instead of considering one
-large system, we evolve a large number of replications of a smaller
-systems simultaneously. The average value of the property from these
-replicas is denoted as an \textit{ensemble average} with angle bars,
-$\langle$~ $\rangle$. 
+arises when considering a macroscopic number of particles ($10^{23}$),
+as calculation of even the initial time step is infeasible. Instead,
+we turn to statistical mechanics as a connection between a microscopic
+system ($10^2 - 10^6$ particles) and the macroscopic experimental
+observation. Here, instead of considering one large system, we evolve
+a large number of replications of a smaller systems
+simultaneously. The average value of the property from these replicas
+is denoted as an \textit{ensemble average} with angle bars, $\langle$~
+$\rangle$.
 \begin{equation}\label{eq:A-ens}
 \langle A \rangle = \int \int d\mathbf{r}^N d\mathbf{p}^N
 A(\mathbf{r}^N,\mathbf{p}^N) \rho
@@ -269,9 +302,12 @@ resulting ensemble average will be equal to the time average value
 ($A_{\mathrm{ave}} = \langle A \rangle$) by the \textit{ergodic
   hypothesis}.
 
-
+Does AandT have something on this in relation to computer time?
 
 \subsubsection{Calculation of Thermodynamic Properties}
+As the particles are evolving through time, there are several possible
+thermodynamic properties which we may wish to compute. 
+
 The instantaneous temperature, $T$, of a collection of $N$ molecules
 is described by their kinetic energy $K$ through the equipartition
 theorem.
@@ -358,6 +394,48 @@ other particles. In the absence of external forces, Equation
 term, and all the potential depends upon is the relative distance
 between particles. 
 
+There are three bonded terms (often referred to as short-ranged
+interactions) which deserve discussion. Bonds between two atoms in a
+molecule, bends between three centrally connected atoms, and torsions
+between four consecutively bonded atoms. Bonds are often treated as
+harmonic oscillators, with a spring constant $k_{ij}$ set to mimic the
+stiffness of the bond and equilibrium distance set to the bond length
+$r_{ij}^0$.
+\begin{equation}\label{eq:bonds}
+U_{bond}(r_{ij}) = \frac{1}{2} k_{ij} (r_{ij} -r_{ij}^0)^2
+\end{equation}
+
+Similarly, bends within a molecule are also treated as a harmonic
+oscillator, with spring constant $k_{\theta_{ijk}}$ and equilibrium bend
+angle $\theta_{ijk}^0$. However, while the bonding potential is a
+function of the distance between particles $i$ and $j$, the bending
+potential is a function of the angle formed between three
+consecutively bonded atoms $i$, $j$, and $k$,
+\begin{equation}\label{eq:bend}
+\theta_{ijk} = \mathrm{cos}^{-1}\Bigg(\frac{\mathbf{r}_{ji} \cdot
+  \mathbf{r}_{jk}}{|r_{ji}|~|r_{jk}|}\Bigg)
+\end{equation}
+where particle $j$ is the central atom. 
+\begin{equation}\label{eq:bend2}
+U_{bend}(\theta_{ijk}) = \frac{1}{2} k_{\theta_{ijk}} (\theta_{ijk} -
+\theta_{ijk}^0)^2
+\end{equation}
+
+A torsion describes a rotation of groups about a central bond, and is
+often expressed in terms of a cosine expansion.
+\begin{equation}\label{eq:torsion}
+U_{torsion}(\phi_{ijkl}) = c_1[1+\mathrm{cos}\phi_{ijkl}] + c_2[1-\mathrm{cos}(2\phi_{ijkl})]+c_3[1+\mathrm{cos}(3\phi_{ijkl})]
+\end{equation}
+Here, the angle $\phi_{ijkl}$ is defined as
+\begin{equation}\label{eq:torsion2}
+\mathrm{cos}\phi_{ijkl} = (\mathbf{\hat{r}}_{ij} \times
+\mathbf{\hat{r}}_{jk}) \cdot (\mathbf{\hat{r}}_{jk} \times
+\mathbf{\hat{r}}_{kl})
+\end{equation}
+and the coefficients $c_1$, $c_2$, and $c_3$ are terms describing the
+barrier for transitioning from a \textit{cis} to a \textit{trans}, or \textit{staggered} to
+\textit{eclipsed} conformations.
+
 In 1924, J. E. Lennard-Jones proposed a pairwise additive
 non-bonded potential for a system of soft-spheres.
 \begin{equation}\label{eq:LJ}
@@ -419,7 +497,6 @@ Here, $q_i$ and $q_j$ are the charges on particles $i$ and $j$, $e$ is
 the charge of an electron, and $\epsilon_0$ is the permittivity of
 free space. 
 
-
 Since the long-ranged interactions converge to zero slowly, cutoff
 radii are commonly employed. A cutoff radii is a distance at which the
 interactions between particles are truncated. However, truncation of
@@ -428,65 +505,6 @@ forces. Due to this, a number of schemes have been proposed in which
 the truncation of the potential is smoothened out as to avoid
 discontinuities. In the work discussed here, the \textit{damped
   shifted force} method was utilized. 
-
-There are three bonded terms (often denoted as short-ranged
-interactions) which deserve discussion. Bonds between two atoms in a
-molecule, bends between three centrally connected atoms, and torsions
-between four consecutively bonded atoms. Bonds are often treated as
-harmonic oscillators, with a spring constant $k_{ij}$ set to mimic the
-stiffness of the bond and equilibrium distance set to the bond length
-$r_{ij}^0$.
-\begin{equation}\label{eq:bonds}
-U_{bond}(r_{ij}) = \frac{1}{2} k_{ij} (r_{ij} -r_{ij}^0)^2
-\end{equation}
-
-Similarly, bends within a molecule are also treated as a harmonic
-oscillator, with spring constant $k_{\theta_{ijk}}$ and equilibrium bend
-angle $\theta_{ijk}^0$. However, while the bonding potential is a
-function of the distance between particles $i$ and $j$, the bending
-potential is a function of the angle formed between three
-consecutively bonded atoms $i$, $j$, and $k$,
-\begin{equation}\label{eq:bend}
-\theta_{ijk} = \mathrm{cos}^{-1}\Bigg(\frac{\mathbf{r}_{ji} \cdot
-  \mathbf{r}_{jk}}{r_{ji}r_{jk}}\Bigg)
-\end{equation}
-where particle $j$ is the central atom. 
-\begin{equation}\label{eq:bend2}
-U_{bend}(\theta_{ijk}) = \frac{1}{2} k_{\theta_{ijk}} (\theta_{ijk} -
-\theta_{ijk}^0)^2
-\end{equation}
-
-
-
-\begin{equation}\label{eq:torsion}
-U_{torsion} = 
-\end{equation}
-
-\begin{equation}\label{eq:inversion}
-U_{inversion} = 
-\end{equation}
-
-
-
-
-
-\subsubsection{Water Models}\label{sec:WaterModels}
-An investigation of the properties and dynamics of water anywhere in
-the phase diagram cannot be conducted without first critically
-analyzing the model proposed for the study. After XX years of
-simulating water, we are still optimizing and searching for geometries
-and distributions of charges and potential sites, mass sites, and many
-other parameters which will reproduce the phase diagram of water in
-closer detail. 
-
-Include a table of parameters for common water models.
-Include a table of properties estimated by water models, Tm, etc.
-
-This is also important for understanding the Appendix about a water
-model construction.
-
-In this section we will discuss the different water models used in the
-literature, and reasons why to use each one. 
 
 
 \subsection{Boundary Conditions}
@@ -554,6 +572,27 @@ near liquid-gas critical points, observing phase transitions, and
 long-wavelength plasmons. However, unnecessarily large unit
 cells require an increasing number of particles in the simulation, and
 resulting computational times intractable. 
+
+
+
+\subsubsection{Water Models}\label{sec:WaterModels}
+An investigation of the properties and dynamics of water anywhere in
+the phase diagram cannot be conducted without first critically
+analyzing the model proposed for the study. After XX years of
+simulating water, we are still optimizing and searching for geometries
+and distributions of charges and potential sites, mass sites, and many
+other parameters which will reproduce the phase diagram of water in
+closer detail. 
+
+Include a table of parameters for common water models.
+Include a table of properties estimated by water models, Tm, etc.
+
+This is also important for understanding the Appendix about a water
+model construction.
+
+In this section we will discuss the different water models used in the
+literature, and reasons why to use each one. 
+
 
 \subsection{Transport Properties}
 Transport phenomena are processes that describe the transfer (flux) of
