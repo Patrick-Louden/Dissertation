@@ -306,11 +306,11 @@ Does AandT have something on this in relation to computer time?
 
 \subsubsection{Calculation of Thermodynamic Properties}
 As the particles are evolving through time, there are several possible
-thermodynamic properties which we may wish to compute. 
-
-The instantaneous temperature, $T$, of a collection of $N$ molecules
-is described by their kinetic energy $K$ through the equipartition
-theorem.
+thermodynamic properties which we may wish to compute. Among the
+properties most commonly desired to be known are the temperature and
+pressure of the system of particles.  The instantaneous temperature,
+$T$, of a collection of $N$ molecules is described by their kinetic
+energy $K$ through the equipartition theorem.
 \begin{equation}\label{Temperature}
 T = \frac{2}{fk_B}\Bigg( \sum_{i=1}^{N} \frac{1}{2} m_i {\bf v}_i^T \cdot {\bf v}_i +
 \sum_{i=1}^{N_{\mathrm{linear}}+N_{\mathrm{non-linear}}}  \frac{1}{2} {\bf j}_i^T \cdot
@@ -400,7 +400,13 @@ molecule, bends between three centrally connected atoms, and torsions
 between four consecutively bonded atoms. Bonds are often treated as
 harmonic oscillators, with a spring constant $k_{ij}$ set to mimic the
 stiffness of the bond and equilibrium distance set to the bond length
-$r_{ij}^0$.
+$r_{ij}^0$. The spring constant is determined from the frequency of
+the bond $\omega$ and the reduced mass $\mu_{ij}$ of the two atoms in the
+bond.
+\begin{equation}\label{eq:kij}
+\omega = \sqrt{\frac{k_{ij}}{\mu_{ij}} }
+\end{equation}
+
 \begin{equation}\label{eq:bonds}
 U_{bond}(r_{ij}) = \frac{1}{2} k_{ij} (r_{ij} -r_{ij}^0)^2
 \end{equation}
@@ -488,7 +494,7 @@ $r^{-1}$ decay of electrostatic interactions, calculating
 charge-charge interactions is often the most computationally demanding
 part of a molecular dynamics simulation. While there are many
 implementations of how to compute these interactions, Coulomb's law is
-the governing principle for these interactions.
+at the heart of the methods.
 \begin{equation}\label{eq:coulomb}
 U_{charge}(r_{ij}) = \sum_{ij}\frac{q_i q_j e^2}{4 \pi \epsilon_0
   r_{ij}}
@@ -496,6 +502,130 @@ U_{charge}(r_{ij}) = \sum_{ij}\frac{q_i q_j e^2}{4 \pi \epsilon_0
 Here, $q_i$ and $q_j$ are the charges on particles $i$ and $j$, $e$ is
 the charge of an electron, and $\epsilon_0$ is the permittivity of
 free space. 
+
+Number of bonded terms goes as $N$, but number non-bonded interactions
+goes as $N^2$. For LJ interactions, the potential at $2.5\sigma$ is just $1 \%$ of its
+value at $\sigma$. This is due to rapidly falling off potential of
+$r^{-6}$, and is commonly dealt with by implementing a cutoff radius
+for non-bonded interactions, while applying a minimum image
+convention. Any interactions with molecules beyond the cutoff are set
+to zero. Make cutoff small enough that particle doesn't see its own
+image. Neighbor-lists make cutoffs worthwhile, otherwise we would have
+to compute all pairwise distance each timestep to determine if we
+should compute potential and forces or not. In larger systems, a cell
+index method can be used where the molecules are cast into mini cells,
+and then neighbor lists are constructed from the 26 cells surrounding
+the cell in question (total of 27 cells then). Sorting molecules is on
+order $N$, and sorting neighbors is cheap as long as the total number
+of cells is greater than 27. 
+
+A cutoff introduces discontinuities in the potential and thus the
+force calculations. One way around this is to shift the potential by
+its value at the cutoff.
+\begin{equation}
+v'(r) = v(r) - v_c r \le r_c
+\end{equation}
+\begin{equation}
+v'(r) = 0 r > r_c
+\end{equation}
+where $r_c$ is the cutoff radius and $v_c$ is the potential at the
+cutoff. The additive constant vanishes upon taking the derivative to
+compute the forces, and energy conservation is better than with the
+un-shifted potential. However, there is still a problem of a
+discontinuity in the force with this method. A second solution is to
+use a switching function , to smoothly transition the potential to
+zero at the cutoff. Switching functions can take several forms, one
+such example is the following polynomial
+\begin{equation}
+v'(r) = v(r)\Big[1-2\Big(\frac{r}{r_c}\Big)^2 + 
+4\Big(\frac{r}{r_c}\Big)^4 \Big]
+\end{equation}
+The switching function has a value of $1$ at $r=0$ and $0$ at
+$r = r_c$. Switching functions are normally implemented at some
+distance close to the cutoff, so that only a small amount of the
+potential is perturbed. This prevents asparious affects such as
+deviation from equilibrium structures. Need the first derivative of
+the switching function at the end points to be zero to ensure the
+forces approach zero smoothly, and second derivitives to be zero for
+stability of integration algorithm. 
+\begin{equation}
+S(r) = c_0 + c_1\Big[\frac{r-r_l}{r_u-r_l}\Big] +
+c_2\Big[\frac{r-r_l}{r_u - r_l}\Big]^2
++ c_3\Big[\frac{r-r_l}{r_u-r_l}\Big]^3 +
+c_4\Big[\frac{r-r_l}{r_u-r_l}\Big]^4 +
+c_5\Big[\frac{r-r_l}{r_u-r_l}\Big]^5
+\end{equation}
+The set of coefficients that satisfies the derivative stipulations are
+$(c_0 = 1, c_1 = 0, c_2 = 0, c_3 = -10, c_4 = 15, c_5 = -6)$.
+
+Interactions that decay no faster than $r^{-n}$ where $n$ is the
+dimensionality of the system can pose a problem in that they may not
+converge for distances greater than the size of the simulation
+box. Charge-charge interacations go as $r^{-1}$, and therefore are
+quite problematic. There have been several methods suggested to handle
+this issue, the most famous of which is the method presented by Ewald
+in 1921. The Ewald Sum requires replicas of the simulation cell for
+computation of $U_{charge}(r_{ij})$. These charges are then wrapped by
+a Gaussian of opposite charge, creating a mask around the
+charges. Doing so requires to corrections to be made, first, an
+oppositely charged Gaussian must also be added for each one introduced
+around a charge, and secondly, since the Gaussians interact with
+themselves, a self correction piece must be added as well. Depending
+on the material being modeled, a dipole correction might also need to
+be added. The charges and the Gaussians wrapped about them are added
+up in real space, while the oppositely charged Gaussians are added in
+reciprocal space. This method is computationaly very expensive,
+however, it is the most accurate way of computing the charge-charge
+interactions in molecular simulation. 
+
+An alternative approach to the demanding Ewald Sum is the method first
+developed by Wolf \textit{et al.}, and later expanded upon by Fennel
+and Gezelter.\cite{Fennell06} This method combines the shifting of the
+potential described above with a dampening of the electrostatic
+interactions in a similar fashion as the Ewald Summation. The first
+key observation is that the electrostatic interactions are shorter
+ranged than $r^{-1}$ in condensed phases. Wolf \textit{et al.}
+observed that creating a neutral cutoff sphere energy resulted in a
+good conservation of energy. 
+
+\begin{equation}
+V_\textrm{SP}(r) =      \begin{cases}
+v(r)-v_\textrm{c} &\quad r\leqslant R_\textrm{c} \\ 0 &\quad r >
+R_\textrm{c}  
+\end{cases},
+\label{eq:shiftingPotForm}
+\end{equation}
+and shifted force,
+\begin{equation}
+V_\textrm{SF}(r) =      \begin{cases}
+v(r)-v_\textrm{c}-\left(\frac{d v(r)}{d r}\right)_{r=R_\textrm{c}}(r-R_\textrm{c
+})
+&\quad r\leqslant R_\textrm{c} \\ 0 &\quad r > R_\textrm{c} 
+                                                \end{cases},
+\label{eq:shiftingForm}
+\end{equation}
+ 
+
+\begin{equation}
+\begin{split}
+V_\mathrm{DSF}(r) = q_iq_j\Biggr{[} & \frac{\mathrm{erfc}\left(\alpha r \right)}{r} -\frac{\mathrm{erfc}\left(\alpha R_\mathrm{c} \right) }{R_\mathrm{c}} \\
+ & \left. +\left(\frac{\mathrm{erfc}\left(\alpha
+R_\mathrm{c}\right)}{R_\mathrm{c}^2}+\frac{2\alpha}{\pi^{1/2}}\frac{\exp\left(-\alpha^2R_\mathrm{c}^2\right)}{R_\mathrm{c}}\right)\left(r-R_\mathrm{c}\right)
+\right] \quad r\leqslant R_\textrm{c} 
+\label{eq:DSFPot}
+\end{split}
+\end{equation}
+The derivative of the above potential will lead to the following forces,
+\begin{equation}
+\begin{split}
+F_\mathrm{DSF}(r) =
+q_iq_j\Biggr{[}&\left(\frac{\textrm{erfc}\left(\alpha r\right)}{r^2}+\frac{2\alpha}{\pi^{1/2}}\frac{\exp{\left(-\alpha^2r^2\right)}}{r}\right) \\ &\left.-\left(\frac{\textrm{erfc}\left(\alpha R_{\textrm{c}}\right)}{R_{\textrm{c}}^2}+\frac{2\alpha}{\pi^{1/2}}\frac{\exp{\left(-\alpha^2R_{\textrm{c}}^2
+\right)}}{R_{\textrm{c}}}\right)\right] \quad r\leqslant R_\textrm{c}.
+\label{eq:DSFForces}
+\end{split}
+\end{equation}
+
+
 
 Since the long-ranged interactions converge to zero slowly, cutoff
 radii are commonly employed. A cutoff radii is a distance at which the
@@ -506,6 +636,9 @@ the truncation of the potential is smoothened out as to avoid
 discontinuities. In the work discussed here, the \textit{damped
   shifted force} method was utilized. 
 
+
+
+Constraints, rigid molecules, etc.
 
 \subsection{Boundary Conditions}
 Having discussed how to evolve particles positions and momenta through
@@ -578,14 +711,20 @@ resulting computational times intractable.
 \subsubsection{Water Models}\label{sec:WaterModels}
 An investigation of the properties and dynamics of water anywhere in
 the phase diagram cannot be conducted without first critically
-analyzing the model proposed for the study. After XX years of
+analyzing the model proposed for the study. After almost 50 years of
 simulating water, we are still optimizing and searching for geometries
 and distributions of charges and potential sites, mass sites, and many
 other parameters which will reproduce the phase diagram of water in
-closer detail. 
+closer detail.
+
+The first simulation of water was performed by Rahman and Stillinger
+in 1971\cite{Rahman1971}.
 
 Include a table of parameters for common water models.
 Include a table of properties estimated by water models, Tm, etc.
+Water models by the number of sites, types of interactions at each
+site, etc. 
+
 
 This is also important for understanding the Appendix about a water
 model construction.
