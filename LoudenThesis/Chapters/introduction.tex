@@ -36,32 +36,32 @@
 This introductory chapter begins with an overview of molecular
 simulations, focusing primarily on molecular dynamics methods. With a
 firm grasp of these techniques, a review of past and current
-investigations of water and ice are presented. The remaining chapters
+investigations of water and ice is presented. The remaining chapters
 encompass my contributions to our understanding of hydrodynamic
-friction for a slider moving across the surface of ice.
+friction at the surface of ice.
 
 Chapter \ref{chap:Methods} details the construction of the
 ice-I$_\mathrm{h}$ / water systems, and outlines the velocity shearing
 and scaling variant of reverse non-equilibrium molecular dynamics
 method used to create a shear through the system without causing bulk
 melting. Molecular forcefield parameters are discussed and simulation
-methodologies pertaining to the simulations conducted in Chapters
+methodologies pertaining to those conducted in Chapters
 \ref{chap:Str} - \ref{chap:Friction} are also described.
 
 In Chapter \ref{chap:Str} we begin our characterization of the
 ice-I$_\mathrm{h}$ / water interface by two structural measures, the
 local density and the local tetrahedral order parameter. Following
 this, we present an investigation of the dynamics of the water
-molecules in Chapter \ref{chap:Dyn}, namely the self diffusion
+molecules in Chapter \ref{chap:Dyn}, namely, the self diffusion
 constant, the time dependent reorientation of molecules, and the
 hydrogen bond jump rates. In both chapters we quantify the spatial
-transition from bulk liquid to ice, and the effect shearing presents
-to these local order parameters and dynamics.
+transition from bulk liquid to ice, and the effect shearing has
+on these order parameters and dynamics.
 
 An expression for friction coefficients ($\kappa$) appropriate for
 negative slip boundary conditions is presented in Chapter
 \ref{chap:Friction}. The obtained values of $\kappa$ are found to be
-invariant to shear rate and direction of the shear relative to the ice
+invariant of shear rate and direction of the shear relative to the ice
 crystal surface topography. However, noncongruent friction
 coefficients are obtained for the four facets of ice investigated;
 although simulations with different models agree on the relative
@@ -72,8 +72,10 @@ surface features and hydrogen bond lifetimes are investigated. Lastly
 a simple momentum transmission model is presented which agrees well
 with the results for both the SPC/E and TIP4P/Ice simulations.
 
-In Chapter \ref{chap:QLL}, we discuss the viscous shearing of the
-surface premelt quasi-liquid layer (QLL) of ice. We present evidence
+In Chapter \ref{chap:QLL}, we investigate the surface premelting of
+ice. We quantify the spatial transition from bulk ice to the
+quasi-liquid layer (QLL), as well as characterize the structure and
+dynamics of this surface premelt. We present evidence
 that the QLL is composed of a bilayer of water, and show that the
 shear viscosity ($\eta$) of the two layers are distinct from one
 another.
@@ -112,9 +114,9 @@ another.
 % \end{figure}
 In 1812, Pierre Simon Laplace published a manuscript entitled
 \textit{A Philosophical Essay on Probabilities} detailing his system
-of reasoning based on probabilities. Within this work, he describes
-the notion of casual or scientific determinism, that is, that all
-events are dictated by previously existing causes.
+of reasoning based on probabilities.\cite{LaplaceXX} Within this work,
+he describes the notion of casual or scientific determinism, that is,
+that all events are dictated by previously existing causes:
  
 \begin{displayquote}
 We may regard the present state of the universe as the effect of
@@ -138,27 +140,29 @@ additional evidence against the claim, and it now agreed upon as
 untrue.
 
 Still, today we strive to achieve the premise that Laplace founded,
-relinquishing unobtainable predictablility of nature for
-representative models, stepping slowly towards understanding the
-universe. We have replaced the `powerful intellect` with computers,
-and actively develop algorithms to recursively solve these complex
-models. Through computer simulations we are becoming more proficient
-at understanding and predicting the world around us, from the motion
-of planets, to the properties of molecules.
+relinquishing the unobtainable asbolute predictablility of nature for
+solvable representative models, stepping slowly towards understanding
+the universe. We have replaced the `powerful intellect` with
+computers, and develop algorithms to recursively solve these
+complex models. Through computer simulations we are becoming more
+proficient at understanding and predicting the world around us, from
+the motion of planets, to the properties of molecules.
 
 \section{Molecular Dynamics}
 In a general defintion, molecular dynamics (MD) simulations involve
 popogating molecules through time by Netwon's Second Law. The models
 used to describe the molecules are often constructed using classical
-mechanics, treating atoms as hard spheres, and bonds between atoms
+mechanics, treating atoms as hard spheres and bonds between atoms
 within a molecule as a spring. Charges are also handled classically,
 and depending on the model the charges can be static (restricted to
 some initial position), or dynamic, in which they allowed to move
 around the molecule. While hybrid quantum / classical molecular
 dynamics methods exist, we restrict ourselves here to the purely
-classical case. Several excellent books have been published which
-cover molecular dynamics, from the classic text of Allan and Tildesey,
-to the modern broad work of Leach.\cite{AllanXX,LeachYY}
+classical case. In the following sections, I outline the basis of
+classical molecular dynamics simulations. References for what is
+presented comes from several excellent books which cover molecular
+dynamics, from the classic text of Allan and Tildesey, to the modern
+broad reaching work of Leach.\cite{AllanXX,LeachYY}
 
 We begin by considering a many-body expansion of the configurational
 potential energy $\mathscr{U}$ for an isolated collection of $N$ particles with
@@ -171,11 +175,11 @@ Most commonly, the expansion is truncated at the two-body term as
 higher order terms have proven computationally infeasible in the
 past. However, with the development of faster computers, Paesani
 \textit{et al.} has recently shown that incorporating higher order
-terms leads to a more accurate water model.\cite{PaesaniXX} These
-details will be discussed in more details in Section
-\ref{sec:WaterModels}, but for now we will restrict ourselves to a
+terms leads to a more accurate water model.\cite{PaesaniXX} A more
+detailed discussion on water models will be presented in Section
+\ref{sec:WaterModels}; for now, we will restrict ourselves to a
 many-body expansion up to the two-body term. We further restrict
-ourelves to a potential where no dissapative forces act between
+ourselves to a potential where no dissapative forces act between
 particles, from this, we can obtain the force on particle $i$.
 \begin{equation}\label{eq:force}
 \mathbf{F_i} = -\frac{\partial \mathscr{U}(\mathbf{r}^N)}{\partial \mathbf{r}_i}
@@ -193,21 +197,20 @@ positions.
 
 \subsubsection{Finite Difference Methods and Equations of Motion}
 For particles described by a continous potential energy function, the
-forces acting upon those particles will change every time they move,
-or one of the particles they are interacting with moves. Due to this,
-the motion of all particles are coupled, giving rise to a many-body
-problem with no analytic solution. Therefore, finite difference
-methods of integration must be used in order to propogate the
-particles through time.
+forces acting upon each of the $N$ particles will change every time a
+single particles moves. Due to this, the motion of all particles are
+coupled, giving rise to a many-body problem with no analytic
+solution. Therefore, finite difference methods of integration must be
+used in order to propogate the particles through time.
 
 While there exist a large number of algorithms for propogating
-particles through time under a potential as described above, they are
-not all equal. The general idea for each method is to take small steps
-through time ($\delta t$) by knowing the position and momenta for
-each of the $N$ particles at a previous time. Knowing these
-quantities, the forces are calculated from the position, and the
-positions and momenta are updated accordingly. This results in a new
-$\mathbf{r}^N$ configuration, and the method iterates again. 
+particles, they are not all equal. The general idea for each method is
+to take small steps through time ($\delta t$) by knowing the position
+and momenta for each of the $N$ particles at a previous time
+($t-\delta t$). Knowing these quantities, the forces are calculated
+from the position, and the positions and momenta are updated
+accordingly. This results in a new $\mathbf{r}^N$ configuration, and
+the method iterates again.
 
 The main difference between each integration scheme is what data is
 stored between steps. In the \textit{Verlet} method, two sets of
@@ -271,18 +274,17 @@ A(\mathbf{r}^N(t),\mathbf{p}^N(t))dt
 
 In theory, it is straightforward to compute the time averaged value of
 $A$ from a computer simulation. As described previously, the positions
-and velocities can be integrated through time using Newton's Second
-Law, and for each configuration of the system
-$A(\mathbf{r}^N(t),\mathbf{p}^N(t))$ could be computed. The issue
-arises when considering a macroscopic number of particles ($10^{23}$),
-as calculation of even the initial time step is infeasible. Instead,
-we turn to statistical mechanics as a connection between a microscopic
-system ($10^2 - 10^6$ particles) and the macroscopic experimental
-observation. Here, instead of considering one large system, we evolve
-a large number of replications of a smaller systems
-simultaneously. The average value of the property from these replicas
-is denoted as an \textit{ensemble average} with angle bars, $\langle$~
-$\rangle$.
+and velocities can be integrated through time, and for each
+configuration of the system $A(\mathbf{r}^N(t),\mathbf{p}^N(t))$ could
+be computed. The issue arises when considering a macroscopic number of
+particles ($10^{23}$), as calculation of even the initial time step is
+infeasible. Instead, we turn to statistical mechanics as a connection
+between a microscopic system ($10^2 - 10^6$ particles) and the
+macroscopic experimental observation. Here, instead of considering one
+large system, we evolve a large number of replications of a smaller
+systems simultaneously. The average value of the property from these
+replicas is denoted as an \textit{ensemble average} with angle bars,
+$\langle$~ $\rangle$.
 \begin{equation}\label{eq:A-ens}
 \langle A \rangle = \int \int d\mathbf{r}^N d\mathbf{p}^N
 A(\mathbf{r}^N,\mathbf{p}^N) \rho
@@ -305,12 +307,12 @@ resulting ensemble average will be equal to the time average value
 Does AandT have something on this in relation to computer time?
 
 \subsubsection{Calculation of Thermodynamic Properties}
-As the particles are evolving through time, there are several possible
+As the particles evolve through time, there are several possible
 thermodynamic properties which we may wish to compute. Among the
-properties most commonly desired to be known are the temperature and
-pressure of the system of particles.  The instantaneous temperature,
-$T$, of a collection of $N$ molecules is described by their kinetic
-energy $K$ through the equipartition theorem.
+properties most commonly desired are the temperature and pressure.
+The instantaneous temperature, $T$, of a collection of $N$ molecules
+is described by their kinetic energy $K$ through the equipartition
+theorem.
 \begin{equation}\label{Temperature}
 T = \frac{2}{fk_B}\Bigg( \sum_{i=1}^{N} \frac{1}{2} m_i {\bf v}_i^T \cdot {\bf v}_i +
 \sum_{i=1}^{N_{\mathrm{linear}}+N_{\mathrm{non-linear}}}  \frac{1}{2} {\bf j}_i^T \cdot
@@ -321,16 +323,20 @@ where $f$ is the total number of degrees of freedom in the system,
 \begin{equation}
 f = 3 N + 2 N_{\mathrm{linear}} + 3 N_{\mathrm{non-linear}} - N_{\mathrm{constraints}}
 \end{equation}
-$N_{linear}$ is the number of linear molecules, and $N_{non-linear}$
-is the total number of non-linear molecules in the system.
+$k_B$ is Boltzmann's constant, $N_{linear}$ is the number of linear
+molecules, and $N_{non-linear}$ is the total number of non-linear
+molecules in the system. The first sum includes the velocities of all
+$N$ molecules, while the second sum is over those with angular
+velocity $j_i$, and a moment of inertia
+$\overleftrightarrow{\mathsf{I}}_i$.
 
-In a similar manner the instantaneous pressure, $P$, of a collection
-of molecules can be obtained through the virial theorem of
-Clausius. The \textit{virial}, $W$, is defined by
+The instantaneous pressure, $P$, of a collection of molecules can be
+obtained through the virial theorem of Clausius. The \textit{virial},
+$W$, is defined by
 \begin{equation}\label{eq:virial}
-W = \sum_i^N x_i\dot{p}_{x_i}
+W = \sum_i^N r_i\dot{p}_{x_i}
 \end{equation}
-where $x_i$ is a coordinate such as the $x$ or $y$ dimension, and
+where $r_i$ is a coordinate such as the $x$ or $y$ dimension, and
 $\dot{p}_{x_i}$ is the first time derivitive of momentum, or force,
 along that coordinate. The virial theorem of Clausius states that the
 virial is equal to $-3Nk_BT$.
