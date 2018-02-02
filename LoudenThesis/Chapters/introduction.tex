@@ -266,7 +266,8 @@ $A(\mathbf{r}^N(t),\mathbf{p}^N(t))$. As the positions and momenta of
 the particles evolve, the value of $A$ fluctuates. During an
 experiment, a \textit{time average} of $A$ is measured for a large
 collection of particles. As the duration of the experiment increases,
-the value of the measured property approaches the  `true` value.
+the value of the measured property approaches the `true` value,
+$A_{\mathrm{ave}}$.
 \begin{equation}\label{eq:A-ave}
 A_{\mathrm{ave}} = \mathrm{lim}_{\tau \to \infty} \frac{1}{\tau} \int_{t=0}^{\tau}
 A(\mathbf{r}^N(t),\mathbf{p}^N(t))dt
@@ -292,7 +293,7 @@ A(\mathbf{r}^N,\mathbf{p}^N) \rho
 \end{equation}
 Equation \eqref{eq:A-ens} is written with as double integral, although
 more accurately this equation indicates $6N$ integrals, one for each
-of the $6N$ position and momentum coordinates of the $N$
+of the $3N$ position and $3N$ momentum coordinates of the $N$
 particles. The second term in the integrand,
 $ \rho(\mathbf{r}^N,\mathbf{p}^N)$, is the \textit{probability
   density} of the ensemble. It is a function which describes the
@@ -302,9 +303,10 @@ configuration. If one is able to compute $\langle A \rangle$ by
 integrating over all possible configurations of the system, the
 resulting ensemble average will be equal to the time average value
 ($A_{\mathrm{ave}} = \langle A \rangle$) by the \textit{ergodic
-  hypothesis}.
-
-Does AandT have something on this in relation to computer time?
+  hypothesis}. In practice, it is not often possible to integrate over
+all possible configurations. Instead, convergence of the property
+$\langle A \rangle$ is achieved once the system has explored a
+sufficient amount of phase space.
 
 \subsubsection{Calculation of Thermodynamic Properties}
 As the particles evolve through time, there are several possible
@@ -334,10 +336,10 @@ The instantaneous pressure, $P$, of a collection of molecules can be
 obtained through the virial theorem of Clausius. The \textit{virial},
 $W$, is defined by
 \begin{equation}\label{eq:virial}
-W = \sum_i^N r_i\dot{p}_{x_i}
+W = \sum_i^N r_i\dot{p}_{r_i}
 \end{equation}
 where $r_i$ is a coordinate such as the $x$ or $y$ dimension, and
-$\dot{p}_{x_i}$ is the first time derivitive of momentum, or force,
+$\dot{p}_{r_i}$ is the first time derivitive of momentum, or force,
 along that coordinate. The virial theorem of Clausius states that the
 virial is equal to $-3Nk_BT$.
 
@@ -372,24 +374,23 @@ accurate representation for the interactions between molecules, more
 commonly known as a forcefield. Generally, the functional form of the
 forcefield is structured as a balance between accurately capturing the
 pertinent physics and what is feasible in computing time. Here, we
-present functional forms of a forcefield commonly used for simulations
-of water, followed by a discussion of suitable parameters in a brief
-overview of the large body of literature surrounding water models.
+present functional forms for forcefields commonly used, followed by a
+discussion of suitable parameters in a brief overview of the large
+body of literature surrounding water models.
 
 Due to computational expense, it is common to truncate the many-body
 expansion of the potential energy to include only the one-body and
 two-body interaction terms, and consider only those two-body terms
-which are pairwise additive. That is, the potential
+which are pairwise additive. That is, the potential in Equation
+\eqref{eq:potE} becomes,
 \begin{equation}\label{eq:potPair}
 \mathscr{U}(\mathbf{r}^N) = \sum_i^N U(\mathbf{r}_i) + \sum_{i<j}^N U(r_{ij})
 \end{equation}
 where $\mathbf{r}_i$ is the absolute position of particle $i$, and
 $r_{ij}$ is the scalar distance between particles $i$ and $j$,
-$r_{ij} = | \mathbf{r}_i - \mathbf{r}_j|$. While this may seem like
-an extreme restriction on the total potential, however, we will see
-models of this form still perform quite well. Generally, the terms
-incorporated into Equation \ref{eq:potPair} fall into one of two
-categories, bonded and non-bonded interactions.
+$r_{ij} = | \mathbf{r}_i - \mathbf{r}_j|$. This may seem like an
+extreme restriction on the potential, however, we will see models of
+this structure still perform quite well. 
 
 The one-body term in Equation \eqref{eq:potPair} accounts for any
 external forces on the particles, such as an external electric
@@ -397,8 +398,9 @@ field. Their interaction with the field depends on the particle's
 absolute position in that field, not the relative distance between the
 other particles. In the absence of external forces, Equation
 \eqref{eq:potPair} reduces to just the two-body pairwise additive
-term, and all the potential depends upon is the relative distance
-between particles. 
+term, and the potential only depends upon the relative distance
+between particles. Generally, these terms fall into one of two
+categories, bonded and non-bonded interactions.
 
 There are three bonded terms (often referred to as short-ranged
 interactions) which deserve discussion. Bonds between two atoms in a
@@ -421,7 +423,7 @@ Similarly, bends within a molecule are also treated as a harmonic
 oscillator, with spring constant $k_{\theta_{ijk}}$ and equilibrium bend
 angle $\theta_{ijk}^0$. However, while the bonding potential is a
 function of the distance between particles $i$ and $j$, the bending
-potential is a function of the angle formed between three
+potential is more succinclty written as a function of the angle formed between three
 consecutively bonded atoms $i$, $j$, and $k$,
 \begin{equation}\label{eq:bend}
 \theta_{ijk} = \mathrm{cos}^{-1}\Bigg(\frac{\mathbf{r}_{ji} \cdot
@@ -451,7 +453,7 @@ barrier for transitioning from a \textit{cis} to a \textit{trans}, or \textit{st
 In 1924, J. E. Lennard-Jones proposed a pairwise additive
 non-bonded potential for a system of soft-spheres.
 \begin{equation}\label{eq:LJ}
-U(r_{ij}) = k\epsilon_{ij}\Bigg[ \Big( \frac{\sigma_{ij}}{r_{ij}}\Big)^n - \Big(\frac{\sigma_{ij}}{r_{ij}}\Big)^m\Bigg]
+U_{\mathrm{LJ}}(r_{ij}) = k\epsilon_{ij}\Bigg[ \Big( \frac{\sigma_{ij}}{r_{ij}}\Big)^n - \Big(\frac{\sigma_{ij}}{r_{ij}}\Big)^m\Bigg]
 \end{equation}
 where
 \begin{equation}\label{eq:LJ2}
@@ -468,12 +470,12 @@ no physical justification for it, the short-ranged attraction term is
 often set to $n=12$ primarily due to ease of computation. With these
 values for $m$ and $n$ the resulting Lennard-Jones model becomes
 \begin{equation}\label{eq:LJ3}
-U(r_{ij}) =
-4\epsilon_{ij}\Bigg[\Big(\frac{\sigma_{ij}}{r_{ij}}\Big)^{12}-\Big(\frac{\sigma_{ij}}{r_{ij}}\Big)^{6}\Bigg]
+U_{\mathrm{LJ}}(r_{ij}) =
+4\epsilon_{ij}\Bigg[\Big(\frac{\sigma_{ij}}{r_{ij}}\Big)^{12}-\Big(\frac{\sigma_{ij}}{r_{ij}}\Big)^{6}\Bigg].
 \end{equation} 
 The remaining two parameters to the model are $\sigma_{ij}$, the distance
-at which $U(r_{ij})$ goes to zero, and $\epsilon_{ij}$, the potential
-energy minimum which is located at $r_{ij} = \sqrt[6]{2}\sigma$. While the
+at which $U_{\mathrm{LJ}}(r_{ij})$ goes to zero, and $\epsilon_{ij}$, the potential
+energy minimum which is located at $r_{ij} = \sqrt[6]{2}\sigma_{ij}$. While the
 number and locations of Lennard-Jones sites within water models vary,
 the parameter $\sigma$ is commonly taken to be the molecular diameter
 and $\epsilon$ is often tuned to reproduce a certain region of the
@@ -495,35 +497,38 @@ A second non-bonded interaction we must consider is the appropriate
 treatment of charged particles. Commonly, molecular mechanics
 forcefields represent molecular charges as point charges on atomic
 sites, coupled with short-ranged Lennard-Jones repulsions to prevent
-molecules from collapsing onto one another. Due to the long-ranged
-$r^{-1}$ decay of electrostatic interactions, calculating
-charge-charge interactions is often the most computationally demanding
-part of a molecular dynamics simulation. While there are many
+molecules from collapsing onto one another. While there are many
 implementations of how to compute these interactions, Coulomb's law is
 at the heart of the methods.
 \begin{equation}\label{eq:coulomb}
-U_{charge}(r_{ij}) = \sum_{ij}\frac{q_i q_j e^2}{4 \pi \epsilon_0
+U_{\mathrm{charge}}(r_{ij}) = \sum_{ij}\frac{q_i q_j e^2}{4 \pi \epsilon_0
   r_{ij}}
 \end{equation}
 Here, $q_i$ and $q_j$ are the charges on particles $i$ and $j$, $e$ is
 the charge of an electron, and $\epsilon_0$ is the permittivity of
 free space. 
 
-Number of bonded terms goes as $N$, but number non-bonded interactions
-goes as $N^2$. For LJ interactions, the potential at $2.5\sigma$ is just $1 \%$ of its
-value at $\sigma$. This is due to rapidly falling off potential of
-$r^{-6}$, and is commonly dealt with by implementing a cutoff radius
-for non-bonded interactions, while applying a minimum image
-convention. Any interactions with molecules beyond the cutoff are set
-to zero. Make cutoff small enough that particle doesn't see its own
-image. Neighbor-lists make cutoffs worthwhile, otherwise we would have
-to compute all pairwise distance each timestep to determine if we
-should compute potential and forces or not. In larger systems, a cell
-index method can be used where the molecules are cast into mini cells,
-and then neighbor lists are constructed from the 26 cells surrounding
-the cell in question (total of 27 cells then). Sorting molecules is on
-order $N$, and sorting neighbors is cheap as long as the total number
-of cells is greater than 27. 
+For a system of $N$ molecules, the number of bonded terms goes as $N$
+and the number non-bonded interactions as $N^2$. Due to the
+long-ranged $r^{-1}$ decay of electrostatic interactions, calculating
+charge-charge interactions are often the most computationally
+demanding part of a molecular dynamics simulation. However, for
+Lennard-Jones interactions the potential at $r_{ij} = 2.5\sigma_{ij}$
+is just $1 \%$ of its value at $r_{ij} = \sigma_{ij}$. This is due to
+the rapidly falling off potential ($r^{-6}$). In order to save
+computational time, a cutoff radius is commonly imposed on the
+potential.  Any interactions with molecules beyond the cutoff are set
+to zero.
+
+% Make cutoff small enough that particle doesn't see its own
+% image. Neighbor-lists make cutoffs worthwhile, otherwise we would have
+% to compute all pairwise distance each timestep to determine if we
+% should compute potential and forces or not. In larger systems, a cell
+% index method can be used where the molecules are cast into mini cells,
+% and then neighbor lists are constructed from the 26 cells surrounding
+% the cell in question (total of 27 cells then). Sorting molecules is on
+% order $N$, and sorting neighbors is cheap as long as the total number
+% of cells is greater than 27.
 
 A cutoff introduces discontinuities in the potential and thus the
 force calculations. One way around this is to shift the potential by
