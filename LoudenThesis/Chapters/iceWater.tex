@@ -15,8 +15,7 @@ friction at the basal $\{0001\}$, prismatic $\{10\bar{1}0\}$,
 $\{11\bar{2}0\}$ facets of an ice-I$_\mathrm{h}$ crystal were
 performed. Contained in this chapter are the details of how these
 systems were constructed as well as the computational details
-of the simulations. In addition, non-equilibrium molecular dynamics
-methodologies and water models are discussed.
+of the simulations. 
 
 
 \section{Construction of Ice-I$_\mathrm{h}$ / Water Interfaces}
@@ -75,7 +74,7 @@ and Ojam\"{a}e determined fourteen unique hydrogen arrangements for the
 ice-I$_\mathrm{h}$ orthorhombic unit cells.\cite{Hirsch2004} Upon
 replication of some of these unit cells, the resulting structures
 present stripes of dangling H-atoms and lone pairs at an exposed
-crystal facet. These orthorhombic initial configurations can be used
+crystal facet. These orthorhombic configurations can be used
 to reproduce the surface features from Buch \textit{et
   al.}\cite{Buch2008} that helped interpret sum-frequency generation
 (SFG) experiments by the Shultz lab.\cite{Groenzin2007} More recently,
@@ -95,19 +94,18 @@ Replication of Structure 6 (unit cell geometry $P2_12_12_1$) produces
 a proton-ordered version of ice-I$_\mathrm{h}$ on a smaller length
 scale than the simulation box. However, the resulting crystal has a
 zero-net dipole, unlike proton ordered ice-XI crystals.  Structure 6
-from the Hirsch and Ojam\"{a}e paper has lattice parameters
-$a = 4.49225$~\AA\ , $b = 7.78080$~\AA\ , $c = 7.33581$~\AA\ and two
-water molecules whose atoms reside at fractional coordinates given in
-Table \ref{tab:p212121}.  Table \ref{tab:equiv} contains a mapping
-between the Miller indices of common ice facets in the P$6_3/mmc$
-crystal system and those in the Hirsch and Ojam\"{a}e $P2_12_12_1$
-system.
+has lattice parameters $a = 4.49225$~\AA\ , $b = 7.78080$~\AA\ ,
+$c = 7.33581$~\AA\ and two water molecules whose atoms reside at
+fractional coordinates given in Table \ref{tab:p212121}.  Table
+\ref{tab:equiv} contains a mapping between the Miller indices of
+common ice facets in the P$6_3/mmc$ crystal system and those in the
+Hirsch and Ojam\"{a}e $P2_12_12_1$ system.
 
-\begin{table}
+\begin{table}[H]
 \centering
   \caption{FRACTIONAL COORDINATES FOR WATER IN THE ORTHORHOMBIC
     $P2_12_12_1$ SYSTEM FOR ICE-I$_\mathrm{h}$ IN REFERENCE
-    \bibpunct{}{}{,}{n}{}{,} \protect\citep{Hirsch0404}}
+    \bibpunct{}{}{,}{n}{}{,} \protect\citep{Hirsch2004}}
 \label{tab:p212121}
 \begin{tabular}{cccc}  
 \hline
@@ -129,7 +127,7 @@ atom type & x & y & z \\ \hline
 \centering
   \caption{MAPPING BETWEEN THE MILLER INDICES OF FOUR FACETS OF ICE IN
     THE $P6_3/mmc$ CRYSTAL SYSTEM TO THE ORTHORHOMBIC $P2_12_12_1$
-    SYSTEM IN REFERENCE \bibpunct{}{}{,}{n}{}{,} \protect\citep{Hirsch04}}
+    SYSTEM IN REFERENCE \bibpunct{}{}{,}{n}{}{,} \protect\citep{Hirsch2004}}
 \label{tab:equiv}
 \begin{tabular}{r|cc} 
 \hline
@@ -150,7 +148,7 @@ In order to generate large crystals for simulation, the primitive unit
 cells were replicated in all dimensions. The crystals were cleaved along
 the desired face, and two additional mutually perpendicular cuts were
 made.  The crystals were reoriented so that the initial cut (basal,
-prismatic, 14 \degree~pyramidal, or secondary prism) was normal to the
+prismatic, 14\degree~pyramidal, or secondary prism) was normal to the
 $z$-axis of the simulation cell.  The resulting structures were
 extended in $x$ and $y$ to form large exposed facets in rectangular
 box geometries.  Because the orthorhombic unit cells are relatively
@@ -389,22 +387,18 @@ both water models can be found in Table \ref{tab:waterModels}.
 \end {table}
 
 
-The interfaces were equilibrated for a total of 10 ns at equilibrium
-conditions before being exposed to either a shear or thermal gradient.
-This consisted of 5 ns under a constant temperature (NVT) integrator
-set to 225~K followed by 5 ns under a microcanonical integrator.  Weak
-thermal gradients were allowed to develop using the VSS-RNEMD (NVE)
-integrator using a small thermal flux ($-2.0\times 10^{-6}$
-kcal/mol/\AA$^2$/fs) for a duration of 5 ns to allow the gradient to
-stabilize.  The resulting thermal gradients ($< 10$~K over the length
-of the simulation box) were allowed to stabilize for 5 ns, and were
-found to be sufficient to keep the interface within $\pm 5$ K of the
-target temperature (225~K for SPC/E and 270~K for TIP4P/Ice) during
-all shearing simulations.
+Once the ice / water systems were equilibrated, weak thermal gradients
+were allowed to develop using the VSS-RNEMD (NVE) integrator. The
+imposed thermal flux ($J_z \sim -2.0\times 10^{-6}$
+kcal/mol/\AA$^2$/fs) was imposed for a duration of 5 ns, resulting in
+thermal gradients ($< 10$~K over the length of the simulation box),
+which were found to be sufficient to keep the interface within $\pm 5$
+K of the target temperature (225~K for SPC/E and 270~K for TIP4P/Ice)
+during all shearing simulations.
 
-Velocity gradients were then imposed using the VSS-RNEMD (NVE)
-integrator with a range of momentum fluxes.  Four successive 1~ns
-simulations were performed for each shear rate (varying from
+Velocity gradients were then simultaneously imposed with a range of
+momentum fluxes.  Four successive 1~ns simulations were performed for
+each shear rate (varying from
 $0.5 \rightarrow 10.0~\mathrm{~m~s}^{-1}$) . All atomic configurations
 (positions and velocities) were saved every 1~ps, while statistical
 measures of the system (e.g. temperature, potential energy, total
@@ -420,6 +414,7 @@ prismatic facet being sheared through liquid water is shown in Figure
 
 
 \begin{figure*} 
+\centering
 \includegraphics[width=1.7in]{Figures/Shearing}
 \caption{\label{fig:Shearing} Computational model of a slab of ice
   being sheared through liquid water.  The ice presents two copies of
@@ -431,4 +426,4 @@ prismatic facet being sheared through liquid water is shown in Figure
   surrounding liquid.}
 \end{figure*}
 
-To add: Surface energies, dimensions of crystal channels at zero kelvin, ...
+
