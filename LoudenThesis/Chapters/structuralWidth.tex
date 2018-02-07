@@ -36,17 +36,32 @@ width, and consider dynamic order parameters in Chapter
 \ref{chap:Dyn}.
 
 \section{Density Measurements Transverse to the Interface}
-Following the pioneering work of Haymet \textit{et al.}, we initially
-probed the ice-I$_\mathrm{h}$ / water interface by examining the
-transition of the density of molecules from bulk liquid to bulk
+One of the many anomolies of water is that under ambient conditions
+the density of the solid is less than that of the liquid. The
+tetrahedral structure of ice is more open than local solvation
+environment of the liquid giving rise to this phenomena. Liquid water
+molecules at the surface of ice would experience two different
+environments on either side; templating from the exposed solid and
+liquid-like packing on the other. Due to this, the liquid may take on
+a configuration that is unique to its local environment, and this
+deviation from liquid-like structures may take several molecular
+layers to dampen out in the liquid. Therefore it may be possible to
+quantify the transition between the solid and the bulk liquid by
+observing the length scale over which these effects diminish.
+
+In order to understand what affect shearing has on the structure of
+water at the ice-I$_\mathrm{h}$ / water interface, we initially
+studied the systems without imposed thermal or momentum
+fluxes. Following the pioneering work of Haymet \textit{et al.}, we
+probed the interface by examining the transition of the density of
+molecules from bulk liquid to bulk
 ice.\cite{Karim1987,Karim1990,Hayward2001,Bryk2004} Four consecutive 1
 ns simulations of quiescent ice / water systems were performed for
-each interface. The simulations were performed under a constant volume
-and constant energy integrator (NVE), equilibrated at the coexistence
-temperature (225~K for SPC/E and 270~K for TIP4P/Ice) and with no
-VSS-RNEMD moves attempted (\textit{i.e.} no thermal or momentum flux
-applied). During the simulations, the positions and velocities of the
-water molecules were sampled every 0.1 ps.
+each exposed crystal face. These simulations were performed under a
+constant volume and constant energy integrator (NVE), equilibrated at
+the coexistence temperature (225~K for SPC/E and 270~K for
+TIP4P/Ice). During the simulations, the positions and velocities of
+the water molecules were sampled every 0.1 ps.
 
 To compute transverse density profiles, each frame of the trajectories
 were divided into 0.25~\AA~bins, and the average density of each bin
@@ -437,16 +452,13 @@ much of the observed difference can be attributed to how the Gaussian
 filtering process broadens out the transition between the bulk ice and
 bulk liquid domains.
 
-In a follow up paper, Hayward and Haymet studied the orientational
-ordering of water molecules transverse to the interface as an
-additional order parameter.\cite{Hayward2002} They computed the
-time-averaged one-body orientational correlation functions for the
-angle made between the origin of the simulation cell and the HOH
-bisector, $\theta$, as well as the angle made with the projection of
-the HOH bisector with the plane of the system, $\phi$.
-
-
-
+% In a follow up paper, Hayward and Haymet studied the orientational
+% ordering of water molecules transverse to the interface as an
+% additional order parameter.\cite{Hayward2002} They computed the
+% time-averaged one-body orientational correlation functions for the
+% angle made between the origin of the simulation cell and the HOH
+% bisector, $\theta$, as well as the angle made with the projection of
+% the HOH bisector with the plane of the system, $\phi$.
 
 
 \begin{table}[h]
@@ -475,11 +487,6 @@ Experimental (Ellipticity)\footnotemark[6] & 10 & 10 & & \\
   \footnotemark[5]\footnotesize{Reference \cite{Bryk2002}.} \\
   \footnotemark[6]\footnotesize{Reference \cite{Beaglehole1993}.} \\
 \end{table}
-
-
-
-
-
 
 
 
