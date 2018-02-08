@@ -25,7 +25,7 @@ diffusion constant, and both translational and orientational order
 parameters~\cite{Karim1988,Karim1990,Hayward2001,Hayward2002,Bryk2002,Gay2002,Louden2013a}. Throughout
 shearing simulations, the VSS-RNEMD method employed here creates
 thermal and velocity gradients in the system, during which the momenta
-of the water molecules are perturbed, thus any order parameters that
+of the water molecules are perturbed. Due to this, any order parameters that
 depends on translational motion may measure the momentum exchange and
 not physical properties of the interface. To avoid these influences,
 we have probed the ice-I$_\mathrm{h}$ / water interface under shear by
@@ -38,16 +38,17 @@ width, and consider dynamic order parameters in Chapter
 \section{Density Measurements Transverse to the Interface}
 One of the many anomolies of water is that under ambient conditions
 the density of the solid is less than that of the liquid. The
-tetrahedral structure of ice is more open than local solvation
-environment of the liquid giving rise to this phenomena. Liquid water
-molecules at the surface of ice would experience two different
-environments on either side; templating from the exposed solid and
-liquid-like packing on the other. Due to this, the liquid may take on
-a configuration that is unique to its local environment, and this
-deviation from liquid-like structures may take several molecular
-layers to dampen out in the liquid. Therefore it may be possible to
-quantify the transition between the solid and the bulk liquid by
-observing the length scale over which these effects diminish.
+tetrahedral structure of ice-I$_\mathrm{h}$ is more open than the
+local solvation environment of the liquid, which gives rise to this
+phenomena. Liquid water at the surface of ice would experience two
+different environments on either side of the molecule; ice-like
+templating from the exposed solid and liquid-like packing on the
+other. Due to this, the liquid may take on a configuration that is
+unique to its local environment, and this deviation from bulk
+liquid-like structures may take several molecular layers to dampen
+out. Therefore it may be possible to quantify the transition between
+the solid and the bulk liquid by observing the length scale over which
+these effects diminish.
 
 In order to understand what affect shearing has on the structure of
 water at the ice-I$_\mathrm{h}$ / water interface, we initially
@@ -60,8 +61,8 @@ ns simulations of quiescent ice / water systems were performed for
 each exposed crystal face. These simulations were performed under a
 constant volume and constant energy integrator (NVE), equilibrated at
 the coexistence temperature (225~K for SPC/E and 270~K for
-TIP4P/Ice). During the simulations, the positions and velocities of
-the water molecules were sampled every 0.1 ps.
+TIP4P/Ice). During the simulations, the positions of the water
+molecules were sampled every 0.1 ps.
 
 To compute transverse density profiles, each frame of the trajectories
 were divided into 0.25~\AA~bins, and the average density of each bin
@@ -79,7 +80,7 @@ the liquid and ice respectively. The $z$-locations of the left and
 right Gibbs dividing surfaces are $l$ and $r$, and $w^\rho$ is the
 width of the interface. An example density profile for each of the
 SPC/E interfaces is shown in Figure \ref{fig:transDensity} (a similar
-graph for the TIP4P-Ice results can be seen in Figure
+set of graphs for the TIP4P-Ice modeled systems can be seen in Figure
 \ref{fig:TIPtransDensity} in Appendix \ref{structAppendix}).
 
 \begin{figure*}
@@ -92,12 +93,12 @@ graph for the TIP4P-Ice results can be seen in Figure
   Equation \eqref{rho_fit} (dashed red lines).}
 \end{figure*}
 
-From Equation \eqref{rho_fit}, we have obtained estimates for $w^{\rho}$;
-these values are related to the $10\%-90\%$ interfacial widths
-commonly reported in previous studies
+From Equation \eqref{rho_fit}, we have obtained estimates for
+$w^{\rho}$; these values are related to the $10\%-90\%$ interfacial
+widths commonly reported in previous studies
 ($w_\mathrm{10-90}^{\rho} = 2.197~w^{\rho}$).\cite{Bryk2002,Bryk2004}
-For the SPC/E interfaces at 225~K, we find large discrepencies in
-$w_\mathrm{10-90}^{\rho}$ as seen in Table \ref{tab:strWidths}.
+The results for the SPC/E and TIP4P/Ice interfaces are reported in
+Table \ref{tab:strWidths}.
 
 \begin{table}[h]
 \centering
@@ -122,28 +123,26 @@ $w_\mathrm{10-90}^{\rho}$ as seen in Table \ref{tab:strWidths}.
  Uncertainties in the last digit are indicated with parentheses. \\
 \end{table}
 
-For the basal interface, we find a density estimate of the interfacial
-width $w_\mathrm{10-90}^{\rho} \sim$ 9 \AA~, where values closer to 7
-\AA~ are observed for the prismatic and secondary prism
-interfaces. However, the density transition for the
+For the SPC/E basal, prismatic, and secondary prism interfaces, we
+estimate an interfacial width $w_\mathrm{10-90}^{\rho} \sim$ 8
+\AA~. However, the solid to liquid density transition for the
 14\degree~pyramidal interface is observed to occur over $\sim$ 3
-\AA~. These results suggest the transition from ice to liquid water
+\AA~. This result suggests the transition from ice to liquid water
 occurs over a single molecular diameter for the pyramidal interface,
 while over several molecular diameters for the other ice facets. Since
 the 14\degree~pyramidal crystal does not have well defined
 crystallographic planes perpendicular to the dimension normal to the
 surface, fitting the resulting density profiles gives potentially
-skewed results. Values for $w_\mathrm{10-90}^{\rho}$ for the TIP4P/Ice
-systems are also reported in the same table. Notice that while the
-basal and two prismatic interfaces are found to be broader for the
-TIP4P/Ice interfaces, the pyramidal interfacial width remains quite
-constant. The broadening of the interfaces can be attributed to the
-warmer coexistence temperature for the TIP4P/Ice systems, however, it
-appears the TIP4P/Ice pyramidal density fit suffers from the issue as
-the SPC/E systems.  Since the density profiles (black lines) require
-subjective fitting (red dashed-lines) and the resulting estimates of
-the interfacial widths using this metric have large error bars, it is
-desirable to consider a second structural order parameter for
+skewed results. A similar trend is observed in the TIP4P/Ice estimates
+of $w_\mathrm{10-90}^{\rho}$. The basal and two prismatic interfaces
+are found to be of similar width, although slightly broader than those
+predicted by SPC/E. This can be attributed to the warmer coexistence
+temperature of the TIP4P/Ice model. However, the pyramidal width
+appears to suffer from the same issue as in the SPC/E fits.  Since the
+density profiles (black lines) require subjective fitting (red
+dashed-lines) and the resulting estimates of the interfacial widths
+using this metric are faulty for certain orientations of the crystal,
+it is desirable to consider a second structural order parameter for
 comparison.
 
 \section{Local Tetrahedral Order Parameter}\label{sec:tetra}
@@ -161,7 +160,7 @@ water interfaces by Bryk and Haymet~\cite{Bryk2004}.
 
 We have evaluated the local tetrahedral order parameter, $q$, along
 the coordinate perpendicular to the ice / water interface,
-\textit{i.e}., the $z$-axis of the simulation box. With $N$ molecules,
+\textit{i.e}., the $z$-axis of the simulation box. With $N$ total molecules,
 \begin{equation}
 q(z) = \frac{1}{N_z} \int_0^L \sum_{i=1}^{N} \Bigg(1 -\frac{9}{2n(n-1)}\sum_{j=1}^{n-1}
 \sum_{k=j+1}^{n} \bigg(\cos\psi_{jik}+\frac{1}{3}\bigg)^2\Bigg)
@@ -198,11 +197,11 @@ were determined by dividing each system into 1~\AA~ bins along the
 $z$-axis, and computing statistical averages of $q(z)$ in each
 bin. For the secondary prism interface (using SPC/E water at 225~K),
 the resulting distribution can be seen in the bottom panel of
-Fig. \ref{fig:spComic} and for comparison, Figure \ref{fig:tipsComic}
+Figure \ref{fig:spComic} and for comparison, Figure \ref{fig:tipsComic}
 shows the same interface using the TIP4P/Ice model at 270~K.  (See
 Appendix \ref{structAppendix} for the other interfaces with the SPC/E
 and TIP4P/Ice models). In the bulk liquid (at small and large values
-of $z$) of Fig. \ref{fig:spComic}, the order parameter takes on values
+of $z$) of Figure \ref{fig:spComic}, the order parameter takes on values
 of $q(z) \approx~0.77$, while $q(z) \approx~0.92$~was found in bins
 spanning the ice. The tetrahedrality profiles were fit using the same
 functional form as the density profiles, however, an additive term was
@@ -217,7 +216,7 @@ q_\mathrm{liq}+\frac{q_\mathrm{ice}-q_\mathrm{liq}}{2}\left[\tanh\left(\frac{z-l
 Here $q_\mathrm{liq}$ and $q_\mathrm{ice}$ are the values of the order
 parameter for the bulk liquid and ice domains. The locations $l$ and
 $r$ are the $z-$coordinates of the Gibbs dividing surface for the left
-and right interfaces (shown in Fig. \ref{fig:spComic} with vertical
+and right interfaces (shown in Figure \ref{fig:spComic} with vertical
 dotted lines), and $w^{q}$ is the interfacial width.  The last term in
 Equation \eqref{tet_fit} accounts for the influence of the weak thermal
 gradient on the tetrahedrality profile in the liquid region. Namely,
@@ -228,7 +227,7 @@ increasing displacements from the ice surface.
 
 \begin{figure*}
 \includegraphics[width=\linewidth]{Figures/SecPrismComicStrip}
-\caption{\label{fig:spComic} Properties of the secondary prism
+\caption{\label{fig:spComic} Properties of the SPC/E secondary prism
   interface (top) being sheared through water at 8.6 m
   s\textsuperscript{-1}. Lower panel: the local tetrahedral order
   parameter, $q(z)$, (circles) and the hyperbolic tangent fit
@@ -256,9 +255,9 @@ increasing displacements from the ice surface.
   dividing surfaces of the two interfaces.}
 \end{figure*}
 
-In the middle panel of Fig. \ref{fig:spComic}, we show the resulting
+In the middle panel of Figure \ref{fig:spComic}, we show the resulting
 thermal gradient from the imposed kinetic energy flux. For the SPC/E
-water model, the interfacial temperature is held at $\sim$ 225~K
+systems, the interfacial temperature is held at $\sim$ 225~K
 (270~K for the TIP4P/Ice), allowing investigation of the response to
 the shear while maintaining solid / liquid coexistence. In the top
 panel, the velocity gradient resulting from the imposed momentum flux
@@ -286,13 +285,13 @@ are also reported in Table \ref{tab:strWidths}.
 
 Over the range of shear rates investigated,
 $\sim 0.5-10.0~\mathrm{~m~s}^{-1}$, we find no significant changes in
-the interfacial widths for any of the crystal faces (see Fig. \ref{fig:tetByShearRate}). All values of
+the interfacial widths for any of the crystal faces (see Figure \ref{fig:tetByShearRate}). All values of
 $w_\mathrm{10-90}^{q}$ obtained from shearing simulations fell inside the
 error bars of the values obtained from the quiescent simulations.
 
 \begin{figure*}
 \includegraphics[width=\linewidth]{Figures/tetByShearRate}
-\caption{\label{fig:tetByShearRate}The 10-90 widths of the
+\caption{\label{fig:tetByShearRate}The $10\%-90\%$ widths of the
   ice-I$_\mathrm{h}$ / water interface for the basal, prismatic,
   14\degree~pyramidal, and secondary prism crystal faces as determined
   by the local tetrahedral order parameter fit by
@@ -302,46 +301,52 @@ error bars of the values obtained from the quiescent simulations.
 
 \section{Discussion}
 While there has been a considerable number of computational and
-experimental investigations on the ice / vapor interface,
+experimental investigations on the ice / vapor
+interface\cite{Bolton2000,Conde2008,Gladich2011,Sazaki2011,Pfalzgraff2011,Watkins2011,Bartels-Rausch2014,Gladich2015,Murata2015,Asakawa2016,Benet2016,Murata2016,Neshyba2016,Limmer2016,Michaelides2017,Sancheza2017},
 significantly fewer studies have been reported at the ice / liquid
-interface. Due to the difficulty of experimentally probing water's
-properties at the bulk liquid / solid interface, most of what is known
-has been provided by computational methods. However, these studies
-have been limited by the slow process of crystal nucleation or growth,
-and the large system size dependence on phenomena such as XX and
-YY. There is also disagreement amongst the community as to which water
-model is best suited for studying these interfaces, as well as the
-coexistence temperatures for these models. This has resulted in a
-large collection of data points for the properties of water molecules
-at the ice / water interface, many with different models and at
-varying temperatures. 
+interface. \cite{Beaglehole1980,Karim1988,Karim1990,Hayward2001,Hayward2002,Bryk2002,Gay2002}
+Due to the difficulty of experimentally probing water's properties at
+the bulk liquid / solid interface, most of what is known has been
+provided by computational methods. However, there is disagreement
+amongst the community as to which water model is best suited for
+studying these
+interfaces\cite{Sanz2004a,Vega2005c,Abascal2007,Vega2009}, as well as
+the coexistence temperatures for these
+models.\cite{Gao2000,Bryk2004,Sanz2004a,Vega2006a,Abascal2007,Paesani2016}
+Slight changes in the treatment of the long range electrostatic
+interactions have been seen to significantly alter the coexistence
+temperature.\cite{Bryk2004} This has resulted in a collection of data
+points for the properties of water molecules at the ice / water
+interface, many with different models, electrostatic treatment, and at
+varying temperatures.
 
 In the late 1980's, Karim and Haymet investigated the solid to liquid
 transition for a basal ice-I$_\mathrm{h}$ / water interface using the
-TIP4P model at 240~K\cite{Karim1987,Karim1988}, and the SPC model at
-200~K.\cite{Karim1990} In each of the studies, they divided their
-system into 0.2 \AA~ bins along the dimension normal to the interface,
-and computed the average density for each of these bins. These density
-profiles were segmented into 3.7 \AA~ bins, which coincide with the
+TIP4P model at 240~K~\cite{Karim1987,Karim1988}, and the SPC model at
+200~K.\cite{Karim1990} In each of the studies, they computed the
+average density along the dimension normal to the interface, and
+binned the resulting profiles to coincide with the
 spacing of the crystallographic planes inside their ice crystal. Karim
 and Haymet then estimated the width of the basal ice-I$_\mathrm{h}$ /
-water interface to be $\sim$ 10 - 15 \AA~ by counting the number of
-these wider bins. This result proved to be invarient of the exposed
-surface area of the basal plane, as a simulation of equal length in
-time with a factor of four larger presented surface area yielded the
-same results.
+water interface to be $\sim$ 10 \AA~ - 15 \AA~ by counting the number of
+these large bins. This result proved to be invarient of the exposed
+surface area of the basal plane.
 
-About the same time, Nada and Furukawa observed a slight anisotropy
+Around the same time, Nada and Furukawa observed a slight anisotropy
 between the basal and prismatic ice / water interface using the TIP4P
-model at 230~K. Their primary method for descriminating molecules as
-ice-like or liquid-like was the local density, and an existence
-function which determined the likelihood that a water molecule had
-four nearest neighbors. They estimated the ice / water interface to be
-between 9 and 12 \AA~ wide, with the basal interface being slightly
-narrower than the prismatic.\cite{Nada1995} Our density based
-estimates of the basal and prismatic ice / water interfaces for both
-the SPC/E and TIP4P/Ice models agrees well with both the density based
-estimates by Haymet \textit{et al.} and Nada \textit{et al.}.
+model at 230~K.\cite{Nada1995} Their primary method for discriminating
+ice-like and liquid-like molecules was the local density, as well as
+an existence function which determined the likelihood that a water
+molecule had four nearest neighbors. They estimated the ice / water
+interface to be between 9 \AA~ and 12 \AA~ wide, with the basal
+interface being slightly narrower than the prismatic.
+
+Our density based estimates for the basal and prismatic
+ice-I$_\mathrm{h}$ / water interfaces agrees well with those by Haymet
+\textit{et al.} and Nada \textit{et al.}. We did not observe the same
+anisotropy as Nada and Furukawa, however, our fit resolution was much
+larger, and their results could have been an artificat of their larger
+binning method. 
 
 The problem of ice / water coexistence was later revisited by Hayward
 and Haymet, where a comparitive study of the basal, prism,
@@ -356,23 +361,24 @@ interfaces. % These two interfaces were found to be of particular
 % shorthorn Sculpin inhibit ice growth at these ice
 % surfaces.\cite{Knight2001,Wierzbicki1996,Haymet1998,Harding1999}
 They observed a stable ice / water interface at 270~K over 300 ps
-using the CF1 central force model, and estimated the 10-90 width of
-the interfaces by measuring the transition of two structural criteria,
-the translational order and a Gaussian filtered translational order
-(see Table \ref{tab:structCompare}). Their calculations indicate that
-the basal and prismatic interfaces are wider than the two higher index
-facets. While we did not see this trend, our results for the basal and
-prismatic interfaces using the TIP4P/Ice water model agree well with
-their estimates given by the translational order parameter. Our
-simulations with the SPC/E model predict a slightly thinner interface,
-possibly due to the colder coexistence temperature. Lastly, their
-estimates of interfacial width from the average density predicts a
-much wider interface, with estimates roughly a factor of 2 larger than
-those computed by the unfiltered translational order parameter. It is
-unclear if the filtering process provides a more accurate measure,
-much of the observed difference can be attributed to how the Gaussian
-filtering process broadens out the transition between the bulk ice and
-bulk liquid domains.
+using the CF1 central force model, and estimated the $10\%-90\%$ width
+of the interfaces by measuring the transition of two structural
+criteria, the translational order and a Gaussian filtered
+translational order (see Table \ref{tab:structCompare}). Their
+calculations indicate that the basal and prismatic interfaces are
+wider than the two higher index facets. While we did not see this
+trend, our results for the basal and prismatic interfaces using the
+TIP4P/Ice water model agree well with their estimates given by the
+translational order parameter. Our simulations with the SPC/E model
+predict a slightly thinner interface, possibly due to the colder
+coexistence temperature. Lastly, their estimates of interfacial width
+from the average density predicts a much wider interface, with
+estimates roughly a factor of 2 larger than those computed by the
+unfiltered translational order parameter. It is unclear if the
+filtering process provides a more accurate measure, much of the
+observed difference can be attributed to how the Gaussian filtering
+process broadens out the transition between the bulk ice and bulk
+liquid domains.
  
 
 % For each order
@@ -434,9 +440,9 @@ bulk liquid domains.
 % \end{equation}
 
 % From Equation \eqref{eq:Hayward2001}, 
-Hayward and Haymet estimated the 10-90 widths of the ice
-I$_\mathrm{h}$ / water interface for the translational profiles and
-the average density profiles (see Table
+Hayward and Haymet estimated the $10\%-90\%$ widths of the
+ice-I$_\mathrm{h}$ / water interface for the translational profiles
+and the average density profiles (see Table
 \ref{tab:structCompare}). Their calculations indicate that the basal
 and prismatic interfaces are wider than that of the two higher index
 facets. While we did not see this trend, our results for the basal and
@@ -461,78 +467,80 @@ bulk liquid domains.
 % the HOH bisector with the plane of the system, $\phi$.
 
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \caption{STRUCTURAL MEASURES OF THE ICE-I$_\mathrm{h}$ / WATER
-  INTERFACE. \label{tab:structCompare}} 
-\begin{tabular}{|l|cccc|}  
+  INTERFACE \label{tab:structCompare}} 
+\begin{tabular}{l|cccc}
+\hline  
 \hline
-& Basal & Prismatic & $\{2\bar{1}\bar{1}0\}$ & $\{20\bar{2}1\}$ \\
+& Basal & Prismatic & 14\degree~Pyramidal & Secondary Prism \\
 \hline
-Translational (CF1)\footnotemark[1] & 9.9 & 8.6  & 7.9 & 6.6 \\
-Average Density (CF1)\footnotemark[1] & 18.2 & 13.6 & 11.4 & 12.3 \\
-Orientational (CF1)\footnotemark[2] & 10.8 & 10.1 & 9.7 & 8.8 \\
-Translational (SPC/E)\footnotemark[5] & 10.54 & 8.30 & & \\
-Window-averaged Density (SPC/E) \footnotemark[5] & 12.86 & 10.03 & & \\
-Translational (TIP4P)\footnotemark[3] & 5.93 & & & \\
-Translational (SPC)\footnotemark[4] & 8.13 & & & \\
-Experimental (Ellipticity)\footnotemark[6] & 10 & 10 & & \\
+Translational (CF1 270~K)\footnotemark[1] & 9.9 & 8.6  & 7.9 & 6.6 \\
+Average Density (CF1 270~K)\footnotemark[1] & 18.2 & 13.6 & 11.4 & 12.3 \\
+Orientational (CF1 270~K)\footnotemark[2] & 5.7 & 7.7 & 7.5 & 5.1 \\
+\\
+Density (TIP4P/2005 248.5~K)\footnotemark[3] & 13~-~16 & 13~-~16 & - &
+                                                                    13~-~16 \\
+\\
+Translational (SPC/E 225~K)\footnotemark[4] & 10.54 & 8.30 & - & - \\
+Density (SPC/E 225~K)\footnotemark[4] & 12.86 & 10.03 & - & -
+\\
+Tetrahedral (SPC/E 225~K)\footnotemark[5] & 11 & 11 & - & - \\
+\\
+Density (TIP4P 230~K)\footnotemark[6] & 9 & 12 & - & - \\
+Translational (TIP4P 240~K)\footnotemark[7] & 5.93 & - & - & - \\
+Density (TIP4P 240~K)\footnotemark[8] & 10~-~15 & - & - & - \\
+\\
+Translational (SPC 200~K)\footnotemark[9] & 8.13 & - & - & - \\
+\\
+Experimental (Ellipticity 273~K)\footnotemark[10] & 10 & 10 & - & - \\
+\hline
 \hline
 \end{tabular}
 \flushleft
+Interfacial widths are reported in \AA~. \\
   \footnotemark[1]\footnotesize{Reference \cite{Hayward2001}.} \\
   \footnotemark[2]\footnotesize{Reference \cite{Hayward2002}.} \\
-  \footnotemark[3]\footnotesize{Reference \cite{Karim1988}.} \\
-  \footnotemark[4]\footnotesize{Reference \cite{Karim1990}.} \\
-  \footnotemark[5]\footnotesize{Reference \cite{Bryk2002}.} \\
-  \footnotemark[6]\footnotesize{Reference \cite{Beaglehole1993}.} \\
+  \footnotemark[3]\footnotesize{Reference \cite{Benet2014}.} \\
+  \footnotemark[4]\footnotesize{Reference \cite{Bryk2002}.} \\
+  \footnotemark[5]\footnotesize{Reference \cite{Bryk2004}.} \\
+  \footnotemark[6]\footnotesize{Reference \cite{Nada1995}.} \\
+  \footnotemark[7]\footnotesize{Reference \cite{Karim1988}.} \\
+  \footnotemark[8]\footnotesize{Reference \cite{Karim1987}.} \\
+  \footnotemark[9]\footnotesize{Reference \cite{Karim1990}.} \\
+  \footnotemark[10]\footnotesize{Reference \cite{Beaglehole1993}.} \\
 \end{table}
 
-
-
-These values agree reasonably well with those reported by Haymet
-\textit{et
-  al.}.\cite{Karim1988,Karim1990,Hayward2001,Bryk2002,Hayward2002,Bryk2004}
-Using a variety of water models and several different order
-parameters, they have estimated the ice / water interface to be
-between $5$~\AA~and $18$~\AA~depending on the particular interface and
-means of measure.  For the SPC/E model, they found the basal and
-prismatic ice / water interface to be $\approx 11$~\AA~ wide from
-translational and window-averaged density order parameters. The
-interfacial widths were also estimated by observing the transition of
-a similar tetrahedral order parameter from their ice-like value of
-$0.9$ to the bulk liquid value of $0.6$. This gave estimates of
-$\approx 11$~\AA~, somewhat larger than our current estimates. More
-careful analysis will be necessary to determine if the proton striped
-surface configurations used here are the origin of this discrepancy.
-
-
-Benet, MacDowell and Sanz have studied ice/water coexistence using the
-TIP4P, TIP4P/2005, and TIP4P-Ew model to measure the interfacial free
-energy of the basal, prismatic, and secondary prism planes of ice with
-liquid water by analysing the spectrum of capillary fluctuations of
-theinterface. They quantify the basal interface to be about 4-5
-molecular diameters wide using XX and observe regions of cubic ice and
-regions of hexagonal ice. \cite{Benet2014}
+Using the SPC/E model, Bryk and Haymet estimated interfacial widths
+for the basal and prismatic faces by observing the transition of a
+similar tetrahedral order parameter from the ice-like value of $0.9$
+to a bulk liquid value of $0.6$.\cite{Bryk2004} This resulted in widths of
+$\sim$ 11~\AA~, somewhat larger than our current estimates. While
+the oxygen atoms of the presented surface facets are identical to
+those used in our investigation, the surface hydrogen placement was
+vastly different than ours. Our ice surfaces were designed to
+replicate proton striping observed by Buch \textit{et al.} to
+replicate sum-frequency generation experiments by Shultz \textit{et
+  al.}.  More careful analysis will be necessary to determine if the
+proton striped surface configurations used here are the origin of this
+discrepancy.
 
 
 \section{Summary}
-In this chapter we have presented SPC/E and TIP4P/Ice
-ice-I$_\mathrm{h}$ / water interfacial widths as determined by
-structural measures, namely, the local density and the local
-tetrahedral order parameter. Analysis of the local density profiles
-predicted a 10-90 interfacial width of $\sim$ 8 \AA~ for the basal and
-two prismatic facets for the SPC/E model at 225~K as well as the
-TIP4P/Ice model at 270~K. However, the same fits predicted a much
-narrower interface for the pyramidal facet, believed to be due to the
-rotation of the crystal. Fitting these density profiles required
-biasing the density maxima corresponding to the ice planes in the
-solid, therefore a second order parameter was considered. The local
-tetrahedral order parameter is a more accurate measure of liquid-like
-and ice-like configurations, and fits of the order parameter gave
-estimates of interfacial width with smaller deviation. The SPC/E
-ice-I$_\mathrm{h}$ / water interface was found to be $\sim$ 7 \AA~
-wide for each of the four facets, while the slightly warmer TIP4P/Ice
-interface was predicted to be $\sim$ 9 \AA~. These widths were found
-to be insensitive to shear rate, indicating that the interface is
-quite stable under flow.
+In this chapter we have presented structural analyses of the basal,
+prismatic, 14\degree~ pyramidal, and secondary prism facets of an
+ice-I$_\mathrm{h}$ / water interface. Fitting the local density
+profiles predicted a $10\%-90\%$ interfacial width of $\sim$ 8 \AA~
+for the basal and two prismatic facets. However, the same fits
+predicted a much narrower interface for the pyramidal facet, believed
+to be due to the rotation of the crystal. Fitting these density
+profiles required biasing the density maxima within the ice, therefore
+a second order parameter was considered. The local tetrahedral order
+parameter is a more accurate measure of liquid-like and ice-like
+configurations, and fits of the order parameter gave estimates of
+interfacial width with smaller error. For each of the facets, the
+SPC/E ice-I$_\mathrm{h}$ / water interface was found to be $\sim$ 7
+\AA~ wide, while the slightly warmer TIP4P/Ice interface was predicted
+to be $\sim$ 9 \AA~ wide. These widths were found to be insensitive to
+shear rate, indicating that the interface is quite stable under flow.
