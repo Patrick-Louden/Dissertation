@@ -78,10 +78,10 @@ computed by slicing the systems into 1~\AA~bins along the
 $z$-dimension (see Figure \ref{fig:DzSPCE} and Figure
 \ref{fig:DzTIP4PIce}).
 
-\begin{figure}
+\begin{figure*}
 \includegraphics[width=\linewidth]{Figures/DzSPCE}
 \caption{\label{fig:DzSPCE} Upper: Mean-squared displacement (MSD)
-  collected in 1 \AA~bins across the SPC/E basal ice / water
+  collected in 1 \AA~bins across the SPC/E basal ice-I$_\mathrm{h}$ / water
   interface. The band with no increase in the mean-squared
   displacement are the water molecules in the ice, while the band
   increases most quickly corresponds to bins in the liquid. Between
@@ -94,16 +94,16 @@ $z$-dimension (see Figure \ref{fig:DzSPCE} and Figure
   the structural Gibbs dividing surfaces (using tetrahedrality) are
   indicated with vertical dashed blue lines, while the locations of
   the ''diffusion'' interfaces are shown in green.  }
-\end{figure}
+\end{figure*}
 
-\begin{figure}
+\begin{figure*}
 \includegraphics[width=\linewidth]{Figures/DzTIP4PIce}
 \caption{\label{fig:DzTIP4PIce} The same basal diffusion coefficients
   as Fig. \ref{fig:DzSPCE}, but collected using the TIP4P/Ice model
   and at 270 K. Note that the higher coexistence temperature for this
   model increases the observed diffusion coefficients, and has brought
   the structural and diffusion interfaces much closer together.}
-\end{figure}
+\end{figure*}
 
 In the top panel of Figure \ref{fig:DzSPCE} and Figure
 \ref{fig:DzTIP4PIce}, the mean-squared displacement
@@ -159,11 +159,12 @@ for each interface is reported in Table \ref{tab:dynWidths}.
 \centering
 \caption{COMPUTED WIDTHS OF THE ICE-I$_\mathrm{h}$ / WATER INTERFACES BY
   DYNAMIC MEASURES. \label{tab:dynWidths}} 
-\begin{tabular}{|r|ccc|ccc|}  
+\begin{tabular}{r|ccc|ccc}  
 \hline
-  \multirow{2}{*} & \multicolumn{3}{c|}{SPC/E (225~K)} &  \multicolumn{3}{c|}{TIP4P/Ice (270~K) } \\
+\hline
+  \multirow{2}{*} & \multicolumn{3}{c|}{SPC/E (225~K)} &  \multicolumn{3}{c}{TIP4P/Ice (270~K) } \\
   & \multicolumn{3}{c|} {Interfacial Widths (\AA) \footnotemark[1]} &
-                                                                      \multicolumn{3}{c|} {Interfacial Widths  (\AA) \footnotemark[1]} \\
+                                                                      \multicolumn{3}{c} {Interfacial Widths  (\AA) \footnotemark[1]} \\
  Interface &  $d_\mathrm{10-90}^{D}$ & $d_\mathrm{10-90}^{C_2}$ &
                                                                   $d_\mathrm{10-90}^{jump}$  
                                                                  &
@@ -171,8 +172,9 @@ for each interface is reported in Table \ref{tab:dynWidths}.
 \hline
   Basal  $\{0001\}$                 & 14(4) & 11(2) & 12(2) & 13(2) & 15(3) & 11.1(8)  \\
   Prismatic  $\{10\bar{1}0\}$       & 15(3)  & 10(2) & 11(2) & 13(3) & 15(2) & 11(2)  \\
-  14\degree~Pyramidal  $\{20\bar{2}1\}$   & 15(3) & 13(1) & 13 & 10(2) & 13(1) & 8.8(7)  \\
+  14\degree~Pyramidal  $\{20\bar{2}1\}$   & 15(3) & 13(1) & 12(2) & 10(2) & 13(1) & 8.8(7)  \\
   Secondary Prism  $\{11\bar{2}0\}$ & 12(3) & 11(3) & 9(3) & 12(4) & 14(2) & 11(2)  \\ 
+\hline
 \hline
 \end{tabular}
 \flushleft
@@ -200,22 +202,22 @@ measure of the interfacial width. To determine dynamic widths of the
 interfaces under shear, each of the systems were divided into bins
 along the $z$ axis ($\approx$ 1 \AA\ wide) and $C_2(z,t)$ was computed
 using only those molecules that were in the bin at the initial
-time. For each ice / water interface investigated, the following 0.5
+time. For each ice-I$_\mathrm{h}$ / water interface investigated, the following 0.5
 ns simulations were computed: quiescent simulations (where no thermal
 or momentum gradient was present), simulations with only a thermal
 gradient present, and simulations where both thermal and momentum
 gradients were present. During these simulations, the positions and
 orientations of each molecule were recorded every 100 fs.
 
-\begin{figure}
+\begin{figure*}
 \includegraphics[width=\linewidth]{Figures/CztImage}
 \caption{\label{fig:Czt} $C_2(z,t)$ collected in 1 \AA~bins across the SPC/E
-  secondary prism ice / water interface. The band that experiences very
+  secondary prism ice-I$_\mathrm{h}$ / water interface. The band that experiences very
   little decay represents water molecules in the ice, while the band
   that decays quickly corresponds to bins in the liquid.  The
   correlation function presents a continuous distribution of decay
   behaviors across the interface between ice and liquid water.}
-\end{figure}
+\end{figure*}
 
 Recently, Laage and Hynes have determined the mechanism for water
 reorientation.\cite{Laage2006,Laage2008} Using molecular dynamics
@@ -283,7 +285,7 @@ observe frame reorientation to contribute 85 percent of the overall
 decay.
 
 
-\begin{figure}
+\begin{figure*}
 \includegraphics[width=\linewidth]{Figures/Sec_lcorrz}
 \caption{\label{fig:SPorient} Decay times (left) for $C_2(z,t)$ at the
   SPC/E secondary prism interface, and their fractional contributions to the
@@ -295,7 +297,7 @@ decay.
   momentum flux (black), an interface with an imposed
   kinetic energy flux (red), and a sheared simulation (blue) with both
   kinetic and momentum fluxes.}
-\end{figure}
+\end{figure*}
 
 The middle and long decay times diverge inside the ice crystal, so the
 orientational rate, $k(z) = 1 / \tau(z)$ can be used to identify a
@@ -319,7 +321,7 @@ interfaces.
 We note that Bryk and Haymet also calculated the orientational time
 correlation function at the basal interface of SPC/E
 water,\cite{Bryk2002} and observed the same qualitative trend through
-the ice / water interface, although the spatial resolution was not
+the ice-I$_\mathrm{h}$ / water interface, although the spatial resolution was not
 sufficient to resolve a dynamic width.
  
 \section{Spatial Resolution of Hydrogen Bond Jump Rates}
@@ -365,11 +367,11 @@ similar manner to the dynamic width. $k_\mathrm{jump}(z)$ was fit with
 a hyperbolic tangent (see Eq. \eqref{tauFit}) and the $10\%-90\%$ jump
 width, $d_\mathrm{10-90}^{jump}$, is shown in Table \ref{tab:dynWidths}.
 
-\begin{figure}
+\begin{figure*}
 \includegraphics[width=5.5in]{Figures/secPrismJumpPlot}
 \caption{\label{fig:SPkjmp} Upper: Hydrogen bond jump correlation
   functions, $C_\mathrm{jump}(z,t)$, collected in 1 \AA~bins across
-  the SPC/E secondary prism ice / water interface. The band that
+  the SPC/E secondary prism ice-I$_\mathrm{h}$ / water interface. The band that
   experiences very little decay represents water molecules in the ice,
   while the band that decays quickly corresponds to bins in the
   liquid.  The correlation function presents a continuous distribution
@@ -381,10 +383,10 @@ width, $d_\mathrm{10-90}^{jump}$, is shown in Table \ref{tab:dynWidths}.
   surfaces (using tetrahedrality) are indicated with vertical dashed
   blue lines, while the locations of the ``jump'' interfaces are shown in
   orange.}
-\end{figure}
+\end{figure*}
 
 
-\begin{figure}
+\begin{figure*}
 \includegraphics[width=\linewidth]{Figures/secprismJumpPlotTIP4PIce}
 \caption{\label{fig:SPTIP4Pkjmp} The same secondary prism hydrogen
   bond jump data as Fig. \ref{fig:SPkjmp}, but collected using the
@@ -392,7 +394,7 @@ width, $d_\mathrm{10-90}^{jump}$, is shown in Table \ref{tab:dynWidths}.
   temperature for this model increases the observed liquid-state jump
   rates, and has brought the structural and jump interfaces much
   closer together.}
-\end{figure}
+\end{figure*}
 
 
 \section{Summary}
