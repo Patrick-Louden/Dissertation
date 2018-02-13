@@ -2,26 +2,26 @@
 In Chapter \ref{chap:Str}, ice-I$_\mathrm{h}$ / water interface was
 characterized by structural order parameters, and estimates of the
 interfacial width were obtained by determining the distance over which
-these parameters transitioned from their bulk liquid values
-to those for ice-like configurations. The density and local
-tetrahedral order parameter were found to transition smoothly between
-the two regions, and yield similar widths for a given facet.
-Simulations and experiments indicate that the dynamics of water
-molecules depend not only on their local structure and environment,
-but also on the ordering of molecules outside of their first solvation
-shell. Given this, we have investigated the spatial transition of the
-dynamics of water molecules across the interface as well.
+these parameters transitioned from their bulk liquid values to those
+for ice-like configurations. The local density and tetrahedral order
+parameters were found to transition smoothly between the two regions,
+and yield similar widths for a given facet.  Simulations and
+experiments indicate that the dynamics of water molecules depend not
+only on their local structure and environment, but also on the
+ordering of molecules outside of their first solvation shell.\cite{}
+Given this, we have investigated the dynamics of water molecules
+across the interface as well.
 
 \section{Diffusion Coefficients as a Measure of Interfacial Width}
-As discussed in Chapter \ref{chap:intro}, transport coefficients are
+XXX As discussed in Chapter \ref{chap:intro}, transport coefficients are
 defined by a relation of the system's response to a perturbation. For
 example, the diffusion coefficient can be expressed in terms of an
 applied particle flux and the resulting concentration gradient, just
 as the shear viscosity can be expressed in terms of an applied shear
 stress and the resulting velocity gradient. While it is still possible
 to obtain transport coefficients by reversing which quantity is
-applied and which is observed, \textit{i.e.}, apply a velocity
-gradient across the system and measure the resulting shear stress,
+applied and which is observed, \textit{i.e.}, applying a velocity
+gradient across the system and measuring the resulting shear stress,
 such methodologies are innately prone to noise and the resulting
 simulations are required to be much longer. Regardless of which
 quantity is applied, deviation from equilibrium is achieved by adding
@@ -41,58 +41,61 @@ for large $t$ compared to the correlation time of $\mathscr{A}$.
 
 The diffusion coefficient $D$ is given by
 \begin{equation}\label{eq:diffusion1}
-D = \frac{1}{3} \int_0^{\infty} dt \langle \dot{\bm{r}_i}(t) -
-\dot{\bm{r}_i}(0) \rangle
+D = \frac{1}{3} \int_0^{\infty} dt \langle \dot{\mathbf{r}_i}(t) -
+\dot{\mathbf{r}_i}(0) \rangle
 \end{equation}
-where $\dot{\bm{r}_i}(t)$ is the center-of-mass velocity of molecule
+where $\dot{\mathbf{r}_i}(t)$ is the center-of-mass velocity of molecule
 $i$, and the factor of $\frac{1}{3}$ accounts for motion in three
 dimensions. From Eq. \eqref{eq:transport1} and Eq. \eqref{eq:transport2},
 the corresponding Einstein relation would then be
 \begin{equation}\label{eq:diffusion2}
-2Dt = \frac{1}{3} \langle | \bm{r}_i(t) - \bm{r}_i(0) |^2 \rangle
+2Dt = \frac{1}{3} \langle | \mathbf{r}_i(t) - \mathbf{r}_i(0) |^2 \rangle
 \end{equation}
-where $\bm{r}_i(t)$ is the center-of-mass position of molecule
+where $\mathbf{r}_i(t)$ is the center-of-mass position of molecule
 $i$. 
 
-The spatially resolved diffusion constant,
+The spatially-resolved diffusion constant,
 \begin{equation}\label{eq:diffusion3}
-D(z) = \frac{1}{6t} \langle | \bm{r}_i(t) - \bm{r}_i(0) |^2
+D(z) = \frac{1}{6t} \langle | \mathbf{r}_i(t) - \mathbf{r}_i(0) |^2
 \delta(z_i(0) - z)  \rangle 
 \end{equation}
 provides local information about the translational motions avaiable to
-the water molecules located within a computed $\delta z$. In the
-liquid, translation of molecules primarily occurs within local
-solvation cages, while translation within the ice is
+the water molecules located within a computed $\delta z$, and the
+angle brackets indicate an average over all the water molecules and
+time origins available from the simulation. In the liquid, translation
+primarily occurs on two separate time scales. At short times,
+diffusion occurs within local solvation cages, while at longer times
+these molecules vacate their local solvation shells and form new cage
+confirmations. Comparatively, translation within the ice is
 nonexistent. Therefore, we expect the corresponding diffusion
 constants for these two regions to be vastly different. Observing the
 spatial length over which this transition occurs provides us with a
 dynamic width of the interface, and allows for comparison with the
-structural widths obtained in Chapter \ref{chap:Str}. 
+structural widths obtained in Chapter \ref{chap:Str}.
 
 For each of the ice-I$_\mathrm{h}$ / water interfaces described in
-Chapter \ref{chap:Str}, four subsequent one nanosecond simulations
-were performed without the presence of an applied kinetic energy or
+Chapter \ref{chap:Methods}, four one nanosecond simulations were
+performed without the presence of an applied kinetic energy or
 momentum flux (\textit{i.e.}, no thermal or velocity gradient was
 present in the system). Configurations of the systems were stored
-every 100 fs, and the spatially resolved diffusion coefficients were
-computed by slicing the systems into 1~\AA~bins along the
-$z$-dimension (see Figure \ref{fig:DzSPCE} and Figure
+every 100 fs, and spatially resolved three-dimensional diffusion
+coefficients were computed by slicing the systems into 1~\AA~bins
+along the $z$-dimension (see Figure \ref{fig:DzSPCE} and Figure
 \ref{fig:DzTIP4PIce}).
 
 \begin{figure*}
 \includegraphics[width=\linewidth]{Figures/DzSPCE}
 \caption{\label{fig:DzSPCE} Upper: Mean-squared displacement (MSD)
-  collected in 1 \AA~bins across the SPC/E basal ice-I$_\mathrm{h}$ / water
-  interface. The band with no increase in the mean-squared
-  displacement are the water molecules in the ice, while the band
-  increases most quickly corresponds to bins in the liquid. Between
-  these two bands are bins which span the interfacial liquid water,
-  with a mean-square displacement which increases moderately in
-  time. Lower: The spatially resolved diffusion coefficient, $D(z)$,
-  can be obtained from fitting the MSD data by
-  Eq. \eqref{eq:diffusion3}. These are shown along with a fit that
-  provies a ''diffusion'' width, $d_{10-90}^{D}$. The locations of
-  the structural Gibbs dividing surfaces (using tetrahedrality) are
+  collected in 1 \AA~bins across the SPC/E basal ice-I$_\mathrm{h}$ /
+  water interface. The band with no increase in the MSD are the water
+  molecules in the ice, while the band that increases most quickly
+  corresponds to bins in the liquid. Between these two bands are bins
+  which span the interfacial liquid water, with a MSD which increases
+  moderately in time. Lower: The spatially resolved three-dimensional
+  diffusion coefficient, $D(z)$, can be obtained from fitting the MSD
+  data by Eq. \eqref{eq:diffusion3}. These are shown along with a fit
+  that provies a ''diffusion'' width, $d_{10-90}^{D}$. The locations
+  of the structural Gibbs dividing surfaces (using tetrahedrality) are
   indicated with vertical dashed blue lines, while the locations of
   the ''diffusion'' interfaces are shown in green.  }
 \end{figure*}
@@ -105,35 +108,38 @@ $z$-dimension (see Figure \ref{fig:DzSPCE} and Figure
   model increases the observed diffusion coefficients, and has brought
   the structural and diffusion interfaces much closer together.}
 \end{figure*}
+XXX Fix Plots $10^{-10}$ XXX
 
 In the top panel of Figure \ref{fig:DzSPCE} and Figure
 \ref{fig:DzTIP4PIce}, the mean-squared displacement
-($\langle | \bm{r}_i(t) - \bm{r}_i(0) |^2 \rangle $) has been computed
-for molecules within 1 \AA~bins across the basal ice-I$_\mathrm{h}$ /
-water interface. At early times, the mean-square displacement rises
-linearly due to ballistic motion of the molecules. This is due to the
-unhindered motion of the water molecules within their local solvation
-cages. At slightly longer times, the molecules bounce off of their
-solvation cages, which can be seen in the short decay in the
-mean-squared displacement immediately following the ballistic
-regeime. Diffusion coefficients are obtained from a regression of the
-longer time portion of the mean-squared displacements using
-Eq. \eqref{eq:diffusion3}, and are shown in the lower panels of the
-same figures. Calculation of the diffusion coefficients was performed
-assuming the water molecules could translate in three dimensions, even
-though it may be more appropriate to assume diffusion to occur in only
-two dimensions for molecules close to the ice. 
+($\langle | \mathbf{r}_i(t) - \mathbf{r}_i(0) |^2 \rangle $) has been computed
+across the basal ice-I$_\mathrm{h}$ / water interface. At early times,
+the mean-square displacement rises parabolically due to the ballistic
+motion of molecules; which arises from the unhindered motion of
+molecules within their local solvation cages. At slightly longer
+times, the molecules bounce off of their solvation cages, which can be
+seen in the short decay in the mean-squared displacement immediately
+following the ballistic regeime. Diffusion coefficients are obtained
+from a regression of the longer time portion of the mean-squared
+displacements using Eq. \eqref{eq:diffusion3}, and are shown in the
+lower panels of the same figures. Calculation of the diffusion
+coefficients was performed assuming the water molecules could
+translate in three dimensions, even though it may be more appropriate
+to assume diffusion to occur in only two dimensions for molecules
+close to the ice.
 
-In the bulk liquid portions of the SPC/E system (Figure
-\ref{fig:DzSPCE}), diffusion coefficients are found to be XXX, while
-in the ice the transport coefficient is numerically zero. In
-comparison, diffusion constants for the liquid region of the systems
-modeled with the TIP4P/Ice forcefield were found to be YYY. The
-increase in the values reported is attributed to the warmer
-temperature, 270~K. Fitting the $D(z)$ profiles with a function
-designed to smoothly transition from the liquid diffusion coefficients
-to those of the ice, we can determine the distance over which this
-transition occurs.
+In the bulk liquid portions of the SPC/E system ( lower panel of
+Figure \ref{fig:DzSPCE}), diffusion coefficients are found to be
+$\sim$~0.75$\times 10^{-10}~\mathrm{m}^{2}~\mathrm{s}^{-1 }$, while in
+the ice the transport coefficient is numerically zero. In comparison,
+diffusion constants for the liquid region of the systems modeled with
+the TIP4P/Ice forcefield were found to be
+$\sim$~1.75$\times 10^{-10}~\mathrm{m}^{2}~\mathrm{s}^{-1 }$ (lower
+panel of Figure \ref{fig:DzTIP4PIce}). The observed increase in the
+reported values is attributed to the warmer temperature of the
+liquid. We can determine the distance over which this transition
+occurs by fitting the $D(z)$ profiles with a function designed to
+smoothly transition from the liquid to the ice.
 
 \begin{equation}\label{eq:Dfit}
   D(z) = \frac{1}{D_\mathrm{liquid}} - \frac{1}{2D_\mathrm{liquid}} \left(
@@ -142,19 +148,38 @@ transition occurs.
   
 Here, $D_\mathrm{liquid}$ is the value of the diffusion coefficient in
 the liquid, $l$ and $r$ are the Gibbs dividing surface of the left and
-right interfaces, and $d^{D}$ is the width of the interface. These
-values of interfacial width are related to the structural $10\%-90\%$
-interfacial widths reported in Chapter \ref{chap:Str} by the same
-scaling coefficient, ($d_\mathrm{10-90}^{D} = 2.197~d^{D}$). All four
-SPC/E interfaces exhibit dynamic widths that are $\sim~XX$~\AA~and are
-larger than the structural measures reported in Table
-\ref{tab:strWidths}. Similarly, the TIP4P/Ice systems at 270~K exhibit
-dynamic widths of $\sim~YY$~\AA~, which are also larger than
-interfacial widths predicted by structural measures for the same
-model. As we saw with the structural measures of interfacial width,
-the TIP4P/Ice model at 270~K predicts a broader interface than the
-SPC/E model at 225~K.  The value of the dynamic width of the interface
-for each interface is reported in Table \ref{tab:dynWidths}.
+right interfaces (indicated with vertical green lines in Figure
+\ref{Fig:DzSPCE} and Figure \ref{fig:DzTIP4PIce}), and $d^{D}$ is the
+width of the interface. These values of interfacial width are related
+to the structural $10\%-90\%$ interfacial widths reported in Chapter
+\ref{chap:Str} by the same scaling coefficient,
+($d_\mathrm{10-90}^{D} = 2.197~d^{D}$). All four SPC/E interfaces
+exhibit dynamic widths of $\sim$~14~\AA~, which is significantly
+larger than the widths predicted by structural measurements reported
+in Table \ref{tab:strWidths}. Similarly, the TIP4P/Ice systems at
+270~K exhibit dynamic widths of $\sim$12~\AA~, which are also larger
+than the interfacial widths predicted by structural measures for the
+same model. Suprisingly, the TIP4P/Ice model at 270~K predicts a
+narrower interface than the SPC/E model at 225~K. This could indicate
+that at the warmer temperature, the liquid molecules near the surface
+recover the bulk-like dynamics over fewer molecular layers advancing
+from the ice. However, the associated error with these measurements is
+rather large and thus cannot be definitively established. The value of
+the dynamic width of each interface is reported in Table
+\ref{tab:dynWidths}.
+
+It is interesting to note the spatial separations between the two
+Gibbs dividing surfaces (tetrahedrality in blue, diffusion in green)
+shown in the lower panels of Figure \ref{Fig:DzSPCE} and Figure
+\ref{fig:DzTIP4PIce} are not equal. The SPC/E systems exhibit a wide
+separation between these two interfaces, $\sim$~XX \AA~, while the
+TIP4P/Ice model predicts a much narrower separation $\sim$~XX
+\AA~. Due to the dependence of molecular motion on the local
+structure, it is not clear if these two interfaces should lie on top
+of one another. However, this discrepency between the spatial
+separations of the Gibbs dividing surfaces of structural and dynamic
+measures appears robust, as will be seen in the following sections of
+this chapter.
 
 \begin{table}[h]
 \centering
@@ -192,7 +217,8 @@ The spatially-resolved orientational time correlation function,
 provides local information about the decorrelation of molecular
 orientations in time. Here, $P_{2}$ is the second-order Legendre
 polynomial, and $\mathbf{u}_i$ is the molecular unit vector that bisects
-the HOH angle of molecule $i$. The angle brackets indicate an average
+the HOH angle of molecule $i$. As denoted with the computation of the
+local diffusion constants, the angle brackets indicate an average
 over all the water molecules and time origins, and the delta function
 restricts the average to specific regions in the $z$-dimension. 
 
@@ -257,16 +283,18 @@ with
 where all of the decay constants are considered local functions of the
 $z$ coordinate. In Fig. \ref{fig:SPorient}, the $z$-coordinate
 profiles for the three decay constants, $\tau_{\mathrm{short}}$,
-$\tau_{\mathrm{middle}}$, and $\tau_{\mathrm{long}}$ for the secondary prism interface
-is shown, along with their fractional components of the overall total
-decay, ($a$, $b$, $1-a-b$), respectively. Similar figures for the
-other interfaces are provided in the Supporting Information.
+$\tau_{\mathrm{middle}}$, and $\tau_{\mathrm{long}}$ for the SPC/E
+secondary prism interface is shown, along with their fractional
+components of the overall total decay, ($a$, $b$, $1-a-b$),
+respectively. Similar figures for the other interfaces are provided in
+Appendix \ref{dynamicAppendix}.
 
 In the liquid regions of all four interfaces, $\tau_\mathrm{middle}$
 and $\tau_\mathrm{long}$ consistently approach $3-6$ ps and $30-40$
-ps, respectively.  Both of these times increase closer to the
-interface.  Conversely, $\tau_\mathrm{short}$ decreases from a
-liquid-state value of $72-76$ fs approaching the interface.
+ps, respectively.  Both of these times increase closer to the local
+tetrahedral order parameter interface.  Conversely,
+$\tau_\mathrm{short}$ decreases from a liquid-state value of $72-76$
+fs approaching the same interface.
 
 The fractional contributions of the three motions to the overall decay
 changes as we approach the interface as well. Far from the ice, the
