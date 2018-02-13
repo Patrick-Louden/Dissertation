@@ -13,27 +13,21 @@ Given this, we have investigated the dynamics of water molecules
 across the interface as well.
 
 \section{Diffusion Coefficients as a Measure of Interfacial Width}
-XXX As discussed in Chapter \ref{chap:intro}, transport coefficients are
-defined by a relation of the system's response to a perturbation. For
-example, the diffusion coefficient can be expressed in terms of an
-applied particle flux and the resulting concentration gradient, just
-as the shear viscosity can be expressed in terms of an applied shear
-stress and the resulting velocity gradient. While it is still possible
-to obtain transport coefficients by reversing which quantity is
-applied and which is observed, \textit{i.e.}, applying a velocity
-gradient across the system and measuring the resulting shear stress,
-such methodologies are innately prone to noise and the resulting
-simulations are required to be much longer. Regardless of which
-quantity is applied, deviation from equilibrium is achieved by adding
-a perturbation $\mathscr{A}$ to the Hamiltonian.  Transport
-coefficients $\gamma$ can then be calculated from an infinite time
-integral of an equilibrium time correlation function.
+As discussed in Chapter \ref{chap:intro}, transport coefficients
+can be defined by relating a system's response to an external
+perturbation. For example, the diffusion coefficient can be expressed
+in terms of an applied particle flux and the resulting concentration
+gradient; just as the shear viscosity can be expressed in terms of an
+applied shear stress and the resulting velocity gradient. It is also
+possible to obtain transport coefficients ($\gamma$) from an infinite
+time integral of an equilibrium time correlation function of a related
+flux ($\mathscr{A}$).
 \begin{equation}\label{eq:transport1}
 \gamma = \int_0^{\infty} dt \langle \dot{\mathscr{A}}(t)
 \dot{\mathscr{A}}(0)\rangle 
 \end{equation}
 Albert Einstein was able to show that for any expression written in
-this form, there was an associated expression which takes the form
+this form, there is an associated expression,
 \begin{equation}\label{eq:transport2}
 2t\gamma = \langle (\mathscr{A}(t)-\mathscr{A}(0))^2 \rangle
 \end{equation}
@@ -46,8 +40,8 @@ D = \frac{1}{3} \int_0^{\infty} dt \langle \dot{\mathbf{r}_i}(t) -
 \end{equation}
 where $\dot{\mathbf{r}_i}(t)$ is the center-of-mass velocity of molecule
 $i$, and the factor of $\frac{1}{3}$ accounts for motion in three
-dimensions. From Eq. \eqref{eq:transport1} and Eq. \eqref{eq:transport2},
-the corresponding Einstein relation would then be
+dimensions. From Equation \eqref{eq:transport1} and Equation \eqref{eq:transport2},
+the corresponding Einstein relation is
 \begin{equation}\label{eq:diffusion2}
 2Dt = \frac{1}{3} \langle | \mathbf{r}_i(t) - \mathbf{r}_i(0) |^2 \rangle
 \end{equation}
@@ -93,7 +87,7 @@ along the $z$-dimension (see Figure \ref{fig:DzSPCE} and Figure
   which span the interfacial liquid water, with a MSD which increases
   moderately in time. Lower: The spatially resolved three-dimensional
   diffusion coefficient, $D(z)$, can be obtained from fitting the MSD
-  data by Eq. \eqref{eq:diffusion3}. These are shown along with a fit
+  data by Equation \eqref{eq:diffusion3}. These are shown along with a fit
   that provies a ''diffusion'' width, $d_{10-90}^{D}$. The locations
   of the structural Gibbs dividing surfaces (using tetrahedrality) are
   indicated with vertical dashed blue lines, while the locations of
@@ -103,30 +97,28 @@ along the $z$-dimension (see Figure \ref{fig:DzSPCE} and Figure
 \begin{figure*}
 \includegraphics[width=\linewidth]{Figures/DzTIP4PIce}
 \caption{\label{fig:DzTIP4PIce} The same basal diffusion coefficients
-  as Fig. \ref{fig:DzSPCE}, but collected using the TIP4P/Ice model
+  as Figure \ref{fig:DzSPCE}, but collected using the TIP4P/Ice model
   and at 270 K. Note that the higher coexistence temperature for this
   model increases the observed diffusion coefficients, and has brought
   the structural and diffusion interfaces much closer together.}
 \end{figure*}
-XXX Fix Plots $10^{-10}$ XXX
 
 In the top panel of Figure \ref{fig:DzSPCE} and Figure
-\ref{fig:DzTIP4PIce}, the mean-squared displacement
-($\langle | \mathbf{r}_i(t) - \mathbf{r}_i(0) |^2 \rangle $) has been computed
-across the basal ice-I$_\mathrm{h}$ / water interface. At early times,
-the mean-square displacement rises parabolically due to the ballistic
-motion of molecules; which arises from the unhindered motion of
-molecules within their local solvation cages. At slightly longer
-times, the molecules bounce off of their solvation cages, which can be
-seen in the short decay in the mean-squared displacement immediately
-following the ballistic regeime. Diffusion coefficients are obtained
-from a regression of the longer time portion of the mean-squared
-displacements using Eq. \eqref{eq:diffusion3}, and are shown in the
-lower panels of the same figures. Calculation of the diffusion
-coefficients was performed assuming the water molecules could
-translate in three dimensions, even though it may be more appropriate
-to assume diffusion to occur in only two dimensions for molecules
-close to the ice.
+\ref{fig:DzTIP4PIce}, the mean-squared displacement (MSD)
+($\langle | \mathbf{r}_i(t) - \mathbf{r}_i(0) |^2 \rangle $) has been
+computed across the basal ice-I$_\mathrm{h}$ / water interface. At
+early times, the MSD rises parabolically due to the ballistic motion
+of molecules; which arises from the unhindered motion of molecules
+within their local solvation cages. At slightly longer times, the
+molecules bounce off of their solvation cages, which can be seen in
+the short decay in the MSD immediately following the ballistic
+regeime. Diffusion coefficients are obtained from a regression of the
+longer time portion of the MSDs using Equation \eqref{eq:diffusion3}, and
+are shown in the lower panels of the same figures. Calculation of the
+diffusion coefficients was performed assuming the water molecules
+could translate in three dimensions, even though it may be more
+appropriate to assume diffusion to occur in only two dimensions for
+molecules close to the ice.
 
 In the bulk liquid portions of the SPC/E system ( lower panel of
 Figure \ref{fig:DzSPCE}), diffusion coefficients are found to be
@@ -172,8 +164,8 @@ It is interesting to note the spatial separations between the two
 Gibbs dividing surfaces (tetrahedrality in blue, diffusion in green)
 shown in the lower panels of Figure \ref{Fig:DzSPCE} and Figure
 \ref{fig:DzTIP4PIce} are not equal. The SPC/E systems exhibit a wide
-separation between these two interfaces, $\sim$~XX \AA~, while the
-TIP4P/Ice model predicts a much narrower separation $\sim$~XX
+separation between these two interfaces, $\sim$~8 \AA~, while the
+TIP4P/Ice model predicts a much narrower separation $\sim$~4
 \AA~. Due to the dependence of molecular motion on the local
 structure, it is not clear if these two interfaces should lie on top
 of one another. However, this discrepency between the spatial
@@ -216,29 +208,30 @@ The spatially-resolved orientational time correlation function,
 \end{equation}
 provides local information about the decorrelation of molecular
 orientations in time. Here, $P_{2}$ is the second-order Legendre
-polynomial, and $\mathbf{u}_i$ is the molecular unit vector that bisects
-the HOH angle of molecule $i$. As denoted with the computation of the
-local diffusion constants, the angle brackets indicate an average
-over all the water molecules and time origins, and the delta function
-restricts the average to specific regions in the $z$-dimension. 
+polynomial, and $\mathbf{u}_i$ is the molecular unit vector that
+bisects the HOH angle of molecule $i$. Again, the angle brackets
+indicate an average over all the water molecules and time origins, and
+the delta function restricts the average to specific regions in the
+$z$-dimension.
 
 In the ice crystal, decay of $C_2(z,t)$ is incomplete, while in the
 liquid, correlation times are typically measured in ps. Observing the
-spatial transition between the decay regimes can define a dynamic
-measure of the interfacial width. To determine dynamic widths of the
-interfaces under shear, each of the systems were divided into bins
-along the $z$ axis ($\approx$ 1 \AA\ wide) and $C_2(z,t)$ was computed
-using only those molecules that were in the bin at the initial
-time. For each ice-I$_\mathrm{h}$ / water interface investigated, the following 0.5
-ns simulations were computed: quiescent simulations (where no thermal
-or momentum gradient was present), simulations with only a thermal
-gradient present, and simulations where both thermal and momentum
-gradients were present. During these simulations, the positions and
-orientations of each molecule were recorded every 100 fs.
+spatial transition between the decay regimes can define another
+dynamic measure of the interfacial width. To determine dynamic widths
+of the interfaces under shear, each of the systems were divided into
+bins along the $z$ axis ($\approx$ 1 \AA\ wide) and $C_2(z,t)$ was
+computed using only those molecules that were in the bin at the
+initial time (see Figure \ref{fig:Czt}). For each ice-I$_\mathrm{h}$ /
+water interface investigated, the following 0.5 ns simulations were
+computed: quiescent simulations (where no thermal or momentum gradient
+was present), simulations with only a thermal gradient present, and
+simulations where both thermal and momentum gradients were
+present. During these simulations, the positions and orientations of
+each molecule were recorded every 100 fs.
 
 \begin{figure*}
 \includegraphics[width=\linewidth]{Figures/CztImage}
-\caption{\label{fig:Czt} $C_2(z,t)$ collected in 1 \AA~bins across the SPC/E
+\caption{\label{fig:Czt}~$C_2(z,t)$ collected in 1 \AA~bins across the SPC/E
   secondary prism ice-I$_\mathrm{h}$ / water interface. The band that experiences very
   little decay represents water molecules in the ice, while the band
   that decays quickly corresponds to bins in the liquid.  The
@@ -281,12 +274,12 @@ with
 \label{eq:c2}
 \end{equation}
 where all of the decay constants are considered local functions of the
-$z$ coordinate. In Fig. \ref{fig:SPorient}, the $z$-coordinate
+$z$ coordinate. In Figure \ref{fig:SPorient}, the $z$-coordinate
 profiles for the three decay constants, $\tau_{\mathrm{short}}$,
 $\tau_{\mathrm{middle}}$, and $\tau_{\mathrm{long}}$ for the SPC/E
 secondary prism interface is shown, along with their fractional
 components of the overall total decay, ($a$, $b$, $1-a-b$),
-respectively. Similar figures for the other interfaces are provided in
+respectively. Similar figures for the other SPC/E interfaces are provided in
 Appendix \ref{dynamicAppendix}.
 
 In the liquid regions of all four interfaces, $\tau_\mathrm{middle}$
@@ -318,7 +311,7 @@ decay.
 \includegraphics[width=\linewidth]{Figures/Sec_lcorrz}
 \caption{\label{fig:SPorient} Decay times (left) for $C_2(z,t)$ at the
   SPC/E secondary prism interface, and their fractional contributions to the
-  overall decay (right) fit using Eq. \eqref{eq:c2}. The local decay
+  overall decay (right) fit using Equation \eqref{eq:c2}. The local decay
   constants are plotted as a function of distance from the center of
   the ice slab. The vertical dashed line indicates the Gibbs dividing
   surface determined using the local tetrahedral order parameter.
@@ -386,14 +379,14 @@ manifests as faster librational decay.
 As an additional measure of a dynamic width of the quiescent
 interfaces, each of the systems were divided into bins along the $z$
 axis ($\approx$ 1 \AA\ wide) and $C_\mathrm{jump}(z,t)$ was computed
-(see Fig. \ref{fig:SPkjmp} and Fig. \ref{fig:SPTIP4Pkjmp}).
+(see Figure \ref{fig:SPkjmp} and Figure \ref{fig:SPTIP4Pkjmp}).
 Like Laage and Hynes, we find that within each spatial region, the
 decay is easily fit with a single exponential, yielding a local
 hydrogen bond jump time. The jump times diverge inside the ice
 crystal, so the jump rate, $k_\mathrm{jump}(z) = 1 / \tau_0(z)$ can be
 used to identify a hydrogen bond jump width for the interface in a
 similar manner to the dynamic width. $k_\mathrm{jump}(z)$ was fit with
-a hyperbolic tangent (see Eq. \eqref{tauFit}) and the $10\%-90\%$ jump
+a hyperbolic tangent (see Equation \eqref{tauFit}) and the $10\%-90\%$ jump
 width, $d_\mathrm{10-90}^{jump}$, is shown in Table \ref{tab:dynWidths}.
 
 \begin{figure*}
@@ -418,7 +411,7 @@ width, $d_\mathrm{10-90}^{jump}$, is shown in Table \ref{tab:dynWidths}.
 \begin{figure*}
 \includegraphics[width=\linewidth]{Figures/secprismJumpPlotTIP4PIce}
 \caption{\label{fig:SPTIP4Pkjmp} The same secondary prism hydrogen
-  bond jump data as Fig. \ref{fig:SPkjmp}, but collected using the
+  bond jump data as Figure \ref{fig:SPkjmp}, but collected using the
   TIP4P/Ice model and at 270~K.  Note that the higher coexistence
   temperature for this model increases the observed liquid-state jump
   rates, and has brought the structural and jump interfaces much
