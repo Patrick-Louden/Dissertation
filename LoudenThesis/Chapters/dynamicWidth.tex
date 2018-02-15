@@ -1,6 +1,6 @@
 \chapter{DYNAMIC WIDTHS OF ICE-I$_\mathrm{h}$ / WATER INTERFACES}\label{chap:Dyn}
-In Chapter \ref{chap:Str}, ice-I$_\mathrm{h}$ / water interface was
-characterized by structural order parameters, and estimates of the
+In Chapter \ref{chap:Str}, the ice-I$_\mathrm{h}$ / water interface
+was characterized by structural order parameters, and estimates of the
 interfacial width were obtained by determining the distance over which
 these parameters transitioned from their bulk liquid values to those
 for ice-like configurations. The local density and tetrahedral order
@@ -9,19 +9,20 @@ and yield similar widths for a given facet.  Simulations and
 experiments indicate that the dynamics of water molecules depend not
 only on their local structure and environment, but also on the
 ordering of molecules outside of their first solvation shell.\cite{}
-Given this, we have investigated the dynamics of water molecules
-across the interface as well.
+Given this, we expect the dynamics of the water molecules to change as
+we traverse from the solid to the liquid. Therefore, we have investigated the
+dynamics of water molecules across the interface as well.
 
 \section{Diffusion Coefficients as a Measure of Interfacial Width}
-As discussed in Chapter \ref{chap:intro}, transport coefficients
-can be defined by relating a system's response to an external
+As discussed in Chapter \ref{chap:intro}, transport coefficients can
+be defined by relating a system's response to an external
 perturbation. For example, the diffusion coefficient can be expressed
 in terms of an applied particle flux and the resulting concentration
 gradient; just as the shear viscosity can be expressed in terms of an
-applied shear stress and the resulting velocity gradient. It is also
-possible to obtain transport coefficients ($\gamma$) from an infinite
-time integral of an equilibrium time correlation function of a related
-flux ($\mathscr{A}$).
+applied shear stress and the resulting velocity gradient. In general,
+it is also possible to obtain transport coefficients ($\gamma$) from
+an infinite time integral of an equilibrium time correlation function
+of a related flux ($\mathscr{A}$).
 \begin{equation}\label{eq:transport1}
 \gamma = \int_0^{\infty} dt \langle \dot{\mathscr{A}}(t)
 \dot{\mathscr{A}}(0)\rangle 
@@ -48,18 +49,18 @@ the corresponding Einstein relation is
 where $\mathbf{r}_i(t)$ is the center-of-mass position of molecule
 $i$. 
 
-The spatially-resolved diffusion constant,
+The spatially-resolved three-dimensional diffusion constant,
 \begin{equation}\label{eq:diffusion3}
 D(z) = \frac{1}{6t} \langle | \mathbf{r}_i(t) - \mathbf{r}_i(0) |^2
 \delta(z_i(0) - z)  \rangle 
 \end{equation}
 provides local information about the translational motions avaiable to
-the water molecules located within a computed $\delta z$, and the
+water molecules located within a computed $\delta z$. Here, the
 angle brackets indicate an average over all the water molecules and
 time origins available from the simulation. In the liquid, translation
 primarily occurs on two separate time scales. At short times,
 diffusion occurs within local solvation cages, while at longer times
-these molecules vacate their local solvation shells and form new cage
+molecules vacate their solvation shells and form new cage
 confirmations. Comparatively, translation within the ice is
 nonexistent. Therefore, we expect the corresponding diffusion
 constants for these two regions to be vastly different. Observing the
@@ -101,7 +102,7 @@ within these $\delta z$~ bins. (see Figure \ref{fig:DzSPCE} and Figure
   as Figure \ref{fig:DzSPCE}, but collected using the TIP4P/Ice model
   and at 270 K. Note that the higher coexistence temperature for this
   model increases the observed diffusion coefficients, and has brought
-  the structural and diffusion interfaces much closer together.}
+  the structural and diffusion interfaces closer together.}
 \end{figure*}
 
 In the top panel of Figure \ref{fig:DzSPCE} and Figure
@@ -114,14 +115,14 @@ within their local solvation cages. At slightly longer times, the
 molecules bounce off of their solvation cages, which can be seen in
 the short decay in the MSD immediately following the ballistic
 regeime. Diffusion coefficients are obtained from a regression of the
-longer time portion of the MSDs using Equation \eqref{eq:diffusion3}, and
-are shown in the lower panels of the same figures. Calculation of the
-diffusion coefficients was performed assuming the water molecules
+longer time portion of the MSDs using Equation \eqref{eq:diffusion3},
+and are shown in the lower panels of the same figures. Calculation of
+the diffusion coefficients was performed assuming the water molecules
 could translate in three dimensions, even though it may be more
-appropriate to assume diffusion to occur in only two dimensions for
-molecules close to the ice.
+appropriate to assume motion in only two dimensions for molecules
+close to the ice.
 
-In the bulk liquid portions of the SPC/E system ( lower panel of
+In the bulk liquid portions of the SPC/E system (lower panel of
 Figure \ref{fig:DzSPCE}), diffusion coefficients are found to be
 $\sim$~0.75$\times 10^{-10}~\mathrm{m}^{2}~\mathrm{s}^{-1 }$, while in
 the ice the transport coefficient is numerically zero. In comparison,
@@ -142,7 +143,7 @@ smoothly transition from the liquid to the ice.
 Here, $D_\mathrm{liquid}$ is the value of the diffusion coefficient in
 the liquid, $l$ and $r$ are the Gibbs dividing surface of the left and
 right interfaces (indicated with vertical green lines in Figure
-\ref{Fig:DzSPCE} and Figure \ref{fig:DzTIP4PIce}), and $d^{D}$ is the
+\ref{fig:DzSPCE} and Figure \ref{fig:DzTIP4PIce}), and $d^{D}$ is the
 width of the interface. These values of interfacial width are related
 to the structural $10\%-90\%$ interfacial widths reported in Chapter
 \ref{chap:Str} by the same scaling coefficient,
@@ -155,29 +156,32 @@ than the interfacial widths predicted by structural measures for the
 same model. Suprisingly, the TIP4P/Ice model at 270~K predicts a
 narrower interface than the SPC/E model at 225~K. This could indicate
 that at the warmer temperature, the liquid molecules near the surface
-recover the bulk-like dynamics over fewer molecular layers advancing
+recover their bulk-like dynamics over fewer molecular layers advancing
 from the ice. However, the associated error with these measurements is
-rather large and thus cannot be definitively established. The value of
-the dynamic width of each interface is reported in Table
-\ref{tab:dynWidths}.
+rather large and cannot be definitively established. The dynamic
+widths for each interface, $d_\mathrm{10-90}^{D}$, are reported in
+Table \ref{tab:dynWidths}.
 
 It is interesting to note the spatial separations between the two
 Gibbs dividing surfaces (tetrahedrality in blue, diffusion in green)
-shown in the lower panels of Figure \ref{Fig:DzSPCE} and Figure
+shown in the lower panels of Figure \ref{fig:DzSPCE} and Figure
 \ref{fig:DzTIP4PIce} are not equal. The SPC/E systems exhibit a wide
 separation between these two interfaces, $\sim$~8 \AA~, while the
-TIP4P/Ice model predicts a much narrower separation $\sim$~4
-\AA~. Due to the dependence of molecular motion on the local
-structure, it is not clear if these two interfaces should lie on top
-of one another. However, this discrepency between the spatial
-separations of the Gibbs dividing surfaces of structural and dynamic
-measures appears robust, as will be seen in the following sections of
-this chapter.
+TIP4P/Ice model predicts a much narrower separation $\sim$~4 \AA~. Due
+to the dependence of molecular motion on the first ($\sim$~4 \AA) and
+second ($\sim$~7 \AA) solvation shells, it is not clear if these two
+interfaces should lie on top of one another. While structural ordering
+of the interfacial liquid may become bulk-like after a few molecular
+diameters, the dynamics of molecules may be influenced further into
+the bulk. However, this discrepency between the spatial separations of
+the Gibbs dividing surfaces for structural and dynamic measures
+appears to be robust, as evident in the following sections of this
+chapter.
 
 \begin{table}[h]
 \centering
 \caption{COMPUTED WIDTHS OF THE ICE-I$_\mathrm{h}$ / WATER INTERFACES BY
-  DYNAMIC MEASURES. \label{tab:dynWidths}} 
+  DYNAMIC MEASURES \label{tab:dynWidths}} 
 \begin{tabular}{r|ccc|ccc}  
 \hline
 \hline
@@ -223,12 +227,12 @@ of the interfaces under shear, each of the systems were divided into
 bins along the $z$ axis ($\approx$ 1 \AA\ wide) and $C_2(z,t)$ was
 computed using only those molecules that were in the bin at the
 initial time (see Figure \ref{fig:Czt}). For each ice-I$_\mathrm{h}$ /
-water interface investigated, the following 0.5 ns simulations were
-computed: quiescent simulations (where no thermal or momentum gradient
-was present), simulations with only a thermal gradient present, and
-simulations where both thermal and momentum gradients were
-present. During these simulations, the positions and orientations of
-each molecule were recorded every 100 fs.
+water interface investigated, four repititions of the following 0.5 ns
+simulations were computed: quiescent simulations (where no thermal or
+momentum gradient was present), simulations with only a thermal
+gradient present, and simulations where both thermal and momentum
+gradients were present. During these simulations, the positions and
+orientations of each molecule were recorded every 100 fs.
 
 \begin{figure*}
 \includegraphics[width=\linewidth]{Figures/CztImage}
@@ -241,7 +245,7 @@ each molecule were recorded every 100 fs.
 \end{figure*}
 
 Recently, Laage and Hynes have determined the mechanism for water
-reorientation.\cite{Laage2006,Laage2008} Using molecular dynamics
+reorientation.~\cite{Laage2006,Laage2008} Using molecular dynamics
 simulations, they found that water reorients by breaking a hydrogen
 bond with an overcoordinated first-shell neighbor, and makes a large
 angle jump to form a new hydrogen bond with an undercoordinated
@@ -337,8 +341,9 @@ $10\%-90\%$ dynamic widths are easily computed from the fits
 ($d_\mathrm{10-90}^{C_2} = 2.197~d^{C_2}$), and are provided in Table
 \ref{tab:dynWidths}. All four SPC/E interfaces exhibit dynamic widths
 that are $\sim 11$~\AA, and are larger than the structural widths
-computed above.  In TIP4P/Ice at 270K, the dynamic widths are
-$\sim 14$~\AA, also larger than the structural widths reported above.
+reported in Table \ref{tab:strWidths}.  In TIP4P/Ice at 270K, the dynamic widths are
+$\sim 14$~\AA, also larger than the structural widths reported in the
+same table.
  
 \section{Spatial Resolution of Hydrogen Bond Jump Rates}
 The spatially-resolved hydrogen bond jump correlation function,
@@ -370,7 +375,7 @@ for the water molecules that are in proximity to the interface, the
 hindered range of motion (i.e., a smaller cone around the O-O vector)
 manifests as faster librational decay.
 
-As an additional measure of a dynamic width of the quiescent
+As a third measure of a dynamic width of the quiescent
 interfaces, each of the systems were divided into bins along the $z$
 axis ($\approx$ 1 \AA\ wide) and $C_\mathrm{jump}(z,t)$ was computed
 (see top panels of Figure \ref{fig:SPkjmp} and Figure
@@ -380,16 +385,16 @@ exponential, yielding a local hydrogen bond jump time. The jump times
 diverge inside the ice crystal, so the jump rate,
 $k_\mathrm{jump}(z) = 1 / \tau_0(z)$ can be used to identify a
 hydrogen bond jump width for the interface in a similar manner to the
-dynamic width (see lower panels of Figure \ref{fig:SPkjmp} and Figure
+orientational decay rates (see lower panels of Figure \ref{fig:SPkjmp} and Figure
 \ref{fig:SPTIP4Pkjmp}). $k_\mathrm{jump}(z)$ was fit with a hyperbolic
 tangent (see Equation \eqref{tauFit}) and the $10\%-90\%$ jump width,
 $d_\mathrm{10-90}^{jump}$, is reported in Table \ref{tab:dynWidths}.
 
 We observe jump widths which agree well with the other dynamic
-measures in this chapter. Again, no apparent trend is observed for
+measures presented in this chapter. Again, no apparent trend is observed for
 interfacial thickness with presented crystal facet. Here, the SPC/E
 and TIP4P/Ice models agree reasonably well, as each interface is
-$\sim$~11 \AA wide. The 14\degree~pyramidal interfacial width modeled
+$\sim$~11 \AA~wide. The 14\degree~pyramidal interfacial width modeled
 by TIP4P/Ice is slightly smaller than the other interfaces, however,
 we were unable to determine the underlying cause upon closer
 investigation.
@@ -399,14 +404,14 @@ In the lower panels of Figure \ref{fig:SPkjmp} and Figure
 the interface. The vertical dashed blue lines indicate the midpoint of
 the interface as determined by the local tetrahedral order parameter,
 while the midpoint for the jump interface is shown in solid orange
-lines. As we previously saw in Figure \ref{fig:DzSPCE} and Figure
+lines. As we saw in Figure \ref{fig:DzSPCE} and Figure
 \ref{fig:DzTIP4PIce}, there is closer agreement between the dynamic
 and structural interfaces with the TIP4P/Ice model as compared with
-the SPC/E model. Here, the discrepency is $\sim$~ 3 \AA for the SPC/E
-model and $\sim$~ 1 \AA for the TIP4P/Ice model. While it is still unclear
-if the structural and dynamical interface come into alignment due to
-the warmer temperature, or if the observed trend is due to the slight
-difference in model parameters, the trend seems robust.  
+the SPC/E model. Here, the discrepency is $\sim$~ 3~\AA~ for the SPC/E
+model and $\sim$~ 1~\AA~ for the TIP4P/Ice model. It is still unclear
+if the structural and dynamical interface comes into alignment due to
+the warmer temperature, or if is due to a difference in the model
+parameters, however, the trend seems robust.
 
 \begin{figure*}
 \includegraphics[width=5.5in]{Figures/secPrismJumpPlot}
@@ -446,18 +451,18 @@ parameters for small slabs perpindicular to the presented ice
 surface. Quantifying the spatial transition between the bulk liquid
 and bulk ice regimes gives a dynamic estimate of interfacial
 width. These widths were found to be slightly larger than those based
-on structural measures reported in Chapter \ref{chap:Str}. However,
-like the structurally determined interfaces, the computed
-orientational dynamic widths were found to be invarient to shear rate
-and shear direction relative to the surface features of the ice.
+on structural measures reported in Chapter \ref{chap:Str}. However, as
+we found with the local tetrahedral order parameter, the computed
+orientational dynamic widths are invarient to shear rate and shear
+direction relative to the surface features of the ice.
 
 Following Haymet \textit{et al.}, the three-dimension diffusion
 coefficient was used to investigate quiescent ice-I$_\mathrm{h}$ /
 water
 interfaces. \cite{Karim1987,Karim1988,Hayward2001,Bryk2002,Hayward2002}
 Karim \textit{et al.} estimated the basal ice / water interface to be
-three to four molecular diameters wide with the TIP4P model at 240~K,
-or $\sim$10~-~15 \AA~. Similarly, Bryk and Haymet explored the SPC/E
+three to four molecular diameters wide ($\sim$10~-~15 \AA~) with the
+TIP4P model at 240~K. Similarly, Bryk and Haymet explored the SPC/E
 basal and prismatic ice-I$_\mathrm{h}$ / water interface. At 230~K,
 they observed diffusion coefficients across the interface that agree
 well with ours reported in Figure \ref{fig:DzSPCE}. In the ice, they
@@ -470,12 +475,12 @@ with our predictions at the slightly cooler solid-liquid state
 line. Hayward \textit{et al.} observed similar behavior with the
 flexible CF1 model at 270~K, which predicted slightly narrower
 interfaces for the 14\degree~ pyramidal and secondary prism compared
-to the basal and prismatic interfaces. However, all interfacial widths
-were determined to be $\sim$~10 \AA~ wide by fitting the diffusion
-coefficients by envelope functions. Comparing our results reported in
-Table \ref{tab:dynWidths} to those of Haymet \textit{et al.}, we see
-general agreement between the wide variety of water models and
-simulation temperatures. 
+to the basal and prismatic interfaces. Given that, all interfacial
+widths were determined to be $\sim$~10 \AA~ wide by fitting the
+diffusion coefficients by envelope functions. Comparing our results
+reported in Table \ref{tab:dynWidths} to those of Haymet \textit{et
+  al.}, we see general agreement between the wide variety of water
+models and simulation temperatures.
 
 Using the TIP4P water model at 240~K, Nada \textit{et al.}  observed
 differential behavior for the diffusion of molecules at the basal and
@@ -489,15 +494,18 @@ driven by the crystal surface. While we were unable to capture this
 phenomena with either the SPC/E or TIP4P/Ice models, it suggests that
 the underlying ice surface can significantly influence the dynamics of
 molecules at the interface. This result will be confirmed and
-extrapolated upon in Chapters \ref{chap:Friction} and \ref{chap:QLL}.  
+extrapolated upon in Chapter \ref{chap:Friction} and Chapter
+\ref{chap:QLL}.
 
 While it is still unclear if it is appropriate to assume
 three-dimensional diffusion for liquid at the surface of ice, the
-interfacial molecules for all studies discussed here were able to
-exchange with molecules in the ice. That is, there were no restraints
-on the water molecules comprising the ice lattice. This allowed for
-\textit{pseudo} three-dimensional diffusion of liquid molecules at the
-interface. 
+interfacial molecules for all studies discussed here (including our
+own) were able to exchange with molecules in the ice. That is, there
+were no restraints on the water molecules comprising the ice
+lattice. While this allowed for \textit{pseudo} three-dimensional
+diffusion of liquid molecules at the interface, determining the
+spatial transition for two to thre dimensional diffusion may prove
+helpful in further quantifying these interfaces in the future.
 
 So far we have observed that the translational motion of interfacial
 water molecules is significantly hindered due to the supercooled
@@ -511,15 +519,29 @@ bends into a rigid structure. However, observing the decorrelation of
 the molecular frame can further illuminate the effects of the surface
 templating on the solvating water molecules.
 
-Bryk and Haymet also calculated the orientational time correlation
-function at the basal interface of SPC/E water,\cite{Bryk2002} and
-observed the same qualitative trend through the ice-I$_\mathrm{h}$ /
-water interface as seen in Figure \ref{fig:Czt}. However, their
-spatial and temporal resolution was not sufficient to resolve a
-dynamic width of the interface. 
+While we are not the first to investigate the reorientation of
+molecules through the ice / water interface, our quantification of an
+interfacial width is the first estimate of its kind. Bryk and Haymet
+also calculated the orientational time correlation function at the
+basal interface of SPC/E water,\cite{Bryk2002} and observed the same
+qualitative trend through the ice-I$_\mathrm{h}$ / water
+interface. However, their spatial and temporal resolution was not
+sufficient to resolve a dynamic width of the interface. 
 
-
-
+Lastly it is worth pointing out the observation of the similarities
+between the four crystal facets studied here. The dynamic measures of
+interfacial width are in relative agreement, as are the decay
+constants of the orientational autocorrelation function at the
+ice-I$_\mathrm{h}$ / water interfaces. In Figure
+\ref{fig:SPCEjumpRates} and Figure \ref{fig:TIP4PIcejumpRates}, the
+hydrogen bond jump rates for all four facets are plotted for the SPC/E
+and TIP4P/Ice models, respectively. For the SPC/E systems, we observe
+a jump rate of $\sim$ 0.01 $\mathrm{ps}^{-1}$~ at each of the
+interfaces, and $\sim$ 0.02 $\mathrm{ps}^{-1}$~ at the TIP4P/Ice
+interfaces. These results indicate that the liquid solvating the the
+ice crystals is insensitive to the presented crystal facet. However,
+as we will see in Chapter \ref{chap:Friction} and Chapter
+\ref{chap:QLL}, this is not entirely true.
 
 
 \section{Summary}
@@ -530,9 +552,9 @@ interfacial width than either of the structural analyses described in
 Chapter \ref{chap:Str}.  For SPC/E ice-I$_\mathrm{h}$ / water
 interfaces, the self diffusion coefficient gives an estimate of about
 13 \AA~, while the TIP4P/Ice interface is found to be slightly
-narrower, at about  12 \AA~ wide. These
-results agree well with other two order parameters investigated, the
-orientational time correlation function, and the hydrogen bond jump
-time. However, the width predicted by the TIP4P/Ice model
-is slightly broader than compared to the SPC/E model as predicted by
-the orientational time correlation function, as well as the jump times.
+narrower, at about 12 \AA~ wide. These results agree well with
+previously reported value, as well as the other two dynamic order
+parameters investigated, the orientational time correlation function,
+and the hydrogen bond jump time. However, the TIP4P/Ice model predicts
+a slightly broader interface than the SPC/E model by the orientational
+time correlation function, as well as the jump times.

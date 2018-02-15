@@ -24,7 +24,7 @@
 % \usepackage{graphicx}
 % \usepackage{multirow}
 % \usepackage{dcolumn}
-\usepackage{bm} 
+%\usepackage{bm} 
 % \usepackage{amssymb}
 %\usepackage{tablefootnote}
 % \usepackage{times}
@@ -39,7 +39,7 @@
 % \usepackage{square}{natbib}
 % \usepackage{achemso}
 % \usepackage{cleveref}
-%------------------------------
+%----my packs--
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows}
 \usepackage{pdflscape}
@@ -53,16 +53,25 @@
 \usepackage{mathrsfs}
 \usepackage{ragged2e}
 \usepackage{csquotes}
+%----my packs--
 
-% \setcitestyle{square}
+% \usepackage{tikz}
+% \usetikzlibrary{shapes,arrows}
+% \usepackage{pdflscape}
+% \usepackage[version=3]{mhchem}
+% \usepackage{mathtools}
+% \usepackage{abraces}
+% \usepackage{threeparttable}
 
-\newcommand*{\citen}[1]{%
-  \begingroup
-    \romannumeral-`\x % remove space at the beginning of \setcitestyle
-    \setcitestyle{numbers}%
-    \cite{#1}%
-  \endgroup   
-}
+%\setcitestyle{square}
+
+%\newcommand*{\citen}[1]{%
+ % \begingroup
+  %  \romannumeral-`\x % remove space at the beginning of \setcitestyle
+   % \setcitestyle{numbers}%
+   % \cite{#1}%
+  %\endgroup   
+%}
 
 \newcommand{\degree}{\ensuremath{^\circ}}
 
@@ -82,9 +91,9 @@
 %		FRONT STUFF
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\copyrightholder{Patrick B. Louden} 
-\copyrightyear{2017}           
-\makecopyright
+%\copyrightholder{Patrick B. Louden} 
+%\copyrightyear{2017}           
+%\makecopyright
 
 \begin{abstract}
 In this dissertation I present work on the molecular origins of the
@@ -99,15 +108,15 @@ tribological properties of an ice/water interface.
 \listoffigures
 \listoftables
 
-\begin{preface}
-\vfill
-\begin{flushright}
-\textit{''Some say the world will end in fire,} \\
-\textit{Some say in ice.''}\\
---Robert Frost
-\end{flushright}
-\vfill
-\end{preface}
+%\begin{preface}
+%\vfill
+%\begin{flushright}
+%\textit{``Some say the world will end in fire,} \\
+%\textit{Some say in ice.''}\\
+%--Robert Frost
+%\end{flushright}
+%\vfill
+%\end{preface}
 
 \begin{acknowledge}
 So many thanks, much wow.
@@ -118,44 +127,33 @@ So many thanks, much wow.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %		CHAPTER 1 -- INTRODUCTION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\include{Chapters/introduction}
-
+%\include{Chapters/introduction}
+\include{Chapters/fakeIntro}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%		CHAPTER 2 -- System Contruction & Computational Details
+%		CHAPTER 2 -- NON-PERIODIC EQUILIBRIUM (LANGEVIN HULL)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\include{Chapters/iceWater}
-
+%\include{Chapters/iceWater}
+\include{Chapters/fakeMethods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%		CHAPTER 3 -- Structural Width of Ice / Water Interfaces
+%		CHAPTER 3 -- PERIODIC NON-EQUILIBRIUM (THIOLATES)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \include{Chapters/structuralWidth}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%		CHAPTER 4 -- Dynamic Widths of Ice / Water Interfaces
+%		CHAPTER 4 -- NON-PERIODIC NON-EQUILIBRIUM (NP VSS-RNEMD)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \include{Chapters/dynamicWidth}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%		CHAPTER 5 -- Friction at Ice / Water Interfaces
+%		CHAPTER 5 -- NP VSS-RNEMD NANOPARTICLE LIGANDS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \include{Chapters/friction}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%		CHAPTER 6 -- Shear Viscosity of QLL
+%		CHAPTER 6 -- CONCLUSIONS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \include{Chapters/qllViscosity}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%		CHAPTER 7 --Droplets
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\include{Chapters/iceWater2}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%		CHAPTER 8 -- Conclusion
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \include{Chapters/conclusion}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %		UNNUMBERED CHAPTER
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -169,6 +167,7 @@ So many thanks, much wow.
 %		APPENDIX
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
+% \include{appendix}
 %\include{Chapters/appendix1}
 \include{Chapters/structuralAppendix}
 \include{Chapters/dynamicAppendix}
@@ -185,6 +184,7 @@ So many thanks, much wow.
  % \bibliographystyle{nddiss2enoarticletitles}
  \bibliographystyle{achemso}
  % \bibliographystyle{abbrvnat} 
+  %\bibliography{Stocker_Thesis} 
  \bibliography{Louden_Thesis} 
  
  % The standard abbrvnat style should be acceptable. Also provided with both the advanced and standard distributions are nddiss2e and nddiss2enoarticletitles style options. If you prefer to manually enter your bibliography, that is fine. Comment out the previous two lines, and enter your bibliography as usual. Note that if you choose this route, formatting the bibliography is your responsibility. An example is below, including the optional arguments necessary for author-date style citations.
