@@ -34,7 +34,7 @@ Box dimensions are given in \AA.
 
 The $y$-dimension of the simulation box was then set to 300~\AA~ to allow for a surface premelt to form, and each system was equilibrated to 265~K~. The resulting systems exposed two interfaces, one toward positive $y$ and the other towards negative $y$. The equilibration was conducted under a constant pressure and temperature integrator, allowing the $x$ and $z$-dimensions of the simulation cell to relax and alleviate any crystal strain. Following this the systems were then equilibrated under a constant volume and temperature integrator, and lastly under a constant volume and energy integrator. During these simulations, the width of the crystal (in the $y$-dimension) was monitored to ensure no appreciable crystal melt occurred.
 
-Once equilibrated, a shear stress was applied only to molecules within the QLLs using the velocity shearing and scaling variant of reverse non-equilibrium molecular dynamics described in Chapter \ref{chap:Methods}.\cite{Kuang13} The VSS-RNEMD exchange regions were defined to incorporate molecules from both the top and bottom interfaces, as seen in Figure \ref{fig:qll-rnemd}. Both the tangential density and tetrahedrality profiles were used to determine the $y$-width of the exchange VSS-RNEMD regions. In Chapter \ref{chap:Str}, we found the tetrahedrality at the Gibbs dividing surface for ice-I$_\mathrm{h}$ / water interfaces to be $q^{Gibbs} \sim$0.84. Here, we have used $q^{Gibbs}$ as the cutoff value between the QLL and the ice. All molecules with $q < q^{Gibbs}$ are denoted as QLL molecules, while those with $q > q^{Gibbs}$ are denoted to be ice. This cutoff coincides with a minimum in the tangential density profiles, as seen in the top and bottom panels of Figure \ref{fig:qll-rhoq}.
+Once equilibrated, a shear stress was applied only to molecules within the QLLs using the velocity shearing and scaling variant of reverse non-equilibrium molecular dynamics described in Chapter \ref{chap:Methods}.\cite{Kuang2012} The VSS-RNEMD exchange regions were defined to incorporate molecules from both the top and bottom interfaces, as seen in Figure \ref{fig:qll-rnemd}. Both the tangential density and tetrahedrality profiles were used to determine the $y$-width of the exchange VSS-RNEMD regions. In Chapter \ref{chap:Str}, we found the tetrahedrality at the Gibbs dividing surface for ice-I$_\mathrm{h}$ / water interfaces to be $q^{Gibbs} \sim$0.84. Here, we have used $q^{Gibbs}$ as the cutoff value between the QLL and the ice. All molecules with $q < q^{Gibbs}$ are denoted as QLL molecules, while those with $q > q^{Gibbs}$ are denoted to be ice. This cutoff coincides with a minimum in the tangential density profiles, as seen in the top and bottom panels of Figure \ref{fig:qll-rhoq}.
 
 
 \section{Distance Dependence of Viscosity from the Ice Surface}
@@ -193,4 +193,5 @@ what their findings were for qll widths.
 
 
 
-Break down of stoke's-einstein relation for viscosity. \cite{Chen2006, Tarjus1995,Bordat2003,Kumar2006}
+Break down of stoke's-einstein relation for viscosity. \cite{Chen2006,
+  Tarjus1995,Bordat2003,Kumar2007}

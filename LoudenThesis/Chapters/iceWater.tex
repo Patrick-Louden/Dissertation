@@ -105,7 +105,7 @@ Hirsch and Ojam\"{a}e $P2_12_12_1$ system.
 \centering
   \caption{FRACTIONAL COORDINATES FOR WATER IN THE ORTHORHOMBIC
     $P2_12_12_1$ SYSTEM FOR ICE-I$_\mathrm{h}$ IN REFERENCE
-    \bibpunct{}{}{,}{n}{}{,} \protect\citep{Hirsch2004}}
+   \cite{Hirsch2004}}
 \label{tab:p212121}
 \begin{tabular}{cccc}  
 \hline
@@ -127,7 +127,7 @@ atom type & x & y & z \\ \hline
 \centering
   \caption{MAPPING BETWEEN THE MILLER INDICES OF FOUR FACETS OF ICE IN
     THE $P6_3/mmc$ CRYSTAL SYSTEM TO THE ORTHORHOMBIC $P2_12_12_1$
-    SYSTEM IN REFERENCE \bibpunct{}{}{,}{n}{}{,} \protect\citep{Hirsch2004}}
+    SYSTEM IN REFERENCE \cite{Hirsch2004}}
 \label{tab:equiv}
 \begin{tabular}{r|cc} 
 \hline
@@ -355,13 +355,14 @@ temperatures (90~K) with a single 1~ns simulation.\cite{Kuang2012}
 % the simulations. 
 
 \section{Computational Details}
-All simulations were performed using OpenMD,\cite{OOPSE,openmd} with a
-time step of 2 fs and periodic boundary conditions in all three
-dimensions.  Electrostatics were handled using the damped-shifted
-force real-space electrostatic kernel.\cite{Ewald} When applicable,
-VSS-RNEMD moves were attempted every time step. This minimized the
-magnitude of individual momentum exchanges.  Forcefield parameters for
-both water models can be found in Table \ref{tab:waterModels}.
+All simulations were performed using
+OpenMD,\cite{Meineke2005,Gezelter2016} with a time step of 2 fs and
+periodic boundary conditions in all three dimensions.  Electrostatics
+were handled using the damped-shifted force real-space electrostatic
+kernel.\cite{Fennell2006} When applicable, VSS-RNEMD moves were
+attempted every time step. This minimized the magnitude of individual
+momentum exchanges.  Forcefield parameters for both water models can
+be found in Table \ref{tab:waterModels}.
 
 \begin{table}
 \centering
