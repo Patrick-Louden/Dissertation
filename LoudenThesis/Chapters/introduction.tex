@@ -711,21 +711,22 @@ number of particles.
   simulation cell, one of its ghost images enters the cell from one of
   the neighboring cells. This is achieved by computation of
   interactions of a molecule with its nearest neighbors within a
-  cutoff radius of $r_{cut}$. Note these molecules may not necessarily
-  be located within the same simulation cell as the molecule of
-  interest.}
+  cutoff radius of $r_{\mathrm{cut}}$. Note these molecules may not
+  necessarily be located within the same simulation cell as the
+  molecule of interest.}
 \end{figure*}
 
 Utilizing periodic boundary conditions does pose one potential
 problem. There is the possibility that a particle could interact with
-an image of itself, if the unit cell length is not large enough. Also,
-while using these methodologies capture short wavelength events quite
-well, it is impossible to observe a phenomena with fluctuations or
-wavelengths larger than the unit cell dimensions. This includes events
-near liquid-gas critical points, observing phase transitions, and
-long-wavelength plasmons. However, unnecessarily large unit
-cells require an increasing number of particles in the simulation, and
-resulting computational times intractable. 
+an image of itself, if the unit cell length is not large compared to
+$r_{\mathrm{cut}}$. Also, while using these methodologies capture
+short wavelength events quite well, it is impossible to observe a
+phenomena with fluctuations or wavelengths larger than the unit cell
+dimensions. This includes events near liquid-gas critical points,
+observing phase transitions, and long-wavelength plasmons. However,
+unnecessarily large unit cells require an increasing number of
+particles in the simulation, and resulting computational times
+intractable.
 
 
 
