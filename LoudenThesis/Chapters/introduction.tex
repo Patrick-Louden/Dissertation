@@ -364,8 +364,20 @@ P = \frac{1}{V}\Big[Nk_BT - \frac{1}{3} \sum_i^N \sum_{j\neq i}^N
 r_{ij} f_{ij}\Big]
 \end{equation}
 
-
-
+These are just two of many thermodynamic properties one may wish to
+compute as a simulation evolves. The problem of writing expressions
+for the desired properties in terms of particle positions and
+velocities lies at the heart of the matter. Once established, solving
+the equations at regular intervals of simulation time becomes
+straightforward. As an interesting final remark on this section, we
+note that while two identical collections of particles (with the exact
+same set of positions and velocities) evolving under different
+potential energy functions will reproduce the same temperature for
+that configuration, the associated pressures (and many other
+thermodynamic properties) will be different. Therefore, we should
+expect collections of the same molecules (\textit{e.g.} water)
+described under different potential energy functions or parameters, to
+result in vastly different thermodynamic properties.
 
 \subsection{Molecular Forcefields}
 Having established how to propogate particles through time using MD
@@ -509,16 +521,17 @@ the charge of an electron, and $\epsilon_0$ is the permittivity of
 free space. 
 
 For a system of $N$ molecules, the number of bonded terms goes as $N$
-and the number non-bonded interactions as $N^2$. Due to the
-long-ranged $r^{-1}$ decay of electrostatic interactions, calculating
-charge-charge interactions are often the most computationally
-demanding part of a molecular dynamics simulation. However, for
-Lennard-Jones interactions the potential at $r_{ij} = 2.5\sigma_{ij}$
-is just $1 \%$ of its value at $r_{ij} = \sigma_{ij}$. This is due to
-the rapidly falling off potential ($r^{-6}$). In order to save
-computational time, a cutoff radius is commonly imposed on the
-potential.  Any interactions with molecules beyond the cutoff are set
-to zero.
+but the number non-bonded interactions as $N^2$. Due to this,
+computing the non-bonded interactions is often the most
+computationally expsive part of the simulation. The Lennard-Jones
+interaction, however, fall of quite rapidly ($r^{-6}$) and the
+potential at $r_{ij} = 2.5\sigma_{ij}$ is just $1 \%$ of its value at
+$r_{ij} = \sigma_{ij}$. Meanwhile, the long-ranged $r^{-1}$ decay of
+electrostatic interactions can have significant value at distances as
+large as the simulation cell. These interactions are quite problematic
+and will be addressed in the following paragraphs. However, we will
+first discuss adding a cutoff to the potential, a method commonly
+used to save computation time.
 
 % Make cutoff small enough that particle doesn't see its own
 % image. Neighbor-lists make cutoffs worthwhile, otherwise we would have
@@ -530,44 +543,40 @@ to zero.
 % order $N$, and sorting neighbors is cheap as long as the total number
 % of cells is greater than 27.
 
-A cutoff introduces discontinuities in the potential and thus the
-force calculations. One way around this is to shift the potential by
-its value at the cutoff.
-\begin{equation}
-v'(r) = v(r) - v_c r \le r_c
-\end{equation}
-\begin{equation}
-v'(r) = 0 r > r_c
-\end{equation}
-where $r_c$ is the cutoff radius and $v_c$ is the potential at the
-cutoff. The additive constant vanishes upon taking the derivative to
-compute the forces, and energy conservation is better than with the
-un-shifted potential. However, there is still a problem of a
-discontinuity in the force with this method. A second solution is to
-use a switching function , to smoothly transition the potential to
-zero at the cutoff. Switching functions can take several forms, one
-such example is the following polynomial
-\begin{equation}
-v'(r) = v(r)\Big[1-2\Big(\frac{r}{r_c}\Big)^2 + 
-4\Big(\frac{r}{r_c}\Big)^4 \Big]
-\end{equation}
-The switching function has a value of $1$ at $r=0$ and $0$ at
-$r = r_c$. Switching functions are normally implemented at some
-distance close to the cutoff, so that only a small amount of the
-potential is perturbed. This prevents asparious affects such as
-deviation from equilibrium structures. Need the first derivative of
-the switching function at the end points to be zero to ensure the
-forces approach zero smoothly, and second derivitives to be zero for
-stability of integration algorithm. 
-\begin{equation}
-S(r) = c_0 + c_1\Big[\frac{r-r_l}{r_u-r_l}\Big] +
-c_2\Big[\frac{r-r_l}{r_u - r_l}\Big]^2
-+ c_3\Big[\frac{r-r_l}{r_u-r_l}\Big]^3 +
-c_4\Big[\frac{r-r_l}{r_u-r_l}\Big]^4 +
-c_5\Big[\frac{r-r_l}{r_u-r_l}\Big]^5
-\end{equation}
-The set of coefficients that satisfies the derivative stipulations are
-$(c_0 = 1, c_1 = 0, c_2 = 0, c_3 = -10, c_4 = 15, c_5 = -6)$.
+When using a cutoff radius, the potential is evaluated as normal for
+distances less than the cutoff, and set to zero for objects outside
+the cutoff. This introduces discontinuities in the potential and thus
+the force calculations. One way around this is to shift the potential
+by its value at the cutoff.  The additive constant vanishes upon
+taking the derivative to compute the forces, and energy conservation
+is better than with the unshifted potential. However, there is still a
+problem of a discontinuity in the force with this method. A second
+solution is to use a switching function, to smoothly transition the
+potential to zero at the cutoff.
+
+% Switching functions can take several forms, one
+% such example is the following polynomial
+% \begin{equation}
+% v'(r) = v(r)\Big[1-2\Big(\frac{r}{r_c}\Big)^2 + 
+% 4\Big(\frac{r}{r_c}\Big)^4 \Big]
+% \end{equation}
+% The switching function has a value of $1$ at $r=0$ and $0$ at
+% $r = r_c$. Switching functions are normally implemented at some
+% distance close to the cutoff, so that only a small amount of the
+% potential is perturbed. This prevents asparious affects such as
+% deviation from equilibrium structures. Need the first derivative of
+% the switching function at the end points to be zero to ensure the
+% forces approach zero smoothly, and second derivitives to be zero for
+% stability of integration algorithm. 
+% \begin{equation}
+% S(r) = c_0 + c_1\Big[\frac{r-r_l}{r_u-r_l}\Big] +
+% c_2\Big[\frac{r-r_l}{r_u - r_l}\Big]^2
+% + c_3\Big[\frac{r-r_l}{r_u-r_l}\Big]^3 +
+% c_4\Big[\frac{r-r_l}{r_u-r_l}\Big]^4 +
+% c_5\Big[\frac{r-r_l}{r_u-r_l}\Big]^5
+% \end{equation}
+% The set of coefficients that satisfies the derivative stipulations are
+% $(c_0 = 1, c_1 = 0, c_2 = 0, c_3 = -10, c_4 = 15, c_5 = -6)$.
 
 Interactions that decay no faster than $r^{-n}$ where $n$ is the
 dimensionality of the system can pose a problem in that they may not
@@ -578,9 +587,9 @@ this issue, the most famous of which is the method presented by Ewald
 in 1921. The Ewald Sum requires replicas of the simulation cell for
 computation of $U_{charge}(r_{ij})$. These charges are then wrapped by
 a Gaussian of opposite charge, creating a mask around the
-charges. Doing so requires to corrections to be made, first, an
+charges. Doing so requires two corrections to be made; first, an
 oppositely charged Gaussian must also be added for each one introduced
-around a charge, and secondly, since the Gaussians interact with
+around a charge. Secondly, since the Gaussians interact with
 themselves, a self correction piece must be added as well. Depending
 on the material being modeled, a dipole correction might also need to
 be added. The charges and the Gaussians wrapped about them are added
@@ -591,13 +600,13 @@ interactions in molecular simulation.
 
 An alternative approach to the demanding Ewald Sum is the method first
 developed by Wolf \textit{et al.}, and later expanded upon by Fennel
-and Gezelter.\cite{Fennell06} This method combines the shifting of the
-potential described above with a dampening of the electrostatic
+and Gezelter.\cite{Fennell2006} This method combines shifting the
+potential as described above with a dampening of the electrostatic
 interactions in a similar fashion as the Ewald Summation. The first
 key observation is that the electrostatic interactions are shorter
 ranged than $r^{-1}$ in condensed phases. Wolf \textit{et al.}
-observed that creating a neutral cutoff sphere energy resulted in a
-good conservation of energy. 
+observed that creating a neutral cutoff sphere resulted in a
+good conservation of energy. We begin with the standard shifted potential,
 
 \begin{equation}
 V_\textrm{SP}(r) =      \begin{cases}
@@ -606,7 +615,7 @@ R_\textrm{c}
 \end{cases},
 \label{eq:shiftingPotForm}
 \end{equation}
-and shifted force,
+and expand on this to the shifted force,
 \begin{equation}
 V_\textrm{SF}(r) =      \begin{cases}
 v(r)-v_\textrm{c}-\left(\frac{d v(r)}{d r}\right)_{r=R_\textrm{c}}(r-R_\textrm{c
@@ -615,7 +624,17 @@ v(r)-v_\textrm{c}-\left(\frac{d v(r)}{d r}\right)_{r=R_\textrm{c}}(r-R_\textrm{c
                                                 \end{cases},
 \label{eq:shiftingForm}
 \end{equation}
- 
+
+which guarantees the potential and forces smoothly go to zero at the
+cutoff radius, $R_\textrm{c}$. Wolf \textit{et al.} observed that when
+the potential is taken to be the Coulomb potential, Equation
+\ref{eq:coulomb}, the calculated Madelung energies fluctuated around
+the analytic value with increasing size of the cutoff radius, with a
+slow decay towards the expected value. Therefore, to accelerate the
+convergence of the expected energies, a dampening function was
+introduced resembling the effective screening of the oppositely
+charged Gaussians in the Ewald summation. Doing so, Fennell and
+Gezelter arrived at the following damped shifted force,
 
 \begin{equation}
 \begin{split}
@@ -626,7 +645,9 @@ R_\mathrm{c}\right)}{R_\mathrm{c}^2}+\frac{2\alpha}{\pi^{1/2}}\frac{\exp\left(-\
 \label{eq:DSFPot}
 \end{split}
 \end{equation}
-The derivative of the above potential will lead to the following forces,
+where $efrc$ is the complimentary error function with dampening
+parameter $\alpha$. Taking the derivative of this damped shifted force
+potential will lead to the following expression for forces,
 \begin{equation}
 \begin{split}
 F_\mathrm{DSF}(r) =
@@ -635,33 +656,22 @@ q_iq_j\Biggr{[}&\left(\frac{\textrm{erfc}\left(\alpha r\right)}{r^2}+\frac{2\alp
 \label{eq:DSFForces}
 \end{split}
 \end{equation}
-
-
-
-Since the long-ranged interactions converge to zero slowly, cutoff
-radii are commonly employed. A cutoff radii is a distance at which the
-interactions between particles are truncated. However, truncation of
-the potential leads to discontinuities in the calculation of
-forces. Due to this, a number of schemes have been proposed in which
-the truncation of the potential is smoothened out as to avoid
-discontinuities. In the work discussed here, the \textit{damped
-  shifted force} method was utilized. 
-
-
-
-Constraints, rigid molecules, etc.
+Fennell and Gezelter have shown that the damped shifted force method
+gives nearly identical results as compared with the smooth particle
+mesh Ewald method on a variety of commonly simulated
+systems.\cite{Fennell2006}
 
 \subsection{Boundary Conditions}
 Having discussed how to evolve particles positions and momenta through
-time, and from these trajectories compute thermodynamic properties of
-the system, we now focus on the problem of how to simulate a tractable
-number of particles. Consider an open (but isolated) system of
-particles. The cluster would be exposed to vacuum in all three
-dimensions, and depending on the strength of the intermolecular
-interactions, the cluster could condense into a sphere or slowly
-dissipate into a gas. If we were interested in simulating a liquid and
-had incorporated an appropriate intermolecular potential, the vacuum
-exposed droplet would be a poor representation of a bulk liquid. 
+time under a classical potential, we now focus on the problem of how
+to simulate a tractable number of particles. Consider an open (but
+isolated) system of particles. The cluster would be exposed to vacuum
+in all three dimensions, and depending on the strength of the
+intermolecular interactions, the cluster could condense into a sphere
+or slowly dissipate into a gas. If we were interested in simulating a
+liquid and had incorporated an appropriate intermolecular potential,
+the vacuum exposed droplet would be a poor representation of a bulk
+liquid.
 
 A naive approach to fix this problem would be to simulate a large
 cluster of molecules and only probe the properties of the interior
