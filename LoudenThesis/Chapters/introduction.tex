@@ -414,6 +414,7 @@ term, and the potential only depends upon the relative distance
 between particles. Generally, these terms fall into one of two
 categories, bonded and non-bonded interactions.
 
+\subsubsection{Bonded Interactions}
 There are three bonded terms (often referred to as short-ranged
 interactions) which deserve discussion. Bonds between two atoms in a
 molecule, bends between three centrally connected atoms, and torsions
@@ -462,6 +463,7 @@ and the coefficients $c_1$, $c_2$, and $c_3$ are terms describing the
 barrier for transitioning from a \textit{cis} to a \textit{trans}, or \textit{staggered} to
 \textit{eclipsed} conformations.
 
+\subsubsection{Non-bonded Interactions}
 In 1924, J. E. Lennard-Jones proposed a pairwise additive
 non-bonded potential for a system of soft-spheres.
 \begin{equation}\label{eq:LJ}
@@ -730,34 +732,162 @@ intractable.
 
 
 
-\subsubsection{Water Models}\label{sec:WaterModels}
+\subsection{Water Models}\label{sec:WaterModels}
 An investigation of the properties and dynamics of water anywhere in
 the phase diagram cannot be conducted without first critically
 analyzing the model proposed for the study. After almost 50 years of
 simulating water, we are still optimizing and searching for geometries
-and distributions of charges and potential sites, mass sites, and many
+and distributions of charges, potential sites, mass sites, and many
 other parameters which will reproduce the phase diagram of water in
-closer detail.
+closer detail. However, in this time we have learned much about the
+rich behavior and characteristics of water through molecular
+simulations. 
 
-The first simulation of water was performed by Rahman and Stillinger
-in 1971\cite{Rahman1971}.
+In this section we present a short review over the large body of
+literature surrounding water models for molecular simulations. The
+list of water models presented here is by no means complete, nor the
+analysis of these models exhaustive. There are a number of excellent
+reviews on these topics, from the early reviews of
+Brodsky\cite{Brodsky1996}, Wallqvist and Mountain\cite{Wallqvist1999},
+Finney\cite{Finney2001}, and Guillot\cite{Guillot2002}, to the more
+recent works of Ouyang\cite{Ouyang2015}, Gallo\cite{Gallo2016}, and
+Brini\cite{Brini2017}. We would be remiss if we also did not include
+the significant contributions from the Unversidad Complutense Madrid,
+namely, the extensive work of Vega, Abascal, Conde, Sanz, and
+MacDowll.\cite{MacDowell2004,Vega2005,Vega2005c,Abascal2007,Abascal2007a,Abascal2007b,Abascal2007c,Vega2009,Vega2011,Vega2011a,Vega2015}
+Lastly, we must include the expansive catalog of Martin
+Chaplin.\cite{Chaplin2018}
 
-Include a table of parameters for common water models.
-Include a table of properties estimated by water models, Tm, etc.
-Water models by the number of sites, types of interactions at each
-site, etc. 
+The first simulations of water were performed in 1969 by Barker and
+Watts,\cite{Barker1969} and shortly thereafter by Rahman and
+Stillinger in 1971\cite{Rahman1971} using the Ben-Naim Stillinger
+potential\cite{Ben-Naim1972}. These inaugural investigations used
+rigid, non-polarizable models for water, consisting of Lennard-Jones
+and charge sites describing the intermolecular interactions, evolving
+according to classical mechanics. Soon thereafter, Rahman and
+Stilleger proposed the five-site ST2 model, which better captured the
+density maximum for liquid water, and whose distribution functions
+more accurately matched x-ray scattering data.\cite{Stillinger1974}
+
+Since this time, hundreds of water models have been proposed and
+characterized.\cite{Chaplin2018} These range from computationally
+expensive models such as the SWM-4DP\cite{Lamourex2003},
+TIP4P-FQ\cite{Rick1994}, DPP2\cite{Kumar2010},
+TTM3-F\cite{Fanourgakis2008}, and AMOEBA\cite{Ren2003,Ren2004} models,
+which have moved beyond point charges and the pairwise additive
+approximation and allow for anisotropic multipole polarizations, while
+others have attempted to make large scale simulations more feasible by
+collapsing the water molecule onto a single interaction
+site\cite{Liu1996,Tan2003,Fennell2004}.
+
+Most commonly, water models are categorized by the number of
+interaction sites and divided into subcategories by the types of
+interactions described within the potential. Three, four, five, and
+six site models are prevalant in the literature, although
+computational expense increases with the number of interaction sites
+($s$); as the number of non-bonded terms for $N$ molecules goes as
+$s^N$. In reality, the number of interaction pairs needed to be
+calculated are slightly less than $s^N$ as some of the interaction
+sites are exclusively Lennard-Jones or charge sites.
+
+Here, we will focus on non-polarizable models, that is, models where
+the charge distribution is held fixed and not allowed to move around
+the molecule. Similarly, we will restrict ourselves to rigid models,
+where the OH bonds and HOH bends are held fixed in space. While there
+are several models which propogate these degrees of freedom, such as
+the SPC/f\cite{Ferguson1995}, SPC/Fw\cite{Wu2006}, and
+TIP4P/2005f\cite{Gonzalez2011} models, limiting our discussion to
+models which exclude these degrees of freedom will provide a more
+similar comparison. XXX
+
+The two most common three site models are Berendsen's
+SPC/E\cite{Berendsen1987} and Jorgenson's TIP3P\cite{Jorgenson1983}
+models. In both cases, the interaction sites are set to the atomic
+positions, with positive charges on the two hydrogens and a negative
+charge located on the oxygen. A Lennard-Jones interaction is also
+defined on the oxygen site to prevent the molecules from collapsing
+onto one another. The SPC/E model is a reparameterization of the
+SPC\cite{Berendsen1981} model, where a self-energy correction was
+included correcting the average polarization. With this correction,
+the model more accurately reproduces the second neighbor peaks in the
+pairwise radial distribution functions, as well as the density and the
+diffusion at ambient conditions.\cite{Berendsen1987}
+
+While attempting to determine the total internal energy of a water
+molecule, Bernal and Fowler found that in order to reproduce the
+observed dipole moment of water, they had to shift the negative charge
+off of the oxygen towards the hydrogens along the HOH
+bisector.\cite{Bernal1993} Following this idea, Jorgenson \textit{et
+  al.} developed a four site water model, moving the negative charge
+from the oxygen to a massless site along the HOH bisector. The
+resulting TIP4P model more accurately reproduced oxygen-oxygen
+diffraction data than the TIP3P model.\cite{Jorgenson1983} The four
+site model was also found to have the correct density of liquid water
+at 298.15~K and 1~atm. 
+
+Due to the success of the TIP4P model, the four site structure has
+been replicated and parameters refined spawning a large number of
+models, including the TIP4P/Ew\cite{Horn2004},
+TIP4P/2005\cite{Abascal2005a}, and TIP4P/Ice\cite{Abascal2005}
+models. Simulations involving biomolecules often involve a large
+number of charged species, as such, the TIP4P/Ew model is a
+reparameterization of the TIP4P model for use with Ewald summation
+methods. The TIP4P/2005 model was developed as a general purpose model
+for condensed phases of water. Reparameterization was achieved using a
+large amount of data from across the phase diagram. These data
+include a fit of the temperature of maximum density, stability of
+several ice polymorphs, the enthalpy of vaporization, and the density
+of the liquid at ambient conditions. The resulting model gives good
+agreement over a large span of the phase diagram, and has recently
+been suggested as being the most accurate rigid non-polarizable model
+to date.\cite{Vega2011a} 
+
+In contrast to the parameterization of the TIP4P/2005 model where the
+goal was to create a single model which spans much of the phase
+diagram accurately, the TIP4P/Ice model was developed targeting the
+properties of ice. The model was parameterized by fitting the equation
+of state and selected points of the solid / liquid coexistence curves,
+as well as the solid / solid coexistence curves. The model gives
+excellent agreement for the melting temperature of ice-I$_\mathrm{h}$,
+with T$_\mathrm{m} = $272.2~K. 
+
+The category of five site models includes the ST2 model originally
+proposed by Stillinger and Rahman in 1972\cite{Stillinger1974}, the
+TIP5P model of Mahoney and Jorgensen\cite{Mahoney2000}, and its
+reparameterization for use with Ewald summation methods (TIP5P/Ew) by
+Rick.\cite{Rick2004} In the five site models, the negative charge has
+moved out of the HOH plane, and is now distributed on the far side of
+the oxygen mimicing the electron lone pairs. The positive charges are
+located on the hydrogn sites, and the Lennard-Jones position is placed
+on the oxygen atom. The TIP5P model is observed to reproduce the
+density maximum of water around 4\degrees~C at 1~atm, and the
+dielectric constant was found to be 81 $\pm$ 1.5 at 25\degrees~C, in
+good agreement with the experimentally known value (78.4). While these
+and other properties predicted by the TIP5P model agree well with
+experimental results, it has recently been shown that when one
+considers performance of the model for a large number of properties,
+the three site SPC/E and four site TIP4P/2005 water models outperform
+the costly five site model. 
+
+While there are not many six site rigid nonpolarizable water models,
+one bares worth mentioning. The NE6 model of Nada and van der Eerden
+is the same as the five site models described above, with the addition
+of a massless charged site along the HOH bisector.\cite{Nada2003a}
+This charge is taken to be negative, however, the total molecule is
+constrained to be neutral. The model was parameterized for simulations
+involving ice and liquid near the melting point, and parameters were
+determined from derivatives of the free energy of ice and water, as
+well as the volumes of the same systems. Proton-disordered
+ice-I$_\mathrm{h}$is the stable structure at the melting point for the
+resulting NE6 model. The melting point was determined to be
+271$\pm$9~K by Nada and van der Eerden, in good agreement with the
+experimentally observed 273.15~K. 
 
 
-This is also important for understanding the Appendix about a water
-model construction.
-
-In this section we will discuss the different water models used in the
-literature, and reasons why to use each one. 
 
 %% Reviews
 
 % Guillot 2002
-Timeline in graph?
 
 The charge distribution is placed either on atomic sites (SPC), or on
 massless sites located in the plane of the molecule (BF, TIP4P), or
