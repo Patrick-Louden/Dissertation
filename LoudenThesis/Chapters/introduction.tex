@@ -195,7 +195,7 @@ Integrating Equation \eqref{eq:accel} once with respect to time gives
 the momentum of the $N$ particles, and a second integration gives the
 positions.
 
-\subsubsection{Finite Difference Methods and Equations of Motion}
+\subsection{Finite Difference Methods and Equations of Motion}
 For particles described by a continous potential energy function, the
 forces acting upon each of the $N$ particles will change every time a
 single particles moves. Due to this, the motion of all particles are
@@ -258,7 +258,7 @@ t$ are computed by
 \end{equation}
 
 
-\subsubsection{Time Averages and Ensemble Averages}
+\subsection{Time Averages and Ensemble Averages}
 Consider a property $A$ that is dependent on the positions and momenta
 of the $N$ particles in the system, then the instantaneous value of
 the property $A$ can be expressed as
@@ -308,7 +308,7 @@ all possible configurations. Instead, convergence of the property
 $\langle A \rangle$ is achieved once the system has explored a
 sufficient amount of phase space.
 
-\subsubsection{Calculation of Thermodynamic Properties}
+\subsection{Calculation of Thermodynamic Properties}
 As the particles evolve through time, there are several possible
 thermodynamic properties which we may wish to compute. Among the
 properties most commonly desired are the temperature and pressure.
@@ -750,10 +750,11 @@ analysis of these models exhaustive. There are a number of excellent
 reviews on these topics, from the early reviews of
 Brodsky\cite{Brodsky1996}, Wallqvist and Mountain\cite{Wallqvist1999},
 Finney\cite{Finney2001}, and Guillot\cite{Guillot2002}, to the more
-recent works of Ouyang\cite{Ouyang2015}, Gallo\cite{Gallo2016}, and
-Brini\cite{Brini2017}. We would be remiss if we also did not include
-the significant contributions from the Unversidad Complutense Madrid,
-namely, the extensive work of Vega, Abascal, Conde, Sanz, and
+recent works of Ouyang\cite{Ouyang2015}, Cisneros\cite{Cisneros2016},
+Gallo\cite{Gallo2016}, and Brini\cite{Brini2017}. We would be remiss
+if we also did not include the significant contributions from the
+Unversidad Complutense Madrid, namely, the extensive work of Vega,
+Abascal, Conde, Sanz, and
 MacDowll.\cite{MacDowell2004,Vega2005,Vega2005c,Abascal2007,Abascal2007a,Abascal2007b,Abascal2007c,Vega2009,Vega2011,Vega2011a,Vega2015}
 Lastly, we must include the expansive catalog of Martin
 Chaplin.\cite{Chaplin2018}
@@ -780,6 +781,7 @@ others have attempted to make large scale simulations more feasible by
 collapsing the water molecule onto a single interaction
 site\cite{Liu1996,Tan2003,Fennell2004}.
 
+\subsubsection{Classes of Water Models}
 Most commonly, water models are categorized by the number of
 interaction sites and divided into subcategories by the types of
 interactions described within the potential. Three, four, five, and
@@ -860,8 +862,8 @@ moved out of the HOH plane, and is now distributed on the far side of
 the oxygen mimicing the electron lone pairs. The positive charges are
 located on the hydrogn sites, and the Lennard-Jones position is placed
 on the oxygen atom. The TIP5P model is observed to reproduce the
-density maximum of water around 4\degrees~C at 1~atm, and the
-dielectric constant was found to be 81 $\pm$ 1.5 at 25\degrees~C, in
+density maximum of water around 4\degree~C at 1~atm, and the
+dielectric constant was found to be 81 $\pm$ 1.5 at 25\degree~C, in
 good agreement with the experimentally known value (78.4). While these
 and other properties predicted by the TIP5P model agree well with
 experimental results, it has recently been shown that when one
@@ -880,59 +882,290 @@ determined from derivatives of the free energy of ice and water, as
 well as the volumes of the same systems. Proton-disordered
 ice-I$_\mathrm{h}$is the stable structure at the melting point for the
 resulting NE6 model. The melting point was determined to be
-271$\pm$9~K by Nada and van der Eerden, in good agreement with the
-experimentally observed 273.15~K. 
+271~$\pm$~9~K by Nada and van der Eerden, in good agreement with the
+experimentally observed 273.15~K.
 
+\subsubsection{Parameterizing Water Models}
+After selecting the number of potential sites for a water model, the
+next task is determining the interaction parameters associated with
+each of those sites. Commonly, water models are parameterized in one
+of two distinct ways, through \textit{ab. initio} calculations or
+matching emperical evidence. In the first method, high level quantum
+mechanical calculations are performed on small clusters of water
+molecules. From these, forces, stresses, and energies are obtained and
+fit using a pairwise (or higher order) function to describe the
+energy. In the second method, parameters for the interaction sites are
+determined by iterative fitting against chosen experimental results,
+such as the density or coexesistence temperatures. A set of
+interaction parameres are chosen, such as the charges ($\mathrm{q}_O$
+and $\mathrm{q}_H$) and Lennard-Jones parameters ($\epsilon_O$ and
+$\sigma_O$), and the resulting behavior of the water model is
+recorded. The parameters are then iteratively changed until
+convergence with the experimental data is achieved. 
 
+Izadi and Onufriev have recently argued that the accuracy limit of the
+rigid non-polarizable three and four site water models has been
+achieved.\cite{Izadi2014,Izadi2016} In their initial work, they
+iteratively solved for the optimal charge distribution for a four site
+model.\cite{Izadi2014} The resulting OPC model reproduced bulk
+properties more accurately than many other existing models. In
+addition, the model also outperformed other models for predicting
+hydration energies of small solute molecules. Following this, they
+applied the same method for optimizing charge distributions to the
+three site class of models, and the resulting OPC3 model was observed
+to reproduce liquid bulk properties better than other three site
+models such as the TIP3P and SPC/E models. The OPC3 model was also
+found to accurately capture the intrinsic charge hydration assymetry
+of water. However, due to the complexity of the nature of water these
+models still performed poor in certain regions of the phase diagram.
 
-%% Reviews
+\subsubsection{Melting Points of Common Water Models}
+Ideally, the water model used to investigate the behavior of interest
+will accurately reproduce the structure and dynamics of real water
+around that region of the phase diagram. Assuming it is representing
+real water accurately, inferences of the behavior of interest can then
+be extracted from simulations. Therefore, the complete phase diagram
+of water models are often characterized, in order to determine if it
+is appropriate to use the proposed model.
 
-% Guillot 2002
+Here, we are concerned with water near the solid / liquid and solid /
+vapor coexistence regions. Therefore, it behooves us to critically
+examine the reported melting points and coexistence lines of the
+various ice polymorphs for water models of potential
+interest. Recently, Vega, Garcia-Fernandez, Sanz, and Abascal have
+computed and tabulated the melting points of many of the rigid
+non-polarizable models discussed above, which we have reproduced in
+Table
+\ref{tab:meltingPoints}.\cite{Abascal2005,Abascal2005a,Vega2005,Vega2005a,Fernandez2006,Vega2006a}
 
-The charge distribution is placed either on atomic sites (SPC), or on
-massless sites located in the plane of the molecule (BF, TIP4P), or
-out of plane as lone-pairs (BNS, ST2). Some models have added
-flexibility to the rigid models more accurately represent water
-molecules (SPC/F), or developing new classes of water models (central
-force models, CF1). The vibrational potential (harmonic and anharmonic
-terms) are paramterized to reproduce the three gas phase vibrations of
-the isolated molecule, and also account for the frequency shift for
-being in the condensed phase. 
+\begin{table}[h]
+\centering
+\caption{MELTING POINTS OF COMMONLY USED RIGID NON-POLARIZABLE
+        WATER MODELS \cite{Abascal2005,Abascal2005a,Vega2005,Vega2005a,Fernandez2006,Vega2006a}\label{tab:meltingPoints}} 
+\begin{tabular}{rccc}
+\hline \hline
+& Solid / Liquid & Solid / Vapor & \\
+Model & Coexistence & Coexistence & Free Energy \\
+\hline
+TIP4P/Ice & 268(2) & 271(1) & 272(6) \\
+TIP4P/2005 & 249(2) & 249(3) & 252(6) \\
+TIP4P/Ew & 242(2) & 243(3) & 245.5(6) \\
+TIP4P & 229(2) & 230(2) & 232(4) \\
+TIP5P & 271(2) & & 274(6) \\
+TIP5P-E & 270(2) & - & 271.5(6) \\
+SPC/E & 213(2) & 217(2) & 215(4) \\
+\hline \hline
+\end{tabular}
+\flushleft
+All melting points are reported in (K). 
+Uncertainties in the last digit are indicated with parentheses. \\
+\end{table}
 
+In the first two columns of data are the melting points determined by
+simulations of solid / liquid and solid / vapor coexistence. It is
+commonly known that commensurate ice crystals modeled by these types
+of potentials can be superheated.\cite{Vega2006a} However, the
+introduction of a nucleation site for the melting to occur at, such as
+an interface, removes the ability for the superheating of these
+models. In the third column of Table \ref{tab:meltingPoints}, are
+melting temperatures determined by Gibbs-Dyhem thermodynamic
+integration\cite{Kofke1993} from the TIP4P model, which was determined
+previously.\cite{Sanz2004}
 
+Upon first observation, we note that very few of the models cataloged
+have melting points close to the true melting point of
+ice-I$_\mathrm{h}$.  Only three models reproduce the experimentally
+observed value of 273.15~K, the TIP4P/Ice (by design), TIP5P, and
+TIP5P-E models. This is due to the majority of the models being fit to
+reproduce bulk liquid water under ambient conditions. Secondly we note
+that while the various methods used to compute melting points agree
+within error of one another, the reported values have quite a large
+spread. This is partially due to the sensativity of the melting point
+to the treatment of long range interactions\cite{Arbuckle2002,
+  Bryk2004}, as well as crystal size\cite{Pan2011} and proton
+distribution throughout the ice.\cite{Louden2017}
+
+Abascal and Vega have recently observed that the melting points of
+common three site and four site water models correlates strongly with
+their quadrupole
+moments.\cite{Abascal2007,Abascal2007a,Abascal2007b,Abascal2007c} To
+quantify multipole moments, we must first consider how to define our
+coordinate system. For planar water models, we define our coordinate
+system in the following way; the $z$ axis as the dipole moment
+direction (the HOH bisector), the $y$ axis parrallel to the vector
+connecting the two hydrogens, and the $x$ axis normal to the plane of
+the molecule. Having defined a coordinate system, we can calculate the
+traceless quadrupole tensor, $\Theta$, for any water model of these
+classes by
+
+\begin{equation}
+\Theta_{ij} = \frac{1}{2} \sum_{\alpha}q_{\alpha}(3r_{i,\alpha}r_{j,\alpha}-|\vec{r_{\alpha}}|^{2}\delta_{ij})
+\end{equation}
+
+where, $q_i$ is the charge in the $i-$th dimension and the sum is
+taken over all $\alpha$ charged sites in the model. The traceless
+quadrupole tensor has certain special properties, and is aptly named
+for one of them; which is the trace, ($Tr$), of the tensor is null.
+
+\begin{equation}
+Tr(\Theta) = \sum_{i,j}\Theta_{ij}\delta_{ij} = 0
+\end{equation}
+
+While having a traceless tensor can make certain calculations easier to 
+perform, it is also possible to calculate a traced quadrupole tensor $Q$, one
+in which the trace is not null.
+
+\begin{equation}
+Q_{ij} = \frac{1}{2}\sum_{\alpha}q_{\alpha}(r_{i,\alpha}-r_{i,com})(r_{j,\alpha}-r_{j,com})
+\end{equation}
+
+Here, $r_{i,com}$ is the position of the center of mass in the $i$-th 
+dimension, and therefore the position of the quadrupole moment is set at the 
+center of mass of the molecule. It will be desirable to change between the
+traceless and traced quadrupole tensors during this work, and changing 
+between the two formalisms can be achieved by the following
+
+\begin{equation}
+\Theta = 3Q - Tr(Q)
+\end{equation}    
+
+Based on the suggestion of Rick\cite{Rick2004}, Abascal and Vega have
+described an effective tetrahedral quadrupole moment ($\Theta_T$),
+defined in our coordinate system for a traceless quadrupole as
+
+\begin{equation}
+\Theta_{T} = \frac{1}{2}(\Theta_{yy} - \Theta_{xx}).
+\end{equation} 
+
+Abascal and Vega have shown that the water models which most accurately
+reproduce the meling point of ice I$_h$ have a ratio of their dipole moment
+to $\Theta_T$ of approximately unity. The equivalent expression for the 
+traced quadrupole tensor is given as
+
+\begin{equation}
+Q_{T} = \frac{3}{2}(Q_{yy} - Q_{xx}).
+\end{equation}
  
-% End Guillot
+The Q$_T$ values for each of the water models
+investigated by Abascal and Vega are shown in Table \ref{Models_quad}, along 
+with the non-zero elements of their traced quadrupole tensors.
+
+\begin{table}[h!]
+\caption{TRACED QUADRUPOLE TENSORS FOR A VARIETY OF WATER MODELS.}
+\label{Models_quad}
+\begin{tabular}{rccccccc}
+\hline
+Model & $Q_{xx}$ & $Q_{yy}$ & $Q_{zz}$ & $Tr(Q)$ & $\overline{Q}$ & $Q_{T}$ &
+                                                                    T$_{m}$ (K) \\
+\hline \hline
+TIP4P/Ice & 0.0 & 1.6629 & 0.7427 & 2.3657 & 2.8143 & 2.4348  & 272.2 \\
+TIP4P/2005 & 0.0 & 1.531 & 0.7034 & 2.2336 & 2.6553 & 2.2969  & 252.1 \\
+TIP4P/Ew & 0.0 & 1.4427 & 0.6617 & 2.1044  & 2.5017 & 2.1640  & 245.5   \\
+TIP4P & 0.0 & 1.4311 & 0.6584 & 2.0895 & 2.4814 & 2.1466 & 232.0 \\
+SPC/E & 0.0 & 1.357 & 0.5267 & 1.8837 & 2.3700 & 2.0356 & 215.0 \\
+SPC & 0.0 & 1.3129 & 0.5095 & 1.8224 & 2.2928 & 1.9693 & 109.5 \\
+TIP3P & 0.0 & 1.1476 & 0.5337 & 1.6812 & 1.9894 & 1.7214 & 146 \\
+\hline \hline
+\end{tabular}
+\begin{flushleft}
+Elements of the tensors are in units of D\AA~. \\
+\end{flushleft}
+\end{table} 
+
+In Figures \ref{fig:QBar} and \ref{fig:TraQ},
+we have replotted the 
+melting point for ice I$_h$ of these water models by $\overline{Q}$ and the 
+trace of their
+quadrupole tensor, where $\overline{Q}$ is given by,
+\begin{equation}
+\overline{Q} = \sqrt{2(3 Q:Q - (Tr(Q))^{2})}
+\end{equation}
+We see in both cases there is a strong correlation between
+the values of their quadrupole tensors and their melting point.
+
+
+\begin{figure*}
+\includegraphics[width=\linewidth]{Figures/Tm_Ih_Qbar_plot.pdf}
+\caption{\label{fig:QBar} Melting point for ice I$_h$ of several
+  popular water models as a function of the QBar for the model. We see
+  a strong correlation between a more accurate melting point and a
+  larger value of $\overline{Q}$. We estimate that a $\overline{Q}$ of
+  approximately 2.8 D\AA~will result in the experimental melting point
+  of 273.15 K. A linear regression of the data resulted in an equation
+  of best fit of $y = 158.89x - 166.83$. From this, we have predicted
+  an optimal $\overline{Q}$ to be 2.7690 D\AA~.}
+\end{figure*}
+
+\begin{figure*}
+\includegraphics[width = \linewidth]{Figures/Tm_Ih_TraQ_plot.pdf}
+\caption{\label{fig:TraQ} Melting point for ice I$_h$ of several popular water models as a function of the trace of the quadrupole tensor for the model. We see a strong correlation between a more accurate melting point and a larger value of the trace. We estimate that a trace of approximately 2.3 D\AA will result in the experimental melting point of 273.15 K.}
+\end{figure*}
+
+While it is still unclear if these results are indicative of an
+experimentally observable phenomenon, exploring correlations such as
+this can help in the development of water models in the future. 
 
 
 \subsection{Transport Properties}
 Transport phenomena are processes that describe the transfer (flux) of
-mass, heat, momentum, and charge by molecular motions. These movements
-have been well defined in both homogeneous and heterogeneous systems,
-through bulk materials as well as across interfaces, and transport
-coefficients have been defined relating the transfered quantities to
-the phenomena.
+mass, heat, momentum, and charge by molecular motions. During this
+process, the transferred quantity is conserved, \textit{i.e.}, the
+moving entity is neither created nor destroyed. Because of this, a set
+of balance, or conservation equations can be written down describing
+the movement of these quantities in the presence of a flux. The set of
+balance equations for the transport of mass, energy and momentum are
+presented in Table \ref{tab:transport}. 
 
 
-\begin{longtable}{rcc}
-	\caption{BALANCE AND CONSTITUTIVE EQUATIONS FOR MASS, ENERGY, AND MOMENTUM TRANSPORT}
-	\label{tab:transport}
-	\\\hline \hline
- 	& \textbf{~~Balance Equations~~} & \textbf{~~Constitutive Equations~~}\\ \hline 
-	\textbf{~~Mass~~} & $\frac{\partial c (\vec{r}, t)}{\partial t} + \nabla \vec{j} = 0$ & $\vec{j} = -D \cdot \nabla c(\vec{r}, t)$\\
-	\textbf{~~Energy~~} & $C_p \frac{\partial T (\vec{r}, t)}{\partial t} + \nabla \vec{J} = 0$ & $\vec{J} = -\lambda \cdot \nabla T(\vec{r}, t)$\\
-	\textbf{~~Momentum~~} & $\rho \frac{D \vec{v}(\vec{r}, t)}{Dt} + \nabla \overleftrightarrow{\sigma} = 0$ & $\sigma_{x,z} = -\eta \cdot \nabla_z (\rho v_x)$\\ \hline \hline
-\end{longtable}
+\begin{table}
+	\caption{BALANCE AND CONSTITUTIVE EQUATIONS FOR MASS, ENERGY, AND MOMENTUM TRANSPORT\label{tab:transport}}
+        \begin{tabular}{rcc}
+          \hline \hline
+          & \textbf{~~Balance Equations~~} & \textbf{~~Constitutive Equations~~}\\ \hline 
+          \textbf{~~Mass~~} & $\frac{\partial c (\vec{r}, t)}{\partial t} + \nabla \vec{j} = 0$ & $\vec{j} = -D \cdot \nabla c(\vec{r}, t)$\\
+          \textbf{~~Energy~~} & $C_p \frac{\partial T (\vec{r}, t)}{\partial t} + \nabla \vec{J} = 0$ & $\vec{J} = -\lambda \cdot \nabla T(\vec{r}, t)$\\
+          \textbf{~~Momentum~~} & $\rho \frac{D \vec{v}(\vec{r}, t)}{Dt}
+                                  + \nabla \overleftrightarrow{\sigma} =
+                                  0$ & $\sigma_{x,z} = -\eta \cdot
+                                       \nabla_z (\rho v_x)$\\ \hline
+          \hline
+          \end{tabular}
+\end{table}
+
+When a transport flux is present, a characteristic response of the
+material the flux is traveling through will become visible. For
+example, in the presence of an energy flux, a thermal gradient will
+develop in the material. Likewise, a momentum flux will cause a
+velocity distribution to form in the system. Through a series of
+constitutive equations, it is possible to relate the flux to the
+observed system response through a proportionality constant describing
+the transport. These constants are dependent on the material the
+transport is occuring through, and thus are characteristic quantities
+of the material. These constants have been well defined in both
+homogeneous and heterogeneous systems, through bulk materials as well
+as across interfaces.
 
 
+\begin{itemize}
+\item \textbf{Diffusion (Fick's Law):} $\vec{j} = -D \cdot \vec{\nabla}c(\vec{r},t)$ \vspace{0.05in}\\
+The diffusion constant, $D$, relates the mass flux to the concentration gradient.
+\item \textbf{Thermal Conductivity (Fourier's Law):} $\vec{q} = -\lambda \cdot \vec{\nabla} T(\vec{r},t)$ \vspace{0.05in}\\
+The thermal conductivity, $\lambda$, relates the heat flux to the temperature gradient.
+\item \textbf{Viscosity (Newton's Law of Viscosity):} $\sigma_{x,z} = -\eta \cdot \vec{\nabla}_z (\rho v_x)$ \vspace{0.05in}\\
+The shear viscosity, $\eta$, relates the shear stress to the velocity gradient $\left < d(v_x)/dz \right >$.
+\end{itemize}
 
+\subsubsection{Green-Kubo Relations}
+In the 1950s, Green and Kubo showed that transport coefficients
+$\gamma$ are directly related to the time dependence of equilibrium
+fluctuations in the associated flux $J$.
+\begin{equation}\label{eq:greenKubo}
+\gamma = \frac{V}{k_BT}\int_0^{\infy}ds\langle J(0)J(s)\rangle
+\end{equation}
+Here, $V$ is the volume of the system, $k_B$ is Boltzmann's constant,
+and $T$ is the temperature.
 
-
-Talk about shear viscosity and such.  In equilibrium molecular
-dynamics simulations, the transport properties can be obtained by
-utilizing the Green-Kubo relations. In this method, the fluctuations
-about SOME PROPERTY are integerated over a long period of time until
-convergence on the desired property is achieved. 
-
+\subsubsection{Non-equilibrium Molecular Dynamics Methods}
 Due to the timescale of the simulations required, others have
 approached the problem by performing non-equilibrium molecular
 dynamics simulations. Here, the system is forced to be at some
@@ -961,12 +1194,13 @@ separated regions of the simulation box,
 where again the regions are taken to be separated along the
 $z$-dimension of the simulation box.
 
-\subsection{Reverse Non-equilibrium Molecular Dynamics}
+In equilibrium molecular dynamics simulations, the transport
+properties can be obtained by utilizing the Green-Kubo relations.
 While it is possible to obtain the transport properties of interest
 through equilibrium or non-equilibrium molecular dyamics simulations,
 Kuang and Gezelter have recently developed an approach to
 non-equilibrium molecular dynamics in which they invert the measured
-and imposed quantites. 
+and imposed quantites.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
