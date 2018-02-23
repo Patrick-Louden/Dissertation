@@ -1110,7 +1110,7 @@ this can help in the development of water models in the future.
 Transport phenomena are processes that describe the transfer (flux) of
 mass, heat, momentum, and charge by molecular motions. During this
 process, the transferred quantity is conserved, \textit{i.e.}, the
-moving entity is neither created nor destroyed. Because of this, a set
+moving quantity is neither created nor destroyed. Because of this, a set
 of balance, or conservation equations can be written down describing
 the movement of these quantities in the presence of a flux. The set of
 balance equations for the transport of mass, energy and momentum are
@@ -1133,54 +1133,101 @@ presented in Table \ref{tab:transport}.
 \end{table}
 
 When a transport flux is present, a characteristic response of the
-material the flux is traveling through will become visible. For
+material the flux is traveling through will become apparent. For
 example, in the presence of an energy flux, a thermal gradient will
 develop in the material. Likewise, a momentum flux will cause a
 velocity distribution to form in the system. Through a series of
-constitutive equations, it is possible to relate the flux to the
-observed system response through a proportionality constant describing
-the transport. These constants are dependent on the material the
-transport is occuring through, and thus are characteristic quantities
-of the material. These constants have been well defined in both
-homogeneous and heterogeneous systems, through bulk materials as well
-as across interfaces.
+constitutive equations (right column of Table \ref{tab:transport}, it
+is possible to relate the flux to the observed system response through
+a proportionality constant describing the transport.  Following Fick's
+Law, the diffusion coefficient, or diffusivity, ($D$) is the
+proportionality constant describing the transport of mass, $\vec{j}$
+and the resulting concentration gradient $\nabla c(\vec{r},
+t)$. Similarly, by Fourier's Law, the thermal conductivity, $\lambda$,
+is described by the energy flux $\vec{J}$ and the thermal gradient
+through the material $\nabla T(\vec{r}, t)$. Lastly, from Newton's Law
+of Viscosity, the shear stress( $\sigma_{x,z}$) and the velocity
+gradient $\nabla_z (\rho v_x)$ are related through the shear viscosity
+$\eta$. These constants are dependent on the material the transport is
+occuring through, and thus are characteristic quantities of the
+material.
 
-
-\begin{itemize}
-\item \textbf{Diffusion (Fick's Law):} $\vec{j} = -D \cdot \vec{\nabla}c(\vec{r},t)$ \vspace{0.05in}\\
-The diffusion constant, $D$, relates the mass flux to the concentration gradient.
-\item \textbf{Thermal Conductivity (Fourier's Law):} $\vec{q} = -\lambda \cdot \vec{\nabla} T(\vec{r},t)$ \vspace{0.05in}\\
-The thermal conductivity, $\lambda$, relates the heat flux to the temperature gradient.
-\item \textbf{Viscosity (Newton's Law of Viscosity):} $\sigma_{x,z} = -\eta \cdot \vec{\nabla}_z (\rho v_x)$ \vspace{0.05in}\\
-The shear viscosity, $\eta$, relates the shear stress to the velocity gradient $\left < d(v_x)/dz \right >$.
-\end{itemize}
+% \begin{itemize}
+% \item \textbf{Diffusion (Fick's Law):} $\vec{j} = -D \cdot \vec{\nabla}c(\vec{r},t)$ \vspace{0.05in}\\
+% The diffusion constant, $D$, relates the mass flux to the concentration gradient.
+% \item \textbf{Thermal Conductivity (Fourier's Law):} $\vec{q} = -\lambda \cdot \vec{\nabla} T(\vec{r},t)$ \vspace{0.05in}\\
+% The thermal conductivity, $\lambda$, relates the heat flux to the temperature gradient.
+% \item \textbf{Viscosity (Newton's Law of Viscosity):} $\sigma_{x,z} = -\eta \cdot \vec{\nabla}_z (\rho v_x)$ \vspace{0.05in}\\
+% The shear viscosity, $\eta$, relates the shear stress to the velocity gradient $\left < d(v_x)/dz \right >$.
+% \end{itemize}
 
 \subsubsection{Green-Kubo Relations}
 In the 1950s, Green and Kubo showed that transport coefficients
-$\gamma$ are directly related to the time dependence of equilibrium
-fluctuations in the associated flux $J$.
-\begin{equation}\label{eq:greenKubo}
-\gamma = \frac{V}{k_BT}\int_0^{\infty}ds\langle J(0)J(s)\rangle
+are directly related to the time dependence of equilibrium
+fluctuations of the system. If we consider an arbitrary dynamic
+property $A(t)$ with a total time derivative of $\dot{A}(t)$, then the
+displacement at time $t$ is given by
+\begin{equation}
+A(t) - A(0) = \int_0^t dt' \dot{A}(t').
 \end{equation}
-Here, $V$ is the volume of the system, $k_B$ is Boltzmann's constant,
-and $T$ is the temperature.
+Squarring both sides and averaging over time origins we obtain 
+\begin{equation}
+\langle [A(t) - A(0)]^2 \rangle = \int_0^t dt'' \int_0^t dt' \langle
+\dot{A}(t') \dot{A}(t'') \rangle
+\end{equation}
+Recognizing that the integrand is symmetric in $t''$ and $t'$, and
+that the integral is taken over a square in $t'-t''$ space, we can
+integrate over one half the square and double the result. Further, if
+we assume the property $\langle \dot{A}(t') \dot{A}(t'') \rangle$ to
+be a stationary correlation function, then we are able to shift time
+origins without issue. 
+\begin{equation}\label{eq:gk}
+  \langle [A(t) - A(0)]^2 \rangle = 2 \int_0^t dt'' \int_0^{t''} d\tau ~
+  \langle \dot{A}(\tau ) \dot{A}(0) \rangle
+\end{equation}
+Equation \ref{eq:gk} is invariant under interchanging the two
+integrations. Lastly, taking a long-time limit collapses one of the
+integrals and we are left with a general relation describing the
+mean-square displacement of a dynamic quantity and an integral of a
+time correlation function.
+\begin{equation}\label{eq:gk2}
+ \gamma =  lim_{t \rightarrow \infty} \frac{\langle[ A(t) - A(0)]^2 \rangle}{2t} =
+  \int_0^{\infty} d\tau ~ \langle \dot{A}(\tau ) \dot{A}(0) \rangle
+\end{equation}
+Solving for the transport coefficient ($\gamma$) of interest, is
+simply a matter of determining the appropriate dynamic property
+$A(t)$, and computing the long-time correlation function. However,
+when implemented extracting transport coefficients from equilibrium
+simulations in this manner is often computationally expensive. This is
+due to the slow decay of the correlation function, resulting in the
+need for long simulation times.
 
 \subsubsection{Non-equilibrium Molecular Dynamics Methods}
-Due to the timescale of the simulations required, others have
-approached the problem by performing non-equilibrium molecular
-dynamics simulations. Here, the system is forced to be at some
-non-equilibrium state, and the flux required to maintain that state is
-calculated from the simulation. This process can be challenging,
-however, simulation times are often shorter than those required for
-using the Green-Kubo formalism. With the required flux in hand, the
-transport property is calculated by using the relavent linear
-constitutive relation. If the desired transport property is the
-thermal conductivity ($\lambda$) of a material, two regions of the simulation box
-will be thermostatted, and the kinetic energy flux ($J$) required to
-maintain the temperature difference will be calculated. Once this
-value is converged, $\lambda$ can be obtained by 
+An alternative approach to obtaining transport coefficients is through
+the use of non-equilibrium molecualr dynamics (NEMD) simulations.
+During NEMD simulations, the system is driven out of equilibrium by
+the presence of an external perturbation (\textit{e.g.} a thermal or
+velocity gradient), and the flux required to sustain the imposed
+gradient is computed. Once in-hand, the computed flux and imposed
+gradient can be used to obtain the transport coefficient through the
+linear constitutive relations in Table \ref{tab:transport}.
+
+Due
+to the timescale of the simulations required, others have approached
+the problem by performing non-equilibrium molecular dynamics
+simulations. Here, the system is forced to be at some non-equilibrium
+state, and the flux required to maintain that state is calculated from
+the simulation. This process can be challenging, however, simulation
+times are often shorter than those required for using the Green-Kubo
+formalism. With the required flux in hand, the transport property is
+calculated by using the relavent linear constitutive relation. If the
+desired transport property is the thermal conductivity ($\lambda$) of
+a material, two regions of the simulation box will be thermostatted,
+and the kinetic energy flux ($J$) required to maintain the temperature
+difference will be calculated. Once this value is converged, $\lambda$
+can be obtained by
 \begin{equation}\label{thermalTransport}
-J_{z} = \lambda \big(\frac{\partial T}{\partial z}\big)
+J_{z} = - \lambda \big(\frac{\partial T}{\partial z}\big)
 \end{equation}
 where the separation has been taken to be along the $z$-dimension of
 the system.  Here, $\big(\frac{\partial T}{\partial z}\big) $ is
