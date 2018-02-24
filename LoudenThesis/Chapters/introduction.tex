@@ -951,7 +951,7 @@ TIP4P/Ice & 268(2) & 271(1) & 272(6) \\
 TIP4P/2005 & 249(2) & 249(3) & 252(6) \\
 TIP4P/Ew & 242(2) & 243(3) & 245.5(6) \\
 TIP4P & 229(2) & 230(2) & 232(4) \\
-TIP5P & 271(2) & & 274(6) \\
+TIP5P & 271(2) & - & 274(6) \\
 TIP5P-E & 270(2) & - & 271.5(6) \\
 SPC/E & 213(2) & 217(2) & 215(4) \\
 \hline \hline
@@ -1038,7 +1038,7 @@ defined in our coordinate system for a traceless quadrupole as
 \end{equation} 
 
 Abascal and Vega have shown that the water models which most accurately
-reproduce the meling point of ice I$_h$ have a ratio of their dipole moment
+reproduce the meling point of ice-I$_h$ have a ratio of their dipole moment
 to $\Theta_T$ of approximately unity. The equivalent expression for the 
 traced quadrupole tensor is given as
 
@@ -1051,13 +1051,13 @@ investigated by Abascal and Vega are shown in Table \ref{Models_quad}, along
 with the non-zero elements of their traced quadrupole tensors.
 
 \begin{table}[h!]
-\caption{TRACED QUADRUPOLE TENSORS FOR A VARIETY OF WATER MODELS.}
+\caption{TRACED QUADRUPOLE TENSORS FOR A VARIETY OF WATER MODELS}
 \label{Models_quad}
 \begin{tabular}{rccccccc}
-\hline
+\hline\hline
 Model & $Q_{xx}$ & $Q_{yy}$ & $Q_{zz}$ & $Tr(Q)$ & $\overline{Q}$ & $Q_{T}$ &
                                                                     T$_{m}$ (K) \\
-\hline \hline
+\hline 
 TIP4P/Ice & 0.0 & 1.6629 & 0.7427 & 2.3657 & 2.8143 & 2.4348  & 272.2 \\
 TIP4P/2005 & 0.0 & 1.531 & 0.7034 & 2.2336 & 2.6553 & 2.2969  & 252.1 \\
 TIP4P/Ew & 0.0 & 1.4427 & 0.6617 & 2.1044  & 2.5017 & 2.1640  & 245.5   \\
@@ -1074,7 +1074,7 @@ Elements of the tensors are in units of D\AA~. \\
 
 In Figures \ref{fig:QBar} and \ref{fig:TraQ},
 we have replotted the 
-melting point for ice I$_h$ of these water models by $\overline{Q}$ and the 
+melting point for ice-I$_h$ of these water models by $\overline{Q}$ and the 
 trace of their
 quadrupole tensor, where $\overline{Q}$ is given by,
 \begin{equation}
@@ -1086,7 +1086,7 @@ the values of their quadrupole tensors and their melting point.
 
 \begin{figure*}
 \includegraphics[width=\linewidth]{Figures/Tm_Ih_Qbar_plot.pdf}
-\caption{\label{fig:QBar} Melting point for ice I$_h$ of several
+\caption{\label{fig:QBar} Melting point for ice-I$_h$ of several
   popular water models as a function of the QBar for the model. We see
   a strong correlation between a more accurate melting point and a
   larger value of $\overline{Q}$. We estimate that a $\overline{Q}$ of
@@ -1098,7 +1098,7 @@ the values of their quadrupole tensors and their melting point.
 
 \begin{figure*}
 \includegraphics[width = \linewidth]{Figures/Tm_Ih_TraQ_plot.pdf}
-\caption{\label{fig:TraQ} Melting point for ice I$_h$ of several popular water models as a function of the trace of the quadrupole tensor for the model. We see a strong correlation between a more accurate melting point and a larger value of the trace. We estimate that a trace of approximately 2.3 D\AA will result in the experimental melting point of 273.15 K.}
+\caption{\label{fig:TraQ} Melting point for ice-I$_h$ of several popular water models as a function of the trace of the quadrupole tensor for the model. We see a strong correlation between a more accurate melting point and a larger value of the trace. We estimate that a trace of approximately 2.3 D\AA will result in the experimental melting point of 273.15 K.}
 \end{figure*}
 
 While it is still unclear if these results are indicative of an
@@ -1212,42 +1212,37 @@ gradient is computed. Once in-hand, the computed flux and imposed
 gradient can be used to obtain the transport coefficient through the
 linear constitutive relations in Table \ref{tab:transport}.
 
-Due
-to the timescale of the simulations required, others have approached
-the problem by performing non-equilibrium molecular dynamics
-simulations. Here, the system is forced to be at some non-equilibrium
-state, and the flux required to maintain that state is calculated from
-the simulation. This process can be challenging, however, simulation
-times are often shorter than those required for using the Green-Kubo
-formalism. With the required flux in hand, the transport property is
-calculated by using the relavent linear constitutive relation. If the
-desired transport property is the thermal conductivity ($\lambda$) of
-a material, two regions of the simulation box will be thermostatted,
-and the kinetic energy flux ($J$) required to maintain the temperature
-difference will be calculated. Once this value is converged, $\lambda$
-can be obtained by
+For example, if the desired transport property is the thermal conductivity
+($\lambda$) of a material, two regions of the simulation box will be
+thermostatted, and the kinetic energy flux ($J$) required to maintain
+the temperature difference will be calculated. Once this value is
+converged, $\lambda$ can be obtained by
 \begin{equation}\label{thermalTransport}
 J_{z} = - \lambda \big(\frac{\partial T}{\partial z}\big)
 \end{equation}
 where the separation has been taken to be along the $z$-dimension of
-the system.  Here, $\big(\frac{\partial T}{\partial z}\big) $ is
-determined by the temperature of the two regions and the distance the
-regions are separated over. Similarly, the shear viscosity
-($\eta$) of a fluid can be determined by forcing molecules at two
-separated regions of the simulation box,
+the system.  Similarly, the shear viscosity ($\eta$) of a fluid can be
+computed by determining the momentum flux ($ j_{z}(p_{x})$) required
+to maintain a given average velocity in two spatially separated
+regions. 
 \begin{equation}\label{momentumTransport}
   j_{z}(p_{x}) = -\eta \big(\frac{\partial v_{x}}{\partial z}\big)
 \end{equation}
-where again the regions are taken to be separated along the
-$z$-dimension of the simulation box.
 
-In equilibrium molecular dynamics simulations, the transport
-properties can be obtained by utilizing the Green-Kubo relations.
-While it is possible to obtain the transport properties of interest
-through equilibrium or non-equilibrium molecular dyamics simulations,
-Kuang and Gezelter have recently developed an approach to
-non-equilibrium molecular dynamics in which they invert the measured
-and imposed quantites.
+Simulation times to converge the required flux to maintain the desired
+thermal or velocity distribution are often shorter than when computing
+transport properties using the Green-Kubo relations. However,
+computing the appropriate flux can be quite challenging. Recently,
+Kuang and Gezelter have developed an approach to non-equilibrium
+molecular dynamics in which they invert the measured and imposed
+quantites.\cite{Kuang2010,Kuang2012} In their method, aptly named
+reverse non-equilibrium molecular dynamics, the flux is imposed across
+two spatially separated regions of the simulation box, and the
+gradient response is measured. Again, the desired transport
+coefficient can be obtained through the linear constitutive
+relations. This method is advantageous over NEMD approaches as the
+gradient response of the system is often much easier to measure
+compared to the difficult to compute flux.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -1264,7 +1259,7 @@ hydrogen. It is also the second most common molecule in the universe,
 trailing behind diatomic hydrogen, $\mathrm{H}_2$. It is composed of
 two atoms of hydrogen and one atom of oxygen, and it has been found to
 be fundamental to star formation.  On Earth, water occupies nearly
-$1.4x10^{9} \mathrm{km}^{3}$\cite{Brown2016}, and accounts for 40\% to
+$1.4\times 10^{9}~\mathrm{km}^{3}$\cite{Brown2016}, and accounts for 40\% to
 70\% of Earth's retention of heat. It is one of the few molecules that
 can be found in its solid, liquid, and gasseous forms at ambient
 temperatures and pressures.  Some hypothesize that life cannot exist
@@ -1346,43 +1341,35 @@ molecule. This gives rise to higher order multipoles, and it is these
 electronic distributions that give rise to many of water's
 characteristic properties. In the gas phase, water has a dipole moment
 of about 1.85~D. This dipole moment is highly polarizable, that is, it
-readily responds to an external electric field, be it an applied one
-or the field created by molecules in its local environment. In the
-presence of an external field, the valence electrons in water respond
-by separating even more, resulting in a larger dipole moment for the
-molecule. In the condensed liquid phase, this value becomes much
-harder to probe, but values have been reported ranging from 2.2~D to
-2.9~D.
+readily responds to an external electric field, be it applied or
+created by molecules in its local environment. In the condensed liquid
+phase, the dipole moment becomes much harder to probe, but values have
+been reported ranging from 2.2~D to 2.9~D.
 
 
 \subsubsection{Liquid Water}
 Water is a liquid at room temperature because of its large dipole
 moment and the strength of the intermolecular hydrogen bonds. These
-bonds can be compared as somewhere
-between the strong covalent bonding interactions holding the
-individual water molecules together, and the weaker van der Waals
-interaction due to the instantaneous polarization of molecules
-electronic clouds of electrons. Numerically, hydrogen bonds have a
-strength of about 20 J/mol, about ten times thermal fluctuation at
-room temperature. This ratio is important in the cohesion of molecules
-into a condensed phase. For water, the order of magnitude difference
-between the intermolecular interactions and thermal fluctuations means
-that the liquid will not boil at room temperatures. Intermolecular
-forces for many other smaller molecules are not as strong as the
-hydrogen bonding observed in water. The intermolecular interactions of
-H2S are much weaker, for example, and it boils at -60 degrees
-Celcius. Most other molecules that weigh on the order of 18 amu are
-gasseous at room temperature. The strong dipole moment of water holds
-the molecules together in a condensed phase.
+bonds are significantly stronger than the van der Waals interactions
+arising from the instantaneous polarization of molecules. Numerically,
+hydrogen bonds have a strength of about 20
+$\mathrm{J}~\mathrm{mol}^{-1}$, about ten times thermal fluctuation at
+room temperature. The order of magnitude difference between the
+intermolecular interactions and thermal fluctuations means that the
+liquid will not boil at room temperatures. The intermolecular forces
+for similar size molecules are weaker, for example
+$\mathrm{H}_2\mathrm{S}$ boils at -60~\degree~C. The strong hydrogen
+bonds and the large dipole moment of water holds the molecules
+together in a condensed phase at room temperature.
 
-Another interesting property of the hydrogen bond is its
-directionality and number of neighbors that bond with it. The proton,
-electron distribution, and higher multipole moments that give rise to
-the strength of the hydrogen bonds also give rise to the local
-structure of liquid water. Water molecules hydrogen bond to a central
-molecule forming a tetrahedral configuration. In liquid water,
-molecules form local tetrahedral environments Liquid water transitions
-to ice when the local ordering becomes long ranged.
+The polarizability of a water molecule leads to another interesting
+property, namely, its local bonding environment. In the liquid phase,
+water molecules often adapty tetrahedral like geometries with other
+water molecules, resulting in $\sim$~3 nearest neighbors at ambient
+conditions. The maximum density of the liquid is observed to occur at
+$\sim$~4\degree~C, and cooling further results in decreasing
+density. Liquid water transitions to ice when the local ordering
+becomes long ranged.
 
 
 \subsubsection{Water Ice}
@@ -1391,171 +1378,40 @@ to ice when the local ordering becomes long ranged.
 % Proton disordered structure, residule entropy. 
 %
 %Annu. Rev. Phys. Chem. 2017. 68:285–304
-'Ice is a fundamental solid with important environmental, biological,
-geological, and extraterrestial impact.'\cite{Shultz2017} 'Ice is
-arguablyamongthemostfundamental andubiquitous solids in the Universe
-(1–3).Consisting of two of the threemost abundant elements, ice and
-its liquid form, water, not only shapeEarth and our Solar System but
-also transportmaterial throughout the Universe.' 
-
-'Ice is challenging in part due to configurational flexibility
-exemplified by the famous residual entropy of ice at 0K(4).The source
-of residual entropy lies in the tetrahedral coordination around the
-oxygen atom: Two coordinations are bonds to hydrogen atoms and two are
-lone pairs. Hence, water forms an extended network, but there is
-considerable flexibility for locating the hydrogen atoms to satisfy
-the “ice rules” (5): exactly one hydrogen atommust be located between
-any pair of oxygen atoms and every oxygen atom must be covalently
-bonded to exactly two hydrogen atoms. Surface termination leads to
-dangling valences. Dangling valences, even at the ideal surface, can
-be random or patterned (6–10). Finally, as is common with many solids,
-the ice surface can relax and/or reconstruct.'
-
-(on qll) 'techniques as diverse as glancing angle X-ray (102, 103),
-SFG (82), He atom scattering (104), atomic force microscopy (105,
-106), ellipsometry (107), photoelectron spectroscopy (108), nuclear
-magnetic resonance (NMR) (109, 110), theory (111–114), and
-differential interference contrast (57, 115, 116) conclude that the
-QLL exists.' The onset temperature has varied from as cold as 200K to
-as warm as 260K, and discrepencies have been attributed to
-contaminations to varying probe depths. There is also considerable
-disagreement about the nature of the QLL, 'Theory indicates that it is
-ordinary supercooled water (117), whereas recent interfacial force
-microscopy (105) suggests that the QLL is neither ice nor water but
-rather a new viscoelastic phase.' And recently Suzuki \textit{et al.}
-have probed the QLL and observed two separate immesible liquid water
-flims. 
-
-Section 4.1 deserves further reading, talks about thermodynamics of
-the basal, prism, and secondary prismatic crystal surfaces.
-%end Annu. Rev. Phys. Chem. 2017. 68:285–304
+Water ice is a fundamental solid, with implications in biological,
+environmental, geological, and extraterrestial
+phenomena.\cite{Shultz2017} Biologically, many organisms have had to
+adapt to advancing ice fronts. These organisms produce antifreeze
+proteins which disrupt the hydrogen bonding network at the ice /
+liquid interface, preventing further ice growth. The movement of
+glaciers has carved out surface features on Earth, and throughout our
+solar system reactions and transport of a wide variety of molecules
+occurs at the surface of ice.
 
 
 % John Finney, A Very Short Introduction to Water. Oxford University
 % Press. 
-In normal ice, water molecules form puckered six member rings, with
-OOO angles formed by three neighboring molecules close to 109.5
-degrees. Looking at the solid phase in the figure, one may wonder if
-subsequent water molecules would fit within the open channels of the
-ice. Indeed molecules can be found in these channels, however, they
-are unable to form hydrogen bonds with water molecules constituting
-the ice lattice. Molecules of this nature are only observed in
-ultra-high density ices, ice-number and ice-number, for example. In
-these crystal structures, two ice lattices are inter-twined within one
-another. That is, a secondary ice lattice is present interwoven
-through the first, where no cross hydrogen bonding between the two
-lattices exist.
+The structure of hexagonal ice (ice-I$_\mathrm{h}$) has been studied
+extensively using experimental methods such as neutron scattering and
+x-ray spectroscopy, as well as NMR and laser
+spectroscopy.\cite{w. F. Kuhs and M. S. Lehmann, in Water Science
+  Reviews 2, edited by F. Franks (Cambridge University, New York,
+  1986),pp. 1-65.}  In this structure, water molecules form puckered
+six member rings, with OOO angles formed by three neighboring
+molecules close to 109.5\degree~. These rings can stack on top of one
+another and expand to form large sheets, giving rise to the observed
+six-fold symmetry of snowflakes. Due to the open structure of the
+crystal, it is possible to interweave an equivalent second ice crystal
+through the first. These structures have a larger density than the
+more open ice, and are aptly named ultra-high density ices. Ice also
+crystallizes into cubic structures, although no interwoven lattice has
+yet been observed for this geometry. In total, there are currently 16
+different crystal structures known for water ice, some of which can be
+seen in Figure \ref{fig:phaseDiagram} and Table \ref{tab:iceProps}. 
 
-Ice Ih at -30
-degrees Celcius, apply 30,000 atmospheres of pressure and we will
-observe a phase transition to ice-III. Similarly, cool ice-III to -40
-degrees Celcius and we will see a phase transition to ice-II. There
-are approximately sixteen different known crystal structures of ice,
-each one stable in some unique region of the phase diagram. Also,
-there are ice phases which have been predicted by computer simulation
-which have not yet been observed in vivo. If we inspect the phase
-transition from ice Ih to ice-III closer, we will see a distortion in
-the crystalline geometry under the large pressure conditions. Some of
-the puckered six-membered rings will compress into five-membered
-structures, resulting in a more dense packing of water
-molecules. However, this will place more strain on the
-hydrogen-bonds. In ice-III, the OOO bond angles vary between 88
-degrees and 148 degrees. Likewise, the hydrogen-bond lengths will also
-change under this distortion. In ice-Ih, hydrogen-bonds are typically
-0.276 nm, in ice-III hydrogen-bonds are found between 0.271 nm and
-0.283 nm.
-
-ice XVI, discovered in 2014, is metastable under ambient and high
-pressure, but is postulated to be stable under negative pressure,
-\textit{i.e.} under lattice tension. Therefore, the region of
-stability might be to the left of that shown in the phase diagram,
-beyond the $P = 0$ vertical. Image of water molecules (maybe 5 of
-them) where the hydrogens are permuted through the possible
-combinations. From this figure, we see that several possible
-combinations of hydrogen arrangements are possible. These are all
-equivalent, and they follow the original set of rules laid down by
-Bernal and Fowler in 1933. These rules are as follows,
-One. Each oxygen atom is covalently bonded to two hydrogens. This is
-essentially the definition of being a water molecules. Two. Each
-hydrogen in each water molecule forms a hydrogen bond with one other
-oxygen, therefore, there is exactly one hydrogen between every two
-oxygen sites in the lattice. The result of these rules is that each
-oxygen is in a tetrahedral environment, and is donating two hydrogens
-and accepting two hydrogen bonds. 
-
-If we now consider how we might populate the hydrogens into the oxygen
-lattice while obeying these ice-rules, we see there are two
-\textit{kinds} of crystals that can be obtained, \textit{ordered} and
-\textit{disordered}. In the \textit{ordered} case, the orientations of
-equivalent water molecules in all unit cells are the same, whereas in
-a \textit{disordered} ice the orientations of equivalent water
-molecules are not the same. This can be seen in figure (insert figure
-showing proton ordered vs disordered here). While we can speak of
-these lattices as water molecules that are orientationally ordered or
-disordered, often this is described in terms of proton order and
-disordered cases. The two descriptions are equivalent as the
-arrangement or ordering of the hydrogens gives rise to the orientation
-of the water molecules. ices Ih, III, IV, V, VI, VII, XII, XVI are
-orientationally disordered, while ices II, VIII, IX, and XI are
-orientationally ordered. Upon cooling, ice III and ice VII (disordered
-ices) will undergo a phase transition to ordered forms, ice IX and ice
-VIII respectively. Transitions of proton disordered ice to proton
-ordered ice must inherently involve the reorientation of water
-molecules, or the transfer of hydrogens, or some combination of the
-two. However, if all molecules in the lattice satisfy the Bernal
-Fowler ice rules, any one water molecule reorientation or proton
-transfer will inevidebly break the ice-rules. Therefore, we conclude
-these events must happen in concert, large collections of molecules
-must simultaneously undergo some combination or reorientation and
-proton transfer. However, the energy required to do so would be quite
-large, and larger still for increasing number of molecules
-involved. This amount of energy is not likely available at the thermal
-conditions where these transitions are observed to occur, thus it is
-believed that the these transitions must depend on defects within the
-lattice. There are two known kinds of defects in ice
-lattices. \textit{Orientational} defects, known as Bjerrum defects after the
-person who proposed the idea, and \textit{ionic} defects. First, there
-are two kinds of Bjerrum defects, D-defect (from the German
-\textit{doppelbesetze} meaning doubly occupied), and an L-defect (from
-\textit{leere} meaning empty). From the figure, we see that a D-defect
-occurs when there are two hydrogens between two oxygen sites, and an
-L-defect occurs when there are no hydrogens between two oxygen
-sites. These are of course in violation of the Bernal Fowler
-ice-rules, however, they act as proton sinks and sources when the
-crystal undergoes phase transitions from proton disordered to proton
-ordered. The presence of these sites lowers the energy required, and
-maybe I can find a citation about this. Ionic defects occur when a
-proton transfer happens and the resulting lattice has a hydroxide and
-hydronium ion.
-
-%end A Very Short Introduction to Water.
-
-Water crystallizes into ice in a wide variety of different spacial
-arrangements. There are currently 16 known crystal structures of ice,
-some of which only occur at large pressure environments and are
-thought to be present on the moons of SaturnXX, while others have yet
-to be observed but are predicted by computer simulations. Here on
-Earth, the most common form of ice is ice-I$_\mathrm{h}$, which has 6
-molecules in the unit cell and crystallizes under the P6mm3 space
-group.
-
-The structure of ice-I$_\mathrm{h}$ has been studied extensively using
-experimental methods such as neutron scattering and x-ray
-spectroscopy, as well as NMR and laser spectroscopy.\cite{w. F. Kuhs
-  and M. S. Lehmann, in Water Science Reviews 2, edited by F. Franks
-  (Cambridge University, New York, 1986),pp. 1-65.} 
-
-From these, a set of 'ice-rules' have been established by Bernal and
-Fowler.\cite{XX} These rules describe the required metrics for accurate
-crystals of ice-I$_\mathrm{h}$. Residual entropy due to hydrogen
-disordering. Hayward and RameiresSP developed an algorithm for
-sampling of ice-I$_\mathrm{h}$ crystals.\cite{HaywardXX}
-
-
-
-\begin{table}[h]
+\begin{table}
 \centering
-\caption{Physical Properties of the Various Ice Forms }
+\caption{ICE CRYSTAL SYMMETRY AND HYDROGEN ORDERING}
 \label{tab:iceProps}
 \begin{tabular}{lccc}  
 \hline\hline 
@@ -1579,66 +1435,294 @@ sampling of ice-I$_\mathrm{h}$ crystals.\cite{HaywardXX}
   XVI & cubic & 0.81 & disordered \\ 
 \hline \hline
 \end{tabular}
+\begin{flushleft}
+Data taken from Reference \cite{Chaplin2018}.
+\end{flushleft}
 \end{table}
 
+% Ice Ih at -30 \degree ~C, apply 30,000 atmospheres of pressure
+% and we will observe a phase transition to ice-III. Similarly, cool
+% ice-III to -40 degrees Celcius and we will see a phase transition to
+% ice-II. There are approximately sixteen different known crystal
+% structures of ice, each one stable in some unique region of the phase
+% diagram. Also, there are ice phases which have been predicted by
+% computer simulation which have not yet been observed in vivo. If we
+% inspect the phase transition from ice-Ih to ice-III closer, we will
+% see a distortion in the crystalline geometry under the large pressure
+% conditions. Some of the puckered six-membered rings will compress into
+% five-membered structures, resulting in a more dense packing of water
+% molecules. However, this will place more strain on the
+% hydrogen-bonds. In ice-III, the OOO bond angles vary between 88
+% degrees and 148 degrees. Likewise, the hydrogen-bond lengths will also
+% change under this distortion. In ice-Ih, hydrogen-bonds are typically
+% 0.276 nm, in ice-III hydrogen-bonds are found between 0.271 nm and
+% 0.283 nm.
+
+In 1933, Bernal and Fowler established a set of rules for populating
+hydrogens into an oxygen ice lattice. These rules are as follows;
+each oxygen atom is covalently bonded to two hydrogens, and each
+hydrogen in each water molecule forms a hydrogen bond with one other
+oxygen. This means there is exactly one hydrogen between every two
+oxygen sites in the lattice. The result of these rules is that each
+oxygen is in a tetrahedral environment, and is donating two hydrogens
+and accepting two hydrogen bonds.
+
+Following these ice-rules, we see that there are two \textit{kinds} of
+crystals that can be obtained, \textit{ordered} and
+\textit{disordered}. In the \textit{ordered} case, the hydrogen
+configurations for equivalent water molecules in all unit cells are
+the same, whereas in a \textit{disordered} ice the proton
+configurations are unequivalent. We can describe these lattices as
+being orientationally ordered or disordered, however, they are more
+commonly described in terms of their proton ordering. The two
+descriptions are equivalent as the arrangement or ordering of the
+hydrogens gives rise to the orientation of the water molecules.  Ice-
+I$_\mathrm{h}$, III, IV, V, VI, VII, XII, XVI are proton disordered,
+while ices II, VIII, IX, and XI are proton ordered.
+
+Upon cooling, ice-III and ice-VII undergo a phase transition to
+ordered forms, ice-IX and ice-VIII respectively. Transitions of proton
+disordered ice to proton ordered ice must inherently involve the
+reorientation of water molecules, the transfer of hydrogens, or some
+combination of the two. However, if all molecules in the lattice
+satisfy the Bernal Fowler ice-rules, any one water molecule
+reorientation or proton transfer will inevitably break the
+ice-rules. Therefore, we conclude these events must happen in concert,
+large collections of molecules must simultaneously undergo some
+combination or reorientation and proton transfer. However, the energy
+required to do so would be quite large, and larger still for
+increasing number of molecules involved. This amount of energy is not
+likely available at the thermal conditions where these transitions are
+observed to occur, therefore, it is believed that the these
+transitions must depend on defects within the lattice. 
+
+There are two known kinds of defects in ice
+lattices, \textit{orientational} defects, known as Bjerrum defects,
+and \textit{ionic} defects. There are two kinds of Bjerrum defects,
+D-defect (from the German \textit{doppelbesetze} meaning doubly
+occupied), and an L-defect (from \textit{leere} meaning empty). A
+D-defect occurs when there are two hydrogens between two neighboring
+oxygens, and an L-defect occurs when there are no hydrogens between
+the oxygen sites. These are of course in violation of the Bernal
+Fowler ice-rules, however, they act as proton sinks and sources when
+the crystal undergoes phase transitions from proton disordered to
+proton ordered. Ionic defects form when a proton transfer happens
+between two oxygens, resulting in the formation of a hydroxide and
+hydronium ion.
+
 % Residual Entropy of ice.
-If we further consider the Bernal-Fowler ice rules, we see that the
-hydrogen arrangement in ice I$_\mathrm{h}$ is not unique. In 1935,
+If we further consider the Bernal Fowler ice-rules, we see that the
+hydrogen arrangement in ice-I$_\mathrm{h}$ is not unique. In 1935,
 Linus Pauling argued that any arrangements of hydrogens which
-satisfies the ice rules is valid and has equal probability of
+satisfies the ice-rules is valid and has equal probability of
 occuring since each unique arrangement has the same energy,
 \textit{i.e.} they are degenerate configurations. Due to this, he
-predicted ice I$_\mathrm{h}$ to have a \textit{residual entropy}, that is, a
+predicted ice-I$_\mathrm{h}$ to have a \textit{residual entropy}, that is, a
 non-vanishing positive entropy ($S_{0}$) at zero Kelvin. This entropy
 can be computed from Boltmann's equation of statistical mechanics,
-\begin{equation}\label{Boltzmann-W}
-S = k_{B}~ln(W)
+\begin{equation}\label{eq:Boltzmann-W}
+S = k_{B}~\mathrm{ln}(W)
 \end{equation}
 where $k_{B}$ is Boltzmann's constant and $W$ is the number of
 equivalent arrangements of the molecules. Pauling estimated the number
 of configurations in two separate ways.\cite{Pauling1935} First, we
 consider that there are possible six ways to orient a water molecule
 within a tetrahedral structure formed by neighboring molecules while
-satisfying ice rule number NUM. If we give each water molecule one of
-these six orientations at random, there is then a 1/2 probability of
-having a hydrogen between two oxygens, thus there is a 1/4 chance of
-satisfying ice rule NUM, that there is exactly one hydrogen between
-every two oxygens in the lattice. The resulting number of correct
-possible arrangements of $N$ water molecules is
-\begin{equation} \label{Pauling-1}
+satisfying the ice-rules. If we give each water molecule one of these
+six orientations at random, there is then a 1/2 probability of having
+a hydrogen between two oxygens, thus there is a 1/4 chance that there
+is exactly one hydrogen between every two oxygens in the lattice. The
+resulting number of correct possible arrangements of $N$ water
+molecules is
+\begin{equation} \label{eq:Pauling-1}
 W_{Pauling} = (6/4)^{N} = (3/2)^{N}.
 \end{equation}   
 Pauling arrived at the same result by a second construction. If we
-ignore ice rule NUM, and only enforce there to be a single Hydrogen
-between each Oxygen in the lattice, there are $2^{2N}$ configurations
-(since there are $2N$ bonds in the network). For each Oxygen atom,
-here are $2^{4} = 16$ possible arrangements for the Hydrogens, 10 of
-which are ruled out by ice rule NUM, as they result in non-intact
+ only enforce there to be a single hydrogen
+between each oxygen in the lattice, there are $2^{2N}$ configurations
+(since there are $2N$ bonds in the network). For each oxygen atom,
+here are $2^{4} = 16$ possible arrangements for the hydrogens, 10 of
+which are ruled out as they result in non-intact
 molecules. That is, they form structures of (H$_{4}$O)$^{2+}$,
 (H$_{3}$O)$^{+}$, (HO)$^{-}$, and O$^{2-}$. Therefore, there are only
-6/16 possible configurations allowed for placing Hydrogens around each
-Oxygen. This gives a total number of configurations as,
+6/16 possible configurations allowed for placing hydrogens around each
+oxygen. This gives a total number of configurations as,
 \begin{equation}
 W_{Pauling} = 2^{2N}(6/16)^{N} = (3/2)^{N}.
 \end{equation}
-Using these results with equation \ref{eq:Boltzmann-W}, the residual
+Using these results with Equation \eqref{eq:Boltzmann-W}, the residual
 entropy follows as
 \begin{equation}
-S_{0} = k_{B}Nln(3/2) = Rln(3/2)
+S_{0} = k_{B}N\mathrm{ln}(3/2) = R\mathrm{ln}(3/2)
 \end{equation}
-where $R$ is the molar gas constant, $R = 8.31447 J
-mol^{-1}K^{-1}$. This gives a residual entropy of 
+where $R$ is the molar gas constant,
+$R = 8.31447~\mathrm{J~mol}^{-1}~\mathrm{K}^{-1}$. This gives a
+residual entropy of
 \begin{equation}
-S_{0} = 3.3712 J mol^{-1}K^{-1} = 0.80574 cal deg^{-1} mol^{-1}.
+  S_{0} = 3.3712~\mathrm{J~mol}^{-1}~\mathrm{K}^{-1} = 0.80574~\mathrm{cal~deg}^{-1}~ \mathrm{mol}^{-1}.
 \end{equation}
 The residual entropy has been further investigated by Berg \textit{et
-  al.} who obtained $S_{0} \approx 0.81550 \pm 0.00021 cal deg^{-1}
-mol^{-1}$ by means of multicanonical simulations.\cite{Berg2007} This
-result was found to be in good agreement with a series expansion
-method by Nagle \textit{et al.}\cite{Nagle1966}, as well as Giaque and
-Stouts calorimetry experiments which estimated $S_{0} = 0.82 \pm 0.05
-cal deg^{-1} mol^{-1}$.\cite{Giaque1936} 
+  al.} who obtained
+$S_{0} \approx 0.81550 \pm 0.00021~\mathrm{cal~deg}^{-1}
+~\mathrm{mol}^{-1}$ by means of multicanonical
+simulations.\cite{Berg2007} This result was found to be in good
+agreement with a series expansion method by Nagle \textit{et
+  al.}\cite{Nagle1966}, as well as Giaque and Stouts calorimetry
+experiments which estimated
+$S_{0} = 0.82 \pm 0.05~\mathrm{cal~deg}^{-1}
+~\mathrm{mol}^{-1}$.\cite{Giaque1936}
 % end Residual Entropy of ice.
+
+
+
+\subsection{Structure of Ice Surface}
+
+% Ding Pan et al. J. Phys. Condens. Matter. 22, 2010, 074209
+DFT calculations of basal and prism surface of
+ice-I$_\mathrm{h}$. Similar surface energies obtained, however, both
+showed a strong dependence on surface proton order. The energy for
+proton-ordering at the surface can account for up to 50~\% of the
+total surface energy (significantly larger than proton ordering in the
+bulk $<$ 1~\%), suggesting that the thermodynamic ground state of
+the ice surface will remain proton ordered well above the bulk
+order-disorder temperature of about 72~K.
+
+Nice review of proton order at surfaces studies up to this date.
+``Fletcher [11] appears to have been the first person to consider the
+question of proton disorder at ice-Ih surfaces, tackling the question
+theoretically with intuitive heuristic models based on classical
+electrostatics. This led to the suggestion in 1992 that the low energy
+structure for the unreconstructed ice-Ih basal surface should be
+proton ordered [11]. This conclusion was arrived at simply on
+electrostatic grounds by considering dipole interactions among nearest
+neighbor dangling OH bonds. Fletcher further suggested that this phase
+would transform in to a proton disordered state at about 30
+K. Likewise the prism surface was predicted to be proton ordered with
+an order–disorder transition temperature of 70 K, close to the bulk
+order–disorder transition temperature of about 72 K. More recently,
+Buch et al used empirical potentials to compare basal faces with
+different proton arrangements [12]. Again proton ordered surfaces were
+predicted to be more stable than disordered ones with Fletcher’s phase
+with alternating rows of dangling OH groups suggested to be the most
+stable. At a similar time we reported an ab initio determination of
+the surface energy of the basal surface of ice-Ih along with a
+detailed consideration of the energetics of different proton
+arrangements [13]. Consistent with the studies of Fletcher and Buch et
+al our ab initio calculations predicted low total energy surfaces that
+were considerably more ordered than the bulk''
+
+Pan et al. concluded that the range of energies from proton order
+configurations at the ice-I$_\mathrm{h}$ surface is more than an order of
+magnitude larger than computed for bulk ice. This indicates a much
+higher order-disorder transition temperature at the surface than
+compared with the bulk (~72 K).
+
+Solutions from a monte carlo simulation of a 2D Ising Model which
+accurately reproduces surface energies from DFT calculations suggest
+that the surface proton order-disorder transition will occur at any
+relevan temperature, i.e., the transition temperature is greater than
+the onset of surface premelting.
+
+On the energy of the bulk ice XI to bulk ice-I$_\mathrm{h}$ proton order to
+disorder transition, `` The energy difference on the level of
+?5meV/H2O between the lowest energy ordered ice XI structure and the
+disordered ice-Ih structures is in the right ballpark for a bulk
+order–disorder transition of about 72 K. At the ice XI–Ih phase
+transition temperature (T), the ordering energy ?E should equal
+T?S,where ?S is the entropy difference between the ordered (ice XI)
+and disordered (ice-Ih) phases. In this system the entropy is
+comprised of two parts: vibrational and configurational entropy. The
+vibrational entropy differences between the two phases is expected to
+be almost negligible since the phonon frequencies of ice XI and Ih do
+not differ greatly, as has been seen through comparison of calculated
+phonon dispersion curves of ice XI with experimental phonon dispersion
+curves of ice-Ih [36, 37]. Thus the phase transition temperature is
+governed primarily by differences in configurational entropies,
+something which Pauling has shown to be given by Sconf = kB ln( 3 2 )
+= 0.035 meV/(K·H2O) [15].  Hence at the phase transition temperature,
+the configurational entropy contributes 2–3 meV/H2O, which is
+consistent with the ?5meV/H2O total energy difference between the two
+phases. Therefore'' ``Knight et al [17] who neglected the vibrational
+contribution to the entropy and predicted a bulk transition
+temperature of ca. 100 K based on DFT calculations.''
+
+Surface energy is a thermodynamic quantity that affects crystal growth
+and controls crystal shape.
+
+For droplets work ``Makkonen [41] observed that the value for the
+contact angle between a hot water drop (95 ◦C) and the ice surface is
+37◦, and so estimated the interface energy of ice to be roughly 4.8meV
+˚ A−2 (77 mJ m−2)at −25 ◦C.''
+
+
+Pan \textit{et al.} calculated the surface energy, $\gamma$, using an
+\textit{ab initio} approach, through
+\begin{equation}\label{PanSurfaceEnergy}
+\gamma = \frac{E_{tot}^{slab}(n) - nE_{tot}^{bulk}}{2A}
+\end{equation}
+where $E_{tot}^{slab}$ is the total energy of the ice slab obtained
+from their DFT calculations, $n$ is the number of bilayers in the
+slab, and $A$ is the surface area of the exposed slab. The factor of
+two is present to account for the exposure of two surface upon
+cleaving a crystal. The bulk energy per bilayer, $E_{tot}^{bulk}$, is
+extrapolated from calculations with varying number of ice bilayers
+using 
+\begin{equation}
+E_{tot}^{bulk} = E_{tot}^{slab}(n) - E_{tot}^{slab}(n-1).
+\end{equation}
+This relation holds for ice slabs thicker than some critical
+thickness, as the energy of insertion of a bilayer is equivalent to
+that of a bilayer addition of bulk ice.
+
+The surface energies for antiferroelectric ice XI were found to
+converge with variying exchange-correlation functionals on a value of
+about $\gamma_{basal}^{XI} \sim 11 \mathrm{meV \AA^{-2}}$. However,
+the surface energies for ice-Ih were observed to be spread over a much
+larger range of values. Values from 12.2 to 18.2
+$\mathrm{meV \AA^{-2}}$ were computed. ``The fact that we do not get a
+unique value for ice-Ih is to be expected since, as we know, the
+lattice energy of bulk ice depends on the degree of proton disorder
+within the simulation cell. The interesting finding here is that the
+variations in surface energy for configurations which dif- fer only in
+the degree of proton order by far exceeds the small range of energies
+found in bulk''
+
+For the ice-Ih surface bilayers, they find the oxygen to oxygen
+distance do not change much compared to the bulk, the average surface
+oxygen to oxygen distance is 0.02 \AA greater when compared to the
+bulk. This is consistent to experimentally obtained values of 2.77 \AA
+for surface and 2.76 \AA for the bulk at 38~K. (reference 10). Pan observed
+that OH bonds sticking out on the surface moved away slightly from
+their initial position, to ``lean'' away from one another as much as
+possible. 
+
+Initially Fletcher\cite{Fletcher} and later Buch\cite{Buch} observed
+the OH bonds ``dangling'' from the surface play an important role in
+the energetics of the surface. To quantify unique distributions of
+dangling OH bonds, Pan \textit{et al.} calculated an order parameter
+which describes the average separation between dangling OH bonds at
+the surface.
+\begin{equation}
+C_{OH}^{basal} = \frac{1}{N_{OH}}\sum_{i=1}^{N_{OH}}c_{i}
+\end{equation}
+where $N_{OH}$ is the total number of dangling OH bonds presented by
+the two basal surfaces, and $c_{i}$ is the number nearest neighbor
+dangling OH bonds around the $i$th dangling OH bond. Here we see that
+a larger value of $C_{OH}^{basal}$ indicate a more inhomogeneous
+distribution of dangling OH bonds, and that on average the dangling OH
+groups are close together. For a completely random distribution of
+dangling OH bonds, the order parameter will go to $\approx 3$, and the
+smallest value that can be obtained for a non-polar surface is 2.
+
+Plotting surface energy as a function of $C_{OH}$, a linear
+relationship is obtained. This indicates that as the more inhomogenous
+surface dangling OH patterning results in a larger surface energy.
+
+There is a nice walk through how to model the surface through classic
+electrostatics, not sure if it's worth covering here.
+%end Pan et al.
+
+
 
 \subsection{Ice/Water Coexistence}
 %%%
@@ -1657,112 +1741,138 @@ cal deg^{-1} mol^{-1}$.\cite{Giaque1936}
 %
 %%%
 
-Understanding the ice/water interface is essential for explaining
+Understanding the ice / water interface is essential for explaining
 complex processes such as nucleation and crystal
 growth,\cite{Han1992,Granasy1995,Vanfleet1995} crystal
-melting,\cite{Weber1983,Han1992,Sakai1996,Sakai1996B} and some fascinating
-biological processes, such as the behavior of the antifreeze proteins
-found in winter flounder,\cite{Chapsky1997 ,Wierzbicki2007} and certain
-terrestrial arthropods.\cite{Duman:2001qy,Meister29012013} There has
-been significant progress on understanding the structure and dynamics
-of quiescent ice/water interfaces utilizing both theory and
-experiment.  Haymet \emph{et al.} have done extensive work on ice I$_\mathrm{h}$,
+melting,\cite{Weber1983,Han1992,Sakai1996,Sakai1996B} and some
+fascinating biological processes, such as the behavior of the
+antifreeze proteins found in winter flounder,\cite{Chapsky1997
+  ,Wierzbicki2007} and certain terrestrial
+arthropods.\cite{Duman:2001qy,Meister29012013} There has been
+significant progress on understanding the structure and dynamics of
+quiescent ice/water interfaces utilizing both theory and experiment.
+Haymet \emph{et al.} have done extensive work on ice-I$_\mathrm{h}$,
 including characterizing and determining the width of the ice/water
-interface for the SPC,\cite{Karim1990} SPC/E,\cite{Gay2002,Bryk2002} CF1,\cite{Hayward2001,Hayward2002} and TIP4P~\cite{Karim1988} models for
-water.
-More recently, Haymet \emph{et al.} have investigated the effects
-cations and anions have on crystal
-nucleation.\cite{Bryk2004,Smith2005,Wilson2008,Wilson2010} Nada \emph{et al.}
-have also studied ice/water
-interfaces,\cite{Nada1995,Nada2000,Nada2003,Nada2012} and have found that the
-differential growth rates of the facets of ice I$_\mathrm{h}$ are due to the the
-reordering of the hydrogen bonding network.\cite{Nada2005}
+interface for the SPC,\cite{Karim1990} SPC/E,\cite{Gay2002,Bryk2002}
+CF1,\cite{Hayward2001,Hayward2002} and TIP4P~\cite{Karim1988} models
+for water.  More recently, Haymet \emph{et al.} have investigated the
+effects cations and anions have on crystal
+nucleation.\cite{Bryk2004,Smith2005,Wilson2008,Wilson2010} Nada
+\emph{et al.}  have also studied ice/water
+interfaces,\cite{Nada1995,Nada2000,Nada2003,Nada2012} and have found
+that the differential growth rates of the facets of ice-I$_\mathrm{h}$
+are due to the the reordering of the hydrogen bonding
+network.\cite{Nada2005}
 
-The movement of liquid water over the facets of ice has been less
-thoroughly studied than the quiescent surfaces. This process is
-potentially important in understanding transport of large blocks of
-ice in water (which has important implications in the earth sciences),
-as well as the relative motion of crystal-crystal interfaces that have
-been separated by nanometer-scale fluid domains.  In addition to
-understanding both the structure and thickness of the interfacial
-regions, it is important to understand the molecular origin of
-friction, drag, and other changes in dynamical properties of the
-liquid in the regions close to the surface that are altered by the
-presence of a shearing of the bulk fluid relative to the solid phase.
+% The movement of liquid water over the facets of ice has been less
+% thoroughly studied than the quiescent surfaces. This process is
+% potentially important in understanding transport of large blocks of
+% ice in water (which has important implications in the earth sciences),
+% as well as the relative motion of crystal-crystal interfaces that have
+% been separated by nanometer-scale fluid domains.  In addition to
+% understanding both the structure and thickness of the interfacial
+% regions, it is important to understand the molecular origin of
+% friction, drag, and other changes in dynamical properties of the
+% liquid in the regions close to the surface that are altered by the
+% presence of a shearing of the bulk fluid relative to the solid phase.
 
 
 
 % Omar A. Karim and A.D.J. Haymet ChemPhysLett, 138, 6, (1987) 531
-In one of the first computer simulations of the ice/water interface,
-Karim and Haymet investigated the basal face of an ice-I$_\mathrm{h}$
-crystal solvated in bulk water using the TIP4P model of water, where
-they observed ice/water coexistence at 240$\pm$5~K. Calculating the
-distance across which the oxygen-site density decays from the
-twin-peaked ice structures to that of bulk liquid, they estimated the
-basal ice/water interface to be approximately 10 \AA~ to 15 \AA~
-wide. They further partitioned the system into 3.7 \AA~ wide bins, and
-calculated the average self diffusion constant for molecules in each
-bin. As the interface was traversed, the diffusion constant decays
-from the bulk liquid value to approximately zero.
+% In one of the first computer simulations of the ice/water interface,
+% Karim and Haymet investigated the basal face of an ice-I$_\mathrm{h}$
+% crystal solvated in bulk water using the TIP4P model of water, where
+% they observed ice/water coexistence at 240$\pm$5~K. Calculating the
+% distance across which the oxygen-site density decays from the
+% twin-peaked ice structures to that of bulk liquid, they estimated the
+% basal ice/water interface to be approximately 10 \AA~ to 15 \AA~
+% wide. They further partitioned the system into 3.7 \AA~ wide bins, and
+% calculated the average self diffusion constant for molecules in each
+% bin. As the interface was traversed, the diffusion constant decays
+% from the bulk liquid value to approximately zero.
 % End  ChemPhysLett, 138, 6, (1987) 531
 
 % Omar A. Karim and A.D.J. Haymet J.Chem.Phys 89, 11 (1988) 6889
-TIP4P basal ice/water interface, larger than previous study. They
-compute g(r) for the bulk liquid and show it agrees with recent
-neutron scattering data.  While investigating the orientational
-structure of the interface, they found that the orientational order
-induced by the ice crystal propogates at least one, and possible two
-layers deeper into the water than the translational order (ie the
-density defined by the oxygen positions). Orientational ordering of
-the liquid which from density profiles looks like liquid water, but
-orientationally still exhibits perturbations due to the
-interface. They observed the same interfacial width using a larger
-system (and the same metric of measure, the density of oxygen sites).
+% TIP4P basal ice/water interface, larger than previous study. They
+% compute g(r) for the bulk liquid and show it agrees with recent
+% neutron scattering data.  While investigating the orientational
+% structure of the interface, they found that the orientational order
+% induced by the ice crystal propogates at least one, and possible two
+% layers deeper into the water than the translational order (ie the
+% density defined by the oxygen positions). Orientational ordering of
+% the liquid which from density profiles looks like liquid water, but
+% orientationally still exhibits perturbations due to the
+% interface. They observed the same interfacial width using a larger
+% system (and the same metric of measure, the density of oxygen sites).
 % End  J.Chem.Phys 89, 11 (1988) 6889
 
 % T. Bryk and A.D.J.Haymet J. Chem. Phys. 117 (2002) 10258
 % make sure I have all of haymets papers.
-The basal and prismatic facets of ice Ih using SPC/E water in
-temperature range of 220 - 240 K and 1 atm. Density, translational,
-orientational, and dynamic order parameters indicate a smooth change
-from ice to bulk liquid, indicative of a diffuse interface. The
-interfaces are observed to be stable at 225 $\pm$ 5K (though this is
-later revisted and shown to be 215K by Vega and others). 
+% The basal and prismatic facets of ice-Ih using SPC/E water in
+% temperature range of 220 - 240 K and 1 atm. Density, translational,
+% orientational, and dynamic order parameters indicate a smooth change
+% from ice to bulk liquid, indicative of a diffuse interface. The
+% interfaces are observed to be stable at 225 $\pm$ 5K (though this is
+% later revisted and shown to be 215K by Vega and others). 
 
-Kusalik \textit{et al.} simulated ice nucleation using the SPC/E model
-in the presence of a large external electric field.\cite{14} Baez and
-Clancy investigated the ice/water interface using non-equilibrium
-molecular dynamics.\cite{15} Without careful treatment of the
-long-range electrostatic portion of the potential energy, sparious ice
-motifs have been found to form, including a quartzlike proton-ordered
-structure not (yet) found in real systems.\cite{16} 
+% Kusalik \textit{et al.} simulated ice nucleation using the SPC/E model
+% in the presence of a large external electric field.\cite{14} Baez and
+% Clancy investigated the ice/water interface using non-equilibrium
+% molecular dynamics.\cite{15} Without careful treatment of the
+% long-range electrostatic portion of the potential energy, sparious ice
+% motifs have been found to form, including a quartzlike proton-ordered
+% structure not (yet) found in real systems.\cite{16} 
 
-citations 22 through 24 are about antifreeze proteins, steal them for
-broader intro to ice/water coexistence. 
+% Bryk and Haymet set out to properly treat the long-range Coulomb
+% interactions with Ewald summation method, whereas Baez and Clancy
+% (also studying basal and prism ice/water interfaces using SPC/E,
+% however, switching function at 6 \AA~ which went to zero at 9 \AA~ for
+% speed of computation.) 
 
-Bryk and Haymet set out to properly treat the long-range Coulomb
-interactions with Ewald summation method, whereas Baez and Clancy
-(also studying basal and prism ice/water interfaces using SPC/E,
-however, switching function at 6 \AA~ which went to zero at 9 \AA~ for
-speed of computation.) 
+% Ice crystal construction constrained to have zero net dipole and some
+% higher order multipoles, using the method employed by Hayward in the
+% CF1 paper. I'm betting it's the Hayward and Reimers construction. 
 
-Ice crystal construction constrained to have zero net dipole and some
-higher order multipoles, using the method employed by Hayward in the
-CF1 paper. I'm betting it's the Hayward and Reimers construction. 
-
-Bryk uses the original parameters of Berendesn's SPC/E model, not the
-updated one?
+% Bryk uses the original parameters of Berendesn's SPC/E model, not the
+% updated one?
 %end Bryk and A.D.J.Haymet J. Chem. Phys. 117 (2002) 10258
 
 % Benet, MacDowell, Sanz, PCCP 2014, 16, 22159
 % A study of the ice/water interface using the TIP4P/2005 water model
-Benet \textit{et al.} have measured the interfacial free energy of ice
-Ih in coexistence with liquid water at 248.5~K by using the TIP4P/2005
-water model by analysing the spectrum of capillary fluctuations at the
-interface.\cite{Benet2014} This method was originally described by
-Hoyt \textit{et al.}\cite{Hoyt2001}, has been used to calculate the
-interfacial free energy of hard spheres,\cite{14} the Lennard-Jones
-potential,\cite{15} and dipolar fluids.\cite{16}
+
+There is an energetic penalty for creating an interface, and the
+magnitude of this penalty is dependent on the orientation at which the
+crystal is terminated. The interfacial free energy between ice and
+water, $\gamma_{iw}$, is a crucial parameter for ice nucleation and
+crystal growth.\cite{1,2} Experimentally obtained values of
+$\gamma_{iw}$ range from 25 to 35
+$\mathrm{mN}~\mathrm{m}^{-1}$.\cite{1} This spread stems from the
+problem that there are no current methods for obtaining a robust
+measurement. Computer simulations have attempted to quantify
+$\gamma_{iw}$, and predictions have been made for a series of water
+models, some with\cite{4} and some without\cite{5} taking full
+electrostatic interactions into account. These studies used a varient
+of the cleaving method,\cite{6} and estimated $\gamma_{iw}$ using the
+TIP4P, TIP4P-Ew, and TIP5P-E water models.
+
+Previously, $\gamma_{iw}$ has been estimated using the TIP4P/2005
+water model and the method pruposed by Bai and Li, studying the
+crystal-melt interface of a Lennard-Jones system.\cite{10} In the
+method of Bai and Li, the critical size of crystalline clusters are
+measured, and by extension of classical nucleation theory
+$\gamma_{iw}$ can be obtained.\cite{11,12} This result produces an
+orientationally averaged estimate of $\gamma_{iw}$, which does not
+provide any information on the dependency of $\gamma_{iw}$ on the
+orienation of the crystal.
+
+Benet \textit{et al.} have measured the interfacial free energy of
+ice-I$_\mathrm{h}$ in coexistence with liquid water at 248.5~K by
+using the TIP4P/2005 water model by analysing the spectrum of
+capillary fluctuations at the interface.\cite{Benet2014} This method
+was originally described by Hoyt \textit{et al.}\cite{Hoyt2001}, has
+been used to calculate the interfacial free energy of hard
+spheres,\cite{14} the Lennard-Jones potential,\cite{15} and dipolar
+fluids.\cite{16}
 
 In this method, water molecules were labeled as ice-like or
 liquid-like based on local bond order parameters. Next, a discretized
@@ -1795,12 +1905,12 @@ as an expansion of the Spherical Harmonics\cite{23}, and will be
 unique for each crystal plane studied. 
 
 Benet found an orientationally averaged interfacial free energy of
-$27 \mathrm{mN} \mathrm{m}^{-1}$, which agrees well with recent
+$27 \mathrm{mN}~\mathrm{m}^{-1}$, which agrees well with recent
 estimates using size cluster analysis by Sanz \textit{et
   al.}\cite{Sanz2013}. Benet \textit{et al.} were able to estimate the
 free energy of different planes (in coexistence with liquid), and
 obtained values of 27 $\pm$ 2, 28 $\pm$ 2, and 28 $\pm$ 2
-$\mathrm{mN} \mathrm{m}^{-1}$ for the basal, prismatic, and secondary
+$\mathrm{mN}~\mathrm{m}^{-1}$ for the basal, prismatic, and secondary
 prismatic surfaces, respectively. They also observed an interfacial
 thickness of about four to five molecular diameters, which was found
 to be (in)sensitive to the crystal face exposed to the liquid. Lastly,
@@ -1809,34 +1919,7 @@ areas of hexagonal ice and cubic ice within the interface. This
 observation is not unique to this study, other simulations and
 experiments have shown hexgonal ice to grow with a mixed Ic-Ih
 stacking.\cite{43-47}
-
-The interfacial free energy between ice and water, $\gamma_{iw}$, is a
-crucial parameter for ice nucleation and crystal growth.\cite{1,2}
-Experimentally obtained values of $\gamma_{iw}$ range from 25 to 35
-$\mathrm{mN} \mathrm{m}^{-1}$.\cite{1} This spread stems from the
-problem that there are no current methods for obtaining a robust
-measurement. Computer simulations have attempted to quantify
-$\gamma_{iw}$, and predictions have been made for a series of water
-models, some with\cite{4} and some without\cite{5} taking full
-electrostatic interactions into account. These studies used a varient
-of the cleaving method,\cite{6} and estimated $\gamma_{iw}$ using the
-TIP4P, TIP4P-Ew, and TIP5P-E water models.
-
-Previously, $\gamma_{iw}$ has been estimated using the TIP4P/2005
-water model and the method pruposed by Bai and Li, studying the
-crystal-melt interface of a Lennard-Jones system.\cite{10} In the
-method of Bai and Li, the critical size of crystalline clusters are
-measured, and by extension of classical nucleation theory
-$\gamma_{iw}$ can be obtained.\cite{11,12} This result produces an
-orientationally averaged estimate of $\gamma_{iw}$, which does not
-provide any information on the dependency of $\gamma_{iw}$ on the
-orienation of the crystal.
-
-
-
 %end Benet, MacDowell, Sanz, PCCP 2014, 16, 22159
-
-
 
 
 
@@ -1855,25 +1938,90 @@ orienation of the crystal.
 % 4. Observed oddity of friction on ice surfaces is small, transition to
 % next subsection where we will talk about friction studies on ice surfaces.
 
+
+
+
+
+To begin to understand the surface premelting of ice, we must first
+understand what this surface looks like. A wide variety of
+experimental techniques have been used to determine the structure,
+dynamics, properties, and width of this liquid-like surface film.
+Materer \textit{et al.} studied an ultrathin ice surface exposing the
+basal face grown on a Pt(11) substrate at 90K (well below complete
+surface melt) using low-energy electron diffraction (LEED)
+spectrocopy, in conjunction with total-energy calculations and
+molecular dynamics simulations.\cite{Materer1995,Materer1997} Their results suggested
+the basal face is terminated with a full bilayer of molecules, and not
+a half bilayer as some had previously conjectured. The same surface
+structure was observed later by NAME using helium atom scattering
+experiments at 30K.\cite{Braun1998,Glebov2000}
+
+Sum frequency generation (SFG) spectroscopy is able to probe the
+orientational disorder of molecules at a surface. The basal surface of
+ice-I$_\mathrm{h}$ is known to present dangling or 'free' O-H bonds
+normal to the interface. The orientational order of these dangling
+bonds can be probed using SFG spectroscopy, and observing the
+temperature at which the intensity of the SFG signal decreases can
+estimate the onset of the QLL. Name and Name have probed the basal
+surface using this technique for temperatures betwen 173-271
+K~.\cite{Wei2001,Wei2002} They observed that the disorder became apparent
+as the temperature approaches 200 K~, and increased with warmer
+temperatures.  These results indicate that the structural ordering
+decreases in a continuous fashion from bulk ice to the liquid-like
+layer, which also agree with results from proton channeling and
+glancing-angle X-ray scattering.\cite{Golecki1978,Dosch1995} Using
+molecular dynamics simulations, Ikeda-Fukazawa and Kawamura found
+molecules present on the surface of a basal plane with large
+vibrational and rotational motions at temperatures well below the bulk
+melting temperature.\cite{Ikeda-Fukazawa2004} Their results supported
+the continous variation of structural ordering across the qausi-liquid
+layer observed by the SFG spectroscopy.
+
+
+
+% Ice Surfaces by Mary Jane Shultz, Ann Rev Phys Chem
+(on qll) 'techniques as diverse as glancing angle X-ray (102, 103),
+SFG (82), He atom scattering (104), atomic force microscopy (105,
+106), ellipsometry (107), photoelectron spectroscopy (108), nuclear
+magnetic resonance (NMR) (109, 110), theory (111–114), and
+differential interference contrast (57, 115, 116) conclude that the
+QLL exists.' The onset temperature has varied from as cold as 200K to
+as warm as 260K, and discrepencies have been attributed to
+contaminations to varying probe depths. There is also considerable
+disagreement about the nature of the QLL, 'Theory indicates that it is
+ordinary supercooled water (117), whereas recent interfacial force
+microscopy (105) suggests that the QLL is neither ice nor water but
+rather a new viscoelastic phase.' And recently Suzuki \textit{et al.}
+have probed the QLL and observed two separate immesible liquid water
+flims. 
+
+
+Section 4.1 deserves further reading, talks about thermodynamics of
+the basal, prism, and secondary prismatic crystal surfaces.
+%end Annu. Rev. Phys. Chem. 2017. 68:285–304
+
+% /Ice Surfaces.
+
+
 \subsubsection{Driving Force of the Surface Premelting}
 All crystalline materials exhibit a surface premelting at temperatures
 approaching their melting point. Molecules at the surface of the
-material have fewer neightbor molecules compared to those in the bulk
-of the crystal, resulting in a reduced potential. At temperatures
-considerably below the materials melting point, these molecules will
-reside in their lattice positions as the potential felt by their
-underlying lattice and neighbor molecules is sufficiently strong to
-prevent thermal fluctuations from dislodging the molecules from their
-lattice positions BLAH. However, as temperature increases the internal
-vibrations and rotations of the surface molecules increase, until at
-some critical temperature (T$^\mathrm{*}$ $<$ T$_\mathrm{m}$), where
-the surface molecules will leave their lattice positions and translate
-along the surface, attempting to maximize their intermoleculer
-interactions with the neihboring molecules and those of the underlying
-lattice. These surface molecules are collectively refered to as a
-quasi-liquid layer (QLL), as their structure and properties reflect
-some of their condensed liquid phase counterparts, but are distinctly
-unique.
+material have fewer neighboring molecules compared to those in the
+bulk of the crystal, resulting in a reduction in the experienced
+potential. At temperatures considerably below the materials melting
+point, these molecules will reside in their lattice positions as the
+potential felt by their underlying lattice and neighbor molecules is
+sufficiently strong to prevent thermal fluctuations from dislodging
+the molecules from their lattice positions BLAH. However, as
+temperature increases the internal vibrations and rotations of the
+surface molecules increase, until at some critical temperature
+(T$^\mathrm{*}$ $<$ T$_\mathrm{m}$), where the surface molecules will
+leave their lattice positions and translate along the surface,
+attempting to maximize their intermoleculer interactions with the
+neihboring molecules and those of the underlying lattice. These
+surface molecules are collectively refered to as a quasi-liquid layer
+(QLL), as their structure and properties reflect some of their
+condensed liquid phase counterparts, but are distinctly unique.
 
 ''the formation of (a QLL) on solid surfaces is now well characterized
 theoretically as a premelting surface phase
@@ -1884,7 +2032,7 @@ transition.''\cite{R. Lipowsky, Phys. Rev. Lett. 49, 1575 (1982).}
 % obtained from computer simulation. M.M.Conde, C.Vega, A.Patrykiejew
 % JCP 129, 014702 (2008)
 %Outstanding references and background
-Molecular dynamics simulations of ice I$_\mathrm{h}$ with a free
+Molecular dynamics simulations of ice-I$_\mathrm{h}$ with a free
 surface were performed using the SPC/E, TIP4P, TIP4P/Ice, and
 TIP5P/2005 water models. The basal, prismatic, and secondary prismatic
 surfaces exposed to vacuum were analyzed. Conde \textit{et al.}
@@ -2377,187 +2525,6 @@ DFT.\cite{Yoo2009}
 %end Pan11 
 
 
-\subsection{Structure of Ice Surface}
-To begin to understand the surface premelting of ice, we must first
-understand what this surface looks like. A wide variety of
-experimental techniques have been used to determine the structure,
-dynamics, properties, and width of this liquid-like surface film.
-Materer \textit{et al.} studied an ultrathin ice surface exposing the
-basal face grown on a Pt(11) substrate at 90K (well below complete
-surface melt) using low-energy electron diffraction (LEED)
-spectrocopy, in conjunction with total-energy calculations and
-molecular dynamics simulations.\cite{Materer1995,Materer1997} Their results suggested
-the basal face is terminated with a full bilayer of molecules, and not
-a half bilayer as some had previously conjectured. The same surface
-structure was observed later by NAME using helium atom scattering
-experiments at 30K.\cite{Braun1998,Glebov2000}
-
-Sum frequency generation (SFG) spectroscopy is able to probe the
-orientational disorder of molecules at a surface. The basal surface of
-ice I-$_\mathrm{h}$ is known to present dangling or 'free' O-H bonds
-normal to the interface. The orientational order of these dangling
-bonds can be probed using SFG spectroscopy, and observing the
-temperature at which the intensity of the SFG signal decreases can
-estimate the onset of the QLL. Name and Name have probed the basal
-surface using this technique for temperatures betwen 173-271
-K~.\cite{Wei2001,Wei2002} They observed that the disorder became apparent
-as the temperature approaches 200 K~, and increased with warmer
-temperatures.  These results indicate that the structural ordering
-decreases in a continuous fashion from bulk ice to the liquid-like
-layer, which also agree with results from proton channeling and
-glancing-angle X-ray scattering.\cite{Golecki1978,Dosch1995} Using
-molecular dynamics simulations, Ikeda-Fukazawa and Kawamura found
-molecules present on the surface of a basal plane with large
-vibrational and rotational motions at temperatures well below the bulk
-melting temperature.\cite{Ikeda-Fukazawa2004} Their results supported
-the continous variation of structural ordering across the qausi-liquid
-layer observed by the SFG spectroscopy.
-
-% Ding Pan et al. J. Phys. Condens. Matter. 22, 2010, 074209
-DFT calculations of basal and prism surface of ice Ih. Similar surface
-energies obtained, however, both showed a strong dependence on surface
-proton order. The energy for proton-ordering at the surface can
-account for up to 50percent of the total surface energy (significantly
-larger than proton ordering in the bulk < 1 percent), suggesting that
-the thermodynamic ground state of the ice surface will remain proton
-ordered well above the bulk order-disorder temperature of about 72 K.
-
-Nice review of proton order at surfaces studies up to this date.
-``Fletcher [11] appears to have been the first person to consider the
-question of proton disorder at ice Ih surfaces, tackling the question
-theoretically with intuitive heuristic models based on classical
-electrostatics. This led to the suggestion in 1992 that the low energy
-structure for the unreconstructed ice Ih basal surface should be
-proton ordered [11]. This conclusion was arrived at simply on
-electrostatic grounds by considering dipole interactions among nearest
-neighbor dangling OH bonds. Fletcher further suggested that this phase
-would transform in to a proton disordered state at about 30
-K. Likewise the prism surface was predicted to be proton ordered with
-an order–disorder transition temperature of 70 K, close to the bulk
-order–disorder transition temperature of about 72 K. More recently,
-Buch et al used empirical potentials to compare basal faces with
-different proton arrangements [12]. Again proton ordered surfaces were
-predicted to be more stable than disordered ones with Fletcher’s phase
-with alternating rows of dangling OH groups suggested to be the most
-stable. At a similar time we reported an ab initio determination of
-the surface energy of the basal surface of ice Ih along with a
-detailed consideration of the energetics of different proton
-arrangements [13]. Consistent with the studies of Fletcher and Buch et
-al our ab initio calculations predicted low total energy surfaces that
-were considerably more ordered than the bulk''
-
-Pan et al. concluded that the range of energies from proton order
-configurations at the ice Ih surface is more than an order of
-magnitude larger than computed for bulk ice. This indicates a much
-higher order-disorder transition temperature at the surface than
-compared with the bulk (~72 K).
-
-Solutions from a monte carlo simulation of a 2D Ising Model which
-accurately reproduces surface energies from DFT calculations suggest
-that the surface proton order-disorder transition will occur at any
-relevan temperature, i.e., the transition temperature is greater than
-the onset of surface premelting.
-
-On the energy of the bulk ice XI to bulk ice Ih proton order to
-disorder transition, `` The energy difference on the level of
-?5meV/H2O between the lowest energy ordered ice XI structure and the
-disordered ice Ih structures is in the right ballpark for a bulk
-order–disorder transition of about 72 K. At the ice XI–Ih phase
-transition temperature (T), the ordering energy ?E should equal
-T?S,where ?S is the entropy difference between the ordered (ice XI)
-and disordered (ice Ih) phases. In this system the entropy is
-comprised of two parts: vibrational and configurational entropy. The
-vibrational entropy differences between the two phases is expected to
-be almost negligible since the phonon frequencies of ice XI and Ih do
-not differ greatly, as has been seen through comparison of calculated
-phonon dispersion curves of ice XI with experimental phonon dispersion
-curves of ice Ih [36, 37]. Thus the phase transition temperature is
-governed primarily by differences in configurational entropies,
-something which Pauling has shown to be given by Sconf = kB ln( 3 2 )
-= 0.035 meV/(K·H2O) [15].  Hence at the phase transition temperature,
-the configurational entropy contributes 2–3 meV/H2O, which is
-consistent with the ?5meV/H2O total energy difference between the two
-phases. Therefore'' ``Knight et al [17] who neglected the vibrational
-contribution to the entropy and predicted a bulk transition
-temperature of ca. 100 K based on DFT calculations.''
-
-Surface energy is a thermodynamic quantity that affects crystal growth
-and controls crystal shape.
-
-For droplets work ``Makkonen [41] observed that the value for the
-contact angle between a hot water drop (95 ◦C) and the ice surface is
-37◦, and so estimated the interface energy of ice to be roughly 4.8meV
-˚ A−2 (77 mJ m−2)at −25 ◦C.''
-
-
-Pan \textit{et al.} calculated the surface energy, $\gamma$, using an
-\textit{ab initio} approach, through
-\begin{equation}\label{PanSurfaceEnergy}
-\gamma = \frac{E_{tot}^{slab}(n) - nE_{tot}^{bulk}}{2A}
-\end{equation}
-where $E_{tot}^{slab}$ is the total energy of the ice slab obtained
-from their DFT calculations, $n$ is the number of bilayers in the
-slab, and $A$ is the surface area of the exposed slab. The factor of
-two is present to account for the exposure of two surface upon
-cleaving a crystal. The bulk energy per bilayer, $E_{tot}^{bulk}$, is
-extrapolated from calculations with varying number of ice bilayers
-using 
-\begin{equation}
-E_{tot}^{bulk} = E_{tot}^{slab}(n) - E_{tot}^{slab}(n-1).
-\end{equation}
-This relation holds for ice slabs thicker than some critical
-thickness, as the energy of insertion of a bilayer is equivalent to
-that of a bilayer addition of bulk ice.
-
-The surface energies for antiferroelectric ice XI were found to
-converge with variying exchange-correlation functionals on a value of
-about $\gamma_{basal}^{XI} \sim 11 \mathrm{meV \AA^{-2}}$. However,
-the surface energies for ice Ih were observed to be spread over a much
-larger range of values. Values from 12.2 to 18.2
-$\mathrm{meV \AA^{-2}}$ were computed. ``The fact that we do not get a
-unique value for ice Ih is to be expected since, as we know, the
-lattice energy of bulk ice depends on the degree of proton disorder
-within the simulation cell. The interesting finding here is that the
-variations in surface energy for configurations which dif- fer only in
-the degree of proton order by far exceeds the small range of energies
-found in bulk''
-
-For the ice Ih surface bilayers, they find the oxygen to oxygen
-distance do not change much compared to the bulk, the average surface
-oxygen to oxygen distance is 0.02 \AA greater when compared to the
-bulk. This is consistent to experimentally obtained values of 2.77 \AA
-for surface and 2.76 \AA for the bulk at 38~K. (reference 10). Pan observed
-that OH bonds sticking out on the surface moved away slightly from
-their initial position, to ``lean'' away from one another as much as
-possible. 
-
-Initially Fletcher\cite{Fletcher} and later Buch\cite{Buch} observed
-the OH bonds ``dangling'' from the surface play an important role in
-the energetics of the surface. To quantify unique distributions of
-dangling OH bonds, Pan \textit{et al.} calculated an order parameter
-which describes the average separation between dangling OH bonds at
-the surface.
-\begin{equation}
-C_{OH}^{basal} = \frac{1}{N_{OH}}\sum_{i=1}^{N_{OH}}c_{i}
-\end{equation}
-where $N_{OH}$ is the total number of dangling OH bonds presented by
-the two basal surfaces, and $c_{i}$ is the number nearest neighbor
-dangling OH bonds around the $i$th dangling OH bond. Here we see that
-a larger value of $C_{OH}^{basal}$ indicate a more inhomogeneous
-distribution of dangling OH bonds, and that on average the dangling OH
-groups are close together. For a completely random distribution of
-dangling OH bonds, the order parameter will go to $\approx 3$, and the
-smallest value that can be obtained for a non-polar surface is 2.
-
-Plotting surface energy as a function of $C_{OH}$, a linear
-relationship is obtained. This indicates that as the more inhomogenous
-surface dangling OH patterning results in a larger surface energy.
-
-There is a nice walk through how to model the surface through classic
-electrostatics, not sure if it's worth covering here.
-%end Pan et al.
-
-
 
 \subsection{Friction of the Ice Surface}
 Observed coefficients of friction on ice are about 1 order of
@@ -2695,7 +2662,7 @@ relaxation of the amplitude of the contact line and $u_q(0)$ being the
 initial amplitude of the mode. Here, $V^* = \gamma / \eta$ is the
 characteristic velocity and $\theta$ is the contact angle the BLD makes
 with the ice surface ($\sim$ 2 degrees). Lastly, the logarithmic factor
-$l=ln(L/a)$ is a cutoff parameter which helps avoid
+$l=\mathrm{ln}(L/a)$ is a cutoff parameter which helps avoid
 singularities. From this fit, they obtained $V^* = 2 \pm 1$ m/s, which
 is about an order of magnitude smaller than that of bulk water, 42.21
 m/s.
@@ -2764,8 +2731,8 @@ premelting occurs at.
 % PRL 117, 096101 (2016) 
 % Premelting-Induced Smoothening of the Ice-Vapor Interface
 Benet \textit{et al.} computer simulations of the QLL of ice fromed on
-the primary prismatic facet of an ice I$_\mathrm{h}$ crystal at the
-ice-vapor interface close to the ice I$_\mathrm{h}$-liquid-vapor
+the primary prismatic facet of an ice-I$_\mathrm{h}$ crystal at the
+ice-vapor interface close to the ice-I$_\mathrm{h}$-liquid-vapor
 triple point of water.\cite{Benet2016} They found that close to the
 triple point(2K below it), the QLL on the prismatic face behaves as
 two independent interfaces, the ice-water interface and at further
