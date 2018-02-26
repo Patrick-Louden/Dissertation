@@ -1295,7 +1295,7 @@ using five elements, earth, wood, metal, fire, and water. The
 importance of water was discovered early in our human history, and it
 has been studied extensively since those early days.
 
-\subsection{The Structure of H$_\mathrm{2}$O}
+\subsection{The Structure of Water}
 %
 % description of what water is? structure constitution etc?
 % Gas phase molecule in isolation
@@ -1714,35 +1714,35 @@ been used to calculate the interfacial free energy of hard
 spheres,\cite{14} the Lennard-Jones potential,\cite{15} and dipolar
 fluids.\cite{16}
 
-In this method, water molecules were labeled as ice-like or
-liquid-like based on local bond order parameters. Next, a discretized
-profile parrallel to the interface (i.e, along the $x$ dimension),
-$h(x_{n})$, was computed for many small bins across the system. These
-resulting profiles were then Fourier-transformed,
-\begin{equation}
-h_{q} = \frac{1}{N}\sum_{n=1}^{N} h(x_{n})e^{iqx_n}
-\end{equation}
-giving an amplitude $h_{q}$ for each wave vector $q$, for each of the
-$N$ total bins across the $x$-dimension. 
+% In this method, water molecules were labeled as ice-like or
+% liquid-like based on local bond order parameters. Next, a discretized
+% profile parrallel to the interface (i.e, along the $x$ dimension),
+% $h(x_{n})$, was computed for many small bins across the system. These
+% resulting profiles were then Fourier-transformed,
+% \begin{equation}
+% h_{q} = \frac{1}{N}\sum_{n=1}^{N} h(x_{n})e^{iqx_n}
+% \end{equation}
+% giving an amplitude $h_{q}$ for each wave vector $q$, for each of the
+% $N$ total bins across the $x$-dimension. 
 
-Capillary wave theory provides a relationship between these wave
-vector amplitudes and the interfacial stiffness, $\sigma$ by
-\begin{equation}
-\langle |h_{q}|^{2} \rangle = \frac{k_{B}T}{A \sigma q^{2}}
-\end{equation}
-where $A$ is taken to be the product of the two simulation box
-dimensions not normal to the interface. Since the interfacial
-stiffness is dependent on both the crystal plane that is exposed to
-the liquid and the direction which the wave vector propogates, we have
-\begin{equation}
-\sigma = \bigg(\gamma (\theta ) + \frac{d^{2}\gamma (\theta )}{d\theta
-^{2}} \bigg)_{\theta = 0} .
-\end{equation}
-Here, $\theta$ is the angle between the average planar ice / water
-interface, and the normal vector of the instantaneous interface. The
-orientational dependence of the interfacial free energy can be written
-as an expansion of the Spherical Harmonics\cite{23}, and will be
-unique for each crystal plane studied. 
+% Capillary wave theory provides a relationship between these wave
+% vector amplitudes and the interfacial stiffness, $\sigma$ by
+% \begin{equation}
+% \langle |h_{q}|^{2} \rangle = \frac{k_{B}T}{A \sigma q^{2}}
+% \end{equation}
+% where $A$ is taken to be the product of the two simulation box
+% dimensions not normal to the interface. Since the interfacial
+% stiffness is dependent on both the crystal plane that is exposed to
+% the liquid and the direction which the wave vector propogates, we have
+% \begin{equation}
+% \sigma = \bigg(\gamma (\theta ) + \frac{d^{2}\gamma (\theta )}{d\theta
+% ^{2}} \bigg)_{\theta = 0} .
+% \end{equation}
+% Here, $\theta$ is the angle between the average planar ice / water
+% interface, and the normal vector of the instantaneous interface. The
+% orientational dependence of the interfacial free energy can be written
+% as an expansion of the Spherical Harmonics\cite{23}, and will be
+% unique for each crystal plane studied. 
 
 Benet found an orientationally averaged interfacial free energy of
 $27 \mathrm{mN}~\mathrm{m}^{-1}$, which agrees well with recent
@@ -1750,24 +1750,20 @@ estimates using size cluster analysis by Sanz \textit{et
   al.}\cite{Sanz2013}. Benet \textit{et al.} were able to estimate the
 free energy of different planes (in coexistence with liquid), and
 obtained values of 27 $\pm$ 2, 28 $\pm$ 2, and 28 $\pm$ 2
-$\mathrm{mN}~\mathrm{m}^{-1}$ for the basal, prismatic, and secondary
-prismatic surfaces, respectively. They also observed an interfacial
-thickness of about four to five molecular diameters, which was found
-to be (in)sensitive to the crystal face exposed to the liquid. Lastly,
-when the basal face is exposed to the liquid, they observed local
-areas of hexagonal ice and cubic ice within the interface. This
-observation is not unique to this study, other simulations and
-experiments have shown hexgonal ice to grow with a mixed Ic-Ih
-stacking.\cite{43-47}
+$\mathrm{mN}~\mathrm{m}^{-1}$ for the basal, prismatic, and a higher
+order surface face, the secondary prismatic surfaces,
+respectively. They also observed an interfacial thickness of about
+four to five molecular diameters, which was found to be insensitive
+to the crystal face exposed to the liquid. Lastly, when the basal face
+is exposed to the liquid, they observed local areas of hexagonal ice
+and cubic ice within the interface. This observation is not unique to
+this study, other simulations and experiments have shown hexgonal ice
+to grow with a mixed Ic-Ih stacking.\cite{43-47}
 %end Benet, MacDowell, Sanz, PCCP 2014, 16, 22159
 
 
 
 \subsection{The Surface Premelting of Ice and the Quasi-Liquid Layer}
-% 1. Surface cuts of ice-Ih, what do they look like, energetics of
-% each. Have image of each surface here, talk about physical structures
-% of each, dimensions of channels. Proton ordered surfaces vs proton
-% disordered surfaces.
 % 2. Driving force for the QLL, not unique to ice. Interesting on ice
 % because ice occurs everywhere in the universe, therefore, lots of
 % interesting things happen at ice surfaces.
@@ -1779,10 +1775,7 @@ stacking.\cite{43-47}
 % next subsection where we will talk about friction studies on ice surfaces.
 
 
-
-
-
-To begin to understand the surface premelting of ice, we must first
+In order to understand the surface premelting of ice, we must first
 understand what this surface looks like. A wide variety of
 experimental techniques have been used to determine the structure,
 dynamics, properties, and width of this liquid-like surface film.
@@ -1841,6 +1834,91 @@ the basal, prism, and secondary prismatic crystal surfaces.
 %end Annu. Rev. Phys. Chem. 2017. 68:285–304
 
 % /Ice Surfaces.
+
+
+For ice-I$_\mathrm{h}$, the temperature at which surface molecule
+vibrations become prevelent at has been reported between 200K and
+271K. Experimentally the surface molecules have been probed using a
+variety of techniques and have determined slightly different
+temperatures at which these internal vibrations become prevelent.
+
+Both experiment and theory agree that the thickness of the QLL on ice
+increases approaching T$_\mathrm{m}$, and values have been reported
+between 2 nm to over 45 nm at 271~K. Part of the reason for the
+discrepency is due to the definition of what molecules constitute a
+QLL, as well as the probe used to measure the molecules. Most
+experimental measurements observed a gradual and continuous increase
+in the QLL width with increasing temperature to T$_\mathrm{m}$,
+however, simulations by Kreos \textit{et al.} predicted the melting
+occurs in a bilayer-to-bilayer manner. This result was recently
+confirmed by Sa'nchez \textit{et al.}, where they probed the QLL
+molecules using sum frequency generation spectroscopy to probe the
+hydrogen-bonded OH stretch frequency between temperatures of 235~K
+and 273~K, the temperature range where many agree the surface
+premelting occurs at.
+
+% PRL 117, 096101 (2016) 
+% Premelting-Induced Smoothening of the Ice-Vapor Interface
+Benet \textit{et al.} computer simulations of the QLL of ice fromed on
+the primary prismatic facet of an ice-I$_\mathrm{h}$ crystal at the
+ice-vapor interface close to the ice-I$_\mathrm{h}$-liquid-vapor
+triple point of water.\cite{Benet2016} They found that close to the
+triple point(2K below it), the QLL on the prismatic face behaves as
+two independent interfaces, the ice-water interface and at further
+distances normal to the surface, the water-vapor interface. This
+result was prominent for small wavelengths, but observing over large
+wavelengths the two interfaces smooth into one gradual interface at
+long wavelengths.
+
+Ice crystal morphologies grown from bulk vapor change from plates, to
+columns, to plates, and back to columns as the temperature is cooled
+down below the triple point, and dendrites can form at high
+saturations.\cite{K. G. Libbrecht, Rep. Prog. Phys. 68, 855 (2005).}
+The varying crystalline morphologies are attributed to the crossover
+in growth rates of the basal and prismatic faces, however, we do not
+currently understand what structural transformation at the surface to
+drive the crossover in growth rates.\cite{1,2,4,5} Kuroda and Lacmann
+have attributed the crossover in crystal growth rates to be due to the
+fact that QLL formation occurs at different temperatures for different
+exposed crystal facets.\cite{6} (Name and Name have determined QLL
+formation to occur at T1 and T2 for basal and prismatic respectively,
+where the higher energy pyramidal and secondary prism surface exhibit
+premelting at T3 and T4.)
+
+Experimental observations of the QLL on ice\cite{8-14}, though the
+presence of impourities has a very large impact on the surface
+structure.\cite{12,15} Due to the large perturbations made by these
+impurities, and the vast array of probes used to study the QLL,
+properties such as the premelting temperature and thickness of the QLL
+is still highly debated.\cite{8} 
+
+Benet \textit{et al.} used the TIP4P/2005 water model. Interrogating
+water molecules to determine if they are a part of the QLL or that of
+ice was performed using the q$_{6}$ order parameter\cite{42}, which
+was later optimized to differentiate betwee icelike and waterlike
+molecules via correlations of the second nearest neighbors.\cite{43}
+Using this parameter, Benet observed an average QLL thickness of
+0.9~nm, agreeing with experimental observations\cite{12,14} and
+computer simulations.\cite{38-40} Using the q$_{6}$ order parameter,
+the ice-liquid and liquid-vapor interfaces were determined, and each
+surface was Fourier transformed to give the spectrum of surface
+fluctuations.
+
+Analyzing the Fourier transformed surfaces, they found that for QLL
+films less than 1 nm thick, the ice-QLL and QLL-vapor interfaces
+fluctuated independently, and were hardly distinguishable from those
+of bulk water-vapor interfaces. sine-Gordon model of the solid-liquid
+interface\cite{20,45}
+% end PRL 117, 096101 (2016)
+
+ % Melting the ice one layer at a time, PNAS commentary (2017) 114, 2,
+ % 195-197. Steal the citations from this paper. Seems like there are
+ % good things to talk about from this paper to in relation to the
+ % recent PNAS paper.
+
+ % Surface Premelting of Ice, J.Phys.Chem.C. 111,27 (2007) 9631
+
+
 
 
 \subsubsection{Driving Force of the Surface Premelting}
@@ -2366,7 +2444,153 @@ DFT.\cite{Yoo2009}
 
 
 
-\subsection{Friction of the Ice Surface}
+\subsection{Friction at the Surface of Ice}
+
+One anomoly of water in particular has been at the heart of a debate
+amongst scientists for nearly two centuries; the observed low
+coefficients of friction for sliding across ice.  Tribological studies of
+ice in contact with a wide variety of materials (including other ice)
+has been the focus of research for many years.  Approximately 150
+years ago, Faraday attributed the freezing of two pieces of ice
+together to be due to the ice surfaces being covered with a
+quasi-liquid layer.\cite{Faraday1859} This marked the beginning
+of the modern investigation on the properties of ice and the role the
+surface liquid-like layer plays in ice friction. Soon thereafter,
+Thomson incorrectly attempted to explain the presence of the
+liquid-like layer as a result of pressure melting.\cite{Thomson1859}
+Reynolds followed Thomson's work, and systematically investigated
+sliding on ice. He also concluded that pressurized melting of the ice
+surface was the governing physical process for the obeserved small
+coefficients of friction.\cite{Reynolds1901} This view was widely
+accepted, until Bowden and Hughes proposed that frictional heating may
+primarily be responsible for the small coefficients of friction
+observed for ice.\cite{Bowden1939}
+
+Since these inaugural investigations of ice, a large and diverse
+community of scientists has formed, studying ice and ice friction
+for applications including ice skating and winter 
+sports\cite{Rosenberg2005,Kietzig2010}, 
+road safety and shoe soles\cite{Roberts1981,Higgins2008}, 
+glacier movement\cite{Casassa1991, Sukhorukov2013, Pritchard2012},
+and the fracture of the arctic sea 
+ice\cite{Schulson2004,Weiss2007,Feltham2008,Lishman2011,Lishman2013}.  
+Experimentally, the surface of ice has been probed by atomic force
+microscopy
+(AFM)\cite{Doppenschmidt1998,Bluhm1999,Bluhm2000}, scanning force
+microscopy\cite{Bluhm1998}, ellipsometry\cite{Beaglehole1980,Beaglehole1993},
+nuclear magnetic resonance (NMR)\cite{Ishizaki1996}, X-ray 
+diffraction\cite{Dosch1996}, and photoelectron
+spectroscopy\cite{Bluhm2002}. Further investigation has been performed by
+computer simulations, studying bulk 
+ice\cite{Kerr1988,Tse1988,Hayward1997,Gao2000,Rick2005,Dong2001,Weber1983,Wang2005,Kuo2005,Buch1998,Rick2001,Gay2002}, 
+ice / vapor\cite{Kroes1992,Devlin1995,Ikeda-Fukazawa2004,Picaud2006,Conde2008,Pereyra2009},
+and ice / water\cite{Baez1995,Bryk2002,Bryk2004,Bryk2004a,Gao2000,GarciaFernandez2006,Hayward2002,Hayward2001,Karim1988,Karim1987,Karim1990,Louden2013,Nada1997,NadaH.andFurukawa1995,Nada1996,Nada2000,Nada1997a} interfaces. 
+
+
+Both experiments and computer simulations point towards the existence
+of a QLL forming on the surface of ice at temperatures below the bulk
+melting point. The formation of this layer is believe to be driven by
+the termination of the periodic crystal structure at the surface. The
+surface molecules are only weakly bound to their lattice positions by
+the underlying ice, and with appreciable thermal energy these
+molecules reorient (and at warmer temperatures translate along the
+surface) to maximize their hydrogen bonds. This results in the
+formation of the QLL, which is generally accepted as the reason why
+ice displays a low friction
+coefficient\cite{Malenkov2009,Dash1995,Rosenberg2005,Dash2006}.
+
+
+There have been extensive investigations on ice friction, attempting
+to ellucidate the roles of
+temperature\cite{Roberts1981,Higgins2008,Bowden1939,Evans1976,Derjaguin1988,Liang2003},
+sliding speed\cite{Evans1976,Derjaguin1988,Liang2003}, applied
+load\cite{Buhl2001,Bowden1939,Derjaguin1988,Baurle2006,Oksanen1982},
+contact area\cite{Bowden1939,Baurle2007}, and
+moisture\cite{Calabrese1980}. Recently, Kietzig \textit{et al.} have
+performed experiments consisting of sliding different steel alloy
+rings over a prepared ice surface.\cite{Kietzig2009} They investigated
+the effect of surface nanopatterning, hydrophobicity, and surface
+structure of the ice-exposed slider on the ice/slider friction.  These
+properties were studied over a wide range of temperatures and sliding
+velocities. They found at all temperatures investigated, increasing
+the slider velocity with constant temperature, decreases the friction
+coefficient. After passing through a minimum, the friction coefficient
+slightly increases. This slight increase was attributed to added drag
+due to capillary bridges forming between the melt film and
+slider. They observed a decrease in friction with increasing
+temperature, up to a minimum at about $-4$ degrees Celsius. At
+temperatures warmer than this, there was an observed increase in
+friction which was attributed to capillary bridges and viscous
+shearing of the melt film.  Through use of laser irradiation, the
+slider hydrophobicity was tuned without changing the chemical nature
+of the material. Kietzig showed that laser induced hydrophobicity
+resulted in fewer capillary bridges forming between the slider and the
+melt film. This reduced the amount of viscous shearing of the
+ice-melt, resulting in a lower friction coefficient.
+%, resulting in a delayed onset of the increase 
+%in friction coefficient with slider velocity.
+While most investigations of ice friction focus on heterogeneous
+materials\cite{Bowden1939,Evans1976,Derjaguin1988,Liang2003,Liang2005,Baurle2006,Baurle2007,Kietzig2009,Kietzig2010},
+there have also been advances made on understanding ice-ice friction\cite{Oksanen1982,Kennedy2000,Maeno2004,Fortt2007,Fortt2011,Lishman2011,Samadashvili2013}.
+
+
+Three distinct ice friction regimes have been described:
+boundary friction, mixed friction, and hydrodynamic friction, and the
+particular regime depends on the temperature and sliding velocity of
+the
+material.\cite{Bhushan2002,Kietzig2009,Kietzig2010,Persson2015,Tuononen2016}
+The observed friction is the result of different physical processes in
+each regime. In boundary friction, the lubricating layer of ice melt
+is only a few molecules thick. This thin film is unable to support the
+sliding load, and friction can be attributed to surface asperities of
+the sliding material interacting with the ice surface
+itself.\cite{Bhushan2002} In the mixed friction regime, the
+lubricating layer is thicker than in the boundary regime, but not yet
+sufficiently thick to maintain the sliding load. The QLL film reduces
+solid-solid adhesion at the interface, although the lubricating layer
+can also form capillary bridges with the material, resulting in a drag
+force.\cite{Kietzig2009,Kietzig2010}
+
+If the liquid layer is thick enough to support the sliding load, the
+slider's surface asperities are no longer in contact with the surface
+and the observed friction may be partially due to the capillary
+bridges formed between the ice melt and the material. Under these
+conditions, the ice friction is classified as hydrodynamic friction
+(see Figure \ref{fig:QLLsketch}).\cite{Kietzig2009,Kietzig2010} Thus
+the three regimes are characterized by the extent that a liquid-like
+layer of water mitigates the sliding load.
+
+\begin{figure*}
+\includegraphics[width=4in]{Figures/QLLsketch}
+\caption{\label{fig:QLLsketch} In the hydrodynamic regime, the
+  friction felt by a slider on an ice surface is mediated by a
+  quasi-liquid layer (QLL) that forms on the surface of the ice.
+  There can be many contributions to this friction: capillary bridges
+  between the slider and the QLL (red), viscous drag in the liquid
+  (yellow), and solid / liquid friction between the ice and the liquid
+  film (green). This study concerns the last of the three
+  contributions, the drag contributed by the ice-liquid interface.}
+\end{figure*}
+
+Kietzig \textit{et al.} have outlined popular experimental techniques
+used to investigate the coefficients of friction for a variety of
+materials sliding on ice, as well as their sensitivity to temperature,
+slider load, contact area, wettability and hydrophobicity of the
+slider.\cite{Kietzig2010} Of particular interest, the friction
+coefficients were found to increase with increasing slider
+velocity. This was attributed to three physical processes; adhesion
+forces between the slider's asperities and the ice surface, breaking
+of capillary bridges between the slider and the ice surface, and the
+viscous shearing of the ice melt across the ice surface. While teasing
+apart the individual contributions has proven challenging,
+Kietzig\cite{Kietzig2009} and Persson\cite{Persson2015,Tuononen2016}
+have made significant progress. However, there is still very little
+known about water shearing over ice surfaces. Open questions include:
+how does the structure of the interface change during this process,
+and what role does the presented crystal facet have in the observed
+friction?
+
+
 Observed coefficients of friction on ice are about 1 order of
 magnitude lower than found for other solids. However, these
 coefficients are found to vary with many factors, including
@@ -2543,95 +2767,9 @@ can be primarily attributed to the shear viscosity of the QLL phase.
 % end Murata2015
 
 
-\subsubsection{The Anomolous Friction of Ice}
 
 
-
-For ice-I$_\mathrm{h}$, the temperature at which surface molecule
-vibrations become prevelent at has been reported between 200K and
-271K. Experimentally the surface molecules have been probed using a
-variety of techniques and have determined slightly different
-temperatures at which these internal vibrations become prevelent.
-
-Both experiment and theory agree that the thickness of the QLL on ice
-increases approaching T$_\mathrm{m}$, and values have been reported
-between 2 nm to over 45 nm at 271~K. Part of the reason for the
-discrepency is due to the definition of what molecules constitute a
-QLL, as well as the probe used to measure the molecules. Most
-experimental measurements observed a gradual and continuous increase
-in the QLL width with increasing temperature to T$_\mathrm{m}$,
-however, simulations by Kreos \textit{et al.} predicted the melting
-occurs in a bilayer-to-bilayer manner. This result was recently
-confirmed by Sa'nchez \textit{et al.}, where they probed the QLL
-molecules using sum frequency generation spectroscopy to probe the
-hydrogen-bonded OH stretch frequency between temperatures of 235~K
-and 273~K, the temperature range where many agree the surface
-premelting occurs at.
-
-% PRL 117, 096101 (2016) 
-% Premelting-Induced Smoothening of the Ice-Vapor Interface
-Benet \textit{et al.} computer simulations of the QLL of ice fromed on
-the primary prismatic facet of an ice-I$_\mathrm{h}$ crystal at the
-ice-vapor interface close to the ice-I$_\mathrm{h}$-liquid-vapor
-triple point of water.\cite{Benet2016} They found that close to the
-triple point(2K below it), the QLL on the prismatic face behaves as
-two independent interfaces, the ice-water interface and at further
-distances normal to the surface, the water-vapor interface. This
-result was prominent for small wavelengths, but observing over large
-wavelengths the two interfaces smooth into one gradual interface at
-long wavelengths.
-
-Ice crystal morphologies grown from bulk vapor change from plates, to
-columns, to plates, and back to columns as the temperature is cooled
-down below the triple point, and dendrites can form at high
-saturations.\cite{K. G. Libbrecht, Rep. Prog. Phys. 68, 855 (2005).}
-The varying crystalline morphologies are attributed to the crossover
-in growth rates of the basal and prismatic faces, however, we do not
-currently understand what structural transformation at the surface to
-drive the crossover in growth rates.\cite{1,2,4,5} Kuroda and Lacmann
-have attributed the crossover in crystal growth rates to be due to the
-fact that QLL formation occurs at different temperatures for different
-exposed crystal facets.\cite{6} (Name and Name have determined QLL
-formation to occur at T1 and T2 for basal and prismatic respectively,
-where the higher energy pyramidal and secondary prism surface exhibit
-premelting at T3 and T4.)
-
-Experimental observations of the QLL on ice\cite{8-14}, though the
-presence of impourities has a very large impact on the surface
-structure.\cite{12,15} Due to the large perturbations made by these
-impurities, and the vast array of probes used to study the QLL,
-properties such as the premelting temperature and thickness of the QLL
-is still highly debated.\cite{8} 
-
-Benet \textit{et al.} used the TIP4P/2005 water model. Interrogating
-water molecules to determine if they are a part of the QLL or that of
-ice was performed using the q$_{6}$ order parameter\cite{42}, which
-was later optimized to differentiate betwee icelike and waterlike
-molecules via correlations of the second nearest neighbors.\cite{43}
-Using this parameter, Benet observed an average QLL thickness of
-0.9~nm, agreeing with experimental observations\cite{12,14} and
-computer simulations.\cite{38-40} Using the q$_{6}$ order parameter,
-the ice-liquid and liquid-vapor interfaces were determined, and each
-surface was Fourier transformed to give the spectrum of surface
-fluctuations.
-
-Analyzing the Fourier transformed surfaces, they found that for QLL
-films less than 1 nm thick, the ice-QLL and QLL-vapor interfaces
-fluctuated independently, and were hardly distinguishable from those
-of bulk water-vapor interfaces. sine-Gordon model of the solid-liquid
-interface\cite{20,45}
-% end PRL 117, 096101 (2016)
-
- % Melting the ice one layer at a time, PNAS commentary (2017) 114, 2,
- % 195-197. Steal the citations from this paper. Seems like there are
- % good things to talk about from this paper to in relation to the
- % recent PNAS paper.
-
- % Surface Premelting of Ice, J.Phys.Chem.C. 111,27 (2007) 9631
-
-
-
-\subsection{Friction at Ice/Water Interfaces}
+%\subsection{Friction at Ice/Water Interfaces}
 %%%%%%%%%%%%%%%%%%%%%%%%
 % One anomoly is the reduced friction at ice/water interfaces, explain
 % the slider problem. 
@@ -2643,97 +2781,85 @@ interface\cite{20,45}
 %%%%%%%%%%%%%%%%%%%%%%%%
 
 %iceWaterFriction intro
-Ice friction has been investigated extensively with a range
-of experimental techniques to elucidate the role of
-temperature,\cite{Bowden1939,Evans1976,Roberts1981,Derjaguin1988,Liang2003,Higgins2008} sliding speed,\cite{Evans1976,Derjaguin1988,Liang2003} applied
-load,\cite{Bowden1939,Oksanen1982,Derjaguin1988,Buhl2001,Baurle2006}
-contact area,\cite{Bowden1939,Baurle2007} and
-moisture.\cite{Calabrese1980} Kietzig \textit{et al.} performed
-experiments on steel alloy rings sliding over a prepared ice
-surface.\cite{Kietzig2009} They investigated the effect of surface
-nanopatterning, hydrophobicity, and surface structure of the
-ice-exposed slider on the ice / slider friction.
-Using laser irradiation, the slider surface hydrophobicity was tuned
-without changing the chemical nature of the material. Kietzig showed
-that laser-induced hydrophobicity resulted in fewer capillary bridges
-forming between the slider and a thin film of melted ice. This reduced
-the amount of viscous shearing of the ice-melt, resulting in a lower
-friction coefficient.
-While ice friction experiments have focused on heterogeneous
-materials,\cite{Bowden1939,Evans1976,Derjaguin1988,Liang2003,Liang2005,Baurle2006,Baurle2007,Kietzig2009,Kietzig2010}
-there have also been significant advances made in understanding
-ice-ice
-friction.\cite{Oksanen1982,Kennedy2000,Maeno2004,Fortt2007,Fortt2011,Lishman2011,Samadashvili2013}
+% Ice friction has been investigated extensively with a range
+% of experimental techniques to elucidate the role of
+% temperature,\cite{Bowden1939,Evans1976,Roberts1981,Derjaguin1988,Liang2003,Higgins2008} sliding speed,\cite{Evans1976,Derjaguin1988,Liang2003} applied
+% load,\cite{Bowden1939,Oksanen1982,Derjaguin1988,Buhl2001,Baurle2006}
+% contact area,\cite{Bowden1939,Baurle2007} and
+% moisture.\cite{Calabrese1980} Kietzig \textit{et al.} performed
+% experiments on steel alloy rings sliding over a prepared ice
+% surface.\cite{Kietzig2009} They investigated the effect of surface
+% nanopatterning, hydrophobicity, and surface structure of the
+% ice-exposed slider on the ice / slider friction.
+% Using laser irradiation, the slider surface hydrophobicity was tuned
+% without changing the chemical nature of the material. Kietzig showed
+% that laser-induced hydrophobicity resulted in fewer capillary bridges
+% forming between the slider and a thin film of melted ice. This reduced
+% the amount of viscous shearing of the ice-melt, resulting in a lower
+% friction coefficient.
+% While ice friction experiments have focused on heterogeneous
+% materials,\cite{Bowden1939,Evans1976,Derjaguin1988,Liang2003,Liang2005,Baurle2006,Baurle2007,Kietzig2009,Kietzig2010}
+% there have also been significant advances made in understanding
+% ice-ice
+% friction.\cite{Oksanen1982,Kennedy2000,Maeno2004,Fortt2007,Fortt2011,Lishman2011,Samadashvili2013}
 
-Experiments and computer simulations both suggest the existence of a
-quasi-liquid layer (QLL) that forms at the surface of ice at
-temperatures below the bulk melting point but above
-235~K.\cite{Kroes1992,Ikeda-Fukazawa2004,Picaud2006,Conde2008,Bartels-Rausch2014,Sancheza2017}
-The formation of this layer is driven by the termination of the
-periodic crystal structure. The surface molecules are not as tightly
-bound to their lattice positions as molecules in the underlying ice,
-and with sufficient thermal energy, these molecules reorient to
-maximize hydrogen bonding. At warmer temperatures, they can also
-translate along the surface.\cite{Pfalzgraff2011,Bartels-Rausch2014}
-The existence of the QLL is now generally accepted as one of the
-reasons that ice displays a low coefficient of sliding
-friction.\cite{Dash1995,Rosenberg2005,Dash2006,Malenkov2009}
+% Experiments and computer simulations both suggest the existence of a
+% quasi-liquid layer (QLL) that forms at the surface of ice at
+% temperatures below the bulk melting point but above
+% 235~K.\cite{Kroes1992,Ikeda-Fukazawa2004,Picaud2006,Conde2008,Bartels-Rausch2014,Sancheza2017}
+% The formation of this layer is driven by the termination of the
+% periodic crystal structure. The surface molecules are not as tightly
+% bound to their lattice positions as molecules in the underlying ice,
+% and with sufficient thermal energy, these molecules reorient to
+% maximize hydrogen bonding. At warmer temperatures, they can also
+% translate along the surface.\cite{Pfalzgraff2011,Bartels-Rausch2014}
+% The existence of the QLL is now generally accepted as one of the
+% reasons that ice displays a low coefficient of sliding
+% friction.\cite{Dash1995,Rosenberg2005,Dash2006,Malenkov2009}
 
-Three distinct ice friction regimes have been described:
-boundary friction, mixed friction, and hydrodynamic friction, and the
-particular regime depends on the temperature and sliding velocity of
-the
-material.\cite{Bhushan2002,Kietzig2009,Kietzig2010,Persson2015,Tuononen2016}
-The observed friction is the result of different physical processes in
-each regime. In boundary friction, the lubricating layer of ice melt
-is only a few molecules thick. This thin film is unable to support the
-sliding load, and friction can be attributed to surface asperities of
-the sliding material interacting with the ice surface
-itself.\cite{Bhushan2002} In the mixed friction regime, the
-lubricating layer is thicker than in the boundary regime, but not yet
-sufficiently thick to maintain the sliding load. The QLL film reduces
-solid-solid adhesion at the interface, although the lubricating layer
-can also form capillary bridges with the material, resulting in a drag
-force.\cite{Kietzig2009,Kietzig2010}
+% Three distinct ice friction regimes have been described:
+% boundary friction, mixed friction, and hydrodynamic friction, and the
+% particular regime depends on the temperature and sliding velocity of
+% the
+% material.\cite{Bhushan2002,Kietzig2009,Kietzig2010,Persson2015,Tuononen2016}
+% The observed friction is the result of different physical processes in
+% each regime. In boundary friction, the lubricating layer of ice melt
+% is only a few molecules thick. This thin film is unable to support the
+% sliding load, and friction can be attributed to surface asperities of
+% the sliding material interacting with the ice surface
+% itself.\cite{Bhushan2002} In the mixed friction regime, the
+% lubricating layer is thicker than in the boundary regime, but not yet
+% sufficiently thick to maintain the sliding load. The QLL film reduces
+% solid-solid adhesion at the interface, although the lubricating layer
+% can also form capillary bridges with the material, resulting in a drag
+% force.\cite{Kietzig2009,Kietzig2010}
 
-If the liquid layer is thick enough to support the sliding load, the
-slider's surface asperities are no longer in contact with the surface
-and the observed friction may be partially due to the capillary
-bridges formed between the ice melt and the material. Under these
-conditions, the ice friction is classified as hydrodynamic
-friction.\cite{Kietzig2009,Kietzig2010} Thus the three regimes are
-characterized by the extent that a liquid-like layer of water
-mitigates the sliding load.
+% If the liquid layer is thick enough to support the sliding load, the
+% slider's surface asperities are no longer in contact with the surface
+% and the observed friction may be partially due to the capillary
+% bridges formed between the ice melt and the material. Under these
+% conditions, the ice friction is classified as hydrodynamic
+% friction.\cite{Kietzig2009,Kietzig2010} Thus the three regimes are
+% characterized by the extent that a liquid-like layer of water
+% mitigates the sliding load.
 
-\begin{figure*}
-\includegraphics[width=4in]{Figures/QLLsketch}
-\caption{\label{fig:QLLsketch} In the hydrodynamic regime, the
-  friction felt by a slider on an ice surface is mediated by a
-  quasi-liquid layer (QLL) that forms on the surface of the ice.
-  There can be many contributions to this friction: capillary bridges
-  between the slider and the QLL (red), viscous drag in the liquid
-  (yellow), and solid / liquid friction between the ice and the liquid
-  film (green). This study concerns the last of the three
-  contributions, the drag contributed by the ice-liquid interface.}
-\end{figure*}
-
-Kietzig \textit{et al.} have outlined popular experimental techniques
-used to investigate the coefficients of friction for a variety of
-materials sliding on ice, as well as their sensitivity to temperature,
-slider load, contact area, wettability and hydrophobicity of the
-slider.\cite{Kietzig2010} Of particular interest, the friction
-coefficients were found to increase with increasing slider
-velocity. This was attributed to three physical processes; adhesion
-forces between the slider's asperities and the ice surface, breaking
-of capillary bridges between the slider and the ice surface, and the
-viscous shearing of the ice melt across the ice surface. While teasing
-apart the individual contributions has proven challenging,
-Kietzig\cite{Kietzig2009} and Persson\cite{Persson2015,Tuononen2016}
-have made significant progress. However, there is still very little
-known about water shearing over ice surfaces. Open questions include:
-how does the structure of the interface change during this process,
-and what role does the presented crystal facet have in the observed
-friction?
+% Kietzig \textit{et al.} have outlined popular experimental techniques
+% used to investigate the coefficients of friction for a variety of
+% materials sliding on ice, as well as their sensitivity to temperature,
+% slider load, contact area, wettability and hydrophobicity of the
+% slider.\cite{Kietzig2010} Of particular interest, the friction
+% coefficients were found to increase with increasing slider
+% velocity. This was attributed to three physical processes; adhesion
+% forces between the slider's asperities and the ice surface, breaking
+% of capillary bridges between the slider and the ice surface, and the
+% viscous shearing of the ice melt across the ice surface. While teasing
+% apart the individual contributions has proven challenging,
+% Kietzig\cite{Kietzig2009} and Persson\cite{Persson2015,Tuononen2016}
+% have made significant progress. However, there is still very little
+% known about water shearing over ice surfaces. Open questions include:
+% how does the structure of the interface change during this process,
+% and what role does the presented crystal facet have in the observed
+% friction?
 
 % To help understand slider-ice friction in the hydrodynamic regime, we
 % have simulated the drag forces contributed by the interaction of the
@@ -2754,142 +2880,6 @@ friction?
 
 
 % end iceWaterFriction intro
-
-One anomoly of water in particular has been at the heart of a debate
-amongst scientists for nearly two centuries; the observed low
-coefficients of friction for sliding across ice.  Tribological studies of
-ice in contact with a wide variety of materials (including other ice)
-has been the focus of research for many years.  Approximately 150
-years ago, Faraday attributed the freezing of two pieces of ice
-together to be due to the ice surfaces being covered with a
-quasi-liquid layer (QLL).\cite{Faraday1859} This marked the beginning
-of the modern investigation on the properties of ice and the role the
-surface liquid-like layer plays in ice friction. Soon thereafter,
-Thomson incorrectly attempted to explain the presence of the
-liquid-like layer as a result of pressure melting.\cite{Thomson1859}
-Reynolds followed Thomson's work, and systematically investigated
-sliding on ice. He also concluded that pressurized melting of the ice
-surface was the governing physical process for the obeserved small
-coefficients of friction.\cite{Reynolds1901} This view was widely
-accepted, until Bowden and Hughes proposed that frictional heating may
-primarily be responsible for the small coefficients of friction
-observed for ice.\cite{Bowden1939}
-
-Since these inaugural investigations of ice, a large and diverse
-community of scientists has formed, studying ice and ice friction
-for applications including ice skating and winter 
-sports\cite{Rosenberg2005,Kietzig2010}, 
-road safety and shoe soles\cite{Roberts1981,Higgins2008}, 
-glacier movement\cite{Casassa1991, Sukhorukov2013, Pritchard2012},
-and the fracture of the arctic sea 
-ice\cite{Schulson2004,Weiss2007,Feltham2008,Lishman2011,Lishman2013}.  
-Experimentally, the surface of ice has been probed by atomic force
-microscopy
-(AFM)\cite{Doppenschmidt1998,Bluhm1999,Bluhm2000}, scanning force
-microscopy\cite{Bluhm1998}, ellipsometry\cite{Beaglehole1980,Beaglehole1993},
-nuclear magnetic resonance (NMR)\cite{Ishizaki1996}, X-ray 
-diffraction\cite{Dosch1996}, and photoelectron
-spectroscopy\cite{Bluhm2002}. Further investigation has been performed by
-computer simulations, studying bulk 
-ice\cite{Kerr1988,Tse1988,Hayward1997,Gao2000,Rick2005,Dong2001,Weber1983,Wang2005,Kuo2005,Buch1998,Rick2001,Gay2002}, 
-ice / vapor\cite{Kroes1992,Devlin1995,Ikeda-Fukazawa2004,Picaud2006,Conde2008,Pereyra2009},
-and ice / water\cite{Baez1995,Bryk2002,Bryk2004,Bryk2004a,Gao2000,GarciaFernandez2006,Hayward2002,Hayward2001,Karim1988,Karim1987,Karim1990,Louden2013,Nada1997,NadaH.andFurukawa1995,Nada1996,Nada2000,Nada1997a} interfaces. 
-
-
-Both experiments and computer simulations point towards the existence
-of a QLL forming on the surface of ice at temperatures below the bulk
-melting point. The formation of this layer is believe to be driven by
-the termination of the periodic crystal structure at the surface. The
-surface molecules are only weakly bound to their lattice positions by
-the underlying ice, and with appreciable thermal energy these
-molecules reorient (and at warmer temperatures translate along the
-surface) to maximize their hydrogen bonds. This results in the
-formation of the QLL, which is generally accepted as the reason why
-ice displays a low friction
-coefficient\cite{Malenkov2009,Dash1995,Rosenberg2005,Dash2006}.
-
-
-There have been extensive investigations on ice friction, attempting
-to ellucidate the roles of
-temperature\cite{Roberts1981,Higgins2008,Bowden1939,Evans1976,Derjaguin1988,Liang2003},
-sliding speed\cite{Evans1976,Derjaguin1988,Liang2003}, applied
-load\cite{Buhl2001,Bowden1939,Derjaguin1988,Baurle2006,Oksanen1982},
-contact area\cite{Bowden1939,Baurle2007}, and
-moisture\cite{Calabrese1980}. Recently, Kietzig \textit{et al.} have
-performed experiments consisting of sliding different steel alloy
-rings over a prepared ice surface.\cite{Kietzig2009} They investigated
-the effect of surface nanopatterning, hydrophobicity, and surface
-structure of the ice-exposed slider on the ice/slider friction.  These
-properties were studied over a wide range of temperatures and sliding
-velocities. They found at all temperatures investigated, increasing
-the slider velocity with constant temperature, decreases the friction
-coefficient. After passing through a minimum, the friction coefficient
-slightly increases. This slight increase was attributed to added drag
-due to capillary bridges forming between the melt film and
-slider. They observed a decrease in friction with increasing
-temperature, up to a minimum at about $-4$ degrees Celsius. At
-temperatures warmer than this, there was an observed increase in
-friction which was attributed to capillary bridges and viscous
-shearing of the melt film.  Through use of laser irradiation, the
-slider hydrophobicity was tuned without changing the chemical nature
-of the material. Kietzig showed that laser induced hydrophobicity
-resulted in fewer capillary bridges forming between the slider and the
-melt film. This reduced the amount of viscous shearing of the
-ice-melt, resulting in a lower friction coefficient.
-%, resulting in a delayed onset of the increase 
-%in friction coefficient with slider velocity.
-While most investigations of ice friction focus on heterogeneous
-materials\cite{Bowden1939,Evans1976,Derjaguin1988,Liang2003,Liang2005,Baurle2006,Baurle2007,Kietzig2009,Kietzig2010},
-there have also been advances made on understanding ice-ice friction\cite{Oksanen1982,Kennedy2000,Maeno2004,Fortt2007,Fortt2011,Lishman2011,Samadashvili2013}.
-
-From these studies, three distinct friction regiemes
-have been found depending on the temperature and sliding velocity of the 
-material; boundary friction, mixed friction, and hydrodynamic 
-friction.\cite{Bhushan2002,Persson2015,Tuononen2016,Kietzig2009,Kietzig2010} 
-Under each regieme, the observed 
-friction is the result of a different physical process. In boundary friction, 
-the lubricating layer of ice melt is only several molecules thick. 
-This thin film is unable to support the sliding material's load, and friction
-arises due to the surface asperities of the sliding material 
-interacting with the ice surface.\cite{Bhushan2002} In the mixed friction 
-regime, the ice melt lubricating layer is thicker than in the boundary regime,
-but not yet sufficiently thick to maintain the 
-sliding material's load. However, the ice melt film reduces solid-solid 
-adhesion at the interface. This helps to alleviate some of the frictional 
-forces, although the lubricating layer can form capillary bridges with the 
-material, resulting in a drag force.\cite{Kietzig2009,Kietzig2010} If an 
-ice melt lubricating layer is thick enough
-to support the sliding material's load, the material's surface asperities are 
-no longer in contact with the surface and the observed friction is primarily 
-due to the capillary bridges formed between the ice melt and the material.
-Under these conditions, the ice friction is classified as hydrodynamic 
-friction.\cite{Kietzig2009,Kietzig2010} Thus the three regiemes are characterized by the 
-extent a liquid-like layer of water mitigates the sliding material's load.
-Through extension of contact melting theory, Fowler and Bejan have recently 
-indicated that the lubricating ice melt film under the sliding material becomes 
-thicker toward the trailing end.\cite{Fowler1993} Due to this, as a material 
-slides over the surface of ice, the prevailing friction mechanism may be a 
-combination of those found in each of the friction regiemes. 
-
-In a recent review\cite{Kietzig2010}, Kietzig \textit{et al.} outlined 
-popular experimental techniques used to investigate the coefficients of 
-friction for a variety of materials sliding on ice, as well as their 
-sensativity to temperature, slider load,
-contact area, wettability and hydrophobicity of the slider, and many other
-parameters. Of particular interest, the friction coefficients were found to 
-increase with increasing slider velocity. This was attributed to three 
-physical processes; adhesion forces of the
-slider's asperities with the ice surface, breaking of capillary bridges 
-between the slider and the ice surface, and the viscous shearing of the 
-ice melt across the ice surface. While teasing apart the individual 
-contributions has proven challenging, Kietzig\cite{Kietzig2009} and
-Persson\cite{Persson2015,Tuononen2016} 
-have made significant progress. However, there is still very little known about
-water shearing over ice surfaces. Open questions include how the
-structure of the interface changes 
-during this process, and the role the presented crystal face plays on
-the observed friction. 
-
 
 
 \section{Summary}
