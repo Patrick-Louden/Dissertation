@@ -1574,73 +1574,6 @@ $S_{0} = 0.82 \pm 0.05~\mathrm{cal~deg}^{-1}
 % end Residual Entropy of ice.
 
 
-
-\subsection{Hydrogen Order at the Surface of Ice}
-It is well understood that the formation of a surface requires
-considerable energy, although, the molecules at the surface have
-interesting characteristics unique to their local
-environment. Termination of the repeating crystal lattice results in
-undercoordinated molecules which have enhanced mobility at appreciable
-temperatures due to the reduced potential experienced at these
-sites.\cite{} Similarly, surface platinum atoms have been observed to
-be catallytically active due to their coordination.\cite{}
-
-For most materials, crystal surfaces are often defined by the surface
-plane relative to the internal coordinates. Ice-I$_\mathrm{h}$
-crystals commonly expose the $\{0001\}$ (basal) and $\{10\bar{1}0\}$
-(prismatic) faces, although, this does not completely define the
-surface as compared with simple solids. Due to the residual entropy of
-the proton distribution within the ice lattice, termination of the
-crystal along the desired plane but at varying locations throughout
-the crystal can result in differential hydrogen patterning at the
-surface. The possible proton arrangements could alter the surface
-energy ($\gamma$), a thermodynamic quantity that affects crystal growth and
-controls crystal shape.
-
-Fletcher was the first to consider proton ordering at
-ice-I$_\mathrm{h}$ surfaces, using classical electrostatics arguements
-to suggest that the lowest energy surface should be proton
-ordered.\cite{Fletcher1992} His arguements stemmed from dipole
-interactions among nearest neighbor OH bonds, which also led to the
-prediction that the basal surface would undergo a proton ordered to
-disordered transition at $\sim$~30~K, and $\sim$~70~K for the
-prismatic surface. 
-
-More recently, Buch \textit{et al.} compared basal surfaces with
-varying proton arrangements using the TIP4P/Ice and EMP water
-models.\cite{Buch2008} They also found that proton ordered surfaces
-were of lower energy as compared to disordered states, and observed
-alternating rows of proton-exposed and oxygen-exposed termination to
-be the most stable.  Pan \textit{et al.} performed density-functional
-theory (DFT) calculations on the basal and prismatic surface of an
-ice-I$_\mathrm{h}$ and obtained similar surface energies for the two
-faces.\cite{Pan2010} However, they observed a strong dependence for
-the surface energy on the proton ordering, which was found to account
-for up to 50~\% of the total surface energy (significantly larger than
-proton ordering in the bulk $<$ 1~\%). This suggests that the ice
-surface's thermodynamic ground state will be proton ordered, even for
-temperatures well above the bulk order-disorder temperature of about
-72~K.
-
-The surface energies for an antiferroelectric ice, ice-XI, were found
-to converge with variying exchange-correlation functionals on a value
-of about $\gamma_{basal}^{XI} \sim 11~\mathrm{meV~\AA^{-2}}$. However,
-the surface energies for ice-I$_\mathrm{h}$ were observed to be spread
-over a much larger range of values, from 12.2 to 18.2~
-$\mathrm{meV~\AA^{-2}}$. This indicates that for a constant internal
-ice-I$_\mathrm{h}$ lattice, slight changes in proton ordering at the
-surface can result in large differences in surface energy.
-
-Lastly, Pan \textit{et al.} investigated the surface oxygen
-positions. With a reduction in their experienced potential, these
-oxygen atoms could deviate from their lattice positions with thermal
-energy. For the ice-I$_\mathrm{h}$ surface bilayers, they find the
-oxygen - oxygen distance does not change much compared to the
-bulk. The average surface oxygen - oxygen distance is 0.02 \AA~
-greater than found in the bulk. This is consistent with experimental
-results, indicating distances of 2.77 \AA~ for surface and 2.76 \AA~
-for bulk at 38~K.\cite{Parent2002} 
-
 \subsection{Ice / Water Coexistence}
 %%%
 % General introduction to ice/water coexistence
@@ -1648,12 +1581,6 @@ for bulk at 38~K.\cite{Parent2002}
 % interfacial width.
 % Problems discovered specific to ice/water coexistence, improper
 % treatment of the electrostatics, coexistence temperatures, etc.
-%
-%%%
-
-%%%
-% from iceWater.tex
-%
 %
 %%%
 
@@ -1750,15 +1677,16 @@ estimates using size cluster analysis by Sanz \textit{et
   al.}\cite{Sanz2013}. Benet \textit{et al.} were able to estimate the
 free energy of different planes (in coexistence with liquid), and
 obtained values of 27 $\pm$ 2, 28 $\pm$ 2, and 28 $\pm$ 2
-$\mathrm{mN}~\mathrm{m}^{-1}$ for the basal, prismatic, and a higher
-order surface face, the secondary prismatic surfaces,
-respectively. They also observed an interfacial thickness of about
-four to five molecular diameters, which was found to be insensitive
-to the crystal face exposed to the liquid. Lastly, when the basal face
-is exposed to the liquid, they observed local areas of hexagonal ice
-and cubic ice within the interface. This observation is not unique to
-this study, other simulations and experiments have shown hexgonal ice
-to grow with a mixed Ic-Ih stacking.\cite{43-47}
+$\mathrm{mN}~\mathrm{m}^{-1}$ for the $\{0001\}$ (basal),
+$\{10\bar{1}0\}$ (prismatic) face, and $\{11\bar{2}0\}$ (secondary
+prismatic) faces, respectively. They also observed an interfacial
+thickness of about four to five molecular diameters, which was found
+to be insensitive to the crystal face exposed to the liquid. Lastly,
+when the basal face is exposed to the liquid, they observed local
+areas of hexagonal ice and cubic ice within the interface. This
+observation is not unique to this study, other simulations and
+experiments have shown hexgonal ice to grow with a mixed
+I$_\mathrm{c}$-I$_\mathrm{h}$ stacking.\cite{43-47}
 %end Benet, MacDowell, Sanz, PCCP 2014, 16, 22159
 
 
@@ -1774,20 +1702,161 @@ to grow with a mixed Ic-Ih stacking.\cite{43-47}
 % 4. Observed oddity of friction on ice surfaces is small, transition to
 % next subsection where we will talk about friction studies on ice surfaces.
 
+In order to characterize the surface premelting of ice, we must first
+understand what the ice surface looks like. While a large variety of
+computaitonal and experimental techniques have been used to probe the
+structure, dynamics, and properties of this liquid-like surface film,
+much is still unknown. Open questions include at zero, or small
+temperatures, are the protons at the surface ordered or disordered,
+and does this change with appreciable temperature. Also, what
+contribution does this liquid-like layer play in the observed small
+friction coefficients commonly found for ice. 
 
-In order to understand the surface premelting of ice, we must first
-understand what this surface looks like. A wide variety of
-experimental techniques have been used to determine the structure,
-dynamics, properties, and width of this liquid-like surface film.
-Materer \textit{et al.} studied an ultrathin ice surface exposing the
-basal face grown on a Pt(11) substrate at 90K (well below complete
-surface melt) using low-energy electron diffraction (LEED)
-spectrocopy, in conjunction with total-energy calculations and
-molecular dynamics simulations.\cite{Materer1995,Materer1997} Their results suggested
-the basal face is terminated with a full bilayer of molecules, and not
-a half bilayer as some had previously conjectured. The same surface
-structure was observed later by NAME using helium atom scattering
-experiments at 30K.\cite{Braun1998,Glebov2000}
+\subsubsection{Hydrogen Order at the Surface of Ice}
+It is well understood that the formation of a surface requires
+considerable energy, although, the molecules at the surface have
+interesting characteristics unique to their local
+environment. Termination of the repeating crystal lattice results in
+undercoordinated molecules which have enhanced mobility at appreciable
+temperatures due to the reduced potential experienced at these
+sites.\cite{} Similarly, surface platinum atoms have been observed to
+be catallytically active due to their coordination.\cite{}
+
+For most materials, crystal surfaces are often defined by the surface
+plane relative to the internal coordinates. Ice-I$_\mathrm{h}$
+crystals commonly expose the $\{0001\}$ (basal) and $\{10\bar{1}0\}$
+(prismatic) faces, although, this does not completely define the
+surface as compared with simple solids. Due to the residual entropy of
+the proton distribution within the ice lattice, termination of the
+crystal along the desired plane but at varying locations throughout
+the crystal can result in differential hydrogen patterning at the
+surface. The possible proton arrangements could alter the surface
+energy ($\gamma$), a thermodynamic quantity that affects crystal growth and
+controls crystal shape.
+
+Fletcher was the first to consider proton ordering at
+ice-I$_\mathrm{h}$ surfaces, using classical electrostatics arguements
+to suggest that the lowest energy surface should be proton
+ordered.\cite{Fletcher1992} His arguements stemmed from dipole
+interactions among nearest neighbor OH bonds, which also led to the
+prediction that the basal surface would undergo a proton ordered to
+disordered transition at $\sim$~30~K, and $\sim$~70~K for the
+prismatic surface. 
+
+More recently, Buch \textit{et al.} compared basal surfaces with
+varying proton arrangements using the TIP4P/Ice and EMP water
+models.\cite{Buch2008} They also found that proton ordered surfaces
+were of lower energy as compared to disordered states, and observed
+alternating rows of proton-exposed and oxygen-exposed termination to
+be the most stable.  Pan \textit{et al.} performed density-functional
+theory (DFT) calculations on the basal and prismatic surface of an
+ice-I$_\mathrm{h}$ and obtained similar surface energies for the two
+faces.\cite{Pan2010} However, they observed a strong dependence for
+the surface energy on the proton ordering, which was found to account
+for up to 50~\% of the total surface energy (significantly larger than
+proton ordering in the bulk $<$ 1~\%). This suggests that the ice
+surface's thermodynamic ground state will be proton ordered, even for
+temperatures well above the bulk order-disorder temperature of about
+72~K.
+
+The surface energies for an antiferroelectric ice, ice-XI, were found
+to converge with variying exchange-correlation functionals on a value
+of about $\gamma_{basal}^{XI} \sim 11~\mathrm{meV~\AA^{-2}}$. However,
+the surface energies for ice-I$_\mathrm{h}$ were observed to be spread
+over a much larger range of values, from 12.2 to 18.2~
+$\mathrm{meV~\AA^{-2}}$. This indicates that for a constant internal
+ice-I$_\mathrm{h}$ lattice, slight changes in proton ordering at the
+surface can result in large differences in surface energy.
+
+Pan \textit{et al.} investigated surface oxygen
+positions. With a reduction in their experienced potential, these
+oxygen atoms could deviate from their lattice positions with thermal
+energy. For the ice-I$_\mathrm{h}$ surface bilayers, they find the
+oxygen - oxygen distance does not change much compared to the
+bulk. The average surface oxygen - oxygen distance is 0.02 \AA~
+greater than found in the bulk. This is consistent with experimental
+results, indicating distances of 2.77 \AA~ for surface and 2.76 \AA~
+for bulk at 38~K.\cite{Parent2002} 
+
+The basal face of ice-I$_\mathrm{h}$ could terminate as either a
+monolayer or as a bilayer. Materer \textit{et al.} studied an
+ultrathin ice surface exposing the basal face grown on a Pt(111)
+substrate at 90K (well below surface melt) using low-energy electron
+diffraction (LEED) spectrocopy, in conjunction with total-energy
+calculations and molecular dynamics
+simulations.\cite{Materer1995,Materer1997} Their results suggested the
+basal face is terminated with a full bilayer of molecules, and not a
+half bilayer as some had previously conjectured. The same surface
+structure was observed later by Braun \textit{et al.}\cite{Braun1998}
+and Glebov \textit{et al.}\cite{Glebov2000} using helium atom
+scattering experiments at 30K.
+
+\subsubsection{Driving Force of the Surface Premelting}
+All crystalline materials exhibit a surface premelting at temperatures
+approaching their melting point. Valkealahti and Nieminen observed
+surface premelting for an argon crystal below its bulk melting
+point.\cite{Valkealahti1987} They found a trend between the the
+coordination number of the surface atoms with the onset temperature of
+the premelt. Similarly, Starikov and Stegailov observed surface
+premelting for iron and aluminum, and investigated the pressure and
+temperature dependence of the surface premelt.\cite{Starikov2009}
+
+It is generally accepted that the surface premelt is driven by the
+reduced potential experienced by molecules at the surface. This
+reduction in potential stems from the undercoordination of the surface
+molecules.  At temperatures considerably below the melting point,
+these molecules reside in their lattice positions. However, as thermal
+energy increases the internal vibrational and rotational modes of the
+surface molecules becomes populated. At some critical temperature
+(T$^\mathrm{*}$ $<$ T$_\mathrm{m}$), the surface molecules have
+sufficient energy to leave their lattice positions and translate along
+the surface. This motion is driven by the molecule's ability
+to better maximize their intermolecular interactions with their
+neighbors. These surface molecules are collectively refered to as a
+quasi-liquid layer (QLL), as their structure and properties reflect
+some of their condensed liquid phase counterparts, but are distinctly
+unique.
+
+\subsubsection{Investigations of the Quasi-Liquid Layer}
+% Ice Surfaces by Mary Jane Shultz, Ann Rev Phys Chem
+Significant evidence has been given indicating the existence of a
+surface premelt quasi-liquid layer on ice. Experimentally,
+investigations using glancing angle X-ray\cite{Lied1994, Dosch1995},
+SFG\cite{Wei2001}, He atom scattering\cite{Suter2006}, atomic force
+microscopy\cite{Goertz2009,Doppenschmidt2000},
+ellipsometry\cite{Furukawa1997}, photoelectron
+spectroscopy\cite{Bluhm2002}, nuclear magnetic resonance
+(NMR)\cite{Dec2009,Dec2012}, and differential interference
+contrast\cite{Sazaki2012,Asakawa2016,Sazaki2013} all point towards a
+surface premelt. However, there is a large spread in reported onset
+temperatures, from 200~K to 260~K. Since each technique used probes
+different properties of the surface molecules, the observed onset
+temperature of the QLL is dependent on the temperature at which those
+properties deviate from their solid values. Also, many have argued
+that small amounts of contamination could result in drastically
+varying results.\cite{Elbaum1993,Wettlaufer1999} Computational
+investigation also predict the onset of a surface premelting
+layer.\cite{Conde2008,Neshyba2009,Gladich2011,Pfalzgraff2011,Gladich2015,Park2010,Shepherd2012,Limmer2014,Persson2015}
+
+However, while there is general agreement on the existence of a
+surface premelt, there is considerable disagreement about its
+characteristics. Henson \textit{et al.} predicted that the QLL should
+behave as a supercooled water\cite{Henson2005}, while Goertz
+\textit{et al.}  measured the adhesive and mechanical properties of
+the QLL, showing it to be vistoelastic in nature.\cite{Goertz2009}
+More recently, Suzuki \textit{et al.}  have probed the QLL with
+differential interference contrast and observed two separate immesible
+liquid water flims.\cite{Sazaki2012,Asakawa2016,Sazaki2013} Again
+these differences may arise due to the particular probe used to
+measure the quasi-liquid layer. However, amongst the disagreements
+there resides fruitful observations which may help us to ellucidate
+the nature of this interesting phenomenon. 
+
+
+\begin{flushleft}
+\textit{Experimental Investigations}
+\end{flushleft}
+
 
 Sum frequency generation (SFG) spectroscopy is able to probe the
 orientational disorder of molecules at a surface. The basal surface of
@@ -1812,36 +1881,6 @@ layer observed by the SFG spectroscopy.
 
 
 
-% Ice Surfaces by Mary Jane Shultz, Ann Rev Phys Chem
-(on qll) 'techniques as diverse as glancing angle X-ray (102, 103),
-SFG (82), He atom scattering (104), atomic force microscopy (105,
-106), ellipsometry (107), photoelectron spectroscopy (108), nuclear
-magnetic resonance (NMR) (109, 110), theory (111–114), and
-differential interference contrast (57, 115, 116) conclude that the
-QLL exists.' The onset temperature has varied from as cold as 200K to
-as warm as 260K, and discrepencies have been attributed to
-contaminations to varying probe depths. There is also considerable
-disagreement about the nature of the QLL, 'Theory indicates that it is
-ordinary supercooled water (117), whereas recent interfacial force
-microscopy (105) suggests that the QLL is neither ice nor water but
-rather a new viscoelastic phase.' And recently Suzuki \textit{et al.}
-have probed the QLL and observed two separate immesible liquid water
-flims. 
-
-
-Section 4.1 deserves further reading, talks about thermodynamics of
-the basal, prism, and secondary prismatic crystal surfaces.
-%end Annu. Rev. Phys. Chem. 2017. 68:285–304
-
-% /Ice Surfaces.
-
-
-For ice-I$_\mathrm{h}$, the temperature at which surface molecule
-vibrations become prevelent at has been reported between 200K and
-271K. Experimentally the surface molecules have been probed using a
-variety of techniques and have determined slightly different
-temperatures at which these internal vibrations become prevelent.
-
 Both experiment and theory agree that the thickness of the QLL on ice
 increases approaching T$_\mathrm{m}$, and values have been reported
 between 2 nm to over 45 nm at 271~K. Part of the reason for the
@@ -1856,6 +1895,10 @@ molecules using sum frequency generation spectroscopy to probe the
 hydrogen-bonded OH stretch frequency between temperatures of 235~K
 and 273~K, the temperature range where many agree the surface
 premelting occurs at.
+
+\begin{flushleft}
+\textit{Computational Investigations}
+\end{flushleft}
 
 % PRL 117, 096101 (2016) 
 % Premelting-Induced Smoothening of the Ice-Vapor Interface
@@ -1911,41 +1954,7 @@ of bulk water-vapor interfaces. sine-Gordon model of the solid-liquid
 interface\cite{20,45}
 % end PRL 117, 096101 (2016)
 
- % Melting the ice one layer at a time, PNAS commentary (2017) 114, 2,
- % 195-197. Steal the citations from this paper. Seems like there are
- % good things to talk about from this paper to in relation to the
- % recent PNAS paper.
 
- % Surface Premelting of Ice, J.Phys.Chem.C. 111,27 (2007) 9631
-
-
-
-
-\subsubsection{Driving Force of the Surface Premelting}
-All crystalline materials exhibit a surface premelting at temperatures
-approaching their melting point. Molecules at the surface of the
-material have fewer neighboring molecules compared to those in the
-bulk of the crystal, resulting in a reduction in the experienced
-potential. At temperatures considerably below the materials melting
-point, these molecules will reside in their lattice positions as the
-potential felt by their underlying lattice and neighbor molecules is
-sufficiently strong to prevent thermal fluctuations from dislodging
-the molecules from their lattice positions BLAH. However, as
-temperature increases the internal vibrations and rotations of the
-surface molecules increase, until at some critical temperature
-(T$^\mathrm{*}$ $<$ T$_\mathrm{m}$), where the surface molecules will
-leave their lattice positions and translate along the surface,
-attempting to maximize their intermoleculer interactions with the
-neihboring molecules and those of the underlying lattice. These
-surface molecules are collectively refered to as a quasi-liquid layer
-(QLL), as their structure and properties reflect some of their
-condensed liquid phase counterparts, but are distinctly unique.
-
-''the formation of (a QLL) on solid surfaces is now well characterized
-theoretically as a premelting surface phase
-transition.''\cite{R. Lipowsky, Phys. Rev. Lett. 49, 1575 (1982).}
-
-\subsubsection{Previous Investigations of the QLL}
 % The thickness of a liquid layer on the free surface of ice as
 % obtained from computer simulation. M.M.Conde, C.Vega, A.Patrykiejew
 % JCP 129, 014702 (2008)
@@ -2028,7 +2037,7 @@ the same order of magnitude, similar to our own results.
 %end Conde2008
 
 
-\subsubsection{QLL Width}
+\subsubsection{Width of the Quasi-Liquid Layer}
 Many surface science techniques have been used to quantify the
 temperature dependence of the quasi-liquid layer
 thickness.\cite{Kouchi1987,Golecki1978,Dosch1995,Beaglehole1980, Bluhm1999,
@@ -2090,7 +2099,7 @@ The prism QLL was found to have roughly twice as much anisotropy to it
 than the basal does, indicated by the sign of the ellipticity
 measurement.
 % end D. Beaglehol, P. Wilson, JPC 1993, 97, 11053-11055
-\subsubsection{QLL Structure and Dynamics}
+\subsubsection{Structure and Dynamics of the Quasi-Liquid Layer}
 
 %Anisotropy in structural phase transitions at ice surfaces: a
 %molecular dynamics stdy. H. Nada and Y. Furukawa, 1997, Applied
@@ -2335,112 +2344,6 @@ by temperature. They observed a transition to about unity between 240K
 and 250K, between 49 and 39 K of undercooling for the NE6 model.
 
 % end Gladdich11
-
-\subsubsection{Ice Nanostructures}
-%Pan11 Melting the Ice: On the Relation between Melting Temperature
-%and Size for Nanoscale Ice Crystals. ACS Nano 5 (2011) 4562-4569
-While there has been significant progress made on understanding a
-two-dimensional ice surface exposed to vacuum, less is known on the
-surface premelting of a three-dimensional ice
-nanostructure. Understanding premelting of three-dimensional
-nanostructures is of importance as particles in this size range are
-commonly found in polar mospheric clouds, at altitudes of 80-90 km,
-and are known to scatter light from the ice/water interfaces they
-contain.\cite{Murray2010} 
-
-Egorov \textit{et al.} studied the sensativity of the meling point
-with cluster size, for water clusters from 8 to 40 molecules
-large.\cite{Egorov2002} They observed a nonmonotonic decrease in the melting
-point with growing cluster size, though they concluded this behavior
-might be specific to the size range they investigated. (In a follow up
-study,) Pereyra and Carignano performed molecular simulations of ice
-nanocolumns, where they observed the change in melting point
-depression as they varied the rectangular width of the
-nanostructure.\cite{Pereyra2009} 
-
-Pan \textit{et al.} have recently studied hexagonal ice nanostructures
-in the range of 2nm (768 water molecules) to 8 nm (9600 water
-molecules) using molecular dynamics simulations with the TIP4P water
-model.\cite{Pan2011} These nanostructures exposed both basal and primary
-prism surfaces, as well as two unique edges; one edge where two prism
-surfaces meet at a 120 degree angle, and an edge where a basal and
-prism surface meet at a 90 degree angle. These nanostructures also
-exposed corners where three surfaces intersected, allowing for
-investigation of surface premelting at a variety of low-coordination
-sites.
-
-% this feels a summarizey, might take out the next P.
-They observed that surface premelting occurred first at the corner
-sites, followed by the edge sites, and lastly on the flat surfaces.
-In addition, they also observed a strong size dependence in the
-melting point depression, agreeing well with the classical
-Gibbs-Thomson relation. 
-
-Pan \textit{et al.} observed the nanocrystals ordering decrease with
-increasing temperature, where the overall shape of the crystal
-transitioned from hexagonal to spherical. Interior water molecules
-were found to mantain their tetrahedral ordering up to an undercooling
-temperature of about 5K to 2.5K. In general, they observed surface
-premelting onset between 30 to 40K below the bulk melting point of the
-model, in agreement with NAME and NAME. 
-
-Pan \textit{et al.} observed the potential energy increase with
-increasing temperature up to the melting point of the ice crystals,
-$T^{c}_\mathrm{m}$; at the melting point of the crystals a first-order
-phase transition occurs and the temperature appears to rise
-vertically. From the jumps in temperature, Pan was able to estimate
-the $T^{c}_\mathrm{m}$ for the ice nanocrystals, and saw
-$T^{c}_\mathrm{m}$ decrease with decreasing crystal size. Melting
-point depression that decreases with decreasing size for nanoscale
-clusters of molecules has previoulsy been described by the
-Gibbs-Thomson relation. 
-\begin{equation}\label{GibbsThomson}
-\Delta T^{c}_{m} = T^{b}_{m} - T^{c}_{m} = \frac{\gamma T^{b}_{m} K}{L}
-\end{equation}
-Here, $T^{b}_{m}$ is the bulk melting temperature, $T^{c}_{m}$ is the
-nanocrystal melting temperature, $\gamma$ is the free energy of the
-solid/liquid interface, $K$ is the average curvature of the interface,
-and $L$ is the volumetric latent heat of melting. $K$ can be obtained
-from the ratio of the change in surface area to the change in volume,
-$K = dA/dV$. The accuracy of which the Gibbs-Thomson relation predicts
-melting point depression for ice nanocrystals has been unclear in
-previous studies,\cite{Makkonen2000,Makkonen2002,Della2002,Campbell2002},
-however, Pan \textit{et al.} were able to show their computed
-temperature depressions matched well with the Gibbs-Thomson equation.
-
-Using the local tetrahderal order parameter, Pan \textit{et al.}
-discriminated ice-like and liquid-like water molecules with the
-partitioning criteria of ice-like molecules having $q_{i} \geq 0.91$,
-and all other molecules being considered liquid-like, following Conde
-\textit{et al.}.\cite{Conde2008} Using this criteria, Pan computed the
-thickness of the QLL by
-\begin{equation}
-d_{apparent} = \frac{n_{QLL}M_{H_{2}O}}{2\rho N_{A} \pi r^{2}}
-\end{equation}
-where $n_{QLL}$ is the mean number of liquid-like water molecules
-within a cylinder of radius $r = 0.6$~nm, $M_{H_{2}O}$ is the molar
-mass of water, $\rho$ is the density of TIP4P at it's melting point
-(0.99 g/cm$^{3}$\cite{Bluhm2000,Conde2008}), and $N_{A}$ is Avogadro's number.
-Using this metric, Pan \textit{et al.} estimate the onset temperature
-of the QLL (defined as the temperature at which the QLL becomes 0.1 nm
-thick on the basal plane\cite{Conde2008}), as well as determine the thickness
-of the QLL on the exposed basal and prismatic surfaces of the ice
-nanocrystals. 
-
-With their definition of onset temperature, they observed bulk
-premelting (a comensurate crystal with an exposed basal surface) at
-100K below the melting temperature of the model. For the nanocrystals,
-they observed an onset temperature at about 90K to 95K below the
-melting point of the nanocrystals. 
-
-% for the water model discussion, copied from text
-High melting temperatures (>400 K) predicted by widely used density
-functional theory (DFT) exchange corelation functionals such as
-Perdew-Burke-Ernzerhof (PBE)\cite{Perdew1996} and Becke-Lee- Yang-Parr
-(BLYP)\cite{Becke1988,Sprik1996} are a further reason to favor force fields over
-DFT.\cite{Yoo2009}
-
-%end Pan11 
 
 
 
@@ -2998,3 +2901,111 @@ conclude my work and project towards the future in Chapter
 % surface dangling OH patterning results in a larger surface energy.
 
 %end Pan et al.
+
+
+
+% \subsubsection{Ice Nanostructures}
+% %Pan11 Melting the Ice: On the Relation between Melting Temperature
+% %and Size for Nanoscale Ice Crystals. ACS Nano 5 (2011) 4562-4569
+% While there has been significant progress made on understanding a
+% two-dimensional ice surface exposed to vacuum, less is known on the
+% surface premelting of a three-dimensional ice
+% nanostructure. Understanding premelting of three-dimensional
+% nanostructures is of importance as particles in this size range are
+% commonly found in polar mospheric clouds, at altitudes of 80-90 km,
+% and are known to scatter light from the ice/water interfaces they
+% contain.\cite{Murray2010} 
+
+% Egorov \textit{et al.} studied the sensativity of the meling point
+% with cluster size, for water clusters from 8 to 40 molecules
+% large.\cite{Egorov2002} They observed a nonmonotonic decrease in the melting
+% point with growing cluster size, though they concluded this behavior
+% might be specific to the size range they investigated. (In a follow up
+% study,) Pereyra and Carignano performed molecular simulations of ice
+% nanocolumns, where they observed the change in melting point
+% depression as they varied the rectangular width of the
+% nanostructure.\cite{Pereyra2009} 
+
+% Pan \textit{et al.} have recently studied hexagonal ice nanostructures
+% in the range of 2nm (768 water molecules) to 8 nm (9600 water
+% molecules) using molecular dynamics simulations with the TIP4P water
+% model.\cite{Pan2011} These nanostructures exposed both basal and primary
+% prism surfaces, as well as two unique edges; one edge where two prism
+% surfaces meet at a 120 degree angle, and an edge where a basal and
+% prism surface meet at a 90 degree angle. These nanostructures also
+% exposed corners where three surfaces intersected, allowing for
+% investigation of surface premelting at a variety of low-coordination
+% sites.
+
+% % this feels a summarizey, might take out the next P.
+% They observed that surface premelting occurred first at the corner
+% sites, followed by the edge sites, and lastly on the flat surfaces.
+% In addition, they also observed a strong size dependence in the
+% melting point depression, agreeing well with the classical
+% Gibbs-Thomson relation. 
+
+% Pan \textit{et al.} observed the nanocrystals ordering decrease with
+% increasing temperature, where the overall shape of the crystal
+% transitioned from hexagonal to spherical. Interior water molecules
+% were found to mantain their tetrahedral ordering up to an undercooling
+% temperature of about 5K to 2.5K. In general, they observed surface
+% premelting onset between 30 to 40K below the bulk melting point of the
+% model, in agreement with NAME and NAME. 
+
+% Pan \textit{et al.} observed the potential energy increase with
+% increasing temperature up to the melting point of the ice crystals,
+% $T^{c}_\mathrm{m}$; at the melting point of the crystals a first-order
+% phase transition occurs and the temperature appears to rise
+% vertically. From the jumps in temperature, Pan was able to estimate
+% the $T^{c}_\mathrm{m}$ for the ice nanocrystals, and saw
+% $T^{c}_\mathrm{m}$ decrease with decreasing crystal size. Melting
+% point depression that decreases with decreasing size for nanoscale
+% clusters of molecules has previoulsy been described by the
+% Gibbs-Thomson relation. 
+% \begin{equation}\label{GibbsThomson}
+% \Delta T^{c}_{m} = T^{b}_{m} - T^{c}_{m} = \frac{\gamma T^{b}_{m} K}{L}
+% \end{equation}
+% Here, $T^{b}_{m}$ is the bulk melting temperature, $T^{c}_{m}$ is the
+% nanocrystal melting temperature, $\gamma$ is the free energy of the
+% solid/liquid interface, $K$ is the average curvature of the interface,
+% and $L$ is the volumetric latent heat of melting. $K$ can be obtained
+% from the ratio of the change in surface area to the change in volume,
+% $K = dA/dV$. The accuracy of which the Gibbs-Thomson relation predicts
+% melting point depression for ice nanocrystals has been unclear in
+% previous studies,\cite{Makkonen2000,Makkonen2002,Della2002,Campbell2002},
+% however, Pan \textit{et al.} were able to show their computed
+% temperature depressions matched well with the Gibbs-Thomson equation.
+
+% Using the local tetrahderal order parameter, Pan \textit{et al.}
+% discriminated ice-like and liquid-like water molecules with the
+% partitioning criteria of ice-like molecules having $q_{i} \geq 0.91$,
+% and all other molecules being considered liquid-like, following Conde
+% \textit{et al.}.\cite{Conde2008} Using this criteria, Pan computed the
+% thickness of the QLL by
+% \begin{equation}
+% d_{apparent} = \frac{n_{QLL}M_{H_{2}O}}{2\rho N_{A} \pi r^{2}}
+% \end{equation}
+% where $n_{QLL}$ is the mean number of liquid-like water molecules
+% within a cylinder of radius $r = 0.6$~nm, $M_{H_{2}O}$ is the molar
+% mass of water, $\rho$ is the density of TIP4P at it's melting point
+% (0.99 g/cm$^{3}$\cite{Bluhm2000,Conde2008}), and $N_{A}$ is Avogadro's number.
+% Using this metric, Pan \textit{et al.} estimate the onset temperature
+% of the QLL (defined as the temperature at which the QLL becomes 0.1 nm
+% thick on the basal plane\cite{Conde2008}), as well as determine the thickness
+% of the QLL on the exposed basal and prismatic surfaces of the ice
+% nanocrystals. 
+
+% With their definition of onset temperature, they observed bulk
+% premelting (a comensurate crystal with an exposed basal surface) at
+% 100K below the melting temperature of the model. For the nanocrystals,
+% they observed an onset temperature at about 90K to 95K below the
+% melting point of the nanocrystals. 
+
+% % for the water model discussion, copied from text
+% High melting temperatures (>400 K) predicted by widely used density
+% functional theory (DFT) exchange corelation functionals such as
+% Perdew-Burke-Ernzerhof (PBE)\cite{Perdew1996} and Becke-Lee- Yang-Parr
+% (BLYP)\cite{Becke1988,Sprik1996} are a further reason to favor force fields over
+% DFT.\cite{Yoo2009}
+
+% %end Pan11 
