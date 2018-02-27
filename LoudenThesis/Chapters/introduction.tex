@@ -1820,23 +1820,30 @@ unique.
 \subsubsection{Investigations of the Quasi-Liquid Layer}
 % Ice Surfaces by Mary Jane Shultz, Ann Rev Phys Chem
 Significant evidence has been given indicating the existence of a
-surface premelt quasi-liquid layer on ice. Experimentally,
-investigations using glancing angle X-ray\cite{Lied1994, Dosch1995},
+surface premelt quasi-liquid layer on ice. Investigations have been
+performed using glancing angle X-ray\cite{Lied1994, Dosch1995},
 SFG\cite{Wei2001}, He atom scattering\cite{Suter2006}, atomic force
 microscopy\cite{Goertz2009,Doppenschmidt2000},
 ellipsometry\cite{Furukawa1997}, photoelectron
 spectroscopy\cite{Bluhm2002}, nuclear magnetic resonance
-(NMR)\cite{Dec2009,Dec2012}, and differential interference
+(NMR)\cite{Dec2009,Dec2012}, computational
+techniques\cite{Conde2008,Neshyba2009,Gladich2011,Pfalzgraff2011,Gladich2015,Park2010,Shepherd2012,Limmer2014,Persson2015}
+and differential interference
 contrast\cite{Sazaki2012,Asakawa2016,Sazaki2013} all point towards a
 surface premelt. However, there is a large spread in reported onset
 temperatures, from 200~K to 260~K. Since each technique used probes
 different properties of the surface molecules, the observed onset
 temperature of the QLL is dependent on the temperature at which those
-properties deviate from their solid values. Also, many have argued
-that small amounts of contamination could result in drastically
-varying results.\cite{Elbaum1993,Wettlaufer1999} Computational
-investigation also predict the onset of a surface premelting
-layer.\cite{Conde2008,Neshyba2009,Gladich2011,Pfalzgraff2011,Gladich2015,Park2010,Shepherd2012,Limmer2014,Persson2015}
+properties deviate from their solid values. Surface techniques which
+probe structural changes tend to be more sensitive and usually suggest
+lower temperatures for the onset of the premelting. Contrary to this,
+techniques which probe bulk properties of the film require a larger
+number of molecules for signal generation, and tend to yield warmer
+temperatures for the onset. Also, many have argued that small amounts
+of contamination could result in drastically varying
+results.\cite{Elbaum1993,Wettlaufer1999} Given all of this, the
+commonly compared against onset temperature for the QLL is around
+243~K.
 
 However, while there is general agreement on the existence of a
 surface premelt, there is considerable disagreement about its
@@ -1854,497 +1861,168 @@ the nature of this interesting phenomenon.
 
 
 \begin{flushleft}
-\textit{Experimental Investigations}
+\textit{Formation of the Quasi-Liquid Layer}
 \end{flushleft}
-
 
 Sum frequency generation (SFG) spectroscopy is able to probe the
 orientational disorder of molecules at a surface. The basal surface of
-ice-I$_\mathrm{h}$ is known to present dangling or 'free' O-H bonds
+ice-I$_\mathrm{h}$ is known to present dangling or `free' O-H bonds
 normal to the interface. The orientational order of these dangling
 bonds can be probed using SFG spectroscopy, and observing the
 temperature at which the intensity of the SFG signal decreases can
-estimate the onset of the QLL. Name and Name have probed the basal
-surface using this technique for temperatures betwen 173-271
-K~.\cite{Wei2001,Wei2002} They observed that the disorder became apparent
-as the temperature approaches 200 K~, and increased with warmer
-temperatures.  These results indicate that the structural ordering
-decreases in a continuous fashion from bulk ice to the liquid-like
-layer, which also agree with results from proton channeling and
-glancing-angle X-ray scattering.\cite{Golecki1978,Dosch1995} Using
-molecular dynamics simulations, Ikeda-Fukazawa and Kawamura found
-molecules present on the surface of a basal plane with large
-vibrational and rotational motions at temperatures well below the bulk
-melting temperature.\cite{Ikeda-Fukazawa2004} Their results supported
-the continous variation of structural ordering across the qausi-liquid
-layer observed by the SFG spectroscopy.
+estimate the onset of the QLL.
 
+Wei \textit{et al.} have probed the O-H bonds at the basal surface
+using SFG spectroscopy for temperatures betwen 173~K and
+271~K.\cite{Wei2001,Wei2002} They observed that the disorder became
+apparent as the temperature approached 200~K, and increased with
+warmer temperatures.  These results indicate that the structural
+ordering decreases in a continuous fashion from bulk ice to the
+liquid-like layer, which also agrees well with results from proton
+channeling and glancing-angle X-ray
+scattering.\cite{Golecki1978,Dosch1995} Using molecular dynamics
+simulations, Ikeda-Fukazawa and Kawamura also observed water molecules
+with large vibrational and rotational motions on a basal surface of an
+ice-I$_\mathrm{h}$ crystal at the same
+temperatures.\cite{Ikeda-Fukazawa2004} Their results supported the
+continous transition of structural ordering across the qausi-liquid
+layer.
 
-
-Both experiment and theory agree that the thickness of the QLL on ice
-increases approaching T$_\mathrm{m}$, and values have been reported
-between 2 nm to over 45 nm at 271~K. Part of the reason for the
-discrepency is due to the definition of what molecules constitute a
-QLL, as well as the probe used to measure the molecules. Most
-experimental measurements observed a gradual and continuous increase
-in the QLL width with increasing temperature to T$_\mathrm{m}$,
-however, simulations by Kreos \textit{et al.} predicted the melting
-occurs in a bilayer-to-bilayer manner. This result was recently
-confirmed by Sa'nchez \textit{et al.}, where they probed the QLL
-molecules using sum frequency generation spectroscopy to probe the
-hydrogen-bonded OH stretch frequency between temperatures of 235~K
-and 273~K, the temperature range where many agree the surface
-premelting occurs at.
+In contrast, simulations by Kroes \textit{et al.}  predicted the
+melting occurs in a bilayer-to-bilayer manner.\cite{Kroes1992} Using
+the TIP4P potential, he observed a sudden transition in the
+polarisation of the surface between 210~K and 230~K.  The step-wise
+surface melting was recently observed by Sanchez \textit{et al.};
+using SFG spectroscopy, they probed the hydrogen-bonded OH stretch
+frequency between temperatures of 235~K and 273~K.\cite{Sanchez2017}
+They observed a sudden increase in the width of the surface premelt
+around 257~K, which occurs in a bilayer-by-bilayer manner. 
 
 \begin{flushleft}
-\textit{Computational Investigations}
+\textit{Width of the Quasi-Liquid Layer}
 \end{flushleft}
 
-% PRL 117, 096101 (2016) 
-% Premelting-Induced Smoothening of the Ice-Vapor Interface
-Benet \textit{et al.} computer simulations of the QLL of ice fromed on
-the primary prismatic facet of an ice-I$_\mathrm{h}$ crystal at the
-ice-vapor interface close to the ice-I$_\mathrm{h}$-liquid-vapor
-triple point of water.\cite{Benet2016} They found that close to the
-triple point(2K below it), the QLL on the prismatic face behaves as
-two independent interfaces, the ice-water interface and at further
-distances normal to the surface, the water-vapor interface. This
-result was prominent for small wavelengths, but observing over large
-wavelengths the two interfaces smooth into one gradual interface at
-long wavelengths.
+Using molecular dynamics simulations, Benet \textit{et al.} studied
+the fluctuations at the ice / quasi-liquid layer, and the quasi-liquid
+layer / vapor interfaces.\cite{Benet2016} Using a structural order
+parameter, they estimated the width of the surface premelt to be
+$\sim$ 0.9~nm, agreeing with other computational
+predictions\cite{Conde2008,Bishop2009,Pan2011} and experimental
+observations of Bluhm \textit{et al.}\cite{Bluhm2002}, Beaglehole and
+Wilson\cite{Bealgehole1993}, and Murata \textit{et
+  al.}\cite{Murata2015}. Close to the triple point (2~K below it),
+Benet found that the surface premelt of the prismatic face behaves as
+two independent interfaces. They also observed that the two interfaces
+fluctuated independently of one another, and the QLL / vapor interface
+behaved almost indistinguishably like a bulk-water / vapor interface.
 
-Ice crystal morphologies grown from bulk vapor change from plates, to
-columns, to plates, and back to columns as the temperature is cooled
-down below the triple point, and dendrites can form at high
-saturations.\cite{K. G. Libbrecht, Rep. Prog. Phys. 68, 855 (2005).}
-The varying crystalline morphologies are attributed to the crossover
-in growth rates of the basal and prismatic faces, however, we do not
-currently understand what structural transformation at the surface to
-drive the crossover in growth rates.\cite{1,2,4,5} Kuroda and Lacmann
-have attributed the crossover in crystal growth rates to be due to the
-fact that QLL formation occurs at different temperatures for different
-exposed crystal facets.\cite{6} (Name and Name have determined QLL
-formation to occur at T1 and T2 for basal and prismatic respectively,
-where the higher energy pyramidal and secondary prism surface exhibit
-premelting at T3 and T4.)
+Conde \textit{et al.} performed an in-depth analysis of the surface
+premelt using the SPC/E, TIP4P, TIP4P/Ice, and the TIP4P/2005 water
+models for the basal, prismatic, and secondary prismatic surfaces of
+an ice-I$_\mathrm{h}$ crystal.\cite{Conde2008} They found that when
+compared at the same temperature of undercooling relative to the
+model's melting point, each model predicted the same width of the
+quasi-liquid layer. In addition, they observed facet dependent onset
+temperatures for the quasi-liquid layers. This agreed well with 
+optical reflection experiments, which showed a temperature
+dependence of the QLL thickness with the exposed
+crystal facet.\cite{Elbaum1993} 
 
-Experimental observations of the QLL on ice\cite{8-14}, though the
-presence of impourities has a very large impact on the surface
-structure.\cite{12,15} Due to the large perturbations made by these
-impurities, and the vast array of probes used to study the QLL,
-properties such as the premelting temperature and thickness of the QLL
-is still highly debated.\cite{8} 
-
-Benet \textit{et al.} used the TIP4P/2005 water model. Interrogating
-water molecules to determine if they are a part of the QLL or that of
-ice was performed using the q$_{6}$ order parameter\cite{42}, which
-was later optimized to differentiate betwee icelike and waterlike
-molecules via correlations of the second nearest neighbors.\cite{43}
-Using this parameter, Benet observed an average QLL thickness of
-0.9~nm, agreeing with experimental observations\cite{12,14} and
-computer simulations.\cite{38-40} Using the q$_{6}$ order parameter,
-the ice-liquid and liquid-vapor interfaces were determined, and each
-surface was Fourier transformed to give the spectrum of surface
-fluctuations.
-
-Analyzing the Fourier transformed surfaces, they found that for QLL
-films less than 1 nm thick, the ice-QLL and QLL-vapor interfaces
-fluctuated independently, and were hardly distinguishable from those
-of bulk water-vapor interfaces. sine-Gordon model of the solid-liquid
-interface\cite{20,45}
-% end PRL 117, 096101 (2016)
+Understanding the onset temperatures of the quasi-liquid layer for the
+different facets of ice-I$_\mathrm{h}$ is necessary for understanding
+crystal growth.  Ice crystals grown from bulk vapor change
+morphologies as the temperature is cooled below the triple
+point. Plates and columns are observed to alternate as the dominant
+structure, and dendrites have been observed at high
+saturations.\cite{Libbrecht2005} These varying crystal structures are
+attributed to a crossover in the growth rates of the basal and
+prismatic faces. However, we do not currently understand what
+structural transformation occurs at the surface to drive the
+crossover.\cite{Libbrecht2005,Furukawa2007,Liu1995} Kuroda and Lacmann
+have attributed the crossover to differential QLL formation
+temperatures for different exposed crystal facets.\cite{Kuroda1982}
 
 
-% The thickness of a liquid layer on the free surface of ice as
-% obtained from computer simulation. M.M.Conde, C.Vega, A.Patrykiejew
-% JCP 129, 014702 (2008)
-%Outstanding references and background
-Molecular dynamics simulations of ice-I$_\mathrm{h}$ with a free
-surface were performed using the SPC/E, TIP4P, TIP4P/Ice, and
-TIP5P/2005 water models. The basal, prismatic, and secondary prismatic
-surfaces exposed to vacuum were analyzed. Conde \textit{et al.}
-observed that the thickness of the liquid like layer that develops on
-the surface of the ice is of approximate thickness for a given plane
-across all water models, when comparison is made at the same relative
-undercooling temperature for the water models.\cite{Conde2008} In all cases the width
-of the liquid layer is found to increase with increasing
-temperature. For a given temperature, the following trend in QLL
-thickness was observed, the basal plane > the primary prismatic plane
-> the secondary prismatic plane. For the TIP4P/Ice model, the onset
-temperature of the QLL was observed at -100 degrees Celcius for the
-basal plan, -80 degrees Celcius for the primary prismatic plane, and
--70 degrees Celcius for the secondary prismatic plane. NVT simulations
-between 6 and 12 ns. To discriminate icelike and liquidlike water
-molecules, they have used the local tetrahedral order parameter of
-Errington and Debenedetti. However, their values are locked at only
-the four closest neighbors. 
-
-Conde \textit{et al.} have computed probability densities of the local
-tetrahedral order parameter, $p(q)$, for both a bulk liquid and bulk
-icesystem for all the models investigated. The TIP4P model results
-were almost indistinguishable, and the SPC/E model results were in
-good agreement with the TIP4P/Ice results considering the large
-discrepency between the melting points of the models. However, there
-is visible overlap between the bulk liquid and bulk ice distributions,
-making discrimination between icelike and liquidlike molecules
-difficult. Therefore, they defined a cutoff value of $q$, denoted
-$q_{t}$, where molecules with $q < q_t$ are denoted to be liquid-like,
-and molecules found with $q > q_t$ are denoted as ice-like. 
-\begin{equation}
-\int_{q_t}^{1} p_{liquid}(q)dq = \int_{0}^{q_t} p_{I_h}(q)dq
-\end{equation}
-Here, $\int_{q_t}^{1} p_{liquid}(q)dq$ is the probability of
-incorrectly assigning a liquidlike water molecule as icelike, and
-similarly $\int_{0}^{q_t} p_{I_h}(q)dq$ is the probability of
-incorrectly assigning an icelike water molecule as
-liquidlike. Graphically, $q_t$ is the value of $q$ where the area
-under the $p_{liquid}(q)$ curve to the left of $q_t$ is equal to the
-area under the $p_{I_h}(q)$ curve to the right of $q_t$.  The values
-for $q_t$ were found to be approximately the same for each model
-investigated, with $q_t$ (SPC/E) $\sim 0.9101$ and
-$q_t$ (TIP4P/Ice) $\sim 0.9076$. 
-
-The width of the QLL was obtained by
-\begin{equation}
-\delta =
-\frac{N_\mathrm{liquid}M}{2\rho N_\mathrm{AV}L_\mathrm{y}L_\mathrm{z}}
-\end{equation}
-where $N_{liquid}$ is taken to be the average number of liquid-like
-molecules during the simulation, $M$ is the molecular weight of water,
-$N_{AV}$ is Avagadro's number, the product $L_yL_z$ is the area of the
-exposed crystal face, and $\rho$ is the density of liquid water. The
-factor of 2 in the denominator accounts for the two interfaces which
-are presented by the crystal in the simulation cell. However, their
-definition of the thickness of the QLL is inherently flawed in the
-following way. Since their definition of liquid-like molecules comes
-from their local tetrahedral order number which assumes four nearest
-neighbors, molecules at the surface of the crystal will have an
-artificially low value for $q$ and be labled as liquid-like, even
-though their structure (based on angles between neighbors) is
-indicitive of an icelike environment. A rescaling based on the number
-of neighbors present would give a more accurate result. 
-
-Conde \textit{et al.} also considered a dynamic criteria for whether a
-water molecule is liquidlike or icelike. They computed the mean-square
-displacement of each water molecule, and compared these values to
-reference data of the TIP4P/2005 water model mean-square displacement
-of bulk ice and bulk liquid water simulations. They quantified an
-icelike molecule to have a mean-square displacement of less than 1
-\AA~ after 400ps, and classified molecules as liquidlike if their
-mean-square displacement was greater than 1 \AA~ otherwise. While the
-structural and dynamic widths are not precisely the same, they are on
-the same order of magnitude, similar to our own results. 
-%end Conde2008
-
-
-\subsubsection{Width of the Quasi-Liquid Layer}
-Many surface science techniques have been used to quantify the
-temperature dependence of the quasi-liquid layer
-thickness.\cite{Kouchi1987,Golecki1978,Dosch1995,Beaglehole1980, Bluhm1999,
-  Bluhm2002, Furukawa1987, Elbaum1993, Dosch1996, Doppenschmidt2000,
-  Kaverin2004, Lied1994} While each unique technique probes a different property of
-the surface, thus developing a unique metric for whether the QLL has
-developed, there is common agreement that the onset temperature is
-around 243 K~. However, since the techniques probe different aspects
-of the surface, there is disagreement in the temperature dependence of
-the thickenss of the QLL. Surface techniques which probe structural
-changes tend to be more sensitive and usually suggest lower
-temperatures for the onset of the premelting. Contrary to this,
-techniques which probe bulk properties of the film require a larger
-number of molecules for signal generation, and tend to yield warmer
-temperatures for the onset. Due to these discrepencies, reported
-values for the QLL width range over 2 orders of magnitude at a given
-temperature.\cite{Rosenberg2005,Dosch1996}
-
-Optical reflection experiments have shown that the temperature
-dependence of the QLL thickness varies depending on the exposed
-crystal facet.\cite{Elbaum1993} While there has been considerable improvement
-on the ability to grow crystals of ice exposing single
-faces,\cite{Shultz2014, Shultz2017}, many experiments performed have studied
-polycrystaline ice surface.
-
-Even if one is able to grow a well behaved crystal of ice exposing a
-single facet, surface contamination has been found to considerably
-alter the surface properties and characteristics. J. Wettlaufer
-concluded that the thickness of the QLL would be sensative to
-impurities by METHOD HERE.\cite{Wettlaufer1999} Similarly, M. Elbaum observed
-promotion of surface melting when exposed to air via optical
-reflection experiments.\cite{Elbaum1993} 
-
-
-
-%
-%
-%D. Beaglehol, P. Wilson, JPC 1993, 97, 11053-11055 1993.
-
-Ellipsometry provides a measure of the dielectric constant profile through an interface, so observing the spatial transition yields an interfacial thickness. "Ellipsometry determines the state of polarization of light reflected from an interface and is a sensative tool for the analysis of surface absorbants." At the Brewster angle, the imaginary component of the ratio of the p and s wave reflection amplitudes gives the coefficient of ellipticity, or ellipticity for short. The magnitude and sign of the ellipticity ($\rho$) helps build a model to describe the transition region of the interface.
-
-They measured a small negative ellipticity at the ice/water interface, changing the thermal gradient over the sample did not change the value of $\rho$  
-
-~550nm light was used.
-
-Since water molecules are non-spherically symmetric, they are weakly
-optically anisotropic. For ice, the optic axis lies in the c
-direction, normal to the basal face (denoted the z-axis
-here). $\epsilon_{x}$ = 1.7136 and $\epsilon_{z}$ = 1.709, and water
-of course is isotropic with $\epsilon$ = 1.778, but as water molecules
-take up orientational order through the transition region, some
-anisotropy is likely to develop. This is assuming that the outtermost
-part of the QLL is completely bulk liquid-like, and is not influenced
-by the underlying ice.
-
-Ellipsometry measurements indicate the surface premelting layer of the basal and prismatic surfaces of ice are both approximately 10 angstroms thick.
-
-The prism QLL was found to have roughly twice as much anisotropy to it
-than the basal does, indicated by the sign of the ellipticity
-measurement.
-% end D. Beaglehol, P. Wilson, JPC 1993, 97, 11053-11055
-\subsubsection{Structure and Dynamics of the Quasi-Liquid Layer}
-
-%Anisotropy in structural phase transitions at ice surfaces: a
-%molecular dynamics stdy. H. Nada and Y. Furukawa, 1997, Applied
-%Surface Science, 121/122, 445-447. Nada1997
-720 water molecules in each ice slab, exposing the basal and prismatic
-surfaces. basal system was (22.4 x 23.3 x 43.8) \AA and the prismatic
-system was (22.4 x 21.9 x 46.6) \AA. The TIP4P water model was
-used. Simulations were performed between temperatures of 220 and 250
-K, in incrementes of 5 K. NVT simulations performed. To estimate the
-thickness of the quasi-liquid layer, root mean square fluctuations in
-the oxygen-oxygen length between molecules was calculated for bins of
-molecules normal to the interface.
-\begin{equation}\label{eqNada1997-1}
-\delta = \frac{2}{n(n-1)} \sum_{i<j}^{n}
-\frac{\sqrt{<r_{ij}^{2}>-<r_{ij}>^{2}}}{<r_{ij}>}
-\end{equation}
-Here, $n$ denotes the number of water molecules, $r_{ij}$ the distance
-between oxygen atoms of water molecules $i$ and $j$ respectively, and
-the angle brackets denote a times average. For a slice of molecules
-with a $\delta \ge 0.1$, they are denoted as satisfying the criteria
-to be a quasi liquid layer. This criteria is known as the Linemann
-criterion (ref. 11 therein). Nada and Furukawa estimated the width of
-the QLL to be about 11.5 \AA for the basal ice/vapor interface, and 9
-\AA for the prismatic interface, respectively. They also observe
-increasing QLL thickness with increasing temperature. Also, for low
-temperatures, they observed the prismatic surface having a thicker
-QLL, while at higher temperatures, the basal QLL was predicted to be
-thicker, with the transition occurring around 235~K. \cite{Nada1997}
-%end Nada1997
-
-% Anisotropic Surface Melting of an Ice Crystal and its Relationship
-% to Growth Forms. Y. Furukawa and H. Nada. J. Phys. Chem. B 1997,
-% 101, 6167-6170.
-Experiments have shown that anisotropic surface mleting occurs on the
-surface of the basal and prismatic faces of an ice crystal, just below
-the melting point. That is, at temperatures approaching the melting
-point, the basal QLL is thicker than the prismatic QLL. 
-
-A nice summary of ellipsometry measurements is given in the
-intro. References 12 and 14 therein, simultaneously measured both the
-thickness of the QLL as well as the index of refraction of the
-transition layer on the ice surface using null elipsometry (what is
-null elipsometry). From -2 degrees Celcius, the thickness of the QLL
-steeply increased with increasing temperature. The index of refraction
-was found to be 1.330 (which converts to a density of 991
-$kg/m^{3}$. Comparitively, the index of refraction for water is 1.333
-and bulk ice is 1.308. The QLL thickness of the prismatic facet was
-found to be proportional to $delta T ^{-1/3}$ above -2 degrees
-celcius, while the basal temperature dependence was much steeper. They
-also observed a flat facet at the melting point for the basal face,
-however, the prismatic facet exhibited a rounded surface at -2C. Thus
-a roughening transition is beleived to occur on the prismatic facet
-while not on the basal facet.\cite{Furukawa1997} 
-
-Current work, TIP4P water model for 720 water molecules. At 250~K, the
-basal face has a thinner QLL than the prismatic. This turns over at
-260~K where they are approximately equal width, and at warmer
-temperatures the basal is observed to have a thicker QLL. Furukawa and
-Nada used the $S$ order parameter of Karim and Haymet which depends on
-the orientational ordering of neighboring molecules.\cite{Karim1988}
-This parameter is unity for an ordered arrangement of water molecules
-in an ice crystal, and $\approx$ 0.3 for a random
-arrangement. Furukawa and Nada defined QLL to be present only if a
-slice of water molecules had $S \le 0.1$. References 18 and 22 therein
-describe the basal/water interface as being smooth, while the
-prismatic/water interface as being diffuse. In addition, reference 22
-shows that the basal facet grows in a layer-by-layer process while the
-prismatic facet grows by a collective incorporation process. 
-%end Furukawa1997
-
-% Arrhenius analysis of anisotropic surface self-diffusion on the
-% prismatic facet of ice. Gladich11, PCCP (2011), 13, 19960-19969
-Using the six-site water model of Nada and van der Eerden (NE6),
-Gladich \textit{et al.} studied surface diffusion of qll water
-molecules on the prismatic surface of an ice-I$_\mathrm{h}$
-crystal.\cite{Gladich2011} Molecules were determined to be part of the
-QLL based on a local tetrahedral order parameter, and only those
-molecules considered QLL were incorporated into the calculations. They
-investigated diffusion over a wide range of temperatures, from 230K to
-287K, which varies from -59K to -2K of undercooling, when compared
-with the NE6 model's melting point of 289K. The NE6 model overpredicts
-the melting point due to the over structuring of water with the model.
-
-Their results indicated a positive Arrhenius curvature, suggesting the
-mechanism of self-diffusion changes with increasing temperature. As
-this transition occurs, the energy of activation is also seen to
-increase from 29.1 kJ mol$^{-1}$ at low temperatures to 53.8 kJ
-mol$^{-1}$ at temperatures close to the melting point. The
-self-diffusion is also seen to be anisotropic at low temperatures
-(around XX K), and transitions to isotropic around 240-250K. 
-
-Using the local tetrahedral order parameter NOT modified for varying
-number of local neighbors. They note that due to this, their estimates
-of 
 
 \subsubsection{Anisotropic Diffusion of the QLL}
-One dimensional diffusion coefficients (D$_\mathrm{i}$) were computed
-via the Einstein's relation\cite{Allen1987}
-\begin{equation}
-D_{i} = \frac{1}{2} \frac{dMSD_{i}(t)}{dt}
-\end{equation}
-where MSD$_\mathrm{i}(t)$ is the mean square displacements as a
-function of time. Gladich \textit{et al.} were careful to exclude any
-sublimating water molecules from being included in their calculation,
-as these molecules move considerably further distances in time than
-their condensed phase counterparts. These MSD$_\mathrm{i}(t)$ were
-staggered in starting time by 20~ps, averaged, and from this average
-MSD$_\mathrm{i}(t)$ the $D_\mathrm{i}$ were obtained by fitting the
-linear portion of the MSD$_\mathrm{i}(t)$ plots, between 5 and 25
-ns. However, they argue the obtained $D_\mathrm{i}$ values need
-correction, as the molecules residing in the solid ice, and ice-like
-molecules within the QLL are incorporated into the calculation of
-$D_\mathrm{i}$ through MSD$_\mathrm{i}(t)$ at this point. They assume
-only liquid-like molecules in the QLL contribute to the surface
-diffusivity, and compute surface diffusion constants
-$D^{*}_\mathrm{i}$ according to\cite{Pfalzgraff2011}
-\begin{equation}\label{D*}
-D^{*}_\mathrm{i} = D_\mathrm{i}/Q
-\end{equation}
-where $Q$ is the mean number of molecules classified as liquid-like
-($N_\mathrm{LL}$) divided by the total number of molecules in the
-system ($N_\mathrm{Slab}$). They obtain $Q$ by the following simple
-ration, where they exclude sublimating molecules ($N_\mathrm{EV}$
-since they were removed from the MSD$_\mathrm{i}(t)$ calculations
-earlier.
-\begin{equation}
-Q = \frac{N_\mathrm{LL} - N_\mathrm{EV}}{N_\mathrm{Slab} -
-  N_\mathrm{EV}}
-\end{equation}
-This approach to obtaining the scaling parameter $Q$ improves upon the
-method of Pfalzgraff \text{et al.}\cite{Pfalzgraff2011}, where they included every
-molecule in one ice bilayer, including those that had
-sublimated. Using eq. \eqref{D*}, Gladich \textit{et al.} were also
-able to compute two-dimensional surface diffusion constants.
-\begin{equation}
-D^{*}_\mathrm{ij} = (D^{*}_\mathrm{i} + D^{*}_\mathrm{j}) / 2
-\end{equation} 
+While probing the dynamics of molecules in the quasi-liquid layer,
+Pfalzgraff, Neshyba, and Roeselova discovered anisotropic diffusion on
+the surfaces of the prismatic, 14\degree~ and 28\degree~ pyramidal
+facets.\cite{Pfalzgraff2011} They attributed the observed anisotropy
+to the underlying surface features. The prismatic and pyramidal
+surfaces present large channels to the QLL, and the energy
+required for diffusion along the channel was observed to be smaller
+than traversing across. Even though the basal face presents a
+non-uniform surface to the QLL, isotropic diffusion was observed. They
+argued that the barrier for diffusion in each of the non-uniform
+directions was much closer in energy, and readily available for
+molecules at the simulated temperature.
 
-Observing the density of the crystal at partitions transverse to the
-interface, Gladich observed the prismatic surface QLL grows
-continuously with increasing temperature. At the lowest temperatures
-investigated, 230~K, only the outermost bilayer was observed to
-participate in the formation of the QLL. At two degrees below the
-melting point of the NE6 model, the density profiles indicated that
-the two outermost bilayers both are involved in the QLL
-formation. This result was similar to those seen by Bishop \textit{et
-  al.}, who studied the basal ice surface also using the NE6 water
-model. These results also agree with those reported by Conde
-\textit{et al.}, who studied QLL on the basal, prismatic, and
-secondary prismatic using the SPC/E, TIP4P, TIP4P/Ice, and TIP4P/2005
-water models.\cite{Conde2008} 
-
-Gladich \textit{et al.} estimated QLL thickness ($\delta$) relating
-the number of liquid-like quasi-liquid layer molecule
-($N_\mathrm{LL}$) to the number of water molecules in a bulk liquid
-with box dimensions of $L_\mathrm{x}L_\mathrm{y}\delta$,
-\begin{equation}
-\delta =
-\frac{N_\mathrm{LL}M}{2\rho N_\mathrm{A}L_\mathrm{x}L_\mathrm{y}}
-\end{equation}
-where $M$ is the molar mass of water, $N_{A}$ is Avogadro's number,
-and $\rho$ is the density of liquid water; the factor of two accounts for
-the two interfaces presented by the QLL simulations. Using the
-values of $\rho$ reported by Nada and van der Eerden for supercooled
-liquid water with the NE6 potential,\cite{Nada2003} Gladich computed
-$\delta$ at each temperature investigated, and found the QLL to
-increase from 3.2 \AA~ wide at 59K of undercooling to 7.4 \AA~ at two
-degrees of undercooling.  
-
-They note a low value of $q$ can be obtained for water molecules
-encorporating an amorphous solid, in which water molecules are four
-coordinate, but are not structured in a tetrahedral arrangement but
-instead in a distorted tetrahedron. 
-
-Conde \textit{et al.} studied surface QLL on the prismatic facet using
-the TIP4P/Ice water model,\cite{Conde2008} and it was found that the NE6
-model systematically predicts a lower QLL thickness, due to the
-overstructuring of water. Based on their discrimination of
-N$_\mathrm{LL}$ molecules given $q_\mathrm{t}$, the NE6 model was
-found to have a larger value for $q_\mathrm{t}$, which would thus
-result in fewer molecules being considered QLL.
-
-Gladich \textit{et al.} watched movement of water molecules in the QLL
-along each axis independently, and found at low temperatures that
-movement normal to the interface happened in concert with large
-displacements in the normal plane, even when the normal motion is
-still well within the defined QLL. Therefore, these motions transverse
-to the interface will largely influence surface diffusion of the
+In a follow up study, Gladich \textit{et al.} watched the movement of
+water molecules in the quasi-liquid layer along each axis
+independently, and found at low temperatures that movement normal to
+the interface happened in concert with large displacements in the
+normal plane, even when the normal motion was still well within the
+QLL.\cite{Gladich2011} Therefore, these motions normal to
+the interface will largely influence surface diffusion of the
 molecules. These motions were in good agreement with the diffusion
-mechanism proposed by Bishop \textit{et al.}\cite{Bishop2009} and by Bolton
-and Pettersson\cite{Bolton2000}, which suggested the outtermost molecules of
-the QLL moved across a relatively rigid surface. Diffusion
-characterized in this way will be highly sensative to the underlying
-surface morphology and topography, mainly, if the surface geometry or
-potential energy surface is anisotropic, we should expect diffusion
-across this surface to also be anisotropic. 
+mechanism proposed by Bishop \textit{et al.}\cite{Bishop2009} and by
+Bolton and Pettersson\cite{Bolton2000}, which suggested the outtermost
+molecules of the QLL moved across a relatively rigid
+surface. Diffusion characterized in this way will be highly sensative
+to the underlying surface morphology and topography, mainly, if the
+surface geometry or potential energy surface is anisotropic, we should
+expect diffusion across this surface to also be anisotropic. XXX
 
 Observations that in-plane diffusion follows motions transverse to the
-interface were observed at the warmer temperature as well. Through
-this vertical motion, the QLL molecule leaves a well-hydrated local
-environment to the outter portion of the surface where there are fewer
-hydrogen bond partners. Gladich notes that the activation energy for
-diffusion at the warmer temperature might actually be larger than that
-for the colder. With increasing temperature and a thicker
+interface were observed at warmer temperatures as well. Through this
+vertical motion, the QLL molecule leaves a well-hydrated local
+environment, moving to the outter portion of the surface where there
+are fewer hydrogen bond partners. Gladich concludes the activation
+energy for the high-temperature mechanism for diffusion is greater
+than that of the low-temperature. They further estimate these values
+to be 29.1 kJ mol$^{-1}$ for $E_\mathrm{a}$ the low-temperature
+(approximately the energy of on hydrogen bond with the NE6 model, to
+53.8 kJ mol$^{-1}$ at temperatures close to the melting point (roughly
+two hydrogen bonds).  With increasing temperature and a thicker
 surface premelting forming, the differing surface topography is masked
 and thus there is no observed anisotropy in surface diffusion.
 
-Plotting the surface diffusion along the two axis independentally
-($D^{*}_\mathrm{x}$, $D^{*}_\mathrm{z}$) against inverse temperature,
-the activation energy ($E_\mathrm{a}$) for the diffusion was
-extracted. Since the curvature of ln$D^{*}$ by inverse temperature is
-positive, Gladich concludes the activation energy for the
-high-temperature mechanism for diffusion is greater than that of the
-low-temperature. They further estimate these values to be 29.1 kJ
-mol$^{-1}$ for $E_\mathrm{a}$ the low-temperature (approximately the
-energy of on hydrogen bond with the NE6 model, 24.5 kJ mol$^{mol-1}$) and 24.5 kJ
-mol$^{-1}$ for that of the high-temperature (roughly two hydrogen bonds). 
-
-Nasello \textit{et al.} investigated surface diffusivity of ice by
-observing the formation of grain boundaries on polycrystalline ice
-surfaces.\cite{Nasello2007} Gladich's computed values for surface diffusivity
-agree well with those by Nasello as Gladich's values fall within the
-error bars reported by Nasello. Gladich's work agrees well with the
-experimental work reported by Price \textit{et al.}\cite{Price1999},
-especially at warmer temperatures. At cooler temperatures however,
-Gladich seems to underestimate surface diffusivity.
+Querrying the molecule's distance from the ice surface they proposed a
+mechanism for the observed anisotropic diffusion, and arrenhius
+behavior.\cite{Gladich2015} Nasello \textit{et al.} investigated
+surface diffusivity of ice by observing the formation of grain
+boundaries on polycrystalline ice surfaces.\cite{Nasello2007}
+Gladich's computed values for surface diffusivity agree well with
+those by Nasello as Gladich's values fall within the error bars
+reported by Nasello. Gladich's work agrees well with the experimental
+work reported by Price \textit{et al.}\cite{Price1999}, especially at
+warmer temperatures. At cooler temperatures however, Gladich seems to
+underestimate surface diffusivity.  Following these works, Wang
+\textit{et al.} investigated the activation energy for diffusion of
+quasi-liquid layer molecules at a secondary prismatic ice
+surface.\cite{Wang2017}
 
 It is interesting to note that at warm temperatures, simulations of
-supercooled bulk liquid\cite{Picaud2006,Mahoney2001} have also reproduced surface
-diffusivity measured by Price \textit{et al.}. However, the
-supercooled bulk liquid simulations predict a negative Arrhenius
-curvature, implying the activation energy of diffusion decreases with
-increasing temperature, opposite of that observed by Price \textit{et
-  al.} and predicted by Gladich \textit{et al.}. Given the difference
-in sign for the estimated activation energies, it is clear the
-mechanism predicted in each case is drastically different. 
+supercooled bulk liquid\cite{Picaud2006,Mahoney2001} have also
+reproduced surface diffusivity measured by Price \textit{et
+  al.}. However, the supercooled bulk liquid simulations predict a
+negative Arrhenius curvature, implying the
+activation energy of diffusion decreases with increasing temperature,
+opposite of that observed by Price \textit{et al.} and predicted by
+Gladich \textit{et al.}. Given the difference in sign for the
+estimated activation energies, it is clear the mechanism predicted in
+each case is drastically different.
 
 Gladich \textit{et al.} estimated the temperature at which the
 anisotropic surface diffusivity becomes isotropic by plotting the
 ratio of surface diffusions ($D^{*}_\mathrm{x}$ / $D^{*}_\mathrm{z}$)
 by temperature. They observed a transition to about unity between 240K
-and 250K, between 49 and 39 K of undercooling for the NE6 model.
+and 250K, between 49 and 39 K of undercooling for the NE6 model.  The
+self-diffusion is also seen to be anisotropic at low temperatures
+(around XX K), and transitions to isotropic around 240-250K.
 
 % end Gladdich11
-
 
 
 \subsection{Friction at the Surface of Ice}
@@ -3009,3 +2687,60 @@ conclude my work and project towards the future in Chapter
 % DFT.\cite{Yoo2009}
 
 % %end Pan11 
+
+
+% Many surface science techniques have been used to quantify the
+% temperature dependence of the quasi-liquid layer
+% thickness.\cite{Kouchi1987,Golecki1978,Dosch1995,Beaglehole1980, Bluhm1999,
+%   Bluhm2002, Furukawa1987, Elbaum1993, Dosch1996, Doppenschmidt2000,
+%   Kaverin2004, Lied1994} While each unique technique probes a different property of
+% the surface, thus developing a unique metric for whether the QLL has
+% developed, there is common agreement that the onset temperature is
+% around 243 K~. However, since the techniques probe different aspects
+% of the surface, there is disagreement in the temperature dependence of
+% the thickenss of the QLL. Surface techniques which probe structural
+% changes tend to be more sensitive and usually suggest lower
+% temperatures for the onset of the premelting. Contrary to this,
+% techniques which probe bulk properties of the film require a larger
+% number of molecules for signal generation, and tend to yield warmer
+% temperatures for the onset. Due to these discrepencies, reported
+% values for the QLL width range over 2 orders of magnitude at a given
+% temperature.\cite{Rosenberg2005,Dosch1996}
+
+
+%D. Beaglehol, P. Wilson, JPC 1993, 97, 11053-11055 1993.
+
+% Ellipsometry provides a measure of the dielectric constant profile
+% through an interface, so observing the spatial transition yields an
+% interfacial thickness. "Ellipsometry determines the state of
+% polarization of light reflected from an interface and is a sensative
+% tool for the analysis of surface absorbants." At the Brewster angle,
+% the imaginary component of the ratio of the p and s wave reflection
+% amplitudes gives the coefficient of ellipticity, or ellipticity for
+% short. The magnitude and sign of the ellipticity ($\rho$) helps build
+% a model to describe the transition region of the interface.
+
+% They measured a small negative ellipticity at the ice/water interface,
+% changing the thermal gradient over the sample did not change the value
+% of $\rho$
+
+% ~550nm light was used.
+
+% Since water molecules are non-spherically symmetric, they are weakly
+% optically anisotropic. For ice, the optic axis lies in the c
+% direction, normal to the basal face (denoted the z-axis
+% here). $\epsilon_{x}$ = 1.7136 and $\epsilon_{z}$ = 1.709, and water
+% of course is isotropic with $\epsilon$ = 1.778, but as water molecules
+% take up orientational order through the transition region, some
+% anisotropy is likely to develop. This is assuming that the outtermost
+% part of the QLL is completely bulk liquid-like, and is not influenced
+% by the underlying ice.
+
+% Ellipsometry measurements indicate the surface premelting layer of the
+% basal and prismatic surfaces of ice are both approximately 10
+% angstroms thick.
+
+% The prism QLL was found to have roughly twice as much anisotropy to it
+% than the basal does, indicated by the sign of the ellipticity
+% measurement.
+% % end D. Beaglehol, P. Wilson, JPC 1993, 97, 11053-11055
