@@ -26,7 +26,7 @@ parameters~\cite{Karim1988,Karim1990,Hayward2001,Hayward2002,Bryk2002,Gay2002,Lo
 shearing simulations, the VSS-RNEMD method employed here creates
 thermal and velocity gradients in the system, during which the momenta
 of the water molecules are perturbed. Due to this, any order parameters that
-depends on translational motion may measure the momentum exchange and
+depend on translational motion may measure the momentum exchange and
 not physical properties of the interface. To avoid these influences,
 we have probed the ice-I$_\mathrm{h}$ / water interface under shear by
 observing the transition of several order parameters independent of
@@ -36,7 +36,7 @@ width, and consider dynamic order parameters in Chapter
 \ref{chap:Dyn}.
 
 \section{Density Measurements Transverse to the Interface}
-One of the many anomolies of water is that under ambient conditions
+One of the many anomalies of water is that under ambient conditions
 the density of the solid is less than that of the liquid. The
 tetrahedral structure of ice-I$_\mathrm{h}$ is more open than the
 local solvation environment of the liquid, which gives rise to this
@@ -50,7 +50,7 @@ out. Therefore it may be possible to quantify the transition between
 the solid and the bulk liquid by observing the length scale over which
 these effects diminish.
 
-In order to understand what affect shearing has on the structure of
+In order to understand what effect shearing has on the structure of
 water at the ice-I$_\mathrm{h}$ / water interface, we initially
 studied the systems without imposed thermal or momentum
 fluxes. Following the pioneering work of Haymet \textit{et al.}, we
@@ -207,8 +207,8 @@ spanning the ice. The tetrahedrality profiles were fit using the same
 functional form as the density profiles, however, an additive term was
 included to account for the change in tetrahedral ordering due to the
 thermal gradient throughout the system for simulations where thermal
-fluxes were applied (turquoise line in the bottom panel of the same
-figures),
+fluxes were applied (turquoise line in the bottom panel of Figures
+\ref{fig:spComic} and \ref{fig:tipsComic}),
 \begin{equation}\label{tet_fit}
 q(z) \approx
 q_\mathrm{liq}+\frac{q_\mathrm{ice}-q_\mathrm{liq}}{2}\left[\tanh\left(\frac{z-l}{w^q}\right)-\tanh\left(\frac{z-r}{w^q}\right)\right]+\beta\left|z-\frac{r+l}{2}\right|.
@@ -345,8 +345,8 @@ Our density based estimates for the basal and prismatic
 ice-I$_\mathrm{h}$ / water interfaces agrees well with those by Haymet
 \textit{et al.} and Nada \textit{et al.}. We did not observe the same
 anisotropy as Nada and Furukawa, however, our fit resolution was much
-larger, and their results could have been an artificat of their larger
-binning method. 
+better, and their results could have been an artificat of their larger
+binning method.
 
 The problem of ice / water coexistence was later revisited by Hayward
 and Haymet, where a comparitive study of the basal, prism,
@@ -355,11 +355,7 @@ ice-I$_\mathrm{h}$ / water interfaces was conducted.\cite{Hayward2001}
 This was the first computer investigation of the 14\degree~pyramidal,
 and $\{2\bar{1}\bar{1}0\}$ secondary prism ice-I$_\mathrm{h}$ / water
 interfaces, providing the initial insights to the structure and
-dynamics of molecules at these higher-order crystal facet
-interfaces. % These two interfaces were found to be of particular
-% interest as Type 1 antifreeze proteins in both winter flounder and
-% shorthorn Sculpin inhibit ice growth at these ice
-% surfaces.\cite{Knight2001,Wierzbicki1996,Haymet1998,Harding1999}
+dynamics of molecules at these higher-order crystal facet interfaces.
 They observed a stable ice / water interface at 270~K over 300 ps
 using the CF1 central force model, and estimated the $10\%-90\%$ width
 of the interfaces by measuring the transition of two structural
@@ -476,40 +472,39 @@ bulk liquid domains.
 \hline
 & Basal & Prismatic & 14\degree~Pyramidal & Secondary Prism \\
 \hline
-Translational (CF1 270~K)\footnotemark[1] & 9.9 & 8.6  & 7.9 & 6.6 \\
-Average Density (CF1 270~K)\footnotemark[1] & 18.2 & 13.6 & 11.4 & 12.3 \\
-Orientational (CF1 270~K)\footnotemark[2] & 5.7 & 7.7 & 7.5 & 5.1 \\
+Translational (CF1 270~K) \cite{Hayward2001} & 9.9 & 8.6  & 7.9 & 6.6 \\
+Average Density (CF1 270~K) \cite{Hayward2001} & 18.2 & 13.6 & 11.4 & 12.3 \\
+Orientational (CF1 270~K) \cite{Hayward2002} & 5.7 & 7.7 & 7.5 & 5.1 \\
 \\
-Density (TIP4P/2005 248.5~K)\footnotemark[3] & 13~-~16 & 13~-~16 & - &
+Density (TIP4P/2005 248.5~K) \cite{Benet2014} & 13~-~16 & 13~-~16 & - &
                                                                     13~-~16 \\
 \\
-Translational (SPC/E 225~K)\footnotemark[4] & 10.54 & 8.30 & - & - \\
-Density (SPC/E 225~K)\footnotemark[4] & 12.86 & 10.03 & - & -
+Translational (SPC/E 225~K) \cite{Bryk2002} & 10.54 & 8.30 & - & - \\
+Density (SPC/E 225~K) \cite{Bryk2002} & 12.86 & 10.03 & - & -
 \\
-Tetrahedral (SPC/E 225~K)\footnotemark[5] & 11 & 11 & - & - \\
+Tetrahedral (SPC/E 225~K) \cite{Bryk2004} & 11 & 11 & - & - \\
 \\
-Density (TIP4P 230~K)\footnotemark[6] & 9 & 12 & - & - \\
-Translational (TIP4P 240~K)\footnotemark[7] & 5.93 & - & - & - \\
-Density (TIP4P 240~K)\footnotemark[8] & 10~-~15 & - & - & - \\
+Density (TIP4P 230~K) \cite{Nada1995} & 9 & 12 & - & - \\
+Translational (TIP4P 240~K) \cite{Karim1988} & 5.93 & - & - & - \\
+Density (TIP4P 240~K) \cite{Karim1987} & 10~-~15 & - & - & - \\
 \\
-Translational (SPC 200~K)\footnotemark[9] & 8.13 & - & - & - \\
+Translational (SPC 200~K) \cite{Karim1990} & 8.13 & - & - & - \\
+\hline
+*Tetrahderal (SPC/E 225~K) \cite{Louden2013,Louden2017} & 7.5 & 7.2 & 6.6 & 6.7 \\
+*Density (SPC/E 225~K) & 9 & 7 & 3.1 & 8 \\
 \\
-Experimental (Ellipticity 273~K)\footnotemark[10] & 10 & 10 & - & - \\
+*Tetrahedral (TIP4P/Ice 270~K) \cite{Louden2017} & 8.8 & 9.0 & 8.2 &
+                                                                    9.4
+  \\
+*Density (TIP4P/Ice 270~K) & 11 & 9 & 3.7 & 11.2 \\
+\hline
+Experimental (Ellipticity 273~K) \cite{Beaglehole1993} & 10 & 10 & - & - \\
 \hline
 \hline
 \end{tabular}
 \flushleft
 Interfacial widths are reported in \AA~. \\
-  \footnotemark[1]\footnotesize{Reference \cite{Hayward2001}.} \\
-  \footnotemark[2]\footnotesize{Reference \cite{Hayward2002}.} \\
-  \footnotemark[3]\footnotesize{Reference \cite{Benet2014}.} \\
-  \footnotemark[4]\footnotesize{Reference \cite{Bryk2002}.} \\
-  \footnotemark[5]\footnotesize{Reference \cite{Bryk2004}.} \\
-  \footnotemark[6]\footnotesize{Reference \cite{Nada1995}.} \\
-  \footnotemark[7]\footnotesize{Reference \cite{Karim1988}.} \\
-  \footnotemark[8]\footnotesize{Reference \cite{Karim1987}.} \\
-  \footnotemark[9]\footnotesize{Reference \cite{Karim1990}.} \\
-  \footnotemark[10]\footnotesize{Reference \cite{Beaglehole1993}.} \\
+*Denotes our data presented here. \\
 \end{table}
 
 Using the SPC/E model, Bryk and Haymet estimated interfacial widths
