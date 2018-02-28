@@ -34,11 +34,10 @@
 \end{flushright}
 
 This introductory chapter begins with an overview of molecular
-simulations, focusing primarily on molecular dynamics methods. With a
-firm grasp of these techniques, a review of past and current
-investigations of water and ice is presented. The remaining chapters
-encompass my contributions to our understanding of hydrodynamic
-friction at the surface of ice.
+dynamics simulation methods. With a firm grasp of these techniques, a
+review of past and current investigations of water and ice is
+presented. The remaining chapters encompass my contributions to our
+understanding of hydrodynamic friction at the surface of ice.
 
 Chapter \ref{chap:Methods} details the construction of the
 ice-I$_\mathrm{h}$ / water systems, and outlines the velocity shearing
@@ -62,20 +61,20 @@ An expression for friction coefficients ($\kappa$) appropriate for
 negative slip boundary conditions is presented in Chapter
 \ref{chap:Friction}. The obtained values of $\kappa$ are found to be
 invariant of shear rate and direction of the shear relative to the ice
-crystal surface topography. However, noncongruent friction
+crystal's surface topography. However, nonuniform friction
 coefficients are obtained for the four facets of ice investigated;
 although simulations with different models agree on the relative
 tribological ordering of the surfaces. The observed friction
 coefficients are explained in terms of solid / liquid hydrogen bonds
-identified by their local tetrahedral ordering, and influences of
-surface features and hydrogen bond lifetimes are investigated. Lastly
-a simple momentum transmission model is presented which agrees well
-with the results for both the SPC/E and TIP4P/Ice simulations.
+identified by their local tetrahedral ordering. Influences of surface
+features and hydrogen bond lifetimes are also investigated. Lastly a
+simple momentum transmission model is presented which agrees well with
+the results for both the SPC/E and TIP4P/Ice simulations.
 
 In Chapter \ref{chap:QLL}, we investigate the surface premelting of
-ice. We quantify the spatial transition from bulk ice to the
-quasi-liquid layer (QLL), as well as characterize the structure and
-dynamics of this surface premelt. We present evidence
+ice. We quantify the spatial transition from bulk ice through the
+quasi-liquid layer (QLL) into the vapor, as well as characterize the
+structure and dynamics of this surface premelt. We present evidence
 that the QLL is composed of a bilayer of water, and show that the
 shear viscosity ($\eta$) of the two layers are distinct from one
 another.
@@ -114,9 +113,9 @@ another.
 % \end{figure}
 In 1812, Pierre Simon Laplace published a manuscript entitled
 \textit{A Philosophical Essay on Probabilities} detailing his system
-of reasoning based on probabilities.\cite{LaplaceXX} Within this work,
-he describes the notion of casual or scientific determinism, that is,
-that all events are dictated by previously existing causes:
+of reasoning based on probabilities.\cite{Laplace1902} Within this
+work, he describes the notion of casual or scientific determinism,
+that is, that all events are dictated by previously existing causes:
  
 \begin{displayquote}
 We may regard the present state of the universe as the effect of
@@ -149,7 +148,7 @@ proficient at understanding and predicting the world around us, from
 the motion of planets, to the properties of molecules.
 
 \section{Molecular Dynamics}
-In a general defintion, molecular dynamics (MD) simulations involve
+In general, molecular dynamics (MD) simulations involve
 popogating molecules through time by Netwon's Second Law. The models
 used to describe the molecules are often constructed using classical
 mechanics, treating atoms as hard spheres and bonds between atoms
@@ -160,9 +159,9 @@ around the molecule. While hybrid quantum / classical molecular
 dynamics methods exist, we restrict ourselves here to the purely
 classical case. In the following sections, I outline the basis of
 classical molecular dynamics simulations. References for what is
-presented comes from several excellent books which cover molecular
-dynamics, from the classic text of Allan and Tildesey, to the modern
-broad reaching work of Leach.\cite{AllanXX,LeachYY}
+presented here comes from several excellent books which cover molecular
+dynamics, from the classic text of Allen and Tildesey, to the modern
+broad reaching work of Leach.\cite{Allen1987,Leach2001}
 
 We begin by considering a many-body expansion of the configurational
 potential energy $\mathscr{U}$ for an isolated collection of $N$ particles with
@@ -175,7 +174,7 @@ Most commonly, the expansion is truncated at the two-body term as
 higher order terms have proven computationally infeasible in the
 past. However, with the development of faster computers, Paesani
 \textit{et al.} has recently shown that incorporating higher order
-terms leads to a more accurate water model.\cite{PaesaniXX} A more
+terms leads to a more accurate water model.\cite{Paesani2016} A more
 detailed discussion on water models will be presented in Section
 \ref{sec:WaterModels}; for now, we will restrict ourselves to a
 many-body expansion up to the two-body term. We further restrict
@@ -208,7 +207,7 @@ particles, they are not all equal. The general idea for each method is
 to take small steps through time ($\delta t$) by knowing the position
 and momenta for each of the $N$ particles at a previous time
 ($t-\delta t$). Knowing these quantities, the forces are calculated
-from the position, and the positions and momenta are updated
+from the position at time $t$, and the positions and momenta are updated
 accordingly. This results in a new $\mathbf{r}^N$ configuration, and
 the method iterates again.
 
@@ -219,7 +218,7 @@ velocity terms do not appear explicitly but can be computed from the
 two sets of positions. In the \textit{Leap Frog} method, the positions
 and velocities are stored at a half-step difference. When the
 positions are known at a half-step forward in time, the new velocities are
-computed and `leap-frog` over the positions. While this method is an
+computed and `leap-frog' over the positions. While this method is an
 improvement over the Verlet algorithm as the velocities are computed
 directly, the positions and velocities are not known at the same time
 without further calculations.
@@ -227,16 +226,16 @@ without further calculations.
 In our work, the \textit{velocity Verlet} method was implemented. In
 this integration scheme the positions, velocities, and accelerations
 are known at the same time. Given an initial set of positions at time
-$t$, the accelerations $\mathbf{a}(t)$ can be computed from Equation
+$t$, the accelerations $\mathbf{\ddot{r}}(t)$ can be computed from Equation
 \eqref{eq:accel}. Together with the velocities at $t$, the future
 values of these quantities can be determined.
 \begin{equation}\label{eq:vv-r}
-\mathbf{r}(t+\delta t) = \mathbf{r}(t) + \delta t \mathbf{v}(t) +
-\frac{1}{2}t^2\mathbf{a}(t)
+\mathbf{r}(t+\delta t) = \mathbf{r}(t) + \delta t \mathbf{\dot{r}}(t) +
+\frac{1}{2}t^2\mathbf{\ddot{r}}(t)
 \end{equation}
 \begin{equation}\label{eq:vv-v}
-\mathbf{v}(t+ \delta t) = \mathbf{v}(t) + \frac{1}{2}\delta
-t[\mathbf{a}(t) + \mathbf{a}(t + \delta t)]
+\mathbf{\dot{r}}(t+ \delta t) = \mathbf{\dot{r}}(t) + \frac{1}{2}\delta
+t[\mathbf{\ddot{r}}(t) + \mathbf{a\ddot{r}}(t + \delta t)]
 \end{equation}
 This method has to be implemented in three steps, as the accelerations
 at times $t$ and $t + \delta t$ must be known to update the
@@ -245,32 +244,31 @@ $t + \delta t$ using the velocities and accelerations at time $t$. In
 the second step, the velocities at time $t + \frac{1}{2} \delta t$ are
 computed.
 \begin{equation}\label{eq:vv-v2}
-\mathbf{v}(t+\frac{1}{2}\delta t) = \mathbf{v}(t) + \frac{1}{2}\delta t
-\mathbf{a}(t)
+\mathbf{\dot{r}}(t+\frac{1}{2}\delta t) = \mathbf{\dot{r}}(t) + \frac{1}{2}\delta t
+\mathbf{\ddot{r}}(t)
 \end{equation}
 Forces are computed using the new positions $\mathbf{r}(t + \delta
-t)$, and from these forces the new accelerations $\mathbf{a}(t +
+t)$, and from these forces the new accelerations $\mathbf{\ddot{r}}(t +
 \delta t)$ are determined. Lastly the velocities at time $t + \delta
 t$ are computed by
 \begin{equation}\label{eq:vv-v3}
-\mathbf{v}(t+\delta t) = \mathbf{v}(t+\frac{1}{2}\delta t) +
-\frac{1}{2}\delta \mathbf{a}(t + \delta t)
+\mathbf{\dot{r}}(t+\delta t) = \mathbf{\dot{r}}(t+\frac{1}{2}\delta t) +
+\frac{1}{2}\delta \mathbf{\ddot{r}}(t + \delta t)
 \end{equation}
 
 
 \subsection{Time Averages and Ensemble Averages}
 Consider a property $A$ that is dependent on the positions and momenta
 of the $N$ particles in the system, then the instantaneous value of
-the property $A$ can be expressed as
-$A(\mathbf{r}^N(t),\mathbf{p}^N(t))$. As the positions and momenta of
-the particles evolve, the value of $A$ fluctuates. During an
-experiment, a \textit{time average} of $A$ is measured for a large
-collection of particles. As the duration of the experiment increases,
-the value of the measured property approaches the `true` value,
-$A_{\mathrm{ave}}$.
+$A$ can be expressed as $A(\mathbf{r}^N(t),\mathbf{p}^N(t))$. As the
+positions and momenta of the particles evolve, the value of $A$
+fluctuates. During an experiment, a \textit{time average} of $A$ is
+measured for a large collection of particles. As the duration of the
+experiment increases, the value of the measured property approaches
+the `true' value, $A_{\mathrm{ave}}$.
 \begin{equation}\label{eq:A-ave}
 A_{\mathrm{ave}} = \mathrm{lim}_{\tau \to \infty} \frac{1}{\tau} \int_{t=0}^{\tau}
-A(\mathbf{r}^N(t),\mathbf{p}^N(t))dt
+A(\mathbf{r}^N(t),\mathbf{p}^N(t))\mathrm{d}t
 \end{equation}
 
 In theory, it is straightforward to compute the time averaged value of
@@ -283,15 +281,15 @@ infeasible. Instead, we turn to statistical mechanics as a connection
 between a microscopic system ($10^2 - 10^6$ particles) and the
 macroscopic experimental observation. Here, instead of considering one
 large system, we evolve a large number of replications of a smaller
-systems simultaneously. The average value of the property from these
-replicas is denoted as an \textit{ensemble average} with angle bars,
-$\langle$~ $\rangle$.
+system simultaneously. The average value of the property from these
+replicas is defined as an \textit{ensemble average}, and is denoted
+with angle bars, $\langle$~ $\rangle$.
 \begin{equation}\label{eq:A-ens}
-\langle A \rangle = \int \int d\mathbf{r}^N d\mathbf{p}^N
+\langle A \rangle = \int \int \mathrm{d}\mathbf{r}^N \mathrm{d}\mathbf{p}^N
 A(\mathbf{r}^N,\mathbf{p}^N) \rho
 (\mathbf{r}^N,\mathbf{p}^N)
 \end{equation}
-Equation \eqref{eq:A-ens} is written with as double integral, although
+Equation \eqref{eq:A-ens} is written as a double integral, although
 more accurately this equation indicates $6N$ integrals, one for each
 of the $3N$ position and $3N$ momentum coordinates of the $N$
 particles. The second term in the integrand,
@@ -313,7 +311,7 @@ As the particles evolve through time, there are several possible
 thermodynamic properties which we may wish to compute. Among the
 properties most commonly desired are the temperature and pressure.
 The instantaneous temperature, $T$, of a collection of $N$ molecules
-is described by their kinetic energy $K$ through the equipartition
+is described by their kinetic energy through the equipartition
 theorem.
 \begin{equation}\label{Temperature}
 T = \frac{2}{fk_B}\Bigg( \sum_{i=1}^{N} \frac{1}{2} m_i {\bf v}_i^T \cdot {\bf v}_i +
@@ -327,9 +325,9 @@ f = 3 N + 2 N_{\mathrm{linear}} + 3 N_{\mathrm{non-linear}} - N_{\mathrm{constra
 \end{equation}
 $k_B$ is Boltzmann's constant, $N_{linear}$ is the number of linear
 molecules, and $N_{non-linear}$ is the total number of non-linear
-molecules in the system. The first sum includes the velocities of all
-$N$ molecules, while the second sum is over those with angular
-velocity $j_i$, and a moment of inertia
+molecules in the system. The first sum includes the linear velocities
+of all $N$ molecules, while the second sum is over those with angular
+velocity $\bf j_i$, and a moment of inertia
 $\overleftrightarrow{\mathsf{I}}_i$.
 
 The instantaneous pressure, $P$, of a collection of molecules can be
@@ -355,7 +353,7 @@ due to the interactions of the particles.
 W = -3PV + \sum_i^N \sum_{j\neq i}^N r_{ij} \frac{dU(r_{ij})}{dr_{ij}} = -3Nk_BT
 \end{equation}
 Here we have considered a potential consisting of only two-body
-interactions, although expansion to consider higher-order terms is
+interactions, although expansion to higher-order terms is
 straightforward. If we instead write Equation \eqref{eq:virial2} in terms
 of the force between particles $i$ and $j$, ($f_{ij}$), we obtain the
 following expression for the pressure.
@@ -405,10 +403,10 @@ extreme restriction on the potential, however, we will see models of
 this structure still perform quite well. 
 
 The one-body term in Equation \eqref{eq:potPair} accounts for any
-external forces on the particles, such as an external electric
-field. Their interaction with the field depends on the particle's
-absolute position in that field, not the relative distance between the
-other particles. In the absence of external forces, Equation
+external forces on the particles, such as an electric field. Their
+interaction with the field depends on the particle's absolute position
+in that field, not the relative distance between it and the other
+particles. In the absence of an external potential, Equation
 \eqref{eq:potPair} reduces to just the two-body pairwise additive
 term, and the potential only depends upon the relative distance
 between particles. Generally, these terms fall into one of two
@@ -501,7 +499,7 @@ $\sigma_{ij}$ is determined by an algebraic mean
 \sigma_{ij} = \frac{1}{2} [\sigma_{ii} + \sigma_{jj}]
 \end{equation}
 and $\epsilon_{ij}$ is taken as the geometric mean of $\epsilon$ for
-particles $i$ and $j$. \cite{paper}
+particles $i$ and $j$. \cite{Lorentz1881,Berthelot1898}
 \begin{equation}\label{eq:epsilon}
 \epsilon_{ij} = \sqrt{\epsilon_{ii}\epsilon_{jj}}
 \end{equation}
@@ -553,7 +551,7 @@ by its value at the cutoff.  The additive constant vanishes upon
 taking the derivative to compute the forces, and energy conservation
 is better than with the unshifted potential. However, there is still a
 problem of a discontinuity in the force with this method. A second
-solution is to use a switching function, to smoothly transition the
+solution is to use a switching function to smoothly transition the
 potential to zero at the cutoff.
 
 % Switching functions can take several forms, one
@@ -601,14 +599,15 @@ however, it is the most accurate way of computing the charge-charge
 interactions in molecular simulation. 
 
 An alternative approach to the demanding Ewald Sum is the method first
-developed by Wolf \textit{et al.}, and later expanded upon by Fennel
-and Gezelter.\cite{Fennell2006} This method combines shifting the
-potential as described above with a dampening of the electrostatic
-interactions in a similar fashion as the Ewald Summation. The first
-key observation is that the electrostatic interactions are shorter
-ranged than $r^{-1}$ in condensed phases. Wolf \textit{et al.}
-observed that creating a neutral cutoff sphere resulted in a
-good conservation of energy. We begin with the standard shifted potential,
+developed by Wolf \textit{et al.}\cite{Wolf1999}, and later expanded
+upon by Fennel and Gezelter.\cite{Fennell2006} This method combines
+shifting the potential as described above with a dampening of the
+electrostatic interactions in a similar fashion as the Ewald
+Summation. The first key observation is that the electrostatic
+interactions are shorter ranged than $r^{-1}$ in condensed
+phases. Wolf \textit{et al.}  observed that creating a neutral cutoff
+sphere resulted in a good conservation of energy. Fennell and Gezelter
+began with the standard shifted potential,
 
 \begin{equation}
 V_\textrm{SP}(r) =      \begin{cases}
@@ -627,16 +626,16 @@ v(r)-v_\textrm{c}-\left(\frac{d v(r)}{d r}\right)_{r=R_\textrm{c}}(r-R_\textrm{c
 \label{eq:shiftingForm}
 \end{equation}
 
-which guarantees the potential and forces smoothly go to zero at the
+which guaranteed the potential and forces smoothly go to zero at the
 cutoff radius, $R_\textrm{c}$. Wolf \textit{et al.} observed that when
 the potential is taken to be the Coulomb potential, Equation
 \ref{eq:coulomb}, the calculated Madelung energies fluctuated around
 the analytic value with increasing size of the cutoff radius, with a
-slow decay towards the expected value. Therefore, to accelerate the
-convergence of the expected energies, a dampening function was
-introduced resembling the effective screening of the oppositely
-charged Gaussians in the Ewald summation. Doing so, Fennell and
-Gezelter arrived at the following damped shifted force,
+slow decay towards the expected value.\cite{Wolf1999} Therefore, to
+accelerate the convergence of the expected energies, a dampening
+function was introduced resembling the effective screening of the
+oppositely charged Gaussians in the Ewald summation. Doing so, Fennell
+and Gezelter arrived at the following damped shifted force,
 
 \begin{equation}
 \begin{split}
@@ -671,14 +670,13 @@ isolated) system of particles. The cluster would be exposed to vacuum
 in all three dimensions, and depending on the strength of the
 intermolecular interactions, the cluster could condense into a sphere
 or slowly dissipate into a gas. If we were interested in simulating a
-liquid and had incorporated an appropriate intermolecular potential,
-the vacuum exposed droplet would be a poor representation of a bulk
-liquid.
+liquid, the vacuum exposed droplet would be a poor representation of a
+bulk fluid.
 
 A naive approach to fix this problem would be to simulate a large
 cluster of molecules and only probe the properties of the interior
 molecules. This is both inefficient and potentially inaccurate, as
-determining when a cluster is `large enough` for the interior
+determining when a cluster is `large enough' for the interior
 molecules to recover bulk liquid behavior is open to
 interpretation. An efficient solution to this problem is to impose
 boundary conditions on the system. While the type of boundary
@@ -709,7 +707,7 @@ number of particles.
 \caption{\label{fig:PBC} Periodic boundary conditions and minimum
   image calculation. The central blue cell is the only simulation cell
   maintained by computation. Molecules (red circles) are free to move
-  throughout space uninhindered. When a molecule leaves the blue
+  throughout space unhindered. When a molecule leaves the blue
   simulation cell, one of its ghost images enters the cell from one of
   the neighboring cells. This is achieved by computation of
   interactions of a molecule with its nearest neighbors within a
@@ -756,8 +754,8 @@ if we also did not include the significant contributions from the
 Unversidad Complutense Madrid, namely, the extensive work of Vega,
 Abascal, Conde, Sanz, and
 MacDowll.\cite{MacDowell2004,Vega2005,Vega2005c,Abascal2007,Abascal2007a,Abascal2007b,Abascal2007c,Vega2009,Vega2011,Vega2011a,Vega2015}
-Lastly, we must include the expansive catalog of Martin
-Chaplin.\cite{Chaplin2018}
+Lastly, we must acknowledge and include the expansive catalog of
+literature on water by Martin Chaplin.\cite{Chaplin2018}
 
 The first simulations of water were performed in 1969 by Barker and
 Watts,\cite{Barker1969} and shortly thereafter by Rahman and
@@ -774,7 +772,7 @@ Since this time, hundreds of water models have been proposed and
 characterized.\cite{Chaplin2018} These range from computationally
 expensive models such as the SWM-4DP\cite{Lamourex2003},
 TIP4P-FQ\cite{Rick1994}, DPP2\cite{Kumar2010},
-TTM3-F\cite{Fanourgakis2008}, and AMOEBA\cite{Ren2003,Ren2004} models,
+TTM3-F\cite{Fanourgakis2008}, and AMOEBA\cite{Ren2003,Ren2004} models
 which have moved beyond point charges and the pairwise additive
 approximation and allow for anisotropic multipole polarizations, while
 others have attempted to make large scale simulations more feasible by
@@ -785,22 +783,20 @@ site\cite{Liu1996,Tan2003,Fennell2004}.
 Most commonly, water models are categorized by the number of
 interaction sites and divided into subcategories by the types of
 interactions described within the potential. Three, four, five, and
-six site models are prevalant in the literature, although
+six site models are prevalent in the literature, although
 computational expense increases with the number of interaction sites
 ($s$); as the number of non-bonded terms for $N$ molecules goes as
-$s^N$. In reality, the number of interaction pairs needed to be
-calculated are slightly less than $s^N$ as some of the interaction
-sites are exclusively Lennard-Jones or charge sites.
+$s^N$. 
 
 Here, we will focus on non-polarizable models, that is, models where
-the charge distribution is held fixed and not allowed to move around
-the molecule. Similarly, we will restrict ourselves to rigid models,
-where the OH bonds and HOH bends are held fixed in space. While there
-are several models which propogate these degrees of freedom, such as
-the SPC/f\cite{Ferguson1995}, SPC/Fw\cite{Wu2006}, and
-TIP4P/2005f\cite{Gonzalez2011} models, limiting our discussion to
-models which exclude these degrees of freedom will provide a more
-similar comparison. XXX
+the charge distribution is held fixed and is not allowed to move
+around the molecule. Similarly, we will restrict ourselves to rigid
+models, where the OH bonds and HOH bends are held fixed in
+space. While there are several models which propogate these degrees of
+freedom, such as the SPC/f\cite{Ferguson1995}, SPC/Fw\cite{Wu2006},
+and TIP4P/2005f\cite{Gonzalez2011} models, limiting our discussion to
+models which exclude these degrees of freedom will provide a common
+ground for comparison. 
 
 The two most common three site models are Berendsen's
 SPC/E\cite{Berendsen1987} and Jorgenson's TIP3P\cite{Jorgenson1983}
@@ -819,13 +815,13 @@ While attempting to determine the total internal energy of a water
 molecule, Bernal and Fowler found that in order to reproduce the
 observed dipole moment of water, they had to shift the negative charge
 off of the oxygen towards the hydrogens along the HOH
-bisector.\cite{Bernal1993} Following this idea, Jorgenson \textit{et
+bisector.\cite{Bernal1933} Following this idea, Jorgenson \textit{et
   al.} developed a four site water model, moving the negative charge
 from the oxygen to a massless site along the HOH bisector. The
 resulting TIP4P model more accurately reproduced oxygen-oxygen
 diffraction data than the TIP3P model.\cite{Jorgenson1983} The four
 site model was also found to have the correct density of liquid water
-at 298.15~K and 1~atm. 
+at ambient conditions. 
 
 Due to the success of the TIP4P model, the four site structure has
 been replicated and parameters refined spawning a large number of
@@ -849,41 +845,41 @@ goal was to create a single model which spans much of the phase
 diagram accurately, the TIP4P/Ice model was developed targeting the
 properties of ice. The model was parameterized by fitting the equation
 of state and selected points of the solid / liquid coexistence curves,
-as well as the solid / solid coexistence curves. The model gives
-excellent agreement for the melting temperature of ice-I$_\mathrm{h}$,
-with T$_\mathrm{m} = $272.2~K. 
+as well as several solid / solid coexistence curves for various ice
+phases. The model gives excellent agreement for the melting
+temperature of ice-I$_\mathrm{h}$, with T$_\mathrm{m} = $~272.2~K.
 
 The category of five site models includes the ST2 model originally
 proposed by Stillinger and Rahman in 1972\cite{Stillinger1974}, the
 TIP5P model of Mahoney and Jorgensen\cite{Mahoney2000}, and its
 reparameterization for use with Ewald summation methods (TIP5P/Ew) by
 Rick.\cite{Rick2004} In the five site models, the negative charge has
-moved out of the HOH plane, and is now distributed on the far side of
-the oxygen mimicing the electron lone pairs. The positive charges are
-located on the hydrogn sites, and the Lennard-Jones position is placed
-on the oxygen atom. The TIP5P model is observed to reproduce the
-density maximum of water around 4\degree~C at 1~atm, and the
-dielectric constant was found to be 81 $\pm$ 1.5 at 25\degree~C, in
-good agreement with the experimentally known value (78.4). While these
-and other properties predicted by the TIP5P model agree well with
+moved out of the HOH plane, and is now distributed across two sites
+mimicing electron lone pairs. The positive charges are located on
+the hydrogn sites, and the Lennard-Jones position is placed on the
+oxygen atom. The TIP5P model is observed to reproduce the density
+maximum of water around 4\degree~C at 1~atm, and the dielectric
+constant was found to be 81 $\pm$ 1.5 at 25\degree~C, in good
+agreement with the experimentally known value (78.4). While these and
+other properties predicted by the TIP5P model agree well with
 experimental results, it has recently been shown that when one
 considers performance of the model for a large number of properties,
 the three site SPC/E and four site TIP4P/2005 water models outperform
-the costly five site model. 
+the costly five site model. \cite{Vega2011a}
 
-While there are not many six site rigid nonpolarizable water models,
-one bares worth mentioning. The NE6 model of Nada and van der Eerden
-is the same as the five site models described above, with the addition
-of a massless charged site along the HOH bisector.\cite{Nada2003a}
-This charge is taken to be negative, however, the total molecule is
-constrained to be neutral. The model was parameterized for simulations
-involving ice and liquid near the melting point, and parameters were
-determined from derivatives of the free energy of ice and water, as
-well as the volumes of the same systems. Proton-disordered
-ice-I$_\mathrm{h}$is the stable structure at the melting point for the
-resulting NE6 model. The melting point was determined to be
-271~$\pm$~9~K by Nada and van der Eerden, in good agreement with the
-experimentally observed 273.15~K.
+While six site models are rarely used, one bares worth mentioning. The
+NE6 model of Nada and van der Eerden is similar to the five site
+models described above, with the addition of a massless charged site
+along the HOH bisector.\cite{Nada2003a} This charge is taken to be
+negative, however, the total molecule is constrained to be
+neutral. The model was parameterized for simulations involving ice and
+liquid near the melting point, and parameters were determined from
+derivatives of the free energy of ice and water, as well as the
+volumes of the same systems. Proton-disordered ice-I$_\mathrm{h}$is
+the stable structure at the melting point for the resulting NE6
+model. The melting point was determined to be 271~$\pm$~9~K by Nada
+and van der Eerden, in good agreement with the experimentally observed
+273.15~K.
 
 \subsubsection{Parameterizing Water Models}
 After selecting the number of potential sites for a water model, the
@@ -912,28 +908,29 @@ properties more accurately than many other existing models. In
 addition, the model also outperformed other models for predicting
 hydration energies of small solute molecules. Following this, they
 applied the same method for optimizing charge distributions to the
-three site class of models, and the resulting OPC3 model was observed
+three site class of models. The resulting OPC3 model was observed
 to reproduce liquid bulk properties better than other three site
-models such as the TIP3P and SPC/E models. The OPC3 model was also
+models, such as the TIP3P and SPC/E models. The OPC3 model was also
 found to accurately capture the intrinsic charge hydration assymetry
-of water. However, due to the complexity of the nature of water these
-models still performed poor in certain regions of the phase diagram.
+of water. However, due to the complexity of the nature of water, these
+models still perform poorly in extreme regions of the phase diagram,
+\textit{i.e.} at regions far from where the models were parameterized.
 
 \subsubsection{Melting Points of Common Water Models}
 Ideally, the water model used to investigate the behavior of interest
 will accurately reproduce the structure and dynamics of real water
-around that region of the phase diagram. Assuming it is representing
+around that region of the phase diagram. Assuming the model represents
 real water accurately, inferences of the behavior of interest can then
 be extracted from simulations. Therefore, the complete phase diagram
 of water models are often characterized, in order to determine if it
-is appropriate to use the proposed model.
+is appropriate to use the proposed model for a given investigation.
 
 Here, we are concerned with water near the solid / liquid and solid /
 vapor coexistence regions. Therefore, it behooves us to critically
 examine the reported melting points and coexistence lines of the
 various ice polymorphs for water models of potential
 interest. Recently, Vega, Garcia-Fernandez, Sanz, and Abascal have
-computed and tabulated the melting points of many of the rigid
+computed and tabulated the melting points for many of the rigid
 non-polarizable models discussed above, which we have reproduced in
 Table
 \ref{tab:meltingPoints}.\cite{Abascal2005,Abascal2005a,Vega2005,Vega2005a,Fernandez2006,Vega2006a}
@@ -961,15 +958,15 @@ All melting points are reported in (K).
 Uncertainties in the last digit are indicated with parentheses. \\
 \end{table}
 
-In the first two columns of data are the melting points determined by
+In the first two columns are the melting points determined by
 simulations of solid / liquid and solid / vapor coexistence. It is
 commonly known that commensurate ice crystals modeled by these types
 of potentials can be superheated.\cite{Vega2006a} However, the
 introduction of a nucleation site for the melting to occur at, such as
-an interface, removes the ability for the superheating of these
-models. In the third column of Table \ref{tab:meltingPoints}, are
-melting temperatures determined by Gibbs-Dyhem thermodynamic
-integration\cite{Kofke1993} from the TIP4P model, which was determined
+an interface, removes the ability for superheating. In the third
+column of Table \ref{tab:meltingPoints}, are melting temperatures
+determined by Gibbs-Dyhem thermodynamic integration\cite{Kofke1993}
+using the TIP4P model as the base potential, as it was determined
 previously.\cite{Sanz2004}
 
 Upon first observation, we note that very few of the models cataloged
@@ -977,7 +974,7 @@ have melting points close to the true melting point of
 ice-I$_\mathrm{h}$.  Only three models reproduce the experimentally
 observed value of 273.15~K, the TIP4P/Ice (by design), TIP5P, and
 TIP5P-E models. This is due to the majority of the models being fit to
-reproduce bulk liquid water under ambient conditions. Secondly we note
+reproduce bulk liquid water under ambient conditions. Secondly, we note
 that while the various methods used to compute melting points agree
 within error of one another, the reported values have quite a large
 spread. This is partially due to the sensativity of the melting point
@@ -1012,22 +1009,13 @@ Tr(\Theta) = \sum_{i,j}\Theta_{ij}\delta_{ij} = 0
 \end{equation}
 
 While having a traceless tensor can make certain calculations easier to 
-perform, it is also possible to calculate a traced quadrupole tensor $Q$, one
-in which the trace is not null.
-
+perform, it is also possible to calculate a traced quadrupole tensor $Q$.
 \begin{equation}
 Q_{ij} = \frac{1}{2}\sum_{\alpha}q_{\alpha}(r_{i,\alpha}-r_{i,com})(r_{j,\alpha}-r_{j,com})
 \end{equation}
-
 Here, $r_{i,com}$ is the position of the center of mass in the $i$-th 
 dimension, and therefore the position of the quadrupole moment is set at the 
-center of mass of the molecule. It will be desirable to change between the
-traceless and traced quadrupole tensors during this work, and changing 
-between the two formalisms can be achieved by the following
-
-\begin{equation}
-\Theta = 3Q - Tr(Q)
-\end{equation}    
+center of mass of the molecule.
 
 Based on the suggestion of Rick\cite{Rick2004}, Abascal and Vega have
 described an effective tetrahedral quadrupole moment ($\Theta_T$),
@@ -1041,11 +1029,9 @@ Abascal and Vega have shown that the water models which most accurately
 reproduce the meling point of ice-I$_h$ have a ratio of their dipole moment
 to $\Theta_T$ of approximately unity. The equivalent expression for the 
 traced quadrupole tensor is given as
-
 \begin{equation}
 Q_{T} = \frac{3}{2}(Q_{yy} - Q_{xx}).
 \end{equation}
- 
 The Q$_T$ values for each of the water models
 investigated by Abascal and Vega are shown in Table \ref{Models_quad}, along 
 with the non-zero elements of their traced quadrupole tensors.
@@ -1068,15 +1054,14 @@ TIP3P & 0.0 & 1.1476 & 0.5337 & 1.6812 & 1.9894 & 1.7214 & 146 \\
 \hline \hline
 \end{tabular}
 \begin{flushleft}
-Elements of the tensors are in units of D\AA~. \\
+Elements of the tensors are in units of D$\AA^{2}$~. \\
 \end{flushleft}
 \end{table} 
 
-In Figures \ref{fig:QBar} and \ref{fig:TraQ},
-we have replotted the 
-melting point for ice-I$_h$ of these water models by $\overline{Q}$ and the 
-trace of their
-quadrupole tensor, where $\overline{Q}$ is given by,
+In Figures \ref{fig:QBar} and \ref{fig:TraQ}, we have plotted the
+melting point for ice-I$_h$ of these water models by $\overline{Q}$
+and the trace of their quadrupole tensor, where $\overline{Q}$ is
+given by,
 \begin{equation}
 \overline{Q} = \sqrt{2(3 Q:Q - (Tr(Q))^{2})}
 \end{equation}
@@ -1090,15 +1075,15 @@ the values of their quadrupole tensors and their melting point.
   popular water models as a function of the QBar for the model. We see
   a strong correlation between a more accurate melting point and a
   larger value of $\overline{Q}$. We estimate that a $\overline{Q}$ of
-  approximately 2.8 D\AA~will result in the experimental melting point
+  approximately 2.8 D$\AA^{2}$~will result in the experimental melting point
   of 273.15 K. A linear regression of the data resulted in an equation
   of best fit of $y = 158.89x - 166.83$. From this, we have predicted
-  an optimal $\overline{Q}$ to be 2.7690 D\AA~.}
+  an optimal $\overline{Q}$ to be 2.7690 D$\AA^{2}$~.}
 \end{figure*}
 
 \begin{figure*}
 \includegraphics[width = \linewidth]{Figures/Tm_Ih_TraQ_plot.pdf}
-\caption{\label{fig:TraQ} Melting point for ice-I$_h$ of several popular water models as a function of the trace of the quadrupole tensor for the model. We see a strong correlation between a more accurate melting point and a larger value of the trace. We estimate that a trace of approximately 2.3 D\AA will result in the experimental melting point of 273.15 K.}
+\caption{\label{fig:TraQ} Melting point for ice-I$_h$ of several popular water models as a function of the trace of the quadrupole tensor for the model. We see a strong correlation between a more accurate melting point and a larger value of the trace. We estimate that a trace of approximately 2.3 D$\AA^{2}$~will result in the experimental melting point of 273.15 K.}
 \end{figure*}
 
 While it is still unclear if these results are indicative of an
@@ -1108,7 +1093,7 @@ this can help in the development of water models in the future.
 
 \subsection{Transport Properties}
 Transport phenomena are processes that describe the transfer (flux) of
-mass, heat, momentum, and charge by molecular motions. During this
+mass, heat, momentum, and charge. During this
 process, the transferred quantity is conserved, \textit{i.e.}, the
 moving quantity is neither created nor destroyed. Because of this, a set
 of balance, or conservation equations can be written down describing
@@ -1133,24 +1118,23 @@ presented in Table \ref{tab:transport}.
 \end{table}
 
 When a transport flux is present, a characteristic response of the
-material the flux is traveling through will become apparent. For
-example, in the presence of an energy flux, a thermal gradient will
-develop in the material. Likewise, a momentum flux will cause a
-velocity distribution to form in the system. Through a series of
-constitutive equations (right column of Table \ref{tab:transport}, it
-is possible to relate the flux to the observed system response through
-a proportionality constant describing the transport.  Following Fick's
-Law, the diffusion coefficient, or diffusivity, ($D$) is the
-proportionality constant describing the transport of mass, $\vec{j}$
-and the resulting concentration gradient $\nabla c(\vec{r},
-t)$. Similarly, by Fourier's Law, the thermal conductivity, $\lambda$,
-is described by the energy flux $\vec{J}$ and the thermal gradient
-through the material $\nabla T(\vec{r}, t)$. Lastly, from Newton's Law
-of Viscosity, the shear stress( $\sigma_{x,z}$) and the velocity
-gradient $\nabla_z (\rho v_x)$ are related through the shear viscosity
-$\eta$. These constants are dependent on the material the transport is
-occuring through, and thus are characteristic quantities of the
-material.
+material will become apparent. For example, in the presence of an
+energy flux, a thermal gradient will develop in the
+material. Likewise, a momentum flux will cause a velocity distribution
+to form in the system. Through a series of constitutive equations
+(right column of Table \ref{tab:transport}), it is possible to relate
+the flux to the observed system response through a proportionality
+constant describing the transport.  Following Fick's Law, the
+diffusion coefficient, or diffusivity, ($D$) is the proportionality
+constant describing the transport of mass, $\vec{j}$ and the resulting
+concentration gradient $\nabla c(\vec{r}, t)$. Similarly, by Fourier's
+Law, the thermal conductivity, $\lambda$, is described by the energy
+flux $\vec{J}$ and the thermal gradient through the material
+$\nabla T(\vec{r}, t)$. Lastly, from Newton's Law of Viscosity, the
+shear stress ($\sigma_{x,z}$) and the velocity gradient
+$\nabla_z (\rho v_x)$ are related through the shear viscosity
+$\eta$. 
+
 
 % \begin{itemize}
 % \item \textbf{Diffusion (Fick's Law):} $\vec{j} = -D \cdot \vec{\nabla}c(\vec{r},t)$ \vspace{0.05in}\\
@@ -1162,11 +1146,11 @@ material.
 % \end{itemize}
 
 \subsubsection{Green-Kubo Relations}
-In the 1950s, Green and Kubo showed that transport coefficients
-are directly related to the time dependence of equilibrium
-fluctuations of the system. If we consider an arbitrary dynamic
-property $A(t)$ with a total time derivative of $\dot{A}(t)$, then the
-displacement at time $t$ is given by
+In the 1950s, Green and Kubo showed that transport coefficients are
+directly related to the time dependence of equilibrium fluctuations of
+the system.\cite{Green1954,Kubo1957} If we consider an arbitrary
+dynamic property $A(t)$ with a total time derivative of $\dot{A}(t)$,
+then the displacement at time $t$ is given by
 \begin{equation}
 A(t) - A(0) = \int_0^t dt' \dot{A}(t').
 \end{equation}
@@ -1213,36 +1197,35 @@ gradient can be used to obtain the transport coefficient through the
 linear constitutive relations in Table \ref{tab:transport}.
 
 For example, if the desired transport property is the thermal conductivity
-($\lambda$) of a material, two regions of the simulation box will be
+($\lambda$) of a material, two regions of the simulation box can be
 thermostatted, and the kinetic energy flux ($J$) required to maintain
-the temperature difference will be calculated. Once this value is
-converged, $\lambda$ can be obtained by
+the temperature difference can be calculated. Once this value is
+converged, $\lambda$ is be obtained by
 \begin{equation}\label{thermalTransport}
-J_{z} = - \lambda \big(\frac{\partial T}{\partial z}\big)
+J_{z} = - \lambda \big(\frac{\partial T}{\partial z}\big).
 \end{equation}
-where the separation has been taken to be along the $z$-dimension of
+Here, the separation has been taken to be along the $z$-dimension of
 the system.  Similarly, the shear viscosity ($\eta$) of a fluid can be
 computed by determining the momentum flux ($ j_{z}(p_{x})$) required
 to maintain a given average velocity in two spatially separated
-regions. 
+regions.
 \begin{equation}\label{momentumTransport}
   j_{z}(p_{x}) = -\eta \big(\frac{\partial v_{x}}{\partial z}\big)
 \end{equation}
 
-Simulation times to converge the required flux to maintain the desired
-thermal or velocity distribution are often shorter than when computing
-transport properties using the Green-Kubo relations. However,
-computing the appropriate flux can be quite challenging. Recently,
-Kuang and Gezelter have developed an approach to non-equilibrium
-molecular dynamics in which they invert the measured and imposed
-quantites.\cite{Kuang2010,Kuang2012} In their method, aptly named
-reverse non-equilibrium molecular dynamics, the flux is imposed across
-two spatially separated regions of the simulation box, and the
-gradient response is measured. Again, the desired transport
-coefficient can be obtained through the linear constitutive
-relations. This method is advantageous over NEMD approaches as the
-gradient response of the system is often much easier to measure
-compared to the difficult to compute flux.
+Simulation times to converge the required flux is often shorter than
+when computing transport properties using the Green-Kubo
+relations. However, computing the appropriate flux can be quite
+challenging. Recently, Kuang and Gezelter have developed an approach
+to non-equilibrium molecular dynamics in which they invert the
+measured and imposed quantites.\cite{Kuang2010,Kuang2012} In their
+method, aptly named reverse non-equilibrium molecular dynamics, the
+flux is imposed across two spatially separated regions of the
+simulation box, and the gradient response is measured. Again, the
+desired transport coefficient can be obtained through a linear
+constitutive relation. This method is advantageous over NEMD
+approaches as the gradient response of the system is often much easier
+to measure compared to the difficult to compute flux.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -1256,44 +1239,40 @@ compared to the difficult to compute flux.
 Water is the simplest compound that can be constructed from the two
 most abundant reactive elements in the unvierse, oxygen and
 hydrogen. It is also the second most common molecule in the universe,
-trailing behind diatomic hydrogen, $\mathrm{H}_2$. It is composed of
-two atoms of hydrogen and one atom of oxygen, and it has been found to
-be fundamental to star formation.  On Earth, water occupies nearly
-$1.4\times 10^{9}~\mathrm{km}^{3}$\cite{Brown2016}, and accounts for 40\% to
-70\% of Earth's retention of heat. It is one of the few molecules that
-can be found in its solid, liquid, and gasseous forms at ambient
-temperatures and pressures.  Some hypothesize that life cannot exist
-without water, as all forms of life found thus far depend on
-it.\cite{Caldecott2008,Henry2005} In many organisms, water comprises
-XX percent of their chemical makeup, with as large as XX in others. In
-humans, water composes nearly half the volume of each
-cell.\cite{Ling2004} It is the ubiquitus nature of water and ice that
-gives rise to its importance; due to its natural abundance a wide
-variety of chemistry and physical processes occur within this medium,
-and at its surfaces.
+trailing behind diatomic hydrogen, $\mathrm{H}_2$.  On Earth, water
+occupies nearly $1.4\times 10^{9}~\mathrm{km}^{3}$\cite{Brown2016},
+and accounts for 40\% to 70\% of Earth's retention of heat. It is one
+of the few molecules that can be found in its solid, liquid, and
+gasseous forms at ambient temperatures and pressures.  Some
+hypothesize that life cannot exist without water, as all forms of life
+found thus far depend on it.\cite{Caldecott2008,Henry2005} In humans,
+water composes nearly half the volume of each cell.\cite{Ling2004} It
+is the ubiquitus nature of water and ice that gives rise to its
+importance; due to its natural abundance a wide variety of chemistry
+and physical processes occur within this medium, and at its surface.
 
-Besides being found everywhere in naturally occurring abundance, water
-expresses numerous structural, dynamic, and thermodynamic
-anamolies.\cite{Brovchenko2008}. The melting, boiling, and critical
-points are unusually high for similar size molecules. The denisty of
-ice increases upon heating (up to 70~K). The density of the liquid
-increases with increasing temperature (up to $\sim$ 281 K). Pressure
-can melt the solid rather than freezing the liquid, and there are more
-solid phases than observed for similar sized molecules. While the
-principles governing these and many other unique properties of water
-are not known, many of the observed anomolies are attributed to the
-electronic distribution around water and the resulting strength of the
-hydrogen bond.
+In addition to being found everywhere in naturally occurring
+abundance, water expresses numerous structural, dynamic, and
+thermodynamic anamolies.\cite{Brovchenko2008}. The melting, boiling,
+and critical points are unusually high compared to molecules of
+similar size. The denisty of ice increases upon heating (up to
+70~K). The density of the liquid increases with increasing temperature
+(up to $\sim$ 281 K). Pressure can melt the solid rather than freezing
+the liquid, and there are more solid phases than observed for similar
+sized molecules. While the principles governing these and other
+unique properties of water are not known, many of the observed
+anomolies are attributed to the electronic distribution around water
+and the resulting strength of the hydrogen bond.
 
-In ancient times, humans recognized the importance of water. The Greek
-philosopher Thales of Miletus, one of the seven sages of antiquity,
-declared that everything was composed of water (around 700 BCE). Later
-in the 5th century BCE, Empedocles described water as being one of
-four 'classical' elements of the ancient world, alongside earth, wind,
-and fire. Likewise, the ancient Chinese described the world around them
-using five elements, earth, wood, metal, fire, and water. The
-importance of water was discovered early in our human history, and it
-has been studied extensively since those early days.
+In ancient times, humans recognized the importance of water. Around
+700 BCE, the Greek philosopher Thales of Miletus, one of the seven
+sages of antiquity, declared that everything was composed of
+water. Later in the 5th century BCE, Empedocles described water as
+being one of four `classical' elements of the ancient world, alongside
+earth, wind, and fire. Likewise, the ancient Chinese described the
+world around them using five elements, earth, wood, metal, fire, and
+water. The importance of water was discovered early in our human
+history, and it has been studied extensively since those early days.
 
 \subsection{The Structure of Water}
 %
@@ -1308,10 +1287,12 @@ found in. In the liquid, the dynamic hydrogen bond network evolves
 rapidly; hydrogen atoms diffuse much more quickly than their
 counterpart oxygen atoms due to `bucket-brigade' like motion. In the
 solid phase, motion occurs much slower. However, motion is observed
-around crystalline defects. There is also a large diversity in the
-crystalline structures of water ice, as over sixteen unique crystal
-structures have been observed or predicted\cite{Chaplin2018}, many of
-which can be seen in Figure \ref{fig:phaseDiagram}
+around crystalline defects; hydrogens are still exchanged between
+oxygens and on slow time scales reorientation is still possible. There
+is also a large diversity in the crystalline structures of water ice,
+as over sixteen unique crystal structures have been observed or
+predicted\cite{Chaplin2018}, many of which can be seen in Figure
+\ref{fig:phaseDiagram}
 
 \begin{figure*}
 \includegraphics[width=\linewidth]{Figures/PhaseDiagram}
@@ -1328,9 +1309,9 @@ which can be seen in Figure \ref{fig:phaseDiagram}
 
 \subsubsection{Gaseous Water}
 In the gas phase, water adopts a `bent-like' geometry, with an HOH
-bond angle of about 104.5\degree~. The oxygen-hydrogen bond length as
-computed by high accuracy quantum mechanical calculations gives 1
-\AA~. These bond lengths and bend angles are an equilibrium value, as
+bond angle of about 104.5\degree~. The oxygen-hydrogen bond length has
+been computed with high levels of accuracy to be roughly 1 \AA~
+long. These bond lengths and bend angles are an equilibrium value, as
 they are constantly vibrating. Even at $-$273.15~\degree C some
 residual vibrations remain. This is described as a zero-point energy,
 and has considerable implications for the potential energy of the
@@ -1338,13 +1319,13 @@ molecule.
 
 Water's electrons are not symmetrically distributed about the
 molecule. This gives rise to higher order multipoles, and it is these
-electronic distributions that give rise to many of water's
-characteristic properties. In the gas phase, water has a dipole moment
-of about 1.85~D. This dipole moment is highly polarizable, that is, it
-readily responds to an external electric field, be it applied or
-created by molecules in its local environment. In the condensed liquid
-phase, the dipole moment becomes much harder to probe, but values have
-been reported ranging from 2.2~D to 2.9~D.
+electronic distributions that govern many of water's characteristic
+properties. In the gas phase, water has a dipole moment of about
+1.85~D. This dipole moment is highly polarizable, that is, it readily
+responds to an external electric field, be it applied or created by
+molecules in its local environment. In the condensed liquid phase, the
+dipole moment becomes much harder to probe, but values have been
+reported ranging from 2.2~D to 2.9~D.
 
 
 \subsubsection{Liquid Water}
@@ -1358,13 +1339,13 @@ room temperature. The order of magnitude difference between the
 intermolecular interactions and thermal fluctuations means that the
 liquid will not boil at room temperatures. The intermolecular forces
 for similar size molecules are weaker, for example
-$\mathrm{H}_2\mathrm{S}$ boils at -60~\degree~C. The strong hydrogen
+$\mathrm{H}_2\mathrm{S}$ boils at -60\degree~C. The strong hydrogen
 bonds and the large dipole moment of water holds the molecules
 together in a condensed phase at room temperature.
 
 The polarizability of a water molecule leads to another interesting
 property, namely, its local bonding environment. In the liquid phase,
-water molecules often adapty tetrahedral like geometries with other
+water molecules often adapting near tetrahedral like geometries with other
 water molecules, resulting in $\sim$~3 nearest neighbors at ambient
 conditions. The maximum density of the liquid is observed to occur at
 $\sim$~4\degree~C, and cooling further results in decreasing
@@ -1380,12 +1361,12 @@ becomes long ranged.
 %Annu. Rev. Phys. Chem. 2017. 68:285–304
 Water ice is a fundamental solid, with implications in biological,
 environmental, geological, and extraterrestial
-phenomena.\cite{Shultz2017} Biologically, many organisms have had to
-adapt to advancing ice fronts. These organisms produce antifreeze
+phenomena.\cite{Shultz2017} Biologically, many organisms have adapted
+to block advancing ice fronts. These organisms produce antifreeze
 proteins which disrupt the hydrogen bonding network at the ice /
 liquid interface, preventing further ice growth. The movement of
 glaciers has carved out surface features on Earth, and throughout our
-solar system reactions and transport of a wide variety of molecules
+solar system reactions and transport of a variety of molecules
 occurs at the surface of ice.
 
 
@@ -1394,10 +1375,8 @@ occurs at the surface of ice.
 The structure of hexagonal ice (ice-I$_\mathrm{h}$) has been studied
 extensively using experimental methods such as neutron scattering and
 x-ray spectroscopy, as well as NMR and laser
-spectroscopy.\cite{w. F. Kuhs and M. S. Lehmann, in Water Science
-  Reviews 2, edited by F. Franks (Cambridge University, New York,
-  1986),pp. 1-65.}  In this structure, water molecules form puckered
-six member rings, with OOO angles formed by three neighboring
+spectroscopy.\cite{Kuhs2012} In this structure, water molecules form
+puckered six member rings, with OOO angles formed by three neighboring
 molecules close to 109.5\degree~. These rings can stack on top of one
 another and expand to form large sheets, giving rise to the observed
 six-fold symmetry of snowflakes. Due to the open structure of the
@@ -1407,7 +1386,7 @@ more open ice, and are aptly named ultra-high density ices. Ice also
 crystallizes into cubic structures, although no interwoven lattice has
 yet been observed for this geometry. In total, there are currently 16
 different crystal structures known for water ice, some of which can be
-seen in Figure \ref{fig:phaseDiagram} and Table \ref{tab:iceProps}. 
+seen in Figure \ref{fig:phaseDiagram} and Table \ref{tab:iceProps}.
 
 \begin{table}
 \centering
@@ -1459,16 +1438,16 @@ Data taken from Reference \cite{Chaplin2018}.
 % 0.283 nm.
 
 In 1933, Bernal and Fowler established a set of rules for populating
-hydrogens into an oxygen ice lattice. These rules are as follows;
-each oxygen atom is covalently bonded to two hydrogens, and each
-hydrogen in each water molecule forms a hydrogen bond with one other
-oxygen. This means there is exactly one hydrogen between every two
-oxygen sites in the lattice. The result of these rules is that each
-oxygen is in a tetrahedral environment, and is donating two hydrogens
-and accepting two hydrogen bonds.
+hydrogens into an oxygen ice lattice.\cite{Bernal1933} These rules are
+as follows; each oxygen atom is covalently bonded to two hydrogens,
+and each hydrogen in each water molecule forms a hydrogen bond with
+one other oxygen. This means there is exactly one hydrogen between
+every two oxygen sites in the lattice. The result of these rules is
+that each oxygen is in a tetrahedral environment, and is donating two
+hydrogens and accepting two hydrogen bonds.
 
 Following these ice-rules, we see that there are two \textit{kinds} of
-crystals that can be obtained, \textit{ordered} and
+crystals that can be formed, \textit{ordered} and
 \textit{disordered}. In the \textit{ordered} case, the hydrogen
 configurations for equivalent water molecules in all unit cells are
 the same, whereas in a \textit{disordered} ice the proton
@@ -1478,15 +1457,15 @@ commonly described in terms of their proton ordering. The two
 descriptions are equivalent as the arrangement or ordering of the
 hydrogens gives rise to the orientation of the water molecules.  Ice-
 I$_\mathrm{h}$, III, IV, V, VI, VII, XII, XVI are proton disordered,
-while ices II, VIII, IX, and XI are proton ordered.
+while Ice- II, VIII, IX, and XI are proton ordered.
 
 Upon cooling, ice-III and ice-VII undergo a phase transition to
 ordered forms, ice-IX and ice-VIII respectively. Transitions of proton
 disordered ice to proton ordered ice must inherently involve the
-reorientation of water molecules, the transfer of hydrogens, or some
-combination of the two. However, if all molecules in the lattice
-satisfy the Bernal Fowler ice-rules, any one water molecule
-reorientation or proton transfer will inevitably break the
+reorientation of water molecules, the transfer of
+hydrogens, or some combination of the two. However, if all molecules
+in the lattice satisfy the Bernal Fowler ice-rules, any one water
+molecule reorientation or proton transfer will inevitably break the
 ice-rules. Therefore, we conclude these events must happen in concert,
 large collections of molecules must simultaneously undergo some
 combination or reorientation and proton transfer. However, the energy
@@ -1494,7 +1473,7 @@ required to do so would be quite large, and larger still for
 increasing number of molecules involved. This amount of energy is not
 likely available at the thermal conditions where these transitions are
 observed to occur, therefore, it is believed that the these
-transitions must depend on defects within the lattice. 
+transitions must depend on defects within the lattice.
 
 There are two known kinds of defects in ice
 lattices, \textit{orientational} defects, known as Bjerrum defects,
@@ -1511,6 +1490,11 @@ between two oxygens, resulting in the formation of a hydroxide and
 hydronium ion.
 
 % Residual Entropy of ice.
+
+\begin{flushleft}
+\textit{Residual Entropy of Ice}
+\end{flushleft}
+
 If we further consider the Bernal Fowler ice-rules, we see that the
 hydrogen arrangement in ice-I$_\mathrm{h}$ is not unique. In 1935,
 Linus Pauling argued that any arrangements of hydrogens which
@@ -1526,14 +1510,14 @@ S = k_{B}~\mathrm{ln}(W)
 where $k_{B}$ is Boltzmann's constant and $W$ is the number of
 equivalent arrangements of the molecules. Pauling estimated the number
 of configurations in two separate ways.\cite{Pauling1935} First, we
-consider that there are possible six ways to orient a water molecule
-within a tetrahedral structure formed by neighboring molecules while
-satisfying the ice-rules. If we give each water molecule one of these
-six orientations at random, there is then a 1/2 probability of having
-a hydrogen between two oxygens, thus there is a 1/4 chance that there
-is exactly one hydrogen between every two oxygens in the lattice. The
-resulting number of correct possible arrangements of $N$ water
-molecules is
+must recognize that there are possible six ways to orient a water
+molecule within a tetrahedral structure formed by neighboring
+molecules while satisfying the ice-rules. If we give each water
+molecule one of these six orientations at random, there is then a 1/2
+probability of having a hydrogen between two oxygens, thus there is a
+1/4 chance that there is exactly one hydrogen between every two
+oxygens in the lattice. The resulting number of correct possible
+arrangements of $N$ water molecules is
 \begin{equation} \label{eq:Pauling-1}
 W_{Pauling} = (6/4)^{N} = (3/2)^{N}.
 \end{equation}   
@@ -1541,7 +1525,7 @@ Pauling arrived at the same result by a second construction. If we
  only enforce there to be a single hydrogen
 between each oxygen in the lattice, there are $2^{2N}$ configurations
 (since there are $2N$ bonds in the network). For each oxygen atom,
-here are $2^{4} = 16$ possible arrangements for the hydrogens, 10 of
+there are $2^{4} = 16$ possible arrangements for the hydrogens, 10 of
 which are ruled out as they result in non-intact
 molecules. That is, they form structures of (H$_{4}$O)$^{2+}$,
 (H$_{3}$O)$^{+}$, (HO)$^{-}$, and O$^{2-}$. Therefore, there are only
@@ -1600,7 +1584,7 @@ for water.  More recently, Haymet \emph{et al.} have investigated the
 effects cations and anions have on crystal
 nucleation.\cite{Bryk2004,Smith2005,Wilson2008,Wilson2010} Nada
 \textit{et al.}  have also studied ice/water
-interfaces,\cite{Nada1995,Nada2000,Nada2003,Nada2012} and have found
+interfaces,\cite{Nada1995,Nada2000,Nada2003a,Nada2012} and have found
 that the differential growth rates of the facets of ice-I$_\mathrm{h}$
 are due to the the reordering of the hydrogen bonding network at the
 interface.\cite{Nada2005}
@@ -1909,7 +1893,7 @@ parameter, they estimated the width of the surface premelt to be
 $\sim$ 0.9~nm, agreeing with other computational
 predictions\cite{Conde2008,Bishop2009,Pan2011} and experimental
 observations of Bluhm \textit{et al.}\cite{Bluhm2002}, Beaglehole and
-Wilson\cite{Bealgehole1993}, and Murata \textit{et
+Wilson\cite{Beaglehole1993}, and Murata \textit{et
   al.}\cite{Murata2015}. Close to the triple point (2~K below it),
 Benet found that the surface premelt of the prismatic face behaves as
 two independent interfaces. They also observed that the two interfaces
@@ -1938,7 +1922,7 @@ saturations.\cite{Libbrecht2005} These varying crystal structures are
 attributed to a crossover in the growth rates of the basal and
 prismatic faces. However, we do not currently understand what
 structural transformation occurs at the surface to drive the
-crossover.\cite{Libbrecht2005,Furukawa2007,Liu1995} Kuroda and Lacmann
+crossover.\cite{Libbrecht2005,Furukawa2007,Liu1996} Kuroda and Lacmann
 have attributed the crossover to differential QLL formation
 temperatures for different exposed crystal facets.\cite{Kuroda1982}
 
@@ -1946,180 +1930,185 @@ temperatures for different exposed crystal facets.\cite{Kuroda1982}
 
 \subsubsection{Anisotropic Diffusion of the QLL}
 While probing the dynamics of molecules in the quasi-liquid layer,
-Pfalzgraff, Neshyba, and Roeselova discovered anisotropic diffusion on
+Pfalzgraff, Neshyba, and Roeselova observed anisotropic diffusion on
 the surfaces of the prismatic, 14\degree~ and 28\degree~ pyramidal
-facets.\cite{Pfalzgraff2011} They attributed the observed anisotropy
-to the underlying surface features. The prismatic and pyramidal
-surfaces present large channels to the QLL, and the energy
-required for diffusion along the channel was observed to be smaller
-than traversing across. Even though the basal face presents a
-non-uniform surface to the QLL, isotropic diffusion was observed. They
-argued that the barrier for diffusion in each of the non-uniform
-directions was much closer in energy, and readily available for
+facets.\cite{Pfalzgraff2011} They attributed this anisotropy to the
+underlying surface features. The prismatic and pyramidal surfaces
+present large channels to the QLL, and the energy required for
+diffusion along the channel was conjectured to be smaller than
+traversing across. The basal face also presents a non-uniform surface
+to the QLL, although isotropic diffusion was observed. They argued
+that the barrier for diffusion in each of the non-uniform directions
+on this surface was much closer in energy, and readily available for
 molecules at the simulated temperature.
 
-In a follow up study, Gladich \textit{et al.} watched the movement of
-water molecules in the quasi-liquid layer along each axis
-independently, and found at low temperatures that movement normal to
-the interface happened in concert with large displacements in the
-normal plane, even when the normal motion was still well within the
-QLL.\cite{Gladich2011} Therefore, these motions normal to
-the interface will largely influence surface diffusion of the
-molecules. These motions were in good agreement with the diffusion
-mechanism proposed by Bishop \textit{et al.}\cite{Bishop2009} and by
-Bolton and Pettersson\cite{Bolton2000}, which suggested the outtermost
-molecules of the QLL moved across a relatively rigid
-surface. Diffusion characterized in this way will be highly sensative
-to the underlying surface morphology and topography, mainly, if the
-surface geometry or potential energy surface is anisotropic, we should
-expect diffusion across this surface to also be anisotropic. XXX
+In a follow up study, Gladich \textit{et al.} investigated the
+temperature dependence of this anisotropic diffusion, and found at low
+temperatures that movement normal to the interface happened in concert
+with large displacements in the normal plane, even when the normal
+motion was still well within the QLL.\cite{Gladich2011} They concluded
+that these motions normal to the interface will largely influence
+surface diffusion of the molecules. These motions were in good
+agreement with the diffusion mechanism proposed by Bishop \textit{et
+  al.}\cite{Bishop2009} and by Bolton and Pettersson\cite{Bolton2000},
+which suggested the outtermost molecules of the QLL moved across a
+relatively rigid surface. Diffusion characterized in this way would be
+highly sensative to the underlying surface morphology and topography.
+That is, if the surface geometry or potential energy surface for
+diffusion is anisotropic, we should expect to recover non-uniform
+diffusion across the surface.
 
 Observations that in-plane diffusion follows motions transverse to the
-interface were observed at warmer temperatures as well. Through this
-vertical motion, the QLL molecule leaves a well-hydrated local
-environment, moving to the outter portion of the surface where there
-are fewer hydrogen bond partners. Gladich concludes the activation
-energy for the high-temperature mechanism for diffusion is greater
-than that of the low-temperature. They further estimate these values
-to be 29.1 kJ mol$^{-1}$ for $E_\mathrm{a}$ the low-temperature
-(approximately the energy of on hydrogen bond with the NE6 model, to
-53.8 kJ mol$^{-1}$ at temperatures close to the melting point (roughly
-two hydrogen bonds).  With increasing temperature and a thicker
-surface premelting forming, the differing surface topography is masked
-and thus there is no observed anisotropy in surface diffusion.
+interface were observed at warmer temperatures as well, however, at
+warm enough temperatures isotropic diffusion was
+observed.\cite{Gladich2011,Gladich2015} They proposed the following
+mechanism and reported activation energies. Through this vertical
+motion, the QLL molecule leaves a well-hydrated local environment,
+moving to the outter portion of the surface where there are fewer
+hydrogen bond partners. Gladich concluded that the activation energy
+for high-temperature diffusion is greater than that of the
+low-temperature. This is due to the thicker surface premelt at warmer
+temperatures.  They further estimate these activation energies to be
+29.1 kJ mol$^{-1}$ for low-temperature diffusion (approximately the
+energy of on hydrogen bond with the NE6 model), and 53.8 kJ mol$^{-1}$
+at temperatures close to the melting point (roughly two hydrogen
+bonds).  However, with increasing temperature and a thicker surface
+premelt, the surface morphology and topography is masked and isotropic
+diffusion is recovered. Gladich observed the recovery to isotropic
+diffusion between 49~K and 39~K of undercooling for the NE6 model.
 
-Querrying the molecule's distance from the ice surface they proposed a
-mechanism for the observed anisotropic diffusion, and arrenhius
-behavior.\cite{Gladich2015} Nasello \textit{et al.} investigated
-surface diffusivity of ice by observing the formation of grain
-boundaries on polycrystalline ice surfaces.\cite{Nasello2007}
-Gladich's computed values for surface diffusivity agree well with
-those by Nasello as Gladich's values fall within the error bars
-reported by Nasello. Gladich's work agrees well with the experimental
-work reported by Price \textit{et al.}\cite{Price1999}, especially at
-warmer temperatures. At cooler temperatures however, Gladich seems to
-underestimate surface diffusivity.  Following these works, Wang
-\textit{et al.} investigated the activation energy for diffusion of
-quasi-liquid layer molecules at a secondary prismatic ice
-surface.\cite{Wang2017}
-
-It is interesting to note that at warm temperatures, simulations of
-supercooled bulk liquid\cite{Picaud2006,Mahoney2001} have also
-reproduced surface diffusivity measured by Price \textit{et
-  al.}. However, the supercooled bulk liquid simulations predict a
-negative Arrhenius curvature, implying the
-activation energy of diffusion decreases with increasing temperature,
-opposite of that observed by Price \textit{et al.} and predicted by
-Gladich \textit{et al.}. Given the difference in sign for the
-estimated activation energies, it is clear the mechanism predicted in
-each case is drastically different.
-
-Gladich \textit{et al.} estimated the temperature at which the
-anisotropic surface diffusivity becomes isotropic by plotting the
-ratio of surface diffusions ($D^{*}_\mathrm{x}$ / $D^{*}_\mathrm{z}$)
-by temperature. They observed a transition to about unity between 240K
-and 250K, between 49 and 39 K of undercooling for the NE6 model.  The
-self-diffusion is also seen to be anisotropic at low temperatures
-(around XX K), and transitions to isotropic around 240-250K.
-
-% end Gladdich11
-
+The diffusion coefficients computed by Gladich \textit{et al.} also
+agreed well with the surface diffusivity measurements by Nasello
+\textit{et al.}, who observed the formation of grain boundaries on
+polycrystalline ice surfaces.\cite{Nasello2007} Interestingly, the
+diffusion coefficients also agreed well with NMR measurements of
+supercooled water by Price \textit{et al.}, especially at warmer
+temperatures. \cite{Price1999} At cooler temperatures ($\sim$~240~K),
+the reported values deviate from one another. Simulations of bulk
+liquid also agree with the work of Price, however, at colder
+temperatures the bulk-liquid simulations predict a negative Arrhenius
+curvature, opposite of that observed by
+Price.\cite{Picaud2006,Mahoney2001}
 
 \subsection{Friction at the Surface of Ice}
 
-One anomoly of water in particular has been at the heart of a debate
-amongst scientists for nearly two centuries; the observed low
-coefficients of friction for sliding across ice.  Tribological studies of
-ice in contact with a wide variety of materials (including other ice)
-has been the focus of research for many years.  Approximately 150
-years ago, Faraday attributed the freezing of two pieces of ice
-together to be due to the ice surfaces being covered with a
-quasi-liquid layer.\cite{Faraday1859} This marked the beginning
-of the modern investigation on the properties of ice and the role the
-surface liquid-like layer plays in ice friction. Soon thereafter,
-Thomson incorrectly attempted to explain the presence of the
-liquid-like layer as a result of pressure melting.\cite{Thomson1859}
-Reynolds followed Thomson's work, and systematically investigated
-sliding on ice. He also concluded that pressurized melting of the ice
-surface was the governing physical process for the obeserved small
-coefficients of friction.\cite{Reynolds1901} This view was widely
-accepted, until Bowden and Hughes proposed that frictional heating may
-primarily be responsible for the small coefficients of friction
-observed for ice.\cite{Bowden1939}
+Tribological studies of ice has been an active field of research for
+many years.  Approximately 150 years ago, Faraday attributed the
+freezing of two pieces of ice together to the ice surfaces being
+covered with a quasi-liquid layer.\cite{Faraday1859} This marked the
+beginning of the modern investigation on the properties of ice and the
+role the surface liquid-like layer plays in ice friction. Soon
+thereafter, Thomson explained the presence of the liquid-like layer as
+a result of pressure melting.\cite{Thomson1859} Reynolds followed
+Thomson's work, and systematically investigated sliding on ice. He
+also concluded that pressurized melting of the ice surface was the
+governing physical process for the obeserved small coefficients of
+friction.\cite{Reynolds1901} This view was widely accepted, until
+Bowden and Hughes proposed that frictional heating may be the dominant
+factor, not pressurized melting.\cite{Bowden1939} Understanding ice
+friction is vital for applications including ice skating and winter
+sports\cite{Rosenberg2005,Kietzig2010}, road safety and shoe
+soles\cite{Roberts1981,Higgins2008}, glacier
+movement\cite{Casassa1991, Sukhorukov2013, Pritchard2012}, and the
+fracture of the arctic sea
+ice\cite{Schulson2004,Weiss2007,Feltham2008,Lishman2011,Lishman2013}.
 
-Since these inaugural investigations of ice, a large and diverse
-community of scientists has formed, studying ice and ice friction
-for applications including ice skating and winter 
-sports\cite{Rosenberg2005,Kietzig2010}, 
-road safety and shoe soles\cite{Roberts1981,Higgins2008}, 
-glacier movement\cite{Casassa1991, Sukhorukov2013, Pritchard2012},
-and the fracture of the arctic sea 
-ice\cite{Schulson2004,Weiss2007,Feltham2008,Lishman2011,Lishman2013}.  
-Experimentally, the surface of ice has been probed by atomic force
-microscopy
-(AFM)\cite{Doppenschmidt1998,Bluhm1999,Bluhm2000}, scanning force
-microscopy\cite{Bluhm1998}, ellipsometry\cite{Beaglehole1980,Beaglehole1993},
-nuclear magnetic resonance (NMR)\cite{Ishizaki1996}, X-ray 
-diffraction\cite{Dosch1996}, and photoelectron
-spectroscopy\cite{Bluhm2002}. Further investigation has been performed by
-computer simulations, studying bulk 
-ice\cite{Kerr1988,Tse1988,Hayward1997,Gao2000,Rick2005,Dong2001,Weber1983,Wang2005,Kuo2005,Buch1998,Rick2001,Gay2002}, 
-ice / vapor\cite{Kroes1992,Devlin1995,Ikeda-Fukazawa2004,Picaud2006,Conde2008,Pereyra2009},
-and ice / water\cite{Baez1995,Bryk2002,Bryk2004,Bryk2004a,Gao2000,GarciaFernandez2006,Hayward2002,Hayward2001,Karim1988,Karim1987,Karim1990,Louden2013,Nada1997,NadaH.andFurukawa1995,Nada1996,Nada2000,Nada1997a} interfaces. 
+% Experimentally, the surface of ice has been probed by atomic force
+% microscopy (AFM)\cite{Doppenschmidt1998,Bluhm1999,Bluhm2000}, scanning
+% force microscopy\cite{Bluhm1998},
+% ellipsometry\cite{Beaglehole1980,Beaglehole1993}, nuclear magnetic
+% resonance (NMR)\cite{Ishizaki1996}, X-ray diffraction\cite{Dosch1996},
+% and photoelectron spectroscopy\cite{Bluhm2002}. Further investigation
+% has been performed by computer simulations, studying bulk
+% ice\cite{Kerr1988,Tse1988,Hayward1997,Gao2000,Rick2005,Dong2001,Weber1983,Wang2005,Kuo2005,Buch1998,Rick2001,Gay2002},
+% ice /
+% vapor\cite{Kroes1992,Devlin1995,Ikeda-Fukazawa2004,Picaud2006,Conde2008,Pereyra2009},
+% and ice /
+% water\cite{Baez1995,Bryk2002,Bryk2004,Bryk2004a,Gao2000,GarciaFernandez2006,Hayward2002,Hayward2001,Karim1988,Karim1987,Karim1990,Louden2013,Nada1997,NadaH.andFurukawa1995,Nada1996,Nada2000,Nada1997a}
+% interfaces.
 
 
-Both experiments and computer simulations point towards the existence
-of a QLL forming on the surface of ice at temperatures below the bulk
-melting point. The formation of this layer is believe to be driven by
-the termination of the periodic crystal structure at the surface. The
-surface molecules are only weakly bound to their lattice positions by
-the underlying ice, and with appreciable thermal energy these
-molecules reorient (and at warmer temperatures translate along the
-surface) to maximize their hydrogen bonds. This results in the
-formation of the QLL, which is generally accepted as the reason why
-ice displays a low friction
-coefficient\cite{Malenkov2009,Dash1995,Rosenberg2005,Dash2006}.
+% Both experiments and computer simulations point towards the existence
+% of a QLL forming on the surface of ice at temperatures below the bulk
+% melting point. The formation of this layer is believe to be driven by
+% the termination of the periodic crystal structure at the surface. The
+% surface molecules are only weakly bound to their lattice positions by
+% the underlying ice, and with appreciable thermal energy these
+% molecules reorient (and at warmer temperatures translate along the
+% surface) to maximize their hydrogen bonds. This results in the
+% formation of the QLL, which is generally accepted as the reason why
+% ice displays a low friction
+% coefficient\cite{Malenkov2009,Dash1995,Rosenberg2005,Dash2006}.
 
 
-There have been extensive investigations on ice friction, attempting
-to ellucidate the roles of
+Coefficients of friction for ice are about 1 order of magnitude
+smaller than found for other solids. Ice friction has been found to
+vary with many factors, including
 temperature\cite{Roberts1981,Higgins2008,Bowden1939,Evans1976,Derjaguin1988,Liang2003},
-sliding speed\cite{Evans1976,Derjaguin1988,Liang2003}, applied
-load\cite{Buhl2001,Bowden1939,Derjaguin1988,Baurle2006,Oksanen1982},
-contact area\cite{Bowden1939,Baurle2007}, and
-moisture\cite{Calabrese1980}. Recently, Kietzig \textit{et al.} have
-performed experiments consisting of sliding different steel alloy
-rings over a prepared ice surface.\cite{Kietzig2009} They investigated
-the effect of surface nanopatterning, hydrophobicity, and surface
-structure of the ice-exposed slider on the ice/slider friction.  These
-properties were studied over a wide range of temperatures and sliding
-velocities. They found at all temperatures investigated, increasing
-the slider velocity with constant temperature, decreases the friction
-coefficient. After passing through a minimum, the friction coefficient
-slightly increases. This slight increase was attributed to added drag
-due to capillary bridges forming between the melt film and
-slider. They observed a decrease in friction with increasing
-temperature, up to a minimum at about $-4$ degrees Celsius. At
-temperatures warmer than this, there was an observed increase in
-friction which was attributed to capillary bridges and viscous
-shearing of the melt film.  Through use of laser irradiation, the
-slider hydrophobicity was tuned without changing the chemical nature
-of the material. Kietzig showed that laser induced hydrophobicity
-resulted in fewer capillary bridges forming between the slider and the
-melt film. This reduced the amount of viscous shearing of the
-ice-melt, resulting in a lower friction coefficient.
+sliding speed\cite{Evans1976,Derjaguin1988,Liang2003}, surface
+asparities of the contact surfacea\cite{Bowden1939,Baurle2007},
+moisture\cite{Calabrese1980} ,and
+load.\cite{Buhl2001,Bowden1939,Derjaguin1988,Baurle2006,Oksanen1982}
+While holding all other variables constant, friction is observed to
+decrease with increasing sliding speeds. At slow sliding speeds,
+friction is found to be very large. Investigating glass and granite
+sliding on ice around $10^{-7}$~m~$\mathrm{s}^{-1}$, Persson observed
+coefficients of friction of 0.3 and 0.9
+respectively.\cite{Persson2001} Li and Somorjai attributed the
+discrepency in sliding speeds to be due to the following; at high
+sliding speeds on a macroscopic scale, frictional heating causes
+surface melting, resulting in a thicker lubricating layer.
+Microscopically, at high sliding speeds the slider's surface
+asparities have less time to push out the lubricating ice-melt and
+cause large plastic deformation on the ice surface.\cite{Li2007} They
+proposed the opposite to hold true at smaller sliding speeds, thus the
+observed increase in friction with decreasing sliding speeds.
+
+Evans \textit{et al.} and Colbeck \textit{et al.} have observed a
+decrease in friction with increasing
+temperature.\cite{Evans1976,Colbeck1997}. At warmer temperatures, a
+thicker QLL should act as a better lubricating layer. However, the
+optimum temperature for speed skating is well known to be around
+-7\degree~C, with a reported coefficient of friction of
+0.0046.\cite{Dekoning1992} Above -7\degree~C, friction is observed to
+increase again, indicating that a plastic deformation of the ice
+surface is causing an increase in the contact area between the skate
+and the ice surface.\cite{Barnes1966,Barnes1971} Since the load of the
+skater is not changing through this process, the increase in the
+contact area yields a greater adhesive force which gives the increase
+in friction.
+
+Recently, Kietzig \textit{et al.}  conducted experiments consisting of
+sliding different steel alloy rings over a prepared ice
+surface.\cite{Kietzig2009} They investigated the effect of surface
+nanopatterning, hydrophobicity, and surface structure of the
+ice-exposed slider on the ice/slider friction.  These properties were
+studied over a wide range of temperatures and sliding
+velocities. % They found at all temperatures investigated, increasing
+% the slider velocity with constant temperature, decreases the friction
+% coefficient. After passing through a minimum, the friction coefficient
+% slightly increases. This slight increase was attributed to added drag
+% due to capillary bridges forming between the melt film and
+% slider. They observed a decrease in friction with increasing
+% temperature, up to a minimum at about $-4$\degree~C. At temperatures
+% warmer than this, there was an observed increase in friction which was
+% attributed to capillary bridges and viscous shearing of the melt film.
+Through use of laser irradiation, the slider hydrophobicity was tuned
+without changing the chemical nature of the material. Kietzig showed
+that laser induced hydrophobicity resulted in fewer capillary bridges
+forming between the slider and the melt film. This reduced the amount
+of viscous shearing of the ice-melt, resulting in a lower friction
+coefficient.
 %, resulting in a delayed onset of the increase 
 %in friction coefficient with slider velocity.
 While most investigations of ice friction focus on heterogeneous
 materials\cite{Bowden1939,Evans1976,Derjaguin1988,Liang2003,Liang2005,Baurle2006,Baurle2007,Kietzig2009,Kietzig2010},
-there have also been advances made on understanding ice-ice friction\cite{Oksanen1982,Kennedy2000,Maeno2004,Fortt2007,Fortt2011,Lishman2011,Samadashvili2013}.
+there have also been advances on understanding ice-ice friction\cite{Oksanen1982,Kennedy2000,Maeno2004,Fortt2007,Fortt2011,Lishman2011,Samadashvili2013}.
 
 
-Three distinct ice friction regimes have been described:
-boundary friction, mixed friction, and hydrodynamic friction, and the
-particular regime depends on the temperature and sliding velocity of
-the
-material.\cite{Bhushan2002,Kietzig2009,Kietzig2010,Persson2015,Tuononen2016}
+Three distinct ice friction regimes have been described: boundary
+friction, mixed friction, and hydrodynamic
+friction.\cite{Bhushan2002,Kietzig2009,Kietzig2010,Persson2015,Tuononen2016}
 The observed friction is the result of different physical processes in
 each regime. In boundary friction, the lubricating layer of ice melt
 is only a few molecules thick. This thin film is unable to support the
@@ -2171,181 +2160,50 @@ how does the structure of the interface change during this process,
 and what role does the presented crystal facet have in the observed
 friction?
 
-
-Observed coefficients of friction on ice are about 1 order of
-magnitude lower than found for other solids. However, these
-coefficients are found to vary with many factors, including
-temperature, sliding speeds, surface asparities of the contact
-surface, and load.\cite{Evans1976,Kietzig2002,Persson2001,Persson2015} While
-holding all other contributions constant, the coefficient of friction
-is observed to decrease with increasing sliding speeds. At slow
-sliding speeds, the friction is found to be very large. Investigating
-glass and granite sliding on ice around $10^{-7}$, Persson observed
-coefficients of friction of 0.3 and 0.9 respectively.\cite{Persson2000} Li and
-Somorjai attributed the discrepency in sliding speeds to be due to the
-following; macroscopically at high sliding speeds frictional heating
-causes surface melting, resulting in a lower coefficient of friction,
-while microscopically the slider's surface asparities have less time
-to push out the lubricating ice-melt and to cause large plastic
-deformation on the ice surface.\cite{Li2007} They proposed the
-opposite to hold true at smaller sliding speeds, thus the observed
-increase in friction with decreasing sliding speeds.
-
-Name and Name have observed a decrease in friction with increasing
-temperature.\cite{Evans1976,Colbeck1997}. This is commonly attributed to a
-thicker QLL present on the surface of ice with increasing temperature,
-where the thicker QLL acts as a better lubricating layer. However, the
-optimum temperature for speed skating is well known to be around -7
-degrees Celcius, with a reported coefficient of friction of
-0.0046.\cite{Dekoning1992} Above -7 degrees Celcius, the observed
-friction is found to increase again, indicating that a plastic
-deformation of the ice surface is causing an increase in the contact
-area between the skate and the ice surface.\cite{Barnes1966,Barnes1971}
-Since the load of the skater is not changing through this process, the
-increase in the contact area yields a greater adhesive force and from
-this the observed increase in friction.
-
-\subsubsection{Atomic Force Microscopy Tip Penetration Measurements}
-A quick intro of AFM...  Atomic force microscopy (AFM) is an
-experimental technique in which an ultrafine metallic tip (with a
-single atom at its point) is connected to a cantilever, and as the tip
-approaches the surface, probes the surface topology by interpreting
-the motion of the cantilever. BLAH. 
+\begin{flushleft}
+\textit{Atomic Force Microscopy of the Surface of Ice}
+\end{flushleft}
 
 To probe the plastic deformation of ice surfaces, Pittenger \textit{et
   al.} have performed atomic force microscopy (AFM) experiments where
-they indented the surface with the AFM tip.\cite{Butt2000,
-  Pittenger2001,Bluhm2000} They found yield strengths of 14 MPa at -10.4
-degrees Celcius, and 20 MPa at -15.1 degrees Celcius, both of which
-are smaller than Young's modulus of bulk ice. This indicates that the
-ice surface undergoes plastic deformation during the indentation of
-the tip. Pettinger also attempted to determine the mechanism for
-plastic flow during the plastic deformation by performing indentation
-experiments at varying tip approach speeds. Butt \textit{et al.}
-argued the rate of pressurized melting due to the presence of the tip
-controlled the tip penetration speed.\cite{Butt2000} However, Pettinger
-\textit{et al.} pointed out the pressure due to the tip was not large
-enough to cause melting of the surface.\cite{Pittenger2001} Therefore, at the
-temperatures and pressures Pettinger performed the AFM experiments at,
-one would expect a thick QLL to be present. Given that, the
-penetration rate should be governed by the rate of flow viscosity of
-the QLL out from under the tip. However, the viscosity of the QLL
-layer is still unknown. These AFM experiments do indicate that the
-viscosity of the QLL must be at least 2 orders of magnitue greater
-than that of bulk supercooled water. Li and Somorjai conjecture that
-the increase in viscosity could be due to the confinement of the QLL
-between the AFM tip and the ice, or due to the intrinsic ordering of
-the QLL itself.
+they indented the surface with an AFM tip.\cite{Butt2000,
+  Pittenger2001,Bluhm2000} They found yield strengths of 14 MPa at
+-10.4\degree~C, and 20 MPa at -15.1\degree~C; both are smaller than
+Young's modulus of bulk ice. This indicates that the ice surface
+undergoes plastic deformation during the indentation process. Butt
+\textit{et al.}  argued that the rate of pressurized melting due to
+the presence of the tip controlled the tip penetration
+speed.\cite{Butt2000} However, Pettinger \textit{et al.} pointed out
+that the pressure due to the tip was not large enough to cause melting
+of the surface.\cite{Pittenger2001} They concluded that their AFM
+experiments probed the deformation of an ice surface with the presence
+of a QLL. Given that, the penetration rate of the AFM tip should be
+governed by the rate of flow and viscosity of the QLL out from under
+the tip. These AFM experiments indicate the viscosity of the surface
+premelt must be at least 2 orders of magnitude greater than that of
+bulk supercooled water. Li and Somorjai conjecture that the increase
+in viscosity could be due to the confinement of the QLL between the
+AFM tip and the ice, or due to the intrinsic ordering of the QLL
+itself.\cite{Li2007}
 
-% Molecular dynamics simulation of ice indentation by model atomic
-% force microscopy tips.
-%  Constantin, Carignano, Corti, Szleifer, JPC-C 119 (2015) 27118
+Using lateral force microscopy (LFM), Bluhm \textit{et al.} have
+obtained friction coefficients for ice grown on a mica substrate over
+a temperature range of -40\degree~ to -24\degree~ C.\cite{Bluhm2000}
+Plotting the lateral force against the imposed load, they were able to
+extract a friction coefficient of about 0.6, which was robust over the
+entire temperature range spanned. Since these results were comparable
+to static friction coefficients observed in macroscopic measurements,
+they conjectured that the QLL was pushed out from under the tip,
+resulting in the tip having direct contact with the ice surface. 
 
-% end Constantin2015
-
-\subsubsection{Lateral Force Microscopy Measurements}
-Lateral force microscopy is an experimental technique in which ...
-
-Using LFM, Bluhm \textit{et al.} have obtained friction coefficients
-for ice grown on a mica substrate over a temperature range of -40 to
--24 degrees Celcius.\cite{Bluhm2000} Plotting the lateral force against the
-imposed load, they were able to extract a friction coefficient of
-about 0.6, which was robust over the entire temperature range
-spanned. Due to this, and that the value obtained is comparable to
-static friction observed in macroscopic measurements, they believe the
-QLL was pushed out from under the tip, resulting in the tip having
-direct contact with the ice surface. (They observed a QLL of about 8 nm thick
-on the surface at XX degrees Celcius.) 
-
-\subsubsection{Viscosity of the QLL}
- Interpretation of AFM measurements of the friction of ice depends
- strongly on whether a QLL is present between the tip and the
- surface. However, since the viscosity of the QLL is not known, nor
- how the value changes with changing conditions such as temperature or
- confinement under the tip, many of the results reported above are
- open to conjecture. A promising technique to obtain the viscosity of
- the QLL is interfacial force microscopy (IFM). The benefit to IFM as
- compared to other AFM techniques, is it does not suffer from the
- 'jump-in' instability as it is  force-controlled (more). Using IFM,
- measurements of the normal and lateral forces are able to be obtained
- throughout the interfacial separation.\cite{Joyce1991} Recently, Name and
- Name have studied confined water between a Au(111) surface and a Au
- tip.\cite{Major2006} The effective viscosity was observed to be 7 orders of
- magnitude greater than bulk water, with the increase attributed to
- the structural ordering required under confinement. 
-
- It would be interesting if an IFM investigation of the QLL on ice is
- able to charactarize the viscosity of the ice-melt, which might help
- to further explain the observed AFM results described
- above. Similarly, knowledge of the viscosity would also help
- ellucidate the mechanism for the observed QLL behavior at the leading
- and trailing edge of sliders.
-
- % End Summary
+Interpretation of AFM and LFM measurements of ice friction depends
+strongly on whether a surface premelt layer is present between the tip
+and the surface. However, since the viscosity of the quasi-liquid
+layer is not known, nor how the fluid behaves confinement under the
+tip, many of the reported results are open to conjecture.
 
 
-% Determination of Surface Tension-to-Shear VIscosity Ratio for
-% Quasiliquid layers on Ice Crystal Surfaces.
-%   K. Murata, H. Asakawa, K. Nagashima, Y. Furukawa, G. Sazaki
-%   PRL 115 (2015) 256103
-Using laser confocal microscopy in conjunction with an inverted
-optical microscope, Murata \textit{et al.} have recently measured the
-characteristic-velocity (\textit{i.e.} the surface tension-to-shear
-viscosity ratio) of two distinct wetting morphologies of QLLs on the
-basal surface of ice at -0.2 degrees Celcius and a pressure of 578.9
-Pa.\cite{Murata2015} They observed a partial wetting QLL, described as
-a bulk liquid droplet (BLD), as well as a complete wetting state,
-described as a thin liquid layer (TLL). The characterstic-velocity of
-the BLDs was determined from relaxation modes of their contact lines,
-which was observed to decay with single exponential behavior according
-to
-\begin{equation}
-u_q = u_q(0) exp\Bigg(-\frac{V^* \theta^3 q}{3l}t\Bigg)
-\end{equation}
-where $q$ is the wave vector for the perturbing mode for the
-relaxation of the amplitude of the contact line and $u_q(0)$ being the
-initial amplitude of the mode. Here, $V^* = \gamma / \eta$ is the
-characteristic velocity and $\theta$ is the contact angle the BLD makes
-with the ice surface ($\sim$ 2 degrees). Lastly, the logarithmic factor
-$l=\mathrm{ln}(L/a)$ is a cutoff parameter which helps avoid
-singularities. From this fit, they obtained $V^* = 2 \pm 1$ m/s, which
-is about an order of magnitude smaller than that of bulk water, 42.21
-m/s.
 
-Murata \textit{et al.} also investigated the spreading dynamics of the
-BLD-QLLs, during the transformations to TLL-QLLs. The radii of the
-spreading BLD-QLLs were fit to a power law
-\begin{equation}
-r = L (\frac{4S}{3Ll \eta})^{1/4}(t+t_0)^{1/4}.
-\end{equation}
-Here, $S$ is the spreading coefficient, and $t_0$ captures the initial
-state of the droplet. As the QLL transitions from the BLD
-drpolet-shape to the TLL pancake-shape, the volume must be
-conserved. From this conservation, Murata \textit{et al.} estimated
-the thickness of the TLLs as 9 $\pm$ 3 nm.
-
-Lastly, Murata \textit{et al.} have obtained the characterstic
-velocity of the TLLs in the same way as the BLDs. However, here the
-hydrodynamic dissipation is not located at the wedge of the droplet
-like in the BLD case, but instead the dissipation occurs within the
-fluid of the pancake-shape object itself. Due to this, a slightly
-different expression for the viscious force must be used, and the
-resulting characteristic velocity was found to be $V^* = 0.2 \pm 0.1$
-m/s, about 200 times smaller than that of bulk water. This seems to
-imply a dependence on the characterstic velocity to the QLLs contact
-area and distance from the surface. The BLD droplet-shaped QLLs (where
-the QLL is only partially wets the surface and a larger amount of the
-QLL resides further from the surface), were found to have a
-characterstic velocity of about an order of magnitude larger than the
-more completely wetting state, where more of the QLL resides closer to
-the surface.
-
-It is interesting to note that the surface tension of the BLD/air
-interface ($\gamma_t$) is approximately equal to the TLL/air interface
-surface tension ($\gamma_b$), as there is observed coexistence of both
-forms of QLLs at the same time. Therefore, the discrepency in $V^*$
-can be primarily attributed to the shear viscosity of the QLL phase.
-% end Murata2015
 
 
 
@@ -2465,23 +2323,27 @@ can be primarily attributed to the shear viscosity of the QLL phase.
 
 \section{Summary}
 We began this chapter with an overview of molecular dynamics
-simulations, and followed with a discussion of the importance of water
-in our world and in our lives.  In the chapters to follow, I present
-my contribution to our understanding of the most anomalous molecule,
-water. In Chapter \ref{chap:Methods} I describe the computational
-details and methodologies used in simulating shearing at
-ice-I$_\mathrm{h}$ / water interfaces. In Chapters \ref{chap:Str} and
-\ref{chap:Dyn}, I investigate the structure and dynamics of the liquid
-at the interface, and present estimates of the interfacial width. In
-Chapter \ref{chap:Friction}, I present an appropriate friction
-coefficient for no-slip boundary conditions, and explore possible
-mechanisms of the observed facet dependent friction. In Chapter
-\ref{chap:QLL}, I investigate the shear viscosity of the premelting
-quasi-liquid layer of ice-I$_\mathrm{h}$ / vapor interface. Lastly, I
-conclude my work and project towards the future in Chapter
-\ref{chap:Concl}.
+simulations, including a brief discussion of water models and methods
+to compute transport properties. Following this, we discussed
+fundamental knowledge of ice, water, and characteristics of the
+surface premelting layer. Lastly, we summarized our current
+understanding of ice friction, arriving at open questions about the
+effect the presented surface has on the premelt, and the
+viscosity of the quasi-liquid layer.
 
-
+In the chapters to follow, I present my contribution to our
+understanding of friction at the surface of ice . In Chapter
+\ref{chap:Methods} I describe the computational details and
+methodologies used in simulating shearing at ice-I$_\mathrm{h}$ /
+water interfaces. In Chapters \ref{chap:Str} and \ref{chap:Dyn}, I
+investigate the structure and dynamics of the liquid at the interface,
+and present estimates of the interfacial width. In Chapter
+\ref{chap:Friction}, I present an appropriate friction coefficient for
+no-slip boundary conditions, and explore possible mechanisms for the
+observed facet dependent friction. In Chapter \ref{chap:QLL}, I
+investigate the shear viscosity of the quasi-liquid layer. In Chapter
+\ref{chap:Concl}, I summarize my work and conclude with projections
+of future investigations.
 
 % Below here is text I've written and removed from the chapter, but
 % don't want to lose to the delete key.
