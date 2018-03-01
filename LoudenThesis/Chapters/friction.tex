@@ -243,23 +243,23 @@ a transport coefficient that measures \textit{interfacial momentum
   conductance} across an interface of finite width.
 
 At ice-I$_\mathrm{h}$ / water interfaces, the solid / liquid boundary
-is not an infinitely thin plane. As we found in Chapter \ref{chap:Str}
-and Chapter \ref{chap:Dyn}, a large number of order parameters
-transitions smoothly between the phases over a few molecular
+is not an infinitely thin plane. As we found in Chapters
+\ref{chap:Str} and \ref{chap:Dyn}, a large number of order parameters
+transition smoothly between the phases over a few molecular
 diameters.  Here, we have used the local tetrahedral order parameter
 as the metric for quantifying interfacial width and define locations
 in space that are unambiguously on the solid and liquid sides of the
 interface. This parameter was chosen due to its ability to
 descriminate liquid-like and ice-like water molecules more accurately
-than the local density, and the computed error bars were
-significantly smaller than any of the dynamic order parameters
-investigated in Chapter \ref{chap:Dyn}. In what follows, we have used
-the Gibbs dividing surface ($z_0$) and the $10\%-90\%$ width of the
-interface ($w_\mathrm{10-90}^{q}$) to arrive at physical locations for
-measuring $v_{x}(\mathrm{solid})$ and $v_{x}(\mathrm{liquid})$.  These
-uniquely define a friction coefficient in terms of well-defined
-structural features ($z_0$ and $w_\mathrm{10-90}^{q}$) and dynamic
-properties ($v_{x}(z)$) of the interface.
+than the local density, and the computed error bars were significantly
+smaller than any of the dynamic order parameters investigated in
+Chapter \ref{chap:Dyn}. In what follows, we have used the Gibbs
+dividing surface ($z_0$) and the $10\%-90\%$ width of the interface
+($w_\mathrm{10-90}^{q}$) to arrive at physical locations for measuring
+$v_{x}(\mathrm{solid})$ and $v_{x}(\mathrm{liquid})$.  These uniquely
+define a friction coefficient in terms of well-defined structural
+features ($z_0$ and $w_\mathrm{10-90}^{q}$) and dynamic properties
+($v_{x}(z)$) of the interface.
 
 Tangential velocity profiles from the simulations were fit using a
 piecewise function that is both continuous and continuously
@@ -395,7 +395,7 @@ coefficients,
 seems robust.
 
  
-\section{Influences of Interfacial Friction}
+\section{Influences on Interfacial Friction}
 The primary result presented in this chapter is the observation that
 the different facets of ice-I$_\mathrm{h}$ produce significantly
 different solid / liquid interfacial friction coefficients with water
@@ -518,7 +518,7 @@ surface area of each ice crystal produces a surface density of
 hydrogen bonds (\AA\textsuperscript{-2}) formed between the ice and
 interfacial liquid,
 \begin{equation}\label{hbondDensity}
-\rho_{sl} = \frac{N_\mathrm{HB}}{2 L_{x}L_{y}} \left[ \int_0^{q_{t}}
+\rho_{sl}^{\mathrm{HB}} = \frac{N_\mathrm{HB}}{2 L_{x}L_{y}} \left[ \int_0^{q_{t}}
   dq_{D} \int_{q_{t}}^1 dq_{A}~\rho_\mathrm{HB}(q_{D},q_{A}) +  \int_0^{q_{t}}
   dq_{A} \int_{q_{t}}^1 dq_{D}~\rho_\mathrm{HB}(q_{D},q_{A}) \right]
 \end{equation}
@@ -687,7 +687,7 @@ reported in Table \ref{tab:jumpRates}.
 
 \begin{table}[h]
 \centering
-\caption{HYDROGEN BOND LIFETIMES  ($k_\mathrm{jump}^{-1}$) FOR
+\caption{HYDROGEN BOND LIFETIMES  ($\tau_{\mathrm{HB}} = k_\mathrm{jump}^{-1}$) FOR
   ICE-I$_\mathrm{h}$ / WATER INTERFACES\label{tab:jumpRates}}
 \begin{tabular}{r|cc|cc}  
 \hline
@@ -695,8 +695,8 @@ reported in Table \ref{tab:jumpRates}.
 & \multicolumn{2}{c|}{SPC/E (225~K)}  &
                                                   \multicolumn{2}{c}{TIP4P/Ice
                                         (270~K)}  \\ 
-Interface & $q_\mathrm{mid}$ & $j_\mathrm{mid}$ & $q_\mathrm{mid}$
-                              & $j_\mathrm{mid}$ \\
+Interface & structural & dynamic & structural
+                              & dynamic \\
 \hline
 Basal  $\{0001\}$                 & 500 & 111 & 111 & 50 \\
 Prismatic  $\{10\bar{1}0\}$       & 333 & 167 & 143 & 50 \\
@@ -706,9 +706,9 @@ Secondary Prism  $\{11\bar{2}0\}$ & 333 &111  & 100 & 50\\
 \hline
 \end{tabular}
 \begin{flushleft}
-Hydrogen bond lifetimes measured at the structural interface (as
-determined by tetrahedrality) and at the dynamic interface (as
-measured by hydrogen bond jump time) are reported in ps.
+  Hydrogen bond lifetimes $\tau_{\mathrm{HB}}$ (in ps) measured at the
+    structural interface (as determined by tetrahedrality) and at the
+    dynamic interface (as measured by hydrogen bond jump time).
 \end{flushleft}
 \end{table}
 
@@ -730,19 +730,19 @@ faster dynamics of the water molecules. However, there is no observed
 trend in the lifetime of the hydrogen bonds with the computed friction
 coefficients, further indicating that friction at ice-I$_\mathrm{h}$ /
 water interfaces is governed by the density of solid / liquid hydrogen
-bonds.
+bonds, and not the dynamics of hydrogen-bond breaking / formation.
 
 \section{A Simple Model For Solid-Liquid Friction}
 The interfacial friction coefficient, $\kappa$, captures the momentum
 conductance transverse to the interface, and this momentum should be
 transferred via strong intermolecular interactions across the
 interface. This is measured in ice-I$_\mathrm{h}$ / water systems by
-the surface density of hydrogen bonds, $\rho_\mathrm{s-l}$.  The
-momentum is then carried through the liquid via viscous forces
-$(\eta)$ across an interfacial region that has width
-$w_\mathrm{s-l}$. A simple linear model,
+the surface density of hydrogen bonds,
+$\rho_\mathrm{s-l}^{\mathrm{HB}}$.  The momentum is then carried
+through the liquid via viscous forces $(\eta)$ across an interfacial
+region that has width $w_\mathrm{s-l}$. A simple linear model,
 \begin{equation}
-  \kappa = c~~\rho_\mathrm{s-l}~~\eta~~w_\mathrm{s-l},
+  \kappa = c~~\rho_\mathrm{s-l}^{\mathrm{HB}}~~\eta~~w_\mathrm{s-l},
 \label{eq:model}
 \end{equation}
 captures these features at the ice-I$_\mathrm{h}$ / water interface,
@@ -759,7 +759,7 @@ expressions for $\kappa$ (Equation \eqref{eq:Shenyu-13}) and $\eta$
 (Equation \eqref{eq:viscosity}) shows that the liquid's viscosity is an
 important feature in capturing the velocity drop on the liquid side of
 the interface ($\eta w_\mathrm{s-l}$), but the magnitude of the
-solid-liquid interactions ($c~~\rho_\mathrm{s-l}$) plays a central
+solid-liquid interactions ($c~~\rho_\mathrm{s-l}^{\mathrm{HB}}$) plays a central
 role in the observed friction.
 
 \begin{figure*}
@@ -786,10 +786,10 @@ Using the local tetrahedral order parameter as a metric to
 differentiate ice and liquid water molecules and a geometric hydrogen
 bonding criteria, the friction coefficients were shown to be largely
 governed by the surface density of solid / liquid hydrogen bonds
-($\rho_{sl}$).  A simple linear model, Equation \eqref{eq:model}, uses
-this density to provide estimates of solid-liquid friction that give
-good agrement for two different water models at their respective
-coexistence temperatures.
+($\rho_{sl}^{mathrm{HB}}$).  A simple linear model, Equation
+\eqref{eq:model}, uses this density to provide estimates of
+solid-liquid friction that give good agrement for two different water
+models at their respective coexistence temperatures.
 
 In Chapter \ref{chap:Str} and Chapter \ref{chap:Dyn}, we presented
 evidence that the ice-I$_\mathrm{h}$ / water interfacial widths for
