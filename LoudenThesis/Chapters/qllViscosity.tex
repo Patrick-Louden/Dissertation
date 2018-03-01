@@ -1,16 +1,38 @@
 \chapter{MEASUREMENTS OF THE VISCOSITY OF THE QUASI-LIQUID LAYER AT THE SURFACE OF ICE-I$_\mathrm{h}$}\label{chap:QLL}
 
 \begin{flushright}
-\textit{''Why do snowflakes always fall as flat structures with six corners?''} \\
--Joannes Kepler (1611) \\
+\textit{``In time and with water, everything changes.''} \\
+-Leonardo da Vinci (1513) \\
 \end{flushright}
 
-In the hydrodynamic friction regeime for a slider passing over an ice surface, three distinct forces contribute to the overall observed friction; the solid-liquid friction between the ice and quasi-liquid layer (QLL), the viscous shearing of the qll, and the solid-liquid friction between the qll and the slider. In Chapter \ref{chap:Friction}, we presented facet-dependent friction coefficients for the basal, prismatic, 14\degree~pyramidal, and secondary prism ice-I$_\mathrm{h}$ / water interfaces. In this chapter, we discuss the contribution of the viscous shearing of the qll at the basal and prismatic ice-I$_\mathrm{h}$ / vapor interface.
+In the hydrodynamic friction regime, three distinct forces contribute
+to the overall observed friction; the solid-liquid friction between
+the ice and quasi-liquid layer (QLL), the viscous shearing of the QLL,
+and the solid-liquid friction between the QLL and the
+slider.\cite{Kietzig2009,Kietzig2010} In Chapter \ref{chap:Friction},
+we presented facet-dependent friction coefficients for the basal,
+prismatic, 14\degree~pyramidal, and secondary prism ice-I$_\mathrm{h}$
+/ water interfaces. In this chapter, we present a temperature
+dependent investigation of the shear viscosity of the QLL at the basal
+and prismatic ice-I$_\mathrm{h}$ / vapor interface.
 
 
 
 \section{Computational Methods}
-TIP4P-Ice basal and prismatic ice-I$_\mathrm{h}$ primitive crystals were constructed following the procedure described in Chapter \ref{chap:Methods}. These primitive cells were then reoriented so that the desired crystal face was exposed to the $y$ axis, then replicated in the $x$ and $z$ dimensions to form large sheets. The sheets were then replicated in $y$ until the basal crystal was 12 bilayers thick, and the prismatic cyrstal was replicated to a width of approximately equal to the basal crystal. Dimensions and number of molecules in each system are found in Table \ref{tab:qll-method}.
+
+\begin{flushleft}
+\textit{Ice Surfaces}
+\end{flushleft}
+
+TIP4P-Ice basal and prismatic ice-I$_\mathrm{h}$ primitive crystals
+were constructed following the procedure described in Chapter
+\ref{chap:Methods}. These primitive cells were then reoriented so that
+the desired crystal face was exposed to the $y$ axis, then replicated
+in the $x$ and $z$ dimensions to form large sheets. The sheets were
+then replicated in $y$ until the basal crystal was 12 bilayers thick,
+and the prismatic cyrstal was replicated to a width of approximately
+equal to the basal crystal. Dimensions and number of molecules in each
+system are found in Table \ref{tab:qll-method}.
 
 
 \begin{table}[h]
@@ -32,9 +54,95 @@ Box dimensions are given in \AA.
 \end{table}
 
 
-The $y$-dimension of the simulation box was then set to 300~\AA~ to allow for a surface premelt to form, and each system was equilibrated to 265~K~. The resulting systems exposed two interfaces, one toward positive $y$ and the other towards negative $y$. The equilibration was conducted under a constant pressure and temperature integrator, allowing the $x$ and $z$-dimensions of the simulation cell to relax and alleviate any crystal strain. Following this the systems were then equilibrated under a constant volume and temperature integrator, and lastly under a constant volume and energy integrator. During these simulations, the width of the crystal (in the $y$-dimension) was monitored to ensure no appreciable crystal melt occurred.
+The $y$-dimension of the simulation box was then set to 300~\AA~ to
+allow for a surface premelt to form, and replicas of each system were
+equilibrated to four temperatures, 255~K, 260~K, 265~K, and 270~K. The
+resulting systems exposed two interfaces, one toward positive $y$ and
+the other towards negative $y$. The equilibration was conducted under
+a constant pressure and temperature integrator, allowing the $x$ and
+$z$ dimensions of the simulation cell to relax and alleviate any
+crystal strain. Following this the systems were equilibrated under a
+constant volume and temperature integrator, and lastly under a
+constant volume and energy integrator. During these simulations, the
+width of the crystal (in the $y$-dimension) was monitored to ensure no
+appreciable crystal melt or large scale restructuring occurred.
 
-Once equilibrated, a shear stress was applied only to molecules within the QLLs using the velocity shearing and scaling variant of reverse non-equilibrium molecular dynamics described in Chapter \ref{chap:Methods}.\cite{Kuang2012} The VSS-RNEMD exchange regions were defined to incorporate molecules from both the top and bottom interfaces, as seen in Figure \ref{fig:qll-rnemd}. Both the tangential density and tetrahedrality profiles were used to determine the $y$-width of the exchange VSS-RNEMD regions. In Chapter \ref{chap:Str}, we found the tetrahedrality at the Gibbs dividing surface for ice-I$_\mathrm{h}$ / water interfaces to be $q^{Gibbs} \sim$0.84. Here, we have used $q^{Gibbs}$ as the cutoff value between the QLL and the ice. All molecules with $q < q^{Gibbs}$ are denoted as QLL molecules, while those with $q > q^{Gibbs}$ are denoted to be ice. This cutoff coincides with a minimum in the tangential density profiles, as seen in the top and bottom panels of Figure \ref{fig:qll-rhoq}.
+Once equilibrated, a shear stress was applied only to molecules within
+the QLLs using the velocity shearing and scaling variant of reverse
+non-equilibrium molecular dynamics described in Chapter
+\ref{chap:Methods}.\cite{Kuang2012} The VSS-RNEMD exchange regions
+were defined to incorporate molecules from both the top and bottom
+interfaces, as seen in Figure \ref{fig:qll-rnemd}. The tangential
+tetrahedrality profiles were used to determine the $y$-width of the
+exchange VSS-RNEMD regions. 
+
+% In Chapter \ref{chap:Str}, we found the
+% tetrahedrality at the Gibbs dividing surface for ice-I$_\mathrm{h}$ /
+% water interfaces to be $q^{Gibbs} \sim$0.84. Here, we have used
+% $q^{Gibbs}$ as the cutoff value between the QLL and the ice. All
+% molecules with $q < q^{Gibbs}$ are denoted as QLL molecules, while
+% those with $q > q^{Gibbs}$ are denoted to be ice. This cutoff
+% coincides with a minimum in the tangential density profiles, as seen
+% in the top and bottom panels of Figure \ref{fig:qll-rhoq}.
+
+
+\begin{flushleft}
+\textit{Supercooled Liquids}
+\end{flushleft}
+Henson \textit{et al.} predicted that the QLL should behave as a
+supercooled bulk liquid.\cite{Henson2005} To investigate this claim,
+we have performed simulations of a supercooled bulk liquid using the
+TIP4P/Ice potential. A cubic box of 4000 water molecules was
+constructed and replicas were equilibrated to 255~K, 260~K, 265~K, and
+270~K. System sizes and corresponding densities is presented in Table
+\ref{tab:qll-liquid}. Once the liquid boxes were equilibrated, four
+successive one nanosecond simulations were performed under an NVE
+integrator. During these simulations, the positions and velocities
+were stored every 100 fs.
+
+\begin{table}[h] \centering \caption{SYSTEM SIZES AND DENSITIES OF THE SUPERCOOLED BULK LIQUID\label{tab:qll-liquid}}
+\begin{tabular}{cccc}
+\hline
+\hline
+ Temperature & $N_\mathrm{molecules}$ & $L_i$ & $\rho$\\
+\hline
+270 & 4000 & 50.1512 & 0.9487 \\
+265 & 4000 & 50.1305 & 0.9499 \\
+260 & 4000 & 50.1821 & 0.9469 \\
+255 & 4000 & 50.2494 & 0.9437 \\
+\hline
+\hline
+\end{tabular}
+\begin{flushleft}
+Temperatures, box dimensions, and densities are given in K, \AA~, and
+$\mathrm{g}~\mathrm{cm}^{-3}$, respectively.
+\end{flushleft}
+\end{table}
+
+\section{Simulations of Supercooled Liquid}
+\subsection{Diffusion Coefficient}
+Three dimensional diffusion coefficients were computed from each of the
+bulk liquid simulations. 
+
+
+\begin{table}[h] \centering \caption{STRUCTURAL AND DYNAMIC PROPERTIES
+    OF SUPERCOOLED BULK LIQUID\label{tab:qll-liquid}}
+\begin{tabular}{cccc}
+\hline
+\hline
+ Temperature & g(r) & $\rho (q)_{\mathrm{max}}$& $D\times 10^{-5}$\\
+\hline
+270 & &0.865(2) & 2.85(6)\\
+265 & &0.868(0) & 2.30(3)\\
+260 & &0.875(2) & 1.43(3)\\
+255 & &0.881(2) & 1.05(5) \\
+\hline
+\hline
+\end{tabular}
+\begin{flushleft}
+Diffusion coefficients are given in ($\AA^2~\mathrm{fs}^{-1}$). Uncertanties are given in parantheses.
+\end{flushleft}
+\end{table}
 
 
 \section{Distance Dependence of Viscosity from the Ice Surface}
