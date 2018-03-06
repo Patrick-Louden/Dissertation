@@ -38,7 +38,7 @@ system are found in Table \ref{tab:qll-method}.
 \begin{table}[h]
 \centering
 \caption{SIZES OF THE VAPOR EXPOSED ICE-I$_\mathrm{h}$ / QUASI-LIQUID LAYER SIMULATIONS\label{tab:qll-method}}
-\begin{tabular}{r|c|ccc}
+\begin{tabular}{rcccc}
 \hline
 \hline
  Interface & $N_\mathrm{ice}$ & $L_x$ & $L_y$ & $L_z$ \\
@@ -85,7 +85,7 @@ recored every 0.1 ps.
 \begin{flushleft}
 \textit{Supercooled Liquids}
 \end{flushleft}
-As a comparison for the structure and dynamics of the quasi-liquid
+As a comparison to the structure and dynamics of the quasi-liquid
 layer of ice, we have performed simulations of supercooled bulk liquid using the
 TIP4P/Ice potential. A cubic box of 4,000 water molecules was
 constructed and replicas were equilibrated to 255~K, 260~K, 265~K, and
@@ -118,14 +118,14 @@ $\mathrm{g}~\mathrm{cm}^{-3}$, respectively.
 Formation of a quasi-liquid layer on the basal and prismatic surfaces
 of ice-I$_\mathrm{h}$ was observed at all temperatures
 investigated. Characterizing this surface premelt can be achieved by a
-wide variety of order parameters. Here, we have chosen two structural
+variety of order parameters. Here, we have chosen two structural
 parameters, the local density and the local tetrahedral order
 parameter described in Chapter \ref{chap:Str}. To compute profiles of
 these measures, each of the systems investigated were divided into
 small bins ($\delta y$) and an average of the order parameter was
-computed for that bin. The results for the basal and prismatic systems
-are presented in Figures \ref{fig:basal_rhoq} and
-\ref{fig:prism_rhoq}.
+computed for that bin. The resulting profiles for the basal and
+prismatic systems at each temperature are presented in Figures
+\ref{fig:basal_rhoq} and \ref{fig:prism_rhoq}.
 
 \begin{figure*}
 \includegraphics[width=\linewidth]{Figures/basal_rhoq}
@@ -145,22 +145,22 @@ are presented in Figures \ref{fig:basal_rhoq} and
 \end{figure*}                
 
 In the lower panel of Figure \ref{fig:basal_rhoq}, the local density
-for the basal systems shows a formation of a QLL at $\sim\pm$ 21. The
-peaks around these displacements shows wetting of the underlying
-crystal. That is, the density does not go to zero between the crystal
-planes. Interior to this, the characteristic bilayer of ice is
-observed in the twin peaks at each plane of ice. Note the outter peaks
-have lost this bilayer distribution, further indicating its
-liquid-like character. Comparing the density profiles for the four
-temperatures investigated, we observe a larger amount of wetting of
-the underlying crystal for warmer temperatures. Similarly, the height
-of the QLL peak decreases with warmer temperature, indicating a more
-liquid-like environment.
+for the basal systems shows a formation of a QLL at a displacement of
+$~\sim\pm$ 21 \AA~ from the center of the ice. The peaks around these
+displacements shows wetting of the underlying crystal. That is, the
+density does not go to zero between the crystal planes. Interior to
+this, the characteristic bilayer of ice is observed in the twin peaks
+at each plane of ice. Note the outter peaks have lost this bilayer
+distribution, further indicating its liquid-like character. Comparing
+the density profiles for the four temperatures investigated, we
+observe a larger amount of wetting of the underlying crystal for
+warmer temperatures. Similarly, the height of the QLL peak decreases
+with warmer temperature, indicating a more liquid-like environment.
 
 In the bottom panel of Figure \ref{fig:prism_rhoq}, the
 local density for the prismatic systems indicates a quasi-liquid layer
 formation around $\sim\pm$ 24. While the basal QLL density was found
-to be $\sim$~1.5 - 2.0 $\mathrm{g}~\mathrm{cm}^{-3}$, we observe
+to be $\rho~ \sim$~1.5 - 2.0 $\mathrm{g}~\mathrm{cm}^{-3}$, we observe
 densities closer to 1.0 $\mathrm{g}~\mathrm{cm}^{-3}$ at the prismatic
 surface. Also, the prismatic QLL appears to more completely wet the underlying
 ice crystal as compared to the basal surface premelt. The same
@@ -169,7 +169,25 @@ surface; at warmer temperatures the QLL's density becomes closer to
 that of bulk liquid. 
 
 In the upper panels of the same figures are the local tetrahedral
-order parameter profiles through the interface. XXX
+order parameter profiles through the interface. For the basal
+interface in Figure \ref{fig:basal_rhoq}, we see the characteristic
+bilayer shape in the tetrahedrality profile. Interior to the ice, we
+observe $q$ values close to 0.95, indicating a very tetrahedral
+environment. Further out in the peak determined to be a QLL by density
+measures, the parameters takes on values of 0.9 to 0.85. Beyond
+$\pm$~22 \AA~ from the center of the ice lies the vapor, and $q$
+becomes small and noisey. The profile presented in Figure
+\ref{fig:prism_rhoq} for the prismatic interface appears very similar
+to that of the basal. It is interesting to note, that since the
+tetrahedral order parameter depends on neighboring molecules, it
+indicates that the crystal plane interior to the QLL layer determined
+by the density also deviates from bulk-like environments. This stems
+from the outter layer contributing less to its $q$ value. However,
+this could indicate that this first interior layer should also be
+denoted as a QLL, although perhaps more appropriately named a
+quasi-solid layer (QSL). 
+
+
 
 \section{The Shear Viscosity of the Quasi-Liquid Layer of Ice}
 According to kinetic theory, the diffusion constant, $D$, can be
@@ -285,8 +303,8 @@ seen in the lower panel of Figure \ref{fig:gofrQ}
 \begin{figure*}
 \includegraphics[width=\linewidth]{Figures/bulk_GofrQdens}
 \caption{\label{fig:gofrQ} Pairwise distribution function
-  ($\mathrm{g}(\mathrm{r})$) and probabilitiy density distributions of
-  the local tetrahedral order parameter ($\rho (\mathrm{q})$) for
+  $\mathrm{g}(\mathrm{r})$ and probabilitiy density distributions of
+  the local tetrahedral order parameter $\rho (\mathrm{q})$ for
   supercooled liquid.}
 \end{figure*}  
 
@@ -322,8 +340,7 @@ solvation shells, as seen in Table \ref{tab:gofr}.
 \hline
 \hline
  Temperature & g$_1$(r) & n$_1$(r) & g$_2$(r) & n$_2$(r) & g$_3$(r) &
-                                                                      n$_3$(r)
-  & g$_4$(r) & n$_4$(r)\\
+                                                                      n$_3$(r) & g$_4$(r) & n$_4$(r)\\
 \hline
 270 & 3.297 &4.1523(3) & 5.680 & 23.801(2) & 7.661 & 59.063(4) & 9.491
   & 113.26(2) \\
@@ -354,33 +371,144 @@ with increasing temperature in this regime.
 
 
 \begin{flushleft}
+\textit{Density of Hydrogen Bonds}
+\end{flushleft}
+
+It is well known that water forms four hydrogen bonds in hexagonal
+ice. In the liquid, water often adapts configurations which results in
+a smaller number of hydrogen bonds. As an additional probe of the
+supercooled liquid structure, we have computed the average fractional
+density of hydrogen bonds ($\rho_\mathrm{HB}$) formed at each of the
+four temperatures. To do so, we have used the hydrogen bonding
+criteria of Luzar and Chandler, which requires the oxygen-oxygen
+distance to be less than 3.4~\AA~, and the oxygen-hydrogen-oxygen
+angle to be less than 30\degree~. This criteria has been shown to give
+good agreement with energetic definitions of hydrogen bonds, as the
+geometric and energetic definitions are intimately coupled. The
+resulting fractional distributions can be seen in Table
+\ref{tab:bulk_HB}.
+
+
+\begin{table}[h] \centering \caption{FRACTIONAL DENSITIES OF NUMBER OF
+    HYDROGEN BONDS FORMED FOR SUPERCOOLED LIQUID\label{tab:bulk_HB}}
+\begin{tabular}{ccccc}
+\hline
+\hline
+ Temperature & $\rho_\mathrm{HB}(2)$ & $\rho_\mathrm{HB}(3)$ & $\rho_\mathrm{HB}(4)$ & $\rho_\mathrm{HB}(5)$  \\
+\hline
+270 & 0.01645(3) & 0.1531(9) & 0.7771(3) & 0.05231(1)\\
+265 & 0.01447(57) & 0.1432(4) & 0.7907(8) & 0.0507(2)\\
+260 & 0.01126(6) & 0.1246(3) & 0.8172(4) & 0.0462(2)  \\
+255 & 0.0096(1) & 0.1138(4) & 0.8330(9) & 0.0431(4) \\
+\hline
+\hline
+\end{tabular}
+\begin{flushleft}
+Temperatures are reported in K. Uncertanties are given in parantheses.
+\end{flushleft}
+\end{table}
+
+Here, we observe a clear temperature dependence on the fractional
+densities of numbers of hydrogen bonds formed in the liquid. At colder
+temperatures, we find a larger fraction of the population form four
+hydrogen bonds. However, at warmer temperatures, the reduction in
+population of four hydrogen bonded molecules results in larger
+fractional densities of two, three, and five hydrogen bonded
+molecules. 
+
+
+
+\begin{flushleft}
 \textit{Density of Tetrahedral Ordering}
 \end{flushleft}
 
 While the pairwise distribution function provides information about
 the spatial separation of molecules, it fails to discriminate any
 orientational ordering which may be present in the liquid. In order to
-querry the orientational ordering, the density of local tetrahedral
-order parameters observed during the simulation was computed (see
-\ref{fig:gofrQ}).
+querry this orientational ordering, the density of local tetrahedral
+order parameters ($\rho (q)$) observed during the simulation was
+computed (see \ref{fig:gofrQ}). This was accomplished by computing $q$
+for every molecule each configuration, and determining the fractional
+number of molecules which adopted this configuration.
+
+In Figure \ref{fig:gofrQ}, we see a noticeable trend in $\rho (q)$
+with increasing temperature. The $q$-value of the peak in the density
+distribution decreases with increasing temperature. This indicates
+that for warmer simulation temperatures, the tetrahedral ordering of
+the liquid decreases. All four liquid simulations give a much broader
+distribution than observed for a commensurate ice-I$_\mathrm{h}$
+crystal at 270 K.
 
 
-\subsection{Dynamics Measures of Supercooled Water}
-Three dimensional diffusion coefficients were computed from each of the
-bulk liquid simulations. 
 
-Orientational time correlation functions were computed for each of the
-bulk liquid boxes. In Chapter \ref{chap:Dyn}, we computed a spatially
-resolved form of this correlation function. Here, all of the water
-molecules should behave identically over a long time average as there
-is no interface present. 
+
+
+\subsection{Dynamic Measures of Supercooled Water}
+At colder temperatures, we should expect the dynamics of water to be
+slower due to less kinetic energy being available. However, at colder
+temperatures, water molecules may adapt structures which hinder
+dynamics further. Since the denisty of tetrahedrality indicated an
+orientational ordering in the liquid which was sensitive to
+temperature, we may expect to observe temperature dependent dynamics
+as well. Here, we have investigated both \textit{translational} and
+\textit{orientational} measures of dynamics.
+
+\begin{flushleft}
+\textit{Diffusion of Supercooled Liquid}
+\end{flushleft}
+
+Diffusion coefficients for water molecules in ice are approximately
+zero, as the small amount of diffusion that is observed is highly
+dependent on the presence of lattice defects. In contrast, diffusion
+of water molecules in supercooled liquid is observed well below the
+freezing point.\cite{Debenedetti2003} Pruppacher has measured the
+diffusion of supercooled liquid down to -25\degree~C using a tritium
+tracer.\cite{Pruppacher1972} In order to compare with the diffusion of
+the quasi-liquid layers, we have computed three dimensional diffusion
+coefficients for each of the bulk liquid simulations. Mean squared
+displacements were computed for each of the supercooled liquid systems
+(see lower panel of Figure \ref{fig:bulkD}), and the non-spatially
+resolved version of Equation \eqref{eq:yDiff} was used to compute
+average diffusion coefficients (see upper panel of the same figure).
+
+\begin{figure*}
+\includegraphics[width=\linewidth]{Figures/bulkD}
+\caption{\label{fig:bulkD} Lower panel: mean squared displacements
+  (MSD) for supercooled liquid water. Upper panel: three dimensional
+  diffusion constants computed from the MSD data in the lower panel. }
+\end{figure*}    
+ 
+We estimate diffusion coefficients of
+$\mathrm{D}~\sim~ 1.0 \times 10^{-5}
+(\mathrm{\AA}^{2}~\mathrm{fs}^{-1})$ to
+$\mathrm{D}~\sim~ 3.0 \times 10^{-5}
+(\mathrm{\AA}^{2}~\mathrm{fs}^{-1})$ for the range of temperatures
+investigated. % The data are fit well with a linear regression giving a
+% rate of change between the data of
+% $0.1254 \times 10^{-5}~\mathrm{D}/\mathrm{K}$.
+
+
+\begin{flushleft}
+\textit{Orientational Decorrelation}
+\end{flushleft}
+
+Orientational time correlation functions provide information on the
+decorrelation of molecular environments. As we observed in Chapter
+\ref{chap:Dyn}, decorrelation times within ice go asymptotically to
+infinity, while in liquid values in the ps to ns range are more
+common. In Chapter \ref{chap:Dyn} we computed a spatially resolved
+version of the orientational time correlation function to probe how
+the dynamics of molecules changed approaching the ice-I$_\mathrm{h}$ /
+water interface. Here, all of the water molecules should behave
+identically over a long time average as there are no interfaces present.
 \begin{equation}\label{C(t)}
   C_{2}(t)=\langle P_{2}(\mathbf{u}_i(0)\cdot \mathbf{u}_i(t))\rangle,
 \end{equation}
-Again, $P_2$ is the second-roder Legendre polynomial, 
+Again, $P_2$ is the second-order Legendre polynomial, 
 $\mathbf{u}_i$ is the molecular unit vector that bisects the HOH angle
 of molecule $i$, and the angle brackets denotes an average over all
-molecules and time origins. 
+molecules and time origins. Computed C$_2$(t) is shown in the lower
+panel of Figure \ref{fig:jump_lcorr}.
 
 There are three modes available for decorrelation of $C_2(t)$. Fitting
 computed $C_2(t)$ by a triexponential decay which captures the
@@ -397,9 +525,9 @@ by\cite{Louden2013a}
   (1-a-b)~e^{-t/\tau_\mathrm{long}}.
 \label{eq:c2}
 \end{equation}
-Here, the coefficients $a$, $b$, and $(1-a-b)$ give the percent of the
-total decay due to that particular mode. Averages of the decay
-constants and their coefficients are reported in Table
+Here, the coefficients $a$, $b$, and $(1-a-b)$ give the fractional
+amount of the total decay due to that particular mode. Averages of the
+decay constants and their coefficients are reported in Table
 \ref{tab:supOrient}.
 
 
@@ -418,55 +546,148 @@ constants and their coefficients are reported in Table
 255 &0.2060(5) &87.2(4) & 0.183(7) & 9.6(5) & 0.611(8) & 81(2)\\
 \hline
 \hline
-\hline
 \end{tabular}
 \begin{flushleft}
 Temperatures are given in K, $\tau_{short}$ is reported in fs, while $\tau_{middle}$ and
-$\tau_{long}$ are given in ps.
+$\tau_{long}$ are given in ps. Uncertanties are given in parantheses.
 \end{flushleft}
 \end{table}
 
-
-
-\begin{table}[h] \centering \caption{STRUCTURAL AND DYNAMIC PROPERTIES
-    OF SUPERCOOLED BULK LIQUID\label{tab:qll-liquid}}
-\begin{tabular}{cccc}
-\hline
-\hline
- Temperature & g(r) & $\rho (q)_{\mathrm{max}}$& $D\times 10^{-5}$\\
-\hline
-270 & &0.865(2) & 2.85(6)\\
-265 & &0.868(0) & 2.30(3)\\
-260 & &0.875(2) & 1.43(3)\\
-255 & &0.881(2) & 1.05(5) \\
-\hline
-\hline
-\end{tabular}
-\begin{flushleft}
-Diffusion coefficients are given in ($\AA^2~\mathrm{fs}^{-1}$). Uncertanties are given in parantheses.
-\end{flushleft}
-\end{table}
-
-
-
+We observe a very clear temperature dependence in
+$\tau_\mathrm{short}$, $\tau_\mathrm{middle}$, and
+$\tau_\mathrm{long}$; for increasing temperatures, the decay time
+decreases. We find the fast librational motion decay time to be
+between 85 fs and 87 fs, while the slower hydrogen bond dynamics and
+frame reorientation characterstic times of 4-10 ps, and 26-80 ps
+respectively.  Interestingly, the fractional contribution of each of
+the modes is observed to be invariant with temperature. The
+librational mode and the hydrogen bond breaking and making events each
+account for about 20$\%$ of the total decay, with the remaining 60$\%$
+of the decay given by frame reorientation.
 
 
 \begin{figure*}
 \includegraphics[width=\linewidth]{Figures/jump_lcorr}
-\caption{\label{fig:jump_lcorr} C$_2$(t) and C$_\mathrm{jump}$(t)
-  curves for supercooled liquid water. }
+\caption{\label{fig:jump_lcorr} The orientational time correlation
+  function C$_2$(t) (lower panel) and the hydrogen bond jump
+  correlation function C$_\mathrm{jump}$(t) (upper panel) for
+  supercooled liquid water. }
 \end{figure*}                
 
+
+\begin{flushleft}
+\textit{Hydrogen Bond Jump Times}
+\end{flushleft}
+The hydrogen bond jump time measures the decorrelation of a hydrogen
+bond between two water molecules, $a$ and $b$. 
+\begin{equation}\label{jump}
+C_\mathrm{jump}(t) = 1 - \langle n_a(0) n_b(t) \rangle
+\end{equation}
+$n_a(0)$ is set to 1 if hydrogen $i$ is bound to water molecule $b$ at
+time ($t=0$), and set to zero otherwise. A spatially resolved version
+of this correlation function was described in Chapter \ref{chap:Dyn},
+while here we are interested in the temperature depence of the
+hydrogen bond jump times. Again absorbing boundary conditions were
+applied, \textit{i.e.} any back jumps were considered new hydrogen
+bonds forming.
+
+The hydrogen bond jump correlation function was computed for each of
+the bulk liquid simulations, and the resulting $C_\mathrm{jump}(t)$
+are plotted in the upper panel of Figure \ref{fig:jump_lcorr}. These
+were found to be well fit by a single exponential decay, with a decay
+constant describing the jump time for breaking and making hydrogen
+bonds. From these characterstic decay times the jump rate can be
+determined $k_\mathrm{jump} = \tau_\mathrm{jump}^{-1}$. These jump
+rates are presented in Table \ref{tab:bulkJump}.
+
+\begin{table}[h] \centering \caption{HYDROGEN BOND JUMP RATES FOR THE
+    SUPERCOOLED BULK LIQUID\label{tab:bulkVisco}}
+\begin{tabular}{cc}
+\hline
+\hline
+ Temperature & $k_\mathrm{jump}$ \\
+\hline
+270 & 00402(7) \\
+265 & 0.0328(7) \\
+260 & 0.0207(3)  \\
+255 & 0.0160(5) \\
+\hline
+\hline
+\end{tabular}
+\begin{flushleft}
+  Temperatures are given in K, and jump rates are presented in
+  ~ps$^{-1}$. Uncertanties are given in parantheses.
+\end{flushleft}
+\end{table}
+
+           
+
+\subsection{Shear Viscosity of Supercooled Liquid}
+In order to compare the shear viscosities of the quasi-liquid layers,
+velocity shearing and scaling reverse non-equilibrium molecular
+dynamics were performed. During which, a liquid box containing
+$16,000$ TIP4P/Ice water molcules with dimensions
+$\mathrm{L_x} = 51.22~\mathrm{\AA}$,
+$\mathrm{L_y} = 51.22~\mathrm{\AA}$, and
+$\mathrm{L_z}=200.87~\mathrm{\AA}$ was subjected to a simultaneous
+kinetic energy and momentum flux. This resulted in the development of
+thermal and velocity gradients across the $z$ dimension of the
+simulation box. The velocity profile was fit with a quadratic
+regression, and an analytic derivative of this fit with the imposed
+momentum flux gives the shear viscosity.
+\begin{equation}\label{eq:viscosity}
+  j_{z}(p_{x}) = -\eta \big(\frac{\partial v_{x}}{\partial z}\big)
+\end{equation}
+
+The resulting data were fit with the Williams-Landel-Ferry model (WLF)
+for predicting the shear viscosity of polymers and other liquids which
+exhibit a glass transition temperature ( $T_g~\sim~136~\mathrm{K}$ for
+water). The data and resulting fit can be seen in Figure
+\ref{fig:etaT}. 
 \begin{figure*}
-\includegraphics[width=\linewidth]{Figures/bulkD}
-\caption{\label{fig:bulkD} Mean squared displacements for supercooled
-  liquid water. }
-\end{figure*}                
+\includegraphics[width=\linewidth]{Figures/etaT}
+\caption{\label{fig:etaT} The shear viscosity $\eta$ of supercooled
+  liquid water as a function of temperature. The black circles are
+  data computed from a single VSS-RNEMD simulation with simultaneous
+  kinetic energy and momentum fluxes, the red curve is a fit described
+  by the Williams-Landel Ferry model.}
+\end{figure*} 
+Querrying the fit at the four temperatures the ice surfaces were
+investigated at, we can obtain reasonable estimates of the shear
+viscosity for the supercooled bulk liquid. These values are reported
+in Table \ref{tab:bulkVisco}.
+   
 
-
+\begin{table}[h] \centering \caption{SHEAR VISCOSITY OF THE
+    SUPERCOOLED BULK LIQUID\label{tab:bulkVisco}}
+\begin{tabular}{cc}
+\hline
+\hline
+ Temperature & $\eta$ \\
+\hline
+270 & 0.5 \\
+265 & 0.6 \\
+260 & 1.0  \\
+255 & 7.3 \\
+\hline
+\hline
+\end{tabular}
+\begin{flushleft}
+  Temperatures are given in K, and shear viscosities are reported in
+  amu~\AA$^{-1}$~fs$^{-1}$
+\end{flushleft}
+\end{table}
 
 
 \section{Discussion}
+Similarly, Dehaoui
+\textit{et al.} have measured the viscosity of supercooled water down
+to -34\degree C without freezing the liquid.\cite{Dehaoui2015} There
+have been suggestions that Equation \eqref{eq:stokes-einst} breaks
+down at temperatures close to T$_\mathrm{g}$, the glass transition
+temperature, implying that the translational diffusion and the shear
+viscosity of the liquid become decoupled.
+
 
 % As seen in Figure \ref{fig:qll-rhoq}, the QLLs at the surface of the
 % basal and prismatic crystals form a bilayer. Following Neshyba
