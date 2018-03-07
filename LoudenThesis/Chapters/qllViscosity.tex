@@ -5,16 +5,17 @@
 -Leonardo da Vinci (1513) \\
 \end{flushright}
 
-In the hydrodynamic friction regime, three distinct forces contribute
-to the overall observed friction; the solid-liquid friction between
-the ice and quasi-liquid layer (QLL), the viscous shearing of the QLL,
-and the solid-liquid friction between the QLL and the
-slider.\cite{Kietzig2009,Kietzig2010} In Chapter \ref{chap:Friction},
-we presented facet-dependent friction coefficients for the basal,
-prismatic, 14\degree~pyramidal, and secondary prism ice-I$_\mathrm{h}$
-/ water interfaces. In this chapter, we present a temperature
-dependent investigation of the shear viscosity of the QLL at the basal
-and prismatic ice-I$_\mathrm{h}$ / vapor interface.
+In the hydrodynamic friction regime, there are three distinct
+contributions to the overall observed friction; the solid-liquid
+friction between the ice and quasi-liquid layer (QLL), the viscous
+shearing of the QLL, and the solid-liquid friction between the QLL and
+the slider.\cite{Kietzig2009,Kietzig2010} In Chapter
+\ref{chap:Friction}, we presented facet-dependent friction
+coefficients for the basal, prismatic, 14\degree~pyramidal, and
+secondary prism ice-I$_\mathrm{h}$ / water interfaces. In this
+chapter, we present an investigation of the temperature dependence of
+the shear viscosity of the QLL at the basal and prismatic
+ice-I$_\mathrm{h}$ / vapor interfaces.
 
 
 
@@ -56,19 +57,19 @@ Box dimensions are given in \AA.
 
 The $y$-dimension of the simulation box was then set to 300~\AA~ to
 allow for a surface premelt to form, and replicas of each system were
-equilibrated to four temperatures, 255~K, 260~K, 265~K, and 270~K. The
-resulting systems exposed two interfaces, one toward positive $y$ and
-the other towards negative $y$. Equilibration was conducted under a
-constant pressure and temperature integrator, allowing the $x$ and $z$
-dimensions of the simulation cell to relax and alleviate any crystal
-strain. Following this, the systems were equilibrated under a constant
-volume and temperature integrator (NVT), and lastly under a constant
-volume and energy integrator (NVE). During these simulations, the
-width of the crystal (in the $y$-dimension) was monitored to ensure no
-appreciable crystal melt or large scale restructuring occurred. Once
-equilibration was complete, a 100 ps production simulation was
-performed for each system, where the positions and velocities were
-recored every 0.1 ps.
+equilibrated to four temperatures, 255, 260, 265, and 270~K at
+1~atm. The resulting systems exposed two interfaces, one toward
+positive $y$ and the other towards negative $y$. Equilibration was
+conducted under a constant surface tension and temperature integrator,
+allowing the $x$ and $z$ dimensions of the simulation cell to relax
+and alleviate any crystal strain. Following this, the systems were
+equilibrated under a constant volume and temperature integrator (NVT),
+and lastly under a constant volume and energy integrator (NVE). During
+these simulations, the width of the crystal (in the $y$-dimension) was
+monitored to ensure no appreciable crystal melt or large scale
+restructuring occurred. Once equilibration was complete, a 100 ps
+production simulation was performed for each system, where the
+positions and velocities were recored every 0.1 ps.
 
 
 
@@ -99,7 +100,7 @@ were stored every 100 fs.
 \begin{tabular}{cccc}
 \hline
 \hline
- Temperature & $N_\mathrm{molecules}$ & $L_i$ & $\rho$\\
+ Temperature & $N_\mathrm{molecules}$ & $L_x, L_y, L_z$ & $\rho$\\
 \hline
 270 & 4,000 & 50.1512 & 0.9487 \\
 265 & 4,000 & 50.1305 & 0.9499 \\
@@ -131,16 +132,15 @@ prismatic systems at each temperature are presented in Figures
 \includegraphics[width=\linewidth]{Figures/basal_rhoq}
 \caption{\label{fig:basal_rhoq} The spatially resolved average density
   (lower) and local tetrahedral order parameter (upper) of the
-  vapor-exposed basal ice-I$_\mathrm{h}$ crystal. Quasi-liquid layer
-  formation is observed at large displacements from the center of the
-  ice.}
+  exposed basal ice-I$_\mathrm{h}$ crystal. Quasi-liquid layer
+  formation is observed in the outermost water bilayers.}
 \end{figure*}                
 
 
 \begin{figure*}
 \includegraphics[width=\linewidth]{Figures/prism_rhoq}
 \caption{\label{fig:prism_rhoq} Panel description matches that of
-  Figure \ref{fig:basal_rhoq}, but for the vapor-exposed prismatic
+  Figure \ref{fig:basal_rhoq}, but for the exposed prismatic
   ice-I$_\mathrm{h}$ crystal. }
 \end{figure*}                
 
@@ -148,12 +148,12 @@ In the lower panel of Figure \ref{fig:basal_rhoq}, the local density
 for the basal systems shows a formation of a QLL at a displacement of
 $~\sim\pm$ 21 \AA~ from the center of the ice. The peaks around these
 displacements shows wetting of the underlying crystal. That is, the
-density does not go to zero between the crystal planes. Interior to
+density does not go to zero between the crystal and liquid planes. Interior to
 this, the characteristic bilayer of ice is observed in the twin peaks
 at each plane of ice. Note the outter peaks have lost this bilayer
 distribution, further indicating its liquid-like character. Comparing
 the density profiles for the four temperatures investigated, we
-observe a larger amount of wetting of the underlying crystal for
+observe a greater extent of wetting of the underlying crystal for
 warmer temperatures. Similarly, the height of the QLL peak decreases
 with warmer temperature, indicating a more liquid-like environment.
 
@@ -163,26 +163,26 @@ formation around $\sim\pm$ 24. While the basal QLL density was found
 to be $\rho~ \sim$~1.5 - 2.0 $\mathrm{g}~\mathrm{cm}^{-3}$, we observe
 densities closer to 1.0 $\mathrm{g}~\mathrm{cm}^{-3}$ at the prismatic
 surface. Also, the prismatic QLL appears to more completely wet the underlying
-ice crystal as compared to the basal surface premelt. The same
+ice crystal when compared with the basal surface premelt. The same
 trend with increasing temperature is observed at the prismatic
-surface; at warmer temperatures the QLL's density becomes closer to
-that of bulk liquid. 
+surface; at warmer temperatures the QLL's density comes closer to
+that of the bulk liquid. 
 
 In the upper panels of the same figures are the local tetrahedral
 order parameter profiles through the interface. For the basal
 interface in Figure \ref{fig:basal_rhoq}, we see the characteristic
-bilayer shape in the tetrahedrality profile. Interior to the ice, we
+bilayer shapes in the tetrahedrality profile. Interior to the ice, we
 observe $q$ values close to 0.95, indicating a very tetrahedral
-environment. Further out in the peak determined to be a QLL by density
-measures, the parameters takes on values of 0.9 to 0.85. Beyond
+environment. In the peak determined to be a QLL using density
+measures, the parameter takes on values of 0.9 to 0.85. Beyond
 displacements of $\pm$~22 \AA~ from the center of the ice lies the
-vapor, and $q$ becomes small and noisey. The profile presented in
+vapor, and $q$ becomes small and noisy. The profile presented in
 Figure \ref{fig:prism_rhoq} for the prismatic interface appears very
-similar to that of the basal. It is interesting to note, that since
+similar to that of the basal interface. It is interesting to note, that since
 the tetrahedral order parameter depends on neighboring molecules, it
 indicates that the crystal plane interior to the QLL layer determined
 by the density also deviates from bulk-like environments. This stems
-from the outter layer contributing less to its $q$ value. However,
+from the outer layer contributing less to its $q$ value. However,
 this could indicate that this first interior layer should also be
 denoted as a QLL, although perhaps more appropriately named a
 quasi-solid layer (QSL).
@@ -214,22 +214,21 @@ to the interface.
 D(y) = \frac{1}{6t} \langle | \mathbf{r}_i(t) - \mathbf{r}_i(0) |^2
 \delta(y_i(0) - y)  \rangle 
 \end{equation}
-Equation \eqref{eq:yDiff} was computed at 1 \AA~ partitions as can be
-seen in the lower portion of Figures \ref{fig:basal_DEta} and
-\ref{fig:prism_DEta} for the basal and prismatic surfaces,
-respectively. Within the ice crystal, the diffusion coefficient is
+Equation \eqref{eq:yDiff} was computed in 1 \AA~. In the lower portion
+of Figures \ref{fig:basal_DEta} and \ref{fig:prism_DEta} diffusion
+profiles are shown for the basal and prismatic surfaces,
+respectively. In the ice crystal, the diffusion coefficient is
 numerically zero. At displacements of $\sim \pm$ 18 from the center of
 the ice crystal, the diffusion coefficient becomes non-zero, and is
-observed to rise parabolically through the QLL and into the
-vapor. For both the basal and prismatic systems, there is a suggested
-temperature dependence when observing the lower interface, however,
-resolution at the upper interface prevents a definitive arguement to
-be made. 
+observed to rise parabolically through the QLL and into the vapor. For
+both the basal and prismatic systems, there is a suggested temperature
+dependence when observing the lower interface, however, resolution at
+the upper interface prevents a definitive argument to be made.
 
 \begin{figure*}
 \includegraphics[width=\linewidth]{Figures/basal_2DEta}
 \caption{\label{fig:basal_DEta} Lower: Spatially resolved diffusion
-  coefficients for a vapor exposed basal surface of an
+  coefficients for an exposed basal surface of an
   ice-I$_\mathrm{h}$ crystal. Upper: Spatially resolved shear viscosity
   at the same interface.}
 \end{figure*}                
@@ -237,7 +236,7 @@ be made.
 \begin{figure*}
 \includegraphics[width=\linewidth]{Figures/prism_2DEta}
 \caption{\label{fig:prism_DEta} Lower: Spatially resolved diffusion
-  coefficients for a vapor exposed prismatic surface of an
+  coefficients for an exposed prismatic surface of an
   ice-I$_\mathrm{h}$ crystal. Upper: Spatially resolved shear viscosity
   at the same interface.}
 \end{figure*}                
@@ -246,25 +245,25 @@ From the diffusion coefficients, estimates of the shear viscosity
 using Equation \eqref{eq:stokes-einst} is straightforward. These
 results are shown in the top panels of Figures \ref{fig:basal_DEta}
 and \ref{fig:prism_DEta}. In the vapor, we observe shear viscosities
-close to zero.  $\eta$ increases through the QLLs, and
-asymptomatically go to infinity within the ice. Again, a slight
+close to zero.  $\eta$ increases through the QLLs, and rises
+asymptomatically to infinity in the ice. Again, a slight
 temperature dependence is suggested through the lower interface,
 however, resolution of the upper interface prevents a conclusive
-arguement being made. 
+argument being made. 
 
-We attempted to compute the shear viscosite of the quasi-liquid layers
+We attempted to compute the shear viscosity of the quasi-liquid layers
 in a second way. Using VSS-RNEMD \cite{Kuang2012}, a shear stress was
-applied only to molecules within the QLLs. The VSS-RNEMD exchange
-regions were defined to incorporate molecules from both the top and
-bottom interfaces, and partitioning between the vapor, QLLs, and the
-ice surfaces was performed using the local tetrahedral order parameter
-of the water molecuels. However, application of the VSS-RNEMD moves
+applied only to molecules in the QLLs. The VSS-RNEMD exchange regions
+were defined to incorporate molecules from both the top and bottom
+interfaces, and partitioning between the vapor, QLLs, and the ice
+surfaces was performed using the local tetrahedral order parameter of
+the water molecuels. However, application of the VSS-RNEMD moves
 resulted in non-linear behavior in the velocity distributions of the
 QLLs. The surface premelts were found to couple more strongly with the
 underlying ice than the neighboring QLL, resulting in dissipation of
-the velocity ``kicks'' into the ice as opposed to through the surface
+the velocity ``kicks'' into the ice instead of in the surface
 premelt. Due to this, we were unable to resolve shear viscosities
-using the VSS-RNEMD method. 
+using the VSS-RNEMD method.
 
 
 
@@ -281,19 +280,17 @@ investigations of bulk liquid in this temperature regime.
 \subsection{Structural Measures of Supercooled Water}
 
 \begin{flushleft}
-\textit{Pairwise Distribution Function}
+\textit{Pair Distribution Function}
 \end{flushleft}
 
-The pairwise distribution function, $\mathrm{g}(r)$, provides
-information regarding the spatial distribution of
-molecules. Computation of this function was achieved by partitioning
-the systems into small radial bins ($\delta r$), and the
-average number of molecules found to be a distance $r$ to
-($r + \delta r$) apart is recorded. The pair density
-$\rho (r)$ of each of these small shells is normalized by the
-system's bulk density and the shell volume.
+The pair distribution function, $\mathrm{g}(r)$, provides information
+regarding the spatial distribution of molecules. Calculation of this
+function was achieved by compiling the average number of molecules
+found to be a distance $r$ to ($r + \delta r$) apart. The
+pair density $\rho (r)$ of each of these small shells is normalized by
+the system's bulk density and the shell volume.
 \begin{equation}\label{eq:gofr}
-\mathrm{g}(r) = \rho(r) / 4\pi r^2 \delta r \rho^{bulk}
+\mathrm{g}(r) = \rho(r) / \rho^{bulk}
 \end{equation}
 Equation \eqref{eq:gofr} is a general relation which can be used for
 pairs of atoms, molecules, or even assemblies. Here, we have have
@@ -302,7 +299,7 @@ seen in the lower panel of Figure \ref{fig:gofrQ}
 
 \begin{figure*}
 \includegraphics[width=\linewidth]{Figures/bulk_GofrQdens}
-\caption{\label{fig:gofrQ} Pairwise distribution function
+\caption{\label{fig:gofrQ} Pair distribution function
   $\mathrm{g}(r)$ and probabilitiy density distributions of
   the local tetrahedral order parameter $\rho (\mathrm{q})$ for
   supercooled liquid.}
@@ -320,50 +317,47 @@ $r$ the function approaches unity, indicating at large
 separations the liquid ordering reflects that of the bulk. 
 
 The two insets are closer views of the first and second solvation
-shells. We see for colder temperatures, the liquid becomes slightly
-more ordered, as apparent by the increase in the first and second
+shells. We see for colder temperature, the liquid becomes slightly
+more ordered, apparent from the increase in the first and second
 solvation shells, as well as the decrease in the population between
-the two shells. In order to better quantify this ordering, it is
+the two shells. In order to quantify this ordering, it is
 common to integrate $\mathrm{g}(r)$ to determine the
-coordination number $n(r)$.
+coordination number $n_c$.
 \begin{equation}\label{eq:nofr}
-n(r') = 4 \pi \rho^{bulk} \int_0^{r'} g(r)r^2dr
+n_c = 4 \pi \rho^{bulk} \int_0^{r_m} g(r)r^2dr
 \end{equation}
-Taking the integral limit in Equation \eqref{eq:nofr} to be
-characteristic locations within $\mathrm{g}(r)$ can provide
-information about the number of neighbors within the first ($r_1$),
-second ($r_2$), or higher order solvation shells, as seen in Table
-\ref{tab:gofr}.
 
-\begin{table}[h] \centering \caption{LOCATIONS AND INTEGRATION OF
-    RADIAL DISTRIBUTION FUNCTION SOLVATION SHELLS FOR SUPERCOOLED LIQUID\label{tab:gofr}}
+
+\begin{table}[h] \centering \caption{LOCATION AND INTEGRATION OF THE
+    RADIAL DISTRIBUTION FUNCTION AT THE FIRST SOLVATION SHELLS AND
+    FRACTIONAL DENSITIES OF NUMBER OF HYDROGEN BONDS FORMED FOR
+    SUPERCOOLED LIQUID\label{tab:gofr}}
 \begin{tabular}{ccccccc}
   \hline
   \hline
-  Temperature & $r_1$ & n($r_1$) & $r_2$ & n($r_2$) & $r_3$ &
-                                                                       n($r_3$) \\
+  Temperature & $r_m$ & $n_c$ & $\rho_\mathrm{HB}(2)$ & $\rho_\mathrm{HB}(3)$ & $\rho_\mathrm{HB}(4)$ & $\rho_\mathrm{HB}(5)$ \\
   \hline
-  270 & 3.297 &4.1523(3) & 5.680 & 23.801(2) & 7.661 & 59.063(4) \\
-  265 & 3.271 & 4.1056(7) & 5.652 & 23.561(4) & 7.682 & 59.615(4) \\
-  260 & 3.299 & 4.060(1) & 5.633 & 23.338(5) & 7.615 & 57.871(5) \\
-  255 & 3.253 & 4.06024(6) & 5.690 & 23.849(4) & 7.674 & 58.935(3)  \\
+  270 & 3.297 &4.1523(3) & 0.01645(3) & 0.1531(9) & 0.7771(3) & 0.05231(1)\\
+  265 & 3.271 & 4.1056(7) & 0.01447(57) & 0.1432(4) & 0.7907(8) & 0.0507(2)\\
+  260 & 3.299 & 4.060(1) & 0.01126(6) & 0.1246(3) & 0.8172(4) & 0.0462(2)\\
+  255 & 3.253 & 4.06024(6)  & 0.0096(1) & 0.1138(4) & 0.8330(9) &
+                                                                  0.0431(4) \\
   \hline
   \hline
 \end{tabular}
 \begin{flushleft}
-Temperatures are reported in K. Uncertanties are given in parantheses.
+Temperatures are reported in K. Uncertanties are given in parentheses.
 \end{flushleft}
 \end{table}
 
 We find that the location of the minimum following the first peak
-$r_1$ in $\mathrm{g}(r)$ is at slightly larger values of $r$ with
-increasing temperature, however, this trend does not hold for higher
-order solvation shells. Taking this as the limit of integration, the
-coordination number for the first solvation shell, $n(r_1)$ was
-computed. Similarly, it is observed to increase with increasing
-temperature. Since the supercooled liquid's density increases with
-increasing temperature, we should expect a larger coordination number
-with increasing temperature in this regime.
+$r_m$ in $\mathrm{g}(r)$ is at slightly larger values of $r$ with
+increasing temperature. Taking this as the limit of integration, the
+coordination number for the first solvation shell, $n_c$ was computed
+(see Table \ref{tab:gofr}). Similarly, it is observed to increase with
+increasing temperature. Since the supercooled liquid's density
+increases with increasing temperature, we should expect a larger
+coordination number with increasing temperature in this regime.
 
 \begin{flushleft}
 \textit{Density of Hydrogen Bonds}
@@ -373,43 +367,43 @@ It is well known that water forms four hydrogen bonds in hexagonal
 ice. In the liquid, water often adapts configurations which results in
 a smaller number of hydrogen bonds. As an additional probe of the
 supercooled liquid structure, we have computed the average fractional
-density of hydrogen bonds ($\rho_\mathrm{HB}$) formed at each of the
-four temperatures. To do so, we have used the hydrogen bonding
-criteria of Luzar and Chandler, which requires the oxygen-oxygen
-distance to be less than 3.4~\AA~, and the oxygen-hydrogen-oxygen
-angle to be less than 30\degree~.\cite{Luzar1996} This criteria has
-been shown to give good agreement with energetic definitions of
-hydrogen bonds, as the geometric and energetic definitions are
-intimately coupled. The resulting fractional distributions can be seen
-in Table \ref{tab:bulk_HB}.
+populations of hydrogen bond participation ($\rho_\mathrm{HB}$) at
+each of the four temperatures. To do so, we have used the hydrogen
+bonding criteria of Luzar and Chandler, which requires the
+oxygen-oxygen distance to be less than 3.4~\AA~, and the
+oxygen-hydrogen-oxygen angle to be less than
+30\degree~.\cite{Luzar1996} This criteria has been shown to give good
+agreement with energetic definitions of hydrogen bonds, as the
+geometric and energetic definitions are intimately coupled. The
+resulting fractional participation statistics can be seen in Table
+\ref{tab:gofr}.
 
 
-\begin{table}[h] \centering \caption{FRACTIONAL DENSITIES OF NUMBER OF
-    HYDROGEN BONDS FORMED FOR SUPERCOOLED LIQUID\label{tab:bulk_HB}}
-\begin{tabular}{ccccc}
-\hline
-\hline
- Temperature & $\rho_\mathrm{HB}(2)$ & $\rho_\mathrm{HB}(3)$ & $\rho_\mathrm{HB}(4)$ & $\rho_\mathrm{HB}(5)$  \\
-\hline
-270 & 0.01645(3) & 0.1531(9) & 0.7771(3) & 0.05231(1)\\
-265 & 0.01447(57) & 0.1432(4) & 0.7907(8) & 0.0507(2)\\
-260 & 0.01126(6) & 0.1246(3) & 0.8172(4) & 0.0462(2)  \\
-255 & 0.0096(1) & 0.1138(4) & 0.8330(9) & 0.0431(4) \\
-\hline
-\hline
-\end{tabular}
-\begin{flushleft}
-Temperatures are reported in K. Uncertanties are given in parantheses.
-\end{flushleft}
-\end{table}
+% \begin{table}[h] \centering \caption{FRACTIONAL DENSITIES OF NUMBER OF
+%     HYDROGEN BONDS FORMED FOR SUPERCOOLED LIQUID\label{tab:bulk_HB}}
+% \begin{tabular}{ccccc}
+% \hline
+% \hline
+%  Temperature & $\rho_\mathrm{HB}(2)$ & $\rho_\mathrm{HB}(3)$ & $\rho_\mathrm{HB}(4)$ & $\rho_\mathrm{HB}(5)$  \\
+% \hline
+% 270 & 0.01645(3) & 0.1531(9) & 0.7771(3) & 0.05231(1)\\
+% 265 & 0.01447(57) & 0.1432(4) & 0.7907(8) & 0.0507(2)\\
+% 260 & 0.01126(6) & 0.1246(3) & 0.8172(4) & 0.0462(2)  \\
+% 255 & 0.0096(1) & 0.1138(4) & 0.8330(9) & 0.0431(4) \\
+% \hline
+% \hline
+% \end{tabular}
+% \begin{flushleft}
+% Temperatures are reported in K. Uncertanties are given in parantheses.
+% \end{flushleft}
+% \end{table}
 
 Here, we observe a clear temperature dependence on the fractional
-densities of numbers of hydrogen bonds formed in the liquid. At colder
-temperatures, we find a larger fraction of the population form four
-hydrogen bonds. However, at warmer temperatures, the reduction in
-population of four hydrogen bonded molecules results in larger
-fractional densities of two, three, and five hydrogen bonded
-molecules. 
+populations of of hydrogen bonds participation formed in the
+liquid. At colder temperatures, we find a larger fraction of the
+population form four hydrogen bonds. However, at warmer temperatures,
+the reduction in population of four hydrogen bonded molecules results
+in larger densities of two, three, and five hydrogen bonded molecules.
 
 
 
@@ -417,10 +411,10 @@ molecules.
 \textit{Density of Tetrahedral Ordering}
 \end{flushleft}
 
-While the pairwise distribution function provides information about
+While the pair distribution function provides information about
 the spatial separation of molecules, it fails to discriminate any
 orientational ordering which may be present in the liquid. In order to
-querry this orientational ordering, the density of local tetrahedral
+query this orientational ordering, the density of local tetrahedral
 order parameters ($\rho (q)$) observed during the simulation was
 computed (see Figure \ref{fig:gofrQ}). This was accomplished by
 computing $q$ for every molecule each configuration, and determining
@@ -440,16 +434,16 @@ crystal at 270 K.
 
 \subsection{Dynamic Measures of Supercooled Water}
 At colder temperatures, we should expect the dynamics of water to be
-slower due to less kinetic energy being available. However, at colder
-temperatures, water molecules may adapt structures which hinder
-dynamics further. Since the denisty of tetrahedrality indicated an
+slower simply due to lower kinetic energy. However, at colder
+temperatures, water molecules may adapt structures which further hinder
+dynamics. Since the denisty of tetrahedrality indicated an
 orientational ordering in the liquid which was sensitive to
 temperature, we may expect to observe temperature dependent dynamics
 as well. Here, we have investigated both \textit{translational} and
 \textit{orientational} measures of dynamics.
 
 \begin{flushleft}
-\textit{Diffusion of Supercooled Liquid}
+\textit{Diffusion in the Supercooled Liquid}
 \end{flushleft}
 
 Diffusion coefficients for water molecules in ice are approximately
@@ -489,8 +483,8 @@ investigated. % The data are fit well with a linear regression giving a
 
 Orientational time correlation functions provide information on the
 decorrelation of molecular environments. As we observed in Chapter
-\ref{chap:Dyn}, decorrelation times within ice go asymptotically to
-infinity, while in liquid values in the ps to ns range are more
+\ref{chap:Dyn}, decorrelation times in ice go asymptotically to
+infinity, while in liquid, values in the ps to ns range are more
 common. In Chapter \ref{chap:Dyn} we computed a spatially resolved
 version of the orientational time correlation function to probe how
 the dynamics of molecules changed approaching the ice-I$_\mathrm{h}$ /
@@ -623,12 +617,12 @@ and at warmer temperatures $k_\mathrm{jump} = 0.04$ (ps$^{-1}$).
 \subsection{Shear Viscosity of Supercooled Liquid}
 In order to compare the shear viscosities of the quasi-liquid layers,
 velocity shearing and scaling reverse non-equilibrium molecular
-dynamics simulations were performed. During which, a liquid box
-containing $16,000$ TIP4P/Ice water molcules with dimensions
-$\mathrm{L_x} = 51.22~\mathrm{\AA}$,
+dynamics simulations were performed on a bulk supercooled liquid. A
+liquid box containing $16,000$ TIP4P/Ice water molcules with
+dimensions $\mathrm{L_x} = 51.22~\mathrm{\AA}$,
 $\mathrm{L_y} = 51.22~\mathrm{\AA}$, and
 $\mathrm{L_z}=200.87~\mathrm{\AA}$ was subjected to a simultaneous
-kinetic energy and momentum flux. This resulted in the development of
+kinetic energy and momentum flux. This resulted in simultaneous
 thermal and velocity gradients across the $z$ dimension of the
 simulation box. The velocity profile was fit with a quadratic
 regression, and an analytic derivative with respect to the $z$ gave
@@ -637,8 +631,11 @@ momentum flux gives the shear viscosity.
 \begin{equation}\label{eq:viscosity}
   j_{z}(p_{x}) = -\eta \big(\frac{\partial v_{x}}{\partial z}\big)
 \end{equation}
+The temperature gradient through the system was fit with a linear
+regression. Using this regression, the local temperature for each
+$\eta$ was obtained.  
 
-The resulting $\eta$ were fit with the Williams-Landel Ferry model (WLF)
+The resulting $\eta$ values were fit with the Williams-Landel Ferry model (WLF)
 for predicting the shear viscosity of polymers and other liquids which
 exhibit a glass transition temperature ($T_g~\sim~136~\mathrm{K}$ for
 water). 
@@ -648,7 +645,7 @@ water).
 Here, $\eta_0$, $C_1$, $C_2$, and $T_r$ are empirical
 parameters. Typically, $T_r$ is taken to be the glass transition
 temperature ($T_g$), and when this choice is made $C_1$ and $C_2$ are
-characteristic of the class of the polymers or material being
+characteristic of the class of material being
 fit. With this it is possible to estimate the temperature dependence
 of the shear viscosity by knowing it only at one data point. Our data
 and resulting fit can be seen in Figure \ref{fig:etaT}.
@@ -660,7 +657,7 @@ and resulting fit can be seen in Figure \ref{fig:etaT}.
   kinetic energy and momentum fluxes, the red curve is a fit described
   by the Williams-Landel Ferry model.}
 \end{figure*} 
-Querrying the fit at the four temperatures the ice surfaces were
+Querying the fit at the four temperatures the ice surfaces were
 investigated at, we can obtain reasonable estimates of the shear
 viscosity for the supercooled bulk liquid. These values are reported
 in Table \ref{tab:bulkVisco}.
@@ -724,10 +721,10 @@ ice-I$_\mathrm{h}$ do not significantly alter the width of the QLL as
 compared to proton disordered surfaces.  Furthermore, Conde
 established that the SPC/E, TIP4P, TIP4P/2005, and TIP4P/Ice models
 estimated QLLs of similar thickness, when compared to the relative
-undercooling temperature of the model.\cite{Conde2008} Due to this,
-and given that our estimates of the thickness of the QLL agrees with
-that of Conde, we believe our estimates to be robust against other
-water models as well.
+undercooling temperature of the model.\cite{Conde2008} Given that our
+estimates of the thickness of the QLL agrees with that of Conde, we
+believe our estimates should be robust for other water models as well,
+but we have no evidence of this.
 
 Neshyba \textit{et al.} investigated sublimation and deposition of
 water molecules at the ice / vapor interface.\cite{Neshyba2009} They
@@ -735,19 +732,19 @@ also observed the formation of a QLL while using the NE6
 model\cite{Nada2003a} at 250 K (T$_\mathrm{m}$ - 48 K for the NE6
 model), and discriminated the QLL molecules by their intermolecular
 potential energy. Doing so, they designated two separate QLLs, which
-we have described as a single QLL here. They distinguish an outter QLL
+we have described as a single QLL here. They distinguish an outer QLL
 which contains roughly 8\% of the total molecules, and an inner, more
 crystalline QLL containing the remaining 92\%. 
 
 In addition to obtaining estimates of the QLL width, Equation
 \eqref{eq:qllFit} provides locations of the QLL which can be used to
-querry other properties, such as the diffusion coefficient or shear
+query other properties, such as the diffusion coefficient or shear
 viscosity. For the basal surfaces, $l$ and $u$ are found to be
 approximately $\pm$~20.5 ~\AA~ from the center of the ice. Similarly,
 the prismatic interfaces are found to be $\sim~\pm$~23.5~\AA~ from the
-center of the ice, respectively. For both surfaces, there is not a
-strong temperature dependence on the locations of $l$ and
-$u$. Therefore, we shall use these locations for querrying additional
+center of the ice, respectively. For both surfaces, there is no
+temperature dependence on the locations of $l$ and
+$u$. Therefore, we will use these locations for querying additional
 structural and dynamic properties to establish characteristics of the
 surface premelt. The average value of the tetrahedrality, diffusion
 constant, and shear viscosity for the two interfaces at each
@@ -821,7 +818,7 @@ Pfalzgraff \textit{et al.}\cite{Pfalzgraff2011} and later Gladich
 diffusion of the QLL on the prismatic, 14\degree~ pyramidal, and
 secondary prismatic surfaces of an ice-I$_\mathrm{h}$ crystal. This
 behavior was prominent at colder temperatures where the QLLs were thin
-and the water composing the QLL is significantly influenced by the
+and the water contributing to the QLL is significantly influenced by the
 underlying crystal structure. At warmer temperatures and
 correspondingly thicker QLLs, isotropic diffusion is recovered. While
 one dimensional diffusion coefficients were not resolved here, their
@@ -842,15 +839,15 @@ There are a few reasons why we see disagreement between the
 supercooled liquid and the QLL viscosities. The smaller values of
 $\eta$ obtained for the surface premelt may be due to the open vapor
 phase. In contrast, the bulk liquid at the same temperature is
-subjected to a more confined space. Molecules in the QLL could move
+subjected to a more confined space. Molecules in the QLL can move
 through the diffuse vapor, resulting in larger mean squared
-displacements. Similarly, molecules within the QLL may be able to more
+displacements. Similarly, molecules in the QLL may be able to more
 easily move tangentially through the QLL due to the open interface, as
-the resistence to motion is reduced due to the low density of
+the resistance to motion is reduced due to the low density of
 molecules.
 
 A second possibility is that the local structure of the molecules
-within the QLL is different from that of the bulk liquid. From the top
+in the QLL is different from that of the bulk liquid. From the top
 panel of Figure \ref{fig:gofrQ}, the supercooled bulk liquid's
 tetrahedrality distribution has a maximum of about $q \sim$~0.89, and
 is observed to decrease slightly with increasing temperature. However,
