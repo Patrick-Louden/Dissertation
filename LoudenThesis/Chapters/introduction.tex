@@ -43,7 +43,7 @@ Chapter \ref{chap:Methods} details the construction of the
 ice-I$_\mathrm{h}$ / water systems, and outlines the velocity shearing
 and scaling variant of reverse non-equilibrium molecular dynamics
 method used to create a shear through the system without causing bulk
-melting. Molecular forcefield parameters are discussed and simulation
+melting. Molecular force field parameters are discussed and simulation
 methodologies pertaining to those conducted in Chapters
 \ref{chap:Str} - \ref{chap:Friction} are also described.
 
@@ -51,19 +51,19 @@ In Chapter \ref{chap:Str} we begin our characterization of the
 ice-I$_\mathrm{h}$ / water interface by two structural measures, the
 local density and the local tetrahedral order parameter. Following
 this, we present an investigation of the dynamics of the water
-molecules in Chapter \ref{chap:Dyn}, namely, the self diffusion
+molecules in Chapter \ref{chap:Dyn}, including the self diffusion
 constant, the time dependent reorientation of molecules, and the
 hydrogen bond jump rates. In both chapters we quantify the spatial
 transition from bulk liquid to ice, and the effect shearing has
-on these order parameters and dynamics.
+on these measures.
 
 An expression for friction coefficients ($\kappa$) appropriate for
 negative slip boundary conditions is presented in Chapter
 \ref{chap:Friction}. The obtained values of $\kappa$ are found to be
-invariant of shear rate and direction of the shear relative to the ice
-crystal's surface topography. However, nonuniform friction
-coefficients are obtained for the four facets of ice investigated;
-although simulations with different models agree on the relative
+invariant with shear rate and direction of the shear relative to the ice
+crystal's surface topography. However, different friction
+coefficients are obtained for the four facets of ice investigated.
+Simulations using different water models agree on the relative
 tribological ordering of the surfaces. The observed friction
 coefficients are explained in terms of solid / liquid hydrogen bonds
 identified by their local tetrahedral ordering. Influences of surface
@@ -74,10 +74,11 @@ the results for both the SPC/E and TIP4P/Ice simulations.
 In Chapter \ref{chap:QLL}, we investigate the surface premelting of
 ice. We quantify the spatial transition from bulk ice through the
 quasi-liquid layer (QLL) into the vapor, as well as characterize the
-structure and dynamics of this surface premelt. We present evidence
-that the QLL is composed of a bilayer of water, and show that the
-shear viscosity ($\eta$) of the two layers are distinct from one
-another.
+structure and dynamics of this surface premelt. We present spatially
+resolved diffusion constants for the basal and prismatic surfaces, as
+well as estimates of the shear viscosities. We compare the structural
+and dynamic characteristics of the QLLs with simulations of
+supercooled bulk water. 
 
 \section{Laplace's Demon}
 % Molecular simulations offers insight on the mechanisms
@@ -121,7 +122,7 @@ that is, that all events are dictated by previously existing causes:
 We may regard the present state of the universe as the effect of
 its past and the cause of its future. An intellect which at a certain
 moment would know all forces that set nature in motion, and all
-positions of all items of which nature is comped, if this intellect
+positions of all items of which nature is composed, if this intellect
 were also vast enough to submit these data to analysis, it would
 embrace in a single formula the movements of the greatest bodies of
 the universe and those of the tiniest atom; for such an intellect
@@ -141,101 +142,104 @@ untrue.
 Still, today we strive to achieve the premise that Laplace founded,
 relinquishing the unobtainable asbolute predictablility of nature for
 solvable representative models, stepping slowly towards understanding
-the universe. We have replaced the `powerful intellect` with
-computers, and develop algorithms to recursively solve these
+the universe. We have replaced the `powerful intellect' with
+computers, and develop algorithms to iteratively solve these
 complex models. Through computer simulations we are becoming more
 proficient at understanding and predicting the world around us, from
-the motion of planets, to the properties of molecules.
+the motion of planets to the properties of molecules.
 
 \section{Molecular Dynamics}
-In general, molecular dynamics (MD) simulations involve
-popogating molecules through time by Netwon's Second Law. The models
-used to describe the molecules are often constructed using classical
-mechanics, treating atoms as hard spheres and bonds between atoms
-within a molecule as a spring. Charges are also handled classically,
-and depending on the model the charges can be static (restricted to
-some initial position), or dynamic, in which they allowed to move
-around the molecule. While hybrid quantum / classical molecular
-dynamics methods exist, we restrict ourselves here to the purely
-classical case. In the following sections, I outline the basis of
-classical molecular dynamics simulations. References for what is
-presented here comes from several excellent books which cover molecular
-dynamics, from the classic text of Allen and Tildesey, to the modern
-broad reaching work of Leach.\cite{Allen1987,Leach2001}
+In general, molecular dynamics (MD) simulations involve propogating
+the coordinates of numerical models of molecules through time using
+Netwon's Second Law. The models used to describe the molecules are
+often constructed using classical mechanics, treating atoms as hard
+spheres and bonds between atoms in a molecule as a spring. Charges are
+also handled classically, and depending on the model the charges can
+be static (restricted to some initial value), or dynamic, in which
+they allowed to fluctuate in response to an external field. While
+hybrid quantum / classical molecular dynamics methods exist, we
+restrict ourselves here to the purely classical case. In the following
+sections, I outline the basis of classical molecular dynamics
+simulations. References for what is presented here comes from several
+excellent books which cover molecular dynamics, from the classic text
+of Allen and Tildesey, to the work of
+Leach.\cite{Allen1987,Leach2001}
 
 We begin by considering a many-body expansion of the configurational
 potential energy $\mathscr{U}$ for an isolated collection of $N$ particles with
 vector coordinates $\mathbf{r}^N$.
 \begin{equation}\label{eq:potE}
-\mathscr{U}(\mathbf{r}^N) = \sum_i U(\mathbf{r}_i) + \sum_{i<j}
-U(\mathbf{r}_i,\mathbf{r}_j) + \sum_{i<j<k} U(\mathbf{r}_i,\mathbf{r}_j,\mathbf{r}_k) \dots + U(\mathbf{r}_1,\mathbf{r}_2,\mathbf{r}_3,\dots \mathbf{r}_N)
+  \mathscr{U}(\mathbf{r}^N) = \sum_i U(\mathbf{r}_i) + \sum_{i<j}
+  U(\mathbf{r}_i,\mathbf{r}_j) + \sum_{i<j<k}
+  U(\mathbf{r}_i,\mathbf{r}_j,\mathbf{r}_k) + \dots + U(\mathbf{r}_1,\mathbf{r}_2,\mathbf{r}_3,\dots \mathbf{r}_N)
 \end{equation}
 Most commonly, the expansion is truncated at the two-body term as
-higher order terms have proven computationally infeasible in the
-past. However, with the development of faster computers, Paesani
+higher order terms have proven too computationally expensive
+. However, with the development of faster computers, Paesani
 \textit{et al.} has recently shown that incorporating higher order
 terms leads to a more accurate water model.\cite{Paesani2016} A more
 detailed discussion on water models will be presented in Section
 \ref{sec:WaterModels}; for now, we will restrict ourselves to a
 many-body expansion up to the two-body term. We further restrict
-ourselves to a potential where no dissapative forces act between
+ourselves to a potential where no dissipative forces act between
 particles, from this, we can obtain the force on particle $i$.
 \begin{equation}\label{eq:force}
 \mathbf{F_i} = -\frac{\partial \mathscr{U}(\mathbf{r}^N)}{\partial \mathbf{r}_i}
 \end{equation} 
 Since the system of $N$ particles is isolated and there are no
-dissapative forces, the total energy of the system will be
-conserved. From Equation \eqref{eq:force} and Newton's Second Law the
-accelerations for each of the $N$ particles follows.
+dissipative forces, the total energy of the system will be
+conserved. From Equation \eqref{eq:force} and Newton's Second Law, the
+accelerations for each of the $N$ particles follows,
 \begin{equation}\label{eq:accel}
  m_i\mathbf{\ddot{r}}_i = -\frac{\partial \mathscr{U}(\mathbf{r}^N)}{\partial \mathbf{r}_i}
 \end{equation}
 Integrating Equation \eqref{eq:accel} once with respect to time gives
-the momentum of the $N$ particles, and a second integration gives the
+the momenta of the $N$ particles, and a second integration gives the
 positions.
 
 \subsection{Finite Difference Methods and Equations of Motion}
 For particles described by a continous potential energy function, the
-forces acting upon each of the $N$ particles will change every time a
-single particles moves. Due to this, the motion of all particles are
+forces acting upon each of the $N$ particles will change every time
+the particles moves. Therefore, the motions of all particles are
 coupled, giving rise to a many-body problem with no analytic
 solution. Therefore, finite difference methods of integration must be
-used in order to propogate the particles through time.
+used in order to propogate the coordinates of the particles through
+time.
 
 While there exist a large number of algorithms for propogating
-particles, they are not all equal. The general idea for each method is
-to take small steps through time ($\delta t$) by knowing the position
-and momenta for each of the $N$ particles at a previous time
+coordinates, they are not all equivalent. The general idea for each
+method is to take small steps through time ($\delta t$) by knowing the
+position and momenta for each of the $N$ particles at a previous time
 ($t-\delta t$). Knowing these quantities, the forces are calculated
-from the position at time $t$, and the positions and momenta are updated
-accordingly. This results in a new $\mathbf{r}^N$ configuration, and
-the method iterates again.
+from the position at time $t$, and the positions and momenta are
+updated accordingly. This results in a new $\mathbf{r}^N$
+configuration, and the method iterates again.
 
-The main difference between each integration scheme is what data is
-stored between steps. In the \textit{Verlet} method, two sets of
-positions are stored as well as a single set of accelerations. The
-velocity terms do not appear explicitly but can be computed from the
-two sets of positions. In the \textit{Leap Frog} method, the positions
-and velocities are stored at a half-step difference. When the
-positions are known at a half-step forward in time, the new velocities are
-computed and `leap-frog' over the positions. While this method is an
-improvement over the Verlet algorithm as the velocities are computed
-directly, the positions and velocities are not known at the same time
-without further calculations.
+The main difference between integration schemes is what data is stored
+between steps. In the \textit{Verlet} method, two sets of positions
+are stored as well as a single set of accelerations. The velocity
+terms do not appear explicitly but can be computed from the two sets
+of positions. In the \textit{Leap Frog} method, the positions and
+velocities are stored at half-steps. When the positions are known at a
+half-step forward in time, the new velocities are computed and
+`leap-frog' over the positions. While this method is an improvement
+over the Verlet algorithm as the velocities are computed directly, the
+positions and velocities are not known at the same time without
+further calculation.
 
-In our work, the \textit{velocity Verlet} method was implemented. In
-this integration scheme the positions, velocities, and accelerations
-are known at the same time. Given an initial set of positions at time
-$t$, the accelerations $\mathbf{\ddot{r}}(t)$ can be computed from Equation
-\eqref{eq:accel}. Together with the velocities at $t$, the future
-values of these quantities can be determined.
+In our work, the \textit{velocity Verlet} method was used. In this
+integration scheme the positions, velocities, and accelerations are
+known at the same time. Given an initial set of positions at time $t$,
+the accelerations, $\mathbf{\ddot{r}}(t)$, can be computed from
+Equation \eqref{eq:accel}. Together with the velocities at $t$, the
+future values of these quantities can be determined.
 \begin{equation}\label{eq:vv-r}
 \mathbf{r}(t+\delta t) = \mathbf{r}(t) + \delta t \mathbf{\dot{r}}(t) +
 \frac{1}{2}t^2\mathbf{\ddot{r}}(t)
 \end{equation}
 \begin{equation}\label{eq:vv-v}
 \mathbf{\dot{r}}(t+ \delta t) = \mathbf{\dot{r}}(t) + \frac{1}{2}\delta
-t[\mathbf{\ddot{r}}(t) + \mathbf{a\ddot{r}}(t + \delta t)]
+t[\mathbf{\ddot{r}}(t) + \mathbf{\ddot{r}}(t + \delta t)]
 \end{equation}
 This method has to be implemented in three steps, as the accelerations
 at times $t$ and $t + \delta t$ must be known to update the
@@ -280,7 +284,7 @@ particles ($10^{23}$), as calculation of even the initial time step is
 infeasible. Instead, we turn to statistical mechanics as a connection
 between a microscopic system ($10^2 - 10^6$ particles) and the
 macroscopic experimental observation. Here, instead of considering one
-large system, we evolve a large number of replications of a smaller
+large system, we evolve a large number of replicas of a smaller
 system simultaneously. The average value of the property from these
 replicas is defined as an \textit{ensemble average}, and is denoted
 with angle bars, $\langle$~ $\rangle$.
@@ -292,7 +296,7 @@ A(\mathbf{r}^N,\mathbf{p}^N) \rho
 Equation \eqref{eq:A-ens} is written as a double integral, although
 more accurately this equation indicates $6N$ integrals, one for each
 of the $3N$ position and $3N$ momentum coordinates of the $N$
-particles. The second term in the integrand,
+particles. The second factor in the integrand,
 $ \rho(\mathbf{r}^N,\mathbf{p}^N)$, is the \textit{probability
   density} of the ensemble. It is a function which describes the
 relative probability of observing a specific configuration and
@@ -311,7 +315,7 @@ As the particles evolve through time, there are several possible
 thermodynamic properties which we may wish to compute. Among the
 properties most commonly desired are the temperature and pressure.
 The instantaneous temperature, $T$, of a collection of $N$ molecules
-is described by their kinetic energy through the equipartition
+is related to the kinetic energy through the equipartition
 theorem.
 \begin{equation}\label{Temperature}
 T = \frac{2}{fk_B}\Bigg( \sum_{i=1}^{N} \frac{1}{2} m_i {\bf v}_i^T \cdot {\bf v}_i +
@@ -324,33 +328,34 @@ where $f$ is the total number of degrees of freedom in the system,
 f = 3 N + 2 N_{\mathrm{linear}} + 3 N_{\mathrm{non-linear}} - N_{\mathrm{constraints}}
 \end{equation}
 $k_B$ is Boltzmann's constant, $N_{linear}$ is the number of linear
-molecules, and $N_{non-linear}$ is the total number of non-linear
-molecules in the system. The first sum includes the linear velocities
-of all $N$ molecules, while the second sum is over those with angular
-velocity $\bf j_i$, and a moment of inertia
+rigid bodies, and $N_{non-linear}$ is the total number of non-linear
+rigid bodies in the system. The first sum includes the linear velocities
+of all $N$ bodies, while the second sum is over those with angular
+velocity $\bf j_i$, and moment of inertia,
 $\overleftrightarrow{\mathsf{I}}_i$.
 
-The instantaneous pressure, $P$, of a collection of molecules can be
+The instantaneous pressure, $P$, of a collection of particles can be
 obtained through the virial theorem of Clausius. The \textit{virial},
 $W$, is defined by
 \begin{equation}\label{eq:virial}
-W = \sum_i^N r_i\dot{p}_{r_i}
+W = \sum_{i=1}^N \sum_{\alpha=1}^n r_{i\alpha}\dot{p}_{i\alpha}
 \end{equation}
-where $r_i$ is a coordinate such as the $x$ or $y$ dimension, and
-$\dot{p}_{r_i}$ is the first time derivitive of momentum, or force,
+where $r_{i\alpha}$ is the position along the $\alpha$ axis for
+particle $i$, and
+$\dot{p}_{i\alpha}$ is the first time derivitive of momentum, or force,
 along that coordinate. The virial theorem of Clausius states that the
 virial is equal to $-3Nk_BT$.
 
 For an ideal gas, the molecules composing the gas only interact with
 the walls of the container. Therefore, the only forces present in the
 system are due to those between the gas and the container. In this
-case, the virial becomes $-3PV$ directly from the ideal gas law
-$PV=-Nk_BT$. We can consider a system of interacting particles as a
-perturbation from the ideal gas case, where the virial for the
-interacting system would be the ideal gas virial plus a contribution
-due to the interactions of the particles. 
+case, the virial becomes $-3PV$ directly from the ideal gas law. We
+can consider a system of interacting particles as a perturbation from
+the ideal gas case, where the virial for the interacting system would
+be the ideal gas virial plus a contribution due to the interactions of
+the particles.
 \begin{equation}\label{eq:virial2}
-W = -3PV + \sum_i^N \sum_{j\neq i}^N r_{ij} \frac{dU(r_{ij})}{dr_{ij}} = -3Nk_BT
+W = -3PV + \sum_i^N \sum_{j\neq i}^N r_{ij} \frac{dU(r_{ij})}{dr_{ij}} = -fk_BT
 \end{equation}
 Here we have considered a potential consisting of only two-body
 interactions, although expansion to higher-order terms is
@@ -358,7 +363,7 @@ straightforward. If we instead write Equation \eqref{eq:virial2} in terms
 of the force between particles $i$ and $j$, ($f_{ij}$), we obtain the
 following expression for the pressure.
 \begin{equation}\label{eq:virial3}
-P = \frac{1}{V}\Big[Nk_BT - \frac{1}{3} \sum_i^N \sum_{j\neq i}^N
+P = \frac{1}{V}\Big[fk_BT - \frac{1}{3} \sum_i^N \sum_{j\neq i}^N
 r_{ij} f_{ij}\Big]
 \end{equation}
 
@@ -377,16 +382,16 @@ expect collections of the same molecules (\textit{e.g.} water)
 described under different potential energy functions or parameters, to
 result in vastly different thermodynamic properties.
 
-\subsection{Molecular Forcefields}
+\subsection{Molecular Force Fields}
 Having established how to propogate particles through time using MD
 simulations, we turn our focus next to the problem of developing an
 accurate representation for the interactions between molecules, more
-commonly known as a forcefield. Generally, the functional form of the
-forcefield is structured as a balance between accurately capturing the
-pertinent physics and what is feasible in computing time. Here, we
-present functional forms for forcefields commonly used, followed by a
-discussion of suitable parameters in a brief overview of the large
-body of literature surrounding water models.
+commonly known as a force field. Generally, the functional form of the
+force field is structured as a balance between accurately capturing
+the pertinent physics and what is feasible given computational
+resources. Here, we present functional forms for force fields commonly
+used, followed by a discussion of suitable parameters in a brief
+overview of the large body of literature surrounding water models.
 
 Due to computational expense, it is common to truncate the many-body
 expansion of the potential energy to include only the one-body and
@@ -398,9 +403,9 @@ which are pairwise additive. That is, the potential in Equation
 \end{equation}
 where $\mathbf{r}_i$ is the absolute position of particle $i$, and
 $r_{ij}$ is the scalar distance between particles $i$ and $j$,
-$r_{ij} = | \mathbf{r}_i - \mathbf{r}_j|$. This may seem like an
-extreme restriction on the potential, however, we will see models of
-this structure still perform quite well. 
+$r_{ij} = | \mathbf{r}_j - \mathbf{r}_i|$. This may seem like an
+extreme restriction on the potential, however, we will see models with
+this structure still perform quite well.
 
 The one-body term in Equation \eqref{eq:potPair} accounts for any
 external forces on the particles, such as an electric field. Their
@@ -415,13 +420,16 @@ categories, bonded and non-bonded interactions.
 \subsubsection{Bonded Interactions}
 There are three bonded terms (often referred to as short-ranged
 interactions) which deserve discussion. Bonds between two atoms in a
-molecule, bends between three centrally connected atoms, and torsions
-between four consecutively bonded atoms. Bonds are often treated as
-harmonic oscillators, with a spring constant $k_{ij}$ set to mimic the
-stiffness of the bond and equilibrium distance set to the bond length
-$r_{ij}^0$. The spring constant is determined from the frequency of
-the bond $\omega$ and the reduced mass $\mu_{ij}$ of the two atoms in the
-bond.
+molecule, bends between two atoms centrally connected to a third, and
+torsions between four consecutively bonded atoms. Bonds are often
+treated as harmonic oscillators, with a spring constant $k_{ij}$ set
+to mimic the stiffness of the bond and equilibrium distance set to the
+bond length $r_{ij}^0$. The spring constant is determined from the
+frequency of the bond $\omega$ and the reduced mass $\mu_{ij}$ of the
+two atoms in the bond.
+\begin{equation}
+\mu_{ij} = \frac{m_i m_j}{m_i + m_j}
+\end{equation}
 \begin{equation}\label{eq:kij}
 \omega = \sqrt{\frac{k_{ij}}{\mu_{ij}} }
 \end{equation}
@@ -430,17 +438,17 @@ bond.
 U_{bond}(r_{ij}) = \frac{1}{2} k_{ij} (r_{ij} -r_{ij}^0)^2
 \end{equation}
 
-Similarly, bends within a molecule are also treated as a harmonic
-oscillator, with spring constant $k_{\theta_{ijk}}$ and equilibrium bend
-angle $\theta_{ijk}^0$. However, while the bonding potential is a
+Similarly, bends within a molecule are also treated as harmonic
+oscillators, with spring constants $k_{\theta_{ijk}}$ and equilibrium bend
+angles $\theta_{ijk}^0$. However, while the bonding potential is a
 function of the distance between particles $i$ and $j$, the bending
-potential is more succinclty written as a function of the angle formed between three
+potential is more succinctly written as a function of the angle formed between three
 consecutively bonded atoms $i$, $j$, and $k$,
 \begin{equation}\label{eq:bend}
 \theta_{ijk} = \mathrm{cos}^{-1}\Bigg(\frac{\mathbf{r}_{ji} \cdot
   \mathbf{r}_{jk}}{|r_{ji}|~|r_{jk}|}\Bigg)
 \end{equation}
-where particle $j$ is the central atom. 
+where atom $j$ is the central atom. 
 \begin{equation}\label{eq:bend2}
 U_{bend}(\theta_{ijk}) = \frac{1}{2} k_{\theta_{ijk}} (\theta_{ijk} -
 \theta_{ijk}^0)^2
@@ -453,34 +461,38 @@ U_{torsion}(\phi_{ijkl}) = c_1[1+\mathrm{cos}\phi_{ijkl}] + c_2[1-\mathrm{cos}(2
 \end{equation}
 Here, the angle $\phi_{ijkl}$ is defined as
 \begin{equation}\label{eq:torsion2}
-\mathrm{cos}\phi_{ijkl} = (\mathbf{\hat{r}}_{ij} \times
+\mathrm{cos}\phi_{ijkl} = \frac{(\mathbf{\hat{r}}_{ij} \times
 \mathbf{\hat{r}}_{jk}) \cdot (\mathbf{\hat{r}}_{jk} \times
-\mathbf{\hat{r}}_{kl})
+\mathbf{\hat{r}}_{kl})}{|\mathbf{\hat{r}}_{ij} \times
+\mathbf{\hat{r}}_{jk}|~|\mathbf{\hat{r}}_{jk} \times
+\mathbf{\hat{r}}_{kl}|}
 \end{equation}
 and the coefficients $c_1$, $c_2$, and $c_3$ are terms describing the
 barrier for transitioning from a \textit{cis} to a \textit{trans}, or \textit{staggered} to
 \textit{eclipsed} conformations.
 
 \subsubsection{Non-bonded Interactions}
-In 1924, J. E. Lennard-Jones proposed a pairwise additive
+In 1903, Gustav Mie proposed a pairwise additive
 non-bonded potential for a system of soft-spheres.
 \begin{equation}\label{eq:LJ}
-U_{\mathrm{LJ}}(r_{ij}) = k\epsilon_{ij}\Bigg[ \Big( \frac{\sigma_{ij}}{r_{ij}}\Big)^n - \Big(\frac{\sigma_{ij}}{r_{ij}}\Big)^m\Bigg]
+U_{\mathrm{Mie}}(r_{ij}) = k\epsilon_{ij}\Bigg[ \Big( \frac{\sigma_{ij}}{r_{ij}}\Big)^n - \Big(\frac{\sigma_{ij}}{r_{ij}}\Big)^m\Bigg]
 \end{equation}
 where
 \begin{equation}\label{eq:LJ2}
 k = \frac{n}{n-m} \Big(\frac{n}{m}\Big)^{m/(n-m)}.
 \end{equation}
-With this simple model, Lennard-Jones was able to account for both
-short-ranged repulsive forces as well as long-range attractive
-forces. The short-ranged forces are important to keep a collection of
-particles from collapsing in on itself, while the long-range forces
-prevents the collection of particles disintegrating. Since the leading
-term in London's theory on dispersion forces goes at $1/r^6$, the
-long-range term is chosen to mimic this behavior $m=6$. While there is
-no physical justification for it, the short-ranged attraction term is
-often set to $n=12$ primarily due to ease of computation. With these
-values for $m$ and $n$ the resulting Lennard-Jones model becomes
+With this simple model, Mie was able to account for both short-ranged
+repulsive forces as well as long-range attractive forces. The
+short-ranged forces are important to keep a collection of particles
+from collapsing in on itself, while the long-range forces prevents the
+collection of particles disintegrating. In 1924, J. E. Lennard-Jones
+proposed a specific form of the Mie potential for molecular
+simulation. Since the leading term in London's theory on dispersion
+forces goes at $1/r^6$, the long-range term is chosen to mimic this
+behavior $m=6$. While there is no physical justification for it, the
+short-ranged attraction term is often set to $n=12$ primarily due to
+ease of computation. With these values for $m$ and $n$ the resulting
+Lennard-Jones model becomes
 \begin{equation}\label{eq:LJ3}
 U_{\mathrm{LJ}}(r_{ij}) =
 4\epsilon_{ij}\Bigg[\Big(\frac{\sigma_{ij}}{r_{ij}}\Big)^{12}-\Big(\frac{\sigma_{ij}}{r_{ij}}\Big)^{6}\Bigg].
@@ -510,7 +522,7 @@ treatment of charged particles. Commonly, molecular mechanics
 forcefields represent molecular charges as point charges on atomic
 sites, coupled with short-ranged Lennard-Jones repulsions to prevent
 molecules from collapsing onto one another. While there are many
-implementations of how to compute these interactions, Coulomb's law is
+methods for computing these interactions, Coulomb's law is
 at the heart of the methods.
 \begin{equation}\label{eq:coulomb}
 U_{\mathrm{charge}}(r_{ij}) = \sum_{ij}\frac{q_i q_j e^2}{4 \pi \epsilon_0
@@ -521,17 +533,15 @@ the charge of an electron, and $\epsilon_0$ is the permittivity of
 free space. 
 
 For a system of $N$ molecules, the number of bonded terms goes as $N$
-but the number non-bonded interactions as $N^2$. Due to this,
-computing the non-bonded interactions is often the most
-computationally expsive part of the simulation. The Lennard-Jones
-interaction, however, fall of quite rapidly ($r^{-6}$) and the
-potential at $r_{ij} = 2.5\sigma_{ij}$ is just $1 \%$ of its value at
-$r_{ij} = \sigma_{ij}$. Meanwhile, the long-ranged $r^{-1}$ decay of
-electrostatic interactions can have significant value at distances as
-large as the simulation cell. These interactions are quite problematic
-and will be addressed in the following paragraphs. However, we will
-first discuss adding a cutoff to the potential, a method commonly
-used to save computation time.
+but the number non-bonded interactions as $N^2$.  Computing the
+non-bonded interactions is therefore the most computationally expsive
+part of the simulation. The Lennard-Jones interaction, however, falls
+off quite rapidly due to its $r^{-6}$ functional form. Meanwhile, the
+long-ranged $r^{-1}$ decay of electrostatic interactions can have
+significant value at distances as large as the simulation cell. These
+interactions are quite problematic and will be addressed in the
+following paragraphs. However, we will first discuss adding a cutoff
+to the potential, a method commonly used to save computation time.
 
 % Make cutoff small enough that particle doesn't see its own
 % image. Neighbor-lists make cutoffs worthwhile, otherwise we would have
@@ -543,16 +553,16 @@ used to save computation time.
 % order $N$, and sorting neighbors is cheap as long as the total number
 % of cells is greater than 27.
 
-When using a cutoff radius, the potential is evaluated as normal for
+When using a cutoff radius, the potential is evaluated unmodified for
 distances less than the cutoff, and set to zero for objects outside
 the cutoff. This introduces discontinuities in the potential and thus
-the force calculations. One way around this is to shift the potential
-by its value at the cutoff.  The additive constant vanishes upon
-taking the derivative to compute the forces, and energy conservation
-is better than with the unshifted potential. However, there is still a
-problem of a discontinuity in the force with this method. A second
-solution is to use a switching function to smoothly transition the
-potential to zero at the cutoff.
+the force calculations. One way to prevent potential discontinuities
+is to shift the potential by its value at the cutoff.  The additive
+constant vanishes upon taking the derivative to compute the forces,
+and energy conservation is better than with the unshifted
+potential. However, there is still a problem of  discontinuities in the
+forces with this method. A second solution is to use a switching
+function to smoothly transition the potential to zero at the cutoff.
 
 % Switching functions can take several forms, one
 % such example is the following polynomial
@@ -581,21 +591,21 @@ potential to zero at the cutoff.
 Interactions that decay no faster than $r^{-n}$ where $n$ is the
 dimensionality of the system can pose a problem in that they may not
 converge for distances greater than the size of the simulation
-box. Charge-charge interacations go as $r^{-1}$, and therefore are
+box. Charge-charge interactions go as $r^{-1}$, and therefore are
 quite problematic. There have been several methods suggested to handle
 this issue, the most famous of which is the method presented by Ewald
 in 1921. The Ewald Sum requires replicas of the simulation cell for
-computation of $U_{charge}(r_{ij})$. These charges are then wrapped by
-a Gaussian of opposite charge, creating a mask around the
+computation of $U_{charge}(r_{ij})$. These charges are wrapped by
+a Gaussian of opposite charge, creating a screen around the
 charges. Doing so requires two corrections to be made; first, an
 oppositely charged Gaussian must also be added for each one introduced
 around a charge. Secondly, since the Gaussians interact with
-themselves, a self correction piece must be added as well. Depending
+themselves, a self correction piece must be added. Depending
 on the material being modeled, a dipole correction might also need to
-be added. The charges and the Gaussians wrapped about them are added
+be added. The charges and the Gaussians screening them are added
 up in real space, while the oppositely charged Gaussians are added in
-reciprocal space. This method is computationaly very expensive,
-however, it is the most accurate way of computing the charge-charge
+reciprocal space. This method is computationaly very expensive.
+However, it is the most accurate way of computing the charge-charge
 interactions in molecular simulation. 
 
 An alternative approach to the demanding Ewald Sum is the method first
@@ -616,7 +626,7 @@ R_\textrm{c}
 \end{cases},
 \label{eq:shiftingPotForm}
 \end{equation}
-and expand on this to the shifted force,
+and expanded on this to arrive at the shifted force,
 \begin{equation}
 V_\textrm{SF}(r) =      \begin{cases}
 v(r)-v_\textrm{c}-\left(\frac{d v(r)}{d r}\right)_{r=R_\textrm{c}}(r-R_\textrm{c
@@ -646,7 +656,7 @@ R_\mathrm{c}\right)}{R_\mathrm{c}^2}+\frac{2\alpha}{\pi^{1/2}}\frac{\exp\left(-\
 \label{eq:DSFPot}
 \end{split}
 \end{equation}
-where $efrc$ is the complimentary error function with dampening
+where $\mathrm{erfc}$ is the complimentary error function with dampening
 parameter $\alpha$. Taking the derivative of this damped shifted force
 potential will lead to the following expression for forces,
 \begin{equation}
@@ -658,12 +668,12 @@ q_iq_j\Biggr{[}&\left(\frac{\textrm{erfc}\left(\alpha r\right)}{r^2}+\frac{2\alp
 \end{split}
 \end{equation}
 Fennell and Gezelter have shown that the damped shifted force method
-gives nearly identical results as compared with the smooth particle
+gives nearly identical results when compared with the smooth particle
 mesh Ewald method on a variety of commonly simulated
 systems.\cite{Fennell2006}
 
 \subsection{Boundary Conditions}
-Having discussed how to evolve particles positions and momenta through
+Having discussed how to evolve particle positions and momenta through
 time under a classical potential, we now focus on the problem of how
 to simulate a tractable number of particles. Consider an open (but
 isolated) system of particles. The cluster would be exposed to vacuum
@@ -719,14 +729,13 @@ number of particles.
 Utilizing periodic boundary conditions does pose one potential
 problem. There is the possibility that a particle could interact with
 an image of itself, if the unit cell length is not large compared to
-$r_{\mathrm{cut}}$. Also, while using these methodologies capture
-short wavelength events quite well, it is impossible to observe a
-phenomena with fluctuations or wavelengths larger than the unit cell
-dimensions. This includes events near liquid-gas critical points,
-observing phase transitions, and long-wavelength plasmons. However,
-unnecessarily large unit cells require an increasing number of
-particles in the simulation, and resulting computational times
-intractable.
+$r_{\mathrm{cut}}$. Also, these methodologies capture short wavelength
+events quite well, but it is impossible to observe a phenomena with
+fluctuations or wavelengths larger than the unit cell dimensions. This
+includes events near liquid-gas critical points, and some phase
+transitions. However, unnecessarily large unit cells require an
+increasing number of particles in the simulation, and resulting
+computational times are often intractable.
 
 
 
@@ -737,25 +746,24 @@ analyzing the model proposed for the study. After almost 50 years of
 simulating water, we are still optimizing and searching for geometries
 and distributions of charges, potential sites, mass sites, and many
 other parameters which will reproduce the phase diagram of water in
-closer detail. However, in this time we have learned much about the
-rich behavior and characteristics of water through molecular
-simulations. 
+better agreement with experiments. However, in this time we have
+learned much about the rich behavior and characteristics of water
+through molecular simulations.
 
 In this section we present a short review over the large body of
 literature surrounding water models for molecular simulations. The
-list of water models presented here is by no means complete, nor the
-analysis of these models exhaustive. There are a number of excellent
-reviews on these topics, from the early reviews of
+list of water models presented here is by no means complete, nor is
+the analysis of these models exhaustive. There are a number of
+excellent reviews on these topics, from the early reviews of
 Brodsky\cite{Brodsky1996}, Wallqvist and Mountain\cite{Wallqvist1999},
 Finney\cite{Finney2001}, and Guillot\cite{Guillot2002}, to the more
 recent works of Ouyang\cite{Ouyang2015}, Cisneros\cite{Cisneros2016},
 Gallo\cite{Gallo2016}, and Brini\cite{Brini2017}. We would be remiss
-if we also did not include the significant contributions from the
-Unversidad Complutense Madrid, namely, the extensive work of Vega,
+if we also did not include the significant contributions from Vega,
 Abascal, Conde, Sanz, and
-MacDowll.\cite{MacDowell2004,Vega2005,Vega2005c,Abascal2007,Abascal2007a,Abascal2007b,Abascal2007c,Vega2009,Vega2011,Vega2011a,Vega2015}
-Lastly, we must acknowledge and include the expansive catalog of
-literature on water by Martin Chaplin.\cite{Chaplin2018}
+MacDowell.\cite{MacDowell2004,Vega2005,Vega2005c,Abascal2007,Abascal2007a,Abascal2007b,Abascal2007c,Vega2009,Vega2011,Vega2011a,Vega2015}
+Lastly, we must acknowledge the expansive catalog of literature on
+water by Martin Chaplin.\cite{Chaplin2018}
 
 The first simulations of water were performed in 1969 by Barker and
 Watts,\cite{Barker1969} and shortly thereafter by Rahman and
@@ -855,7 +863,7 @@ TIP5P model of Mahoney and Jorgensen\cite{Mahoney2000}, and its
 reparameterization for use with Ewald summation methods (TIP5P/Ew) by
 Rick.\cite{Rick2004} In the five site models, the negative charge has
 moved out of the HOH plane, and is now distributed across two sites
-mimicing electron lone pairs. The positive charges are located on
+mimicking electron lone pairs. The positive charges are located on
 the hydrogn sites, and the Lennard-Jones position is placed on the
 oxygen atom. The TIP5P model is observed to reproduce the density
 maximum of water around 4\degree~C at 1~atm, and the dielectric
@@ -867,15 +875,15 @@ considers performance of the model for a large number of properties,
 the three site SPC/E and four site TIP4P/2005 water models outperform
 the costly five site model. \cite{Vega2011a}
 
-While six site models are rarely used, one bares worth mentioning. The
+While six site models are rarely used, one is worth mentioning. The
 NE6 model of Nada and van der Eerden is similar to the five site
-models described above, with the addition of a massless charged site
+models described above, with the addition of a massless charge site
 along the HOH bisector.\cite{Nada2003a} This charge is taken to be
 negative, however, the total molecule is constrained to be
 neutral. The model was parameterized for simulations involving ice and
 liquid near the melting point, and parameters were determined from
 derivatives of the free energy of ice and water, as well as the
-volumes of the same systems. Proton-disordered ice-I$_\mathrm{h}$is
+volumes of the same systems. Proton-disordered ice-I$_\mathrm{h}$ is
 the stable structure at the melting point for the resulting NE6
 model. The melting point was determined to be 271~$\pm$~9~K by Nada
 and van der Eerden, in good agreement with the experimentally observed
@@ -885,15 +893,15 @@ and van der Eerden, in good agreement with the experimentally observed
 After selecting the number of potential sites for a water model, the
 next task is determining the interaction parameters associated with
 each of those sites. Commonly, water models are parameterized in one
-of two distinct ways, through \textit{ab. initio} calculations or
-matching emperical evidence. In the first method, high level quantum
+of two distinct ways, through \textit{ab initio} calculations or
+matching empirical data. In the first method, high level quantum
 mechanical calculations are performed on small clusters of water
 molecules. From these, forces, stresses, and energies are obtained and
 fit using a pairwise (or higher order) function to describe the
 energy. In the second method, parameters for the interaction sites are
 determined by iterative fitting against chosen experimental results,
 such as the density or coexesistence temperatures. A set of
-interaction parameres are chosen, such as the charges ($\mathrm{q}_O$
+interaction parameters are chosen, such as the charges ($\mathrm{q}_O$
 and $\mathrm{q}_H$) and Lennard-Jones parameters ($\epsilon_O$ and
 $\sigma_O$), and the resulting behavior of the water model is
 recorded. The parameters are then iteratively changed until
@@ -959,15 +967,15 @@ Uncertainties in the last digit are indicated with parentheses. \\
 \end{table}
 
 In the first two columns are the melting points determined by
-simulations of solid / liquid and solid / vapor coexistence. It is
-commonly known that commensurate ice crystals modeled by these types
-of potentials can be superheated.\cite{Vega2006a} However, the
+simulations of solid / liquid and solid / vapor
+coexistence. Commensurate ice crystals modeled by these types of
+potentials can be superheated.\cite{Vega2006a} However, the
 introduction of a nucleation site for the melting to occur at, such as
-an interface, removes the ability for superheating. In the third
+an interface, removes the capacity for superheating. In the third
 column of Table \ref{tab:meltingPoints}, are melting temperatures
-determined by Gibbs-Dyhem thermodynamic integration\cite{Kofke1993}
-using the TIP4P model as the base potential, as it was determined
-previously.\cite{Sanz2004}
+determined by Gibbs-Duhem thermodynamic integration\cite{Kofke1993}
+using the TIP4P model as the base potential, because it had been
+previously determined.\cite{Sanz2004}
 
 Upon first observation, we note that very few of the models cataloged
 have melting points close to the true melting point of
@@ -977,45 +985,47 @@ TIP5P-E models. This is due to the majority of the models being fit to
 reproduce bulk liquid water under ambient conditions. Secondly, we note
 that while the various methods used to compute melting points agree
 within error of one another, the reported values have quite a large
-spread. This is partially due to the sensativity of the melting point
+spread. This is partially due to the sensitivity of the melting point
 to the treatment of long range interactions\cite{Arbuckle2002,
   Bryk2004}, as well as crystal size\cite{Pan2011} and proton
 distribution throughout the ice.\cite{Louden2017}
 
 Abascal and Vega have recently observed that the melting points of
 common three site and four site water models correlates strongly with
-their quadrupole
-moments.\cite{Abascal2007,Abascal2007a,Abascal2007b,Abascal2007c} To
+their quadrupole moments, or their quadrupole to dipole
+ratio.\cite{Abascal2007,Abascal2007a,Abascal2007b,Abascal2007c} To
 quantify multipole moments, we must first consider how to define our
 coordinate system. For planar water models, we define our coordinate
-system in the following way; the $z$ axis as the dipole moment
-direction (the HOH bisector), the $y$ axis parrallel to the vector
-connecting the two hydrogens, and the $x$ axis normal to the plane of
+system in the following way; the $z$ axis is the dipole moment
+direction (the HOH bisector), the $y$ axis is parallel to the vector
+connecting the two hydrogens, and the $x$ axis is normal to the plane of
 the molecule. Having defined a coordinate system, we can calculate the
-traceless quadrupole tensor, $\Theta$, for any water model of these
-classes by
+traceless quadrupole tensor, $\Theta$, for any water model,
 
 \begin{equation}
-\Theta_{ij} = \frac{1}{2} \sum_{\alpha}q_{\alpha}(3r_{i,\alpha}r_{j,\alpha}-|\vec{r_{\alpha}}|^{2}\delta_{ij})
+\Theta_{\alpha \beta} = \frac{1}{2}
+\sum_{i}q_{i}(3r_{i,\alpha}r_{j,\alpha}-|\vec{r}_{i}|^{2}\delta_{\alpha
+  \beta})
 \end{equation}
 
-where, $q_i$ is the charge in the $i-$th dimension and the sum is
-taken over all $\alpha$ charged sites in the model. The traceless
-quadrupole tensor has certain special properties, and is aptly named
-for one of them; which is the trace, ($Tr$), of the tensor is null.
+where, $q_i$ is the charge in the $i-$th atom and the sum is taken
+over all charged sites in the model. The traceless quadrupole tensor
+has certain special properties, and is aptly named for one of them;
+which is the trace, ($Tr$), of the tensor is zero.
 
 \begin{equation}
-Tr(\Theta) = \sum_{i,j}\Theta_{ij}\delta_{ij} = 0
+\mathrm{Tr}[\Theta] = \sum_{\alpha = x,y,z}\Theta_{\alpha
+  \alpha}\delta_{\alpha \alpha} = 0
 \end{equation}
 
 While having a traceless tensor can make certain calculations easier to 
 perform, it is also possible to calculate a traced quadrupole tensor $Q$.
 \begin{equation}
-Q_{ij} = \frac{1}{2}\sum_{\alpha}q_{\alpha}(r_{i,\alpha}-r_{i,com})(r_{j,\alpha}-r_{j,com})
+Q_{\alpha \beta} = \frac{1}{2}\sum_{i}q_{i}(\vec{r}_{i}-\vec{r}_{com})_{\alpha} (\vec{r}_{j}-\vec{r}_{com})_{\beta}
 \end{equation}
-Here, $r_{i,com}$ is the position of the center of mass in the $i$-th 
-dimension, and therefore the position of the quadrupole moment is set at the 
-center of mass of the molecule.
+Here, $\vec{r}_{com}$ is the position of the center of mass, and
+therefore the origin of the quadrupole moment is set at the center of
+mass of the molecule.
 
 Based on the suggestion of Rick\cite{Rick2004}, Abascal and Vega have
 described an effective tetrahedral quadrupole moment ($\Theta_T$),
@@ -1041,7 +1051,7 @@ with the non-zero elements of their traced quadrupole tensors.
 \label{Models_quad}
 \begin{tabular}{rccccccc}
 \hline\hline
-Model & $Q_{xx}$ & $Q_{yy}$ & $Q_{zz}$ & $Tr(Q)$ & $\overline{Q}$ & $Q_{T}$ &
+Model & $Q_{xx}$ & $Q_{yy}$ & $Q_{zz}$ & $Tr[Q]$ & $\overline{Q}$ & $Q_{T}$ &
                                                                     T$_{m}$ (K) \\
 \hline 
 TIP4P/Ice & 0.0 & 1.6629 & 0.7427 & 2.3657 & 2.8143 & 2.4348  & 272.2 \\
@@ -1054,36 +1064,35 @@ TIP3P & 0.0 & 1.1476 & 0.5337 & 1.6812 & 1.9894 & 1.7214 & 146 \\
 \hline \hline
 \end{tabular}
 \begin{flushleft}
-Elements of the tensors are in units of D$\AA^{2}$~. \\
+Elements of the tensors are in units of D\AA$^{2}$~. \\
 \end{flushleft}
 \end{table} 
 
 In Figures \ref{fig:QBar} and \ref{fig:TraQ}, we have plotted the
 melting point for ice-I$_h$ of these water models by $\overline{Q}$
-and the trace of their quadrupole tensor, where $\overline{Q}$ is
+and the trace of the raw quadrupole tensor, where $\overline{Q}$ is
 given by,
 \begin{equation}
-\overline{Q} = \sqrt{2(3 Q:Q - (Tr(Q))^{2})}
+\overline{Q} = \sqrt{2(3 Q:Q - Tr[Q]^{2})}
 \end{equation}
-We see in both cases there is a strong correlation between
-the values of their quadrupole tensors and their melting point.
+We see in both cases there is a strong correlation between the magnitudes
+of their quadrupole tensors and their melting points.
 
 
 \begin{figure*}
 \includegraphics[width=\linewidth]{Figures/Tm_Ih_Qbar_plot.pdf}
 \caption{\label{fig:QBar} Melting point for ice-I$_h$ of several
-  popular water models as a function of the QBar for the model. We see
+  popular water models as a function of the $\overline{Q}$ for the model. We see
   a strong correlation between a more accurate melting point and a
   larger value of $\overline{Q}$. We estimate that a $\overline{Q}$ of
-  approximately 2.8 D$\AA^{2}$~will result in the experimental melting point
-  of 273.15 K. A linear regression of the data resulted in an equation
-  of best fit of $y = 158.89x - 166.83$. From this, we have predicted
-  an optimal $\overline{Q}$ to be 2.7690 D$\AA^{2}$~.}
+  approximately 2.8 D\AA$^{2}$~will result in the experimental melting point
+  of 273.15 K. A linear regression of the data predicted
+  an optimal $\overline{Q}$ to be 2.7690 D\AA$^{2}$~.}
 \end{figure*}
 
 \begin{figure*}
 \includegraphics[width = \linewidth]{Figures/Tm_Ih_TraQ_plot.pdf}
-\caption{\label{fig:TraQ} Melting point for ice-I$_h$ of several popular water models as a function of the trace of the quadrupole tensor for the model. We see a strong correlation between a more accurate melting point and a larger value of the trace. We estimate that a trace of approximately 2.3 D$\AA^{2}$~will result in the experimental melting point of 273.15 K.}
+\caption{\label{fig:TraQ} Melting point for ice-I$_h$ of several popular water models as a function of the trace of the quadrupole tensor for that model. We see a strong correlation between a more accurate melting point and a larger value of the trace. We estimate that a trace of approximately 2.3 D\AA$^{2}$~will result in an experimental melting point of 273.15 K.}
 \end{figure*}
 
 While it is still unclear if these results are indicative of an
@@ -1111,7 +1120,7 @@ presented in Table \ref{tab:transport}.
           \textbf{~~Energy~~} & $C_p \frac{\partial T (\vec{r}, t)}{\partial t} + \nabla \vec{J} = 0$ & $\vec{J} = -\lambda \cdot \nabla T(\vec{r}, t)$\\
           \textbf{~~Momentum~~} & $\rho \frac{D \vec{v}(\vec{r}, t)}{Dt}
                                   + \nabla \overleftrightarrow{\sigma} =
-                                  0$ & $\sigma_{x,z} = -\eta \cdot
+                                  0$ & $\overleftrightarrow{\sigma}_{x,z} = -\eta \cdot
                                        \nabla_z (\rho v_x)$\\ \hline
           \hline
           \end{tabular}
@@ -1167,7 +1176,7 @@ be a stationary correlation function, then we are able to shift time
 origins without issue. 
 \begin{equation}\label{eq:gk}
   \langle [A(t) - A(0)]^2 \rangle = 2 \int_0^t dt'' \int_0^{t''} d\tau ~
-  \langle \dot{A}(\tau ) \dot{A}(0) \rangle
+  (\tau-0)~\langle \dot{A}(\tau ) \dot{A}(0) \rangle
 \end{equation}
 Equation \ref{eq:gk} is invariant under interchanging the two
 integrations. Lastly, taking a long-time limit collapses one of the
@@ -1175,16 +1184,15 @@ integrals and we are left with a general relation describing the
 mean-square displacement of a dynamic quantity and an integral of a
 time correlation function.
 \begin{equation}\label{eq:gk2}
- \gamma =  lim_{t \rightarrow \infty} \frac{\langle[ A(t) - A(0)]^2 \rangle}{2t} =
+ \gamma =  \mathrm{lim}_{t \rightarrow \infty} \frac{\langle[ A(t) - A(0)]^2 \rangle}{2t} =
   \int_0^{\infty} d\tau ~ \langle \dot{A}(\tau ) \dot{A}(0) \rangle
 \end{equation}
 Solving for the transport coefficient ($\gamma$) of interest, is
 simply a matter of determining the appropriate dynamic property
 $A(t)$, and computing the long-time correlation function. However,
-when implemented extracting transport coefficients from equilibrium
-simulations in this manner is often computationally expensive. This is
-due to the slow decay of the correlation function, resulting in the
-need for long simulation times.
+extracting transport coefficients from equilibrium simulations in this
+manner is often computationally expensive. The correlation functions
+decay slowly, requiring long simulation times.
 
 \subsubsection{Non-equilibrium Molecular Dynamics Methods}
 An alternative approach to obtaining transport coefficients is through
@@ -1217,16 +1225,16 @@ Simulation times to converge the required flux is often shorter than
 when computing transport properties using the Green-Kubo
 relations. However, computing the appropriate flux can be quite
 challenging. Recently, Kuang and Gezelter have developed an approach
-to non-equilibrium molecular dynamics in which they invert the
-measured and imposed quantites.\cite{Kuang2010,Kuang2012} In their
-method, aptly named reverse non-equilibrium molecular dynamics, the
-flux is imposed across two spatially separated regions of the
-simulation box, and the gradient response is measured. Again, the
-desired transport coefficient can be obtained through a linear
-constitutive relation. This method is advantageous over NEMD
-approaches as the gradient response of the system is often much easier
-to measure compared to the difficult to compute flux.
-
+to non-equilibrium molecular dynamics based on earlier work by
+M\"uller-Plathe, in which they invert the measured and imposed
+quantites.\cite{Kuang2010,Kuang2012} In their method, aptly named
+reverse non-equilibrium molecular dynamics, the flux is imposed across
+two spatially separated regions of the simulation box, and the
+gradient response is measured. Again, the desired transport
+coefficient can be obtained through a linear constitutive
+relation. This method is advantageous over NEMD approaches as the
+gradient response of the system is often much easier to measure
+than the flux.
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 % Water is abundant and found everywhere.
@@ -1259,22 +1267,22 @@ similar size. The denisty of ice increases upon heating (up to
 70~K). The density of the liquid increases with increasing temperature
 (up to $\sim$ 281 K). Pressure can melt the solid rather than freezing
 the liquid, and there are more solid phases than observed for similar
-sized molecules. While the principles governing these and other
-unique properties of water are not known, many of the observed
+sized molecules. While the principles governing these and other unique
+properties of water are not completely known, many of the observed
 anomolies are attributed to the electronic distribution around water
 and the resulting strength of the hydrogen bond.
 
-In ancient times, humans recognized the importance of water. Around
-700 BCE, the Greek philosopher Thales of Miletus, one of the seven
-sages of antiquity, declared that everything was composed of
-water. Later in the 5th century BCE, Empedocles described water as
-being one of four `classical' elements of the ancient world, alongside
-earth, wind, and fire. Likewise, the ancient Chinese described the
-world around them using five elements, earth, wood, metal, fire, and
-water. The importance of water was discovered early in our human
-history, and it has been studied extensively since those early days.
+% In ancient times, humans recognized the importance of water. Around
+% 700 BCE, the Greek philosopher Thales of Miletus, one of the seven
+% sages of antiquity, declared that everything was composed of
+% water. Later in the 5th century BCE, Empedocles described water as
+% being one of four `classical' elements of the ancient world, alongside
+% earth, wind, and fire. Likewise, the ancient Chinese described the
+% world around them using five elements, earth, wood, metal, fire, and
+% water. The importance of water was discovered early in our human
+% history, and it has been studied extensively since those early days.
 
-\subsection{The Structure of Water}
+\subsection{The ``Shape'' of Water}
 %
 % description of what water is? structure constitution etc?
 % Gas phase molecule in isolation
@@ -1286,13 +1294,13 @@ due to the vast number of observed structures and configurations it is
 found in. In the liquid, the dynamic hydrogen bond network evolves
 rapidly; hydrogen atoms diffuse much more quickly than their
 counterpart oxygen atoms due to `bucket-brigade' like motion. In the
-solid phase, motion occurs much slower. However, motion is observed
-around crystalline defects; hydrogens are still exchanged between
-oxygens and on slow time scales reorientation is still possible. There
-is also a large diversity in the crystalline structures of water ice,
-as over sixteen unique crystal structures have been observed or
-predicted\cite{Chaplin2018}, many of which can be seen in Figure
-\ref{fig:phaseDiagram}
+solid phase, motion occurs much more slowly. However, motion is
+observed around crystalline defects; hydrogens are still exchanged
+between oxygens and on slow time scales, reorientation is still
+possible. There is also a large diversity in the crystalline
+structures of water ice. Over sixteen unique crystal structures
+have been observed or predicted\cite{Chaplin2018}, many of which can
+be seen in Figure \ref{fig:phaseDiagram}
 
 \begin{figure*}
 \includegraphics[width=\linewidth]{Figures/PhaseDiagram}
@@ -1308,12 +1316,12 @@ predicted\cite{Chaplin2018}, many of which can be seen in Figure
 
 
 \subsubsection{Gaseous Water}
-In the gas phase, water adopts a `bent-like' geometry, with an HOH
-bond angle of about 104.5\degree~. The oxygen-hydrogen bond length has
-been computed with high levels of accuracy to be roughly 1 \AA~
-long. These bond lengths and bend angles are an equilibrium value, as
-they are constantly vibrating. Even at $-$273.15~\degree C some
-residual vibrations remain. This is described as a zero-point energy,
+In the gas phase, water adopts a `bent' geometry, with an HOH bond
+angle of about 104.5\degree~. The oxygen-hydrogen bond length has been
+computed with high levels of accuracy to be roughly 1 \AA~ long. These
+bond lengths and bend angles are an equilibrium value, as the
+molecules are constantly vibrating. Even at $-$273.15~\degree C some
+residual motion remains. This is a zero-point energy,
 and has considerable implications for the potential energy of the
 molecule.
 
@@ -1321,9 +1329,9 @@ Water's electrons are not symmetrically distributed about the
 molecule. This gives rise to higher order multipoles, and it is these
 electronic distributions that govern many of water's characteristic
 properties. In the gas phase, water has a dipole moment of about
-1.85~D. This dipole moment is highly polarizable, that is, it readily
+1.85~D. This dipole is highly polarizable, that is, it readily
 responds to an external electric field, be it applied or created by
-molecules in its local environment. In the condensed liquid phase, the
+molecules in the local environment. In the condensed liquid phase, the
 dipole moment becomes much harder to probe, but values have been
 reported ranging from 2.2~D to 2.9~D.
 
@@ -1345,8 +1353,8 @@ together in a condensed phase at room temperature.
 
 The polarizability of a water molecule leads to another interesting
 property, namely, its local bonding environment. In the liquid phase,
-water molecules often adapting near tetrahedral like geometries with other
-water molecules, resulting in $\sim$~3 nearest neighbors at ambient
+water molecules often adopt near-tetrahedral geometries with other
+water molecules, resulting in $\sim$~4 nearest neighbors at ambient
 conditions. The maximum density of the liquid is observed to occur at
 $\sim$~4\degree~C, and cooling further results in decreasing
 density. Liquid water transitions to ice when the local ordering
@@ -1375,7 +1383,7 @@ occurs at the surface of ice.
 The structure of hexagonal ice (ice-I$_\mathrm{h}$) has been studied
 extensively using experimental methods such as neutron scattering and
 x-ray spectroscopy, as well as NMR and laser
-spectroscopy.\cite{Kuhs2012} In this structure, water molecules form
+spectroscopy.\cite{Kuhs2012} In ice-I$_\mathrm{h}$, water molecules form
 puckered six member rings, with OOO angles formed by three neighboring
 molecules close to 109.5\degree~. These rings can stack on top of one
 another and expand to form large sheets, giving rise to the observed
@@ -1384,7 +1392,7 @@ crystal, it is possible to interweave an equivalent second ice crystal
 through the first. These structures have a larger density than the
 more open ice, and are aptly named ultra-high density ices. Ice also
 crystallizes into cubic structures, although no interwoven lattice has
-yet been observed for this geometry. In total, there are currently 16
+yet been observed for this geometry. There are currently 16
 different crystal structures known for water ice, some of which can be
 seen in Figure \ref{fig:phaseDiagram} and Table \ref{tab:iceProps}.
 
@@ -1455,9 +1463,9 @@ configurations are unequivalent. We can describe these lattices as
 being orientationally ordered or disordered, however, they are more
 commonly described in terms of their proton ordering. The two
 descriptions are equivalent as the arrangement or ordering of the
-hydrogens gives rise to the orientation of the water molecules.  Ice-
+hydrogens gives rise to the orientation of the water molecules.  Ices-
 I$_\mathrm{h}$, III, IV, V, VI, VII, XII, XVI are proton disordered,
-while Ice- II, VIII, IX, and XI are proton ordered.
+while Ices- II, VIII, IX, and XI are proton ordered.
 
 Upon cooling, ice-III and ice-VII undergo a phase transition to
 ordered forms, ice-IX and ice-VIII respectively. Transitions of proton
@@ -1510,7 +1518,7 @@ S = k_{B}~\mathrm{ln}(W)
 where $k_{B}$ is Boltzmann's constant and $W$ is the number of
 equivalent arrangements of the molecules. Pauling estimated the number
 of configurations in two separate ways.\cite{Pauling1935} First, we
-must recognize that there are possible six ways to orient a water
+must recognize that there are six possible ways to orient a water
 molecule within a tetrahedral structure formed by neighboring
 molecules while satisfying the ice-rules. If we give each water
 molecule one of these six orientations at random, there is then a 1/2
@@ -1602,19 +1610,19 @@ robust measurement. Computer simulations have attempted to quantify
 $\gamma_{iw}$, and predictions have been made for a series of water
 models, some with\cite{Davidchack2012} and some
 without\cite{Handel2008} taking full electrostatic interactions into
-account. These studies used a varient of the cleaving
+account. These studies used a variant of the cleaving
 method,\cite{Broughton1986} and estimated $\gamma_{iw}$ using the
 TIP4P, TIP4P-Ew, and TIP5P-E water models.
 
 Previously, $\gamma_{iw}$ has been estimated using the TIP4P/2005
-water model and the method pruposed by Bai and Li, studying the
+water model and the method proposed by Bai and Li, studying the
 crystal-melt interface of a Lennard-Jones system.\cite{Bai2006} In the
 method of Bai and Li, the critical size of crystalline clusters are
 measured, and by extension of classical nucleation theory
 $\gamma_{iw}$ can be obtained.\cite{Volmer1926,Becker1935} This result
 produces an orientationally averaged estimate of $\gamma_{iw}$, which
 does not provide any information on the dependency of $\gamma_{iw}$ on
-the orienation of the crystal.
+the orientation of the crystal.
 
 Benet \textit{et al.} have measured the interfacial free energy of
 ice-I$_\mathrm{h}$ in coexistence with liquid water at 248.5~K by
@@ -1688,14 +1696,14 @@ stacking.\cite{Malkin2012,Moore2011,Seo2012,Carignano2007,Rozmanov2011}
 % next subsection where we will talk about friction studies on ice surfaces.
 
 In order to characterize the surface premelting of ice, we must first
-understand what the crystal termination looks like. While a large
-variety of computaitonal and experimental techniques have been used to
+understand the crystal termination. While a large
+variety of computational and experimental techniques have been used to
 probe the structure, dynamics, and properties of this liquid-like
 surface film, much is still unknown. Open questions include: at zero,
 or small temperatures, are the protons at the surface ordered or
-disordered, and does this change with appreciable temperature. Also,
+disordered, and does this change with appreciable temperature? Also,
 what contribution does this liquid-like layer play in the observed
-small friction coefficients commonly found for ice.
+small friction coefficients commonly found for ice?
 
 \subsubsection{Hydrogen Order at the Surface of Ice}
 It is well understood that the formation of a surface requires
@@ -1719,9 +1727,9 @@ energy ($\gamma$), a thermodynamic quantity that affects crystal growth and
 controls crystal shape.
 
 Fletcher was the first to consider proton ordering at
-ice-I$_\mathrm{h}$ surfaces, using classical electrostatics arguements
+ice-I$_\mathrm{h}$ surfaces, using classical electrostatics arguments
 to suggest that the lowest energy surface should be proton
-ordered.\cite{Fletcher1992} His arguements stemmed from dipole
+ordered.\cite{Fletcher1992} His arguments stemmed from dipole
 interactions among nearest neighbor OH bonds, which also led to the
 prediction that the basal surface would undergo a proton ordered to
 disordered transition at $\sim$~30~K, and similarly the prismatic
@@ -1753,14 +1761,14 @@ ice-I$_\mathrm{h}$ lattice, slight changes in proton ordering at the
 surface can result in large differences in surface energy.
 
 Pan \textit{et al.} investigated surface oxygen
-positions. \cite{Pan2010} With a reduction in their experienced
-potential, these oxygen atoms could deviate from their lattice
-positions with thermal energy. For ice-I$_\mathrm{h}$ surface
-bilayers, they find the oxygen-oxygen distance does not change much
-compared to the bulk. The average surface oxygen-oxygen distance is
-0.02 \AA~ greater than found in the bulk. This is consistent with
-experimental results, indicating distances of 2.77 \AA~ for surface
-and 2.76 \AA~ for bulk at 38~K.\cite{Parent2002}
+positions. \cite{Pan2010} Due to the crystal termination, these oxygen
+atoms could deviate from their lattice positions with thermal
+energy. For ice-I$_\mathrm{h}$ surface bilayers, they find the
+oxygen-oxygen distance does not change much compared to the bulk. The
+average surface oxygen-oxygen distance is 0.02 \AA~ greater than found
+in the bulk. This is consistent with experimental results, indicating
+distances of 2.77 \AA~ for surface and 2.76 \AA~ for bulk at
+38~K.\cite{Parent2002}
 
 Due to the ring stacking structure of ice-I$_\mathrm{h}$, the basal
 face could terminate as either a monolayer or a bilayer. Materer
@@ -1953,24 +1961,25 @@ agreement with the diffusion mechanism proposed by Bishop \textit{et
   al.}\cite{Bishop2009} and by Bolton and Pettersson\cite{Bolton2000},
 which suggested the outtermost molecules of the QLL moved across a
 relatively rigid surface. Diffusion characterized in this way is
-highly sensative to the underlying surface morphology and topography.
+highly sensitive to the underlying surface morphology and topography.
 That is, if the surface geometry or potential energy surface for
 diffusion is anisotropic, we should expect to recover non-uniform
 diffusion across the surface.
 
 Observations that in-plane diffusion follows motions transverse to the
-interface were observed at warmer temperatures as well, however, at
+interface were observed at warmer temperatures as well. However, at
 warm enough temperatures isotropic diffusion was
-observed.\cite{Gladich2011,Gladich2015} They proposed the following
-mechanism and reported activation energies. Through vertical motion,
-the QLL molecule leaves a well-hydrated local environment close to the
-ice surface, moving to the outter portion of the surface where there
-are fewer hydrogen bond partners. Gladich concluded that the
-activation energy for high-temperature diffusion is greater than that
-of the low-temperature. This is due to the thicker surface premelt at
-warmer temperatures.  They further estimate these activation energies
-to be 29.1 kJ mol$^{-1}$ for low-temperature diffusion (approximately
-the energy of one hydrogen bond with the NE6 model), and 53.8 kJ
+observed.\cite{Gladich2011,Gladich2015} Gladich \textit{et al.}
+proposed the following mechanism and reported activation
+energies. Through vertical motion, the QLL molecule leaves a
+well-hydrated local environment close to the ice surface, moving to
+the outter portion of the surface where there are fewer hydrogen bond
+partners. Gladich concluded that the activation energy for
+high-temperature diffusion is greater than that of the
+low-temperature. This is due to the thicker surface premelt at warmer
+temperatures.  They further estimated these activation energies to be
+29.1 kJ mol$^{-1}$ for low-temperature diffusion (approximately the
+energy of one hydrogen bond with the NE6 model), and 53.8 kJ
 mol$^{-1}$ at temperatures close to the melting point (roughly two
 hydrogen bonds).  However, with increasing temperature and a thicker
 surface premelt, the surface morphology and topography is masked and
@@ -2047,7 +2056,7 @@ smaller than found for other solids. Ice friction has been found to
 vary with many factors, including
 temperature\cite{Roberts1981,Higgins2008,Bowden1939,Evans1976,Derjaguin1988,Liang2003},
 sliding speed\cite{Evans1976,Derjaguin1988,Liang2003}, surface
-asparities of the contact surfacea\cite{Bowden1939,Baurle2007},
+asperities of the contact surfacea\cite{Bowden1939,Baurle2007},
 moisture\cite{Calabrese1980} ,and
 load.\cite{Buhl2001,Bowden1939,Derjaguin1988,Baurle2006,Oksanen1982}
 While holding all other variables constant, friction is observed to
@@ -2333,7 +2342,7 @@ effect the presented surface has on the premelt, and the
 viscosity of the quasi-liquid layer.
 
 In the chapters to follow, I present my contribution to our
-understanding of friction at the surface of ice . In Chapter
+understanding of friction at the surface of ice. In Chapter
 \ref{chap:Methods} I describe the computational details and
 methodologies used in simulating shearing at ice-I$_\mathrm{h}$ /
 water interfaces. In Chapters \ref{chap:Str} and \ref{chap:Dyn}, I
@@ -2342,9 +2351,10 @@ and present estimates of the interfacial width. In Chapter
 \ref{chap:Friction}, I present an appropriate friction coefficient for
 no-slip boundary conditions, and explore possible mechanisms for the
 observed facet dependent friction. In Chapter \ref{chap:QLL}, I
-investigate the shear viscosity of the quasi-liquid layer. In Chapter
-\ref{chap:Concl}, I summarize my work and conclude with projections
-of future investigations.
+investigate the shear viscosity of the quasi-liquid layer, and compare
+again supercooled liquid water. In Chapter \ref{chap:Concl}, I
+summarize my work and conclude with projections of future
+investigations.
 
 % Below here is text I've written and removed from the chapter, but
 % don't want to lose to the delete key.

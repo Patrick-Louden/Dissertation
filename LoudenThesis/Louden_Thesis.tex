@@ -96,28 +96,53 @@
 %\makecopyright
 
 \begin{abstract}
-  Friction at the surface of ice is characterized by the extent a
-  surface premelt lubricates the two opposing surfaces. In the
-  hydrodynamic regime, the material traversing over the ice surface is
-  fully supported by the quasi-liquid layer (QLL), and the resulting
-  friciton is comprised of three parts; the friction due to the QLL
-  passing over the ice surface, the viscous shearing of the surface
-  premelt, and the capillary bridges forming between the QLL and the
-  material. In this dissertation I present molecular simulations
-  exploring these contributions. 
+  In this dissertation I present work on the modeling of hydrodynamic
+  friction at the surface of ice. In the hydrodynamic regime, a slider
+  traversing an ice surface is fully supported by a
+  quasi-liquid layer (QLL), and the resulting friciton is comprised of
+  three parts; solid-liquid friction between the ice crystal and the
+  QLL, viscous shearing of the surface premelt, and the drag force due
+  to capillary bridges forming between the QLL and the slider.
+
+  Using non-equilibrium molecular dynamics simulations, the basal
+  $\{0001\}$, prismatic $\{10\bar{1}0\}$, 14\degree~pyramidal
+  $\{20\bar{2}1\}$, and secondary prismatic $\{11\bar{2}0\}$ facets of
+  ice-I$_\mathrm{h}$ were drawn through liquid water with a momentum
+  flux between the solid and liquid phases. The spatial transition
+  between the ice and the liquid was quantified using structural and
+  dynamic order parameters. Estimates of the interfacial width using
+  structural measures gave widths of $\sim$ 6-10~\AA. Dynamic
+  interfacial widths were quantified and predicted a slightly broader
+  interface, $\sim$~10-15~\AA~ wide. In addition, spatial
+  decomposition of molecular orientational correlation functions
+  indicated that the short- and longer-time decay components behave
+  differently closer to the interface. In all cases the interface was
+  observed to be stable under the presence of a shear.
 
   Water sliding over the surface of ice is observed to be in the
-  no-slip limit. A friction coefficient appropriate for these boundary
-  conditions is presented, and crystal facet dependent friction is
-  observed. This trend is observed over multiple water potentials, and
-  is shown to correlate strongly with the surface hydrogen-bond
-  density. A momentum transmission model is proposed, which predicts
-  tribological properties at these interfaces.
+  no-slip limit. A friction coefficient appropriate for negative slip
+  boundary conditions is presented, and crystal facet dependent
+  friction is observed. The computed friction of these interfaces is
+  found to be invariant to the shear rate and direction of shear
+  relative to the surface features. This trend is observed for two
+  water potentials, and is shown to correlate strongly with the
+  surface hydrogen-bond density. A momentum transmission model is
+  proposed, which relates the observed friction with the density of
+  solid to liquid hydrogen bonds, the shear viscosity of the liquid,
+  and the width of the interface. Data collected from both models
+  agrees well with the proposed model.
 
   A temperature dependence study of the surface premelt at the basal
-  and prismatic termination of ice-I$_\mathrm{h}$ is presented. The
-  QLL structure is determined by structural and dynamic properties,
-  and the shear viscosity of the surface premelt is quantified. 
+  and prismatic facets of an ice-I$_\mathrm{h}$ crystal is
+  presented. Spatially resolved diffusion constants are computed
+  normal to the ice surface, and estimates of the shear viscosity for
+  the QLLs are obtained. A facet depedence is observed in the shear
+  viscosity which correlates strongly with the computed solid-liquid
+  friction coefficients. Structural and dynamic properties of the QLLs
+  are compared with simulations of supercooled liquid water. It is
+  observed that the QLLs have characteristics distinctly different
+  than the supercooled bulk liquid, attributed to the presence of the
+  vapor interface.
 \end{abstract}
 
 % \renewcommand{\dedicationname}{NEW DEDICATION NAME}
@@ -139,46 +164,60 @@
 \end{preface}
 
 \begin{acknowledge}
-  I would like to thank my advisor, Professor J. Daniel Gezelter, for
-  his countless hours of explanation, teaching, and encouragement. I
-  would like to thank my parents, for without whom I would not be
-  where I am today. All of your years of sacrifice and encouragement
-  have contributed to this document, and I am forever thankful for
-  your help.
+  This document is the culmination of the work and support of many
+  wonderful educators, mentors, colleagues, and friends. I would like
+  to especially thank my advisor, Professor J. Daniel Gezelter, for
+  his countless hours of explanation, teaching, and
+  encouragement. Malcolm Gladwell has estimated that it takes 10,000
+  hours of practice and experience to gain expertise in any field. I
+  have no doubt that I have asked Dan at least 10,000 questions in my
+  time at Notre Dame, and with unwaivering patience he has answered
+  every one. I am grateful to past and present group members,
+  Dr. Shenyu Kuang, Dr. James Marr, Dr. Kelsey Stocker, Dr. Madan
+  Lamichane, Suzie Neidhart, Hemanta Bhattarai, and Alex Mazanek. I am
+  deeply grateful to Dr. Joseph Michalka for all the years of guidance
+  and mentorship in programming and discussions of theoretical
+  chemistry.
+
+  I am thankful to the Corcelli and Maginn groups for their useful
+  discussions and camaraderie throughout the tough times of
+  research. Scientific discovery and understanding are not always
+  straight paths, and I am grateful for the companions who made the
+  journey with me. I also am thankful for the excellent courses taught by
+  Professor Steven Corcelli, Professor Jindal Shah, Professor Bruce
+  Bunker, Professor Kathie Newman, and Professor J. Daniel Gezelter.
+
+  I am very thankful to my committee members, Professor J. Daniel
+  Gezelter, Professor Steven Corcelli, and Professor Edward Maginn,
+  for their guidance, wisdom, and helpful suggestions; all of which
+  have helped make this document possible.
 
   I am also grateful to my undergraduate research adviser and close
-  friend, Prof. Christopher Lawrence. He opened the door to the world
-  of physical and computational chemistry, and his infinite
-  patience and guidance have helped shape me into the scientist I am
-  today. 
+  friend, Professor Christopher P. Lawrence. If I have achieved
+  anything in my graduate research, it was only made possible by the
+  foundation that he laid.
 
-  I am grateful to past and present group members, Dr. Shenyu Kuang,
-  Dr. James Marr, Dr. Kelsey Stocker, and Dr. Madan Lamichane. I am
-  deeply grateful to Dr. Joseph Michalka for all the years of guidance
-  in programming and discussions of theoretical chemistry. I am
-  thankful for the Corcelli and Maginn groups for their useful
-  discussions on my research. I also am thankful for the excellent
-  courses taught by Prof. Steven Corcelli, Prof. Jindal Shah,
-  Prof. Bruce Bunker, and Prof. J. Daniel Gezelter.  I would like to
-  acknowledge all the excellent discussions with my research
-  committee, Prof. Steven Corcelli and Prof. Edward Maginn
+  I would be remiss if I did not acknowledge my close friends in
+  chemistry, Dr. Robert Graff, Dr. Eric Hansen, and Tiffany Snow, as
+  well as my extended family in physics, James Kelly, Anthony Ruth,
+  Matthew Hall, Alison Hall, and Alison Deatsch. 
 
-  I would be amiss if I did not acknowledge my close friends,
-  Dr. Robert Graff, Dr. Eric Hansen, and Tiffany Snow. For the many
-  days and nights we spend talking about research and the endless
-  suggestions given, and the nights we spent playing board games, you
-  will forever be my close friends.
+  I would like to thank my parents, for without whom I would not be
+  where I am today. All of your years of sacrifice and encouragement
+  have contributed to this document, and I am forever thankful for
+  your love and support.
 
-  Lastly I must thank my wonderful wife, Elizabeth Louden. Her
-  continued support and understanding have meant the world to me. Her
-  ability to melt my stress away and make me smile continues to
-  astound me.
+  Finally, I would like to acknowledge and thank my best friend and
+  wife, Elizabeth Louden. Her continued support and understanding
+  during my time at Notre Dame has meant the world to me, especially
+  while writing this document. Her ability to make me smile continues
+  to astound me.
 
-  Computational resources were provided by the University of Notre
-  Dame Center for Research Computing. Financial support for this
-  research was provided by the National Science Foundation under Grant
-  CHE-0848243 and the University of Notre Dame Department of Chemistry
-  and Biochemistry.
+  % Computational resources were provided by the University of Notre
+  % Dame Center for Research Computing. Financial support for this
+  % research was provided by the National Science Foundation under Grant
+  % CHE-0848243 and the University of Notre Dame Department of Chemistry
+  % and Biochemistry.
 \end{acknowledge}
 
 \mainmatter
