@@ -5,11 +5,11 @@
 %  Describe a water molecule in the gas phase. Next, a collection of
 %  condensed liquid water, then ice ice crystal structures, etc.
 %
-%  Next turn to the anomolies of water, and how some of these have
+%  Next turn to the anomalies of water, and how some of these have
 %  been answered based on what was described about the structure of
 %  water in each of its phases.
 %
-%   One of the anomolies that have been discovered is of the low
+%   One of the anomalies that have been discovered is of the low
 %   friction coefficient observed for sliding over ice surfaces,
 %   advent of studying ice friction, segway into qll and ice surfaces
 %
@@ -105,7 +105,7 @@ supercooled bulk water.
 %   achievable simulation time for various molecular modeling
 %   methodologies. High accuracy quantum mechanical methods (red and
 %   orange) cannot simulate large numbers of molecules for long
-%   times. Methods which reduce molecular detail and propogate by
+%   times. Methods which reduce molecular detail and propagate by
 %   classical mechanics (yellow and green) are able to achieve longer
 %   simulation times for larger systems. Monte Carlo methods (blue)
 %   remove the expense of computing dynamics altogether, and ultra
@@ -140,7 +140,7 @@ additional evidence against the claim, and it now agreed upon as
 untrue.
 
 Still, today we strive to achieve the premise that Laplace founded,
-relinquishing the unobtainable asbolute predictablility of nature for
+relinquishing the unobtainable absolute predictability of nature for
 solvable representative models, stepping slowly towards understanding
 the universe. We have replaced the `powerful intellect' with
 computers, and develop algorithms to iteratively solve these
@@ -149,9 +149,9 @@ proficient at understanding and predicting the world around us, from
 the motion of planets to the properties of molecules.
 
 \section{Molecular Dynamics}
-In general, molecular dynamics (MD) simulations involve propogating
+In general, molecular dynamics (MD) simulations involve propagating
 the coordinates of numerical models of molecules through time using
-Netwon's Second Law. The models used to describe the molecules are
+Newton's Second Law. The models used to describe the molecules are
 often constructed using classical mechanics, treating atoms as hard
 spheres and bonds between atoms in a molecule as a spring. Charges are
 also handled classically, and depending on the model the charges can
@@ -198,15 +198,15 @@ the momenta of the $N$ particles, and a second integration gives the
 positions.
 
 \subsection{Finite Difference Methods and Equations of Motion}
-For particles described by a continous potential energy function, the
+For particles described by a continuous potential energy function, the
 forces acting upon each of the $N$ particles will change every time
 the particles moves. Therefore, the motions of all particles are
 coupled, giving rise to a many-body problem with no analytic
 solution. Therefore, finite difference methods of integration must be
-used in order to propogate the coordinates of the particles through
+used in order to propagate the coordinates of the particles through
 time.
 
-While there exist a large number of algorithms for propogating
+While there exist a large number of algorithms for propagating
 coordinates, they are not all equivalent. The general idea for each
 method is to take small steps through time ($\delta t$) by knowing the
 position and momenta for each of the $N$ particles at a previous time
@@ -342,7 +342,7 @@ W = \sum_{i=1}^N \sum_{\alpha=1}^n r_{i\alpha}\dot{p}_{i\alpha}
 \end{equation}
 where $r_{i\alpha}$ is the position along the $\alpha$ axis for
 particle $i$, and
-$\dot{p}_{i\alpha}$ is the first time derivitive of momentum, or force,
+$\dot{p}_{i\alpha}$ is the first time derivative of momentum, or force,
 along that coordinate. The virial theorem of Clausius states that the
 virial is equal to $-3Nk_BT$.
 
@@ -383,7 +383,7 @@ described under different potential energy functions or parameters, to
 result in vastly different thermodynamic properties.
 
 \subsection{Molecular Force Fields}
-Having established how to propogate particles through time using MD
+Having established how to propagate particles through time using MD
 simulations, we turn our focus next to the problem of developing an
 accurate representation for the interactions between molecules, more
 commonly known as a force field. Generally, the functional form of the
@@ -534,7 +534,7 @@ free space.
 
 For a system of $N$ molecules, the number of bonded terms goes as $N$
 but the number non-bonded interactions as $N^2$.  Computing the
-non-bonded interactions is therefore the most computationally expsive
+non-bonded interactions is therefore the most computationally expensive
 part of the simulation. The Lennard-Jones interaction, however, falls
 off quite rapidly due to its $r^{-6}$ functional form. Meanwhile, the
 long-ranged $r^{-1}$ decay of electrostatic interactions can have
@@ -573,10 +573,10 @@ function to smoothly transition the potential to zero at the cutoff.
 % The switching function has a value of $1$ at $r=0$ and $0$ at
 % $r = r_c$. Switching functions are normally implemented at some
 % distance close to the cutoff, so that only a small amount of the
-% potential is perturbed. This prevents asparious affects such as
+% potential is perturbed. This prevents aspires affects such as
 % deviation from equilibrium structures. Need the first derivative of
 % the switching function at the end points to be zero to ensure the
-% forces approach zero smoothly, and second derivitives to be zero for
+% forces approach zero smoothly, and second derivatives to be zero for
 % stability of integration algorithm. 
 % \begin{equation}
 % S(r) = c_0 + c_1\Big[\frac{r-r_l}{r_u-r_l}\Big] +
@@ -604,7 +604,7 @@ themselves, a self correction piece must be added. Depending
 on the material being modeled, a dipole correction might also need to
 be added. The charges and the Gaussians screening them are added
 up in real space, while the oppositely charged Gaussians are added in
-reciprocal space. This method is computationaly very expensive.
+reciprocal space. This method is computationally very expensive.
 However, it is the most accurate way of computing the charge-charge
 interactions in molecular simulation. 
 
@@ -800,7 +800,7 @@ Here, we will focus on non-polarizable models, that is, models where
 the charge distribution is held fixed and is not allowed to move
 around the molecule. Similarly, we will restrict ourselves to rigid
 models, where the OH bonds and HOH bends are held fixed in
-space. While there are several models which propogate these degrees of
+space. While there are several models which propagate these degrees of
 freedom, such as the SPC/f\cite{Ferguson1995}, SPC/Fw\cite{Wu2006},
 and TIP4P/2005f\cite{Gonzalez2011} models, limiting our discussion to
 models which exclude these degrees of freedom will provide a common
@@ -864,7 +864,7 @@ reparameterization for use with Ewald summation methods (TIP5P/Ew) by
 Rick.\cite{Rick2004} In the five site models, the negative charge has
 moved out of the HOH plane, and is now distributed across two sites
 mimicking electron lone pairs. The positive charges are located on
-the hydrogn sites, and the Lennard-Jones position is placed on the
+the hydrogen sites, and the Lennard-Jones position is placed on the
 oxygen atom. The TIP5P model is observed to reproduce the density
 maximum of water around 4\degree~C at 1~atm, and the dielectric
 constant was found to be 81 $\pm$ 1.5 at 25\degree~C, in good
@@ -900,7 +900,7 @@ molecules. From these, forces, stresses, and energies are obtained and
 fit using a pairwise (or higher order) function to describe the
 energy. In the second method, parameters for the interaction sites are
 determined by iterative fitting against chosen experimental results,
-such as the density or coexesistence temperatures. A set of
+such as the density or coexistence temperatures. A set of
 interaction parameters are chosen, such as the charges ($\mathrm{q}_O$
 and $\mathrm{q}_H$) and Lennard-Jones parameters ($\epsilon_O$ and
 $\sigma_O$), and the resulting behavior of the water model is
@@ -919,7 +919,7 @@ applied the same method for optimizing charge distributions to the
 three site class of models. The resulting OPC3 model was observed
 to reproduce liquid bulk properties better than other three site
 models, such as the TIP3P and SPC/E models. The OPC3 model was also
-found to accurately capture the intrinsic charge hydration assymetry
+found to accurately capture the intrinsic charge hydration asymmetry
 of water. However, due to the complexity of the nature of water, these
 models still perform poorly in extreme regions of the phase diagram,
 \textit{i.e.} at regions far from where the models were parameterized.
@@ -1036,7 +1036,7 @@ defined in our coordinate system for a traceless quadrupole as
 \end{equation} 
 
 Abascal and Vega have shown that the water models which most accurately
-reproduce the meling point of ice-I$_h$ have a ratio of their dipole moment
+reproduce the melting point of ice-I$_h$ have a ratio of their dipole moment
 to $\Theta_T$ of approximately unity. The equivalent expression for the 
 traced quadrupole tensor is given as
 \begin{equation}
@@ -1163,7 +1163,7 @@ then the displacement at time $t$ is given by
 \begin{equation}
 A(t) - A(0) = \int_0^t dt' \dot{A}(t').
 \end{equation}
-Squarring both sides and averaging over time origins we obtain 
+Squaring both sides and averaging over time origins we obtain 
 \begin{equation}
 \langle [A(t) - A(0)]^2 \rangle = \int_0^t dt'' \int_0^t dt' \langle
 \dot{A}(t') \dot{A}(t'') \rangle
@@ -1196,7 +1196,7 @@ decay slowly, requiring long simulation times.
 
 \subsubsection{Non-equilibrium Molecular Dynamics Methods}
 An alternative approach to obtaining transport coefficients is through
-the use of non-equilibrium molecualr dynamics (NEMD) simulations.
+the use of non-equilibrium molecular dynamics (NEMD) simulations.
 During NEMD simulations, the system is driven out of equilibrium by
 the presence of an external perturbation (\textit{e.g.} a thermal or
 velocity gradient), and the flux required to sustain the imposed
@@ -1227,7 +1227,7 @@ relations. However, computing the appropriate flux can be quite
 challenging. Recently, Kuang and Gezelter have developed an approach
 to non-equilibrium molecular dynamics based on earlier work by
 M\"uller-Plathe, in which they invert the measured and imposed
-quantites.\cite{Kuang2010,Kuang2012} In their method, aptly named
+quantities.\cite{Kuang2010,Kuang2012} In their method, aptly named
 reverse non-equilibrium molecular dynamics, the flux is imposed across
 two spatially separated regions of the simulation box, and the
 gradient response is measured. Again, the desired transport
@@ -1245,31 +1245,31 @@ than the flux.
 %%%%%%%%%%%%%%%%%%%%%%%%
 \section{H$_2$O: A Simple Molecule with Complex Behavior}
 Water is the simplest compound that can be constructed from the two
-most abundant reactive elements in the unvierse, oxygen and
+most abundant reactive elements in the universe, oxygen and
 hydrogen. It is also the second most common molecule in the universe,
 trailing behind diatomic hydrogen, $\mathrm{H}_2$.  On Earth, water
 occupies nearly $1.4\times 10^{9}~\mathrm{km}^{3}$\cite{Brown2016},
 and accounts for 40\% to 70\% of Earth's retention of heat. It is one
 of the few molecules that can be found in its solid, liquid, and
-gasseous forms at ambient temperatures and pressures.  Some
+gaseous forms at ambient temperatures and pressures.  Some
 hypothesize that life cannot exist without water, as all forms of life
 found thus far depend on it.\cite{Caldecott2008,Henry2005} In humans,
 water composes nearly half the volume of each cell.\cite{Ling2004} It
-is the ubiquitus nature of water and ice that gives rise to its
+is the ubiquitous nature of water and ice that gives rise to its
 importance; due to its natural abundance a wide variety of chemistry
 and physical processes occur within this medium, and at its surface.
 
 In addition to being found everywhere in naturally occurring
 abundance, water expresses numerous structural, dynamic, and
-thermodynamic anamolies.\cite{Brovchenko2008}. The melting, boiling,
+thermodynamic anomalies.\cite{Brovchenko2008}. The melting, boiling,
 and critical points are unusually high compared to molecules of
-similar size. The denisty of ice increases upon heating (up to
+similar size. The density of ice increases upon heating (up to
 70~K). The density of the liquid increases with increasing temperature
 (up to $\sim$ 281 K). Pressure can melt the solid rather than freezing
 the liquid, and there are more solid phases than observed for similar
 sized molecules. While the principles governing these and other unique
 properties of water are not completely known, many of the observed
-anomolies are attributed to the electronic distribution around water
+anomalies are attributed to the electronic distribution around water
 and the resulting strength of the hydrogen bond.
 
 % In ancient times, humans recognized the importance of water. Around
@@ -1308,7 +1308,7 @@ be seen in Figure \ref{fig:phaseDiagram}
   water.\cite{Zhang2015} dT$_{C}$ / dP $<$ 0 at the following boundaries:
   ice-II to ice-V, liquid to ice-I$_\mathrm{h}$, and ice-VII to
   ice-VIII. Conversely, dT$_{C}$ / dP $>$ 0 at the following boundaries:
-  liquid to vapour, liquid to ice-(V, VI, VII). dT$_{C}$ / dP $\approx$
+  liquid to vapor, liquid to ice-(V, VI, VII). dT$_{C}$ / dP $\approx$
   $\inf$ at the ice-(VII, VIII) to ice-X boundary occurring at 60 GPa.
   dT$_{C}$ / dP $\approx$ 0 at ice-I$_\mathrm{h}$ to ice-XI boundary at
   low temperatures. }
@@ -1368,7 +1368,7 @@ becomes long ranged.
 %
 %Annu. Rev. Phys. Chem. 2017. 68:285–304
 Water ice is a fundamental solid, with implications in biological,
-environmental, geological, and extraterrestial
+environmental, geological, and extraterrestrial
 phenomena.\cite{Shultz2017} Biologically, many organisms have adapted
 to block advancing ice fronts. These organisms produce antifreeze
 proteins which disrupt the hydrogen bonding network at the ice /
@@ -1418,7 +1418,7 @@ seen in Figure \ref{fig:phaseDiagram} and Table \ref{tab:iceProps}.
   XII & tetragonal & 1.29 & disordered \\
   XIII & monoclinic & 1.23 & ordered \\
   XIV & orthorhombic & 1.29 & ordered \\
-  XV & pseudoorthorhombic & 1.30 & ordered \\
+  XV & pseudo-orthorhombic & 1.30 & ordered \\
   XVI & cubic & 0.81 & disordered \\ 
 \hline \hline
 \end{tabular}
@@ -1507,7 +1507,7 @@ If we further consider the Bernal Fowler ice-rules, we see that the
 hydrogen arrangement in ice-I$_\mathrm{h}$ is not unique. In 1935,
 Linus Pauling argued that any arrangements of hydrogens which
 satisfies the ice-rules is valid and has equal probability of
-occuring since each unique arrangement has the same energy,
+occurring since each unique arrangement has the same energy,
 \textit{i.e.} they are degenerate configurations. Due to this, he
 predicted ice-I$_\mathrm{h}$ to have a \textit{residual entropy}, that is, a
 non-vanishing positive entropy ($S_{0}$) at zero Kelvin. This entropy
@@ -1626,7 +1626,7 @@ the orientation of the crystal.
 
 Benet \textit{et al.} have measured the interfacial free energy of
 ice-I$_\mathrm{h}$ in coexistence with liquid water at 248.5~K by
-using the TIP4P/2005 water model by analysing the spectrum of
+using the TIP4P/2005 water model by analyzing the spectrum of
 capillary fluctuations at the interface.\cite{Benet2014} This method
 was originally described by Hoyt \textit{et al.}\cite{Hoyt2001}, has
 been used to calculate the interfacial free energy of hard
@@ -1635,7 +1635,7 @@ potential,\cite{Morris2003} and dipolar fluids.\cite{Wang2013}
 
 % In this method, water molecules were labeled as ice-like or
 % liquid-like based on local bond order parameters. Next, a discretized
-% profile parrallel to the interface (i.e, along the $x$ dimension),
+% profile parallel to the interface (i.e, along the $x$ dimension),
 % $h(x_{n})$, was computed for many small bins across the system. These
 % resulting profiles were then Fourier-transformed,
 % \begin{equation}
@@ -1652,7 +1652,7 @@ potential,\cite{Morris2003} and dipolar fluids.\cite{Wang2013}
 % where $A$ is taken to be the product of the two simulation box
 % dimensions not normal to the interface. Since the interfacial
 % stiffness is dependent on both the crystal plane that is exposed to
-% the liquid and the direction which the wave vector propogates, we have
+% the liquid and the direction which the wave vector propagates, we have
 % \begin{equation}
 % \sigma = \bigg(\gamma (\theta ) + \frac{d^{2}\gamma (\theta )}{d\theta
 % ^{2}} \bigg)_{\theta = 0} .
@@ -1677,7 +1677,7 @@ to be insensitive to the crystal face exposed to the liquid. Lastly,
 when the basal face is exposed to the liquid, they observed local
 areas of hexagonal ice and cubic ice within the interface. This
 observation is not unique to this study, other simulations and
-experiments have shown hexgonal ice to grow with a mixed
+experiments have shown hexagonal ice to grow with a mixed
 I$_\mathrm{c}$-I$_\mathrm{h}$
 stacking.\cite{Malkin2012,Moore2011,Seo2012,Carignano2007,Rozmanov2011}
 %end Benet, MacDowell, Sanz, PCCP 2014, 16, 22159
@@ -1774,7 +1774,7 @@ Due to the ring stacking structure of ice-I$_\mathrm{h}$, the basal
 face could terminate as either a monolayer or a bilayer. Materer
 \textit{et al.} studied an ultrathin ice surface exposing the basal
 face grown on a Pt(111) substrate at 90K (well below surface melt)
-using low-energy electron diffraction (LEED) spectrocopy, in
+using low-energy electron diffraction (LEED) spectroscopy, in
 conjunction with total-energy calculations and molecular dynamics
 simulations.\cite{Materer1995,Materer1997} Their results suggested the
 basal face is terminated with a full bilayer of molecules, and not a
@@ -1804,7 +1804,7 @@ surface molecules becomes populated. At some critical temperature
 sufficient energy to leave their lattice positions and translate along
 the surface. This motion is driven by the molecule's ability
 to better maximize their intermolecular interactions with their
-neighbors. These surface molecules are collectively refered to as a
+neighbors. These surface molecules are collectively referred to as a
 quasi-liquid layer (QLL), as their structure and properties reflect
 some of their condensed liquid phase counterparts, but are distinctly
 unique.
@@ -1842,13 +1842,13 @@ surface premelt, there is considerable disagreement about its
 characteristics. Henson \textit{et al.} predicted that the QLL should
 behave as a supercooled water\cite{Henson2005}, while Goertz
 \textit{et al.}  measured the adhesive and mechanical properties of
-the QLL, showing it to be vistoelastic in nature.\cite{Goertz2009}
+the QLL, showing it to be viscoelastic in nature.\cite{Goertz2009}
 More recently, Suzuki \textit{et al.}  have probed the QLL with
-differential interference contrast and observed two separate immesible
-liquid water flims.\cite{Sazaki2012,Asakawa2016,Sazaki2013} Again
+differential interference contrast and observed two separate immiscible
+liquid water films.\cite{Sazaki2012,Asakawa2016,Sazaki2013} Again
 these differences may arise due to the particular probe used to
 measure the quasi-liquid layer. However, amongst the disagreements
-there resides fruitful observations which may help us to ellucidate
+there resides fruitful observations which may help us to elucidate
 the nature of this interesting phenomenon. 
 
 
@@ -1865,7 +1865,7 @@ temperature at which the intensity of the SFG signal decreases can
 estimate the onset of the QLL.
 
 Wei \textit{et al.} have probed the O-H bonds at the basal surface
-using SFG spectroscopy for temperatures betwen 173~K and
+using SFG spectroscopy for temperatures between 173~K and
 271~K.\cite{Wei2001,Wei2002} They observed that the disorder became
 apparent as the temperature approached 200~K, and increased with
 warmer temperatures.  These results indicate that the structural
@@ -1877,7 +1877,7 @@ simulations, Ikeda-Fukazawa and Kawamura also observed water molecules
 with large vibrational and rotational motions on a basal surface of an
 ice-I$_\mathrm{h}$ crystal at the same
 temperatures.\cite{Ikeda-Fukazawa2004} Their results supported the
-continous transition of structural ordering across the qausi-liquid
+continuous transition of structural ordering across the qausi-liquid
 layer.
 
 In contrast, simulations by Kroes \textit{et al.}  predicted the
@@ -1959,7 +1959,7 @@ that these motions normal to the interface will largely influence
 surface diffusion of the molecules. These motions were in good
 agreement with the diffusion mechanism proposed by Bishop \textit{et
   al.}\cite{Bishop2009} and by Bolton and Pettersson\cite{Bolton2000},
-which suggested the outtermost molecules of the QLL moved across a
+which suggested the outermost molecules of the QLL moved across a
 relatively rigid surface. Diffusion characterized in this way is
 highly sensitive to the underlying surface morphology and topography.
 That is, if the surface geometry or potential energy surface for
@@ -1973,7 +1973,7 @@ observed.\cite{Gladich2011,Gladich2015} Gladich \textit{et al.}
 proposed the following mechanism and reported activation
 energies. Through vertical motion, the QLL molecule leaves a
 well-hydrated local environment close to the ice surface, moving to
-the outter portion of the surface where there are fewer hydrogen bond
+the outer portion of the surface where there are fewer hydrogen bond
 partners. Gladich concluded that the activation energy for
 high-temperature diffusion is greater than that of the
 low-temperature. This is due to the thicker surface premelt at warmer
@@ -2012,7 +2012,7 @@ thereafter, Thomson explained the presence of the liquid-like layer as
 a result of pressure melting.\cite{Thomson1859} Reynolds followed
 Thomson's work, and systematically investigated sliding on ice. He
 also concluded that pressurized melting of the ice surface was the
-governing physical process for the obeserved small coefficients of
+governing physical process for the observed small coefficients of
 friction.\cite{Reynolds1901} This view was widely accepted, until
 Bowden and Hughes proposed that frictional heating may be the dominant
 factor, not pressurized melting.\cite{Bowden1939} Understanding ice
@@ -2065,11 +2065,11 @@ friction is found to be very large. Investigating glass and granite
 sliding on ice around $10^{-7}$~m~$\mathrm{s}^{-1}$, Persson observed
 coefficients of friction of 0.3 and 0.9
 respectively.\cite{Persson2001} Li and Somorjai attributed the
-discrepency in sliding speeds to be due to the following; at high
+discrepancy in sliding speeds to be due to the following; at high
 sliding speeds on a macroscopic scale, frictional heating causes
 surface melting, resulting in a thicker lubricating layer.
 Microscopically, at high sliding speeds the slider's surface
-asparities have less time to push out the lubricating ice-melt and
+asperities have less time to push out the lubricating ice-melt and
 cause large plastic deformation on the ice surface.\cite{Li2007} They
 proposed the opposite to hold true at smaller sliding speeds, thus the
 observed increase in friction with decreasing sliding speeds.
