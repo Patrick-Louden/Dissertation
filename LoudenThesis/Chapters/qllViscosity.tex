@@ -1,8 +1,8 @@
 \chapter{MEASUREMENTS OF THE VISCOSITY OF THE QUASI-LIQUID LAYER AT THE SURFACE OF ICE-I$_\mathrm{h}$}\label{chap:QLL}
 
 \begin{flushright}
-\textit{``In time and with water, everything changes.''} \\
--Leonardo da Vinci (1513) \\
+\textit{``All is born of water; all is sustained by water.''} \\
+-Johann Wolfgang von Goethe (1817) \\
 \end{flushright}
 
 In the hydrodynamic friction regime, there are three distinct
@@ -25,15 +25,15 @@ ice-I$_\mathrm{h}$ / vapor interfaces.
 \textit{Ice Surfaces}
 \end{flushleft}
 
-TIP4P-Ice basal and prismatic ice-I$_\mathrm{h}$ primitive crystals
+TIP4P/Ice basal and prismatic ice-I$_\mathrm{h}$ primitive crystals
 were constructed following the procedure described in Chapter
 \ref{chap:Methods}. These primitive cells were then reoriented so that
 the desired crystal face was exposed to the $y$ axis, then replicated
-in the $x$ and $z$ dimensions to form large sheets. The sheets were
-then replicated in $y$ until the basal crystal was 12 bilayers thick,
-and the prismatic crystal was replicated to a width of approximately
-equal to the basal crystal. Dimensions and number of molecules in each
-system are found in Table \ref{tab:qll-method}.
+in the $x$- and $z$-dimensions to form large sheets. The sheets were
+then replicated along the $y$-dimension until the basal crystal was 12
+bilayers thick, and the prismatic crystal was replicated to a width of
+approximately equal to the basal crystal. Dimensions and number of
+molecules in each system are found in Table \ref{tab:qll-method}.
 
 
 \begin{table}[h]
@@ -61,7 +61,7 @@ equilibrated to four temperatures, 255, 260, 265, and 270~K at
 1~atm. The resulting systems exposed two interfaces, one toward
 positive $y$ and the other towards negative $y$. Equilibration was
 conducted under a constant surface tension and temperature integrator,
-allowing the $x$ and $z$ dimensions of the simulation cell to relax
+allowing the $x$- and $z$-dimensions of the simulation cell to relax
 and alleviate any crystal strain. Following this, the systems were
 equilibrated under a constant volume and temperature integrator (NVT),
 and lastly under a constant volume and energy integrator (NVE). During
@@ -90,7 +90,7 @@ As a comparison to the structure and dynamics of the quasi-liquid
 layer of ice, we have performed simulations of supercooled bulk liquid using the
 TIP4P/Ice potential. A cubic box of 4,000 water molecules was
 constructed and replicas were equilibrated to 255~K, 260~K, 265~K, and
-270~K. System sizes and corresponding densities are presented in Table
+270~K at 1 atm. System sizes and corresponding densities are presented in Table
 \ref{tab:qll-liquid}. Once the liquid boxes were equilibrated, four
 successive one nanosecond simulations were performed under an NVE
 integrator. During these simulations, the positions and velocities
@@ -204,7 +204,7 @@ We find that the location of the minimum following the first peak
 $r_m$ in $\mathrm{g}(r)$ is at slightly larger values of $r$ with
 increasing temperature. Taking this as the limit of integration, the
 coordination number for the first solvation shell, $n_c$ was computed
-(see Table \ref{tab:gofr}). Similarly, it is observed to increase with
+(see Table \ref{tab:gofr}). Similarly, $n_c$ is observed to increase with
 increasing temperature. Since the supercooled liquid's density
 increases with increasing temperature, we should expect a larger
 coordination number with increasing temperature in this regime.
@@ -222,10 +222,10 @@ each of the four temperatures. To do so, we have used the hydrogen
 bonding criteria of Luzar and Chandler, which requires the
 oxygen-oxygen distance to be less than 3.4~\AA~, and the
 oxygen-hydrogen-oxygen angle to be less than
-30\degree~.\cite{Luzar1996} This criteria has been shown to give good
+30\degree.\cite{Luzar1996} This criteria has been shown to give good
 agreement with energetic definitions of hydrogen bonds, as the
 geometric and energetic definitions are intimately coupled. The
-resulting fractional participation statistics can be seen in Table
+resulting fractional participation statistics can be found in Table
 \ref{tab:gofr}.
 
 
@@ -253,7 +253,7 @@ populations of of hydrogen bonds participation formed in the
 liquid. At colder temperatures, we find a larger fraction of the
 population form four hydrogen bonds. However, at warmer temperatures,
 the reduction in population of four hydrogen bonded molecules results
-in larger densities of two, three, and five hydrogen bonded molecules.
+in larger densities of molecules with two and three hydrogen bonds.
 
 
 
@@ -265,9 +265,9 @@ While the pair distribution function provides information about
 the spatial separation of molecules, it fails to discriminate any
 orientational ordering which may be present in the liquid. In order to
 query this orientational ordering, the density of local tetrahedral
-order parameters ($\rho (q)$) observed during the simulation was
+order parameters, $\rho (q)$, observed during the simulation was
 computed (see Figure \ref{fig:gofrQ}). This was accomplished by
-computing $q$ for every molecule each configuration, and determining
+computing $q$ for every molecule at each configuration, and determining
 the fractional number of molecules which adopted this configuration.
 
 In Figure \ref{fig:gofrQ}, we see a noticeable trend in $\rho (q)$
@@ -398,10 +398,11 @@ $\tau_\mathrm{long}$; for increasing temperatures, the decay time
 decreases. We find the fast librational motion decay time to be
 between 85 fs and 87 fs, while the slower hydrogen bond dynamics and
 frame reorientation characteristic times of 4-10 ps, and 26-80 ps
-respectively.  Interestingly, the fractional contribution of each of
-the modes is observed to be invariant with temperature. The
-librational mode and the hydrogen bond breaking and making events each
-account for about 20$\%$ of the total decay, with the remaining 60$\%$
+respectively.  The fractional contribution of the short time
+contribution increases with increasing temperature, while the
+contributions due to hydrogen bond making and breaking events
+contributes less with increasing temperature. The contribution of the slow frame
+reorientation appears to be invariant to temperature, with 60$\%$
 of the decay given by frame reorientation.
 
 
@@ -428,7 +429,7 @@ of this correlation function was described in Chapter \ref{chap:Dyn},
 while here we are interested in the temperature dependence of the
 hydrogen bond jump times. Again absorbing boundary conditions were
 applied, \textit{i.e.} any back jumps were considered new hydrogen
-bonds forming.
+bond formation events.
 
 The hydrogen bond jump correlation function was computed for each of
 the bulk liquid simulations, and the resulting $C_\mathrm{jump}(t)$
@@ -515,7 +516,7 @@ for the prismatic systems indicates a quasi-liquid layer formation
 around $d~\sim\pm$ 24. While the basal QLL density was found to be
 $\rho~ \sim$~1.5 - 2.0 $\mathrm{g}~\mathrm{cm}^{-3}$, we observe
 densities closer to 1.0 $\mathrm{g}~\mathrm{cm}^{-3}$ at the prismatic
-surface. The same trend with increasing temperature is observed at the
+surface. With increasing temperature, the same trend is observed at the
 prismatic surface; at warmer temperatures the QLL's density comes
 closer to that of the bulk liquid. We have estimated the width of the
 QLL at each temperature investigated using the same density metric
@@ -549,19 +550,20 @@ In the upper panels of Figures \ref{fig:basal_rhoq} and
 profiles through the interface. For the basal interface in Figure
 \ref{fig:basal_rhoq}, we see the characteristic bilayer shapes in the
 tetrahedrality profile. Interior to the ice, we observe $q$ values
-close to 0.95, indicating a very tetrahedral environment. In the peak
-determined to be a QLL using density measures, the parameter takes on
-values of 0.9 to 0.85. Beyond displacements of $d~\pm$~22 \AA~ from
-the center of the ice lies the vapor, and $q$ becomes small and
-noisy. The profile presented in Figure \ref{fig:prism_rhoq} for the
-prismatic interface appears very similar to that of the basal
-interface. It is interesting to note, that since the tetrahedral order
-parameter depends on neighboring molecules, it indicates that the
-crystal plane interior to the QLL layer determined by the density also
-deviates from bulk-like environments. This stems from the outer layer
-contributing less to its $q$ value. However, this could indicate that
-this first interior layer should also be denoted as a QLL, although
-perhaps more appropriately named a quasi-solid layer (QSL).
+close to 0.95, indicating a very tetrahedral environment. In the
+region determined to be a QLL using density measures, the parameter
+takes on values of 0.9 to 0.85. Beyond displacements of $d~\pm$~22
+\AA~ from the center of the ice lies the vapor, and $q$ becomes small
+and noisy due to the small population of molecules. The profile
+presented in Figure \ref{fig:prism_rhoq} for the prismatic interface
+appears very similar to that of the basal interface. It is interesting
+to note, that since the tetrahedral order parameter depends on
+neighboring molecules, it indicates that the crystal plane interior to
+the QLL layer also deviates from bulk-like environments. This stems
+from the outer layer being structured in a less tetrahedral
+manner. While this could indicate that this first interior layer
+should also be denoted as a QLL, perhaps it is more appropriate to
+name this layer as a quasi-solid layer (QSL).
 
 
 \section{Viscosity of the Quasi-Liquid Layer}
@@ -585,7 +587,7 @@ $r$ undergoing Brownian Motion.
 
 \subsection{The Reduced Viscosity of the Quasi-Liquid Layer}
 A reduced viscosity of the quasi-liquid layer can be obtained by
-relating the viscosity of the QLL to that of the supercooled bulk
+relating the viscosity of the QLL to that of a supercooled bulk
 liquid at the same temperature.
 \begin{equation}\label{eq:eta*}
 \eta^* = \frac{\eta^{\mathrm{qll}}}{\eta^{\mathrm{bulk}}}
@@ -622,7 +624,7 @@ supercooled bulk liquid at the same temperature to obtain Figure
 
 In Figures \ref{fig:basal_eta0} and \ref{fig:prism_eta0}, we see close
 to the ice the reduced viscosity is quite large, $\eta^* \sim 10$ to
-$\eta^* \sim 100$, depending on the temperature and interface. Close
+$\eta^* \sim 100$, depending on the interface and temperature. Close
 to the Gibbs dividing surface between the QLL and the vapor (magenta
 vertical line), the reduced viscosity is close to 0.1 for both
 interfaces. These results indicate that the viscosity of the QLL
@@ -635,16 +637,16 @@ estimates for the shear viscosities of the QLLs studied here.
 We have performed velocity shearing and scaling reverse
 non-equilibrium molecular dynamics simulations in order to obtain a
 temperature dependent model of the shear viscosity of supercooled bulk
-liquid. A liquid box containing $16,000$ TIP4P/Ice water molecules
-with dimensions $\mathrm{L_x} = 51.22~\mathrm{\AA}$,
+liquid water. A liquid box containing $16,000$ TIP4P/Ice water
+molecules with dimensions $\mathrm{L_x} = 51.22~\mathrm{\AA}$,
 $\mathrm{L_y} = 51.22~\mathrm{\AA}$, and
-$\mathrm{L_z}=200.87~\mathrm{\AA}$ was subjected to a simultaneous
-kinetic energy and momentum flux. This resulted in concurrent thermal
-and velocity gradients across the $z$ dimension of the simulation
+$\mathrm{L_z}=200.87~\mathrm{\AA}$ was subjected to simultaneous
+kinetic energy and momentum fluxes. This resulted in concurrent thermal
+and velocity gradients across the $z$-dimension of the simulation
 box. The velocity profile was fit with a quadratic regression, and an
 analytic derivative with respect to the $z$ gave
 $(\frac{\partial V_x}{\partial z}$). Together with the imposed
-momentum flux gives the shear viscosity.
+momentum flux, the shear viscosity is easily obtained.
 \begin{equation}\label{eq:viscosity}
   j_{z}(p_{x}) = -\eta \big(\frac{\partial v_{x}}{\partial z}\big)
 \end{equation}
@@ -659,14 +661,13 @@ water).
 \begin{equation}\label{eq:WLF}
 \eta (T) = \eta_0 \exp \Bigg({\frac{B}{T-T_0}}\Bigg)
 \end{equation}
-XXX
-Here, $\eta_0$, $B$, and $T_0$ are empirical
-parameters. Typically, $T_0$ is taken to be the glass transition
-temperature ($T_g$), and when this choice is made $C_1$ and $C_2$ are
-characteristic of the class of material being
-fit. With this it is possible to estimate the temperature dependence
-of the shear viscosity by knowing it only at one data point. Our data
-and resulting fit can be seen in Figure \ref{fig:etaT}.
+Here, $\eta_0$ and $B$, are fit parameters describing the infite
+temperature viscosity and the thermal energy required to change the
+viscosity, repspectively. $T_0$ is an empirical parameter, typically
+taken to be the glass transition temperature ($T_g$).  With this it is
+possible to estimate the temperature dependence of the shear viscosity
+by knowing it only at one data point. Our data and resulting fit can
+be seen in Figure \ref{fig:etaT}.
 \begin{figure*}
 \includegraphics[width=\linewidth]{Figures/bulkVFT}
 \caption{\label{fig:etaT} The shear viscosity $\eta$ of supercooled
@@ -688,29 +689,42 @@ in Table \ref{tab:bulkVisco}.
 \hline
  Temperature & $\eta$ \\
 \hline
-270 & 0.5 \\
-265 & 0.6 \\
-260 & 1.0  \\
-255 & 7.3 \\
+270 & 8.2 \\
+265 & 10.7 \\
+260 & 18.3  \\
+255 & 85.5 \\
 \hline
 \hline
 \end{tabular}
 \begin{flushleft}
   Temperatures are given in K, and shear viscosities are reported in
-  (amu~\AA$^{-1}$~fs$^{-1}$).
+  cP.
 \end{flushleft}
 \end{table}
 
 
 \subsection{The Shear Viscosity of the Quasi-Liquid Layer}
-Using the reduced viscosities and temperature dependent model for the
-shear viscosity of bulk supercooled liquid, we have estimated the
-shear viscosity for the quasi-liquid layer at the basal and prismatic
-surfaces of ice-I$_\mathrm{h}$.
+Using the reduced viscosities of the quasi-liquid layers and the
+temperature dependent model for the shear viscosity of bulk
+supercooled liquid, we have estimated the shear viscosity of the QLLs
+at the basal and prismatic surfaces of ice-I$_\mathrm{h}$.
 \begin{equation}\label{eq:qllT}
 \eta^{\mathrm{qll}}(T) = \frac{\eta^{\mathrm{qll}}}{\eta^{\mathrm{bulk}}}\eta^{\mathrm{bulk}}(T)
 \end{equation}
-
+In Figure \ref{fig:qllEta}, the spatially resolved shear viscosity of
+the basal (bottom panel) and prismatic (upper panel) interfaces are
+reported. Close to the ice, we find shear viscosities between
+$\eta(270~\mathrm{K}) = 35~\mathrm{cP}$ and
+$\eta(255~\mathrm{K}) = 1100~\mathrm{cP}$ for the basal interface, and
+between $\eta(270~\mathrm{K}) = 71~\mathrm{cP}$ and
+$\eta(255~\mathrm{K}) = 5800~\mathrm{cP}$ at the prismatic
+interface. At the QLL / vapor interface, the viscosity becomes
+invariant to the presented crystal facet, and values of
+$\eta(255~\mathrm{K}) = 16~\mathrm{cP}$ to
+$\eta(270~\mathrm{K}) = 1~\mathrm{cP}$ are observed at both
+interfaces. Between these two regions, we observe a continuous
+distribution of $\eta^{\mathrm{qll}}(T)$ for both of the crystal
+facets investigated. 
 
 \begin{figure*}
 \includegraphics[width=\linewidth]{Figures/qllEta}
@@ -721,14 +735,6 @@ surfaces of ice-I$_\mathrm{h}$.
   vertical line indicates the Gibbs dividing surface between the QLL
   and the vapor.}
 \end{figure*} 
-
-
-
-
-
-
-
-
 
 We attempted to compute the shear viscosity of the quasi-liquid layers
 in a second way. Using VSS-RNEMD \cite{Kuang2012}, a shear stress was
@@ -747,37 +753,25 @@ using the VSS-RNEMD method.
 
 
 \section{Discussion}
+
+\subsection{Width of the Quasi-Liquid Layer}
 Conde \textit{et al.} investigated water model dependence on the
 formation of the quasi-liquid layer at the vapor exposed basal,
 prismatic, and secondary prismatic surfaces of
 ice-I$_\mathrm{h}$.\cite{Conde2008} They established a cutoff value in
 the local tetrahedral order parameter, $q_t$, to denote molecules as
 being ice-like or liquid-like. Using this, they estimated QLL widths
-to be $\sim$~5-10~\AA~ for the TIP4P/Ice model over the range of
-temperatures investigated here. 
-
-In order to compare with Conde
-\textit{et al.}, we have fit the tetrahedrality profiles with a
-hyperbolic tangent which is designed to transition smoothly between
-the vapor / QLL / ice interfaces.
-\begin{equation}\label{eq:qllFit}
-q(y) \approx
-q_\mathrm{vap}+\frac{q_\mathrm{ice}-q_\mathrm{qll}}{2}\left[\tanh\left(\frac{y-l}{w^q}\right)-\tanh\left(\frac{y-u}{w^q}\right)\right]
-\end{equation}
-Here, $q_\mathrm{vap}$ and $q_\mathrm{ice}$ are are the values for $q$
-in the vapor and ice, $l$ and $u$ are the lower and upper interfaces,
-and $w^q$ is the width of that interface, that is, the width of the
-quasi-liquid layer.  We estimate the vapor / ice-I$_\mathrm{h}$
-interface to be approximately 7-12~\AA~wide for both the basal and
-prismatic surfaces at each of the temperatures investigated. While
-slightly larger, these values agree well with the estimates of Conde
-\textit{et al.}. 
+to be $w~\sim$~5 - 10~\AA~ for the TIP4P/Ice model over the range of
+temperatures investigated here. These results agree well with our
+density based estimates of the QLL width, of $w~\sim~6$~\AA~for both
+the basal and prismatic facets.
 
 As described in Chapter \ref{chap:Methods}, the basal and prismatic
 surfaces used in this study exhibit proton ordering at the surface of
-the crystal. This was chosen to reproduce observed ordering at the
-surface of ice, although the ice surface used by Conde \textit{et al.}
-presents disordered protons. Our results here indicate that the
+the crystal. This was chosen to reproduce sum frequency generation
+spectroscopy which indicated proton ordering at the basal surface of
+ice. However, the ice surfaces simulated by Conde \textit{et al.}
+presented disordered protons. Our results here indicate that the
 proton-ordering at the basal and prismatic surfaces of
 ice-I$_\mathrm{h}$ do not significantly alter the width of the QLL as
 compared to proton disordered surfaces.  Furthermore, Conde
@@ -798,97 +792,33 @@ we have described as a single QLL here. They distinguish an outer QLL
 which contains roughly 8\% of the total molecules, and an inner, more
 crystalline QLL containing the remaining 92\%. 
 
-In addition to obtaining estimates of the QLL width, Equation
-\eqref{eq:qllFit} provides locations of the QLL which can be used to
-query other properties, such as the diffusion coefficient or shear
-viscosity. For the basal surfaces, $l$ and $u$ are found to be
-approximately $\pm$~20.5 ~\AA~ from the center of the ice. Similarly,
-the prismatic interfaces are found to be $\sim~\pm$~23.5~\AA~ from the
-center of the ice, respectively. For both surfaces, there is no
-temperature dependence on the locations of $l$ and
-$u$. Therefore, we will use these locations for querying additional
-structural and dynamic properties to establish characteristics of the
-surface premelt. The average value of the tetrahedrality, diffusion
-constant, and shear viscosity for the two interfaces at each
-temperature is reported in Table \ref{tab:qllResults}.
+As we observed in Figures \ref{fig:basal_rhoq} and
+\ref{fig:prism_rhoq}, the value of the density and tetrahedrality in
+the QLL is very local. We observe, that the structure and dynamics of
+the water molecules vary drastically from the vapor to the QLL / ice
+interface, and assigning an average value for any of the parameters
+investigated here for each of the QLLs studied would be improper.
 
-\begin{table}[h] \centering \caption{STRUCTURAL AND DYNAMIC
-    PROPERTIES OF THE QUASI-LIQUID LAYER\label{tab:qllResults}}
-\begin{tabular}{rcccc}
-\hline
-\hline
-Surface & Temperature & $q$ & D & $\eta$ \\
-\hline
-\multirow{ 4}{*}{Basal  $\{0001\}$} & 270 & 0.744(2) &2.3(7) & 0.17(5)\\ &265 &
-                                                                    0.748(1)&
-                                                                              1.8(2) & 0.20(1) \\ &260 &  0.759(4)& 1.10(1) & 0.33(1) \\ &255 & 0.764(2) & 0.80(4) & 0.46(2) \\
-\hline
-\multirow{ 4}{*}{Prismatic  $\{10\bar{1}0\}$} & 270 & 0.856(1) &  1.3(2) &  0.30(1) 
-\\ & 265 & 0.867(2) &0.8(4) & 0.5(3) \\ & 260 & 0.879(1) & 0.5(3) &
-                                                                      0.8(3) \\
-        & 255 & 0.887(2) &0.34(3) &0.96(6)\\
-\hline
-\hline
-\end{tabular}
-\begin{flushleft}
-  Temperatures are given in K, diffusion constants in
-  (x$10^{-5}$~\AA$^{2}$~fs$^{-1}$),~ and shear viscosities in
-  (amu~\AA$^{-1}$~fs$^{-1}$).
-\end{flushleft}
-\end{table}
 
-From Table \ref{tab:qllResults}, we see a clear temperature dependence
-in all three properties reported for the basal interface. The local
-tetrahedral order parameter increases with decreasing temperature,
-indicating a more structured environment. The diffusion constant
-decreases with decreasing temperature, and as expected from Equation
-\eqref{eq:stokes-einst}, this results in an increase in the shear
-viscosity.  The results for the prismatic interface follow the same
-trend. With decreasing temperatures, the local structure of the QLL
-becomes more tetrahedral, and diffusion within the QLL is reduced. 
-
-It is interesting that the value for the tetrahedrality for the QLL is
-different for the basal and prismatic surface, as this was not true
-for the Gibbs dividing surface at the ice / bulk liquid simulations
-described in Chapter \ref{chap:Str}. The prismatic QLL has a slightly
-larger $q$~value than that of the basal, values of $q~\sim~0.85$ as
-compared to $q~\sim~0.75$.  This may be a result of the basal interface
-having a more diffuse vapor phase, or that perturbations made by the
-presence of the surface extends further into the ice crystal for the
-basal facet than the prismatic.
-
-The diffusion constants for the two surface premelts are significantly
-different. At the basal face, values of
-$\mathrm{D}~\sim~2.3$~(\AA$^{2}$~fs$^{-1}$) to
-$\mathrm{D}~\sim~0.8$~(\AA$^{2}$~fs$^{-1}$) are observed. This is
-significantly larger than those at the prismatic surface,
-$\mathrm{D}~\sim~1.3$~(\AA$^{2}$~fs$^{-1}$) to
-$\mathrm{D}~\sim~0.3$~(\AA$^{2}$~fs$^{-1}$). At each temperature
-investigated, D$_\mathrm{prismatic} \approx 2$
-D$_\mathrm{basal}$. This trend agrees well with the coefficients of
-friction ($\kappa$) at the ice / water interface reported in Chapter
-\ref{chap:Friction}, where we found
-$\kappa_\mathrm{prismatic} \approx 2 \kappa_\mathrm{basal}$. These
-results indicate diffusion on the basal surface is faster than
-compared to the prismatic, which was observed to have a larger
-friction coefficient. Given this, it is not surprising that the shear
-viscosities of the QLL at the basal surface are smaller than those
-found at the prismatic surface.
-
+\subsection{Anisotropic Diffusion of the Quasi-Liquid Layer}
 Pfalzgraff \textit{et al.}\cite{Pfalzgraff2011} and later Gladich
 \textit{et al.}\cite{Gladich2011,Gladich2015} observed anisotropic
 diffusion of the QLL on the prismatic, 14\degree~ pyramidal, and
 secondary prismatic surfaces of an ice-I$_\mathrm{h}$ crystal. This
-behavior was prominent at colder temperatures where the QLLs were thin
-and the water contributing to the QLL is significantly influenced by the
-underlying crystal structure. At warmer temperatures and
-correspondingly thicker QLLs, isotropic diffusion is recovered. 
+behavior was prominent at colder temperatures (60 to 40 degrees of
+undercooling) where the QLLs were thin and the water contributing to
+the QLL is significantly influenced by the underlying crystal
+structure. Since the underlying crystal exhibits an anisotropic
+potential energy surface for movement of the QLL water molecules, the
+resulting diffusion is biased by the directional dependent
+energetics. At warmer temperatures and correspondingly thicker QLLs,
+isotropic diffusion is recovered.
 
-One dimensional diffusion constants were computed for small
+Here, we have computed one dimensional diffusion constants for small
 ($\delta y$) bins normal to the basal and prismatic ice surfaces.
 \begin{equation}\label{eq:1dDiff}
 D_i = \frac{1}{2t} \langle | {r}_i(t) - {r}_i(0) |^2
-\delta(y_i(0) - y)  \rangle 
+\delta(y(0) - y)  \rangle 
 \end{equation}
 Taking the ratio of $D_x / D_z$, where $x$ is towards the secondary
 prismatic face on the basal surface, and towards the basal face on the
@@ -896,9 +826,9 @@ prismatic surface, we have obtained the results shown in Figure
 \ref{fig:dxdz}. At the basal surace (lower panel), we observe
 isotropic diffusion for all four temperatures investigated. This
 agrees well with Gladich \textit{et al.},\cite{Gladich2011} although
-they conjectured that for sufficiently thin QLLs, the basal surface
-may display anisotropic diffusion relative to its six-fold
-symmetry. 
+they conjectured that at extreme undercooling and correspondingly
+sufficiently thin QLLs, the basal surface may display anisotropic
+diffusion relative to its six-fold symmetry.
 
 \begin{figure*}
 \includegraphics[width=\linewidth]{Figures/rd}
@@ -908,22 +838,22 @@ symmetry.
   given in text.}
 \end{figure*} 
 
-Conversely, we observe anisotropic diffusion at the
-prismatic surface in the top panel. Close to the ice crystal, the
-large error bars do not allow us to clearly resolve if the diffusion
-is biased. At distances between 3 and 6 \AA away from the ice / QLL
-interface, we clearly see a bias for diffusion along the
-$x$-dimension. This result challenges the theory of Gladich \textit{et
-  al.}, in which they proposed anisotropic diffusion occuring close to
-the ice surface. Similarly, they predicted that isotropic diffusion
-should be recovered by 30 degrees of undercooling, although we are
-observing anisotropic diffusion up to 1 or 2 degrees of undercooling
-with the TIP4P/Ice model. While we have computed spatially resolved
-one dimensional diffusion constants, Gladich computed the average for
+Conversely, we observe anisotropic diffusion at the prismatic surface
+in the top panel. Close to the ice crystal, the large error bars do
+not allow us to clearly resolve if the diffusion is biased. At
+distances between 3 and 6 \AA~away from the ice / QLL interface, we
+clearly see a bias for diffusion along the $x$-dimension. This result
+challenges the theory of Gladich \textit{et al.}, in which they
+proposed anisotropic diffusion occuring close to the ice surface. In
+addition, they predicted that isotropic diffusion should be recovered
+by 30 degrees of undercooling, although we have observed anisotropic
+diffusion up to 1 or 2 degrees of undercooling with the TIP4P/Ice
+model. We have computed spatially resolved one dimensional diffusion
+constants, however, Gladich computed an average diffusion constant for
 the entire QLL. This may explain some of the differences observed
 between their investigations and our presented results.
 
-
+XXX
 Comparing the shear viscosities of the QLL with the values obtained
 for supercooled liquid water in Table \ref{tab:bulkVisco}, we see that
 the bulk liquid agrees within error of the prismatic QLL at 265 K and
