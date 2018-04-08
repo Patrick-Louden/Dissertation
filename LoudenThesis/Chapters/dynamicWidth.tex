@@ -189,12 +189,13 @@ this chapter.
 \centering
 \caption{COMPUTED WIDTHS OF THE ICE-I$_\mathrm{h}$ / WATER INTERFACES BY
   DYNAMIC MEASURES \label{tab:dynWidths}} 
+\begin{threeparttable}
 \begin{tabular}{r|ccc|ccc}  
 \hline
 \hline
   \multirow{2}{*} & \multicolumn{3}{c|}{SPC/E (225~K)} &  \multicolumn{3}{c}{TIP4P/Ice (270~K) } \\
-  & \multicolumn{3}{c|} {Interfacial Widths (\AA) \footnotemark[1]} &
-                                                                      \multicolumn{3}{c} {Interfacial Widths  (\AA) \footnotemark[1]} \\
+  & \multicolumn{3}{c|} {Interfacial Widths (\AA)} &
+                                                                      \multicolumn{3}{c} {Interfacial Widths  (\AA) } \\
  Interface &  $d_\mathrm{10-90}^{D}$ & $d_\mathrm{10-90}^{C_2}$ &
                                                                   $d_\mathrm{10-90}^{jump}$  
                                                                  &
@@ -207,9 +208,12 @@ this chapter.
 \hline
 \hline
 \end{tabular}
-\flushleft
-  \footnotemark[1]\footnotesize{Uncertainties in the last
-   digit are indicated with parentheses.} \\
+\begin{tablenotes}
+      \small
+    \item Uncertainties in the last digit are indicated with
+      parentheses.
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 
 \section{Reorientation of Water Molecules}

@@ -727,15 +727,15 @@ number of particles.
 \end{figure*}
 
 Utilizing periodic boundary conditions does pose one potential
-problem. There is the possibility that a particle could interact with
-an image of itself, if the unit cell length is not large compared to
-$r_{\mathrm{cut}}$. Also, these methodologies capture short wavelength
-events quite well, but it is impossible to observe a phenomena with
-fluctuations or wavelengths larger than the unit cell dimensions. This
-includes events near liquid-gas critical points, and some phase
-transitions. However, unnecessarily large unit cells require an
-increasing number of particles in the simulation, and resulting
-computational times are often intractable.
+problem. If the unit cell length is not large compared to
+$r_{\mathrm{cut}}$, then there is the possibility that a particle
+could interact with an image of itself. Also, these methodologies
+capture short wavelength events quite well, but it is impossible to
+observe a phenomena with fluctuations or wavelengths larger than the
+unit cell dimensions. This includes events near liquid-gas critical
+points, and some phase transitions. However, unnecessarily large unit
+cells require an increasing number of particles in the simulation, and
+resulting computational times are often intractable.
 
 
 
@@ -943,28 +943,37 @@ non-polarizable models discussed above, which we have reproduced in
 Table
 \ref{tab:meltingPoints}.\cite{Abascal2005,Abascal2005a,Vega2005,Vega2005a,Fernandez2006,Vega2006a}
 
-\begin{table}[h]
-\centering
-\caption{MELTING POINTS OF COMMONLY USED RIGID NON-POLARIZABLE
-        WATER MODELS \cite{Abascal2005,Abascal2005a,Vega2005,Vega2005a,Fernandez2006,Vega2006a}\label{tab:meltingPoints}} 
-\begin{tabular}{rccc}
-\hline \hline
-& Solid / Liquid & Solid / Vapor & \\
-Model & Coexistence & Coexistence & Free Energy \\
-\hline
-TIP4P/Ice & 268(2) & 271(1) & 272(6) \\
-TIP4P/2005 & 249(2) & 249(3) & 252(6) \\
-TIP4P/Ew & 242(2) & 243(3) & 245.5(6) \\
-TIP4P & 229(2) & 230(2) & 232(4) \\
-TIP5P & 271(2) & - & 274(6) \\
-TIP5P-E & 270(2) & - & 271.5(6) \\
-SPC/E & 213(2) & 217(2) & 215(4) \\
-\hline \hline
-\end{tabular}
-\flushleft
-All melting points are reported in (K). 
-Uncertainties in the last digit are indicated with parentheses. \\
+
+\begin{table}[htbp]
+  \centering
+   \caption{MELTING POINTS OF COMMONLY USED RIGID NON-POLARIZABLE
+      WATER MODELS
+      \cite{Abascal2005,Abascal2005a,Vega2005,Vega2005a,Fernandez2006,Vega2006a}\label{tab:meltingPoints}} 
+    \begin{threeparttable}
+    \begin{tabular}{rccc}
+      \hline \hline
+      & Solid / Liquid & Solid / Vapor & \\
+      Model & Coexistence & Coexistence & Free Energy \\
+      \hline
+      TIP4P/Ice & 268(2) & 271(1) & 272(6) \\
+      TIP4P/2005 & 249(2) & 249(3) & 252(6) \\
+      TIP4P/Ew & 242(2) & 243(3) & 245.5(6) \\
+      TIP4P & 229(2) & 230(2) & 232(4) \\
+      TIP5P & 271(2) & - & 274(6) \\
+      TIP5P-E & 270(2) & - & 271.5(6) \\
+      SPC/E & 213(2) & 217(2) & 215(4) \\
+      \hline \hline
+    \end{tabular}
+
+    \begin{tablenotes}
+      \small
+    \item All melting points are reported in (K). 
+      Uncertainties in the last digit are indicated with parentheses.
+    \end{tablenotes}
+  \end{threeparttable}
 \end{table}
+
+
 
 In the first two columns are the melting points determined by
 simulations of solid / liquid and solid / vapor
@@ -1001,13 +1010,11 @@ direction (the HOH bisector), the $y$ axis is parallel to the vector
 connecting the two hydrogens, and the $x$ axis is normal to the plane of
 the molecule. Having defined a coordinate system, we can calculate the
 traceless quadrupole tensor, $\Theta$, for any water model,
-
 \begin{equation}
 \Theta_{\alpha \beta} = \frac{1}{2}
 \sum_{i}q_{i}(3r_{i,\alpha}r_{j,\alpha}-|\vec{r}_{i}|^{2}\delta_{\alpha
   \beta})
 \end{equation}
-
 where, $q_i$ is the charge in the $i-$th atom and the sum is taken
 over all charged sites in the model. The traceless quadrupole tensor
 has certain special properties, and is aptly named for one of them;
@@ -1049,6 +1056,8 @@ with the non-zero elements of their traced quadrupole tensors.
 \begin{table}[h!]
 \caption{TRACED QUADRUPOLE TENSORS FOR A VARIETY OF WATER MODELS}
 \label{Models_quad}
+    \begin{threeparttable}
+
 \begin{tabular}{rccccccc}
 \hline\hline
 Model & $Q_{xx}$ & $Q_{yy}$ & $Q_{zz}$ & $Tr[Q]$ & $\overline{Q}$ & $Q_{T}$ &
@@ -1063,9 +1072,11 @@ SPC & 0.0 & 1.3129 & 0.5095 & 1.8224 & 2.2928 & 1.9693 & 109.5 \\
 TIP3P & 0.0 & 1.1476 & 0.5337 & 1.6812 & 1.9894 & 1.7214 & 146 \\
 \hline \hline
 \end{tabular}
-\begin{flushleft}
-Elements of the tensors are in units of D\AA$^{2}$~. \\
-\end{flushleft}
+    \begin{tablenotes}
+      \small
+    \item Elements of the tensors are in units of D\AA$^{2}$~.
+\end{tablenotes}
+\end{threeparttable}
 \end{table} 
 
 In Figures \ref{fig:QBar} and \ref{fig:TraQ}, we have plotted the
@@ -1112,7 +1123,9 @@ presented in Table \ref{tab:transport}.
 
 
 \begin{table}
-	\caption{BALANCE AND CONSTITUTIVE EQUATIONS FOR MASS, ENERGY, AND MOMENTUM TRANSPORT\label{tab:transport}}
+	\caption{BALANCE AND CONSTITUTIVE EQUATIONS FOR MASS, ENERGY,
+          AND MOMENTUM TRANSPORT\label{tab:transport}}
+        \begin{threeparttable}
         \begin{tabular}{rcc}
           \hline \hline
           & \textbf{~~Balance Equations~~} & \textbf{~~Constitutive Equations~~}\\ \hline 
@@ -1124,6 +1137,7 @@ presented in Table \ref{tab:transport}.
                                        \nabla_z (\rho v_x)$\\ \hline
           \hline
           \end{tabular}
+\end{threeparttable}
 \end{table}
 
 When a transport flux is present, a characteristic response of the
@@ -1400,6 +1414,7 @@ seen in Figure \ref{fig:phaseDiagram} and Table \ref{tab:iceProps}.
 \centering
 \caption{ICE CRYSTAL SYMMETRY AND HYDROGEN ORDERING}
 \label{tab:iceProps}
+\begin{threeparttable}
 \begin{tabular}{lccc}  
 \hline\hline 
   ice form & crystal structure & density (g cm$^{-3}$) & proton arrangement  \\ \hline
@@ -1422,10 +1437,14 @@ seen in Figure \ref{fig:phaseDiagram} and Table \ref{tab:iceProps}.
   XVI & cubic & 0.81 & disordered \\ 
 \hline \hline
 \end{tabular}
-\begin{flushleft}
-Data taken from Reference \cite{Chaplin2018}.
-\end{flushleft}
+    \begin{tablenotes}
+      \small
+    \item Data taken from Reference \cite{Chaplin2018}.
+\end{tablenotes}
+
+\end{threeparttable}
 \end{table}
+
 
 % Ice Ih at -30 \degree ~C, apply 30,000 atmospheres of pressure
 % and we will observe a phase transition to ice-III. Similarly, cool
@@ -1498,7 +1517,7 @@ between two oxygens, resulting in the formation of a hydroxide and
 hydronium ion.
 
 % Residual Entropy of ice.
-
+\vspace{0.6cm}
 \begin{flushleft}
 \textit{Residual Entropy of Ice}
 \end{flushleft}
@@ -1851,7 +1870,7 @@ measure the quasi-liquid layer. However, amongst the disagreements
 there resides fruitful observations which may help us to elucidate
 the nature of this interesting phenomenon. 
 
-
+\vspace{0.6cm}
 \begin{flushleft}
 \textit{Formation of the Quasi-Liquid Layer}
 \end{flushleft}
@@ -1890,6 +1909,7 @@ frequency between temperatures of 235~K and 273~K.\cite{Sanchez2017}
 They observed a sudden increase in the width of the surface premelt
 around 257~K, which occurs in a bilayer-by-bilayer manner. 
 
+\vspace{0.6cm}
 \begin{flushleft}
 \textit{Width of the Quasi-Liquid Layer}
 \end{flushleft}
@@ -2141,7 +2161,7 @@ the three regimes are characterized by the extent that a liquid-like
 layer of water mitigates the sliding load.
 
 \begin{figure*}
-\includegraphics[width=4in]{Figures/QLLsketch}
+\includegraphics[width=\linewidth]{Figures/QLLsketch}
 \caption{\label{fig:QLLsketch} In the hydrodynamic regime, the
   friction felt by a slider on an ice surface is mediated by a
   quasi-liquid layer (QLL) that forms on the surface of the ice.
@@ -2170,6 +2190,7 @@ how does the structure of the interface change during this process,
 and what role does the presented crystal facet have in the observed
 friction?
 
+\vspace{0.6cm}
 \begin{flushleft}
 \textit{Atomic Force Microscopy of the Surface of Ice}
 \end{flushleft}
